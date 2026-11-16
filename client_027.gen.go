@@ -3131,6 +3131,21 @@ func (c *ClientWithResponses) ListDrivesV1WithResponse(ctx context.Context, para
 	return ParseListDrivesV1Response(rsp)
 }
 
+// DeleteDriveV1WithResponse Delete a drive
+//
+// Deletes a drive by project and name or drive ID. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/drives/{nameOrId} (the `DeleteDriveV1` operationId).
+func (c *ClientWithResponses) DeleteDriveV1WithResponse(ctx context.Context, nameOrId string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*DeleteDriveV1Response, error) {
+	rsp, err := c.DeleteDriveV1(ctx, nameOrId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteDriveV1Response(rsp)
+}
+
 // GetDriveV1WithResponse Get a drive
 //
 // Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
@@ -3144,21 +3159,6 @@ func (c *ClientWithResponses) GetDriveV1WithResponse(ctx context.Context, nameOr
 		return nil, err
 	}
 	return ParseGetDriveV1Response(rsp)
-}
-
-// DeleteDriveV1WithResponse Delete a drive
-//
-// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/drives/{name} (the `DeleteDriveV1` operationId).
-func (c *ClientWithResponses) DeleteDriveV1WithResponse(ctx context.Context, name string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*DeleteDriveV1Response, error) {
-	rsp, err := c.DeleteDriveV1(ctx, name, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteDriveV1Response(rsp)
 }
 
 // GetOrCreateDriveV1WithBodyWithResponse Get or create a drive
@@ -9394,6 +9394,24 @@ func (c *ClientWithResponses) ListDrivesWithResponse(ctx context.Context, params
 	return ParseListDrivesResponse(rsp)
 }
 
+// DeleteDriveWithResponse Deprecated: Use DELETE /v1/drives/:nameOrId. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
+// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
+//
+// Deletes a drive by project and name or drive ID. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v2/sandboxes/drives/{nameOrId} (the `DeleteDrive` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+func (c *ClientWithResponses) DeleteDriveWithResponse(ctx context.Context, nameOrId string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*DeleteDriveResponse, error) {
+	rsp, err := c.DeleteDrive(ctx, nameOrId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteDriveResponse(rsp)
+}
+
 // GetDriveWithResponse Deprecated: Use GET /v1/drives/:nameOrId. Requires the read:drive app scope instead of read:sandbox, and drive:read instead of vercelRun:read. Get a drive
 //
 // Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
@@ -9409,24 +9427,6 @@ func (c *ClientWithResponses) GetDriveWithResponse(ctx context.Context, nameOrId
 		return nil, err
 	}
 	return ParseGetDriveResponse(rsp)
-}
-
-// DeleteDriveWithResponse Deprecated: Use DELETE /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
-// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
-//
-// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
-//
-// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *ClientWithResponses) DeleteDriveWithResponse(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*DeleteDriveResponse, error) {
-	rsp, err := c.DeleteDrive(ctx, name, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteDriveResponse(rsp)
 }
 
 // GetOrCreateDriveWithBodyWithResponse Deprecated: Use POST /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:create instead of vercelRun:create.
@@ -9546,7 +9546,7 @@ func (c *ClientWithResponses) ListSessionCommandsWithResponse(ctx context.Contex
 
 // RunSessionCommandWithBodyWithResponse Execute a command
 //
-// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion. When `wait` is true, send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the stream as a CBOR Sequence (RFC 8742) instead of ND-JSON. Each item is a two-element array `[TYPE, PAYLOAD]`. `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, `3` for a stream failure with a `{ code, message }` map, or `128` for the `SessionCommand` as a map, sent when the command starts and again when it finishes.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -9561,7 +9561,7 @@ func (c *ClientWithResponses) RunSessionCommandWithBodyWithResponse(ctx context.
 
 // RunSessionCommandWithResponse Execute a command
 //
-// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion. When `wait` is true, send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the stream as a CBOR Sequence (RFC 8742) instead of ND-JSON. Each item is a two-element array `[TYPE, PAYLOAD]`. `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, `3` for a stream failure with a `{ code, message }` map, or `128` for the `SessionCommand` as a map, sent when the command starts and again when it finishes.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -9621,7 +9621,7 @@ func (c *ClientWithResponses) KillSessionCommandWithResponse(ctx context.Context
 
 // GetSessionCommandLogsWithResponse Stream command logs
 //
-// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
+// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures). Send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the raw output bytes as a CBOR Sequence (RFC 8742) instead. Each item is a two-element array `[TYPE, PAYLOAD]`, where `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, or `3` for a stream failure with a `{ code, message }` map.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -16245,53 +16245,6 @@ func ParseListDrivesV1Response(rsp *http.Response) (*ListDrivesV1Response, error
 	return response, nil
 }
 
-// ParseGetDriveV1Response parses an HTTP response from a GetDriveV1WithResponse call
-func ParseGetDriveV1Response(rsp *http.Response) (*GetDriveV1Response, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDriveV1Response{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Drive This object contains information related to a Vercel Sandbox Drive.
-			Drive Drive `json:"drive"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
 // ParseDeleteDriveV1Response parses an HTTP response from a DeleteDriveV1WithResponse call
 func ParseDeleteDriveV1Response(rsp *http.Response) (*DeleteDriveV1Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -16329,6 +16282,53 @@ func ParseDeleteDriveV1Response(rsp *http.Response) (*DeleteDriveV1Response, err
 		break // No content-type
 
 	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDriveV1Response parses an HTTP response from a GetDriveV1WithResponse call
+func ParseGetDriveV1Response(rsp *http.Response) (*GetDriveV1Response, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDriveV1Response{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
 		break // No content-type
 
 	case rsp.StatusCode == 410:

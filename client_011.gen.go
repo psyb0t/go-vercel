@@ -8,6 +8,264 @@ import (
 	"time"
 )
 
+// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2BaseType defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2BaseType string
+
+// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type string
+
+// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3 defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3 struct {
+	Type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type `json:"type"`
+}
+
+// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type string
+
+// CreateFlag201JSONResponseBody_Environments_Rules_Outcome defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBody_Environments_Rules_Outcome struct {
+	union json.RawMessage
+}
+
+// CreateFlag201JSONResponseBodyKind defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyKind string
+
+// CreateFlag201JSONResponseBodyPermanent defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyPermanent bool
+
+// CreateFlag201JSONResponseBodySeenInProduction defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodySeenInProduction bool
+
+// CreateFlag201JSONResponseBodyState defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyState string
+
+// CreateFlag201JSONResponseBodyTypeName defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyTypeName string
+
+// CreateFlag201JSONResponseBodyVariantsValue0 defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyVariantsValue0 = string
+
+// CreateFlag201JSONResponseBodyVariantsValue1 defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyVariantsValue1 = float32
+
+// CreateFlag201JSONResponseBodyVariantsValue2 defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyVariantsValue2 map[string]interface{}
+
+// CreateFlag201JSONResponseBodyVariantsValue3 defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyVariantsValue3 = []interface{}
+
+// CreateFlag201JSONResponseBodyVariantsValue4 defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBodyVariantsValue4 bool
+
+// CreateFlag201JSONResponseBody_Variants_Value defines parameters for CreateFlag.
+type CreateFlag201JSONResponseBody_Variants_Value struct {
+	union json.RawMessage
+}
+
+// DeleteFlagParams defines parameters for DeleteFlag.
+type DeleteFlagParams struct {
+	// IfMatch Etag to match, can be used interchangeably with the `if-match` header
+	IfMatch *string `form:"ifMatch,omitempty" json:"ifMatch,omitempty"`
+
+	// WithMetadata Whether to include metadata in the response
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetFlagParams defines parameters for GetFlag.
+type GetFlagParams struct {
+	// IfMatch Etag to match, can be used interchangeably with the `if-match` header
+	IfMatch *string `form:"ifMatch,omitempty" json:"ifMatch,omitempty"`
+
+	// WithMetadata Whether to include metadata in the response
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateFlagJSONBody defines parameters for UpdateFlag.
+type UpdateFlagJSONBody struct {
+	// CreatedBy The user who created this patch
+	CreatedBy *string `json:"createdBy,omitempty"`
+
+	// Description A description of the flag
+	Description *string `json:"description,omitempty"`
+
+	// Environments The configuration for the flag in different environments
+	Environments *map[string]struct {
+		Active        bool                                        `json:"active"`
+		Fallthrough   UpdateFlagJSONBody_Environments_Fallthrough `json:"fallthrough"`
+		PausedOutcome struct {
+			Type      interface{} `json:"type"`
+			VariantId string      `json:"variantId"`
+		} `json:"pausedOutcome"`
+
+		// Reuse Allows linking this environment to another environment so this flag will be evaluated with the other flag's configuration
+		Reuse *struct {
+			// Active Whether the reuse is active or not
+			Active bool `json:"active"`
+
+			// Environment The environment to link to
+			Environment string `json:"environment"`
+		} `json:"reuse,omitempty"`
+
+		// Revision The revision of the environment config
+		Revision *float32 `json:"revision,omitempty"`
+		Rules    []struct {
+			Conditions []struct {
+				Cmp        UpdateFlagJSONBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
+				CmpOptions *struct {
+					IgnoreCase *bool `json:"ignoreCase,omitempty"`
+				} `json:"cmpOptions,omitempty"`
+				Lhs UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
+				Rhs *UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
+			} `json:"conditions"`
+			Id      string                                        `json:"id"`
+			Outcome UpdateFlagJSONBody_Environments_Rules_Outcome `json:"outcome"`
+		} `json:"rules"`
+
+		// Targets Allows assigning targets to variants while bypassing the flag's rules
+		Targets *map[string]map[string]map[string][]struct {
+			Note  *string `json:"note,omitempty"`
+			Value string  `json:"value"`
+		} `json:"targets,omitempty"`
+	} `json:"environments,omitempty"`
+
+	// MaintainerIds The user ids of the maintainers of the flag
+	MaintainerIds *[]string `json:"maintainerIds,omitempty"`
+
+	// Message Additional message for this version
+	Message *string `json:"message,omitempty"`
+
+	// Permanent Whether this flag is marked as permanent, indicating it should not be removed
+	Permanent *bool `json:"permanent,omitempty"`
+
+	// Seed A random seed to prevent split points in different flags from having the same targets
+	Seed  *float32                 `json:"seed,omitempty"`
+	State *UpdateFlagJSONBodyState `json:"state,omitempty"`
+
+	// Tags Tags for categorizing the flag
+	Tags *[]string `json:"tags,omitempty"`
+
+	// Variants The variants of the flag
+	Variants *[]struct {
+		// Description A description of the variant
+		Description *string `json:"description,omitempty"`
+
+		// Id The id of the variant
+		Id string `json:"id"`
+
+		// Label A label for the variant
+		Label *string                           `json:"label,omitempty"`
+		Value UpdateFlagJSONBody_Variants_Value `json:"value"`
+	} `json:"variants,omitempty"`
+}
+
+// UpdateFlagParams defines parameters for UpdateFlag.
+type UpdateFlagParams struct {
+	// IfMatch Etag to match, can be used interchangeably with the `if-match` header
+	IfMatch *string `form:"ifMatch,omitempty" json:"ifMatch,omitempty"`
+
+	// WithMetadata Whether to include metadata in the response
+	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsFallthrough0 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsFallthrough0 struct {
+	Type      interface{} `json:"type"`
+	VariantId string      `json:"variantId"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsFallthrough1 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsFallthrough1 struct {
+	Base struct {
+		Attribute string      `json:"attribute"`
+		Kind      string      `json:"kind"`
+		Type      interface{} `json:"type"`
+	} `json:"base"`
+
+	// DefaultVariantId This variant will be used when the base attribute does not exist
+	DefaultVariantId string      `json:"defaultVariantId"`
+	Type             interface{} `json:"type"`
+
+	// Weights The distribution for each variant
+	Weights map[string]float32 `json:"weights"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsFallthrough2 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsFallthrough2 struct {
+	Base struct {
+		Attribute string      `json:"attribute"`
+		Kind      string      `json:"kind"`
+		Type      interface{} `json:"type"`
+	} `json:"base"`
+
+	// DefaultVariantId This variant will be used when the base attribute does not exist
+	DefaultVariantId string `json:"defaultVariantId"`
+
+	// FinalPromille Traffic for rollToVariant after all slots expire (0-100_000, where 1_000 = 1%). Defaults to 100_000 (100%). Set 50_000 to end at 50%.
+	FinalPromille *float32 `json:"finalPromille,omitempty"`
+
+	// RollFromVariantId The variant to roll away from
+	RollFromVariantId string `json:"rollFromVariantId"`
+
+	// RollToVariantId The variant to roll towards
+	RollToVariantId string `json:"rollToVariantId"`
+
+	// Slots Each slot defines a promille and how long it is served for. After all slots expire, finalPromille is served indefinitely (100% when omitted). The final percentage does not need its own slot.
+	Slots []struct {
+		// DurationMs How long this promille is served in ms before moving to the next slot.
+		DurationMs float32 `json:"durationMs"`
+
+		// Promille Promille of traffic for rollToVariant (0-100_000, where 1_000 = 1%)
+		Promille float32 `json:"promille"`
+	} `json:"slots"`
+
+	// StartTimestamp Epoch ms when the rollout begins
+	StartTimestamp float32     `json:"startTimestamp"`
+	Type           interface{} `json:"type"`
+}
+
+// UpdateFlagJSONBody_Environments_Fallthrough defines parameters for UpdateFlag.
+type UpdateFlagJSONBody_Environments_Fallthrough struct {
+	union json.RawMessage
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsCmp defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsCmp string
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs0 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs0 struct {
+	Type interface{} `json:"type"`
+}
+
+// UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs1 defines parameters for UpdateFlag.
+type UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs1 struct {
+	Attribute string      `json:"attribute"`
+	Kind      string      `json:"kind"`
+	Type      interface{} `json:"type"`
+}
+
+// UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs defines parameters for UpdateFlag.
+type UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs struct {
+	union json.RawMessage
+}
+
 // UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0 defines parameters for UpdateFlag.
 type UpdateFlagJSONBodyEnvironmentsRulesConditionsRhs0 struct {
 	Items []UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item `json:"items"`

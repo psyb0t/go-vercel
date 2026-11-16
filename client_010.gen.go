@@ -10,6 +10,272 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UserEventPayload528AfterClaimsValuesWildcards defines model for UserEvent.Payload.528.After.Claims.Values.Wildcards.
+type UserEventPayload528AfterClaimsValuesWildcards bool
+
+// UserEventPayload528BeforeClaimsValuesWildcards defines model for UserEvent.Payload.528.Before.Claims.Values.Wildcards.
+type UserEventPayload528BeforeClaimsValuesWildcards bool
+
+// UserEventPayload529 The payload of the event, if requested.
+type UserEventPayload529 struct {
+	CreatedByParentTeamId *string `json:"createdByParentTeamId,omitempty"`
+
+	// ExpiresAt Unix epoch milliseconds. Absent when the token never expires.
+	ExpiresAt   *float32 `json:"expiresAt,omitempty"`
+	Geolocation *struct {
+		City *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"city,omitempty"`
+		Country struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"country"`
+		MostSpecificSubdivision *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"most_specific_subdivision,omitempty"`
+		RegionName *string `json:"regionName,omitempty"`
+	} `json:"geolocation,omitempty"`
+
+	// HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
+	HasAuthorizationDetails *UserEventPayload529HasAuthorizationDetails `json:"hasAuthorizationDetails,omitempty"`
+	Ip                      *string                                     `json:"ip,omitempty"`
+
+	// OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
+	OrganizationScope *UserEventPayload529OrganizationScope `json:"organizationScope,omitempty"`
+
+	// Origin How the token was issued. Always `'manual'` for explicit PAT creation.
+	Origin UserEventPayload529Origin `json:"origin"`
+
+	// ProjectId Present when `scope` is `'project'`.
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// ProjectName Present when `scope` is `'project'`.
+	ProjectName *string `json:"projectName,omitempty"`
+
+	// ProjectScope Present when `scope` is `'project'`.
+	ProjectScope *UserEventPayload529ProjectScope `json:"projectScope,omitempty"`
+	ReqId        *string                          `json:"reqId,omitempty"`
+	ReqUrl       *string                          `json:"reqUrl,omitempty"`
+
+	// Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
+	Scope  UserEventPayload529Scope   `json:"scope"`
+	Source *UserEventPayload529Source `json:"source,omitempty"`
+
+	// TeamId Present when `scope` is `'team'` or `'project'`.
+	TeamId *string `json:"teamId,omitempty"`
+
+	// TeamSlug Present when `scope` is `'team'` or `'project'`.
+	TeamSlug *string `json:"teamSlug,omitempty"`
+
+	// TokenId The token's public ID.
+	TokenId string `json:"tokenId"`
+
+	// TokenName User-supplied name of the token.
+	TokenName string `json:"tokenName"`
+
+	// TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
+	TokenPrefix *UserEventPayload529TokenPrefix `json:"tokenPrefix,omitempty"`
+
+	// TokenSuffix The token checksum suffix.
+	TokenSuffix *string `json:"tokenSuffix,omitempty"`
+	UserAgent   *string `json:"userAgent,omitempty"`
+}
+
+// UserEventPayload529HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
+type UserEventPayload529HasAuthorizationDetails bool
+
+// UserEventPayload529OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
+type UserEventPayload529OrganizationScope bool
+
+// UserEventPayload529Origin How the token was issued. Always `'manual'` for explicit PAT creation.
+type UserEventPayload529Origin string
+
+// UserEventPayload529ProjectScope Present when `scope` is `'project'`.
+type UserEventPayload529ProjectScope string
+
+// UserEventPayload529Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
+type UserEventPayload529Scope string
+
+// UserEventPayload529Source defines model for UserEvent.Payload.529.Source.
+type UserEventPayload529Source string
+
+// UserEventPayload529TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
+type UserEventPayload529TokenPrefix string
+
+// UserEventPayload530 The payload of the event, if requested.
+type UserEventPayload530 struct {
+	// ActorTokenId The token's public ID.
+	ActorTokenId          string                      `json:"actorTokenId"`
+	CreatedByParentTeamId *string                     `json:"createdByParentTeamId,omitempty"`
+	Expired               *UserEventPayload530Expired `json:"expired,omitempty"`
+	Geolocation           *struct {
+		City *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"city,omitempty"`
+		Country struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"country"`
+		MostSpecificSubdivision *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"most_specific_subdivision,omitempty"`
+		RegionName *string `json:"regionName,omitempty"`
+	} `json:"geolocation,omitempty"`
+	Ip           *string                          `json:"ip,omitempty"`
+	Leaked       *UserEventPayload530Leaked       `json:"leaked,omitempty"`
+	LogoutSource *UserEventPayload530LogoutSource `json:"logoutSource,omitempty"`
+	Origin       *UserEventPayload530Origin       `json:"origin,omitempty"`
+	Reason       *UserEventPayload530Reason       `json:"reason,omitempty"`
+	ReqId        *string                          `json:"reqId,omitempty"`
+	ReqUrl       *string                          `json:"reqUrl,omitempty"`
+	Revoked      *UserEventPayload530Revoked      `json:"revoked,omitempty"`
+	Scope        *UserEventPayload530Scope        `json:"scope,omitempty"`
+	Source       *UserEventPayload530Source       `json:"source,omitempty"`
+	TeamId       *string                          `json:"teamId,omitempty"`
+	TokenId      string                           `json:"tokenId"`
+	TokenName    string                           `json:"tokenName"`
+	TokenType    string                           `json:"tokenType"`
+	UserAgent    *string                          `json:"userAgent,omitempty"`
+}
+
+// UserEventPayload530Expired defines model for UserEvent.Payload.530.Expired.
+type UserEventPayload530Expired bool
+
+// UserEventPayload530Leaked defines model for UserEvent.Payload.530.Leaked.
+type UserEventPayload530Leaked bool
+
+// UserEventPayload530LogoutSource defines model for UserEvent.Payload.530.LogoutSource.
+type UserEventPayload530LogoutSource string
+
+// UserEventPayload530Origin defines model for UserEvent.Payload.530.Origin.
+type UserEventPayload530Origin string
+
+// UserEventPayload530Reason defines model for UserEvent.Payload.530.Reason.
+type UserEventPayload530Reason string
+
+// UserEventPayload530Revoked defines model for UserEvent.Payload.530.Revoked.
+type UserEventPayload530Revoked bool
+
+// UserEventPayload530Scope defines model for UserEvent.Payload.530.Scope.
+type UserEventPayload530Scope string
+
+// UserEventPayload530Source defines model for UserEvent.Payload.530.Source.
+type UserEventPayload530Source string
+
+// UserEventPayload531 The payload of the event, if requested.
+type UserEventPayload531 struct {
+	// ActorTokenId The token's public ID.
+	ActorTokenId string  `json:"actorTokenId"`
+	DeletedCount float32 `json:"deletedCount"`
+	Geolocation  *struct {
+		City *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"city,omitempty"`
+		Country struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"country"`
+		MostSpecificSubdivision *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"most_specific_subdivision,omitempty"`
+		RegionName *string `json:"regionName,omitempty"`
+	} `json:"geolocation,omitempty"`
+	Ip        *string `json:"ip,omitempty"`
+	ReqId     *string `json:"reqId,omitempty"`
+	ReqUrl    *string `json:"reqUrl,omitempty"`
+	UserAgent *string `json:"userAgent,omitempty"`
+}
+
+// UserEvent_Payload defines model for UserEvent.Payload.
+type UserEvent_Payload struct {
+	union json.RawMessage
+}
+
+// UserEventPrincipal0 Metadata for {@link principalId}.
+type UserEventPrincipal0 struct {
+	Avatar   string                   `json:"avatar"`
+	Email    string                   `json:"email"`
+	Slug     *string                  `json:"slug,omitempty"`
+	Type     *UserEventPrincipal0Type `json:"type,omitempty"`
+	Uid      string                   `json:"uid"`
+	Username string                   `json:"username"`
+}
+
+// UserEventPrincipal0Type defines model for UserEvent.Principal.0.Type.
+type UserEventPrincipal0Type string
+
+// UserEventPrincipal1 Metadata for {@link principalId}.
+type UserEventPrincipal1 struct {
+	// ClientId The OAuth 2.0 client ID, which may be a CIMD URL.
+	ClientId string `json:"clientId"`
+
+	// Id The backing Vercel App ID. When absent, defaults to `clientId`.
+	Id   *string                 `json:"id,omitempty"`
+	Name string                  `json:"name"`
+	Type UserEventPrincipal1Type `json:"type"`
+}
+
+// UserEventPrincipal1Type defines model for UserEvent.Principal.1.Type.
+type UserEventPrincipal1Type string
+
+// UserEventPrincipal2 Metadata for {@link principalId}.
+type UserEventPrincipal2 struct {
+	Avatar *string `json:"avatar,omitempty"`
+
+	// Id The OAuth2 integration ID.
+	Id   string                  `json:"id"`
+	Name string                  `json:"name"`
+	Slug *string                 `json:"slug,omitempty"`
+	Type UserEventPrincipal2Type `json:"type"`
+}
+
+// UserEventPrincipal2Type defines model for UserEvent.Principal.2.Type.
+type UserEventPrincipal2Type string
+
+// UserEventPrincipal3 Metadata for {@link principalId}.
+type UserEventPrincipal3 struct {
+	Email *string                 `json:"email,omitempty"`
+	Id    string                  `json:"id"`
+	Name  string                  `json:"name"`
+	Type  UserEventPrincipal3Type `json:"type"`
+}
+
+// UserEventPrincipal3Type defines model for UserEvent.Principal.3.Type.
+type UserEventPrincipal3Type string
+
+// UserEventPrincipal4 Metadata for {@link principalId}.
+type UserEventPrincipal4 struct {
+	Type UserEventPrincipal4Type `json:"type"`
+}
+
+// UserEventPrincipal4Type defines model for UserEvent.Principal.4.Type.
+type UserEventPrincipal4Type string
+
+// UserEvent_Principal defines model for UserEvent.Principal.
+type UserEvent_Principal struct {
+	union json.RawMessage
+}
+
+// UserEventType The type of the event.
+//
+// Example: login
+type UserEventType string
+
 // UserEventVia0 Metadata for {@link viaIds}.
 type UserEventVia0 struct {
 	Avatar   string             `json:"avatar"`
@@ -6337,8 +6603,8 @@ type ListDrivesV1ParamsSortBy string
 // ListDrivesV1ParamsSortOrder defines parameters for ListDrivesV1.
 type ListDrivesV1ParamsSortOrder string
 
-// GetDriveV1Params defines parameters for GetDriveV1.
-type GetDriveV1Params struct {
+// DeleteDriveV1Params defines parameters for DeleteDriveV1.
+type DeleteDriveV1Params struct {
 	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
 
@@ -6349,8 +6615,8 @@ type GetDriveV1Params struct {
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
 
-// DeleteDriveV1Params defines parameters for DeleteDriveV1.
-type DeleteDriveV1Params struct {
+// GetDriveV1Params defines parameters for GetDriveV1.
+type GetDriveV1Params struct {
 	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
 
@@ -19754,262 +20020,4 @@ type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2 struct {
 	} `json:"slots"`
 	StartTimestamp float32                                                    `json:"startTimestamp"`
 	Type           CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2BaseType defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2BaseType string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3 struct {
-	Type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type string
-
-// CreateFlag201JSONResponseBody_Environments_Rules_Outcome defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBody_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// CreateFlag201JSONResponseBodyKind defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyKind string
-
-// CreateFlag201JSONResponseBodyPermanent defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyPermanent bool
-
-// CreateFlag201JSONResponseBodySeenInProduction defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodySeenInProduction bool
-
-// CreateFlag201JSONResponseBodyState defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyState string
-
-// CreateFlag201JSONResponseBodyTypeName defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyTypeName string
-
-// CreateFlag201JSONResponseBodyVariantsValue0 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyVariantsValue0 = string
-
-// CreateFlag201JSONResponseBodyVariantsValue1 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyVariantsValue1 = float32
-
-// CreateFlag201JSONResponseBodyVariantsValue2 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyVariantsValue2 map[string]interface{}
-
-// CreateFlag201JSONResponseBodyVariantsValue3 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyVariantsValue3 = []interface{}
-
-// CreateFlag201JSONResponseBodyVariantsValue4 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyVariantsValue4 bool
-
-// CreateFlag201JSONResponseBody_Variants_Value defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBody_Variants_Value struct {
-	union json.RawMessage
-}
-
-// DeleteFlagParams defines parameters for DeleteFlag.
-type DeleteFlagParams struct {
-	// IfMatch Etag to match, can be used interchangeably with the `if-match` header
-	IfMatch *string `form:"ifMatch,omitempty" json:"ifMatch,omitempty"`
-
-	// WithMetadata Whether to include metadata in the response
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetFlagParams defines parameters for GetFlag.
-type GetFlagParams struct {
-	// IfMatch Etag to match, can be used interchangeably with the `if-match` header
-	IfMatch *string `form:"ifMatch,omitempty" json:"ifMatch,omitempty"`
-
-	// WithMetadata Whether to include metadata in the response
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateFlagJSONBody defines parameters for UpdateFlag.
-type UpdateFlagJSONBody struct {
-	// CreatedBy The user who created this patch
-	CreatedBy *string `json:"createdBy,omitempty"`
-
-	// Description A description of the flag
-	Description *string `json:"description,omitempty"`
-
-	// Environments The configuration for the flag in different environments
-	Environments *map[string]struct {
-		Active        bool                                        `json:"active"`
-		Fallthrough   UpdateFlagJSONBody_Environments_Fallthrough `json:"fallthrough"`
-		PausedOutcome struct {
-			Type      interface{} `json:"type"`
-			VariantId string      `json:"variantId"`
-		} `json:"pausedOutcome"`
-
-		// Reuse Allows linking this environment to another environment so this flag will be evaluated with the other flag's configuration
-		Reuse *struct {
-			// Active Whether the reuse is active or not
-			Active bool `json:"active"`
-
-			// Environment The environment to link to
-			Environment string `json:"environment"`
-		} `json:"reuse,omitempty"`
-
-		// Revision The revision of the environment config
-		Revision *float32 `json:"revision,omitempty"`
-		Rules    []struct {
-			Conditions []struct {
-				Cmp        UpdateFlagJSONBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *bool `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *UpdateFlagJSONBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                                        `json:"id"`
-			Outcome UpdateFlagJSONBody_Environments_Rules_Outcome `json:"outcome"`
-		} `json:"rules"`
-
-		// Targets Allows assigning targets to variants while bypassing the flag's rules
-		Targets *map[string]map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"targets,omitempty"`
-	} `json:"environments,omitempty"`
-
-	// MaintainerIds The user ids of the maintainers of the flag
-	MaintainerIds *[]string `json:"maintainerIds,omitempty"`
-
-	// Message Additional message for this version
-	Message *string `json:"message,omitempty"`
-
-	// Permanent Whether this flag is marked as permanent, indicating it should not be removed
-	Permanent *bool `json:"permanent,omitempty"`
-
-	// Seed A random seed to prevent split points in different flags from having the same targets
-	Seed  *float32                 `json:"seed,omitempty"`
-	State *UpdateFlagJSONBodyState `json:"state,omitempty"`
-
-	// Tags Tags for categorizing the flag
-	Tags *[]string `json:"tags,omitempty"`
-
-	// Variants The variants of the flag
-	Variants *[]struct {
-		// Description A description of the variant
-		Description *string `json:"description,omitempty"`
-
-		// Id The id of the variant
-		Id string `json:"id"`
-
-		// Label A label for the variant
-		Label *string                           `json:"label,omitempty"`
-		Value UpdateFlagJSONBody_Variants_Value `json:"value"`
-	} `json:"variants,omitempty"`
-}
-
-// UpdateFlagParams defines parameters for UpdateFlag.
-type UpdateFlagParams struct {
-	// IfMatch Etag to match, can be used interchangeably with the `if-match` header
-	IfMatch *string `form:"ifMatch,omitempty" json:"ifMatch,omitempty"`
-
-	// WithMetadata Whether to include metadata in the response
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsFallthrough0 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsFallthrough0 struct {
-	Type      interface{} `json:"type"`
-	VariantId string      `json:"variantId"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsFallthrough1 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsFallthrough1 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string      `json:"defaultVariantId"`
-	Type             interface{} `json:"type"`
-
-	// Weights The distribution for each variant
-	Weights map[string]float32 `json:"weights"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsFallthrough2 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsFallthrough2 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string `json:"defaultVariantId"`
-
-	// FinalPromille Traffic for rollToVariant after all slots expire (0-100_000, where 1_000 = 1%). Defaults to 100_000 (100%). Set 50_000 to end at 50%.
-	FinalPromille *float32 `json:"finalPromille,omitempty"`
-
-	// RollFromVariantId The variant to roll away from
-	RollFromVariantId string `json:"rollFromVariantId"`
-
-	// RollToVariantId The variant to roll towards
-	RollToVariantId string `json:"rollToVariantId"`
-
-	// Slots Each slot defines a promille and how long it is served for. After all slots expire, finalPromille is served indefinitely (100% when omitted). The final percentage does not need its own slot.
-	Slots []struct {
-		// DurationMs How long this promille is served in ms before moving to the next slot.
-		DurationMs float32 `json:"durationMs"`
-
-		// Promille Promille of traffic for rollToVariant (0-100_000, where 1_000 = 1%)
-		Promille float32 `json:"promille"`
-	} `json:"slots"`
-
-	// StartTimestamp Epoch ms when the rollout begins
-	StartTimestamp float32     `json:"startTimestamp"`
-	Type           interface{} `json:"type"`
-}
-
-// UpdateFlagJSONBody_Environments_Fallthrough defines parameters for UpdateFlag.
-type UpdateFlagJSONBody_Environments_Fallthrough struct {
-	union json.RawMessage
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsCmp defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsCmp string
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs0 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs0 struct {
-	Type interface{} `json:"type"`
-}
-
-// UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs1 defines parameters for UpdateFlag.
-type UpdateFlagJSONBodyEnvironmentsRulesConditionsLhs1 struct {
-	Attribute string      `json:"attribute"`
-	Kind      string      `json:"kind"`
-	Type      interface{} `json:"type"`
-}
-
-// UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs defines parameters for UpdateFlag.
-type UpdateFlagJSONBody_Environments_Rules_Conditions_Lhs struct {
-	union json.RawMessage
 }

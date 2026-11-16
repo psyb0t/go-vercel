@@ -19754,8 +19754,8 @@ type ListDrivesParamsSortBy string
 // ListDrivesParamsSortOrder defines parameters for ListDrives.
 type ListDrivesParamsSortOrder string
 
-// GetDriveParams defines parameters for GetDrive.
-type GetDriveParams struct {
+// DeleteDriveParams defines parameters for DeleteDrive.
+type DeleteDriveParams struct {
 	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
 
@@ -19766,8 +19766,8 @@ type GetDriveParams struct {
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
 
-// DeleteDriveParams defines parameters for DeleteDrive.
-type DeleteDriveParams struct {
+// GetDriveParams defines parameters for GetDrive.
+type GetDriveParams struct {
 	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
 	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
 

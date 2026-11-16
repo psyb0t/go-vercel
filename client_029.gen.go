@@ -4612,56 +4612,6 @@ func ParseListDrivesResponse(rsp *http.Response) (*ListDrivesResponse, error) {
 	return response, nil
 }
 
-// ParseGetDriveResponse parses an HTTP response from a GetDriveWithResponse call
-func ParseGetDriveResponse(rsp *http.Response) (*GetDriveResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDriveResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Drive This object contains information related to a Vercel Sandbox Drive.
-			Drive Drive `json:"drive"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 422:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
 // ParseDeleteDriveResponse parses an HTTP response from a DeleteDriveWithResponse call
 func ParseDeleteDriveResponse(rsp *http.Response) (*DeleteDriveResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -4699,6 +4649,56 @@ func ParseDeleteDriveResponse(rsp *http.Response) (*DeleteDriveResponse, error) 
 		break // No content-type
 
 	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 422:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDriveResponse parses an HTTP response from a GetDriveWithResponse call
+func ParseGetDriveResponse(rsp *http.Response) (*GetDriveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDriveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Drive This object contains information related to a Vercel Sandbox Drive.
+			Drive Drive `json:"drive"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
 		break // No content-type
 
 	case rsp.StatusCode == 410:
@@ -6983,7 +6983,7 @@ func ParseGetDeploymentEventsResponse(rsp *http.Response) (*GetDeploymentEventsR
 
 	switch {
 	case rsp.Header.Get("Content-Type") == "application/json" && rsp.StatusCode == 200:
-		var dest []*GetDeploymentEvents200JSONResponseBody_Item
+		var dest []GetDeploymentEvents200JSONResponseBody_Item
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

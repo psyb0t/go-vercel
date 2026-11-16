@@ -16,6 +16,108 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// DeleteAiGatewayRule Delete rule
+//
+// Delete a routing rule (soft delete).
+//
+// Corresponds with DELETE /ai-gateway/rules (the `DeleteAiGatewayRule` operationId).
+func (c *Client) DeleteAiGatewayRule(ctx context.Context, params *DeleteAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAiGatewayRuleRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAiGatewayRules List rules
+//
+// List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
+//
+// Corresponds with GET /ai-gateway/rules (the `ListAiGatewayRules` operationId).
+func (c *Client) ListAiGatewayRules(ctx context.Context, params *ListAiGatewayRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiGatewayRulesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAiGatewayRule Update rule
+//
+// Update a routing rule (enabled, action, or description)
+//
+// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
+func (c *Client) UpdateAiGatewayRule(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayRuleRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayRule Create rule
+//
+// Create a routing rule.
+//
+// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
+func (c *Client) CreateAiGatewayRule(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayRuleRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAiGatewayVirtualModelConfig Delete virtual model config
+//
+// Delete a virtual model config (soft delete).
+//
+// Corresponds with DELETE /ai-gateway/virtual-model-configs (the `DeleteAiGatewayVirtualModelConfig` operationId).
+func (c *Client) DeleteAiGatewayVirtualModelConfig(ctx context.Context, params *DeleteAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAiGatewayVirtualModelConfigRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAiGatewayVirtualModelConfig Get virtual model config
+//
+// Get a virtual model config.
+//
+// Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
+func (c *Client) GetAiGatewayVirtualModelConfig(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAiGatewayVirtualModelConfigRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // UpdateAiGatewayVirtualModelConfig Update virtual model config
 //
 // Update a virtual model config.
@@ -1843,13 +1945,13 @@ func (c *Client) ListDrivesV1(ctx context.Context, params *ListDrivesV1Params, r
 	return c.Client.Do(req)
 }
 
-// GetDriveV1 Get a drive
+// DeleteDriveV1 Delete a drive
 //
-// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
+// Deletes a drive by project and name or drive ID. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
 //
-// Corresponds with GET /v1/drives/{nameOrId} (the `GetDriveV1` operationId).
-func (c *Client) GetDriveV1(ctx context.Context, nameOrId string, params *GetDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDriveV1Request(c.Server, nameOrId, params)
+// Corresponds with DELETE /v1/drives/{nameOrId} (the `DeleteDriveV1` operationId).
+func (c *Client) DeleteDriveV1(ctx context.Context, nameOrId string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteDriveV1Request(c.Server, nameOrId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1860,13 +1962,13 @@ func (c *Client) GetDriveV1(ctx context.Context, nameOrId string, params *GetDri
 	return c.Client.Do(req)
 }
 
-// DeleteDriveV1 Delete a drive
+// GetDriveV1 Get a drive
 //
-// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
 //
-// Corresponds with DELETE /v1/drives/{name} (the `DeleteDriveV1` operationId).
-func (c *Client) DeleteDriveV1(ctx context.Context, name string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteDriveV1Request(c.Server, name, params)
+// Corresponds with GET /v1/drives/{nameOrId} (the `GetDriveV1` operationId).
+func (c *Client) GetDriveV1(ctx context.Context, nameOrId string, params *GetDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDriveV1Request(c.Server, nameOrId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -9430,14 +9532,15 @@ func (c *Client) ListDrives(ctx context.Context, params *ListDrivesParams, reqEd
 	return c.Client.Do(req)
 }
 
-// GetDrive Deprecated: Use GET /v1/drives/:nameOrId. Requires the read:drive app scope instead of read:sandbox, and drive:read instead of vercelRun:read. Get a drive
+// DeleteDrive Deprecated: Use DELETE /v1/drives/:nameOrId. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
+// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
 //
-// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
+// Deletes a drive by project and name or drive ID. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
 //
-// Corresponds with GET /v2/sandboxes/drives/{nameOrId} (the `GetDrive` operationId).
+// Corresponds with DELETE /v2/sandboxes/drives/{nameOrId} (the `DeleteDrive` operationId).
 // Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) GetDrive(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetDriveRequest(c.Server, nameOrId, params)
+func (c *Client) DeleteDrive(ctx context.Context, nameOrId string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteDriveRequest(c.Server, nameOrId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -9448,15 +9551,14 @@ func (c *Client) GetDrive(ctx context.Context, nameOrId string, params *GetDrive
 	return c.Client.Do(req)
 }
 
-// DeleteDrive Deprecated: Use DELETE /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
-// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
+// GetDrive Deprecated: Use GET /v1/drives/:nameOrId. Requires the read:drive app scope instead of read:sandbox, and drive:read instead of vercelRun:read. Get a drive
 //
-// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
 //
-// Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
+// Corresponds with GET /v2/sandboxes/drives/{nameOrId} (the `GetDrive` operationId).
 // Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-func (c *Client) DeleteDrive(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteDriveRequest(c.Server, name, params)
+func (c *Client) GetDrive(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDriveRequest(c.Server, nameOrId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -9604,7 +9706,7 @@ func (c *Client) ListSessionCommands(ctx context.Context, sessionId string, para
 
 // RunSessionCommandWithBody Execute a command
 //
-// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion. When `wait` is true, send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the stream as a CBOR Sequence (RFC 8742) instead of ND-JSON. Each item is a two-element array `[TYPE, PAYLOAD]`. `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, `3` for a stream failure with a `{ code, message }` map, or `128` for the `SessionCommand` as a map, sent when the command starts and again when it finishes.
 //
 // Takes any type of body and a specified content type.
 //
@@ -9623,7 +9725,7 @@ func (c *Client) RunSessionCommandWithBody(ctx context.Context, sessionId string
 
 // RunSessionCommand Execute a command
 //
-// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion. When `wait` is true, send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the stream as a CBOR Sequence (RFC 8742) instead of ND-JSON. Each item is a two-element array `[TYPE, PAYLOAD]`. `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, `3` for a stream failure with a `{ code, message }` map, or `128` for the `SessionCommand` as a map, sent when the command starts and again when it finishes.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -9697,7 +9799,7 @@ func (c *Client) KillSessionCommand(ctx context.Context, sessionId string, cmdId
 
 // GetSessionCommandLogs Stream command logs
 //
-// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
+// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures). Send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the raw output bytes as a CBOR Sequence (RFC 8742) instead. Each item is a two-element array `[TYPE, PAYLOAD]`, where `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, or `3` for a stream failure with a `{ code, message }` map.
 //
 // Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs (the `GetSessionCommandLogs` operationId).
 func (c *Client) GetSessionCommandLogs(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -19298,6 +19400,91 @@ func NewListDrivesV1Request(server string, params *ListDrivesV1Params) (*http.Re
 	return req, nil
 }
 
+// NewDeleteDriveV1Request constructs an http.Request for the DeleteDriveV1 method
+func NewDeleteDriveV1Request(server string, nameOrId string, params *DeleteDriveV1Params) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "nameOrId", nameOrId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/drives/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetDriveV1Request constructs an http.Request for the GetDriveV1 method
 func NewGetDriveV1Request(server string, nameOrId string, params *GetDriveV1Params) (*http.Request, error) {
 	var err error
@@ -19376,91 +19563,6 @@ func NewGetDriveV1Request(server string, nameOrId string, params *GetDriveV1Para
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDeleteDriveV1Request constructs an http.Request for the DeleteDriveV1 method
-func NewDeleteDriveV1Request(server string, name string, params *DeleteDriveV1Params) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/drives/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ProjectId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -19922,159 +20024,4 @@ func NewInvalidateByTagsRequest(server string, params *InvalidateByTagsParams, b
 	}
 	bodyReader = bytes.NewReader(buf)
 	return NewInvalidateByTagsRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewInvalidateByTagsRequestWithBody constructs an http.Request for the InvalidateByTags method, with any body, and a specified content type
-func NewInvalidateByTagsRequestWithBody(server string, params *InvalidateByTagsParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/edge-cache/invalidate-by-tags")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIdOrName", params.ProjectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteSharedEnvVariableRequest calls the generic DeleteSharedEnvVariable builder with application/json body
-func NewDeleteSharedEnvVariableRequest(server string, params *DeleteSharedEnvVariableParams, body DeleteSharedEnvVariableJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewDeleteSharedEnvVariableRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewDeleteSharedEnvVariableRequestWithBody constructs an http.Request for the DeleteSharedEnvVariable method, with any body, and a specified content type
-func NewDeleteSharedEnvVariableRequestWithBody(server string, params *DeleteSharedEnvVariableParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/env")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
 }

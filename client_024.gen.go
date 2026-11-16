@@ -9,6 +9,233 @@ import (
 )
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CreateApiKeysResponse) GetJSON200() *struct {
+	// ApiKey Represents an API key.
+	ApiKey APIKey `json:"apiKey"`
+
+	// ApiKeyString The API key's actual value. This value is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
+	//
+	// Example: uRKJSTt0L4RaSkiMj41QTkxM
+	ApiKeyString string `json:"apiKeyString"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r CreateApiKeysResponse) GetJSON401() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r CreateApiKeysResponse) GetJSON403() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r CreateApiKeysResponse) GetJSON429() *struct {
+	Error struct {
+		Code    string  `json:"code"`
+		Limit   float32 `json:"limit"`
+		Message string  `json:"message"`
+		Name    string  `json:"name"`
+	} `json:"error"`
+} {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r CreateApiKeysResponse) GetJSON500() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateApiKeysResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateApiKeysResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateApiKeysResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateApiKeysResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateApiKeyQuotaResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// ApiKey Represents an API key.
+		ApiKey APIKey `json:"apiKey"`
+
+		// Quota AI Gateway quota associated with an API key.
+		Quota APIKeyQuota `json:"quota"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *struct {
+		Error struct {
+			Code    string  `json:"code"`
+			Limit   float32 `json:"limit"`
+			Message string  `json:"message"`
+			Name    string  `json:"name"`
+		} `json:"error"`
+	}
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON200() *struct {
+	// ApiKey Represents an API key.
+	ApiKey APIKey `json:"apiKey"`
+
+	// Quota AI Gateway quota associated with an API key.
+	Quota APIKeyQuota `json:"quota"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON401() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON403() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON429() *struct {
+	Error struct {
+		Code    string  `json:"code"`
+		Limit   float32 `json:"limit"`
+		Message string  `json:"message"`
+		Name    string  `json:"name"`
+	} `json:"error"`
+} {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r UpdateApiKeyQuotaResponse) GetJSON500() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateApiKeyQuotaResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateApiKeyQuotaResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateApiKeyQuotaResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateApiKeyQuotaResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetDomainsRecordsByRecordIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Comment    *string                                                  `json:"comment,omitempty"`
+		CreatedAt  *float32                                                 `json:"createdAt,omitempty"`
+		Creator    string                                                   `json:"creator"`
+		Domain     string                                                   `json:"domain"`
+		Id         string                                                   `json:"id"`
+		Name       string                                                   `json:"name"`
+		RecordType GetDomainsRecordsByRecordId200JSONResponseBodyRecordType `json:"recordType"`
+		Ttl        *float32                                                 `json:"ttl,omitempty"`
+		Type       GetDomainsRecordsByRecordId200JSONResponseBodyType       `json:"type"`
+		Value      string                                                   `json:"value"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetDomainsRecordsByRecordIdResponse) GetJSON200() *struct {
 	Comment    *string                                                  `json:"comment,omitempty"`
 	CreatedAt  *float32                                                 `json:"createdAt,omitempty"`
@@ -4397,53 +4624,6 @@ func (r ListDrivesV1Response) ContentType() string {
 	return ""
 }
 
-type GetDriveV1Response struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Drive This object contains information related to a Vercel Sandbox Drive.
-		Drive Drive `json:"drive"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDriveV1Response) GetJSON200() *struct {
-	// Drive This object contains information related to a Vercel Sandbox Drive.
-	Drive Drive `json:"drive"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetDriveV1Response) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetDriveV1Response) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetDriveV1Response) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetDriveV1Response) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
 type DeleteDriveV1Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -4485,6 +4665,53 @@ func (r DeleteDriveV1Response) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r DeleteDriveV1Response) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetDriveV1Response struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetDriveV1Response) GetJSON200() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetDriveV1Response) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDriveV1Response) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDriveV1Response) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetDriveV1Response) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}

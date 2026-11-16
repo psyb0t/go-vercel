@@ -13142,25 +13142,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload119. Returns the specified
+// Getter for additional properties for UserEventPayload122. Returns the specified
 // element and whether it was found
-func (a UserEventPayload119) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload122) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload119
-func (a *UserEventPayload119) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload122
+func (a *UserEventPayload122) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload119 to handle AdditionalProperties
-func (a *UserEventPayload119) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload122 to handle AdditionalProperties
+func (a *UserEventPayload122) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -13189,8 +13189,8 @@ func (a *UserEventPayload119) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload119 to handle AdditionalProperties
-func (a UserEventPayload119) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload122 to handle AdditionalProperties
+func (a UserEventPayload122) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -13208,25 +13208,25 @@ func (a UserEventPayload119) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload268. Returns the specified
+// Getter for additional properties for UserEventPayload271. Returns the specified
 // element and whether it was found
-func (a UserEventPayload268) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload271) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload268
-func (a *UserEventPayload268) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload271
+func (a *UserEventPayload271) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload268 to handle AdditionalProperties
-func (a *UserEventPayload268) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload271 to handle AdditionalProperties
+func (a *UserEventPayload271) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -13279,8 +13279,8 @@ func (a *UserEventPayload268) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload268 to handle AdditionalProperties
-func (a UserEventPayload268) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload271 to handle AdditionalProperties
+func (a UserEventPayload271) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 

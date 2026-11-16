@@ -8125,53 +8125,6 @@ func (r ListDrivesResponse) ContentType() string {
 	return ""
 }
 
-type GetDriveResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Drive This object contains information related to a Vercel Sandbox Drive.
-		Drive Drive `json:"drive"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDriveResponse) GetJSON200() *struct {
-	// Drive This object contains information related to a Vercel Sandbox Drive.
-	Drive Drive `json:"drive"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetDriveResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetDriveResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetDriveResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetDriveResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
 type DeleteDriveResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -8213,6 +8166,53 @@ func (r DeleteDriveResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r DeleteDriveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetDriveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Drive This object contains information related to a Vercel Sandbox Drive.
+		Drive Drive `json:"drive"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetDriveResponse) GetJSON200() *struct {
+	// Drive This object contains information related to a Vercel Sandbox Drive.
+	Drive Drive `json:"drive"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetDriveResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDriveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDriveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetDriveResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -10466,13 +10466,13 @@ type GetDeploymentEventsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *[]*GetDeploymentEvents200JSONResponseBody_Item
+	JSON200 *[]GetDeploymentEvents200JSONResponseBody_Item
 	// ApplicationstreamJSON200 the response for an HTTP 200 `application/stream+json` response
 	ApplicationstreamJSON200 *GetDeploymentEvents200ApplicationStreamPlusJSONResponseBody
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetDeploymentEventsResponse) GetJSON200() *[]*GetDeploymentEvents200JSONResponseBody_Item {
+func (r GetDeploymentEventsResponse) GetJSON200() *[]GetDeploymentEvents200JSONResponseBody_Item {
 	return r.JSON200
 }
 

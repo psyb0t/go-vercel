@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.29.0, 2026-11-16
+
+- Breaking: `GetDeploymentEventsResponse.JSON200` and `GetJSON200` change from `*[]*GetDeploymentEvents200JSONResponseBody_Item` to `*[]GetDeploymentEvents200JSONResponseBody_Item`.
+- Breaking: about 4700 `UserEventPayload` types, fields and methods are removed or changed because numbering shifted. For example `UserEventPayload10` loses `BoardId`, `GrantId` and `OperationId`, `UserEventPayload100.Cns` becomes `[]string` and `UserEventPayload100.Cn` is removed, and `UserEventPayload102` loses `Next`, `Previous` and its `Next...` and `Previous...` enum types. Several of these types are no longer comparable.
+- Breaking: `UserEventPayload119` and `UserEventPayload268` lose `Set` and `UnmarshalJSON`, and `UserEvent_Payload` loses `FromUserEventPayload131` and `MergeUserEventPayload131`. `UserEventPayload122` and `UserEventPayload271` gain `Set` and `UnmarshalJSON`.
+- Added `FromUserEventPayload` and `MergeUserEventPayload` methods on `UserEvent_Payload` for `UserEventPayload128` and `UserEventPayload528` to `UserEventPayload531`.
+- Added the origin constants `AuthTokenScopes0OriginClaude` and `AuthTokenScopes1OriginClaude`.
+- Added the `TierCritical` constants for project response bodies, such as `GetProject200JSONResponseBodyTierCritical` and `CreateProject200JSONResponseBodyTierCritical`.
+- Added event type constants `ListEventTypeName...` and `ListEventTypeReplacedBy...` for AI Gateway inference hooks (`...AiGatewayInferenceHooksToggled`, `...EndpointUpdated`, `...SettingsUpdated`, `...Removed`), connector requests (`...ConnectApproveConnectorRequest`, `...Delete...`, `...Provision...`, `...Reject...`, `...Submit...`, `...Update...`, `...Withdraw...`) and `...VercelCiRepositoryGithubRunnersUpdated`.
+- Generated from spec version 0.0.1.
+
 ## v0.28.1, 2026-11-14
 
 - Added `UserEventPayload351.BudgetId` and `UserEventPayload351.BudgetScope`.

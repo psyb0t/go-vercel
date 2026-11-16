@@ -8,6 +8,252 @@ import (
 	"time"
 )
 
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigBuildQueueConfiguration) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigBuildQueueConfigurationSKIPNAMESPACEQUEUE:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigBuildQueueConfigurationWAITFORNAMESPACEQUEUE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0CoresN4 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores = 4
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0CoresN4:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0LabelStandard UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label = "standard"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0LabelStandard:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0MemoryN8192 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory = 8192
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine0MemoryN8192:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1CoresN8 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores = 8
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1CoresN8:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1LabelEnhanced UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label = "enhanced"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1LabelEnhanced:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1MemoryN16384 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory = 16384
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine1MemoryN16384:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN14 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores = 14
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2CoresN14:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelN14cpu28gb UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label = "14cpu-28gb"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2LabelN14cpu28gb:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN28672 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory = 28672
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine2MemoryN28672:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3CoresN30 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores = 30
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Cores) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3CoresN30:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3LabelTurbo UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label = "turbo"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Label) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3LabelTurbo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3MemoryN61440 UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory = 61440
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3Memory) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticBuildMachine3MemoryN61440:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabledFalse UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled = false
+	UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabledTrue  UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabledFalse:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigElasticConcurrencyEnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBetaFalse UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta = false
+	UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBetaTrue  UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBeta) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBetaFalse:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigEnableFunctionsBetaTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyResourceConfigFluid.
+const (
+	UpdateProject200JSONResponseBodyResourceConfigFluidFalse UpdateProject200JSONResponseBodyResourceConfigFluid = false
+	UpdateProject200JSONResponseBodyResourceConfigFluidTrue  UpdateProject200JSONResponseBodyResourceConfigFluid = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyResourceConfigFluid enum.
+func (e UpdateProject200JSONResponseBodyResourceConfigFluid) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyResourceConfigFluidFalse:
+		return true
+	case UpdateProject200JSONResponseBodyResourceConfigFluidTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType.
 const (
 	UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryTypePerformance    UpdateProject200JSONResponseBodyResourceConfigFunctionDefaultMemoryType = "performance"
@@ -1600,12 +1846,15 @@ func (e UpdateProject200JSONResponseBodyTargetsWithCache) Valid() bool {
 
 // Defines values for UpdateProject200JSONResponseBodyTier.
 const (
+	UpdateProject200JSONResponseBodyTierCritical UpdateProject200JSONResponseBodyTier = "critical"
 	UpdateProject200JSONResponseBodyTierPriority UpdateProject200JSONResponseBodyTier = "priority"
 )
 
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyTier enum.
 func (e UpdateProject200JSONResponseBodyTier) Valid() bool {
 	switch e {
+	case UpdateProject200JSONResponseBodyTierCritical:
+		return true
 	case UpdateProject200JSONResponseBodyTierPriority:
 		return true
 	default:
@@ -10471,25 +10720,37 @@ type UserEventPayload1SlackConfigured bool
 
 // UserEventPayload2 The payload of the event, if requested.
 type UserEventPayload2 struct {
-	Action      UserEventPayload2Action `json:"action"`
-	Id          string                  `json:"id"`
-	ProjectId   string                  `json:"projectId"`
-	ProjectName *string                 `json:"projectName,omitempty"`
-	Slug        string                  `json:"slug"`
+	AcceptedTokenCount      *float32                      `json:"acceptedTokenCount,omitempty"`
+	ClientId                *string                       `json:"clientId,omitempty"`
+	ClientName              *string                       `json:"clientName,omitempty"`
+	ClientUid               *string                       `json:"clientUid,omitempty"`
+	Environments            *[]string                     `json:"environments,omitempty"`
+	EventName               *string                       `json:"eventName,omitempty"`
+	Fields                  *[]string                     `json:"fields,omitempty"`
+	ImportedTokenCount      *float32                      `json:"importedTokenCount,omitempty"`
+	InstallationId          *string                       `json:"installationId,omitempty"`
+	ProjectId               *string                       `json:"projectId,omitempty"`
+	ProjectName             *string                       `json:"projectName,omitempty"`
+	RequestId               *string                       `json:"requestId,omitempty"`
+	RequestName             *string                       `json:"requestName,omitempty"`
+	Result                  *string                       `json:"result,omitempty"`
+	SubjectType             *UserEventPayload2SubjectType `json:"subjectType,omitempty"`
+	SubscriptionId          *string                       `json:"subscriptionId,omitempty"`
+	TokenCount              *float32                      `json:"tokenCount,omitempty"`
+	TokensDeleted           *float32                      `json:"tokensDeleted,omitempty"`
+	TriggerDestinationCount *float32                      `json:"triggerDestinationCount,omitempty"`
 }
 
-// UserEventPayload2Action defines model for UserEvent.Payload.2.Action.
-type UserEventPayload2Action string
+// UserEventPayload2SubjectType defines model for UserEvent.Payload.2.SubjectType.
+type UserEventPayload2SubjectType string
 
 // UserEventPayload3 The payload of the event, if requested.
 type UserEventPayload3 struct {
 	Action      UserEventPayload3Action `json:"action"`
 	Id          string                  `json:"id"`
-	Name        string                  `json:"name"`
 	ProjectId   string                  `json:"projectId"`
 	ProjectName *string                 `json:"projectName,omitempty"`
 	Slug        string                  `json:"slug"`
-	State       string                  `json:"state"`
 }
 
 // UserEventPayload3Action defines model for UserEvent.Payload.3.Action.
@@ -10498,10 +10759,12 @@ type UserEventPayload3Action string
 // UserEventPayload4 The payload of the event, if requested.
 type UserEventPayload4 struct {
 	Action      UserEventPayload4Action `json:"action"`
-	Environment string                  `json:"environment"`
-	Label       *string                 `json:"label,omitempty"`
-	ProjectId   *string                 `json:"projectId,omitempty"`
+	Id          string                  `json:"id"`
+	Name        string                  `json:"name"`
+	ProjectId   string                  `json:"projectId"`
 	ProjectName *string                 `json:"projectName,omitempty"`
+	Slug        string                  `json:"slug"`
+	State       string                  `json:"state"`
 }
 
 // UserEventPayload4Action defines model for UserEvent.Payload.4.Action.
@@ -10510,7 +10773,8 @@ type UserEventPayload4Action string
 // UserEventPayload5 The payload of the event, if requested.
 type UserEventPayload5 struct {
 	Action      UserEventPayload5Action `json:"action"`
-	Environment []string                `json:"environment"`
+	Environment string                  `json:"environment"`
+	Label       *string                 `json:"label,omitempty"`
 	ProjectId   *string                 `json:"projectId,omitempty"`
 	ProjectName *string                 `json:"projectName,omitempty"`
 }
@@ -10520,13 +10784,24 @@ type UserEventPayload5Action string
 
 // UserEventPayload6 The payload of the event, if requested.
 type UserEventPayload6 struct {
+	Action      UserEventPayload6Action `json:"action"`
+	Environment []string                `json:"environment"`
+	ProjectId   *string                 `json:"projectId,omitempty"`
+	ProjectName *string                 `json:"projectName,omitempty"`
+}
+
+// UserEventPayload6Action defines model for UserEvent.Payload.6.Action.
+type UserEventPayload6Action string
+
+// UserEventPayload7 The payload of the event, if requested.
+type UserEventPayload7 struct {
 	PolicyId    string `json:"policyId"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload7 The payload of the event, if requested.
-type UserEventPayload7 struct {
+// UserEventPayload8 The payload of the event, if requested.
+type UserEventPayload8 struct {
 	ExpiresAt      *string `json:"expiresAt"`
 	GrantId        *string `json:"grantId"`
 	NamedSandboxId string  `json:"namedSandboxId"`
@@ -10536,8 +10811,8 @@ type UserEventPayload7 struct {
 	SandboxId      string  `json:"sandboxId"`
 }
 
-// UserEventPayload8 The payload of the event, if requested.
-type UserEventPayload8 struct {
+// UserEventPayload9 The payload of the event, if requested.
+type UserEventPayload9 struct {
 	Namespace    string `json:"namespace"`
 	ProjectId    string `json:"projectId"`
 	ProjectName  string `json:"projectName"`
@@ -10545,34 +10820,34 @@ type UserEventPayload8 struct {
 	ScheduleName string `json:"scheduleName"`
 }
 
-// UserEventPayload9 The payload of the event, if requested.
-type UserEventPayload9 struct {
-	Namespace     string                           `json:"namespace"`
-	ProjectId     string                           `json:"projectId"`
-	ProjectName   string                           `json:"projectName"`
-	ScheduleId    string                           `json:"scheduleId"`
-	ScheduleName  string                           `json:"scheduleName"`
-	UpdatedFields []UserEventPayload9UpdatedFields `json:"updatedFields"`
-}
-
-// UserEventPayload9UpdatedFields defines model for UserEvent.Payload.9.UpdatedFields.
-type UserEventPayload9UpdatedFields string
-
 // UserEventPayload10 The payload of the event, if requested.
 type UserEventPayload10 struct {
+	Namespace     string                            `json:"namespace"`
+	ProjectId     string                            `json:"projectId"`
+	ProjectName   string                            `json:"projectName"`
+	ScheduleId    string                            `json:"scheduleId"`
+	ScheduleName  string                            `json:"scheduleName"`
+	UpdatedFields []UserEventPayload10UpdatedFields `json:"updatedFields"`
+}
+
+// UserEventPayload10UpdatedFields defines model for UserEvent.Payload.10.UpdatedFields.
+type UserEventPayload10UpdatedFields string
+
+// UserEventPayload11 The payload of the event, if requested.
+type UserEventPayload11 struct {
 	BoardId     string `json:"boardId"`
 	GrantId     string `json:"grantId"`
 	OperationId string `json:"operationId"`
 }
 
-// UserEventPayload11 The payload of the event, if requested.
-type UserEventPayload11 struct {
+// UserEventPayload12 The payload of the event, if requested.
+type UserEventPayload12 struct {
 	BoardId     string `json:"boardId"`
 	OperationId string `json:"operationId"`
 }
 
-// UserEventPayload12 The payload of the event, if requested.
-type UserEventPayload12 struct {
+// UserEventPayload13 The payload of the event, if requested.
+type UserEventPayload13 struct {
 	BoardId     string  `json:"boardId"`
 	Environment string  `json:"environment"`
 	Name        string  `json:"name"`
@@ -10581,15 +10856,15 @@ type UserEventPayload12 struct {
 	UserId      *string `json:"userId,omitempty"`
 }
 
-// UserEventPayload13 The payload of the event, if requested.
-type UserEventPayload13 struct {
+// UserEventPayload14 The payload of the event, if requested.
+type UserEventPayload14 struct {
 	BoardId     string `json:"boardId"`
 	ChannelId   string `json:"channelId"`
 	OperationId string `json:"operationId"`
 }
 
-// UserEventPayload14 The payload of the event, if requested.
-type UserEventPayload14 struct {
+// UserEventPayload15 The payload of the event, if requested.
+type UserEventPayload15 struct {
 	BoardId     string  `json:"boardId"`
 	ChannelId   string  `json:"channelId"`
 	Environment string  `json:"environment"`
@@ -10599,68 +10874,49 @@ type UserEventPayload14 struct {
 	UserId      *string `json:"userId,omitempty"`
 }
 
-// UserEventPayload15 The payload of the event, if requested.
-type UserEventPayload15 struct {
+// UserEventPayload16 The payload of the event, if requested.
+type UserEventPayload16 struct {
 	BoardId     string   `json:"boardId"`
 	ChannelId   string   `json:"channelId"`
 	Fields      []string `json:"fields"`
 	OperationId string   `json:"operationId"`
 }
 
-// UserEventPayload16 The payload of the event, if requested.
-type UserEventPayload16 struct {
-	BoardId     string                       `json:"boardId"`
-	OperationId string                       `json:"operationId"`
-	Visibility  UserEventPayload16Visibility `json:"visibility"`
-}
-
-// UserEventPayload16Visibility defines model for UserEvent.Payload.16.Visibility.
-type UserEventPayload16Visibility string
-
 // UserEventPayload17 The payload of the event, if requested.
 type UserEventPayload17 struct {
+	BoardId     string                       `json:"boardId"`
+	OperationId string                       `json:"operationId"`
+	Visibility  UserEventPayload17Visibility `json:"visibility"`
+}
+
+// UserEventPayload17Visibility defines model for UserEvent.Payload.17.Visibility.
+type UserEventPayload17Visibility string
+
+// UserEventPayload18 The payload of the event, if requested.
+type UserEventPayload18 struct {
 	BoardId      string   `json:"boardId"`
 	Environments []string `json:"environments"`
 	OperationId  string   `json:"operationId"`
 	ProjectId    string   `json:"projectId"`
 }
 
-// UserEventPayload18 The payload of the event, if requested.
-type UserEventPayload18 struct {
+// UserEventPayload19 The payload of the event, if requested.
+type UserEventPayload19 struct {
 	BoardId     string `json:"boardId"`
 	OperationId string `json:"operationId"`
 	ProjectId   string `json:"projectId"`
 }
 
-// UserEventPayload19 The payload of the event, if requested.
-type UserEventPayload19 struct {
+// UserEventPayload20 The payload of the event, if requested.
+type UserEventPayload20 struct {
 	OperationId string `json:"operationId"`
 	SchemaId    string `json:"schemaId"`
 }
 
-// UserEventPayload20 The payload of the event, if requested.
-type UserEventPayload20 struct {
-	AccountRequestId string `json:"accountRequestId"`
-
-	// Provider Present on new events only. Equivalent to "stripe" when absent.
-	Provider *UserEventPayload20Provider `json:"provider,omitempty"`
-
-	// ProviderAccount Present on new events only. Equivalent to `stripeAccount` when absent.
-	ProviderAccount *string `json:"providerAccount,omitempty"`
-
-	// StripeAccount Present when `provider` is "stripe". Equivalent to `providerAccount`.
-	StripeAccount *string `json:"stripeAccount,omitempty"`
-
-	// StripeOrganisation Present when `provider` is "stripe".
-	StripeOrganisation *string `json:"stripeOrganisation,omitempty"`
-	TeamId             string  `json:"teamId"`
-}
-
-// UserEventPayload20Provider Present on new events only. Equivalent to "stripe" when absent.
-type UserEventPayload20Provider string
-
 // UserEventPayload21 The payload of the event, if requested.
 type UserEventPayload21 struct {
+	AccountRequestId string `json:"accountRequestId"`
+
 	// Provider Present on new events only. Equivalent to "stripe" when absent.
 	Provider *UserEventPayload21Provider `json:"provider,omitempty"`
 
@@ -10692,7 +10948,6 @@ type UserEventPayload22 struct {
 	// StripeOrganisation Present when `provider` is "stripe".
 	StripeOrganisation *string `json:"stripeOrganisation,omitempty"`
 	TeamId             string  `json:"teamId"`
-	TeamSlug           string  `json:"teamSlug"`
 }
 
 // UserEventPayload22Provider Present on new events only. Equivalent to "stripe" when absent.
@@ -10700,10 +10955,30 @@ type UserEventPayload22Provider string
 
 // UserEventPayload23 The payload of the event, if requested.
 type UserEventPayload23 struct {
+	// Provider Present on new events only. Equivalent to "stripe" when absent.
+	Provider *UserEventPayload23Provider `json:"provider,omitempty"`
+
+	// ProviderAccount Present on new events only. Equivalent to `stripeAccount` when absent.
+	ProviderAccount *string `json:"providerAccount,omitempty"`
+
+	// StripeAccount Present when `provider` is "stripe". Equivalent to `providerAccount`.
+	StripeAccount *string `json:"stripeAccount,omitempty"`
+
+	// StripeOrganisation Present when `provider` is "stripe".
+	StripeOrganisation *string `json:"stripeOrganisation,omitempty"`
+	TeamId             string  `json:"teamId"`
+	TeamSlug           string  `json:"teamSlug"`
+}
+
+// UserEventPayload23Provider Present on new events only. Equivalent to "stripe" when absent.
+type UserEventPayload23Provider string
+
+// UserEventPayload24 The payload of the event, if requested.
+type UserEventPayload24 struct {
 	BlockCode string `json:"blockCode"`
 
 	// Provider Present on new events only. Equivalent to "stripe" when absent.
-	Provider *UserEventPayload23Provider `json:"provider,omitempty"`
+	Provider *UserEventPayload24Provider `json:"provider,omitempty"`
 
 	// ProviderAccount Present on new events only. Equivalent to `stripeAccount` when absent.
 	ProviderAccount *string `json:"providerAccount,omitempty"`
@@ -10716,15 +10991,15 @@ type UserEventPayload23 struct {
 	StripeOrganisation *string `json:"stripeOrganisation,omitempty"`
 }
 
-// UserEventPayload23Provider Present on new events only. Equivalent to "stripe" when absent.
-type UserEventPayload23Provider string
+// UserEventPayload24Provider Present on new events only. Equivalent to "stripe" when absent.
+type UserEventPayload24Provider string
 
-// UserEventPayload24 The payload of the event, if requested.
-type UserEventPayload24 struct {
+// UserEventPayload25 The payload of the event, if requested.
+type UserEventPayload25 struct {
 	ProjectName string `json:"projectName"`
 
 	// Provider Present on new events only. Equivalent to "stripe" when absent.
-	Provider *UserEventPayload24Provider `json:"provider,omitempty"`
+	Provider *UserEventPayload25Provider `json:"provider,omitempty"`
 
 	// ProviderAccount Present on new events only. Equivalent to `stripeAccount` when absent.
 	ProviderAccount *string `json:"providerAccount,omitempty"`
@@ -10734,18 +11009,18 @@ type UserEventPayload24 struct {
 	StripeAccount *string `json:"stripeAccount,omitempty"`
 }
 
-// UserEventPayload24Provider Present on new events only. Equivalent to "stripe" when absent.
-type UserEventPayload24Provider string
+// UserEventPayload25Provider Present on new events only. Equivalent to "stripe" when absent.
+type UserEventPayload25Provider string
 
-// UserEventPayload25 The payload of the event, if requested.
-type UserEventPayload25 struct {
+// UserEventPayload26 The payload of the event, if requested.
+type UserEventPayload26 struct {
 	// ActorId Okta user id.
 	ActorId   string                      `json:"actorId"`
 	ActorName *string                     `json:"actorName,omitempty"`
-	ActorType UserEventPayload25ActorType `json:"actorType"`
+	ActorType UserEventPayload26ActorType `json:"actorType"`
 
 	// Provider Present on new events only. Equivalent to "stripe" when absent.
-	Provider *UserEventPayload25Provider `json:"provider,omitempty"`
+	Provider *UserEventPayload26Provider `json:"provider,omitempty"`
 
 	// ProviderAccount Present on new events only. Equivalent to `stripeAccount` when absent.
 	ProviderAccount *string `json:"providerAccount,omitempty"`
@@ -10758,18 +11033,18 @@ type UserEventPayload25 struct {
 	TeamId             string  `json:"teamId"`
 }
 
-// UserEventPayload25ActorType defines model for UserEvent.Payload.25.ActorType.
-type UserEventPayload25ActorType string
+// UserEventPayload26ActorType defines model for UserEvent.Payload.26.ActorType.
+type UserEventPayload26ActorType string
 
-// UserEventPayload25Provider Present on new events only. Equivalent to "stripe" when absent.
-type UserEventPayload25Provider string
+// UserEventPayload26Provider Present on new events only. Equivalent to "stripe" when absent.
+type UserEventPayload26Provider string
 
-// UserEventPayload26 The payload of the event, if requested.
-type UserEventPayload26 struct {
-	FromPlan UserEventPayload26FromPlan `json:"fromPlan"`
+// UserEventPayload27 The payload of the event, if requested.
+type UserEventPayload27 struct {
+	FromPlan UserEventPayload27FromPlan `json:"fromPlan"`
 
 	// Provider Present on new events only. Equivalent to "stripe" when absent.
-	Provider *UserEventPayload26Provider `json:"provider,omitempty"`
+	Provider *UserEventPayload27Provider `json:"provider,omitempty"`
 
 	// ProviderAccount Present on new events only. Equivalent to `stripeAccount` when absent.
 	ProviderAccount *string `json:"providerAccount,omitempty"`
@@ -10781,25 +11056,17 @@ type UserEventPayload26 struct {
 	// StripeOrganisation Present when `provider` is "stripe".
 	StripeOrganisation *string                  `json:"stripeOrganisation,omitempty"`
 	TeamId             string                   `json:"teamId"`
-	ToPlan             UserEventPayload26ToPlan `json:"toPlan"`
+	ToPlan             UserEventPayload27ToPlan `json:"toPlan"`
 }
 
-// UserEventPayload26FromPlan defines model for UserEvent.Payload.26.FromPlan.
-type UserEventPayload26FromPlan string
+// UserEventPayload27FromPlan defines model for UserEvent.Payload.27.FromPlan.
+type UserEventPayload27FromPlan string
 
-// UserEventPayload26Provider Present on new events only. Equivalent to "stripe" when absent.
-type UserEventPayload26Provider string
+// UserEventPayload27Provider Present on new events only. Equivalent to "stripe" when absent.
+type UserEventPayload27Provider string
 
-// UserEventPayload26ToPlan defines model for UserEvent.Payload.26.ToPlan.
-type UserEventPayload26ToPlan string
-
-// UserEventPayload27 The payload of the event, if requested.
-type UserEventPayload27 struct {
-	AccessPolicy struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"accessPolicy"`
-}
+// UserEventPayload27ToPlan defines model for UserEvent.Payload.27.ToPlan.
+type UserEventPayload27ToPlan string
 
 // UserEventPayload28 The payload of the event, if requested.
 type UserEventPayload28 struct {
@@ -10807,7 +11074,6 @@ type UserEventPayload28 struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
 	} `json:"accessPolicy"`
-	PreviousName *string `json:"previousName,omitempty"`
 }
 
 // UserEventPayload29 The payload of the event, if requested.
@@ -10816,47 +11082,24 @@ type UserEventPayload29 struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
 	} `json:"accessPolicy"`
+	PreviousName *string `json:"previousName,omitempty"`
+}
+
+// UserEventPayload30 The payload of the event, if requested.
+type UserEventPayload30 struct {
+	AccessPolicy struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"accessPolicy"`
 	Member struct {
 		Id   string                       `json:"id"`
-		Kind UserEventPayload29MemberKind `json:"kind"`
+		Kind UserEventPayload30MemberKind `json:"kind"`
 		Name *string                      `json:"name,omitempty"`
 	} `json:"member"`
 }
 
-// UserEventPayload29MemberKind defines model for UserEvent.Payload.29.Member.Kind.
-type UserEventPayload29MemberKind string
-
-// UserEventPayload30 The payload of the event, if requested.
-type UserEventPayload30 struct {
-	ApiKey struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"apiKey"`
-
-	// Budget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
-	Budget *struct {
-		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
-
-		// LimitAmount Spend cap, in dollars.
-		LimitAmount   float32                               `json:"limitAmount"`
-		RefreshPeriod UserEventPayload30BudgetRefreshPeriod `json:"refreshPeriod"`
-	} `json:"budget,omitempty"`
-
-	// BypassAll True when the key was created to bypass all of the team's restrictions (the ZDR-only model restriction and the provider/model allowlist).
-	BypassAll *UserEventPayload30BypassAll `json:"bypassAll,omitempty"`
-
-	// ZdrExemption True when the key was created with a ZDR exemption.
-	ZdrExemption *UserEventPayload30ZdrExemption `json:"zdrExemption,omitempty"`
-}
-
-// UserEventPayload30BudgetRefreshPeriod defines model for UserEvent.Payload.30.Budget.RefreshPeriod.
-type UserEventPayload30BudgetRefreshPeriod string
-
-// UserEventPayload30BypassAll True when the key was created to bypass all of the team's restrictions (the ZDR-only model restriction and the provider/model allowlist).
-type UserEventPayload30BypassAll bool
-
-// UserEventPayload30ZdrExemption True when the key was created with a ZDR exemption.
-type UserEventPayload30ZdrExemption bool
+// UserEventPayload30MemberKind defines model for UserEvent.Payload.30.Member.Kind.
+type UserEventPayload30MemberKind string
 
 // UserEventPayload31 The payload of the event, if requested.
 type UserEventPayload31 struct {
@@ -10864,10 +11107,42 @@ type UserEventPayload31 struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
 	} `json:"apiKey"`
+
+	// Budget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
+	Budget *struct {
+		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+
+		// LimitAmount Spend cap, in dollars.
+		LimitAmount   float32                               `json:"limitAmount"`
+		RefreshPeriod UserEventPayload31BudgetRefreshPeriod `json:"refreshPeriod"`
+	} `json:"budget,omitempty"`
+
+	// BypassAll True when the key was created to bypass all of the team's restrictions (the ZDR-only model restriction and the provider/model allowlist).
+	BypassAll *UserEventPayload31BypassAll `json:"bypassAll,omitempty"`
+
+	// ZdrExemption True when the key was created with a ZDR exemption.
+	ZdrExemption *UserEventPayload31ZdrExemption `json:"zdrExemption,omitempty"`
 }
+
+// UserEventPayload31BudgetRefreshPeriod defines model for UserEvent.Payload.31.Budget.RefreshPeriod.
+type UserEventPayload31BudgetRefreshPeriod string
+
+// UserEventPayload31BypassAll True when the key was created to bypass all of the team's restrictions (the ZDR-only model restriction and the provider/model allowlist).
+type UserEventPayload31BypassAll bool
+
+// UserEventPayload31ZdrExemption True when the key was created with a ZDR exemption.
+type UserEventPayload31ZdrExemption bool
 
 // UserEventPayload32 The payload of the event, if requested.
 type UserEventPayload32 struct {
+	ApiKey struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"apiKey"`
+}
+
+// UserEventPayload33 The payload of the event, if requested.
+type UserEventPayload33 struct {
 	ApiKey struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -10879,9 +11154,9 @@ type UserEventPayload32 struct {
 
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                               `json:"limitAmount"`
-		RefreshPeriod UserEventPayload32BudgetRefreshPeriod `json:"refreshPeriod"`
+		RefreshPeriod UserEventPayload33BudgetRefreshPeriod `json:"refreshPeriod"`
 	} `json:"budget,omitempty"`
-	Change        UserEventPayload32Change `json:"change"`
+	Change        UserEventPayload33Change `json:"change"`
 	Justification *string                  `json:"justification,omitempty"`
 
 	// PreviousBudget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
@@ -10890,22 +11165,22 @@ type UserEventPayload32 struct {
 
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                                       `json:"limitAmount"`
-		RefreshPeriod UserEventPayload32PreviousBudgetRefreshPeriod `json:"refreshPeriod"`
+		RefreshPeriod UserEventPayload33PreviousBudgetRefreshPeriod `json:"refreshPeriod"`
 	} `json:"previousBudget,omitempty"`
 }
 
-// UserEventPayload32BudgetRefreshPeriod defines model for UserEvent.Payload.32.Budget.RefreshPeriod.
-type UserEventPayload32BudgetRefreshPeriod string
+// UserEventPayload33BudgetRefreshPeriod defines model for UserEvent.Payload.33.Budget.RefreshPeriod.
+type UserEventPayload33BudgetRefreshPeriod string
 
-// UserEventPayload32Change defines model for UserEvent.Payload.32.Change.
-type UserEventPayload32Change string
+// UserEventPayload33Change defines model for UserEvent.Payload.33.Change.
+type UserEventPayload33Change string
 
-// UserEventPayload32PreviousBudgetRefreshPeriod defines model for UserEvent.Payload.32.PreviousBudget.RefreshPeriod.
-type UserEventPayload32PreviousBudgetRefreshPeriod string
+// UserEventPayload33PreviousBudgetRefreshPeriod defines model for UserEvent.Payload.33.PreviousBudget.RefreshPeriod.
+type UserEventPayload33PreviousBudgetRefreshPeriod string
 
-// UserEventPayload33 The payload of the event, if requested.
-type UserEventPayload33 struct {
-	Change     UserEventPayload33Change `json:"change"`
+// UserEventPayload34 The payload of the event, if requested.
+type UserEventPayload34 struct {
+	Change     UserEventPayload34Change `json:"change"`
 	Commitment *struct {
 		DeferredInvoiceTargetBalance string  `json:"deferredInvoiceTargetBalance"`
 		MaximumMonthlySpend          *string `json:"maximumMonthlySpend"`
@@ -10922,44 +11197,8 @@ type UserEventPayload33 struct {
 	} `json:"settings,omitempty"`
 }
 
-// UserEventPayload33Change defines model for UserEvent.Payload.33.Change.
-type UserEventPayload33Change string
-
-// UserEventPayload34 The payload of the event, if requested.
-type UserEventPayload34 struct {
-	// Budget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
-	Budget *struct {
-		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
-
-		// LimitAmount Spend cap, in dollars.
-		LimitAmount   float32                               `json:"limitAmount"`
-		RefreshPeriod UserEventPayload34BudgetRefreshPeriod `json:"refreshPeriod"`
-	} `json:"budget,omitempty"`
-	Change        UserEventPayload34Change `json:"change"`
-	Justification *string                  `json:"justification,omitempty"`
-
-	// PreviousBudget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
-	PreviousBudget *struct {
-		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
-
-		// LimitAmount Spend cap, in dollars.
-		LimitAmount   float32                                       `json:"limitAmount"`
-		RefreshPeriod UserEventPayload34PreviousBudgetRefreshPeriod `json:"refreshPeriod"`
-	} `json:"previousBudget,omitempty"`
-	ScopeType UserEventPayload34ScopeType `json:"scopeType"`
-}
-
-// UserEventPayload34BudgetRefreshPeriod defines model for UserEvent.Payload.34.Budget.RefreshPeriod.
-type UserEventPayload34BudgetRefreshPeriod string
-
 // UserEventPayload34Change defines model for UserEvent.Payload.34.Change.
 type UserEventPayload34Change string
-
-// UserEventPayload34PreviousBudgetRefreshPeriod defines model for UserEvent.Payload.34.PreviousBudget.RefreshPeriod.
-type UserEventPayload34PreviousBudgetRefreshPeriod string
-
-// UserEventPayload34ScopeType defines model for UserEvent.Payload.34.ScopeType.
-type UserEventPayload34ScopeType string
 
 // UserEventPayload35 The payload of the event, if requested.
 type UserEventPayload35 struct {
@@ -10982,15 +11221,7 @@ type UserEventPayload35 struct {
 		LimitAmount   float32                                       `json:"limitAmount"`
 		RefreshPeriod UserEventPayload35PreviousBudgetRefreshPeriod `json:"refreshPeriod"`
 	} `json:"previousBudget,omitempty"`
-
-	// ProjectId Associates the event with a project for filtering; not rendered.
-	ProjectId   *string                     `json:"projectId,omitempty"`
-	ProjectName *string                     `json:"projectName,omitempty"`
-	ScopeType   UserEventPayload35ScopeType `json:"scopeType"`
-
-	// UserId Associates the event with a member for filtering; not rendered.
-	UserId   *string `json:"userId,omitempty"`
-	UserName *string `json:"userName,omitempty"`
+	ScopeType UserEventPayload35ScopeType `json:"scopeType"`
 }
 
 // UserEventPayload35BudgetRefreshPeriod defines model for UserEvent.Payload.35.Budget.RefreshPeriod.
@@ -11007,14 +11238,58 @@ type UserEventPayload35ScopeType string
 
 // UserEventPayload36 The payload of the event, if requested.
 type UserEventPayload36 struct {
-	Enabled UserEventPayload36Enabled `json:"enabled"`
+	// Budget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
+	Budget *struct {
+		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+
+		// LimitAmount Spend cap, in dollars.
+		LimitAmount   float32                               `json:"limitAmount"`
+		RefreshPeriod UserEventPayload36BudgetRefreshPeriod `json:"refreshPeriod"`
+	} `json:"budget,omitempty"`
+	Change        UserEventPayload36Change `json:"change"`
+	Justification *string                  `json:"justification,omitempty"`
+
+	// PreviousBudget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
+	PreviousBudget *struct {
+		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+
+		// LimitAmount Spend cap, in dollars.
+		LimitAmount   float32                                       `json:"limitAmount"`
+		RefreshPeriod UserEventPayload36PreviousBudgetRefreshPeriod `json:"refreshPeriod"`
+	} `json:"previousBudget,omitempty"`
+
+	// ProjectId Associates the event with a project for filtering; not rendered.
+	ProjectId   *string                     `json:"projectId,omitempty"`
+	ProjectName *string                     `json:"projectName,omitempty"`
+	ScopeType   UserEventPayload36ScopeType `json:"scopeType"`
+
+	// UserId Associates the event with a member for filtering; not rendered.
+	UserId   *string `json:"userId,omitempty"`
+	UserName *string `json:"userName,omitempty"`
 }
 
-// UserEventPayload36Enabled defines model for UserEvent.Payload.36.Enabled.
-type UserEventPayload36Enabled bool
+// UserEventPayload36BudgetRefreshPeriod defines model for UserEvent.Payload.36.Budget.RefreshPeriod.
+type UserEventPayload36BudgetRefreshPeriod string
+
+// UserEventPayload36Change defines model for UserEvent.Payload.36.Change.
+type UserEventPayload36Change string
+
+// UserEventPayload36PreviousBudgetRefreshPeriod defines model for UserEvent.Payload.36.PreviousBudget.RefreshPeriod.
+type UserEventPayload36PreviousBudgetRefreshPeriod string
+
+// UserEventPayload36ScopeType defines model for UserEvent.Payload.36.ScopeType.
+type UserEventPayload36ScopeType string
 
 // UserEventPayload37 The payload of the event, if requested.
 type UserEventPayload37 struct {
+	Enabled UserEventPayload37Enabled `json:"enabled"`
+}
+
+// UserEventPayload37Enabled defines model for UserEvent.Payload.37.Enabled.
+type UserEventPayload37Enabled bool
+
+// UserEventPayload38 The payload of the event, if requested.
+type UserEventPayload38 struct {
 	Credential struct {
 		Id           string `json:"id"`
 		Name         string `json:"name"`
@@ -11022,13 +11297,13 @@ type UserEventPayload37 struct {
 	} `json:"credential"`
 }
 
-// UserEventPayload38 The payload of the event, if requested.
-type UserEventPayload38 struct {
+// UserEventPayload39 The payload of the event, if requested.
+type UserEventPayload39 struct {
 	Changes *struct {
-		Active            *UserEventPayload38ChangesActive            `json:"active,omitempty"`
-		KeyReplaced       *UserEventPayload38ChangesKeyReplaced       `json:"keyReplaced,omitempty"`
+		Active            *UserEventPayload39ChangesActive            `json:"active,omitempty"`
+		KeyReplaced       *UserEventPayload39ChangesKeyReplaced       `json:"keyReplaced,omitempty"`
 		PreviousName      *string                                     `json:"previousName,omitempty"`
-		ZeroDataRetention *UserEventPayload38ChangesZeroDataRetention `json:"zeroDataRetention,omitempty"`
+		ZeroDataRetention *UserEventPayload39ChangesZeroDataRetention `json:"zeroDataRetention,omitempty"`
 	} `json:"changes,omitempty"`
 	Credential struct {
 		Id           string `json:"id"`
@@ -11037,17 +11312,17 @@ type UserEventPayload38 struct {
 	} `json:"credential"`
 }
 
-// UserEventPayload38ChangesActive defines model for UserEvent.Payload.38.Changes.Active.
-type UserEventPayload38ChangesActive bool
+// UserEventPayload39ChangesActive defines model for UserEvent.Payload.39.Changes.Active.
+type UserEventPayload39ChangesActive bool
 
-// UserEventPayload38ChangesKeyReplaced defines model for UserEvent.Payload.38.Changes.KeyReplaced.
-type UserEventPayload38ChangesKeyReplaced bool
+// UserEventPayload39ChangesKeyReplaced defines model for UserEvent.Payload.39.Changes.KeyReplaced.
+type UserEventPayload39ChangesKeyReplaced bool
 
-// UserEventPayload38ChangesZeroDataRetention defines model for UserEvent.Payload.38.Changes.ZeroDataRetention.
-type UserEventPayload38ChangesZeroDataRetention bool
+// UserEventPayload39ChangesZeroDataRetention defines model for UserEvent.Payload.39.Changes.ZeroDataRetention.
+type UserEventPayload39ChangesZeroDataRetention bool
 
-// UserEventPayload39 The payload of the event, if requested.
-type UserEventPayload39 struct {
+// UserEventPayload40 The payload of the event, if requested.
+type UserEventPayload40 struct {
 	Added      []string `json:"added"`
 	Changed    []string `json:"changed"`
 	Credential struct {
@@ -11058,86 +11333,117 @@ type UserEventPayload39 struct {
 	Removed []string `json:"removed"`
 }
 
-// UserEventPayload40 The payload of the event, if requested.
-type UserEventPayload40 struct {
+// UserEventPayload41 The payload of the event, if requested.
+type UserEventPayload41 struct {
 	Amount           string `json:"amount"`
 	PurchaseIntentId string `json:"purchaseIntentId"`
 }
 
-// UserEventPayload41 The payload of the event, if requested.
-type UserEventPayload41 struct {
+// UserEventPayload42 The payload of the event, if requested.
+type UserEventPayload42 struct {
 	Added   []string `json:"added"`
 	Removed []string `json:"removed"`
 }
 
-// UserEventPayload42 The payload of the event, if requested.
-type UserEventPayload42 struct {
+// UserEventPayload43 The payload of the event, if requested.
+type UserEventPayload43 struct {
 	PrivateModel struct {
 		ProviderSlug string `json:"providerSlug"`
 		Slug         string `json:"slug"`
 	} `json:"privateModel"`
 }
 
-// UserEventPayload43 The payload of the event, if requested.
-type UserEventPayload43 struct {
+// UserEventPayload44 The payload of the event, if requested.
+type UserEventPayload44 struct {
 	PrivateModel struct {
 		Slug string `json:"slug"`
 	} `json:"privateModel"`
 }
 
-// UserEventPayload44 The payload of the event, if requested.
-type UserEventPayload44 struct {
+// UserEventPayload45 The payload of the event, if requested.
+type UserEventPayload45 struct {
 	PrivateProvider struct {
 		Slug string `json:"slug"`
 	} `json:"privateProvider"`
 }
 
-// UserEventPayload45 The payload of the event, if requested.
-type UserEventPayload45 struct {
+// UserEventPayload46 The payload of the event, if requested.
+type UserEventPayload46 struct {
 	ModerationPolicyCount float32 `json:"moderationPolicyCount"`
 	PiiRedaction          struct {
-		From UserEventPayload45PiiRedactionFrom `json:"from"`
-		To   UserEventPayload45PiiRedactionTo   `json:"to"`
+		From UserEventPayload46PiiRedactionFrom `json:"from"`
+		To   UserEventPayload46PiiRedactionTo   `json:"to"`
 	} `json:"piiRedaction"`
 	PoliciesAdded    []string `json:"policiesAdded"`
 	PoliciesModified []string `json:"policiesModified"`
 	PoliciesRemoved  []string `json:"policiesRemoved"`
 }
 
-// UserEventPayload45PiiRedactionFrom defines model for UserEvent.Payload.45.PiiRedaction.From.
-type UserEventPayload45PiiRedactionFrom bool
+// UserEventPayload46PiiRedactionFrom defines model for UserEvent.Payload.46.PiiRedaction.From.
+type UserEventPayload46PiiRedactionFrom bool
 
-// UserEventPayload45PiiRedactionTo defines model for UserEvent.Payload.45.PiiRedaction.To.
-type UserEventPayload45PiiRedactionTo bool
-
-// UserEventPayload46 The payload of the event, if requested.
-type UserEventPayload46 struct {
-	Regions []string `json:"regions"`
-}
+// UserEventPayload46PiiRedactionTo defines model for UserEvent.Payload.46.PiiRedaction.To.
+type UserEventPayload46PiiRedactionTo bool
 
 // UserEventPayload47 The payload of the event, if requested.
 type UserEventPayload47 struct {
-	Countries []string `json:"countries"`
+	Regions []string `json:"regions"`
 }
 
 // UserEventPayload48 The payload of the event, if requested.
 type UserEventPayload48 struct {
-	Retention struct {
-		CeilingDays *float32                               `json:"ceilingDays,omitempty"`
-		CeilingMode UserEventPayload48RetentionCeilingMode `json:"ceilingMode"`
-		DefaultDays *float32                               `json:"defaultDays,omitempty"`
-		DefaultMode UserEventPayload48RetentionDefaultMode `json:"defaultMode"`
-	} `json:"retention"`
+	Countries []string `json:"countries"`
 }
-
-// UserEventPayload48RetentionCeilingMode defines model for UserEvent.Payload.48.Retention.CeilingMode.
-type UserEventPayload48RetentionCeilingMode string
-
-// UserEventPayload48RetentionDefaultMode defines model for UserEvent.Payload.48.Retention.DefaultMode.
-type UserEventPayload48RetentionDefaultMode string
 
 // UserEventPayload49 The payload of the event, if requested.
 type UserEventPayload49 struct {
+	Enabled UserEventPayload49Enabled `json:"enabled"`
+	Mode    UserEventPayload49Mode    `json:"mode"`
+}
+
+// UserEventPayload49Enabled defines model for UserEvent.Payload.49.Enabled.
+type UserEventPayload49Enabled bool
+
+// UserEventPayload49Mode defines model for UserEvent.Payload.49.Mode.
+type UserEventPayload49Mode string
+
+// UserEventPayload50 The payload of the event, if requested.
+type UserEventPayload50 struct {
+	EndpointOrigin string `json:"endpointOrigin"`
+}
+
+// UserEventPayload51 The payload of the event, if requested.
+type UserEventPayload51 struct {
+	FailureMode    *UserEventPayload51FailureMode `json:"failureMode,omitempty"`
+	Mode           *UserEventPayload51Mode        `json:"mode,omitempty"`
+	RolloutPercent *float32                       `json:"rolloutPercent,omitempty"`
+	TimeoutMs      *float32                       `json:"timeoutMs,omitempty"`
+}
+
+// UserEventPayload51FailureMode defines model for UserEvent.Payload.51.FailureMode.
+type UserEventPayload51FailureMode string
+
+// UserEventPayload51Mode defines model for UserEvent.Payload.51.Mode.
+type UserEventPayload51Mode string
+
+// UserEventPayload52 The payload of the event, if requested.
+type UserEventPayload52 struct {
+	Retention struct {
+		CeilingDays *float32                               `json:"ceilingDays,omitempty"`
+		CeilingMode UserEventPayload52RetentionCeilingMode `json:"ceilingMode"`
+		DefaultDays *float32                               `json:"defaultDays,omitempty"`
+		DefaultMode UserEventPayload52RetentionDefaultMode `json:"defaultMode"`
+	} `json:"retention"`
+}
+
+// UserEventPayload52RetentionCeilingMode defines model for UserEvent.Payload.52.Retention.CeilingMode.
+type UserEventPayload52RetentionCeilingMode string
+
+// UserEventPayload52RetentionDefaultMode defines model for UserEvent.Payload.52.Retention.DefaultMode.
+type UserEventPayload52RetentionDefaultMode string
+
+// UserEventPayload53 The payload of the event, if requested.
+type UserEventPayload53 struct {
 	Rule struct {
 		Id           string  `json:"id"`
 		Model        *string `json:"model,omitempty"`
@@ -11146,10 +11452,10 @@ type UserEventPayload49 struct {
 	} `json:"rule"`
 }
 
-// UserEventPayload50 The payload of the event, if requested.
-type UserEventPayload50 struct {
-	ChangedFields        *[]UserEventPayload50ChangedFields `json:"changedFields,omitempty"`
-	Enabled              *UserEventPayload50Enabled         `json:"enabled,omitempty"`
+// UserEventPayload54 The payload of the event, if requested.
+type UserEventPayload54 struct {
+	ChangedFields        *[]UserEventPayload54ChangedFields `json:"changedFields,omitempty"`
+	Enabled              *UserEventPayload54Enabled         `json:"enabled,omitempty"`
 	PreviousRewriteModel *string                            `json:"previousRewriteModel,omitempty"`
 	Rule                 struct {
 		Id           string  `json:"id"`
@@ -11159,14 +11465,14 @@ type UserEventPayload50 struct {
 	} `json:"rule"`
 }
 
-// UserEventPayload50ChangedFields defines model for UserEvent.Payload.50.ChangedFields.
-type UserEventPayload50ChangedFields string
+// UserEventPayload54ChangedFields defines model for UserEvent.Payload.54.ChangedFields.
+type UserEventPayload54ChangedFields string
 
-// UserEventPayload50Enabled defines model for UserEvent.Payload.50.Enabled.
-type UserEventPayload50Enabled bool
+// UserEventPayload54Enabled defines model for UserEvent.Payload.54.Enabled.
+type UserEventPayload54Enabled bool
 
-// UserEventPayload51 The payload of the event, if requested.
-type UserEventPayload51 struct {
+// UserEventPayload55 The payload of the event, if requested.
+type UserEventPayload55 struct {
 	VirtualModelConfig struct {
 		DisplayName *string `json:"displayName,omitempty"`
 		Id          string  `json:"id"`
@@ -11174,9 +11480,9 @@ type UserEventPayload51 struct {
 	} `json:"virtualModelConfig"`
 }
 
-// UserEventPayload52 The payload of the event, if requested.
-type UserEventPayload52 struct {
-	ChangedFields      *[]UserEventPayload52ChangedFields `json:"changedFields,omitempty"`
+// UserEventPayload56 The payload of the event, if requested.
+type UserEventPayload56 struct {
+	ChangedFields      *[]UserEventPayload56ChangedFields `json:"changedFields,omitempty"`
 	VirtualModelConfig struct {
 		DisplayName *string `json:"displayName,omitempty"`
 		Id          string  `json:"id"`
@@ -11184,11 +11490,11 @@ type UserEventPayload52 struct {
 	} `json:"virtualModelConfig"`
 }
 
-// UserEventPayload52ChangedFields defines model for UserEvent.Payload.52.ChangedFields.
-type UserEventPayload52ChangedFields string
+// UserEventPayload56ChangedFields defines model for UserEvent.Payload.56.ChangedFields.
+type UserEventPayload56ChangedFields string
 
-// UserEventPayload53 The payload of the event, if requested.
-type UserEventPayload53 struct {
+// UserEventPayload57 The payload of the event, if requested.
+type UserEventPayload57 struct {
 	AccessGroup struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -11198,8 +11504,8 @@ type UserEventPayload53 struct {
 	TeamRoles       *[]string `json:"teamRoles,omitempty"`
 }
 
-// UserEventPayload54 The payload of the event, if requested.
-type UserEventPayload54 struct {
+// UserEventPayload58 The payload of the event, if requested.
+type UserEventPayload58 struct {
 	AccessGroup struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -11207,28 +11513,28 @@ type UserEventPayload54 struct {
 	Author *string `json:"author,omitempty"`
 }
 
-// UserEventPayload55 The payload of the event, if requested.
-type UserEventPayload55 struct {
+// UserEventPayload59 The payload of the event, if requested.
+type UserEventPayload59 struct {
 	AccessGroup struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
 	} `json:"accessGroup"`
-	NextRole     *UserEventPayload55NextRole     `json:"next_role,omitempty"`
-	PreviousRole *UserEventPayload55PreviousRole `json:"previous_role,omitempty"`
+	NextRole     *UserEventPayload59NextRole     `json:"next_role,omitempty"`
+	PreviousRole *UserEventPayload59PreviousRole `json:"previous_role,omitempty"`
 	Project      struct {
 		Id   string  `json:"id"`
 		Name *string `json:"name,omitempty"`
 	} `json:"project"`
 }
 
-// UserEventPayload55NextRole defines model for UserEvent.Payload.55.NextRole.
-type UserEventPayload55NextRole string
+// UserEventPayload59NextRole defines model for UserEvent.Payload.59.NextRole.
+type UserEventPayload59NextRole string
 
-// UserEventPayload55PreviousRole defines model for UserEvent.Payload.55.PreviousRole.
-type UserEventPayload55PreviousRole string
+// UserEventPayload59PreviousRole defines model for UserEvent.Payload.59.PreviousRole.
+type UserEventPayload59PreviousRole string
 
-// UserEventPayload56 The payload of the event, if requested.
-type UserEventPayload56 struct {
+// UserEventPayload60 The payload of the event, if requested.
+type UserEventPayload60 struct {
 	AccessGroup struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -11243,8 +11549,8 @@ type UserEventPayload56 struct {
 	TeamRoles               *[]string `json:"teamRoles,omitempty"`
 }
 
-// UserEventPayload57 The payload of the event, if requested.
-type UserEventPayload57 struct {
+// UserEventPayload61 The payload of the event, if requested.
+type UserEventPayload61 struct {
 	AccessGroup struct {
 		Id   string  `json:"id"`
 		Name *string `json:"name,omitempty"`
@@ -11256,20 +11562,20 @@ type UserEventPayload57 struct {
 	} `json:"user"`
 }
 
-// UserEventPayload58 The payload of the event, if requested.
-type UserEventPayload58 struct {
+// UserEventPayload62 The payload of the event, if requested.
+type UserEventPayload62 struct {
 	Currency *string  `json:"currency,omitempty"`
 	Price    *float32 `json:"price,omitempty"`
 }
 
-// UserEventPayload59 The payload of the event, if requested.
-type UserEventPayload59 struct {
+// UserEventPayload63 The payload of the event, if requested.
+type UserEventPayload63 struct {
 	Alias          *string  `json:"alias,omitempty"`
 	AliasId        *string  `json:"aliasId,omitempty"`
 	AliasUpdatedAt *float32 `json:"aliasUpdatedAt,omitempty"`
 	Deployment     *struct {
 		// AllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
-		AllowListedReadyStateReasonInternal *UserEventPayload59DeploymentAllowListedReadyStateReasonInternal `json:"allowListedReadyStateReasonInternal,omitempty"`
+		AllowListedReadyStateReasonInternal *UserEventPayload63DeploymentAllowListedReadyStateReasonInternal `json:"allowListedReadyStateReasonInternal,omitempty"`
 		Id                                  string                                                           `json:"id"`
 		Meta                                map[string]string                                                `json:"meta"`
 		Name                                string                                                           `json:"name"`
@@ -11282,22 +11588,22 @@ type UserEventPayload59 struct {
 	Redirect           *string                   `json:"redirect,omitempty"`
 	RedirectStatusCode *float32                  `json:"redirectStatusCode,omitempty"`
 	RuleCount          *float32                  `json:"ruleCount,omitempty"`
-	System             *UserEventPayload59System `json:"system,omitempty"`
+	System             *UserEventPayload63System `json:"system,omitempty"`
 	Target             *string                   `json:"target,omitempty"`
 }
 
-// UserEventPayload59DeploymentAllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
-type UserEventPayload59DeploymentAllowListedReadyStateReasonInternal string
+// UserEventPayload63DeploymentAllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
+type UserEventPayload63DeploymentAllowListedReadyStateReasonInternal string
 
-// UserEventPayload59System defines model for UserEvent.Payload.59.System.
-type UserEventPayload59System bool
+// UserEventPayload63System defines model for UserEvent.Payload.63.System.
+type UserEventPayload63System bool
 
-// UserEventPayload60 The payload of the event, if requested.
-type UserEventPayload60 struct {
+// UserEventPayload64 The payload of the event, if requested.
+type UserEventPayload64 struct {
 	AliasCount float32 `json:"aliasCount"`
 	Deployment *struct {
 		// AllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
-		AllowListedReadyStateReasonInternal *UserEventPayload60DeploymentAllowListedReadyStateReasonInternal `json:"allowListedReadyStateReasonInternal,omitempty"`
+		AllowListedReadyStateReasonInternal *UserEventPayload64DeploymentAllowListedReadyStateReasonInternal `json:"allowListedReadyStateReasonInternal,omitempty"`
 		Id                                  string                                                           `json:"id"`
 		Meta                                map[string]string                                                `json:"meta"`
 		Name                                string                                                           `json:"name"`
@@ -11307,11 +11613,11 @@ type UserEventPayload60 struct {
 	ProjectId string `json:"projectId"`
 }
 
-// UserEventPayload60DeploymentAllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
-type UserEventPayload60DeploymentAllowListedReadyStateReasonInternal string
+// UserEventPayload64DeploymentAllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
+type UserEventPayload64DeploymentAllowListedReadyStateReasonInternal string
 
-// UserEventPayload61 The payload of the event, if requested.
-type UserEventPayload61 struct {
+// UserEventPayload65 The payload of the event, if requested.
+type UserEventPayload65 struct {
 	Alias   string  `json:"alias"`
 	Name    *string `json:"name,omitempty"`
 	NewTeam *struct {
@@ -11322,133 +11628,133 @@ type UserEventPayload61 struct {
 	} `json:"oldTeam,omitempty"`
 }
 
-// UserEventPayload62 The payload of the event, if requested.
-type UserEventPayload62 struct {
+// UserEventPayload66 The payload of the event, if requested.
+type UserEventPayload66 struct {
 	Alias        string  `json:"alias"`
 	AliasId      string  `json:"aliasId"`
 	DeploymentId *string `json:"deploymentId"`
 	Name         *string `json:"name,omitempty"`
 }
 
-// UserEventPayload63 The payload of the event, if requested.
-type UserEventPayload63 struct {
+// UserEventPayload67 The payload of the event, if requested.
+type UserEventPayload67 struct {
 	Alias    *string `json:"alias,omitempty"`
 	Email    *string `json:"email,omitempty"`
 	Username *string `json:"username,omitempty"`
 }
 
-// UserEventPayload64 The payload of the event, if requested.
-type UserEventPayload64 struct {
+// UserEventPayload68 The payload of the event, if requested.
+type UserEventPayload68 struct {
 	Alias *string `json:"alias,omitempty"`
 }
 
-// UserEventPayload65 The payload of the event, if requested.
-type UserEventPayload65 struct {
+// UserEventPayload69 The payload of the event, if requested.
+type UserEventPayload69 struct {
 	Alias *string `json:"alias,omitempty"`
 	Email *string `json:"email,omitempty"`
 }
 
-// UserEventPayload66 The payload of the event, if requested.
-type UserEventPayload66 struct {
+// UserEventPayload70 The payload of the event, if requested.
+type UserEventPayload70 struct {
 	Alias       *string `json:"alias,omitempty"`
 	AliasId     *string `json:"aliasId,omitempty"`
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload67 The payload of the event, if requested.
-type UserEventPayload67 struct {
-	Action      UserEventPayload67Action `json:"action"`
+// UserEventPayload71 The payload of the event, if requested.
+type UserEventPayload71 struct {
+	Action      UserEventPayload71Action `json:"action"`
 	Alias       string                   `json:"alias"`
 	ProjectId   *string                  `json:"projectId,omitempty"`
 	ProjectName string                   `json:"projectName"`
 }
 
-// UserEventPayload67Action defines model for UserEvent.Payload.67.Action.
-type UserEventPayload67Action string
+// UserEventPayload71Action defines model for UserEvent.Payload.71.Action.
+type UserEventPayload71Action string
 
-// UserEventPayload68 The payload of the event, if requested.
-type UserEventPayload68 struct {
+// UserEventPayload72 The payload of the event, if requested.
+type UserEventPayload72 struct {
 	Alias         string `json:"alias"`
 	DeploymentUrl string `json:"deploymentUrl"`
 }
 
-// UserEventPayload69 The payload of the event, if requested.
-type UserEventPayload69 struct {
+// UserEventPayload73 The payload of the event, if requested.
+type UserEventPayload73 struct {
 	Alias    *string `json:"alias,omitempty"`
 	UserId   *string `json:"userId,omitempty"`
 	Username *string `json:"username,omitempty"`
 }
 
-// UserEventPayload70 The payload of the event, if requested.
-type UserEventPayload70 struct {
+// UserEventPayload74 The payload of the event, if requested.
+type UserEventPayload74 struct {
 	Alias    *string `json:"alias,omitempty"`
 	AliasId  *string `json:"aliasId,omitempty"`
 	UserId   *string `json:"userId,omitempty"`
 	Username *string `json:"username,omitempty"`
 }
 
-// UserEventPayload71 The payload of the event, if requested.
-type UserEventPayload71 struct {
+// UserEventPayload75 The payload of the event, if requested.
+type UserEventPayload75 struct {
 	AppId       *string                          `json:"appId,omitempty"`
 	AppName     string                           `json:"appName"`
-	Permissions *[]UserEventPayload71Permissions `json:"permissions,omitempty"`
-	Scopes      []UserEventPayload71Scopes       `json:"scopes"`
+	Permissions *[]UserEventPayload75Permissions `json:"permissions,omitempty"`
+	Scopes      []UserEventPayload75Scopes       `json:"scopes"`
 }
 
-// UserEventPayload71Permissions defines model for UserEvent.Payload.71.Permissions.
-type UserEventPayload71Permissions string
+// UserEventPayload75Permissions defines model for UserEvent.Payload.75.Permissions.
+type UserEventPayload75Permissions string
 
-// UserEventPayload71Scopes defines model for UserEvent.Payload.71.Scopes.
-type UserEventPayload71Scopes string
+// UserEventPayload75Scopes defines model for UserEvent.Payload.75.Scopes.
+type UserEventPayload75Scopes string
 
-// UserEventPayload72 The payload of the event, if requested.
-type UserEventPayload72 struct {
+// UserEventPayload76 The payload of the event, if requested.
+type UserEventPayload76 struct {
 	AppId   *string `json:"appId,omitempty"`
 	AppName string  `json:"appName"`
 }
 
-// UserEventPayload73 The payload of the event, if requested.
-type UserEventPayload73 struct {
+// UserEventPayload77 The payload of the event, if requested.
+type UserEventPayload77 struct {
 	AppId           *string                              `json:"appId,omitempty"`
 	AppName         string                               `json:"appName"`
-	NextPermissions *[]UserEventPayload73NextPermissions `json:"nextPermissions,omitempty"`
-	NextScopes      []UserEventPayload73NextScopes       `json:"nextScopes"`
+	NextPermissions *[]UserEventPayload77NextPermissions `json:"nextPermissions,omitempty"`
+	NextScopes      []UserEventPayload77NextScopes       `json:"nextScopes"`
 }
 
-// UserEventPayload73NextPermissions defines model for UserEvent.Payload.73.NextPermissions.
-type UserEventPayload73NextPermissions string
+// UserEventPayload77NextPermissions defines model for UserEvent.Payload.77.NextPermissions.
+type UserEventPayload77NextPermissions string
 
-// UserEventPayload73NextScopes defines model for UserEvent.Payload.73.NextScopes.
-type UserEventPayload73NextScopes string
+// UserEventPayload77NextScopes defines model for UserEvent.Payload.77.NextScopes.
+type UserEventPayload77NextScopes string
 
-// UserEventPayload74 The payload of the event, if requested.
-type UserEventPayload74 struct {
+// UserEventPayload78 The payload of the event, if requested.
+type UserEventPayload78 struct {
 	After *struct {
-		Permissions *[]UserEventPayload74AfterPermissions `json:"permissions,omitempty"`
+		Permissions *[]UserEventPayload78AfterPermissions `json:"permissions,omitempty"`
 		Resources   *struct {
 			// ProjectIds Specific project IDs or all projects on the team (`['*']`).
 			ProjectIds struct {
 				Items struct {
-					Type UserEventPayload74AfterResourcesProjectIdsItemsType `json:"type"`
+					Type UserEventPayload78AfterResourcesProjectIdsItemsType `json:"type"`
 				} `json:"items"`
-				Required UserEventPayload74AfterResourcesProjectIdsRequired `json:"required"`
-				Type     UserEventPayload74AfterResourcesProjectIdsType     `json:"type"`
+				Required UserEventPayload78AfterResourcesProjectIdsRequired `json:"required"`
+				Type     UserEventPayload78AfterResourcesProjectIdsType     `json:"type"`
 			} `json:"projectIds"`
 		} `json:"resources,omitempty"`
 	} `json:"after,omitempty"`
 	AppId   *string `json:"appId,omitempty"`
 	AppName string  `json:"appName"`
 	Before  *struct {
-		Permissions *[]UserEventPayload74BeforePermissions `json:"permissions,omitempty"`
+		Permissions *[]UserEventPayload78BeforePermissions `json:"permissions,omitempty"`
 		Resources   *struct {
 			// ProjectIds Specific project IDs or all projects on the team (`['*']`).
 			ProjectIds struct {
 				Items struct {
-					Type UserEventPayload74BeforeResourcesProjectIdsItemsType `json:"type"`
+					Type UserEventPayload78BeforeResourcesProjectIdsItemsType `json:"type"`
 				} `json:"items"`
-				Required UserEventPayload74BeforeResourcesProjectIdsRequired `json:"required"`
-				Type     UserEventPayload74BeforeResourcesProjectIdsType     `json:"type"`
+				Required UserEventPayload78BeforeResourcesProjectIdsRequired `json:"required"`
+				Type     UserEventPayload78BeforeResourcesProjectIdsType     `json:"type"`
 			} `json:"projectIds"`
 		} `json:"resources,omitempty"`
 	} `json:"before,omitempty"`
@@ -11456,69 +11762,69 @@ type UserEventPayload74 struct {
 	OrganizationId *string `json:"organizationId,omitempty"`
 }
 
-// UserEventPayload74AfterPermissions defines model for UserEvent.Payload.74.After.Permissions.
-type UserEventPayload74AfterPermissions string
+// UserEventPayload78AfterPermissions defines model for UserEvent.Payload.78.After.Permissions.
+type UserEventPayload78AfterPermissions string
 
-// UserEventPayload74AfterResourcesProjectIdsItemsType defines model for UserEvent.Payload.74.After.Resources.ProjectIds.Items.Type.
-type UserEventPayload74AfterResourcesProjectIdsItemsType string
+// UserEventPayload78AfterResourcesProjectIdsItemsType defines model for UserEvent.Payload.78.After.Resources.ProjectIds.Items.Type.
+type UserEventPayload78AfterResourcesProjectIdsItemsType string
 
-// UserEventPayload74AfterResourcesProjectIdsRequired defines model for UserEvent.Payload.74.After.Resources.ProjectIds.Required.
-type UserEventPayload74AfterResourcesProjectIdsRequired bool
+// UserEventPayload78AfterResourcesProjectIdsRequired defines model for UserEvent.Payload.78.After.Resources.ProjectIds.Required.
+type UserEventPayload78AfterResourcesProjectIdsRequired bool
 
-// UserEventPayload74AfterResourcesProjectIdsType defines model for UserEvent.Payload.74.After.Resources.ProjectIds.Type.
-type UserEventPayload74AfterResourcesProjectIdsType string
+// UserEventPayload78AfterResourcesProjectIdsType defines model for UserEvent.Payload.78.After.Resources.ProjectIds.Type.
+type UserEventPayload78AfterResourcesProjectIdsType string
 
-// UserEventPayload74BeforePermissions defines model for UserEvent.Payload.74.Before.Permissions.
-type UserEventPayload74BeforePermissions string
+// UserEventPayload78BeforePermissions defines model for UserEvent.Payload.78.Before.Permissions.
+type UserEventPayload78BeforePermissions string
 
-// UserEventPayload74BeforeResourcesProjectIdsItemsType defines model for UserEvent.Payload.74.Before.Resources.ProjectIds.Items.Type.
-type UserEventPayload74BeforeResourcesProjectIdsItemsType string
+// UserEventPayload78BeforeResourcesProjectIdsItemsType defines model for UserEvent.Payload.78.Before.Resources.ProjectIds.Items.Type.
+type UserEventPayload78BeforeResourcesProjectIdsItemsType string
 
-// UserEventPayload74BeforeResourcesProjectIdsRequired defines model for UserEvent.Payload.74.Before.Resources.ProjectIds.Required.
-type UserEventPayload74BeforeResourcesProjectIdsRequired bool
+// UserEventPayload78BeforeResourcesProjectIdsRequired defines model for UserEvent.Payload.78.Before.Resources.ProjectIds.Required.
+type UserEventPayload78BeforeResourcesProjectIdsRequired bool
 
-// UserEventPayload74BeforeResourcesProjectIdsType defines model for UserEvent.Payload.74.Before.Resources.ProjectIds.Type.
-type UserEventPayload74BeforeResourcesProjectIdsType string
+// UserEventPayload78BeforeResourcesProjectIdsType defines model for UserEvent.Payload.78.Before.Resources.ProjectIds.Type.
+type UserEventPayload78BeforeResourcesProjectIdsType string
 
-// UserEventPayload75 The payload of the event, if requested.
-type UserEventPayload75 struct {
+// UserEventPayload79 The payload of the event, if requested.
+type UserEventPayload79 struct {
 	AppId          *string                          `json:"appId,omitempty"`
 	AppName        string                           `json:"appName"`
 	OrganizationId *string                          `json:"organizationId,omitempty"`
-	Permissions    *[]UserEventPayload75Permissions `json:"permissions,omitempty"`
+	Permissions    *[]UserEventPayload79Permissions `json:"permissions,omitempty"`
 	Resources      *struct {
 		// ProjectIds Specific project IDs or all projects on the team (`['*']`).
 		ProjectIds struct {
 			Items struct {
-				Type UserEventPayload75ResourcesProjectIdsItemsType `json:"type"`
+				Type UserEventPayload79ResourcesProjectIdsItemsType `json:"type"`
 			} `json:"items"`
-			Required UserEventPayload75ResourcesProjectIdsRequired `json:"required"`
-			Type     UserEventPayload75ResourcesProjectIdsType     `json:"type"`
+			Required UserEventPayload79ResourcesProjectIdsRequired `json:"required"`
+			Type     UserEventPayload79ResourcesProjectIdsType     `json:"type"`
 		} `json:"projectIds"`
 	} `json:"resources,omitempty"`
 }
 
-// UserEventPayload75Permissions defines model for UserEvent.Payload.75.Permissions.
-type UserEventPayload75Permissions string
+// UserEventPayload79Permissions defines model for UserEvent.Payload.79.Permissions.
+type UserEventPayload79Permissions string
 
-// UserEventPayload75ResourcesProjectIdsItemsType defines model for UserEvent.Payload.75.Resources.ProjectIds.Items.Type.
-type UserEventPayload75ResourcesProjectIdsItemsType string
+// UserEventPayload79ResourcesProjectIdsItemsType defines model for UserEvent.Payload.79.Resources.ProjectIds.Items.Type.
+type UserEventPayload79ResourcesProjectIdsItemsType string
 
-// UserEventPayload75ResourcesProjectIdsRequired defines model for UserEvent.Payload.75.Resources.ProjectIds.Required.
-type UserEventPayload75ResourcesProjectIdsRequired bool
+// UserEventPayload79ResourcesProjectIdsRequired defines model for UserEvent.Payload.79.Resources.ProjectIds.Required.
+type UserEventPayload79ResourcesProjectIdsRequired bool
 
-// UserEventPayload75ResourcesProjectIdsType defines model for UserEvent.Payload.75.Resources.ProjectIds.Type.
-type UserEventPayload75ResourcesProjectIdsType string
+// UserEventPayload79ResourcesProjectIdsType defines model for UserEvent.Payload.79.Resources.ProjectIds.Type.
+type UserEventPayload79ResourcesProjectIdsType string
 
-// UserEventPayload76 The payload of the event, if requested.
-type UserEventPayload76 struct {
+// UserEventPayload80 The payload of the event, if requested.
+type UserEventPayload80 struct {
 	AppId               *string `json:"appId,omitempty"`
 	AppName             string  `json:"appName"`
 	SecretLastFourChars *string `json:"secretLastFourChars,omitempty"`
 }
 
-// UserEventPayload77 The payload of the event, if requested.
-type UserEventPayload77 struct {
+// UserEventPayload81 The payload of the event, if requested.
+type UserEventPayload81 struct {
 	// App Note that not all historical events have this field.
 	App *struct {
 		// Id The App's ID.
@@ -11538,162 +11844,162 @@ type UserEventPayload77 struct {
 	IssuedBefore *float32 `json:"issuedBefore,omitempty"`
 }
 
-// UserEventPayload78 The payload of the event, if requested.
-type UserEventPayload78 struct {
+// UserEventPayload82 The payload of the event, if requested.
+type UserEventPayload82 struct {
 	AppId          *string `json:"appId,omitempty"`
 	AppName        string  `json:"appName"`
 	OrganizationId *string `json:"organizationId,omitempty"`
 }
 
-// UserEventPayload79 The payload of the event, if requested.
-type UserEventPayload79 struct {
+// UserEventPayload83 The payload of the event, if requested.
+type UserEventPayload83 struct {
 	AttackModeActiveUntil     *float32                                 `json:"attackModeActiveUntil,omitempty"`
-	AttackModeEnabled         UserEventPayload79AttackModeEnabled      `json:"attackModeEnabled"`
+	AttackModeEnabled         UserEventPayload83AttackModeEnabled      `json:"attackModeEnabled"`
 	PrevAttackModeActiveUntil *float32                                 `json:"prevAttackModeActiveUntil,omitempty"`
-	PrevAttackModeEnabled     *UserEventPayload79PrevAttackModeEnabled `json:"prevAttackModeEnabled,omitempty"`
+	PrevAttackModeEnabled     *UserEventPayload83PrevAttackModeEnabled `json:"prevAttackModeEnabled,omitempty"`
 	ProjectId                 string                                   `json:"projectId"`
 }
 
-// UserEventPayload79AttackModeEnabled defines model for UserEvent.Payload.79.AttackModeEnabled.
-type UserEventPayload79AttackModeEnabled bool
+// UserEventPayload83AttackModeEnabled defines model for UserEvent.Payload.83.AttackModeEnabled.
+type UserEventPayload83AttackModeEnabled bool
 
-// UserEventPayload79PrevAttackModeEnabled defines model for UserEvent.Payload.79.PrevAttackModeEnabled.
-type UserEventPayload79PrevAttackModeEnabled bool
+// UserEventPayload83PrevAttackModeEnabled defines model for UserEvent.Payload.83.PrevAttackModeEnabled.
+type UserEventPayload83PrevAttackModeEnabled bool
 
-// UserEventPayload80 The payload of the event, if requested.
-type UserEventPayload80 struct {
-	AutoExposeSystemEnvs UserEventPayload80AutoExposeSystemEnvs `json:"autoExposeSystemEnvs"`
+// UserEventPayload84 The payload of the event, if requested.
+type UserEventPayload84 struct {
+	AutoExposeSystemEnvs UserEventPayload84AutoExposeSystemEnvs `json:"autoExposeSystemEnvs"`
 	ProjectId            *string                                `json:"projectId,omitempty"`
 	ProjectName          string                                 `json:"projectName"`
 }
 
-// UserEventPayload80AutoExposeSystemEnvs defines model for UserEvent.Payload.80.AutoExposeSystemEnvs.
-type UserEventPayload80AutoExposeSystemEnvs bool
+// UserEventPayload84AutoExposeSystemEnvs defines model for UserEvent.Payload.84.AutoExposeSystemEnvs.
+type UserEventPayload84AutoExposeSystemEnvs bool
 
-// UserEventPayload81 The payload of the event, if requested.
-type UserEventPayload81 struct {
+// UserEventPayload85 The payload of the event, if requested.
+type UserEventPayload85 struct {
 	Avatar *string `json:"avatar,omitempty"`
 }
 
-// UserEventPayload82 The payload of the event, if requested.
-type UserEventPayload82 struct {
+// UserEventPayload86 The payload of the event, if requested.
+type UserEventPayload86 struct {
 	Amount        float32 `json:"amount"`
 	InvoiceId     string  `json:"invoiceId"`
 	LineItemCount float32 `json:"lineItemCount"`
 	RefundReason  string  `json:"refundReason"`
 }
 
-// UserEventPayload83 The payload of the event, if requested.
-type UserEventPayload83 struct {
+// UserEventPayload87 The payload of the event, if requested.
+type UserEventPayload87 struct {
 	Amount           float32                            `json:"amount"`
 	InvoiceId        string                             `json:"invoiceId"`
 	NewInvoiceId     string                             `json:"newInvoiceId"`
-	SettlementMethod UserEventPayload83SettlementMethod `json:"settlementMethod"`
+	SettlementMethod UserEventPayload87SettlementMethod `json:"settlementMethod"`
 }
 
-// UserEventPayload83SettlementMethod defines model for UserEvent.Payload.83.SettlementMethod.
-type UserEventPayload83SettlementMethod string
+// UserEventPayload87SettlementMethod defines model for UserEvent.Payload.87.SettlementMethod.
+type UserEventPayload87SettlementMethod string
 
-// UserEventPayload84 The payload of the event, if requested.
-type UserEventPayload84 struct {
+// UserEventPayload88 The payload of the event, if requested.
+type UserEventPayload88 struct {
 	SubscriptionId string `json:"subscriptionId"`
 }
 
-// UserEventPayload85 The payload of the event, if requested.
-type UserEventPayload85 struct {
+// UserEventPayload89 The payload of the event, if requested.
+type UserEventPayload89 struct {
 	PaymentMethodId string `json:"paymentMethodId"`
 	SubscriptionId  string `json:"subscriptionId"`
 }
 
-// UserEventPayload86 The payload of the event, if requested.
-type UserEventPayload86 struct {
+// UserEventPayload90 The payload of the event, if requested.
+type UserEventPayload90 struct {
 	Brand           *string `json:"brand,omitempty"`
 	Last4           *string `json:"last4,omitempty"`
 	PaymentMethodId string  `json:"paymentMethodId"`
 }
 
-// UserEventPayload87 The payload of the event, if requested.
-type UserEventPayload87 struct {
-	ChangedFields []UserEventPayload87ChangedFields `json:"changedFields"`
+// UserEventPayload91 The payload of the event, if requested.
+type UserEventPayload91 struct {
+	ChangedFields []UserEventPayload91ChangedFields `json:"changedFields"`
 }
 
-// UserEventPayload87ChangedFields defines model for UserEvent.Payload.87.ChangedFields.
-type UserEventPayload87ChangedFields string
+// UserEventPayload91ChangedFields defines model for UserEvent.Payload.91.ChangedFields.
+type UserEventPayload91ChangedFields string
 
-// UserEventPayload88 The payload of the event, if requested.
-type UserEventPayload88 struct {
+// UserEventPayload92 The payload of the event, if requested.
+type UserEventPayload92 struct {
 	PlanSlug       string  `json:"planSlug"`
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
 }
 
-// UserEventPayload89 The payload of the event, if requested.
-type UserEventPayload89 struct {
-	Action         UserEventPayload89Action  `json:"action"`
-	Data           UserEvent_Payload_89_Data `json:"data"`
+// UserEventPayload93 The payload of the event, if requested.
+type UserEventPayload93 struct {
+	Action         UserEventPayload93Action  `json:"action"`
+	Data           UserEvent_Payload_93_Data `json:"data"`
 	SubscriptionId *string                   `json:"subscriptionId,omitempty"`
 }
 
-// UserEventPayload89Action defines model for UserEvent.Payload.89.Action.
-type UserEventPayload89Action string
+// UserEventPayload93Action defines model for UserEvent.Payload.93.Action.
+type UserEventPayload93Action string
 
-// UserEventPayload89Data0 defines model for UserEvent.Payload.89.Data.0.
-type UserEventPayload89Data0 struct {
-	PlanSlug UserEventPayload89Data0PlanSlug `json:"planSlug"`
-	Reason   *UserEventPayload89Data0Reason  `json:"reason,omitempty"`
+// UserEventPayload93Data0 defines model for UserEvent.Payload.93.Data.0.
+type UserEventPayload93Data0 struct {
+	PlanSlug UserEventPayload93Data0PlanSlug `json:"planSlug"`
+	Reason   *UserEventPayload93Data0Reason  `json:"reason,omitempty"`
 }
 
-// UserEventPayload89Data0PlanSlug defines model for UserEvent.Payload.89.Data.0.PlanSlug.
-type UserEventPayload89Data0PlanSlug string
+// UserEventPayload93Data0PlanSlug defines model for UserEvent.Payload.93.Data.0.PlanSlug.
+type UserEventPayload93Data0PlanSlug string
 
-// UserEventPayload89Data0Reason defines model for UserEvent.Payload.89.Data.0.Reason.
-type UserEventPayload89Data0Reason string
+// UserEventPayload93Data0Reason defines model for UserEvent.Payload.93.Data.0.Reason.
+type UserEventPayload93Data0Reason string
 
-// UserEventPayload89Data1 defines model for UserEvent.Payload.89.Data.1.
-type UserEventPayload89Data1 struct {
-	PlanSlug UserEventPayload89Data1PlanSlug `json:"planSlug"`
+// UserEventPayload93Data1 defines model for UserEvent.Payload.93.Data.1.
+type UserEventPayload93Data1 struct {
+	PlanSlug UserEventPayload93Data1PlanSlug `json:"planSlug"`
 }
 
-// UserEventPayload89Data1PlanSlug defines model for UserEvent.Payload.89.Data.1.PlanSlug.
-type UserEventPayload89Data1PlanSlug string
+// UserEventPayload93Data1PlanSlug defines model for UserEvent.Payload.93.Data.1.PlanSlug.
+type UserEventPayload93Data1PlanSlug string
 
-// UserEvent_Payload_89_Data defines model for UserEvent.Payload.89.Data.
-type UserEvent_Payload_89_Data struct {
+// UserEvent_Payload_93_Data defines model for UserEvent.Payload.93.Data.
+type UserEvent_Payload_93_Data struct {
 	union json.RawMessage
 }
 
-// UserEventPayload90 The payload of the event, if requested.
-type UserEventPayload90 struct {
-	Action UserEventPayload90Action `json:"action"`
+// UserEventPayload94 The payload of the event, if requested.
+type UserEventPayload94 struct {
+	Action UserEventPayload94Action `json:"action"`
 	Data   struct {
-		PlanSlug UserEventPayload90DataPlanSlug `json:"planSlug"`
+		PlanSlug UserEventPayload94DataPlanSlug `json:"planSlug"`
 	} `json:"data"`
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
 }
 
-// UserEventPayload90Action defines model for UserEvent.Payload.90.Action.
-type UserEventPayload90Action string
+// UserEventPayload94Action defines model for UserEvent.Payload.94.Action.
+type UserEventPayload94Action string
 
-// UserEventPayload90DataPlanSlug defines model for UserEvent.Payload.90.Data.PlanSlug.
-type UserEventPayload90DataPlanSlug string
+// UserEventPayload94DataPlanSlug defines model for UserEvent.Payload.94.Data.PlanSlug.
+type UserEventPayload94DataPlanSlug string
 
-// UserEventPayload91 The payload of the event, if requested.
-type UserEventPayload91 struct {
-	Action         UserEventPayload91Action `json:"action"`
+// UserEventPayload95 The payload of the event, if requested.
+type UserEventPayload95 struct {
+	Action         UserEventPayload95Action `json:"action"`
 	Data           map[string]interface{}   `json:"data"`
 	SubscriptionId *string                  `json:"subscriptionId,omitempty"`
 }
 
-// UserEventPayload91Action defines model for UserEvent.Payload.91.Action.
-type UserEventPayload91Action string
+// UserEventPayload95Action defines model for UserEvent.Payload.95.Action.
+type UserEventPayload95Action string
 
-// UserEventPayload92 The payload of the event, if requested.
-type UserEventPayload92 struct {
+// UserEventPayload96 The payload of the event, if requested.
+type UserEventPayload96 struct {
 	ProductAliases []string `json:"productAliases"`
 	SubscriptionId *string  `json:"subscriptionId,omitempty"`
 }
 
-// UserEventPayload93 The payload of the event, if requested.
-type UserEventPayload93 struct {
+// UserEventPayload97 The payload of the event, if requested.
+type UserEventPayload97 struct {
 	BulkRedirectsLimit     float32 `json:"bulkRedirectsLimit"`
 	PrevBulkRedirectsLimit float32 `json:"prevBulkRedirectsLimit"`
 	Project                struct {
@@ -11702,8 +12008,8 @@ type UserEventPayload93 struct {
 	} `json:"project"`
 }
 
-// UserEventPayload94 The payload of the event, if requested.
-type UserEventPayload94 struct {
+// UserEventPayload98 The payload of the event, if requested.
+type UserEventPayload98 struct {
 	Project struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -11711,36 +12017,36 @@ type UserEventPayload94 struct {
 	VersionId string `json:"versionId"`
 }
 
-// UserEventPayload95 The payload of the event, if requested.
-type UserEventPayload95 struct {
+// UserEventPayload99 The payload of the event, if requested.
+type UserEventPayload99 struct {
 	Cn     *string                  `json:"cn,omitempty"`
 	Cns    *[]string                `json:"cns,omitempty"`
-	Custom UserEventPayload95Custom `json:"custom"`
+	Custom UserEventPayload99Custom `json:"custom"`
 	Id     *string                  `json:"id,omitempty"`
 }
 
-// UserEventPayload95Custom defines model for UserEvent.Payload.95.Custom.
-type UserEventPayload95Custom bool
+// UserEventPayload99Custom defines model for UserEvent.Payload.99.Custom.
+type UserEventPayload99Custom bool
 
-// UserEventPayload96 The payload of the event, if requested.
-type UserEventPayload96 struct {
-	Cns    []string                 `json:"cns"`
-	Custom UserEventPayload96Custom `json:"custom"`
-	Id     string                   `json:"id"`
+// UserEventPayload100 The payload of the event, if requested.
+type UserEventPayload100 struct {
+	Cns    []string                  `json:"cns"`
+	Custom UserEventPayload100Custom `json:"custom"`
+	Id     string                    `json:"id"`
 }
 
-// UserEventPayload96Custom defines model for UserEvent.Payload.96.Custom.
-type UserEventPayload96Custom bool
+// UserEventPayload100Custom defines model for UserEvent.Payload.100.Custom.
+type UserEventPayload100Custom bool
 
-// UserEventPayload97 The payload of the event, if requested.
-type UserEventPayload97 struct {
+// UserEventPayload101 The payload of the event, if requested.
+type UserEventPayload101 struct {
 	Cn  *string   `json:"cn,omitempty"`
 	Cns *[]string `json:"cns,omitempty"`
 	Id  *string   `json:"id,omitempty"`
 }
 
-// UserEventPayload98 The payload of the event, if requested.
-type UserEventPayload98 struct {
+// UserEventPayload102 The payload of the event, if requested.
+type UserEventPayload102 struct {
 	Id      string `json:"id"`
 	NewTeam *struct {
 		Name string `json:"name"`
@@ -11750,61 +12056,61 @@ type UserEventPayload98 struct {
 	} `json:"oldTeam,omitempty"`
 }
 
-// UserEventPayload99 The payload of the event, if requested.
-type UserEventPayload99 struct {
+// UserEventPayload103 The payload of the event, if requested.
+type UserEventPayload103 struct {
 	Dst string `json:"dst"`
 	Src string `json:"src"`
 }
 
-// UserEventPayload100 The payload of the event, if requested.
-type UserEventPayload100 struct {
+// UserEventPayload104 The payload of the event, if requested.
+type UserEventPayload104 struct {
 	Cn  *string   `json:"cn,omitempty"`
 	Cns *[]string `json:"cns,omitempty"`
 	Id  string    `json:"id"`
 }
 
-// UserEventPayload101 The payload of the event, if requested.
-type UserEventPayload101 struct {
+// UserEventPayload105 The payload of the event, if requested.
+type UserEventPayload105 struct {
 	Cn  *string   `json:"cn,omitempty"`
 	Cns *[]string `json:"cns,omitempty"`
 }
 
-// UserEventPayload102 The payload of the event, if requested.
-type UserEventPayload102 struct {
+// UserEventPayload106 The payload of the event, if requested.
+type UserEventPayload106 struct {
 	GitOwnerName      string `json:"gitOwnerName"`
 	GitRepositoryName string `json:"gitRepositoryName"`
 	Next              struct {
-		AutoAddReviewers UserEventPayload102NextAutoAddReviewers `json:"autoAddReviewers"`
-		Enabled          UserEventPayload102NextEnabled          `json:"enabled"`
+		AutoAddReviewers UserEventPayload106NextAutoAddReviewers `json:"autoAddReviewers"`
+		Enabled          UserEventPayload106NextEnabled          `json:"enabled"`
 	} `json:"next"`
 	Previous struct {
-		AutoAddReviewers UserEventPayload102PreviousAutoAddReviewers `json:"autoAddReviewers"`
-		Enabled          UserEventPayload102PreviousEnabled          `json:"enabled"`
+		AutoAddReviewers UserEventPayload106PreviousAutoAddReviewers `json:"autoAddReviewers"`
+		Enabled          UserEventPayload106PreviousEnabled          `json:"enabled"`
 	} `json:"previous"`
 }
 
-// UserEventPayload102NextAutoAddReviewers defines model for UserEvent.Payload.102.Next.AutoAddReviewers.
-type UserEventPayload102NextAutoAddReviewers bool
+// UserEventPayload106NextAutoAddReviewers defines model for UserEvent.Payload.106.Next.AutoAddReviewers.
+type UserEventPayload106NextAutoAddReviewers bool
 
-// UserEventPayload102NextEnabled defines model for UserEvent.Payload.102.Next.Enabled.
-type UserEventPayload102NextEnabled bool
+// UserEventPayload106NextEnabled defines model for UserEvent.Payload.106.Next.Enabled.
+type UserEventPayload106NextEnabled bool
 
-// UserEventPayload102PreviousAutoAddReviewers defines model for UserEvent.Payload.102.Previous.AutoAddReviewers.
-type UserEventPayload102PreviousAutoAddReviewers bool
+// UserEventPayload106PreviousAutoAddReviewers defines model for UserEvent.Payload.106.Previous.AutoAddReviewers.
+type UserEventPayload106PreviousAutoAddReviewers bool
 
-// UserEventPayload102PreviousEnabled defines model for UserEvent.Payload.102.Previous.Enabled.
-type UserEventPayload102PreviousEnabled bool
+// UserEventPayload106PreviousEnabled defines model for UserEvent.Payload.106.Previous.Enabled.
+type UserEventPayload106PreviousEnabled bool
 
-// UserEventPayload103 The payload of the event, if requested.
-type UserEventPayload103 struct {
+// UserEventPayload107 The payload of the event, if requested.
+type UserEventPayload107 struct {
 	DocumentId  string `json:"documentId"`
 	Fingerprint string `json:"fingerprint"`
 	Slug        string `json:"slug"`
 	Title       string `json:"title"`
 }
 
-// UserEventPayload104 The payload of the event, if requested.
-type UserEventPayload104 struct {
+// UserEventPayload108 The payload of the event, if requested.
+type UserEventPayload108 struct {
 	Count     float32 `json:"count"`
 	Documents []struct {
 		DocumentId  string `json:"documentId"`
@@ -11814,76 +12120,76 @@ type UserEventPayload104 struct {
 	} `json:"documents"`
 }
 
-// UserEventPayload105 The payload of the event, if requested.
-type UserEventPayload105 struct {
-	Configuration struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"configuration"`
-}
-
-// UserEventPayload106 The payload of the event, if requested.
-type UserEventPayload106 struct {
-	BuildsEnabled *UserEventPayload106BuildsEnabled `json:"buildsEnabled,omitempty"`
-	Configuration struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"configuration"`
-	Project struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"project"`
-	Team struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"team"`
-}
-
-// UserEventPayload106BuildsEnabled defines model for UserEvent.Payload.106.BuildsEnabled.
-type UserEventPayload106BuildsEnabled bool
-
-// UserEventPayload107 The payload of the event, if requested.
-type UserEventPayload107 struct {
-	BuildsEnabled *UserEventPayload107BuildsEnabled `json:"buildsEnabled,omitempty"`
-	Configuration struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"configuration"`
-	Passive *UserEventPayload107Passive `json:"passive,omitempty"`
-	Project struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"project"`
-	Team struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"team"`
-}
-
-// UserEventPayload107BuildsEnabled defines model for UserEvent.Payload.107.BuildsEnabled.
-type UserEventPayload107BuildsEnabled bool
-
-// UserEventPayload107Passive defines model for UserEvent.Payload.107.Passive.
-type UserEventPayload107Passive bool
-
-// UserEventPayload108 The payload of the event, if requested.
-type UserEventPayload108 struct {
-	Configuration struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"configuration"`
-	Project struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"project"`
-	Team struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"team"`
-}
-
 // UserEventPayload109 The payload of the event, if requested.
 type UserEventPayload109 struct {
+	Configuration struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"configuration"`
+}
+
+// UserEventPayload110 The payload of the event, if requested.
+type UserEventPayload110 struct {
+	BuildsEnabled *UserEventPayload110BuildsEnabled `json:"buildsEnabled,omitempty"`
+	Configuration struct {
+		Id   string  `json:"id"`
+		Name *string `json:"name,omitempty"`
+	} `json:"configuration"`
+	Project struct {
+		Id   string  `json:"id"`
+		Name *string `json:"name,omitempty"`
+	} `json:"project"`
+	Team struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"team"`
+}
+
+// UserEventPayload110BuildsEnabled defines model for UserEvent.Payload.110.BuildsEnabled.
+type UserEventPayload110BuildsEnabled bool
+
+// UserEventPayload111 The payload of the event, if requested.
+type UserEventPayload111 struct {
+	BuildsEnabled *UserEventPayload111BuildsEnabled `json:"buildsEnabled,omitempty"`
+	Configuration struct {
+		Id   string  `json:"id"`
+		Name *string `json:"name,omitempty"`
+	} `json:"configuration"`
+	Passive *UserEventPayload111Passive `json:"passive,omitempty"`
+	Project struct {
+		Id   string  `json:"id"`
+		Name *string `json:"name,omitempty"`
+	} `json:"project"`
+	Team struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"team"`
+}
+
+// UserEventPayload111BuildsEnabled defines model for UserEvent.Payload.111.BuildsEnabled.
+type UserEventPayload111BuildsEnabled bool
+
+// UserEventPayload111Passive defines model for UserEvent.Payload.111.Passive.
+type UserEventPayload111Passive bool
+
+// UserEventPayload112 The payload of the event, if requested.
+type UserEventPayload112 struct {
+	Configuration struct {
+		Id   string  `json:"id"`
+		Name *string `json:"name,omitempty"`
+	} `json:"configuration"`
+	Project struct {
+		Id   string  `json:"id"`
+		Name *string `json:"name,omitempty"`
+	} `json:"project"`
+	Team struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"team"`
+}
+
+// UserEventPayload113 The payload of the event, if requested.
+type UserEventPayload113 struct {
 	Configuration struct {
 		Id   string  `json:"id"`
 		Name *string `json:"name,omitempty"`
@@ -11895,25 +12201,25 @@ type UserEventPayload109 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload110 The payload of the event, if requested.
-type UserEventPayload110 struct {
+// UserEventPayload114 The payload of the event, if requested.
+type UserEventPayload114 struct {
 	GithubLogin string  `json:"githubLogin"`
 	Host        *string `json:"host,omitempty"`
 }
 
-// UserEventPayload111 The payload of the event, if requested.
-type UserEventPayload111 struct {
+// UserEventPayload115 The payload of the event, if requested.
+type UserEventPayload115 struct {
 	GithubLogin string `json:"githubLogin"`
 }
 
-// UserEventPayload112 The payload of the event, if requested.
-type UserEventPayload112 struct {
+// UserEventPayload116 The payload of the event, if requested.
+type UserEventPayload116 struct {
 	GithubLogin string `json:"githubLogin"`
 	Host        string `json:"host"`
 }
 
-// UserEventPayload113 The payload of the event, if requested.
-type UserEventPayload113 struct {
+// UserEventPayload117 The payload of the event, if requested.
+type UserEventPayload117 struct {
 	GitlabEmail     string  `json:"gitlabEmail"`
 	GitlabLogin     string  `json:"gitlabLogin"`
 	GitlabName      *string `json:"gitlabName,omitempty"`
@@ -11921,50 +12227,27 @@ type UserEventPayload113 struct {
 	ZeitAccountType *string `json:"zeitAccountType,omitempty"`
 }
 
-// UserEventPayload114 The payload of the event, if requested.
-type UserEventPayload114 struct {
+// UserEventPayload118 The payload of the event, if requested.
+type UserEventPayload118 struct {
 	GitlabLogin  string  `json:"gitlabLogin"`
 	GitlabUserId float32 `json:"gitlabUserId"`
 }
 
-// UserEventPayload115 The payload of the event, if requested.
-type UserEventPayload115 struct {
+// UserEventPayload119 The payload of the event, if requested.
+type UserEventPayload119 struct {
 	BitbucketEmail string  `json:"bitbucketEmail"`
 	BitbucketLogin string  `json:"bitbucketLogin"`
 	BitbucketName  *string `json:"bitbucketName,omitempty"`
 }
 
-// UserEventPayload116 The payload of the event, if requested.
-type UserEventPayload116 struct {
+// UserEventPayload120 The payload of the event, if requested.
+type UserEventPayload120 struct {
 	BitbucketAccountId string `json:"bitbucketAccountId"`
 	BitbucketLogin     string `json:"bitbucketLogin"`
 }
 
-// UserEventPayload117 The payload of the event, if requested.
-type UserEventPayload117 struct {
-	AcceptedTokenCount      *float32                        `json:"acceptedTokenCount,omitempty"`
-	ClientId                *string                         `json:"clientId,omitempty"`
-	ClientName              *string                         `json:"clientName,omitempty"`
-	ClientUid               *string                         `json:"clientUid,omitempty"`
-	Environments            *[]string                       `json:"environments,omitempty"`
-	EventName               *string                         `json:"eventName,omitempty"`
-	Fields                  *[]string                       `json:"fields,omitempty"`
-	ImportedTokenCount      *float32                        `json:"importedTokenCount,omitempty"`
-	InstallationId          *string                         `json:"installationId,omitempty"`
-	ProjectId               *string                         `json:"projectId,omitempty"`
-	ProjectName             *string                         `json:"projectName,omitempty"`
-	SubjectType             *UserEventPayload117SubjectType `json:"subjectType,omitempty"`
-	SubscriptionId          *string                         `json:"subscriptionId,omitempty"`
-	TokenCount              *float32                        `json:"tokenCount,omitempty"`
-	TokensDeleted           *float32                        `json:"tokensDeleted,omitempty"`
-	TriggerDestinationCount *float32                        `json:"triggerDestinationCount,omitempty"`
-}
-
-// UserEventPayload117SubjectType defines model for UserEvent.Payload.117.SubjectType.
-type UserEventPayload117SubjectType string
-
-// UserEventPayload118 The payload of the event, if requested.
-type UserEventPayload118 struct {
+// UserEventPayload121 The payload of the event, if requested.
+type UserEventPayload121 struct {
 	PrevPurchasedAmount float32 `json:"prevPurchasedAmount"`
 	Project             struct {
 		Id   string `json:"id"`
@@ -11973,99 +12256,99 @@ type UserEventPayload118 struct {
 	PurchasedAmount float32 `json:"purchasedAmount"`
 }
 
-// UserEventPayload119 The payload of the event, if requested.
-type UserEventPayload119 struct {
+// UserEventPayload122 The payload of the event, if requested.
+type UserEventPayload122 struct {
 	MetricName           string                 `json:"metricName"`
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// UserEventPayload120 The payload of the event, if requested.
-type UserEventPayload120 struct {
+// UserEventPayload123 The payload of the event, if requested.
+type UserEventPayload123 struct {
 	Reason *string `json:"reason,omitempty"`
 	Suffix string  `json:"suffix"`
 }
 
-// UserEventPayload121 The payload of the event, if requested.
-type UserEventPayload121 struct {
+// UserEventPayload124 The payload of the event, if requested.
+type UserEventPayload124 struct {
 	Status string `json:"status"`
 	Suffix string `json:"suffix"`
 }
 
-// UserEventPayload122 The payload of the event, if requested.
-type UserEventPayload122 struct {
+// UserEventPayload125 The payload of the event, if requested.
+type UserEventPayload125 struct {
 	Suffix string `json:"suffix"`
 }
 
-// UserEventPayload123 The payload of the event, if requested.
-type UserEventPayload123 struct {
+// UserEventPayload126 The payload of the event, if requested.
+type UserEventPayload126 struct {
 	OldPasswordProtection *struct {
-		DeploymentType UserEventPayload123OldPasswordProtectionDeploymentType `json:"deploymentType"`
+		DeploymentType UserEventPayload126OldPasswordProtectionDeploymentType `json:"deploymentType"`
 	} `json:"oldPasswordProtection"`
-	PasswordChanged    *UserEventPayload123PasswordChanged `json:"passwordChanged,omitempty"`
+	PasswordChanged    *UserEventPayload126PasswordChanged `json:"passwordChanged,omitempty"`
 	PasswordProtection *struct {
-		DeploymentType UserEventPayload123PasswordProtectionDeploymentType `json:"deploymentType"`
+		DeploymentType UserEventPayload126PasswordProtectionDeploymentType `json:"deploymentType"`
 	} `json:"passwordProtection"`
-	Scope UserEventPayload123Scope `json:"scope"`
+	Scope UserEventPayload126Scope `json:"scope"`
 }
 
-// UserEventPayload123OldPasswordProtectionDeploymentType defines model for UserEvent.Payload.123.OldPasswordProtection.DeploymentType.
-type UserEventPayload123OldPasswordProtectionDeploymentType string
+// UserEventPayload126OldPasswordProtectionDeploymentType defines model for UserEvent.Payload.126.OldPasswordProtection.DeploymentType.
+type UserEventPayload126OldPasswordProtectionDeploymentType string
 
-// UserEventPayload123PasswordChanged defines model for UserEvent.Payload.123.PasswordChanged.
-type UserEventPayload123PasswordChanged bool
+// UserEventPayload126PasswordChanged defines model for UserEvent.Payload.126.PasswordChanged.
+type UserEventPayload126PasswordChanged bool
 
-// UserEventPayload123PasswordProtectionDeploymentType defines model for UserEvent.Payload.123.PasswordProtection.DeploymentType.
-type UserEventPayload123PasswordProtectionDeploymentType string
+// UserEventPayload126PasswordProtectionDeploymentType defines model for UserEvent.Payload.126.PasswordProtection.DeploymentType.
+type UserEventPayload126PasswordProtectionDeploymentType string
 
-// UserEventPayload123Scope defines model for UserEvent.Payload.123.Scope.
-type UserEventPayload123Scope string
+// UserEventPayload126Scope defines model for UserEvent.Payload.126.Scope.
+type UserEventPayload126Scope string
 
-// UserEventPayload124 The payload of the event, if requested.
-type UserEventPayload124 struct {
+// UserEventPayload127 The payload of the event, if requested.
+type UserEventPayload127 struct {
 	OldSsoProtection *struct {
-		April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload124OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
-		Cve55182MigrationAppliedFrom                  *UserEventPayload124OldSsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
-		DeploymentType                                UserEventPayload124OldSsoProtectionDeploymentType                                 `json:"deploymentType"`
+		April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
+		Cve55182MigrationAppliedFrom                  *UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
+		DeploymentType                                UserEventPayload127OldSsoProtectionDeploymentType                                 `json:"deploymentType"`
 	} `json:"oldSsoProtection"`
-	Scope         UserEventPayload124Scope `json:"scope"`
+	Scope         UserEventPayload127Scope `json:"scope"`
 	SsoProtection *struct {
-		April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload124SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
-		Cve55182MigrationAppliedFrom                  *UserEventPayload124SsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
-		DeploymentType                                UserEventPayload124SsoProtectionDeploymentType                                 `json:"deploymentType"`
+		April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
+		Cve55182MigrationAppliedFrom                  *UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
+		DeploymentType                                UserEventPayload127SsoProtectionDeploymentType                                 `json:"deploymentType"`
 	} `json:"ssoProtection"`
 }
 
-// UserEventPayload124OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.124.OldSsoProtection.April2026SecurityIncidentMigrationAppliedFrom.
-type UserEventPayload124OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
+// UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.127.OldSsoProtection.April2026SecurityIncidentMigrationAppliedFrom.
+type UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
 
-// UserEventPayload124OldSsoProtectionCve55182MigrationAppliedFrom defines model for UserEvent.Payload.124.OldSsoProtection.Cve55182MigrationAppliedFrom.
-type UserEventPayload124OldSsoProtectionCve55182MigrationAppliedFrom string
+// UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom defines model for UserEvent.Payload.127.OldSsoProtection.Cve55182MigrationAppliedFrom.
+type UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom string
 
-// UserEventPayload124OldSsoProtectionDeploymentType defines model for UserEvent.Payload.124.OldSsoProtection.DeploymentType.
-type UserEventPayload124OldSsoProtectionDeploymentType string
+// UserEventPayload127OldSsoProtectionDeploymentType defines model for UserEvent.Payload.127.OldSsoProtection.DeploymentType.
+type UserEventPayload127OldSsoProtectionDeploymentType string
 
-// UserEventPayload124Scope defines model for UserEvent.Payload.124.Scope.
-type UserEventPayload124Scope string
+// UserEventPayload127Scope defines model for UserEvent.Payload.127.Scope.
+type UserEventPayload127Scope string
 
-// UserEventPayload124SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.124.SsoProtection.April2026SecurityIncidentMigrationAppliedFrom.
-type UserEventPayload124SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
+// UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.127.SsoProtection.April2026SecurityIncidentMigrationAppliedFrom.
+type UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
 
-// UserEventPayload124SsoProtectionCve55182MigrationAppliedFrom defines model for UserEvent.Payload.124.SsoProtection.Cve55182MigrationAppliedFrom.
-type UserEventPayload124SsoProtectionCve55182MigrationAppliedFrom string
+// UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom defines model for UserEvent.Payload.127.SsoProtection.Cve55182MigrationAppliedFrom.
+type UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom string
 
-// UserEventPayload124SsoProtectionDeploymentType defines model for UserEvent.Payload.124.SsoProtection.DeploymentType.
-type UserEventPayload124SsoProtectionDeploymentType string
+// UserEventPayload127SsoProtectionDeploymentType defines model for UserEvent.Payload.127.SsoProtection.DeploymentType.
+type UserEventPayload127SsoProtectionDeploymentType string
 
-// UserEventPayload125 The payload of the event, if requested.
-type UserEventPayload125 struct {
+// UserEventPayload128 The payload of the event, if requested.
+type UserEventPayload128 struct {
 	HookName    string `json:"hookName"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 	Ref         string `json:"ref"`
 }
 
-// UserEventPayload126 The payload of the event, if requested.
-type UserEventPayload126 struct {
+// UserEventPayload129 The payload of the event, if requested.
+type UserEventPayload129 struct {
 	Job struct {
 		DeployHook struct {
 			CreatedAt float32 `json:"createdAt"`
@@ -12080,20 +12363,20 @@ type UserEventPayload126 struct {
 	} `json:"project"`
 }
 
-// UserEventPayload127 The payload of the event, if requested.
-type UserEventPayload127 struct {
+// UserEventPayload130 The payload of the event, if requested.
+type UserEventPayload130 struct {
 	CheckId     string `json:"checkId"`
 	CheckName   string `json:"checkName"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload129 The payload of the event, if requested.
-type UserEventPayload129 struct {
+// UserEventPayload132 The payload of the event, if requested.
+type UserEventPayload132 struct {
 	Alias      *[]string `json:"alias,omitempty"`
 	Deployment *struct {
 		// AllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
-		AllowListedReadyStateReasonInternal *UserEventPayload129DeploymentAllowListedReadyStateReasonInternal `json:"allowListedReadyStateReasonInternal,omitempty"`
+		AllowListedReadyStateReasonInternal *UserEventPayload132DeploymentAllowListedReadyStateReasonInternal `json:"allowListedReadyStateReasonInternal,omitempty"`
 		Id                                  string                                                            `json:"id"`
 		Meta                                map[string]string                                                 `json:"meta"`
 		Name                                string                                                            `json:"name"`
@@ -12101,8 +12384,8 @@ type UserEventPayload129 struct {
 		Url                                 string                                                            `json:"url"`
 	} `json:"deployment,omitempty"`
 	DeploymentId        *string                                 `json:"deploymentId,omitempty"`
-	Forced              *UserEventPayload129Forced              `json:"forced,omitempty"`
-	GitCredentialSource *UserEventPayload129GitCredentialSource `json:"gitCredentialSource,omitempty"`
+	Forced              *UserEventPayload132Forced              `json:"forced,omitempty"`
+	GitCredentialSource *UserEventPayload132GitCredentialSource `json:"gitCredentialSource,omitempty"`
 	Name                *string                                 `json:"name,omitempty"`
 	Plan                *string                                 `json:"plan,omitempty"`
 	Project             *string                                 `json:"project,omitempty"`
@@ -12113,27 +12396,27 @@ type UserEventPayload129 struct {
 	Url                 string                                  `json:"url"`
 }
 
-// UserEventPayload129DeploymentAllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
-type UserEventPayload129DeploymentAllowListedReadyStateReasonInternal string
+// UserEventPayload132DeploymentAllowListedReadyStateReasonInternal A narrowed subset of the deployment's `readyStateReasonInternal` — only values in the public allowlist are permitted here. Callers should run their raw reason through `toAllowListedReadyStateReasonInternal` from `@api/events` before assigning. This keeps abuse / moderation / admin reasons out of the public activity log.
+type UserEventPayload132DeploymentAllowListedReadyStateReasonInternal string
 
-// UserEventPayload129Forced defines model for UserEvent.Payload.129.Forced.
-type UserEventPayload129Forced bool
+// UserEventPayload132Forced defines model for UserEvent.Payload.132.Forced.
+type UserEventPayload132Forced bool
 
-// UserEventPayload129GitCredentialSource defines model for UserEvent.Payload.129.GitCredentialSource.
-type UserEventPayload129GitCredentialSource string
+// UserEventPayload132GitCredentialSource defines model for UserEvent.Payload.132.GitCredentialSource.
+type UserEventPayload132GitCredentialSource string
 
-// UserEventPayload130 The payload of the event, if requested.
-type UserEventPayload130 struct {
-	Job UserEvent_Payload_130_Job `json:"job"`
+// UserEventPayload133 The payload of the event, if requested.
+type UserEventPayload133 struct {
+	Job UserEvent_Payload_133_Job `json:"job"`
 }
 
-// UserEventPayload130Job0 defines model for UserEvent.Payload.130.Job.0.
-type UserEventPayload130Job0 struct {
-	Authorized   *UserEventPayload130Job0Authorized `json:"authorized,omitempty"`
+// UserEventPayload133Job0 defines model for UserEvent.Payload.133.Job.0.
+type UserEventPayload133Job0 struct {
+	Authorized   *UserEventPayload133Job0Authorized `json:"authorized,omitempty"`
 	AuthorizedBy *string                            `json:"authorizedBy,omitempty"`
 
 	// CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-	CommitVerification *UserEventPayload130Job0CommitVerification `json:"commitVerification,omitempty"`
+	CommitVerification *UserEventPayload133Job0CommitVerification `json:"commitVerification,omitempty"`
 
 	// ConnectedProjectCount Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
 	ConnectedProjectCount *float32 `json:"connectedProjectCount,omitempty"`
@@ -12146,17 +12429,17 @@ type UserEventPayload130Job0 struct {
 		Ref       string  `json:"ref"`
 	} `json:"deployHook,omitempty"`
 	DeploymentId *string                          `json:"deploymentId,omitempty"`
-	Eventful     *UserEventPayload130Job0Eventful `json:"eventful,omitempty"`
-	ForceNew     *UserEventPayload130Job0ForceNew `json:"forceNew,omitempty"`
+	Eventful     *UserEventPayload133Job0Eventful `json:"eventful,omitempty"`
+	ForceNew     *UserEventPayload133Job0ForceNew `json:"forceNew,omitempty"`
 
 	// GitComments Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job0GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job0GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job0GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job0GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-	GitHashtagVercel *[]UserEventPayload130Job0GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
+	GitHashtagVercel *[]UserEventPayload133Job0GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
 	HeadInfo         struct {
 		Owner    string `json:"owner"`
 		Ref      string `json:"ref"`
@@ -12166,7 +12449,7 @@ type UserEventPayload130Job0 struct {
 	} `json:"headInfo"`
 
 	// IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-	IsManualGitDeploy *UserEventPayload130Job0IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
+	IsManualGitDeploy *UserEventPayload133Job0IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
 
 	// JobPairs Since December 2022 Pairs of projects and owner ids to build for this build request.
 	JobPairs *[][]string `json:"jobPairs,omitempty"`
@@ -12178,7 +12461,7 @@ type UserEventPayload130Job0 struct {
 
 	// NsnbSideEffect Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
 	NsnbSideEffect *struct {
-		Action       UserEventPayload130Job0NsnbSideEffectAction `json:"action"`
+		Action       UserEventPayload133Job0NsnbSideEffectAction `json:"action"`
 		GitUserLogin string                                      `json:"gitUserLogin"`
 	} `json:"nsnbSideEffect,omitempty"`
 	Owner string   `json:"owner"`
@@ -12187,70 +12470,70 @@ type UserEventPayload130Job0 struct {
 	// PrIdOrZero Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
 	PrIdOrZero   *float32                        `json:"prIdOrZero,omitempty"`
 	ProjectId    *string                         `json:"projectId,omitempty"`
-	Provider     UserEventPayload130Job0Provider `json:"provider"`
+	Provider     UserEventPayload133Job0Provider `json:"provider"`
 	Ref          string                          `json:"ref"`
 	RepoPushedAt *float32                        `json:"repoPushedAt,omitempty"`
 	RepoUuid     string                          `json:"repoUuid"`
 	Sha          string                          `json:"sha"`
-	Silent       *UserEventPayload130Job0Silent  `json:"silent,omitempty"`
+	Silent       *UserEventPayload133Job0Silent  `json:"silent,omitempty"`
 
 	// SkippedJobPairs Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
 	SkippedJobPairs *[][]string                       `json:"skippedJobPairs,omitempty"`
 	Slug            string                            `json:"slug"`
 	Target          *string                           `json:"target,omitempty"`
-	Type            UserEventPayload130Job0Type       `json:"type"`
+	Type            UserEventPayload133Job0Type       `json:"type"`
 	Url             *string                           `json:"url,omitempty"`
-	WithCache       *UserEventPayload130Job0WithCache `json:"withCache,omitempty"`
+	WithCache       *UserEventPayload133Job0WithCache `json:"withCache,omitempty"`
 	WorkspaceUuid   string                            `json:"workspaceUuid"`
 }
 
-// UserEventPayload130Job0Authorized defines model for UserEvent.Payload.130.Job.0.Authorized.
-type UserEventPayload130Job0Authorized bool
+// UserEventPayload133Job0Authorized defines model for UserEvent.Payload.133.Job.0.Authorized.
+type UserEventPayload133Job0Authorized bool
 
-// UserEventPayload130Job0CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-type UserEventPayload130Job0CommitVerification string
+// UserEventPayload133Job0CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+type UserEventPayload133Job0CommitVerification string
 
-// UserEventPayload130Job0Eventful defines model for UserEvent.Payload.130.Job.0.Eventful.
-type UserEventPayload130Job0Eventful bool
+// UserEventPayload133Job0Eventful defines model for UserEvent.Payload.133.Job.0.Eventful.
+type UserEventPayload133Job0Eventful bool
 
-// UserEventPayload130Job0ForceNew defines model for UserEvent.Payload.130.Job.0.ForceNew.
-type UserEventPayload130Job0ForceNew bool
+// UserEventPayload133Job0ForceNew defines model for UserEvent.Payload.133.Job.0.ForceNew.
+type UserEventPayload133Job0ForceNew bool
 
-// UserEventPayload130Job0GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.0.GitComments.OnCommit.
-type UserEventPayload130Job0GitCommentsOnCommit bool
+// UserEventPayload133Job0GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.0.GitComments.OnCommit.
+type UserEventPayload133Job0GitCommentsOnCommit bool
 
-// UserEventPayload130Job0GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.0.GitComments.OnPullRequest.
-type UserEventPayload130Job0GitCommentsOnPullRequest bool
+// UserEventPayload133Job0GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.0.GitComments.OnPullRequest.
+type UserEventPayload133Job0GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job0GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-type UserEventPayload130Job0GitHashtagVercel string
+// UserEventPayload133Job0GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+type UserEventPayload133Job0GitHashtagVercel string
 
-// UserEventPayload130Job0IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-type UserEventPayload130Job0IsManualGitDeploy bool
+// UserEventPayload133Job0IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+type UserEventPayload133Job0IsManualGitDeploy bool
 
-// UserEventPayload130Job0NsnbSideEffectAction defines model for UserEvent.Payload.130.Job.0.NsnbSideEffect.Action.
-type UserEventPayload130Job0NsnbSideEffectAction string
+// UserEventPayload133Job0NsnbSideEffectAction defines model for UserEvent.Payload.133.Job.0.NsnbSideEffect.Action.
+type UserEventPayload133Job0NsnbSideEffectAction string
 
-// UserEventPayload130Job0Provider defines model for UserEvent.Payload.130.Job.0.Provider.
-type UserEventPayload130Job0Provider string
+// UserEventPayload133Job0Provider defines model for UserEvent.Payload.133.Job.0.Provider.
+type UserEventPayload133Job0Provider string
 
-// UserEventPayload130Job0Silent defines model for UserEvent.Payload.130.Job.0.Silent.
-type UserEventPayload130Job0Silent bool
+// UserEventPayload133Job0Silent defines model for UserEvent.Payload.133.Job.0.Silent.
+type UserEventPayload133Job0Silent bool
 
-// UserEventPayload130Job0Type defines model for UserEvent.Payload.130.Job.0.Type.
-type UserEventPayload130Job0Type string
+// UserEventPayload133Job0Type defines model for UserEvent.Payload.133.Job.0.Type.
+type UserEventPayload133Job0Type string
 
-// UserEventPayload130Job0WithCache defines model for UserEvent.Payload.130.Job.0.WithCache.
-type UserEventPayload130Job0WithCache bool
+// UserEventPayload133Job0WithCache defines model for UserEvent.Payload.133.Job.0.WithCache.
+type UserEventPayload133Job0WithCache bool
 
-// UserEventPayload130Job1 Represents the payload for a Bitbucket comment job This interface defines the structure of data needed when creating a job to handle comments on Bitbucket pull requests or commits.
-type UserEventPayload130Job1 struct {
+// UserEventPayload133Job1 Represents the payload for a Bitbucket comment job This interface defines the structure of data needed when creating a job to handle comments on Bitbucket pull requests or commits.
+type UserEventPayload133Job1 struct {
 	CreatedAt   *float32                         `json:"createdAt,omitempty"`
 	CustomEnvId *string                          `json:"customEnvId,omitempty"`
-	Eventful    *UserEventPayload130Job1Eventful `json:"eventful,omitempty"`
+	Eventful    *UserEventPayload133Job1Eventful `json:"eventful,omitempty"`
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job1GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job1GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job1GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job1GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 	HeadInfo struct {
 		Owner    string `json:"owner"`
@@ -12264,38 +12547,38 @@ type UserEventPayload130Job1 struct {
 	Owner           string                          `json:"owner"`
 	PrId            float32                         `json:"prId"`
 	ProjectId       *string                         `json:"projectId,omitempty"`
-	Provider        UserEventPayload130Job1Provider `json:"provider"`
+	Provider        UserEventPayload133Job1Provider `json:"provider"`
 	Ref             string                          `json:"ref"`
 	RepoUuid        string                          `json:"repoUuid"`
 	Sha             string                          `json:"sha"`
 	Slug            string                          `json:"slug"`
-	Type            UserEventPayload130Job1Type     `json:"type"`
+	Type            UserEventPayload133Job1Type     `json:"type"`
 	WorkspaceUuid   string                          `json:"workspaceUuid"`
 }
 
-// UserEventPayload130Job1Eventful defines model for UserEvent.Payload.130.Job.1.Eventful.
-type UserEventPayload130Job1Eventful bool
+// UserEventPayload133Job1Eventful defines model for UserEvent.Payload.133.Job.1.Eventful.
+type UserEventPayload133Job1Eventful bool
 
-// UserEventPayload130Job1GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.1.GitComments.OnCommit.
-type UserEventPayload130Job1GitCommentsOnCommit bool
+// UserEventPayload133Job1GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.1.GitComments.OnCommit.
+type UserEventPayload133Job1GitCommentsOnCommit bool
 
-// UserEventPayload130Job1GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.1.GitComments.OnPullRequest.
-type UserEventPayload130Job1GitCommentsOnPullRequest bool
+// UserEventPayload133Job1GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.1.GitComments.OnPullRequest.
+type UserEventPayload133Job1GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job1Provider defines model for UserEvent.Payload.130.Job.1.Provider.
-type UserEventPayload130Job1Provider string
+// UserEventPayload133Job1Provider defines model for UserEvent.Payload.133.Job.1.Provider.
+type UserEventPayload133Job1Provider string
 
-// UserEventPayload130Job1Type defines model for UserEvent.Payload.130.Job.1.Type.
-type UserEventPayload130Job1Type string
+// UserEventPayload133Job1Type defines model for UserEvent.Payload.133.Job.1.Type.
+type UserEventPayload133Job1Type string
 
-// UserEventPayload130Job2 defines model for UserEvent.Payload.130.Job.2.
-type UserEventPayload130Job2 struct {
-	Authorized   *UserEventPayload130Job2Authorized `json:"authorized,omitempty"`
+// UserEventPayload133Job2 defines model for UserEvent.Payload.133.Job.2.
+type UserEventPayload133Job2 struct {
+	Authorized   *UserEventPayload133Job2Authorized `json:"authorized,omitempty"`
 	AuthorizedBy *string                            `json:"authorizedBy,omitempty"`
 	BeforeSha    *string                            `json:"beforeSha,omitempty"`
 
 	// CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-	CommitVerification *UserEventPayload130Job2CommitVerification `json:"commitVerification,omitempty"`
+	CommitVerification *UserEventPayload133Job2CommitVerification `json:"commitVerification,omitempty"`
 
 	// CommitterGitUserId Remote account id of the committer details (github id etc, not vercel). Note that the committer name/email are user input verbatim and not verified. Github does appear to resolve the given email to the username so we can trust that. If the username matches that of the sender, which is verified info, then we can use the account id and account type. See api-incoming, where we determine and set this property Note that even with that, the account may still have been spoofed.
 	CommitterGitUserId *float32 `json:"committerGitUserId,omitempty"`
@@ -12316,17 +12599,17 @@ type UserEventPayload130Job2 struct {
 		Ref       string  `json:"ref"`
 	} `json:"deployHook,omitempty"`
 	DeploymentId *string                          `json:"deploymentId,omitempty"`
-	Eventful     *UserEventPayload130Job2Eventful `json:"eventful,omitempty"`
-	ForceNew     *UserEventPayload130Job2ForceNew `json:"forceNew,omitempty"`
+	Eventful     *UserEventPayload133Job2Eventful `json:"eventful,omitempty"`
+	ForceNew     *UserEventPayload133Job2ForceNew `json:"forceNew,omitempty"`
 
 	// GitComments Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job2GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job2GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job2GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job2GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-	GitHashtagVercel   *[]UserEventPayload130Job2GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
+	GitHashtagVercel   *[]UserEventPayload133Job2GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
 	GithubDeploymentId *string                                    `json:"githubDeploymentId,omitempty"`
 
 	// HeadInfo Information about the head commit/branch for a GitHub repository
@@ -12340,8 +12623,8 @@ type UserEventPayload130Job2 struct {
 	InstallationId float32 `json:"installationId"`
 
 	// IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-	IsManualGitDeploy *UserEventPayload130Job2IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
-	IsPrivate         UserEventPayload130Job2IsPrivate          `json:"isPrivate"`
+	IsManualGitDeploy *UserEventPayload133Job2IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
+	IsPrivate         UserEventPayload133Job2IsPrivate          `json:"isPrivate"`
 
 	// JobPairs Since December 2022 Pairs of projects and owner ids to build for this build request.
 	JobPairs *[][]string `json:"jobPairs,omitempty"`
@@ -12352,7 +12635,7 @@ type UserEventPayload130Job2 struct {
 
 	// NsnbSideEffect Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
 	NsnbSideEffect *struct {
-		Action       UserEventPayload130Job2NsnbSideEffectAction `json:"action"`
+		Action       UserEventPayload133Job2NsnbSideEffectAction `json:"action"`
 		GitUserLogin string                                      `json:"gitUserLogin"`
 	} `json:"nsnbSideEffect,omitempty"`
 	Org  string  `json:"org"`
@@ -12361,60 +12644,60 @@ type UserEventPayload130Job2 struct {
 	// PrIdOrZero Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
 	PrIdOrZero *float32                        `json:"prIdOrZero,omitempty"`
 	ProjectId  *string                         `json:"projectId,omitempty"`
-	Provider   UserEventPayload130Job2Provider `json:"provider"`
+	Provider   UserEventPayload133Job2Provider `json:"provider"`
 	Repo       string                          `json:"repo"`
 	RepoId     float32                         `json:"repoId"`
 
 	// SkippedJobPairs Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
 	SkippedJobPairs *[][]string                       `json:"skippedJobPairs,omitempty"`
 	Target          *string                           `json:"target,omitempty"`
-	Type            UserEventPayload130Job2Type       `json:"type"`
+	Type            UserEventPayload133Job2Type       `json:"type"`
 	Url             *string                           `json:"url,omitempty"`
-	WithCache       *UserEventPayload130Job2WithCache `json:"withCache,omitempty"`
+	WithCache       *UserEventPayload133Job2WithCache `json:"withCache,omitempty"`
 }
 
-// UserEventPayload130Job2Authorized defines model for UserEvent.Payload.130.Job.2.Authorized.
-type UserEventPayload130Job2Authorized bool
+// UserEventPayload133Job2Authorized defines model for UserEvent.Payload.133.Job.2.Authorized.
+type UserEventPayload133Job2Authorized bool
 
-// UserEventPayload130Job2CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-type UserEventPayload130Job2CommitVerification string
+// UserEventPayload133Job2CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+type UserEventPayload133Job2CommitVerification string
 
-// UserEventPayload130Job2Eventful defines model for UserEvent.Payload.130.Job.2.Eventful.
-type UserEventPayload130Job2Eventful bool
+// UserEventPayload133Job2Eventful defines model for UserEvent.Payload.133.Job.2.Eventful.
+type UserEventPayload133Job2Eventful bool
 
-// UserEventPayload130Job2ForceNew defines model for UserEvent.Payload.130.Job.2.ForceNew.
-type UserEventPayload130Job2ForceNew bool
+// UserEventPayload133Job2ForceNew defines model for UserEvent.Payload.133.Job.2.ForceNew.
+type UserEventPayload133Job2ForceNew bool
 
-// UserEventPayload130Job2GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.2.GitComments.OnCommit.
-type UserEventPayload130Job2GitCommentsOnCommit bool
+// UserEventPayload133Job2GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.2.GitComments.OnCommit.
+type UserEventPayload133Job2GitCommentsOnCommit bool
 
-// UserEventPayload130Job2GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.2.GitComments.OnPullRequest.
-type UserEventPayload130Job2GitCommentsOnPullRequest bool
+// UserEventPayload133Job2GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.2.GitComments.OnPullRequest.
+type UserEventPayload133Job2GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job2GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-type UserEventPayload130Job2GitHashtagVercel string
+// UserEventPayload133Job2GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+type UserEventPayload133Job2GitHashtagVercel string
 
-// UserEventPayload130Job2IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-type UserEventPayload130Job2IsManualGitDeploy bool
+// UserEventPayload133Job2IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+type UserEventPayload133Job2IsManualGitDeploy bool
 
-// UserEventPayload130Job2IsPrivate defines model for UserEvent.Payload.130.Job.2.IsPrivate.
-type UserEventPayload130Job2IsPrivate bool
+// UserEventPayload133Job2IsPrivate defines model for UserEvent.Payload.133.Job.2.IsPrivate.
+type UserEventPayload133Job2IsPrivate bool
 
-// UserEventPayload130Job2NsnbSideEffectAction defines model for UserEvent.Payload.130.Job.2.NsnbSideEffect.Action.
-type UserEventPayload130Job2NsnbSideEffectAction string
+// UserEventPayload133Job2NsnbSideEffectAction defines model for UserEvent.Payload.133.Job.2.NsnbSideEffect.Action.
+type UserEventPayload133Job2NsnbSideEffectAction string
 
-// UserEventPayload130Job2Provider defines model for UserEvent.Payload.130.Job.2.Provider.
-type UserEventPayload130Job2Provider string
+// UserEventPayload133Job2Provider defines model for UserEvent.Payload.133.Job.2.Provider.
+type UserEventPayload133Job2Provider string
 
-// UserEventPayload130Job2Type defines model for UserEvent.Payload.130.Job.2.Type.
-type UserEventPayload130Job2Type string
+// UserEventPayload133Job2Type defines model for UserEvent.Payload.133.Job.2.Type.
+type UserEventPayload133Job2Type string
 
-// UserEventPayload130Job2WithCache defines model for UserEvent.Payload.130.Job.2.WithCache.
-type UserEventPayload130Job2WithCache bool
+// UserEventPayload133Job2WithCache defines model for UserEvent.Payload.133.Job.2.WithCache.
+type UserEventPayload133Job2WithCache bool
 
-// UserEventPayload130Job3 defines model for UserEvent.Payload.130.Job.3.
-type UserEventPayload130Job3 struct {
-	Authorized   *UserEventPayload130Job3Authorized `json:"authorized,omitempty"`
+// UserEventPayload133Job3 defines model for UserEvent.Payload.133.Job.3.
+type UserEventPayload133Job3 struct {
+	Authorized   *UserEventPayload133Job3Authorized `json:"authorized,omitempty"`
 	AuthorizedBy *string                            `json:"authorizedBy,omitempty"`
 	BeforeSha    *string                            `json:"beforeSha,omitempty"`
 	CommitInfo   *struct {
@@ -12423,7 +12706,7 @@ type UserEventPayload130Job3 struct {
 	} `json:"commitInfo,omitempty"`
 
 	// CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-	CommitVerification *UserEventPayload130Job3CommitVerification `json:"commitVerification,omitempty"`
+	CommitVerification *UserEventPayload133Job3CommitVerification `json:"commitVerification,omitempty"`
 
 	// CommitterGitUserId Remote account id of the committer details (github id etc, not vercel). Note that the committer name/email are user input verbatim and not verified. Github does appear to resolve the given email to the username so we can trust that. If the username matches that of the sender, which is verified info, then we can use the account id and account type. See api-incoming, where we determine and set this property Note that even with that, the account may still have been spoofed.
 	CommitterGitUserId *float32 `json:"committerGitUserId,omitempty"`
@@ -12444,18 +12727,18 @@ type UserEventPayload130Job3 struct {
 		Ref       string  `json:"ref"`
 	} `json:"deployHook,omitempty"`
 	DeploymentId *string                          `json:"deploymentId,omitempty"`
-	Eventful     *UserEventPayload130Job3Eventful `json:"eventful,omitempty"`
-	ForceNew     *UserEventPayload130Job3ForceNew `json:"forceNew,omitempty"`
-	Forced       *UserEventPayload130Job3Forced   `json:"forced,omitempty"`
+	Eventful     *UserEventPayload133Job3Eventful `json:"eventful,omitempty"`
+	ForceNew     *UserEventPayload133Job3ForceNew `json:"forceNew,omitempty"`
+	Forced       *UserEventPayload133Job3Forced   `json:"forced,omitempty"`
 
 	// GitComments Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job3GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job3GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job3GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job3GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-	GitHashtagVercel   *[]UserEventPayload130Job3GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
+	GitHashtagVercel   *[]UserEventPayload133Job3GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
 	GithubDeploymentId *string                                    `json:"githubDeploymentId,omitempty"`
 
 	// HeadInfo Information about the head commit/branch for a GitHub repository
@@ -12469,8 +12752,8 @@ type UserEventPayload130Job3 struct {
 	InstallationId float32 `json:"installationId"`
 
 	// IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-	IsManualGitDeploy *UserEventPayload130Job3IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
-	IsPrivate         UserEventPayload130Job3IsPrivate          `json:"isPrivate"`
+	IsManualGitDeploy *UserEventPayload133Job3IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
+	IsPrivate         UserEventPayload133Job3IsPrivate          `json:"isPrivate"`
 
 	// JobPairs Since December 2022 Pairs of projects and owner ids to build for this build request.
 	JobPairs *[][]string `json:"jobPairs,omitempty"`
@@ -12481,7 +12764,7 @@ type UserEventPayload130Job3 struct {
 
 	// NsnbSideEffect Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
 	NsnbSideEffect *struct {
-		Action       UserEventPayload130Job3NsnbSideEffectAction `json:"action"`
+		Action       UserEventPayload133Job3NsnbSideEffectAction `json:"action"`
 		GitUserLogin string                                      `json:"gitUserLogin"`
 	} `json:"nsnbSideEffect,omitempty"`
 	Org  string   `json:"org"`
@@ -12490,7 +12773,7 @@ type UserEventPayload130Job3 struct {
 	// PrIdOrZero Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
 	PrIdOrZero   *float32                        `json:"prIdOrZero,omitempty"`
 	ProjectId    *string                         `json:"projectId,omitempty"`
-	Provider     UserEventPayload130Job3Provider `json:"provider"`
+	Provider     UserEventPayload133Job3Provider `json:"provider"`
 	Repo         string                          `json:"repo"`
 	RepoId       float32                         `json:"repoId"`
 	RepoPushedAt *float32                        `json:"repoPushedAt"`
@@ -12498,63 +12781,63 @@ type UserEventPayload130Job3 struct {
 	// SkippedJobPairs Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
 	SkippedJobPairs *[][]string                       `json:"skippedJobPairs,omitempty"`
 	Target          *string                           `json:"target,omitempty"`
-	Type            UserEventPayload130Job3Type       `json:"type"`
+	Type            UserEventPayload133Job3Type       `json:"type"`
 	Url             *string                           `json:"url,omitempty"`
-	WithCache       *UserEventPayload130Job3WithCache `json:"withCache,omitempty"`
+	WithCache       *UserEventPayload133Job3WithCache `json:"withCache,omitempty"`
 }
 
-// UserEventPayload130Job3Authorized defines model for UserEvent.Payload.130.Job.3.Authorized.
-type UserEventPayload130Job3Authorized bool
+// UserEventPayload133Job3Authorized defines model for UserEvent.Payload.133.Job.3.Authorized.
+type UserEventPayload133Job3Authorized bool
 
-// UserEventPayload130Job3CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-type UserEventPayload130Job3CommitVerification string
+// UserEventPayload133Job3CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+type UserEventPayload133Job3CommitVerification string
 
-// UserEventPayload130Job3Eventful defines model for UserEvent.Payload.130.Job.3.Eventful.
-type UserEventPayload130Job3Eventful bool
+// UserEventPayload133Job3Eventful defines model for UserEvent.Payload.133.Job.3.Eventful.
+type UserEventPayload133Job3Eventful bool
 
-// UserEventPayload130Job3ForceNew defines model for UserEvent.Payload.130.Job.3.ForceNew.
-type UserEventPayload130Job3ForceNew bool
+// UserEventPayload133Job3ForceNew defines model for UserEvent.Payload.133.Job.3.ForceNew.
+type UserEventPayload133Job3ForceNew bool
 
-// UserEventPayload130Job3Forced defines model for UserEvent.Payload.130.Job.3.Forced.
-type UserEventPayload130Job3Forced bool
+// UserEventPayload133Job3Forced defines model for UserEvent.Payload.133.Job.3.Forced.
+type UserEventPayload133Job3Forced bool
 
-// UserEventPayload130Job3GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.3.GitComments.OnCommit.
-type UserEventPayload130Job3GitCommentsOnCommit bool
+// UserEventPayload133Job3GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.3.GitComments.OnCommit.
+type UserEventPayload133Job3GitCommentsOnCommit bool
 
-// UserEventPayload130Job3GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.3.GitComments.OnPullRequest.
-type UserEventPayload130Job3GitCommentsOnPullRequest bool
+// UserEventPayload133Job3GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.3.GitComments.OnPullRequest.
+type UserEventPayload133Job3GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job3GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-type UserEventPayload130Job3GitHashtagVercel string
+// UserEventPayload133Job3GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+type UserEventPayload133Job3GitHashtagVercel string
 
-// UserEventPayload130Job3IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-type UserEventPayload130Job3IsManualGitDeploy bool
+// UserEventPayload133Job3IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+type UserEventPayload133Job3IsManualGitDeploy bool
 
-// UserEventPayload130Job3IsPrivate defines model for UserEvent.Payload.130.Job.3.IsPrivate.
-type UserEventPayload130Job3IsPrivate bool
+// UserEventPayload133Job3IsPrivate defines model for UserEvent.Payload.133.Job.3.IsPrivate.
+type UserEventPayload133Job3IsPrivate bool
 
-// UserEventPayload130Job3NsnbSideEffectAction defines model for UserEvent.Payload.130.Job.3.NsnbSideEffect.Action.
-type UserEventPayload130Job3NsnbSideEffectAction string
+// UserEventPayload133Job3NsnbSideEffectAction defines model for UserEvent.Payload.133.Job.3.NsnbSideEffect.Action.
+type UserEventPayload133Job3NsnbSideEffectAction string
 
-// UserEventPayload130Job3Provider defines model for UserEvent.Payload.130.Job.3.Provider.
-type UserEventPayload130Job3Provider string
+// UserEventPayload133Job3Provider defines model for UserEvent.Payload.133.Job.3.Provider.
+type UserEventPayload133Job3Provider string
 
-// UserEventPayload130Job3Type defines model for UserEvent.Payload.130.Job.3.Type.
-type UserEventPayload130Job3Type string
+// UserEventPayload133Job3Type defines model for UserEvent.Payload.133.Job.3.Type.
+type UserEventPayload133Job3Type string
 
-// UserEventPayload130Job3WithCache defines model for UserEvent.Payload.130.Job.3.WithCache.
-type UserEventPayload130Job3WithCache bool
+// UserEventPayload133Job3WithCache defines model for UserEvent.Payload.133.Job.3.WithCache.
+type UserEventPayload133Job3WithCache bool
 
-// UserEventPayload130Job4 defines model for UserEvent.Payload.130.Job.4.
-type UserEventPayload130Job4 struct {
+// UserEventPayload133Job4 defines model for UserEvent.Payload.133.Job.4.
+type UserEventPayload133Job4 struct {
 	BeforeSha   *string                          `json:"beforeSha,omitempty"`
 	CreatedAt   *float32                         `json:"createdAt,omitempty"`
 	CustomEnvId interface{}                      `json:"customEnvId,omitempty"`
 	CustomHost  *string                          `json:"customHost,omitempty"`
-	Eventful    *UserEventPayload130Job4Eventful `json:"eventful,omitempty"`
+	Eventful    *UserEventPayload133Job4Eventful `json:"eventful,omitempty"`
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job4GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job4GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job4GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job4GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// HeadInfo Information about the head commit/branch for a GitHub repository
@@ -12566,38 +12849,38 @@ type UserEventPayload130Job4 struct {
 		Sha    string  `json:"sha"`
 	} `json:"headInfo"`
 	InstallationId  float32                          `json:"installationId"`
-	IsPrivate       UserEventPayload130Job4IsPrivate `json:"isPrivate"`
+	IsPrivate       UserEventPayload133Job4IsPrivate `json:"isPrivate"`
 	LinkedProjectId *string                          `json:"linkedProjectId,omitempty"`
 	Org             string                           `json:"org"`
 	PrId            float32                          `json:"prId"`
 	ProjectId       interface{}                      `json:"projectId"`
-	Provider        UserEventPayload130Job4Provider  `json:"provider"`
+	Provider        UserEventPayload133Job4Provider  `json:"provider"`
 	Repo            string                           `json:"repo"`
 	RepoId          float32                          `json:"repoId"`
-	Type            UserEventPayload130Job4Type      `json:"type"`
+	Type            UserEventPayload133Job4Type      `json:"type"`
 }
 
-// UserEventPayload130Job4Eventful defines model for UserEvent.Payload.130.Job.4.Eventful.
-type UserEventPayload130Job4Eventful bool
+// UserEventPayload133Job4Eventful defines model for UserEvent.Payload.133.Job.4.Eventful.
+type UserEventPayload133Job4Eventful bool
 
-// UserEventPayload130Job4GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.4.GitComments.OnCommit.
-type UserEventPayload130Job4GitCommentsOnCommit bool
+// UserEventPayload133Job4GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.4.GitComments.OnCommit.
+type UserEventPayload133Job4GitCommentsOnCommit bool
 
-// UserEventPayload130Job4GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.4.GitComments.OnPullRequest.
-type UserEventPayload130Job4GitCommentsOnPullRequest bool
+// UserEventPayload133Job4GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.4.GitComments.OnPullRequest.
+type UserEventPayload133Job4GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job4IsPrivate defines model for UserEvent.Payload.130.Job.4.IsPrivate.
-type UserEventPayload130Job4IsPrivate bool
+// UserEventPayload133Job4IsPrivate defines model for UserEvent.Payload.133.Job.4.IsPrivate.
+type UserEventPayload133Job4IsPrivate bool
 
-// UserEventPayload130Job4Provider defines model for UserEvent.Payload.130.Job.4.Provider.
-type UserEventPayload130Job4Provider string
+// UserEventPayload133Job4Provider defines model for UserEvent.Payload.133.Job.4.Provider.
+type UserEventPayload133Job4Provider string
 
-// UserEventPayload130Job4Type defines model for UserEvent.Payload.130.Job.4.Type.
-type UserEventPayload130Job4Type string
+// UserEventPayload133Job4Type defines model for UserEvent.Payload.133.Job.4.Type.
+type UserEventPayload133Job4Type string
 
-// UserEventPayload130Job5 defines model for UserEvent.Payload.130.Job.5.
-type UserEventPayload130Job5 struct {
-	Authorized   *UserEventPayload130Job5Authorized `json:"authorized,omitempty"`
+// UserEventPayload133Job5 defines model for UserEvent.Payload.133.Job.5.
+type UserEventPayload133Job5 struct {
+	Authorized   *UserEventPayload133Job5Authorized `json:"authorized,omitempty"`
 	AuthorizedBy *string                            `json:"authorizedBy,omitempty"`
 	Commit       *struct {
 		AuthorAvatar *string  `json:"authorAvatar,omitempty"`
@@ -12609,7 +12892,7 @@ type UserEventPayload130Job5 struct {
 	} `json:"commit,omitempty"`
 
 	// CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-	CommitVerification *UserEventPayload130Job5CommitVerification `json:"commitVerification,omitempty"`
+	CommitVerification *UserEventPayload133Job5CommitVerification `json:"commitVerification,omitempty"`
 
 	// ConnectedProjectCount Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
 	ConnectedProjectCount *float32 `json:"connectedProjectCount,omitempty"`
@@ -12622,17 +12905,17 @@ type UserEventPayload130Job5 struct {
 		Ref       string  `json:"ref"`
 	} `json:"deployHook,omitempty"`
 	DeploymentId *string                          `json:"deploymentId,omitempty"`
-	Eventful     *UserEventPayload130Job5Eventful `json:"eventful,omitempty"`
-	ForceNew     *UserEventPayload130Job5ForceNew `json:"forceNew,omitempty"`
+	Eventful     *UserEventPayload133Job5Eventful `json:"eventful,omitempty"`
+	ForceNew     *UserEventPayload133Job5ForceNew `json:"forceNew,omitempty"`
 
 	// GitComments Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job5GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job5GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job5GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job5GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-	GitHashtagVercel *[]UserEventPayload130Job5GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
+	GitHashtagVercel *[]UserEventPayload133Job5GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
 
 	// HeadInfo GitLab
 	HeadInfo struct {
@@ -12649,7 +12932,7 @@ type UserEventPayload130Job5 struct {
 	} `json:"headInfo"`
 
 	// IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-	IsManualGitDeploy *UserEventPayload130Job5IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
+	IsManualGitDeploy *UserEventPayload133Job5IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
 
 	// JobPairs Since December 2022 Pairs of projects and owner ids to build for this build request.
 	JobPairs *[][]string `json:"jobPairs,omitempty"`
@@ -12660,7 +12943,7 @@ type UserEventPayload130Job5 struct {
 
 	// NsnbSideEffect Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
 	NsnbSideEffect *struct {
-		Action       UserEventPayload130Job5NsnbSideEffectAction `json:"action"`
+		Action       UserEventPayload133Job5NsnbSideEffectAction `json:"action"`
 		GitUserLogin string                                      `json:"gitUserLogin"`
 	} `json:"nsnbSideEffect,omitempty"`
 	PrId *float32 `json:"prId,omitempty"`
@@ -12676,67 +12959,67 @@ type UserEventPayload130Job5 struct {
 		Url           *string `json:"url,omitempty"`
 	} `json:"project"`
 	ProjectId    *string                         `json:"projectId,omitempty"`
-	Provider     UserEventPayload130Job5Provider `json:"provider"`
+	Provider     UserEventPayload133Job5Provider `json:"provider"`
 	Ref          string                          `json:"ref"`
 	RepoPushedAt *float32                        `json:"repoPushedAt,omitempty"`
 	Sha          string                          `json:"sha"`
-	Silent       *UserEventPayload130Job5Silent  `json:"silent,omitempty"`
+	Silent       *UserEventPayload133Job5Silent  `json:"silent,omitempty"`
 
 	// SkippedJobPairs Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
 	SkippedJobPairs *[][]string                       `json:"skippedJobPairs,omitempty"`
 	Target          *string                           `json:"target,omitempty"`
-	Type            UserEventPayload130Job5Type       `json:"type"`
+	Type            UserEventPayload133Job5Type       `json:"type"`
 	Url             *string                           `json:"url,omitempty"`
-	WithCache       *UserEventPayload130Job5WithCache `json:"withCache,omitempty"`
+	WithCache       *UserEventPayload133Job5WithCache `json:"withCache,omitempty"`
 }
 
-// UserEventPayload130Job5Authorized defines model for UserEvent.Payload.130.Job.5.Authorized.
-type UserEventPayload130Job5Authorized bool
+// UserEventPayload133Job5Authorized defines model for UserEvent.Payload.133.Job.5.Authorized.
+type UserEventPayload133Job5Authorized bool
 
-// UserEventPayload130Job5CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-type UserEventPayload130Job5CommitVerification string
+// UserEventPayload133Job5CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+type UserEventPayload133Job5CommitVerification string
 
-// UserEventPayload130Job5Eventful defines model for UserEvent.Payload.130.Job.5.Eventful.
-type UserEventPayload130Job5Eventful bool
+// UserEventPayload133Job5Eventful defines model for UserEvent.Payload.133.Job.5.Eventful.
+type UserEventPayload133Job5Eventful bool
 
-// UserEventPayload130Job5ForceNew defines model for UserEvent.Payload.130.Job.5.ForceNew.
-type UserEventPayload130Job5ForceNew bool
+// UserEventPayload133Job5ForceNew defines model for UserEvent.Payload.133.Job.5.ForceNew.
+type UserEventPayload133Job5ForceNew bool
 
-// UserEventPayload130Job5GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.5.GitComments.OnCommit.
-type UserEventPayload130Job5GitCommentsOnCommit bool
+// UserEventPayload133Job5GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.5.GitComments.OnCommit.
+type UserEventPayload133Job5GitCommentsOnCommit bool
 
-// UserEventPayload130Job5GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.5.GitComments.OnPullRequest.
-type UserEventPayload130Job5GitCommentsOnPullRequest bool
+// UserEventPayload133Job5GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.5.GitComments.OnPullRequest.
+type UserEventPayload133Job5GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job5GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-type UserEventPayload130Job5GitHashtagVercel string
+// UserEventPayload133Job5GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+type UserEventPayload133Job5GitHashtagVercel string
 
-// UserEventPayload130Job5IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-type UserEventPayload130Job5IsManualGitDeploy bool
+// UserEventPayload133Job5IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+type UserEventPayload133Job5IsManualGitDeploy bool
 
-// UserEventPayload130Job5NsnbSideEffectAction defines model for UserEvent.Payload.130.Job.5.NsnbSideEffect.Action.
-type UserEventPayload130Job5NsnbSideEffectAction string
+// UserEventPayload133Job5NsnbSideEffectAction defines model for UserEvent.Payload.133.Job.5.NsnbSideEffect.Action.
+type UserEventPayload133Job5NsnbSideEffectAction string
 
-// UserEventPayload130Job5Provider defines model for UserEvent.Payload.130.Job.5.Provider.
-type UserEventPayload130Job5Provider string
+// UserEventPayload133Job5Provider defines model for UserEvent.Payload.133.Job.5.Provider.
+type UserEventPayload133Job5Provider string
 
-// UserEventPayload130Job5Silent defines model for UserEvent.Payload.130.Job.5.Silent.
-type UserEventPayload130Job5Silent bool
+// UserEventPayload133Job5Silent defines model for UserEvent.Payload.133.Job.5.Silent.
+type UserEventPayload133Job5Silent bool
 
-// UserEventPayload130Job5Type defines model for UserEvent.Payload.130.Job.5.Type.
-type UserEventPayload130Job5Type string
+// UserEventPayload133Job5Type defines model for UserEvent.Payload.133.Job.5.Type.
+type UserEventPayload133Job5Type string
 
-// UserEventPayload130Job5WithCache defines model for UserEvent.Payload.130.Job.5.WithCache.
-type UserEventPayload130Job5WithCache bool
+// UserEventPayload133Job5WithCache defines model for UserEvent.Payload.133.Job.5.WithCache.
+type UserEventPayload133Job5WithCache bool
 
-// UserEventPayload130Job6 defines model for UserEvent.Payload.130.Job.6.
-type UserEventPayload130Job6 struct {
+// UserEventPayload133Job6 defines model for UserEvent.Payload.133.Job.6.
+type UserEventPayload133Job6 struct {
 	CreatedAt   *float32                         `json:"createdAt,omitempty"`
 	CustomEnvId *string                          `json:"customEnvId,omitempty"`
-	Eventful    *UserEventPayload130Job6Eventful `json:"eventful,omitempty"`
+	Eventful    *UserEventPayload133Job6Eventful `json:"eventful,omitempty"`
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job6GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job6GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job6GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job6GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// HeadInfo GitLab
@@ -12763,34 +13046,34 @@ type UserEventPayload130Job6 struct {
 		Url           *string `json:"url,omitempty"`
 	} `json:"project"`
 	ProjectId *string                         `json:"projectId,omitempty"`
-	Provider  UserEventPayload130Job6Provider `json:"provider"`
+	Provider  UserEventPayload133Job6Provider `json:"provider"`
 	Ref       string                          `json:"ref"`
 	Sha       string                          `json:"sha"`
-	Type      UserEventPayload130Job6Type     `json:"type"`
+	Type      UserEventPayload133Job6Type     `json:"type"`
 }
 
-// UserEventPayload130Job6Eventful defines model for UserEvent.Payload.130.Job.6.Eventful.
-type UserEventPayload130Job6Eventful bool
+// UserEventPayload133Job6Eventful defines model for UserEvent.Payload.133.Job.6.Eventful.
+type UserEventPayload133Job6Eventful bool
 
-// UserEventPayload130Job6GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.6.GitComments.OnCommit.
-type UserEventPayload130Job6GitCommentsOnCommit bool
+// UserEventPayload133Job6GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.6.GitComments.OnCommit.
+type UserEventPayload133Job6GitCommentsOnCommit bool
 
-// UserEventPayload130Job6GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.6.GitComments.OnPullRequest.
-type UserEventPayload130Job6GitCommentsOnPullRequest bool
+// UserEventPayload133Job6GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.6.GitComments.OnPullRequest.
+type UserEventPayload133Job6GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job6Provider defines model for UserEvent.Payload.130.Job.6.Provider.
-type UserEventPayload130Job6Provider string
+// UserEventPayload133Job6Provider defines model for UserEvent.Payload.133.Job.6.Provider.
+type UserEventPayload133Job6Provider string
 
-// UserEventPayload130Job6Type defines model for UserEvent.Payload.130.Job.6.Type.
-type UserEventPayload130Job6Type string
+// UserEventPayload133Job6Type defines model for UserEvent.Payload.133.Job.6.Type.
+type UserEventPayload133Job6Type string
 
-// UserEventPayload130Job7 defines model for UserEvent.Payload.130.Job.7.
-type UserEventPayload130Job7 struct {
-	Authorized   *UserEventPayload130Job7Authorized `json:"authorized,omitempty"`
+// UserEventPayload133Job7 defines model for UserEvent.Payload.133.Job.7.
+type UserEventPayload133Job7 struct {
+	Authorized   *UserEventPayload133Job7Authorized `json:"authorized,omitempty"`
 	AuthorizedBy *string                            `json:"authorizedBy,omitempty"`
 
 	// CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-	CommitVerification *UserEventPayload130Job7CommitVerification `json:"commitVerification,omitempty"`
+	CommitVerification *UserEventPayload133Job7CommitVerification `json:"commitVerification,omitempty"`
 
 	// ConnectedProjectCount Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
 	ConnectedProjectCount *float32 `json:"connectedProjectCount,omitempty"`
@@ -12805,12 +13088,12 @@ type UserEventPayload130Job7 struct {
 
 	// GitComments Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job7GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job7GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job7GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job7GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-	GitHashtagVercel *[]UserEventPayload130Job7GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
+	GitHashtagVercel *[]UserEventPayload133Job7GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
 
 	// HeadInfo Vercel
 	HeadInfo struct {
@@ -12834,7 +13117,7 @@ type UserEventPayload130Job7 struct {
 	} `json:"headInfo"`
 
 	// IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-	IsManualGitDeploy *UserEventPayload130Job7IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
+	IsManualGitDeploy *UserEventPayload133Job7IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
 
 	// JobPairs Since December 2022 Pairs of projects and owner ids to build for this build request.
 	JobPairs *[][]string `json:"jobPairs,omitempty"`
@@ -12845,7 +13128,7 @@ type UserEventPayload130Job7 struct {
 
 	// NsnbSideEffect Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
 	NsnbSideEffect *struct {
-		Action       UserEventPayload130Job7NsnbSideEffectAction `json:"action"`
+		Action       UserEventPayload133Job7NsnbSideEffectAction `json:"action"`
 		GitUserLogin string                                      `json:"gitUserLogin"`
 	} `json:"nsnbSideEffect,omitempty"`
 	Org  string   `json:"org"`
@@ -12854,7 +13137,7 @@ type UserEventPayload130Job7 struct {
 	// PrIdOrZero Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
 	PrIdOrZero   *float32                        `json:"prIdOrZero,omitempty"`
 	ProjectId    *string                         `json:"projectId,omitempty"`
-	Provider     UserEventPayload130Job7Provider `json:"provider"`
+	Provider     UserEventPayload133Job7Provider `json:"provider"`
 	Ref          string                          `json:"ref"`
 	Repo         string                          `json:"repo"`
 	RepoId       string                          `json:"repoId"`
@@ -12864,45 +13147,45 @@ type UserEventPayload130Job7 struct {
 	// SkippedJobPairs Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
 	SkippedJobPairs *[][]string                 `json:"skippedJobPairs,omitempty"`
 	Target          *string                     `json:"target,omitempty"`
-	Type            UserEventPayload130Job7Type `json:"type"`
+	Type            UserEventPayload133Job7Type `json:"type"`
 	Url             *string                     `json:"url,omitempty"`
 }
 
-// UserEventPayload130Job7Authorized defines model for UserEvent.Payload.130.Job.7.Authorized.
-type UserEventPayload130Job7Authorized bool
+// UserEventPayload133Job7Authorized defines model for UserEvent.Payload.133.Job.7.Authorized.
+type UserEventPayload133Job7Authorized bool
 
-// UserEventPayload130Job7CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-type UserEventPayload130Job7CommitVerification string
+// UserEventPayload133Job7CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+type UserEventPayload133Job7CommitVerification string
 
-// UserEventPayload130Job7GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.7.GitComments.OnCommit.
-type UserEventPayload130Job7GitCommentsOnCommit bool
+// UserEventPayload133Job7GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.7.GitComments.OnCommit.
+type UserEventPayload133Job7GitCommentsOnCommit bool
 
-// UserEventPayload130Job7GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.7.GitComments.OnPullRequest.
-type UserEventPayload130Job7GitCommentsOnPullRequest bool
+// UserEventPayload133Job7GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.7.GitComments.OnPullRequest.
+type UserEventPayload133Job7GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job7GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-type UserEventPayload130Job7GitHashtagVercel string
+// UserEventPayload133Job7GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+type UserEventPayload133Job7GitHashtagVercel string
 
-// UserEventPayload130Job7IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-type UserEventPayload130Job7IsManualGitDeploy bool
+// UserEventPayload133Job7IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+type UserEventPayload133Job7IsManualGitDeploy bool
 
-// UserEventPayload130Job7NsnbSideEffectAction defines model for UserEvent.Payload.130.Job.7.NsnbSideEffect.Action.
-type UserEventPayload130Job7NsnbSideEffectAction string
+// UserEventPayload133Job7NsnbSideEffectAction defines model for UserEvent.Payload.133.Job.7.NsnbSideEffect.Action.
+type UserEventPayload133Job7NsnbSideEffectAction string
 
-// UserEventPayload130Job7Provider defines model for UserEvent.Payload.130.Job.7.Provider.
-type UserEventPayload130Job7Provider string
+// UserEventPayload133Job7Provider defines model for UserEvent.Payload.133.Job.7.Provider.
+type UserEventPayload133Job7Provider string
 
-// UserEventPayload130Job7Type defines model for UserEvent.Payload.130.Job.7.Type.
-type UserEventPayload130Job7Type string
+// UserEventPayload133Job7Type defines model for UserEvent.Payload.133.Job.7.Type.
+type UserEventPayload133Job7Type string
 
-// UserEventPayload130Job8 defines model for UserEvent.Payload.130.Job.8.
-type UserEventPayload130Job8 struct {
-	Authorized   *UserEventPayload130Job8Authorized `json:"authorized,omitempty"`
+// UserEventPayload133Job8 defines model for UserEvent.Payload.133.Job.8.
+type UserEventPayload133Job8 struct {
+	Authorized   *UserEventPayload133Job8Authorized `json:"authorized,omitempty"`
 	AuthorizedBy *string                            `json:"authorizedBy,omitempty"`
 	BeforeSha    *string                            `json:"beforeSha,omitempty"`
 
 	// CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-	CommitVerification *UserEventPayload130Job8CommitVerification `json:"commitVerification,omitempty"`
+	CommitVerification *UserEventPayload133Job8CommitVerification `json:"commitVerification,omitempty"`
 
 	// ConnectedProjectCount Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
 	ConnectedProjectCount *float32 `json:"connectedProjectCount,omitempty"`
@@ -12916,18 +13199,18 @@ type UserEventPayload130Job8 struct {
 		Ref       string  `json:"ref"`
 	} `json:"deployHook,omitempty"`
 	DeploymentId *string                          `json:"deploymentId,omitempty"`
-	Eventful     *UserEventPayload130Job8Eventful `json:"eventful,omitempty"`
-	ForceNew     *UserEventPayload130Job8ForceNew `json:"forceNew,omitempty"`
-	Forced       *UserEventPayload130Job8Forced   `json:"forced,omitempty"`
+	Eventful     *UserEventPayload133Job8Eventful `json:"eventful,omitempty"`
+	ForceNew     *UserEventPayload133Job8ForceNew `json:"forceNew,omitempty"`
+	Forced       *UserEventPayload133Job8Forced   `json:"forced,omitempty"`
 
 	// GitComments Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job8GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job8GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job8GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job8GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-	GitHashtagVercel *[]UserEventPayload130Job8GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
+	GitHashtagVercel *[]UserEventPayload133Job8GitHashtagVercel `json:"gitHashtagVercel,omitempty"`
 
 	// HeadInfo Cursor Origin
 	HeadInfo struct {
@@ -12950,7 +13233,7 @@ type UserEventPayload130Job8 struct {
 	InstallationId string `json:"installationId"`
 
 	// IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-	IsManualGitDeploy *UserEventPayload130Job8IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
+	IsManualGitDeploy *UserEventPayload133Job8IsManualGitDeploy `json:"isManualGitDeploy,omitempty"`
 
 	// JobPairs Since December 2022 Pairs of projects and owner ids to build for this build request.
 	JobPairs *[][]string `json:"jobPairs,omitempty"`
@@ -12961,7 +13244,7 @@ type UserEventPayload130Job8 struct {
 
 	// NsnbSideEffect Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
 	NsnbSideEffect *struct {
-		Action       UserEventPayload130Job8NsnbSideEffectAction `json:"action"`
+		Action       UserEventPayload133Job8NsnbSideEffectAction `json:"action"`
 		GitUserLogin string                                      `json:"gitUserLogin"`
 	} `json:"nsnbSideEffect,omitempty"`
 	Owner string   `json:"owner"`
@@ -12970,7 +13253,7 @@ type UserEventPayload130Job8 struct {
 	// PrIdOrZero Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
 	PrIdOrZero   *float32                        `json:"prIdOrZero,omitempty"`
 	ProjectId    *string                         `json:"projectId,omitempty"`
-	Provider     UserEventPayload130Job8Provider `json:"provider"`
+	Provider     UserEventPayload133Job8Provider `json:"provider"`
 	Ref          string                          `json:"ref"`
 	Repo         string                          `json:"repo"`
 	RepoId       string                          `json:"repoId"`
@@ -12980,54 +13263,54 @@ type UserEventPayload130Job8 struct {
 	// SkippedJobPairs Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
 	SkippedJobPairs *[][]string                 `json:"skippedJobPairs,omitempty"`
 	Target          *string                     `json:"target,omitempty"`
-	Type            UserEventPayload130Job8Type `json:"type"`
+	Type            UserEventPayload133Job8Type `json:"type"`
 	Url             *string                     `json:"url,omitempty"`
 }
 
-// UserEventPayload130Job8Authorized defines model for UserEvent.Payload.130.Job.8.Authorized.
-type UserEventPayload130Job8Authorized bool
+// UserEventPayload133Job8Authorized defines model for UserEvent.Payload.133.Job.8.Authorized.
+type UserEventPayload133Job8Authorized bool
 
-// UserEventPayload130Job8CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
-type UserEventPayload130Job8CommitVerification string
+// UserEventPayload133Job8CommitVerification Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+type UserEventPayload133Job8CommitVerification string
 
-// UserEventPayload130Job8Eventful defines model for UserEvent.Payload.130.Job.8.Eventful.
-type UserEventPayload130Job8Eventful bool
+// UserEventPayload133Job8Eventful defines model for UserEvent.Payload.133.Job.8.Eventful.
+type UserEventPayload133Job8Eventful bool
 
-// UserEventPayload130Job8ForceNew defines model for UserEvent.Payload.130.Job.8.ForceNew.
-type UserEventPayload130Job8ForceNew bool
+// UserEventPayload133Job8ForceNew defines model for UserEvent.Payload.133.Job.8.ForceNew.
+type UserEventPayload133Job8ForceNew bool
 
-// UserEventPayload130Job8Forced defines model for UserEvent.Payload.130.Job.8.Forced.
-type UserEventPayload130Job8Forced bool
+// UserEventPayload133Job8Forced defines model for UserEvent.Payload.133.Job.8.Forced.
+type UserEventPayload133Job8Forced bool
 
-// UserEventPayload130Job8GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.8.GitComments.OnCommit.
-type UserEventPayload130Job8GitCommentsOnCommit bool
+// UserEventPayload133Job8GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.8.GitComments.OnCommit.
+type UserEventPayload133Job8GitCommentsOnCommit bool
 
-// UserEventPayload130Job8GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.8.GitComments.OnPullRequest.
-type UserEventPayload130Job8GitCommentsOnPullRequest bool
+// UserEventPayload133Job8GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.8.GitComments.OnPullRequest.
+type UserEventPayload133Job8GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job8GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
-type UserEventPayload130Job8GitHashtagVercel string
+// UserEventPayload133Job8GitHashtagVercel Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+type UserEventPayload133Job8GitHashtagVercel string
 
-// UserEventPayload130Job8IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
-type UserEventPayload130Job8IsManualGitDeploy bool
+// UserEventPayload133Job8IsManualGitDeploy Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+type UserEventPayload133Job8IsManualGitDeploy bool
 
-// UserEventPayload130Job8NsnbSideEffectAction defines model for UserEvent.Payload.130.Job.8.NsnbSideEffect.Action.
-type UserEventPayload130Job8NsnbSideEffectAction string
+// UserEventPayload133Job8NsnbSideEffectAction defines model for UserEvent.Payload.133.Job.8.NsnbSideEffect.Action.
+type UserEventPayload133Job8NsnbSideEffectAction string
 
-// UserEventPayload130Job8Provider defines model for UserEvent.Payload.130.Job.8.Provider.
-type UserEventPayload130Job8Provider string
+// UserEventPayload133Job8Provider defines model for UserEvent.Payload.133.Job.8.Provider.
+type UserEventPayload133Job8Provider string
 
-// UserEventPayload130Job8Type defines model for UserEvent.Payload.130.Job.8.Type.
-type UserEventPayload130Job8Type string
+// UserEventPayload133Job8Type defines model for UserEvent.Payload.133.Job.8.Type.
+type UserEventPayload133Job8Type string
 
-// UserEventPayload130Job9 defines model for UserEvent.Payload.130.Job.9.
-type UserEventPayload130Job9 struct {
+// UserEventPayload133Job9 defines model for UserEvent.Payload.133.Job.9.
+type UserEventPayload133Job9 struct {
 	CreatedAt   *float32                         `json:"createdAt,omitempty"`
 	CustomEnvId interface{}                      `json:"customEnvId,omitempty"`
-	Eventful    *UserEventPayload130Job9Eventful `json:"eventful,omitempty"`
+	Eventful    *UserEventPayload133Job9Eventful `json:"eventful,omitempty"`
 	GitComments *struct {
-		OnCommit      UserEventPayload130Job9GitCommentsOnCommit      `json:"onCommit"`
-		OnPullRequest UserEventPayload130Job9GitCommentsOnPullRequest `json:"onPullRequest"`
+		OnCommit      UserEventPayload133Job9GitCommentsOnCommit      `json:"onCommit"`
+		OnPullRequest UserEventPayload133Job9GitCommentsOnPullRequest `json:"onPullRequest"`
 	} `json:"gitComments,omitempty"`
 
 	// HeadInfo Cursor Origin
@@ -13053,34 +13336,34 @@ type UserEventPayload130Job9 struct {
 	Owner           string                          `json:"owner"`
 	PrId            float32                         `json:"prId"`
 	ProjectId       interface{}                     `json:"projectId"`
-	Provider        UserEventPayload130Job9Provider `json:"provider"`
+	Provider        UserEventPayload133Job9Provider `json:"provider"`
 	Repo            string                          `json:"repo"`
 	RepoId          string                          `json:"repoId"`
-	Type            UserEventPayload130Job9Type     `json:"type"`
+	Type            UserEventPayload133Job9Type     `json:"type"`
 }
 
-// UserEventPayload130Job9Eventful defines model for UserEvent.Payload.130.Job.9.Eventful.
-type UserEventPayload130Job9Eventful bool
+// UserEventPayload133Job9Eventful defines model for UserEvent.Payload.133.Job.9.Eventful.
+type UserEventPayload133Job9Eventful bool
 
-// UserEventPayload130Job9GitCommentsOnCommit defines model for UserEvent.Payload.130.Job.9.GitComments.OnCommit.
-type UserEventPayload130Job9GitCommentsOnCommit bool
+// UserEventPayload133Job9GitCommentsOnCommit defines model for UserEvent.Payload.133.Job.9.GitComments.OnCommit.
+type UserEventPayload133Job9GitCommentsOnCommit bool
 
-// UserEventPayload130Job9GitCommentsOnPullRequest defines model for UserEvent.Payload.130.Job.9.GitComments.OnPullRequest.
-type UserEventPayload130Job9GitCommentsOnPullRequest bool
+// UserEventPayload133Job9GitCommentsOnPullRequest defines model for UserEvent.Payload.133.Job.9.GitComments.OnPullRequest.
+type UserEventPayload133Job9GitCommentsOnPullRequest bool
 
-// UserEventPayload130Job9Provider defines model for UserEvent.Payload.130.Job.9.Provider.
-type UserEventPayload130Job9Provider string
+// UserEventPayload133Job9Provider defines model for UserEvent.Payload.133.Job.9.Provider.
+type UserEventPayload133Job9Provider string
 
-// UserEventPayload130Job9Type defines model for UserEvent.Payload.130.Job.9.Type.
-type UserEventPayload130Job9Type string
+// UserEventPayload133Job9Type defines model for UserEvent.Payload.133.Job.9.Type.
+type UserEventPayload133Job9Type string
 
-// UserEvent_Payload_130_Job defines model for UserEvent.Payload.130.Job.
-type UserEvent_Payload_130_Job struct {
+// UserEvent_Payload_133_Job defines model for UserEvent.Payload.133.Job.
+type UserEvent_Payload_133_Job struct {
 	union json.RawMessage
 }
 
-// UserEventPayload131 The payload of the event, if requested.
-type UserEventPayload131 struct {
+// UserEventPayload134 The payload of the event, if requested.
+type UserEventPayload134 struct {
 	NewTeam *struct {
 		Name string `json:"name"`
 	} `json:"newTeam,omitempty"`
@@ -13090,22 +13373,22 @@ type UserEventPayload131 struct {
 	Url string `json:"url"`
 }
 
-// UserEventPayload132 The payload of the event, if requested.
-type UserEventPayload132 struct {
+// UserEventPayload135 The payload of the event, if requested.
+type UserEventPayload135 struct {
 	GitCommitterName string                     `json:"gitCommitterName"`
 	GitUserPlatform  string                     `json:"gitUserPlatform"`
 	ProjectId        *string                    `json:"projectId,omitempty"`
 	ProjectName      string                     `json:"projectName"`
-	Reason           *UserEventPayload132Reason `json:"reason,omitempty"`
+	Reason           *UserEventPayload135Reason `json:"reason,omitempty"`
 	Sha              string                     `json:"sha"`
 	Source           string                     `json:"source"`
 }
 
-// UserEventPayload132Reason defines model for UserEvent.Payload.132.Reason.
-type UserEventPayload132Reason string
+// UserEventPayload135Reason defines model for UserEvent.Payload.135.Reason.
+type UserEventPayload135Reason string
 
-// UserEventPayload133 The payload of the event, if requested.
-type UserEventPayload133 struct {
+// UserEventPayload136 The payload of the event, if requested.
+type UserEventPayload136 struct {
 	Deployment struct {
 		Id   string            `json:"id"`
 		Meta map[string]string `json:"meta"`
@@ -13117,59 +13400,59 @@ type UserEventPayload133 struct {
 	Url          string  `json:"url"`
 }
 
-// UserEventPayload134 The payload of the event, if requested.
-type UserEventPayload134 struct {
+// UserEventPayload137 The payload of the event, if requested.
+type UserEventPayload137 struct {
 	// DeploymentId The blocked deployment's id (e.g. `dpl_…`). When present, the message links it to the deployment details (inspector) page. Optional so events emitted before this field was added still render.
 	DeploymentId *string `json:"deploymentId,omitempty"`
 	ProjectId    *string `json:"projectId,omitempty"`
 	ProjectName  string  `json:"projectName"`
 
 	// RuleName Which rule blocked the deploy.
-	RuleName UserEventPayload134RuleName `json:"ruleName"`
+	RuleName UserEventPayload137RuleName `json:"ruleName"`
 
 	// RuleProvenance Team-level or project-level rule.
-	RuleProvenance UserEventPayload134RuleProvenance `json:"ruleProvenance"`
+	RuleProvenance UserEventPayload137RuleProvenance `json:"ruleProvenance"`
 
 	// Source Classified deploy source, e.g. 'cli', 'git', 'integration'.
 	Source string `json:"source"`
 }
 
-// UserEventPayload134RuleName Which rule blocked the deploy.
-type UserEventPayload134RuleName string
+// UserEventPayload137RuleName Which rule blocked the deploy.
+type UserEventPayload137RuleName string
 
-// UserEventPayload134RuleProvenance Team-level or project-level rule.
-type UserEventPayload134RuleProvenance string
+// UserEventPayload137RuleProvenance Team-level or project-level rule.
+type UserEventPayload137RuleProvenance string
 
-// UserEventPayload135 The payload of the event, if requested.
-type UserEventPayload135 struct {
-	Mode         *UserEventPayload135Mode         `json:"mode"`
-	PreviousMode *UserEventPayload135PreviousMode `json:"previousMode"`
-	Scope        UserEventPayload135Scope         `json:"scope"`
+// UserEventPayload138 The payload of the event, if requested.
+type UserEventPayload138 struct {
+	Mode         *UserEventPayload138Mode         `json:"mode"`
+	PreviousMode *UserEventPayload138PreviousMode `json:"previousMode"`
+	Scope        UserEventPayload138Scope         `json:"scope"`
 }
 
-// UserEventPayload135Mode defines model for UserEvent.Payload.135.Mode.
-type UserEventPayload135Mode string
+// UserEventPayload138Mode defines model for UserEvent.Payload.138.Mode.
+type UserEventPayload138Mode string
 
-// UserEventPayload135PreviousMode defines model for UserEvent.Payload.135.PreviousMode.
-type UserEventPayload135PreviousMode string
+// UserEventPayload138PreviousMode defines model for UserEvent.Payload.138.PreviousMode.
+type UserEventPayload138PreviousMode string
 
-// UserEventPayload135Scope defines model for UserEvent.Payload.135.Scope.
-type UserEventPayload135Scope string
+// UserEventPayload138Scope defines model for UserEvent.Payload.138.Scope.
+type UserEventPayload138Scope string
 
-// UserEventPayload136 The payload of the event, if requested.
-type UserEventPayload136 struct {
-	Mode         UserEventPayload136Mode         `json:"mode"`
-	PreviousMode UserEventPayload136PreviousMode `json:"previousMode"`
+// UserEventPayload139 The payload of the event, if requested.
+type UserEventPayload139 struct {
+	Mode         UserEventPayload139Mode         `json:"mode"`
+	PreviousMode UserEventPayload139PreviousMode `json:"previousMode"`
 }
 
-// UserEventPayload136Mode defines model for UserEvent.Payload.136.Mode.
-type UserEventPayload136Mode string
+// UserEventPayload139Mode defines model for UserEvent.Payload.139.Mode.
+type UserEventPayload139Mode string
 
-// UserEventPayload136PreviousMode defines model for UserEvent.Payload.136.PreviousMode.
-type UserEventPayload136PreviousMode string
+// UserEventPayload139PreviousMode defines model for UserEvent.Payload.139.PreviousMode.
+type UserEventPayload139PreviousMode string
 
-// UserEventPayload137 The payload of the event, if requested.
-type UserEventPayload137 struct {
+// UserEventPayload140 The payload of the event, if requested.
+type UserEventPayload140 struct {
 	DeploymentId   string  `json:"deploymentId"`
 	DeploymentName *string `json:"deploymentName"`
 	DeploymentUrl  *string `json:"deploymentUrl"`
@@ -13177,8 +13460,8 @@ type UserEventPayload137 struct {
 	ProjectName    string  `json:"projectName"`
 }
 
-// UserEventPayload138 The payload of the event, if requested.
-type UserEventPayload138 struct {
+// UserEventPayload141 The payload of the event, if requested.
+type UserEventPayload141 struct {
 	ConfigurationId string    `json:"configurationId"`
 	IntegrationId   string    `json:"integrationId"`
 	IntegrationName string    `json:"integrationName"`
@@ -13187,8 +13470,8 @@ type UserEventPayload138 struct {
 	ProjectIds      *[]string `json:"projectIds,omitempty"`
 }
 
-// UserEventPayload139 The payload of the event, if requested.
-type UserEventPayload139 struct {
+// UserEventPayload142 The payload of the event, if requested.
+type UserEventPayload142 struct {
 	Domain     string   `json:"domain"`
 	Id         string   `json:"id"`
 	MxPriority *float32 `json:"mxPriority,omitempty"`
@@ -13197,12 +13480,12 @@ type UserEventPayload139 struct {
 	Value      string   `json:"value"`
 }
 
-// UserEventPayload140 The payload of the event, if requested.
-type UserEventPayload140 struct {
-	Action        UserEventPayload140Action    `json:"action"`
+// UserEventPayload143 The payload of the event, if requested.
+type UserEventPayload143 struct {
+	Action        UserEventPayload143Action    `json:"action"`
 	Domain        string                       `json:"domain"`
 	Id            string                       `json:"id"`
-	Initiator     UserEventPayload140Initiator `json:"initiator"`
+	Initiator     UserEventPayload143Initiator `json:"initiator"`
 	MxPriority    *float32                     `json:"mxPriority,omitempty"`
 	Name          string                       `json:"name"`
 	PreviousValue *string                      `json:"previousValue,omitempty"`
@@ -13211,14 +13494,14 @@ type UserEventPayload140 struct {
 	Value         string                       `json:"value"`
 }
 
-// UserEventPayload140Action defines model for UserEvent.Payload.140.Action.
-type UserEventPayload140Action string
+// UserEventPayload143Action defines model for UserEvent.Payload.143.Action.
+type UserEventPayload143Action string
 
-// UserEventPayload140Initiator defines model for UserEvent.Payload.140.Initiator.
-type UserEventPayload140Initiator string
+// UserEventPayload143Initiator defines model for UserEvent.Payload.143.Initiator.
+type UserEventPayload143Initiator string
 
-// UserEventPayload141 The payload of the event, if requested.
-type UserEventPayload141 struct {
+// UserEventPayload144 The payload of the event, if requested.
+type UserEventPayload144 struct {
 	Domain string `json:"domain"`
 	Id     string `json:"id"`
 	Name   string `json:"name"`
@@ -13226,33 +13509,33 @@ type UserEventPayload141 struct {
 	Value  string `json:"value"`
 }
 
-// UserEventPayload142 The payload of the event, if requested.
-type UserEventPayload142 struct {
+// UserEventPayload145 The payload of the event, if requested.
+type UserEventPayload145 struct {
 	Name string                   `json:"name"`
-	Zone *UserEventPayload142Zone `json:"zone,omitempty"`
+	Zone *UserEventPayload145Zone `json:"zone,omitempty"`
 }
 
-// UserEventPayload142Zone defines model for UserEvent.Payload.142.Zone.
-type UserEventPayload142Zone bool
+// UserEventPayload145Zone defines model for UserEvent.Payload.145.Zone.
+type UserEventPayload145Zone bool
 
-// UserEventPayload143 The payload of the event, if requested.
-type UserEventPayload143 struct {
+// UserEventPayload146 The payload of the event, if requested.
+type UserEventPayload146 struct {
 	Currency *string `json:"currency,omitempty"`
 	Name     string  `json:"name"`
 	Price    float32 `json:"price"`
 }
 
-// UserEventPayload144 The payload of the event, if requested.
-type UserEventPayload144 struct {
-	CdnEnabled UserEventPayload144CdnEnabled `json:"cdnEnabled"`
+// UserEventPayload147 The payload of the event, if requested.
+type UserEventPayload147 struct {
+	CdnEnabled UserEventPayload147CdnEnabled `json:"cdnEnabled"`
 	Name       string                        `json:"name"`
 }
 
-// UserEventPayload144CdnEnabled defines model for UserEvent.Payload.144.CdnEnabled.
-type UserEventPayload144CdnEnabled bool
+// UserEventPayload147CdnEnabled defines model for UserEvent.Payload.147.CdnEnabled.
+type UserEventPayload147CdnEnabled bool
 
-// UserEventPayload145 The payload of the event, if requested.
-type UserEventPayload145 struct {
+// UserEventPayload148 The payload of the event, if requested.
+type UserEventPayload148 struct {
 	Name    string `json:"name"`
 	NewTeam *struct {
 		Name string `json:"name"`
@@ -13262,22 +13545,22 @@ type UserEventPayload145 struct {
 	} `json:"oldTeam,omitempty"`
 }
 
-// UserEventPayload146 The payload of the event, if requested.
-type UserEventPayload146 struct {
+// UserEventPayload149 The payload of the event, if requested.
+type UserEventPayload149 struct {
 	Name      string `json:"name"`
 	OwnerName string `json:"ownerName"`
 	TeamId    string `json:"teamId"`
 	UserId    string `json:"userId"`
 }
 
-// UserEventPayload147 The payload of the event, if requested.
-type UserEventPayload147 struct {
+// UserEventPayload150 The payload of the event, if requested.
+type UserEventPayload150 struct {
 	DomainId string `json:"domainId"`
 	Name     string `json:"name"`
 }
 
-// UserEventPayload148 The payload of the event, if requested.
-type UserEventPayload148 struct {
+// UserEventPayload151 The payload of the event, if requested.
+type UserEventPayload151 struct {
 	Id                  string   `json:"id"`
 	Name                string   `json:"name"`
 	Nameservers         []string `json:"nameservers"`
@@ -13285,124 +13568,124 @@ type UserEventPayload148 struct {
 	ServiceType         string   `json:"serviceType"`
 }
 
-// UserEventPayload149 The payload of the event, if requested.
-type UserEventPayload149 struct {
+// UserEventPayload152 The payload of the event, if requested.
+type UserEventPayload152 struct {
 	CustomNameservers     *[]string `json:"customNameservers"`
 	Domain                string    `json:"domain"`
 	PrevCustomNameservers *[]string `json:"prevCustomNameservers"`
 }
 
-// UserEventPayload150 The payload of the event, if requested.
-type UserEventPayload150 struct {
+// UserEventPayload153 The payload of the event, if requested.
+type UserEventPayload153 struct {
 	Domain string `json:"domain"`
 }
 
-// UserEventPayload151 The payload of the event, if requested.
-type UserEventPayload151 struct {
-	Domain          string                             `json:"domain"`
-	EchMode         UserEventPayload151EchMode         `json:"echMode"`
-	PreviousEchMode UserEventPayload151PreviousEchMode `json:"previousEchMode"`
-}
-
-// UserEventPayload151EchMode defines model for UserEvent.Payload.151.EchMode.
-type UserEventPayload151EchMode string
-
-// UserEventPayload151PreviousEchMode defines model for UserEvent.Payload.151.PreviousEchMode.
-type UserEventPayload151PreviousEchMode string
-
-// UserEventPayload152 The payload of the event, if requested.
-type UserEventPayload152 struct {
-	Domain string                  `json:"domain"`
-	Zone   UserEventPayload152Zone `json:"zone"`
-}
-
-// UserEventPayload152Zone defines model for UserEvent.Payload.152.Zone.
-type UserEventPayload152Zone bool
-
-// UserEventPayload153 The payload of the event, if requested.
-type UserEventPayload153 struct {
-	Domain       string                           `json:"domain"`
-	Initiator    UserEventPayload153Initiator     `json:"initiator"`
-	PreviousZone *UserEventPayload153PreviousZone `json:"previousZone,omitempty"`
-	Source       *string                          `json:"source,omitempty"`
-	Zone         UserEventPayload153Zone          `json:"zone"`
-}
-
-// UserEventPayload153Initiator defines model for UserEvent.Payload.153.Initiator.
-type UserEventPayload153Initiator string
-
-// UserEventPayload153PreviousZone defines model for UserEvent.Payload.153.PreviousZone.
-type UserEventPayload153PreviousZone bool
-
-// UserEventPayload153Zone defines model for UserEvent.Payload.153.Zone.
-type UserEventPayload153Zone bool
-
 // UserEventPayload154 The payload of the event, if requested.
 type UserEventPayload154 struct {
+	Domain          string                             `json:"domain"`
+	EchMode         UserEventPayload154EchMode         `json:"echMode"`
+	PreviousEchMode UserEventPayload154PreviousEchMode `json:"previousEchMode"`
+}
+
+// UserEventPayload154EchMode defines model for UserEvent.Payload.154.EchMode.
+type UserEventPayload154EchMode string
+
+// UserEventPayload154PreviousEchMode defines model for UserEvent.Payload.154.PreviousEchMode.
+type UserEventPayload154PreviousEchMode string
+
+// UserEventPayload155 The payload of the event, if requested.
+type UserEventPayload155 struct {
+	Domain string                  `json:"domain"`
+	Zone   UserEventPayload155Zone `json:"zone"`
+}
+
+// UserEventPayload155Zone defines model for UserEvent.Payload.155.Zone.
+type UserEventPayload155Zone bool
+
+// UserEventPayload156 The payload of the event, if requested.
+type UserEventPayload156 struct {
+	Domain       string                           `json:"domain"`
+	Initiator    UserEventPayload156Initiator     `json:"initiator"`
+	PreviousZone *UserEventPayload156PreviousZone `json:"previousZone,omitempty"`
+	Source       *string                          `json:"source,omitempty"`
+	Zone         UserEventPayload156Zone          `json:"zone"`
+}
+
+// UserEventPayload156Initiator defines model for UserEvent.Payload.156.Initiator.
+type UserEventPayload156Initiator string
+
+// UserEventPayload156PreviousZone defines model for UserEvent.Payload.156.PreviousZone.
+type UserEventPayload156PreviousZone bool
+
+// UserEventPayload156Zone defines model for UserEvent.Payload.156.Zone.
+type UserEventPayload156Zone bool
+
+// UserEventPayload157 The payload of the event, if requested.
+type UserEventPayload157 struct {
 	FromId   *string `json:"fromId"`
 	FromName *string `json:"fromName"`
 	Name     string  `json:"name"`
 }
 
-// UserEventPayload155 The payload of the event, if requested.
-type UserEventPayload155 struct {
+// UserEventPayload158 The payload of the event, if requested.
+type UserEventPayload158 struct {
 	DestinationId   *string `json:"destinationId"`
 	DestinationName *string `json:"destinationName"`
 	Name            string  `json:"name"`
 }
 
-// UserEventPayload156 The payload of the event, if requested.
-type UserEventPayload156 struct {
+// UserEventPayload159 The payload of the event, if requested.
+type UserEventPayload159 struct {
 	DestinationId   string `json:"destinationId"`
 	DestinationName string `json:"destinationName"`
 	Name            string `json:"name"`
 }
 
-// UserEventPayload157 The payload of the event, if requested.
-type UserEventPayload157 struct {
+// UserEventPayload160 The payload of the event, if requested.
+type UserEventPayload160 struct {
 	Domain string                    `json:"domain"`
-	Renew  *UserEventPayload157Renew `json:"renew,omitempty"`
+	Renew  *UserEventPayload160Renew `json:"renew,omitempty"`
 }
 
-// UserEventPayload157Renew defines model for UserEvent.Payload.157.Renew.
-type UserEventPayload157Renew bool
+// UserEventPayload160Renew defines model for UserEvent.Payload.160.Renew.
+type UserEventPayload160Renew bool
 
-// UserEventPayload158 The payload of the event, if requested.
-type UserEventPayload158 struct {
+// UserEventPayload161 The payload of the event, if requested.
+type UserEventPayload161 struct {
 	Currency *string  `json:"currency,omitempty"`
 	Name     string   `json:"name"`
 	Price    *float32 `json:"price,omitempty"`
 }
 
-// UserEventPayload159 The payload of the event, if requested.
-type UserEventPayload159 struct {
+// UserEventPayload162 The payload of the event, if requested.
+type UserEventPayload162 struct {
 	Name string `json:"name"`
 }
 
-// UserEventPayload160 The payload of the event, if requested.
-type UserEventPayload160 struct {
+// UserEventPayload163 The payload of the event, if requested.
+type UserEventPayload163 struct {
 	DrainName       *string `json:"drainName"`
 	DrainUrl        *string `json:"drainUrl"`
 	Id              *string `json:"id,omitempty"`
 	IntegrationName *string `json:"integrationName,omitempty"`
 }
 
-// UserEventPayload161 The payload of the event, if requested.
-type UserEventPayload161 struct {
+// UserEventPayload164 The payload of the event, if requested.
+type UserEventPayload164 struct {
 	DrainUrl        *string `json:"drainUrl"`
 	IntegrationName *string `json:"integrationName,omitempty"`
 }
 
-// UserEventPayload162 The payload of the event, if requested.
-type UserEventPayload162 struct {
+// UserEventPayload165 The payload of the event, if requested.
+type UserEventPayload165 struct {
 	DriveName   string `json:"driveName"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 	Region      string `json:"region"`
 }
 
-// UserEventPayload163 The payload of the event, if requested.
-type UserEventPayload163 struct {
+// UserEventPayload166 The payload of the event, if requested.
+type UserEventPayload166 struct {
 	DriveName    string `json:"driveName"`
 	ProjectId    string `json:"projectId"`
 	ProjectName  string `json:"projectName"`
@@ -13411,65 +13694,65 @@ type UserEventPayload163 struct {
 	SnapshotName string `json:"snapshotName"`
 }
 
-// UserEventPayload164 The payload of the event, if requested.
-type UserEventPayload164 struct {
+// UserEventPayload167 The payload of the event, if requested.
+type UserEventPayload167 struct {
 	ProjectId   string   `json:"projectId"`
 	ProjectName string   `json:"projectName"`
 	SrcImages   []string `json:"srcImages"`
 }
 
-// UserEventPayload165 The payload of the event, if requested.
-type UserEventPayload165 struct {
+// UserEventPayload168 The payload of the event, if requested.
+type UserEventPayload168 struct {
 	ProjectId   string   `json:"projectId"`
 	ProjectName string   `json:"projectName"`
 	Tags        []string `json:"tags"`
 	Target      *string  `json:"target,omitempty"`
 }
 
-// UserEventPayload166 The payload of the event, if requested.
-type UserEventPayload166 struct {
+// UserEventPayload169 The payload of the event, if requested.
+type UserEventPayload169 struct {
 	Path        string `json:"path"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload167 The payload of the event, if requested.
-type UserEventPayload167 struct {
+// UserEventPayload170 The payload of the event, if requested.
+type UserEventPayload170 struct {
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload168 The payload of the event, if requested.
-type UserEventPayload168 struct {
+// UserEventPayload171 The payload of the event, if requested.
+type UserEventPayload171 struct {
 	EdgeConfigDigest string `json:"edgeConfigDigest"`
 	EdgeConfigId     string `json:"edgeConfigId"`
 	EdgeConfigSlug   string `json:"edgeConfigSlug"`
 }
 
-// UserEventPayload169 The payload of the event, if requested.
-type UserEventPayload169 struct {
+// UserEventPayload172 The payload of the event, if requested.
+type UserEventPayload172 struct {
 	EdgeConfigBackupVersionId string `json:"edgeConfigBackupVersionId"`
 	EdgeConfigDigest          string `json:"edgeConfigDigest"`
 	EdgeConfigId              string `json:"edgeConfigId"`
 	EdgeConfigSlug            string `json:"edgeConfigSlug"`
 }
 
-// UserEventPayload170 The payload of the event, if requested.
-type UserEventPayload170 struct {
+// UserEventPayload173 The payload of the event, if requested.
+type UserEventPayload173 struct {
 	EdgeConfigId     string                  `json:"edgeConfigId"`
 	EdgeConfigSchema *map[string]interface{} `json:"edgeConfigSchema,omitempty"`
 	EdgeConfigSlug   string                  `json:"edgeConfigSlug"`
 }
 
-// UserEventPayload171 The payload of the event, if requested.
-type UserEventPayload171 struct {
+// UserEventPayload174 The payload of the event, if requested.
+type UserEventPayload174 struct {
 	EdgeConfigDigest *string `json:"edgeConfigDigest,omitempty"`
 	EdgeConfigId     string  `json:"edgeConfigId"`
 	EdgeConfigSlug   string  `json:"edgeConfigSlug"`
 }
 
-// UserEventPayload172 The payload of the event, if requested.
-type UserEventPayload172 struct {
+// UserEventPayload175 The payload of the event, if requested.
+type UserEventPayload175 struct {
 	EdgeConfig struct {
 		Id   string `json:"id"`
 		Slug string `json:"slug"`
@@ -13477,33 +13760,33 @@ type UserEventPayload172 struct {
 	FromAccount struct {
 		Id       string                             `json:"id"`
 		Slug     *string                            `json:"slug,omitempty"`
-		Type     UserEventPayload172FromAccountType `json:"type"`
+		Type     UserEventPayload175FromAccountType `json:"type"`
 		Username *string                            `json:"username,omitempty"`
 	} `json:"fromAccount"`
 	ToAccount struct {
 		Id       string                           `json:"id"`
 		Slug     *string                          `json:"slug,omitempty"`
-		Type     UserEventPayload172ToAccountType `json:"type"`
+		Type     UserEventPayload175ToAccountType `json:"type"`
 		Username *string                          `json:"username,omitempty"`
 	} `json:"toAccount"`
 }
 
-// UserEventPayload172FromAccountType defines model for UserEvent.Payload.172.FromAccount.Type.
-type UserEventPayload172FromAccountType string
+// UserEventPayload175FromAccountType defines model for UserEvent.Payload.175.FromAccount.Type.
+type UserEventPayload175FromAccountType string
 
-// UserEventPayload172ToAccountType defines model for UserEvent.Payload.172.ToAccount.Type.
-type UserEventPayload172ToAccountType string
+// UserEventPayload175ToAccountType defines model for UserEvent.Payload.175.ToAccount.Type.
+type UserEventPayload175ToAccountType string
 
-// UserEventPayload173 The payload of the event, if requested.
-type UserEventPayload173 struct {
+// UserEventPayload176 The payload of the event, if requested.
+type UserEventPayload176 struct {
 	EdgeConfigId      string `json:"edgeConfigId"`
 	EdgeConfigSlug    string `json:"edgeConfigSlug"`
 	EdgeConfigTokenId string `json:"edgeConfigTokenId"`
 	Label             string `json:"label"`
 }
 
-// UserEventPayload174 The payload of the event, if requested.
-type UserEventPayload174 struct {
+// UserEventPayload177 The payload of the event, if requested.
+type UserEventPayload177 struct {
 	EdgeConfigId   string `json:"edgeConfigId"`
 	EdgeConfigSlug string `json:"edgeConfigSlug"`
 
@@ -13511,14 +13794,14 @@ type UserEventPayload174 struct {
 	EdgeConfigTokenIds []string `json:"edgeConfigTokenIds"`
 }
 
-// UserEventPayload175 The payload of the event, if requested.
-type UserEventPayload175 struct {
+// UserEventPayload178 The payload of the event, if requested.
+type UserEventPayload178 struct {
 	Email string `json:"email"`
 	Name  string `json:"name"`
 }
 
-// UserEventPayload176 The payload of the event, if requested.
-type UserEventPayload176 struct {
+// UserEventPayload179 The payload of the event, if requested.
+type UserEventPayload179 struct {
 	PreviousRule struct {
 		Email string `json:"email"`
 	} `json:"previousRule"`
@@ -13528,8 +13811,8 @@ type UserEventPayload176 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload177 The payload of the event, if requested.
-type UserEventPayload177 struct {
+// UserEventPayload180 The payload of the event, if requested.
+type UserEventPayload180 struct {
 	NextRule *struct {
 		Email string `json:"email"`
 	} `json:"nextRule,omitempty"`
@@ -13542,8 +13825,8 @@ type UserEventPayload177 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload178 The payload of the event, if requested.
-type UserEventPayload178 struct {
+// UserEventPayload181 The payload of the event, if requested.
+type UserEventPayload181 struct {
 	DeletedUid  *string `json:"deletedUid,omitempty"`
 	DeletedUser *struct {
 		Email    string `json:"email"`
@@ -13552,8 +13835,8 @@ type UserEventPayload178 struct {
 	EmailDomain *string `json:"emailDomain,omitempty"`
 }
 
-// UserEventPayload179 The payload of the event, if requested.
-type UserEventPayload179 struct {
+// UserEventPayload182 The payload of the event, if requested.
+type UserEventPayload182 struct {
 	CustomEnvironmentSlugs *[]string                     `json:"customEnvironmentSlugs,omitempty"`
 	EdgeConfigId           *string                       `json:"edgeConfigId,omitempty"`
 	EdgeConfigTokenId      *string                       `json:"edgeConfigTokenId,omitempty"`
@@ -13564,22 +13847,22 @@ type UserEventPayload179 struct {
 	ProjectId              *string                       `json:"projectId,omitempty"`
 	ProjectName            *string                       `json:"projectName,omitempty"`
 	Source                 *string                       `json:"source,omitempty"`
-	Target                 *UserEvent_Payload_179_Target `json:"target,omitempty"`
+	Target                 *UserEvent_Payload_182_Target `json:"target,omitempty"`
 }
 
-// UserEventPayload179Target0 defines model for UserEvent.Payload.179.Target.0.
-type UserEventPayload179Target0 = string
+// UserEventPayload182Target0 defines model for UserEvent.Payload.182.Target.0.
+type UserEventPayload182Target0 = string
 
-// UserEventPayload179Target1 defines model for UserEvent.Payload.179.Target.1.
-type UserEventPayload179Target1 = []string
+// UserEventPayload182Target1 defines model for UserEvent.Payload.182.Target.1.
+type UserEventPayload182Target1 = []string
 
-// UserEvent_Payload_179_Target defines model for UserEvent.Payload.179.Target.
-type UserEvent_Payload_179_Target struct {
+// UserEvent_Payload_182_Target defines model for UserEvent.Payload.182.Target.
+type UserEvent_Payload_182_Target struct {
 	union json.RawMessage
 }
 
-// UserEventPayload180 The payload of the event, if requested.
-type UserEventPayload180 struct {
+// UserEventPayload183 The payload of the event, if requested.
+type UserEventPayload183 struct {
 	CustomEnvironmentSlugs *[]string                     `json:"customEnvironmentSlugs,omitempty"`
 	EdgeConfigId           *string                       `json:"edgeConfigId,omitempty"`
 	EdgeConfigTokenId      *string                       `json:"edgeConfigTokenId,omitempty"`
@@ -13590,52 +13873,52 @@ type UserEventPayload180 struct {
 	ProjectId              *string                       `json:"projectId,omitempty"`
 	ProjectName            *string                       `json:"projectName,omitempty"`
 	Source                 *string                       `json:"source,omitempty"`
-	Target                 *UserEvent_Payload_180_Target `json:"target,omitempty"`
+	Target                 *UserEvent_Payload_183_Target `json:"target,omitempty"`
 	UpdateDiff             *struct {
-		ChangedComment   *UserEventPayload180UpdateDiffChangedComment   `json:"changedComment,omitempty"`
-		ChangedGitBranch *UserEventPayload180UpdateDiffChangedGitBranch `json:"changedGitBranch,omitempty"`
+		ChangedComment   *UserEventPayload183UpdateDiffChangedComment   `json:"changedComment,omitempty"`
+		ChangedGitBranch *UserEventPayload183UpdateDiffChangedGitBranch `json:"changedGitBranch,omitempty"`
 
 		// ChangedValue Indicates a value was submitted, not whether its plaintext changed.
-		ChangedValue            UserEventPayload180UpdateDiffChangedValue `json:"changedValue"`
+		ChangedValue            UserEventPayload183UpdateDiffChangedValue `json:"changedValue"`
 		Key                     *string                                   `json:"key,omitempty"`
 		NewCustomEnvironmentIds *[]string                                 `json:"newCustomEnvironmentIds,omitempty"`
 		NewKey                  *string                                   `json:"newKey,omitempty"`
-		NewTarget               *[]UserEventPayload180UpdateDiffNewTarget `json:"newTarget,omitempty"`
+		NewTarget               *[]UserEventPayload183UpdateDiffNewTarget `json:"newTarget,omitempty"`
 		NewType                 *string                                   `json:"newType,omitempty"`
 		OldCustomEnvironmentIds *[]string                                 `json:"oldCustomEnvironmentIds,omitempty"`
-		OldTarget               *[]UserEventPayload180UpdateDiffOldTarget `json:"oldTarget,omitempty"`
+		OldTarget               *[]UserEventPayload183UpdateDiffOldTarget `json:"oldTarget,omitempty"`
 		OldType                 *string                                   `json:"oldType,omitempty"`
 	} `json:"updateDiff,omitempty"`
 }
 
-// UserEventPayload180Target0 defines model for UserEvent.Payload.180.Target.0.
-type UserEventPayload180Target0 = string
+// UserEventPayload183Target0 defines model for UserEvent.Payload.183.Target.0.
+type UserEventPayload183Target0 = string
 
-// UserEventPayload180Target1 defines model for UserEvent.Payload.180.Target.1.
-type UserEventPayload180Target1 = []string
+// UserEventPayload183Target1 defines model for UserEvent.Payload.183.Target.1.
+type UserEventPayload183Target1 = []string
 
-// UserEvent_Payload_180_Target defines model for UserEvent.Payload.180.Target.
-type UserEvent_Payload_180_Target struct {
+// UserEvent_Payload_183_Target defines model for UserEvent.Payload.183.Target.
+type UserEvent_Payload_183_Target struct {
 	union json.RawMessage
 }
 
-// UserEventPayload180UpdateDiffChangedComment defines model for UserEvent.Payload.180.UpdateDiff.ChangedComment.
-type UserEventPayload180UpdateDiffChangedComment bool
+// UserEventPayload183UpdateDiffChangedComment defines model for UserEvent.Payload.183.UpdateDiff.ChangedComment.
+type UserEventPayload183UpdateDiffChangedComment bool
 
-// UserEventPayload180UpdateDiffChangedGitBranch defines model for UserEvent.Payload.180.UpdateDiff.ChangedGitBranch.
-type UserEventPayload180UpdateDiffChangedGitBranch bool
+// UserEventPayload183UpdateDiffChangedGitBranch defines model for UserEvent.Payload.183.UpdateDiff.ChangedGitBranch.
+type UserEventPayload183UpdateDiffChangedGitBranch bool
 
-// UserEventPayload180UpdateDiffChangedValue Indicates a value was submitted, not whether its plaintext changed.
-type UserEventPayload180UpdateDiffChangedValue bool
+// UserEventPayload183UpdateDiffChangedValue Indicates a value was submitted, not whether its plaintext changed.
+type UserEventPayload183UpdateDiffChangedValue bool
 
-// UserEventPayload180UpdateDiffNewTarget defines model for UserEvent.Payload.180.UpdateDiff.NewTarget.
-type UserEventPayload180UpdateDiffNewTarget string
+// UserEventPayload183UpdateDiffNewTarget defines model for UserEvent.Payload.183.UpdateDiff.NewTarget.
+type UserEventPayload183UpdateDiffNewTarget string
 
-// UserEventPayload180UpdateDiffOldTarget defines model for UserEvent.Payload.180.UpdateDiff.OldTarget.
-type UserEventPayload180UpdateDiffOldTarget string
+// UserEventPayload183UpdateDiffOldTarget defines model for UserEvent.Payload.183.UpdateDiff.OldTarget.
+type UserEventPayload183UpdateDiffOldTarget string
 
-// UserEventPayload181 The payload of the event, if requested.
-type UserEventPayload181 struct {
+// UserEventPayload184 The payload of the event, if requested.
+type UserEventPayload184 struct {
 	CustomEnvironmentSlugs *[]string                     `json:"customEnvironmentSlugs,omitempty"`
 	DeploymentId           string                        `json:"deploymentId"`
 	DeploymentUrl          string                        `json:"deploymentUrl"`
@@ -13648,37 +13931,37 @@ type UserEventPayload181 struct {
 	ProjectId              *string                       `json:"projectId,omitempty"`
 	ProjectName            *string                       `json:"projectName,omitempty"`
 	Source                 *string                       `json:"source,omitempty"`
-	Target                 *UserEvent_Payload_181_Target `json:"target,omitempty"`
+	Target                 *UserEvent_Payload_184_Target `json:"target,omitempty"`
 }
 
-// UserEventPayload181Target0 defines model for UserEvent.Payload.181.Target.0.
-type UserEventPayload181Target0 = string
+// UserEventPayload184Target0 defines model for UserEvent.Payload.184.Target.0.
+type UserEventPayload184Target0 = string
 
-// UserEventPayload181Target1 defines model for UserEvent.Payload.181.Target.1.
-type UserEventPayload181Target1 = []string
+// UserEventPayload184Target1 defines model for UserEvent.Payload.184.Target.1.
+type UserEventPayload184Target1 = []string
 
-// UserEvent_Payload_181_Target defines model for UserEvent.Payload.181.Target.
-type UserEvent_Payload_181_Target struct {
+// UserEvent_Payload_184_Target defines model for UserEvent.Payload.184.Target.
+type UserEvent_Payload_184_Target struct {
 	union json.RawMessage
 }
 
-// UserEventPayload182 The payload of the event, if requested.
-type UserEventPayload182 struct {
+// UserEventPayload185 The payload of the event, if requested.
+type UserEventPayload185 struct {
 	ChangedFields  *[]string                     `json:"changedFields,omitempty"`
 	Key            string                        `json:"key"`
 	OrganizationId string                        `json:"organizationId"`
 	Provider       string                        `json:"provider"`
 	Repository     string                        `json:"repository"`
-	Visibility     UserEventPayload182Visibility `json:"visibility"`
+	Visibility     UserEventPayload185Visibility `json:"visibility"`
 }
 
-// UserEventPayload182Visibility defines model for UserEvent.Payload.182.Visibility.
-type UserEventPayload182Visibility string
+// UserEventPayload185Visibility defines model for UserEvent.Payload.185.Visibility.
+type UserEventPayload185Visibility string
 
-// UserEventPayload183 The payload of the event, if requested.
-type UserEventPayload183 struct {
+// UserEventPayload186 The payload of the event, if requested.
+type UserEventPayload186 struct {
 	// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-	ApplyToAllCustomEnvironments *UserEventPayload183ApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
+	ApplyToAllCustomEnvironments *UserEventPayload186ApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
 
 	// Comment A user provided comment that describes what this Shared Env Var is for.
 	Comment *string `json:"comment,omitempty"`
@@ -13702,7 +13985,7 @@ type UserEventPayload183 struct {
 	CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
 
 	// Decrypted whether or not this env variable is decrypted
-	Decrypted *UserEventPayload183Decrypted `json:"decrypted,omitempty"`
+	Decrypted *UserEventPayload186Decrypted `json:"decrypted,omitempty"`
 
 	// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
 	//
@@ -13727,7 +14010,7 @@ type UserEventPayload183 struct {
 
 	// LastEditedByDisplayName The last editor full name or username.
 	LastEditedByDisplayName *string                                      `json:"lastEditedByDisplayName,omitempty"`
-	LastEditedByPrincipal   *UserEvent_Payload_183_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
+	LastEditedByPrincipal   *UserEvent_Payload_186_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
 
 	// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
 	//
@@ -13743,12 +14026,12 @@ type UserEventPayload183 struct {
 	// Target environments this env variable targets
 	//
 	// Example: production
-	Target *[]UserEventPayload183Target `json:"target,omitempty"`
+	Target *[]UserEventPayload186Target `json:"target,omitempty"`
 
 	// Type The type of this cosmos doc instance, if blank, assume secret.
 	//
 	// Example: encrypted
-	Type *UserEventPayload183Type `json:"type,omitempty"`
+	Type *UserEventPayload186Type `json:"type,omitempty"`
 
 	// UpdatedAt Timestamp for when the Shared Env Var was last updated.
 	//
@@ -13764,68 +14047,68 @@ type UserEventPayload183 struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// UserEventPayload183ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-type UserEventPayload183ApplyToAllCustomEnvironments bool
+// UserEventPayload186ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
+type UserEventPayload186ApplyToAllCustomEnvironments bool
 
-// UserEventPayload183Decrypted whether or not this env variable is decrypted
-type UserEventPayload183Decrypted bool
+// UserEventPayload186Decrypted whether or not this env variable is decrypted
+type UserEventPayload186Decrypted bool
 
-// UserEventPayload183LastEditedByPrincipal0 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-type UserEventPayload183LastEditedByPrincipal0 struct {
+// UserEventPayload186LastEditedByPrincipal0 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+type UserEventPayload186LastEditedByPrincipal0 struct {
 	Avatar   *string                                       `json:"avatar,omitempty"`
 	Id       string                                        `json:"id"`
 	Name     *string                                       `json:"name,omitempty"`
-	Type     UserEventPayload183LastEditedByPrincipal0Type `json:"type"`
+	Type     UserEventPayload186LastEditedByPrincipal0Type `json:"type"`
 	Username string                                        `json:"username"`
 }
 
-// UserEventPayload183LastEditedByPrincipal0Type defines model for UserEvent.Payload.183.LastEditedByPrincipal.0.Type.
-type UserEventPayload183LastEditedByPrincipal0Type string
+// UserEventPayload186LastEditedByPrincipal0Type defines model for UserEvent.Payload.186.LastEditedByPrincipal.0.Type.
+type UserEventPayload186LastEditedByPrincipal0Type string
 
-// UserEventPayload183LastEditedByPrincipal1 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-type UserEventPayload183LastEditedByPrincipal1 struct {
+// UserEventPayload186LastEditedByPrincipal1 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+type UserEventPayload186LastEditedByPrincipal1 struct {
 	Avatar *string                                       `json:"avatar,omitempty"`
 	Id     string                                        `json:"id"`
 	Name   string                                        `json:"name"`
-	Type   UserEventPayload183LastEditedByPrincipal1Type `json:"type"`
+	Type   UserEventPayload186LastEditedByPrincipal1Type `json:"type"`
 }
 
-// UserEventPayload183LastEditedByPrincipal1Type defines model for UserEvent.Payload.183.LastEditedByPrincipal.1.Type.
-type UserEventPayload183LastEditedByPrincipal1Type string
+// UserEventPayload186LastEditedByPrincipal1Type defines model for UserEvent.Payload.186.LastEditedByPrincipal.1.Type.
+type UserEventPayload186LastEditedByPrincipal1Type string
 
-// UserEvent_Payload_183_LastEditedByPrincipal defines model for UserEvent.Payload.183.LastEditedByPrincipal.
-type UserEvent_Payload_183_LastEditedByPrincipal struct {
+// UserEvent_Payload_186_LastEditedByPrincipal defines model for UserEvent.Payload.186.LastEditedByPrincipal.
+type UserEvent_Payload_186_LastEditedByPrincipal struct {
 	union json.RawMessage
 }
 
-// UserEventPayload183Target environments this env variable targets
+// UserEventPayload186Target environments this env variable targets
 //
 // Example: production
-type UserEventPayload183Target string
+type UserEventPayload186Target string
 
-// UserEventPayload183Type The type of this cosmos doc instance, if blank, assume secret.
+// UserEventPayload186Type The type of this cosmos doc instance, if blank, assume secret.
 //
 // Example: encrypted
-type UserEventPayload183Type string
+type UserEventPayload186Type string
 
-// UserEventPayload184 The payload of the event, if requested.
-type UserEventPayload184 struct {
+// UserEventPayload187 The payload of the event, if requested.
+type UserEventPayload187 struct {
 	EnvId          string                      `json:"envId"`
 	EnvKey         string                      `json:"envKey"`
 	OrganizationId string                      `json:"organizationId"`
 	Provider       string                      `json:"provider"`
 	Repository     string                      `json:"repository"`
-	Target         []UserEventPayload184Target `json:"target"`
+	Target         []UserEventPayload187Target `json:"target"`
 }
 
-// UserEventPayload184Target defines model for UserEvent.Payload.184.Target.
-type UserEventPayload184Target string
+// UserEventPayload187Target defines model for UserEvent.Payload.187.Target.
+type UserEventPayload187Target string
 
-// UserEventPayload185 The payload of the event, if requested.
-type UserEventPayload185 struct {
+// UserEventPayload188 The payload of the event, if requested.
+type UserEventPayload188 struct {
 	NewEnvVar *struct {
 		// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-		ApplyToAllCustomEnvironments *UserEventPayload185NewEnvVarApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
+		ApplyToAllCustomEnvironments *UserEventPayload188NewEnvVarApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
 
 		// Comment A user provided comment that describes what this Shared Env Var is for.
 		Comment *string `json:"comment,omitempty"`
@@ -13849,7 +14132,7 @@ type UserEventPayload185 struct {
 		CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
 
 		// Decrypted whether or not this env variable is decrypted
-		Decrypted *UserEventPayload185NewEnvVarDecrypted `json:"decrypted,omitempty"`
+		Decrypted *UserEventPayload188NewEnvVarDecrypted `json:"decrypted,omitempty"`
 
 		// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
 		//
@@ -13873,7 +14156,7 @@ type UserEventPayload185 struct {
 
 		// LastEditedByDisplayName The last editor full name or username.
 		LastEditedByDisplayName *string                                                `json:"lastEditedByDisplayName,omitempty"`
-		LastEditedByPrincipal   *UserEvent_Payload_185_NewEnvVar_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
+		LastEditedByPrincipal   *UserEvent_Payload_188_NewEnvVar_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
 
 		// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
 		//
@@ -13888,12 +14171,12 @@ type UserEventPayload185 struct {
 		// Target environments this env variable targets
 		//
 		// Example: production
-		Target *[]UserEventPayload185NewEnvVarTarget `json:"target,omitempty"`
+		Target *[]UserEventPayload188NewEnvVarTarget `json:"target,omitempty"`
 
 		// Type The type of this cosmos doc instance, if blank, assume secret.
 		//
 		// Example: encrypted
-		Type *UserEventPayload185NewEnvVarType `json:"type,omitempty"`
+		Type *UserEventPayload188NewEnvVarType `json:"type,omitempty"`
 
 		// UpdatedAt Timestamp for when the Shared Env Var was last updated.
 		//
@@ -13910,7 +14193,7 @@ type UserEventPayload185 struct {
 	} `json:"newEnvVar,omitempty"`
 	OldEnvVar *struct {
 		// ApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-		ApplyToAllCustomEnvironments *UserEventPayload185OldEnvVarApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
+		ApplyToAllCustomEnvironments *UserEventPayload188OldEnvVarApplyToAllCustomEnvironments `json:"applyToAllCustomEnvironments,omitempty"`
 
 		// Comment A user provided comment that describes what this Shared Env Var is for.
 		Comment *string `json:"comment,omitempty"`
@@ -13934,7 +14217,7 @@ type UserEventPayload185 struct {
 		CustomEnvironmentIds *[]string `json:"customEnvironmentIds,omitempty"`
 
 		// Decrypted whether or not this env variable is decrypted
-		Decrypted *UserEventPayload185OldEnvVarDecrypted `json:"decrypted,omitempty"`
+		Decrypted *UserEventPayload188OldEnvVarDecrypted `json:"decrypted,omitempty"`
 
 		// DeletedAt Timestamp for when the Shared Env Var was (soft) deleted.
 		//
@@ -13958,7 +14241,7 @@ type UserEventPayload185 struct {
 
 		// LastEditedByDisplayName The last editor full name or username.
 		LastEditedByDisplayName *string                                                `json:"lastEditedByDisplayName,omitempty"`
-		LastEditedByPrincipal   *UserEvent_Payload_185_OldEnvVar_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
+		LastEditedByPrincipal   *UserEvent_Payload_188_OldEnvVar_LastEditedByPrincipal `json:"lastEditedByPrincipal,omitempty"`
 
 		// OwnerId The unique identifier of the owner (team) the Shared Env Var was created for.
 		//
@@ -13973,12 +14256,12 @@ type UserEventPayload185 struct {
 		// Target environments this env variable targets
 		//
 		// Example: production
-		Target *[]UserEventPayload185OldEnvVarTarget `json:"target,omitempty"`
+		Target *[]UserEventPayload188OldEnvVarTarget `json:"target,omitempty"`
 
 		// Type The type of this cosmos doc instance, if blank, assume secret.
 		//
 		// Example: encrypted
-		Type *UserEventPayload185OldEnvVarType `json:"type,omitempty"`
+		Type *UserEventPayload188OldEnvVarType `json:"type,omitempty"`
 
 		// UpdatedAt Timestamp for when the Shared Env Var was last updated.
 		//
@@ -13994,11 +14277,11 @@ type UserEventPayload185 struct {
 		Value *string `json:"value,omitempty"`
 	} `json:"oldEnvVar,omitempty"`
 	UpdateDiff *struct {
-		ChangedComment   *UserEventPayload185UpdateDiffChangedComment   `json:"changedComment,omitempty"`
-		ChangedGitBranch *UserEventPayload185UpdateDiffChangedGitBranch `json:"changedGitBranch,omitempty"`
+		ChangedComment   *UserEventPayload188UpdateDiffChangedComment   `json:"changedComment,omitempty"`
+		ChangedGitBranch *UserEventPayload188UpdateDiffChangedGitBranch `json:"changedGitBranch,omitempty"`
 
 		// ChangedValue Indicates a value was submitted, not whether its plaintext changed.
-		ChangedValue            UserEventPayload185UpdateDiffChangedValue `json:"changedValue"`
+		ChangedValue            UserEventPayload188UpdateDiffChangedValue `json:"changedValue"`
 		Id                      string                                    `json:"id"`
 		Key                     *string                                   `json:"key,omitempty"`
 		NewCustomEnvironmentIds *[]string                                 `json:"newCustomEnvironmentIds,omitempty"`
@@ -14007,257 +14290,257 @@ type UserEventPayload185 struct {
 			ProjectId   string  `json:"projectId"`
 			ProjectName *string `json:"projectName,omitempty"`
 		} `json:"newProjects,omitempty"`
-		NewTarget               *[]UserEventPayload185UpdateDiffNewTarget `json:"newTarget,omitempty"`
+		NewTarget               *[]UserEventPayload188UpdateDiffNewTarget `json:"newTarget,omitempty"`
 		NewType                 *string                                   `json:"newType,omitempty"`
 		OldCustomEnvironmentIds *[]string                                 `json:"oldCustomEnvironmentIds,omitempty"`
 		OldProjects             *[]struct {
 			ProjectId   string  `json:"projectId"`
 			ProjectName *string `json:"projectName,omitempty"`
 		} `json:"oldProjects,omitempty"`
-		OldTarget *[]UserEventPayload185UpdateDiffOldTarget `json:"oldTarget,omitempty"`
+		OldTarget *[]UserEventPayload188UpdateDiffOldTarget `json:"oldTarget,omitempty"`
 		OldType   *string                                   `json:"oldType,omitempty"`
 	} `json:"updateDiff,omitempty"`
 }
 
-// UserEventPayload185NewEnvVarApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-type UserEventPayload185NewEnvVarApplyToAllCustomEnvironments bool
+// UserEventPayload188NewEnvVarApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
+type UserEventPayload188NewEnvVarApplyToAllCustomEnvironments bool
 
-// UserEventPayload185NewEnvVarDecrypted whether or not this env variable is decrypted
-type UserEventPayload185NewEnvVarDecrypted bool
+// UserEventPayload188NewEnvVarDecrypted whether or not this env variable is decrypted
+type UserEventPayload188NewEnvVarDecrypted bool
 
-// UserEventPayload185NewEnvVarLastEditedByPrincipal0 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-type UserEventPayload185NewEnvVarLastEditedByPrincipal0 struct {
+// UserEventPayload188NewEnvVarLastEditedByPrincipal0 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+type UserEventPayload188NewEnvVarLastEditedByPrincipal0 struct {
 	Avatar   *string                                                `json:"avatar,omitempty"`
 	Id       string                                                 `json:"id"`
 	Name     *string                                                `json:"name,omitempty"`
-	Type     UserEventPayload185NewEnvVarLastEditedByPrincipal0Type `json:"type"`
+	Type     UserEventPayload188NewEnvVarLastEditedByPrincipal0Type `json:"type"`
 	Username string                                                 `json:"username"`
 }
 
-// UserEventPayload185NewEnvVarLastEditedByPrincipal0Type defines model for UserEvent.Payload.185.NewEnvVar.LastEditedByPrincipal.0.Type.
-type UserEventPayload185NewEnvVarLastEditedByPrincipal0Type string
+// UserEventPayload188NewEnvVarLastEditedByPrincipal0Type defines model for UserEvent.Payload.188.NewEnvVar.LastEditedByPrincipal.0.Type.
+type UserEventPayload188NewEnvVarLastEditedByPrincipal0Type string
 
-// UserEventPayload185NewEnvVarLastEditedByPrincipal1 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-type UserEventPayload185NewEnvVarLastEditedByPrincipal1 struct {
+// UserEventPayload188NewEnvVarLastEditedByPrincipal1 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+type UserEventPayload188NewEnvVarLastEditedByPrincipal1 struct {
 	Avatar *string                                                `json:"avatar,omitempty"`
 	Id     string                                                 `json:"id"`
 	Name   string                                                 `json:"name"`
-	Type   UserEventPayload185NewEnvVarLastEditedByPrincipal1Type `json:"type"`
+	Type   UserEventPayload188NewEnvVarLastEditedByPrincipal1Type `json:"type"`
 }
 
-// UserEventPayload185NewEnvVarLastEditedByPrincipal1Type defines model for UserEvent.Payload.185.NewEnvVar.LastEditedByPrincipal.1.Type.
-type UserEventPayload185NewEnvVarLastEditedByPrincipal1Type string
+// UserEventPayload188NewEnvVarLastEditedByPrincipal1Type defines model for UserEvent.Payload.188.NewEnvVar.LastEditedByPrincipal.1.Type.
+type UserEventPayload188NewEnvVarLastEditedByPrincipal1Type string
 
-// UserEvent_Payload_185_NewEnvVar_LastEditedByPrincipal defines model for UserEvent.Payload.185.NewEnvVar.LastEditedByPrincipal.
-type UserEvent_Payload_185_NewEnvVar_LastEditedByPrincipal struct {
+// UserEvent_Payload_188_NewEnvVar_LastEditedByPrincipal defines model for UserEvent.Payload.188.NewEnvVar.LastEditedByPrincipal.
+type UserEvent_Payload_188_NewEnvVar_LastEditedByPrincipal struct {
 	union json.RawMessage
 }
 
-// UserEventPayload185NewEnvVarTarget environments this env variable targets
+// UserEventPayload188NewEnvVarTarget environments this env variable targets
 //
 // Example: production
-type UserEventPayload185NewEnvVarTarget string
+type UserEventPayload188NewEnvVarTarget string
 
-// UserEventPayload185NewEnvVarType The type of this cosmos doc instance, if blank, assume secret.
+// UserEventPayload188NewEnvVarType The type of this cosmos doc instance, if blank, assume secret.
 //
 // Example: encrypted
-type UserEventPayload185NewEnvVarType string
+type UserEventPayload188NewEnvVarType string
 
-// UserEventPayload185OldEnvVarApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
-type UserEventPayload185OldEnvVarApplyToAllCustomEnvironments bool
+// UserEventPayload188OldEnvVarApplyToAllCustomEnvironments whether or not this env varible applies to custom environments
+type UserEventPayload188OldEnvVarApplyToAllCustomEnvironments bool
 
-// UserEventPayload185OldEnvVarDecrypted whether or not this env variable is decrypted
-type UserEventPayload185OldEnvVarDecrypted bool
+// UserEventPayload188OldEnvVarDecrypted whether or not this env variable is decrypted
+type UserEventPayload188OldEnvVarDecrypted bool
 
-// UserEventPayload185OldEnvVarLastEditedByPrincipal0 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-type UserEventPayload185OldEnvVarLastEditedByPrincipal0 struct {
+// UserEventPayload188OldEnvVarLastEditedByPrincipal0 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+type UserEventPayload188OldEnvVarLastEditedByPrincipal0 struct {
 	Avatar   *string                                                `json:"avatar,omitempty"`
 	Id       string                                                 `json:"id"`
 	Name     *string                                                `json:"name,omitempty"`
-	Type     UserEventPayload185OldEnvVarLastEditedByPrincipal0Type `json:"type"`
+	Type     UserEventPayload188OldEnvVarLastEditedByPrincipal0Type `json:"type"`
 	Username string                                                 `json:"username"`
 }
 
-// UserEventPayload185OldEnvVarLastEditedByPrincipal0Type defines model for UserEvent.Payload.185.OldEnvVar.LastEditedByPrincipal.0.Type.
-type UserEventPayload185OldEnvVarLastEditedByPrincipal0Type string
+// UserEventPayload188OldEnvVarLastEditedByPrincipal0Type defines model for UserEvent.Payload.188.OldEnvVar.LastEditedByPrincipal.0.Type.
+type UserEventPayload188OldEnvVarLastEditedByPrincipal0Type string
 
-// UserEventPayload185OldEnvVarLastEditedByPrincipal1 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
-type UserEventPayload185OldEnvVarLastEditedByPrincipal1 struct {
+// UserEventPayload188OldEnvVarLastEditedByPrincipal1 The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user.
+type UserEventPayload188OldEnvVarLastEditedByPrincipal1 struct {
 	Avatar *string                                                `json:"avatar,omitempty"`
 	Id     string                                                 `json:"id"`
 	Name   string                                                 `json:"name"`
-	Type   UserEventPayload185OldEnvVarLastEditedByPrincipal1Type `json:"type"`
+	Type   UserEventPayload188OldEnvVarLastEditedByPrincipal1Type `json:"type"`
 }
 
-// UserEventPayload185OldEnvVarLastEditedByPrincipal1Type defines model for UserEvent.Payload.185.OldEnvVar.LastEditedByPrincipal.1.Type.
-type UserEventPayload185OldEnvVarLastEditedByPrincipal1Type string
+// UserEventPayload188OldEnvVarLastEditedByPrincipal1Type defines model for UserEvent.Payload.188.OldEnvVar.LastEditedByPrincipal.1.Type.
+type UserEventPayload188OldEnvVarLastEditedByPrincipal1Type string
 
-// UserEvent_Payload_185_OldEnvVar_LastEditedByPrincipal defines model for UserEvent.Payload.185.OldEnvVar.LastEditedByPrincipal.
-type UserEvent_Payload_185_OldEnvVar_LastEditedByPrincipal struct {
+// UserEvent_Payload_188_OldEnvVar_LastEditedByPrincipal defines model for UserEvent.Payload.188.OldEnvVar.LastEditedByPrincipal.
+type UserEvent_Payload_188_OldEnvVar_LastEditedByPrincipal struct {
 	union json.RawMessage
 }
 
-// UserEventPayload185OldEnvVarTarget environments this env variable targets
+// UserEventPayload188OldEnvVarTarget environments this env variable targets
 //
 // Example: production
-type UserEventPayload185OldEnvVarTarget string
+type UserEventPayload188OldEnvVarTarget string
 
-// UserEventPayload185OldEnvVarType The type of this cosmos doc instance, if blank, assume secret.
+// UserEventPayload188OldEnvVarType The type of this cosmos doc instance, if blank, assume secret.
 //
 // Example: encrypted
-type UserEventPayload185OldEnvVarType string
+type UserEventPayload188OldEnvVarType string
 
-// UserEventPayload185UpdateDiffChangedComment defines model for UserEvent.Payload.185.UpdateDiff.ChangedComment.
-type UserEventPayload185UpdateDiffChangedComment bool
+// UserEventPayload188UpdateDiffChangedComment defines model for UserEvent.Payload.188.UpdateDiff.ChangedComment.
+type UserEventPayload188UpdateDiffChangedComment bool
 
-// UserEventPayload185UpdateDiffChangedGitBranch defines model for UserEvent.Payload.185.UpdateDiff.ChangedGitBranch.
-type UserEventPayload185UpdateDiffChangedGitBranch bool
+// UserEventPayload188UpdateDiffChangedGitBranch defines model for UserEvent.Payload.188.UpdateDiff.ChangedGitBranch.
+type UserEventPayload188UpdateDiffChangedGitBranch bool
 
-// UserEventPayload185UpdateDiffChangedValue Indicates a value was submitted, not whether its plaintext changed.
-type UserEventPayload185UpdateDiffChangedValue bool
+// UserEventPayload188UpdateDiffChangedValue Indicates a value was submitted, not whether its plaintext changed.
+type UserEventPayload188UpdateDiffChangedValue bool
 
-// UserEventPayload185UpdateDiffNewTarget defines model for UserEvent.Payload.185.UpdateDiff.NewTarget.
-type UserEventPayload185UpdateDiffNewTarget string
+// UserEventPayload188UpdateDiffNewTarget defines model for UserEvent.Payload.188.UpdateDiff.NewTarget.
+type UserEventPayload188UpdateDiffNewTarget string
 
-// UserEventPayload185UpdateDiffOldTarget defines model for UserEvent.Payload.185.UpdateDiff.OldTarget.
-type UserEventPayload185UpdateDiffOldTarget string
+// UserEventPayload188UpdateDiffOldTarget defines model for UserEvent.Payload.188.UpdateDiff.OldTarget.
+type UserEventPayload188UpdateDiffOldTarget string
 
-// UserEventPayload186 The payload of the event, if requested.
-type UserEventPayload186 struct {
+// UserEventPayload189 The payload of the event, if requested.
+type UserEventPayload189 struct {
 	ExpiresAt *float32 `json:"expiresAt,omitempty"`
 	ProjectId string   `json:"projectId"`
 	Scope     string   `json:"scope"`
 	Source    string   `json:"source"`
 }
 
-// UserEventPayload187 The payload of the event, if requested.
-type UserEventPayload187 struct {
+// UserEventPayload190 The payload of the event, if requested.
+type UserEventPayload190 struct {
 	ProjectId string `json:"projectId"`
 	Scope     string `json:"scope"`
 	Source    string `json:"source"`
 }
 
-// UserEventPayload188 The payload of the event, if requested.
-type UserEventPayload188 struct {
-	ConfigVersion UserEvent_Payload_188_ConfigVersion `json:"configVersion"`
+// UserEventPayload191 The payload of the event, if requested.
+type UserEventPayload191 struct {
+	ConfigVersion UserEvent_Payload_191_ConfigVersion `json:"configVersion"`
 	ProjectId     string                              `json:"projectId"`
 	ProjectName   string                              `json:"projectName"`
 }
 
-// UserEventPayload188ConfigVersion0 defines model for UserEvent.Payload.188.ConfigVersion.0.
-type UserEventPayload188ConfigVersion0 = string
+// UserEventPayload191ConfigVersion0 defines model for UserEvent.Payload.191.ConfigVersion.0.
+type UserEventPayload191ConfigVersion0 = string
 
-// UserEventPayload188ConfigVersion1 defines model for UserEvent.Payload.188.ConfigVersion.1.
-type UserEventPayload188ConfigVersion1 = float32
+// UserEventPayload191ConfigVersion1 defines model for UserEvent.Payload.191.ConfigVersion.1.
+type UserEventPayload191ConfigVersion1 = float32
 
-// UserEvent_Payload_188_ConfigVersion defines model for UserEvent.Payload.188.ConfigVersion.
-type UserEvent_Payload_188_ConfigVersion struct {
+// UserEvent_Payload_191_ConfigVersion defines model for UserEvent.Payload.191.ConfigVersion.
+type UserEvent_Payload_191_ConfigVersion struct {
 	union json.RawMessage
 }
 
-// UserEventPayload189 The payload of the event, if requested.
-type UserEventPayload189 struct {
-	ConfigVersion UserEvent_Payload_189_ConfigVersion `json:"configVersion"`
+// UserEventPayload192 The payload of the event, if requested.
+type UserEventPayload192 struct {
+	ConfigVersion UserEvent_Payload_192_ConfigVersion `json:"configVersion"`
 }
 
-// UserEventPayload189ConfigVersion0 defines model for UserEvent.Payload.189.ConfigVersion.0.
-type UserEventPayload189ConfigVersion0 = string
+// UserEventPayload192ConfigVersion0 defines model for UserEvent.Payload.192.ConfigVersion.0.
+type UserEventPayload192ConfigVersion0 = string
 
-// UserEventPayload189ConfigVersion1 defines model for UserEvent.Payload.189.ConfigVersion.1.
-type UserEventPayload189ConfigVersion1 = float32
+// UserEventPayload192ConfigVersion1 defines model for UserEvent.Payload.192.ConfigVersion.1.
+type UserEventPayload192ConfigVersion1 = float32
 
-// UserEvent_Payload_189_ConfigVersion defines model for UserEvent.Payload.189.ConfigVersion.
-type UserEvent_Payload_189_ConfigVersion struct {
+// UserEvent_Payload_192_ConfigVersion defines model for UserEvent.Payload.192.ConfigVersion.
+type UserEvent_Payload_192_ConfigVersion struct {
 	union json.RawMessage
 }
 
-// UserEventPayload190 The payload of the event, if requested.
-type UserEventPayload190 struct {
+// UserEventPayload193 The payload of the event, if requested.
+type UserEventPayload193 struct {
 	ConfigChangeCount *float32                            `json:"configChangeCount,omitempty"`
 	ConfigChanges     *[]map[string]interface{}           `json:"configChanges,omitempty"`
-	ConfigVersion     UserEvent_Payload_190_ConfigVersion `json:"configVersion"`
+	ConfigVersion     UserEvent_Payload_193_ConfigVersion `json:"configVersion"`
 }
 
-// UserEventPayload190ConfigVersion0 defines model for UserEvent.Payload.190.ConfigVersion.0.
-type UserEventPayload190ConfigVersion0 = string
+// UserEventPayload193ConfigVersion0 defines model for UserEvent.Payload.193.ConfigVersion.0.
+type UserEventPayload193ConfigVersion0 = string
 
-// UserEventPayload190ConfigVersion1 defines model for UserEvent.Payload.190.ConfigVersion.1.
-type UserEventPayload190ConfigVersion1 = float32
+// UserEventPayload193ConfigVersion1 defines model for UserEvent.Payload.193.ConfigVersion.1.
+type UserEventPayload193ConfigVersion1 = float32
 
-// UserEvent_Payload_190_ConfigVersion defines model for UserEvent.Payload.190.ConfigVersion.
-type UserEvent_Payload_190_ConfigVersion struct {
+// UserEvent_Payload_193_ConfigVersion defines model for UserEvent.Payload.193.ConfigVersion.
+type UserEvent_Payload_193_ConfigVersion struct {
 	union json.RawMessage
 }
 
-// UserEventPayload191 The payload of the event, if requested.
-type UserEventPayload191 struct {
+// UserEventPayload194 The payload of the event, if requested.
+type UserEventPayload194 struct {
 	ConfigChangeCount float32                    `json:"configChangeCount"`
 	ConfigChanges     []map[string]interface{}   `json:"configChanges"`
 	ConfigVersion     float32                    `json:"configVersion"`
 	ProjectId         string                     `json:"projectId"`
 	ProjectName       *string                    `json:"projectName,omitempty"`
-	Restore           UserEventPayload191Restore `json:"restore"`
+	Restore           UserEventPayload194Restore `json:"restore"`
 }
 
-// UserEventPayload191Restore defines model for UserEvent.Payload.191.Restore.
-type UserEventPayload191Restore bool
+// UserEventPayload194Restore defines model for UserEvent.Payload.194.Restore.
+type UserEventPayload194Restore bool
 
-// UserEventPayload192 The payload of the event, if requested.
-type UserEventPayload192 struct {
+// UserEventPayload195 The payload of the event, if requested.
+type UserEventPayload195 struct {
 	ProjectId  string `json:"projectId"`
 	RuleGroups map[string]struct {
-		Action *UserEventPayload192RuleGroupsAction `json:"action,omitempty"`
-		Active UserEventPayload192RuleGroupsActive  `json:"active"`
+		Action *UserEventPayload195RuleGroupsAction `json:"action,omitempty"`
+		Active UserEventPayload195RuleGroupsActive  `json:"active"`
 	} `json:"ruleGroups"`
 	RulesetName string `json:"rulesetName"`
 }
 
-// UserEventPayload192RuleGroupsAction defines model for UserEvent.Payload.192.RuleGroups.Action.
-type UserEventPayload192RuleGroupsAction string
+// UserEventPayload195RuleGroupsAction defines model for UserEvent.Payload.195.RuleGroups.Action.
+type UserEventPayload195RuleGroupsAction string
 
-// UserEventPayload192RuleGroupsActive defines model for UserEvent.Payload.192.RuleGroups.Active.
-type UserEventPayload192RuleGroupsActive bool
+// UserEventPayload195RuleGroupsActive defines model for UserEvent.Payload.195.RuleGroups.Active.
+type UserEventPayload195RuleGroupsActive bool
 
-// UserEventPayload193 The payload of the event, if requested.
-type UserEventPayload193 struct {
-	Action      *UserEventPayload193Action `json:"action,omitempty"`
-	Active      UserEventPayload193Active  `json:"active"`
+// UserEventPayload196 The payload of the event, if requested.
+type UserEventPayload196 struct {
+	Action      *UserEventPayload196Action `json:"action,omitempty"`
+	Active      UserEventPayload196Active  `json:"active"`
 	ProjectId   string                     `json:"projectId"`
 	RulesetName string                     `json:"rulesetName"`
 }
 
-// UserEventPayload193Action defines model for UserEvent.Payload.193.Action.
-type UserEventPayload193Action string
+// UserEventPayload196Action defines model for UserEvent.Payload.196.Action.
+type UserEventPayload196Action string
 
-// UserEventPayload193Active defines model for UserEvent.Payload.193.Active.
-type UserEventPayload193Active bool
+// UserEventPayload196Active defines model for UserEvent.Payload.196.Active.
+type UserEventPayload196Active bool
 
-// UserEventPayload194 The payload of the event, if requested.
-type UserEventPayload194 struct {
+// UserEventPayload197 The payload of the event, if requested.
+type UserEventPayload197 struct {
 	ConsumerProjectId   string  `json:"consumerProjectId"`
 	ConsumerProjectName *string `json:"consumerProjectName,omitempty"`
 	ProjectId           string  `json:"projectId"`
 	ProjectName         *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload195 The payload of the event, if requested.
-type UserEventPayload195 struct {
+// UserEventPayload198 The payload of the event, if requested.
+type UserEventPayload198 struct {
 	NewOwnerId      string  `json:"newOwnerId"`
 	PreviousOwnerId string  `json:"previousOwnerId"`
 	ProjectId       string  `json:"projectId"`
 	ProjectName     *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload196 The payload of the event, if requested.
-type UserEventPayload196 struct {
-	Action UserEventPayload196Action `json:"action"`
+// UserEventPayload199 The payload of the event, if requested.
+type UserEventPayload199 struct {
+	Action UserEventPayload199Action `json:"action"`
 }
 
-// UserEventPayload196Action defines model for UserEvent.Payload.196.Action.
-type UserEventPayload196Action string
+// UserEventPayload199Action defines model for UserEvent.Payload.199.Action.
+type UserEventPayload199Action string
 
-// UserEventPayload197 The payload of the event, if requested.
-type UserEventPayload197 struct {
+// UserEventPayload200 The payload of the event, if requested.
+type UserEventPayload200 struct {
 	Environment string `json:"environment"`
 
 	// ExpiresIn Seconds until the overrides expire.
@@ -14272,16 +14555,16 @@ type UserEventPayload197 struct {
 	ProjectName *string  `json:"projectName,omitempty"`
 }
 
-// UserEventPayload198 The payload of the event, if requested.
-type UserEventPayload198 struct {
-	Source UserEventPayload198Source `json:"source"`
+// UserEventPayload201 The payload of the event, if requested.
+type UserEventPayload201 struct {
+	Source UserEventPayload201Source `json:"source"`
 }
 
-// UserEventPayload198Source defines model for UserEvent.Payload.198.Source.
-type UserEventPayload198Source string
+// UserEventPayload201Source defines model for UserEvent.Payload.201.Source.
+type UserEventPayload201Source string
 
-// UserEventPayload199 The payload of the event, if requested.
-type UserEventPayload199 struct {
+// UserEventPayload202 The payload of the event, if requested.
+type UserEventPayload202 struct {
 	// ActorAccountId Stable account id on `provider`.
 	ActorAccountId *string `json:"actorAccountId"`
 
@@ -14298,34 +14581,34 @@ type UserEventPayload199 struct {
 	FailureCode *string `json:"failureCode,omitempty"`
 
 	// FailureStage Mirrors `PushFailureStage` in `api-git-providers`.
-	FailureStage *UserEventPayload199FailureStage `json:"failureStage,omitempty"`
+	FailureStage *UserEventPayload202FailureStage `json:"failureStage,omitempty"`
 
 	// InstallationId Set only when an App installation token was minted (GitHub only).
 	InstallationId  *string                     `json:"installationId"`
-	Outcome         UserEventPayload199Outcome  `json:"outcome"`
-	Provider        UserEventPayload199Provider `json:"provider"`
+	Outcome         UserEventPayload202Outcome  `json:"outcome"`
+	Provider        UserEventPayload202Provider `json:"provider"`
 	ResultCommitSha *string                     `json:"resultCommitSha"`
 	SourceCommitSha *string                     `json:"sourceCommitSha"`
 
 	// SourceRepo Source repository, "owner/name". Null when the pushed content was generated in-request (push-files-to-repo) rather than copied from a repository.
 	SourceRepo   *string                         `json:"sourceRepo"`
-	UsedAppToken UserEventPayload199UsedAppToken `json:"usedAppToken"`
+	UsedAppToken UserEventPayload202UsedAppToken `json:"usedAppToken"`
 }
 
-// UserEventPayload199FailureStage Mirrors `PushFailureStage` in `api-git-providers`.
-type UserEventPayload199FailureStage string
+// UserEventPayload202FailureStage Mirrors `PushFailureStage` in `api-git-providers`.
+type UserEventPayload202FailureStage string
 
-// UserEventPayload199Outcome defines model for UserEvent.Payload.199.Outcome.
-type UserEventPayload199Outcome string
+// UserEventPayload202Outcome defines model for UserEvent.Payload.202.Outcome.
+type UserEventPayload202Outcome string
 
-// UserEventPayload199Provider defines model for UserEvent.Payload.199.Provider.
-type UserEventPayload199Provider string
+// UserEventPayload202Provider defines model for UserEvent.Payload.202.Provider.
+type UserEventPayload202Provider string
 
-// UserEventPayload199UsedAppToken defines model for UserEvent.Payload.199.UsedAppToken.
-type UserEventPayload199UsedAppToken bool
+// UserEventPayload202UsedAppToken defines model for UserEvent.Payload.202.UsedAppToken.
+type UserEventPayload202UsedAppToken bool
 
-// UserEventPayload200 The payload of the event, if requested.
-type UserEventPayload200 struct {
+// UserEventPayload203 The payload of the event, if requested.
+type UserEventPayload203 struct {
 	FromDeploymentId string  `json:"fromDeploymentId"`
 	ProjectId        string  `json:"projectId"`
 	ProjectName      string  `json:"projectName"`
@@ -14333,16 +14616,16 @@ type UserEventPayload200 struct {
 	ToDeploymentId   string  `json:"toDeploymentId"`
 }
 
-// UserEventPayload201 The payload of the event, if requested.
-type UserEventPayload201 struct {
+// UserEventPayload204 The payload of the event, if requested.
+type UserEventPayload204 struct {
 	ConfigurationId string `json:"configurationId"`
 	IntegrationId   string `json:"integrationId"`
 	IntegrationName string `json:"integrationName"`
 	IntegrationSlug string `json:"integrationSlug"`
 }
 
-// UserEventPayload202 The payload of the event, if requested.
-type UserEventPayload202 struct {
+// UserEventPayload205 The payload of the event, if requested.
+type UserEventPayload205 struct {
 	ConfigurationId string  `json:"configurationId"`
 	IntegrationId   string  `json:"integrationId"`
 	IntegrationName *string `json:"integrationName,omitempty"`
@@ -14354,8 +14637,8 @@ type UserEventPayload202 struct {
 	UserId string `json:"userId"`
 }
 
-// UserEventPayload203 The payload of the event, if requested.
-type UserEventPayload203 struct {
+// UserEventPayload206 The payload of the event, if requested.
+type UserEventPayload206 struct {
 	ConfigurationId string    `json:"configurationId"`
 	ConfirmedScopes []string  `json:"confirmedScopes"`
 	IntegrationId   string    `json:"integrationId"`
@@ -14365,8 +14648,8 @@ type UserEventPayload203 struct {
 	ProjectIds      *[]string `json:"projectIds,omitempty"`
 }
 
-// UserEventPayload204 The payload of the event, if requested.
-type UserEventPayload204 struct {
+// UserEventPayload207 The payload of the event, if requested.
+type UserEventPayload207 struct {
 	DestinationTeamId   string `json:"destinationTeamId"`
 	DestinationTeamName string `json:"destinationTeamName"`
 	Integration         struct {
@@ -14377,8 +14660,8 @@ type UserEventPayload204 struct {
 	} `json:"integration"`
 }
 
-// UserEventPayload205 The payload of the event, if requested.
-type UserEventPayload205 struct {
+// UserEventPayload208 The payload of the event, if requested.
+type UserEventPayload208 struct {
 	Integration struct {
 		ConfigurationId string `json:"configurationId"`
 		Id              string `json:"id"`
@@ -14389,8 +14672,8 @@ type UserEventPayload205 struct {
 	OriginTeamName string `json:"originTeamName"`
 }
 
-// UserEventPayload206 The payload of the event, if requested.
-type UserEventPayload206 struct {
+// UserEventPayload209 The payload of the event, if requested.
+type UserEventPayload209 struct {
 	Configurations []struct {
 		ConfigurationId string  `json:"configurationId"`
 		IntegrationId   string  `json:"integrationId"`
@@ -14400,8 +14683,8 @@ type UserEventPayload206 struct {
 	OwnerId string `json:"ownerId"`
 }
 
-// UserEventPayload207 The payload of the event, if requested.
-type UserEventPayload207 struct {
+// UserEventPayload210 The payload of the event, if requested.
+type UserEventPayload210 struct {
 	BillingPlanId   string  `json:"billingPlanId"`
 	BillingPlanName *string `json:"billingPlanName,omitempty"`
 	ConfigurationId string  `json:"configurationId"`
@@ -14411,36 +14694,36 @@ type UserEventPayload207 struct {
 	OwnerId         string  `json:"ownerId"`
 }
 
-// UserEventPayload208 The payload of the event, if requested.
-type UserEventPayload208 struct {
+// UserEventPayload211 The payload of the event, if requested.
+type UserEventPayload211 struct {
 	ConfigurationId string                            `json:"configurationId"`
 	IntegrationId   string                            `json:"integrationId"`
 	IntegrationName string                            `json:"integrationName"`
 	IntegrationSlug string                            `json:"integrationSlug"`
 	OwnerId         string                            `json:"ownerId"`
-	ProjectIds      *UserEvent_Payload_208_ProjectIds `json:"projectIds,omitempty"`
+	ProjectIds      *UserEvent_Payload_211_ProjectIds `json:"projectIds,omitempty"`
 }
 
-// UserEventPayload208ProjectIds0 defines model for UserEvent.Payload.208.ProjectIds.0.
-type UserEventPayload208ProjectIds0 = []string
+// UserEventPayload211ProjectIds0 defines model for UserEvent.Payload.211.ProjectIds.0.
+type UserEventPayload211ProjectIds0 = []string
 
-// UserEventPayload208ProjectIds1 defines model for UserEvent.Payload.208.ProjectIds.1.
-type UserEventPayload208ProjectIds1 string
+// UserEventPayload211ProjectIds1 defines model for UserEvent.Payload.211.ProjectIds.1.
+type UserEventPayload211ProjectIds1 string
 
-// UserEvent_Payload_208_ProjectIds defines model for UserEvent.Payload.208.ProjectIds.
-type UserEvent_Payload_208_ProjectIds struct {
+// UserEvent_Payload_211_ProjectIds defines model for UserEvent.Payload.211.ProjectIds.
+type UserEvent_Payload_211_ProjectIds struct {
 	union json.RawMessage
 }
 
-// UserEventPayload209 The payload of the event, if requested.
-type UserEventPayload209 struct {
+// UserEventPayload212 The payload of the event, if requested.
+type UserEventPayload212 struct {
 	IntegrationId   string `json:"integrationId"`
 	IntegrationName string `json:"integrationName"`
 	IntegrationSlug string `json:"integrationSlug"`
 }
 
-// UserEventPayload210 The payload of the event, if requested.
-type UserEventPayload210 struct {
+// UserEventPayload213 The payload of the event, if requested.
+type UserEventPayload213 struct {
 	ConfigurationId        string   `json:"configurationId"`
 	DatabaseName           string   `json:"databaseName"`
 	ErrorCode              *string  `json:"errorCode"`
@@ -14458,23 +14741,23 @@ type UserEventPayload210 struct {
 		Tables   *[]string `json:"tables,omitempty"`
 	} `json:"queries"`
 	QueryCount float32                       `json:"queryCount"`
-	QueryType  UserEventPayload210QueryType  `json:"queryType"`
-	Readonly   UserEventPayload210Readonly   `json:"readonly"`
+	QueryType  UserEventPayload213QueryType  `json:"queryType"`
+	Readonly   UserEventPayload213Readonly   `json:"readonly"`
 	ResourceId string                        `json:"resourceId"`
-	RolledBack UserEventPayload210RolledBack `json:"rolledBack"`
+	RolledBack UserEventPayload213RolledBack `json:"rolledBack"`
 }
 
-// UserEventPayload210QueryType defines model for UserEvent.Payload.210.QueryType.
-type UserEventPayload210QueryType string
+// UserEventPayload213QueryType defines model for UserEvent.Payload.213.QueryType.
+type UserEventPayload213QueryType string
 
-// UserEventPayload210Readonly defines model for UserEvent.Payload.210.Readonly.
-type UserEventPayload210Readonly bool
+// UserEventPayload213Readonly defines model for UserEvent.Payload.213.Readonly.
+type UserEventPayload213Readonly bool
 
-// UserEventPayload210RolledBack defines model for UserEvent.Payload.210.RolledBack.
-type UserEventPayload210RolledBack bool
+// UserEventPayload213RolledBack defines model for UserEvent.Payload.213.RolledBack.
+type UserEventPayload213RolledBack bool
 
-// UserEventPayload211 The payload of the event, if requested.
-type UserEventPayload211 struct {
+// UserEventPayload214 The payload of the event, if requested.
+type UserEventPayload214 struct {
 	Commands []struct {
 		Command   string  `json:"command"`
 		ErrorCode *string `json:"errorCode,omitempty"`
@@ -14485,85 +14768,85 @@ type UserEventPayload211 struct {
 	IntegrationId          string                         `json:"integrationId"`
 	IntegrationProductSlug string                         `json:"integrationProductSlug"`
 	IntegrationSlug        string                         `json:"integrationSlug"`
-	Readonly               UserEventPayload211Readonly    `json:"readonly"`
-	RequestKind            UserEventPayload211RequestKind `json:"requestKind"`
-	ResourceId             string                         `json:"resourceId"`
-}
-
-// UserEventPayload211Readonly defines model for UserEvent.Payload.211.Readonly.
-type UserEventPayload211Readonly bool
-
-// UserEventPayload211RequestKind defines model for UserEvent.Payload.211.RequestKind.
-type UserEventPayload211RequestKind string
-
-// UserEventPayload212 The payload of the event, if requested.
-type UserEventPayload212 struct {
-	ConfigurationId        string                         `json:"configurationId"`
-	ErrorCode              *string                        `json:"errorCode,omitempty"`
-	IntegrationId          string                         `json:"integrationId"`
-	IntegrationProductSlug string                         `json:"integrationProductSlug"`
-	IntegrationSlug        string                         `json:"integrationSlug"`
-	Pattern                *string                        `json:"pattern,omitempty"`
-	RequestKind            UserEventPayload212RequestKind `json:"requestKind"`
-	ResourceId             string                         `json:"resourceId"`
-	Type                   *string                        `json:"type,omitempty"`
-}
-
-// UserEventPayload212RequestKind defines model for UserEvent.Payload.212.RequestKind.
-type UserEventPayload212RequestKind string
-
-// UserEventPayload213 The payload of the event, if requested.
-type UserEventPayload213 struct {
-	ConfigurationId        string                         `json:"configurationId"`
-	ErrorCode              *string                        `json:"errorCode,omitempty"`
-	IntegrationId          string                         `json:"integrationId"`
-	IntegrationProductSlug string                         `json:"integrationProductSlug"`
-	IntegrationSlug        string                         `json:"integrationSlug"`
-	Keys                   []string                       `json:"keys"`
-	RequestKind            UserEventPayload213RequestKind `json:"requestKind"`
-	ResourceId             string                         `json:"resourceId"`
-}
-
-// UserEventPayload213RequestKind defines model for UserEvent.Payload.213.RequestKind.
-type UserEventPayload213RequestKind string
-
-// UserEventPayload214 The payload of the event, if requested.
-type UserEventPayload214 struct {
-	ConfigurationId        string                         `json:"configurationId"`
-	ErrorCode              *string                        `json:"errorCode,omitempty"`
-	IntegrationId          string                         `json:"integrationId"`
-	IntegrationProductSlug string                         `json:"integrationProductSlug"`
-	IntegrationSlug        string                         `json:"integrationSlug"`
-	Key                    string                         `json:"key"`
+	Readonly               UserEventPayload214Readonly    `json:"readonly"`
 	RequestKind            UserEventPayload214RequestKind `json:"requestKind"`
 	ResourceId             string                         `json:"resourceId"`
 }
+
+// UserEventPayload214Readonly defines model for UserEvent.Payload.214.Readonly.
+type UserEventPayload214Readonly bool
 
 // UserEventPayload214RequestKind defines model for UserEvent.Payload.214.RequestKind.
 type UserEventPayload214RequestKind string
 
 // UserEventPayload215 The payload of the event, if requested.
 type UserEventPayload215 struct {
+	ConfigurationId        string                         `json:"configurationId"`
+	ErrorCode              *string                        `json:"errorCode,omitempty"`
+	IntegrationId          string                         `json:"integrationId"`
+	IntegrationProductSlug string                         `json:"integrationProductSlug"`
+	IntegrationSlug        string                         `json:"integrationSlug"`
+	Pattern                *string                        `json:"pattern,omitempty"`
+	RequestKind            UserEventPayload215RequestKind `json:"requestKind"`
+	ResourceId             string                         `json:"resourceId"`
+	Type                   *string                        `json:"type,omitempty"`
+}
+
+// UserEventPayload215RequestKind defines model for UserEvent.Payload.215.RequestKind.
+type UserEventPayload215RequestKind string
+
+// UserEventPayload216 The payload of the event, if requested.
+type UserEventPayload216 struct {
+	ConfigurationId        string                         `json:"configurationId"`
+	ErrorCode              *string                        `json:"errorCode,omitempty"`
+	IntegrationId          string                         `json:"integrationId"`
+	IntegrationProductSlug string                         `json:"integrationProductSlug"`
+	IntegrationSlug        string                         `json:"integrationSlug"`
+	Keys                   []string                       `json:"keys"`
+	RequestKind            UserEventPayload216RequestKind `json:"requestKind"`
+	ResourceId             string                         `json:"resourceId"`
+}
+
+// UserEventPayload216RequestKind defines model for UserEvent.Payload.216.RequestKind.
+type UserEventPayload216RequestKind string
+
+// UserEventPayload217 The payload of the event, if requested.
+type UserEventPayload217 struct {
+	ConfigurationId        string                         `json:"configurationId"`
+	ErrorCode              *string                        `json:"errorCode,omitempty"`
+	IntegrationId          string                         `json:"integrationId"`
+	IntegrationProductSlug string                         `json:"integrationProductSlug"`
+	IntegrationSlug        string                         `json:"integrationSlug"`
+	Key                    string                         `json:"key"`
+	RequestKind            UserEventPayload217RequestKind `json:"requestKind"`
+	ResourceId             string                         `json:"resourceId"`
+}
+
+// UserEventPayload217RequestKind defines model for UserEvent.Payload.217.RequestKind.
+type UserEventPayload217RequestKind string
+
+// UserEventPayload218 The payload of the event, if requested.
+type UserEventPayload218 struct {
 	IntegrationId           string   `json:"integrationId"`
 	IntegrationName         string   `json:"integrationName"`
 	IntegrationSlug         string   `json:"integrationSlug"`
 	PreviousSecretExpiresAt *float32 `json:"previousSecretExpiresAt"`
 }
 
-// UserEventPayload216 The payload of the event, if requested.
-type UserEventPayload216 struct {
-	AccessTokenRotation     UserEventPayload216AccessTokenRotation `json:"accessTokenRotation"`
+// UserEventPayload219 The payload of the event, if requested.
+type UserEventPayload219 struct {
+	AccessTokenRotation     UserEventPayload219AccessTokenRotation `json:"accessTokenRotation"`
 	IntegrationId           string                                 `json:"integrationId"`
 	IntegrationName         string                                 `json:"integrationName"`
 	IntegrationSlug         string                                 `json:"integrationSlug"`
 	PermanentTokensExpireAt *float32                               `json:"permanentTokensExpireAt,omitempty"`
 }
 
-// UserEventPayload216AccessTokenRotation defines model for UserEvent.Payload.216.AccessTokenRotation.
-type UserEventPayload216AccessTokenRotation bool
+// UserEventPayload219AccessTokenRotation defines model for UserEvent.Payload.219.AccessTokenRotation.
+type UserEventPayload219AccessTokenRotation bool
 
-// UserEventPayload217 The payload of the event, if requested.
-type UserEventPayload217 struct {
+// UserEventPayload220 The payload of the event, if requested.
+type UserEventPayload220 struct {
 	Algorithm  string  `json:"algorithm"`
 	IssuerId   string  `json:"issuerId"`
 	IssuerName string  `json:"issuerName"`
@@ -14571,22 +14854,22 @@ type UserEventPayload217 struct {
 	Origin     string  `json:"origin"`
 }
 
-// UserEventPayload218 The payload of the event, if requested.
-type UserEventPayload218 struct {
+// UserEventPayload221 The payload of the event, if requested.
+type UserEventPayload221 struct {
 	IssuerId   string  `json:"issuerId"`
 	IssuerName string  `json:"issuerName"`
 	ManagedBy  *string `json:"managedBy,omitempty"`
 }
 
-// UserEventPayload219 The payload of the event, if requested.
-type UserEventPayload219 struct {
+// UserEventPayload222 The payload of the event, if requested.
+type UserEventPayload222 struct {
 	IssuerId   string  `json:"issuerId"`
 	IssuerName string  `json:"issuerName"`
 	KeyId      *string `json:"keyId,omitempty"`
 }
 
-// UserEventPayload220 The payload of the event, if requested.
-type UserEventPayload220 struct {
+// UserEventPayload223 The payload of the event, if requested.
+type UserEventPayload223 struct {
 	ClientId     *string   `json:"clientId,omitempty"`
 	Environments *[]string `json:"environments,omitempty"`
 	IssuerId     string    `json:"issuerId"`
@@ -14595,47 +14878,47 @@ type UserEventPayload220 struct {
 	ProjectId    *string   `json:"projectId,omitempty"`
 }
 
-// UserEventPayload221 The payload of the event, if requested.
-type UserEventPayload221 struct {
+// UserEventPayload224 The payload of the event, if requested.
+type UserEventPayload224 struct {
 	IssuerId   string `json:"issuerId"`
 	IssuerName string `json:"issuerName"`
 	Kind       string `json:"kind"`
 	PolicyKey  string `json:"policyKey"`
 }
 
-// UserEventPayload222 The payload of the event, if requested.
-type UserEventPayload222 struct {
+// UserEventPayload225 The payload of the event, if requested.
+type UserEventPayload225 struct {
 	IntegrationName *string `json:"integrationName,omitempty"`
 	LogDrainUrl     *string `json:"logDrainUrl"`
 }
 
-// UserEventPayload223 The payload of the event, if requested.
-type UserEventPayload223 struct {
+// UserEventPayload226 The payload of the event, if requested.
+type UserEventPayload226 struct {
 	IntegrationName *string `json:"integrationName,omitempty"`
 	LogDrainUrl     string  `json:"logDrainUrl"`
 }
 
-// UserEventPayload224 The payload of the event, if requested.
-type UserEventPayload224 struct {
+// UserEventPayload227 The payload of the event, if requested.
+type UserEventPayload227 struct {
 	Login    string                      `json:"login"`
-	Provider UserEventPayload224Provider `json:"provider"`
+	Provider UserEventPayload227Provider `json:"provider"`
 }
 
-// UserEventPayload224Provider defines model for UserEvent.Payload.224.Provider.
-type UserEventPayload224Provider string
+// UserEventPayload227Provider defines model for UserEvent.Payload.227.Provider.
+type UserEventPayload227Provider string
 
-// UserEventPayload225 The payload of the event, if requested.
-type UserEventPayload225 struct {
-	Provider UserEventPayload225Provider `json:"provider"`
+// UserEventPayload228 The payload of the event, if requested.
+type UserEventPayload228 struct {
+	Provider UserEventPayload228Provider `json:"provider"`
 }
 
-// UserEventPayload225Provider defines model for UserEvent.Payload.225.Provider.
-type UserEventPayload225Provider string
+// UserEventPayload228Provider defines model for UserEvent.Payload.228.Provider.
+type UserEventPayload228Provider string
 
-// UserEventPayload226 The payload of the event, if requested.
-type UserEventPayload226 struct {
+// UserEventPayload229 The payload of the event, if requested.
+type UserEventPayload229 struct {
 	Env         *string                        `json:"env,omitempty"`
-	Factors     *UserEvent_Payload_226_Factors `json:"factors,omitempty"`
+	Factors     *UserEvent_Payload_229_Factors `json:"factors,omitempty"`
 	Geolocation *struct {
 		City *struct {
 			Names struct {
@@ -14661,108 +14944,108 @@ type UserEventPayload226 struct {
 	SsoType        *string                          `json:"ssoType,omitempty"`
 	UserAgent      *string                          `json:"userAgent,omitempty"`
 	Username       *string                          `json:"username,omitempty"`
-	ViaApple       *UserEventPayload226ViaApple     `json:"viaApple,omitempty"`
-	ViaBitbucket   *UserEventPayload226ViaBitbucket `json:"viaBitbucket,omitempty"`
-	ViaGithub      *UserEventPayload226ViaGithub    `json:"viaGithub,omitempty"`
-	ViaGitlab      *UserEventPayload226ViaGitlab    `json:"viaGitlab,omitempty"`
-	ViaGoogle      *UserEventPayload226ViaGoogle    `json:"viaGoogle,omitempty"`
-	ViaOTP         *UserEventPayload226ViaOTP       `json:"viaOTP,omitempty"`
-	ViaPasskey     *UserEventPayload226ViaPasskey   `json:"viaPasskey,omitempty"`
-	ViaSamlSso     *UserEventPayload226ViaSamlSso   `json:"viaSamlSso,omitempty"`
+	ViaApple       *UserEventPayload229ViaApple     `json:"viaApple,omitempty"`
+	ViaBitbucket   *UserEventPayload229ViaBitbucket `json:"viaBitbucket,omitempty"`
+	ViaGithub      *UserEventPayload229ViaGithub    `json:"viaGithub,omitempty"`
+	ViaGitlab      *UserEventPayload229ViaGitlab    `json:"viaGitlab,omitempty"`
+	ViaGoogle      *UserEventPayload229ViaGoogle    `json:"viaGoogle,omitempty"`
+	ViaOTP         *UserEventPayload229ViaOTP       `json:"viaOTP,omitempty"`
+	ViaPasskey     *UserEventPayload229ViaPasskey   `json:"viaPasskey,omitempty"`
+	ViaSamlSso     *UserEventPayload229ViaSamlSso   `json:"viaSamlSso,omitempty"`
 }
 
-// UserEventPayload226Factors0 defines model for UserEvent.Payload.226.Factors.0.
-type UserEventPayload226Factors0 = []struct {
-	Legacy   *UserEventPayload226Factors0Legacy `json:"legacy,omitempty"`
-	Origin   UserEventPayload226Factors0Origin  `json:"origin"`
+// UserEventPayload229Factors0 defines model for UserEvent.Payload.229.Factors.0.
+type UserEventPayload229Factors0 = []struct {
+	Legacy   *UserEventPayload229Factors0Legacy `json:"legacy,omitempty"`
+	Origin   UserEventPayload229Factors0Origin  `json:"origin"`
 	SsoType  *string                            `json:"ssoType,omitempty"`
 	TeamId   *string                            `json:"teamId,omitempty"`
 	Username *string                            `json:"username,omitempty"`
 }
 
-// UserEventPayload226Factors0Legacy defines model for UserEvent.Payload.226.Factors.0.Legacy.
-type UserEventPayload226Factors0Legacy bool
+// UserEventPayload229Factors0Legacy defines model for UserEvent.Payload.229.Factors.0.Legacy.
+type UserEventPayload229Factors0Legacy bool
 
-// UserEventPayload226Factors0Origin defines model for UserEvent.Payload.226.Factors.0.Origin.
-type UserEventPayload226Factors0Origin string
+// UserEventPayload229Factors0Origin defines model for UserEvent.Payload.229.Factors.0.Origin.
+type UserEventPayload229Factors0Origin string
 
-// UserEventPayload226Factors1 defines model for UserEvent.Payload.226.Factors.1.
-type UserEventPayload226Factors1 = []UserEvent_Payload_226_Factors_1_Item
+// UserEventPayload229Factors1 defines model for UserEvent.Payload.229.Factors.1.
+type UserEventPayload229Factors1 = []UserEvent_Payload_229_Factors_1_Item
 
-// UserEventPayload226Factors10 defines model for UserEvent.Payload.226.Factors.1.0.
-type UserEventPayload226Factors10 struct {
-	Legacy   *UserEventPayload226Factors10Legacy `json:"legacy,omitempty"`
-	Origin   UserEventPayload226Factors10Origin  `json:"origin"`
+// UserEventPayload229Factors10 defines model for UserEvent.Payload.229.Factors.1.0.
+type UserEventPayload229Factors10 struct {
+	Legacy   *UserEventPayload229Factors10Legacy `json:"legacy,omitempty"`
+	Origin   UserEventPayload229Factors10Origin  `json:"origin"`
 	SsoType  *string                             `json:"ssoType,omitempty"`
 	TeamId   *string                             `json:"teamId,omitempty"`
 	Username *string                             `json:"username,omitempty"`
 }
 
-// UserEventPayload226Factors10Legacy defines model for UserEvent.Payload.226.Factors.1.0.Legacy.
-type UserEventPayload226Factors10Legacy bool
+// UserEventPayload229Factors10Legacy defines model for UserEvent.Payload.229.Factors.1.0.Legacy.
+type UserEventPayload229Factors10Legacy bool
 
-// UserEventPayload226Factors10Origin defines model for UserEvent.Payload.226.Factors.1.0.Origin.
-type UserEventPayload226Factors10Origin string
+// UserEventPayload229Factors10Origin defines model for UserEvent.Payload.229.Factors.1.0.Origin.
+type UserEventPayload229Factors10Origin string
 
-// UserEventPayload226Factors11 defines model for UserEvent.Payload.226.Factors.1.1.
-type UserEventPayload226Factors11 struct {
-	Origin UserEventPayload226Factors11Origin `json:"origin"`
+// UserEventPayload229Factors11 defines model for UserEvent.Payload.229.Factors.1.1.
+type UserEventPayload229Factors11 struct {
+	Origin UserEventPayload229Factors11Origin `json:"origin"`
 }
 
-// UserEventPayload226Factors11Origin defines model for UserEvent.Payload.226.Factors.1.1.Origin.
-type UserEventPayload226Factors11Origin string
+// UserEventPayload229Factors11Origin defines model for UserEvent.Payload.229.Factors.1.1.Origin.
+type UserEventPayload229Factors11Origin string
 
-// UserEvent_Payload_226_Factors_1_Item defines model for UserEvent.Payload.226.Factors.1.Item.
-type UserEvent_Payload_226_Factors_1_Item struct {
+// UserEvent_Payload_229_Factors_1_Item defines model for UserEvent.Payload.229.Factors.1.Item.
+type UserEvent_Payload_229_Factors_1_Item struct {
 	union json.RawMessage
 }
 
-// UserEvent_Payload_226_Factors defines model for UserEvent.Payload.226.Factors.
-type UserEvent_Payload_226_Factors struct {
+// UserEvent_Payload_229_Factors defines model for UserEvent.Payload.229.Factors.
+type UserEvent_Payload_229_Factors struct {
 	union json.RawMessage
 }
 
-// UserEventPayload226ViaApple defines model for UserEvent.Payload.226.ViaApple.
-type UserEventPayload226ViaApple bool
+// UserEventPayload229ViaApple defines model for UserEvent.Payload.229.ViaApple.
+type UserEventPayload229ViaApple bool
 
-// UserEventPayload226ViaBitbucket defines model for UserEvent.Payload.226.ViaBitbucket.
-type UserEventPayload226ViaBitbucket bool
+// UserEventPayload229ViaBitbucket defines model for UserEvent.Payload.229.ViaBitbucket.
+type UserEventPayload229ViaBitbucket bool
 
-// UserEventPayload226ViaGithub defines model for UserEvent.Payload.226.ViaGithub.
-type UserEventPayload226ViaGithub bool
+// UserEventPayload229ViaGithub defines model for UserEvent.Payload.229.ViaGithub.
+type UserEventPayload229ViaGithub bool
 
-// UserEventPayload226ViaGitlab defines model for UserEvent.Payload.226.ViaGitlab.
-type UserEventPayload226ViaGitlab bool
+// UserEventPayload229ViaGitlab defines model for UserEvent.Payload.229.ViaGitlab.
+type UserEventPayload229ViaGitlab bool
 
-// UserEventPayload226ViaGoogle defines model for UserEvent.Payload.226.ViaGoogle.
-type UserEventPayload226ViaGoogle bool
+// UserEventPayload229ViaGoogle defines model for UserEvent.Payload.229.ViaGoogle.
+type UserEventPayload229ViaGoogle bool
 
-// UserEventPayload226ViaOTP defines model for UserEvent.Payload.226.ViaOTP.
-type UserEventPayload226ViaOTP bool
+// UserEventPayload229ViaOTP defines model for UserEvent.Payload.229.ViaOTP.
+type UserEventPayload229ViaOTP bool
 
-// UserEventPayload226ViaPasskey defines model for UserEvent.Payload.226.ViaPasskey.
-type UserEventPayload226ViaPasskey bool
+// UserEventPayload229ViaPasskey defines model for UserEvent.Payload.229.ViaPasskey.
+type UserEventPayload229ViaPasskey bool
 
-// UserEventPayload226ViaSamlSso defines model for UserEvent.Payload.226.ViaSamlSso.
-type UserEventPayload226ViaSamlSso bool
+// UserEventPayload229ViaSamlSso defines model for UserEvent.Payload.229.ViaSamlSso.
+type UserEventPayload229ViaSamlSso bool
 
-// UserEventPayload227 The payload of the event, if requested.
-type UserEventPayload227 struct {
+// UserEventPayload230 The payload of the event, if requested.
+type UserEventPayload230 struct {
 	ProjectId      string `json:"projectId"`
 	ProjectName    string `json:"projectName"`
 	ToDeploymentId string `json:"toDeploymentId"`
 }
 
-// UserEventPayload228 The payload of the event, if requested.
-type UserEventPayload228 struct {
-	InvoiceCollection UserEventPayload228InvoiceCollection `json:"invoiceCollection"`
+// UserEventPayload231 The payload of the event, if requested.
+type UserEventPayload231 struct {
+	InvoiceCollection UserEventPayload231InvoiceCollection `json:"invoiceCollection"`
 }
 
-// UserEventPayload228InvoiceCollection defines model for UserEvent.Payload.228.InvoiceCollection.
-type UserEventPayload228InvoiceCollection bool
+// UserEventPayload231InvoiceCollection defines model for UserEvent.Payload.231.InvoiceCollection.
+type UserEventPayload231InvoiceCollection bool
 
-// UserEventPayload229 The payload of the event, if requested.
-type UserEventPayload229 struct {
+// UserEventPayload232 The payload of the event, if requested.
+type UserEventPayload232 struct {
 	Periods []struct {
 		EndDate      string  `json:"endDate"`
 		Percent      string  `json:"percent"`
@@ -14771,32 +15054,32 @@ type UserEventPayload229 struct {
 	} `json:"periods"`
 }
 
-// UserEventPayload230 The payload of the event, if requested.
-type UserEventPayload230 struct {
+// UserEventPayload233 The payload of the event, if requested.
+type UserEventPayload233 struct {
 	AllowedIntegrationCount      *float32                   `json:"allowedIntegrationCount,omitempty"`
 	AllowedIntegrationIds        *[]string                  `json:"allowedIntegrationIds,omitempty"`
-	Enabled                      UserEventPayload230Enabled `json:"enabled"`
+	Enabled                      UserEventPayload233Enabled `json:"enabled"`
 	ResourceOnlyIntegrationCount *float32                   `json:"resourceOnlyIntegrationCount,omitempty"`
 }
 
-// UserEventPayload230Enabled defines model for UserEvent.Payload.230.Enabled.
-type UserEventPayload230Enabled bool
+// UserEventPayload233Enabled defines model for UserEvent.Payload.233.Enabled.
+type UserEventPayload233Enabled bool
 
-// UserEventPayload231 The payload of the event, if requested.
-type UserEventPayload231 struct {
+// UserEventPayload234 The payload of the event, if requested.
+type UserEventPayload234 struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
 	Slug string `json:"slug"`
 }
 
-// UserEventPayload232 The payload of the event, if requested.
-type UserEventPayload232 struct {
-	EnablePolyrepoBranchRouting *UserEventPayload232EnablePolyrepoBranchRouting `json:"enablePolyrepoBranchRouting,omitempty"`
+// UserEventPayload235 The payload of the event, if requested.
+type UserEventPayload235 struct {
+	EnablePolyrepoBranchRouting *UserEventPayload235EnablePolyrepoBranchRouting `json:"enablePolyrepoBranchRouting,omitempty"`
 	FallbackEnvironment         *string                                         `json:"fallbackEnvironment,omitempty"`
 	Id                          string                                          `json:"id"`
 	Name                        *string                                         `json:"name,omitempty"`
 	Prev                        struct {
-		EnablePolyrepoBranchRouting *UserEventPayload232PrevEnablePolyrepoBranchRouting `json:"enablePolyrepoBranchRouting,omitempty"`
+		EnablePolyrepoBranchRouting *UserEventPayload235PrevEnablePolyrepoBranchRouting `json:"enablePolyrepoBranchRouting,omitempty"`
 		FallbackEnvironment         string                                              `json:"fallbackEnvironment"`
 		Name                        string                                              `json:"name"`
 		Slug                        string                                              `json:"slug"`
@@ -14804,14 +15087,14 @@ type UserEventPayload232 struct {
 	Slug *string `json:"slug,omitempty"`
 }
 
-// UserEventPayload232EnablePolyrepoBranchRouting defines model for UserEvent.Payload.232.EnablePolyrepoBranchRouting.
-type UserEventPayload232EnablePolyrepoBranchRouting bool
+// UserEventPayload235EnablePolyrepoBranchRouting defines model for UserEvent.Payload.235.EnablePolyrepoBranchRouting.
+type UserEventPayload235EnablePolyrepoBranchRouting bool
 
-// UserEventPayload232PrevEnablePolyrepoBranchRouting defines model for UserEvent.Payload.232.Prev.EnablePolyrepoBranchRouting.
-type UserEventPayload232PrevEnablePolyrepoBranchRouting bool
+// UserEventPayload235PrevEnablePolyrepoBranchRouting defines model for UserEvent.Payload.235.Prev.EnablePolyrepoBranchRouting.
+type UserEventPayload235PrevEnablePolyrepoBranchRouting bool
 
-// UserEventPayload233 The payload of the event, if requested.
-type UserEventPayload233 struct {
+// UserEventPayload236 The payload of the event, if requested.
+type UserEventPayload236 struct {
 	Group struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -14823,8 +15106,8 @@ type UserEventPayload233 struct {
 	} `json:"project"`
 }
 
-// UserEventPayload234 The payload of the event, if requested.
-type UserEventPayload234 struct {
+// UserEventPayload237 The payload of the event, if requested.
+type UserEventPayload237 struct {
 	Group struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
@@ -14832,407 +15115,407 @@ type UserEventPayload234 struct {
 	} `json:"group"`
 	Prev struct {
 		Project struct {
-			Microfrontends *UserEvent_Payload_234_Prev_Project_Microfrontends `json:"microfrontends,omitempty"`
+			Microfrontends *UserEvent_Payload_237_Prev_Project_Microfrontends `json:"microfrontends,omitempty"`
 		} `json:"project"`
 	} `json:"prev"`
 	Project struct {
 		Id             string                                        `json:"id"`
-		Microfrontends *UserEvent_Payload_234_Project_Microfrontends `json:"microfrontends,omitempty"`
+		Microfrontends *UserEvent_Payload_237_Project_Microfrontends `json:"microfrontends,omitempty"`
 		Name           string                                        `json:"name"`
 	} `json:"project"`
 }
 
-// UserEventPayload234PrevProjectMicrofrontends0 defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.0.
-type UserEventPayload234PrevProjectMicrofrontends0 struct {
+// UserEventPayload237PrevProjectMicrofrontends0 defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.0.
+type UserEventPayload237PrevProjectMicrofrontends0 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
 	// Enabled Whether microfrontends are enabled for this project.
-	Enabled UserEventPayload234PrevProjectMicrofrontends0Enabled `json:"enabled"`
+	Enabled UserEventPayload237PrevProjectMicrofrontends0Enabled `json:"enabled"`
 
 	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-	FreeProjectForLegacyLimits *UserEventPayload234PrevProjectMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	FreeProjectForLegacyLimits *UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
 
 	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
 	GroupIds     []string                                                  `json:"groupIds"`
-	IsDefaultApp UserEventPayload234PrevProjectMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
+	IsDefaultApp UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
 
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
 
-// UserEventPayload234PrevProjectMicrofrontends0Enabled Whether microfrontends are enabled for this project.
-type UserEventPayload234PrevProjectMicrofrontends0Enabled bool
+// UserEventPayload237PrevProjectMicrofrontends0Enabled Whether microfrontends are enabled for this project.
+type UserEventPayload237PrevProjectMicrofrontends0Enabled bool
 
-// UserEventPayload234PrevProjectMicrofrontends0FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-type UserEventPayload234PrevProjectMicrofrontends0FreeProjectForLegacyLimits bool
+// UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+type UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits bool
 
-// UserEventPayload234PrevProjectMicrofrontends0IsDefaultApp defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.0.IsDefaultApp.
-type UserEventPayload234PrevProjectMicrofrontends0IsDefaultApp bool
+// UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.0.IsDefaultApp.
+type UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp bool
 
-// UserEventPayload234PrevProjectMicrofrontends1 defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.1.
-type UserEventPayload234PrevProjectMicrofrontends1 struct {
+// UserEventPayload237PrevProjectMicrofrontends1 defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.1.
+type UserEventPayload237PrevProjectMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-	DoNotRouteWithMicrofrontendsRouting *UserEventPayload234PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
+	DoNotRouteWithMicrofrontendsRouting *UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
 	// Enabled Whether microfrontends are enabled for this project.
-	Enabled UserEventPayload234PrevProjectMicrofrontends1Enabled `json:"enabled"`
+	Enabled UserEventPayload237PrevProjectMicrofrontends1Enabled `json:"enabled"`
 
 	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-	FreeProjectForLegacyLimits *UserEventPayload234PrevProjectMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	FreeProjectForLegacyLimits *UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
 
 	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
 	GroupIds     []string                                                   `json:"groupIds"`
-	IsDefaultApp *UserEventPayload234PrevProjectMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
+	IsDefaultApp *UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
 
 	// RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
-	RouteObservabilityToThisProject *UserEventPayload234PrevProjectMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
+	RouteObservabilityToThisProject *UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
 
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
 
-// UserEventPayload234PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-type UserEventPayload234PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
+// UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+type UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
 
-// UserEventPayload234PrevProjectMicrofrontends1Enabled Whether microfrontends are enabled for this project.
-type UserEventPayload234PrevProjectMicrofrontends1Enabled bool
+// UserEventPayload237PrevProjectMicrofrontends1Enabled Whether microfrontends are enabled for this project.
+type UserEventPayload237PrevProjectMicrofrontends1Enabled bool
 
-// UserEventPayload234PrevProjectMicrofrontends1FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-type UserEventPayload234PrevProjectMicrofrontends1FreeProjectForLegacyLimits bool
+// UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+type UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits bool
 
-// UserEventPayload234PrevProjectMicrofrontends1IsDefaultApp defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.1.IsDefaultApp.
-type UserEventPayload234PrevProjectMicrofrontends1IsDefaultApp bool
+// UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.1.IsDefaultApp.
+type UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp bool
 
-// UserEventPayload234PrevProjectMicrofrontends1RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
-type UserEventPayload234PrevProjectMicrofrontends1RouteObservabilityToThisProject bool
+// UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
+type UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject bool
 
-// UserEventPayload234PrevProjectMicrofrontends2 defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.2.
-type UserEventPayload234PrevProjectMicrofrontends2 struct {
-	Enabled                    UserEventPayload234PrevProjectMicrofrontends2Enabled                     `json:"enabled"`
-	FreeProjectForLegacyLimits *UserEventPayload234PrevProjectMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+// UserEventPayload237PrevProjectMicrofrontends2 defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.2.
+type UserEventPayload237PrevProjectMicrofrontends2 struct {
+	Enabled                    UserEventPayload237PrevProjectMicrofrontends2Enabled                     `json:"enabled"`
+	FreeProjectForLegacyLimits *UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
 	GroupIds                   []interface{}                                                            `json:"groupIds"`
 	UpdatedAt                  float32                                                                  `json:"updatedAt"`
 }
 
-// UserEventPayload234PrevProjectMicrofrontends2Enabled defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.2.Enabled.
-type UserEventPayload234PrevProjectMicrofrontends2Enabled bool
+// UserEventPayload237PrevProjectMicrofrontends2Enabled defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.2.Enabled.
+type UserEventPayload237PrevProjectMicrofrontends2Enabled bool
 
-// UserEventPayload234PrevProjectMicrofrontends2FreeProjectForLegacyLimits defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.2.FreeProjectForLegacyLimits.
-type UserEventPayload234PrevProjectMicrofrontends2FreeProjectForLegacyLimits bool
+// UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.2.FreeProjectForLegacyLimits.
+type UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits bool
 
-// UserEvent_Payload_234_Prev_Project_Microfrontends defines model for UserEvent.Payload.234.Prev.Project.Microfrontends.
-type UserEvent_Payload_234_Prev_Project_Microfrontends struct {
+// UserEvent_Payload_237_Prev_Project_Microfrontends defines model for UserEvent.Payload.237.Prev.Project.Microfrontends.
+type UserEvent_Payload_237_Prev_Project_Microfrontends struct {
 	union json.RawMessage
 }
 
-// UserEventPayload234ProjectMicrofrontends0 defines model for UserEvent.Payload.234.Project.Microfrontends.0.
-type UserEventPayload234ProjectMicrofrontends0 struct {
+// UserEventPayload237ProjectMicrofrontends0 defines model for UserEvent.Payload.237.Project.Microfrontends.0.
+type UserEventPayload237ProjectMicrofrontends0 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
 	// Enabled Whether microfrontends are enabled for this project.
-	Enabled UserEventPayload234ProjectMicrofrontends0Enabled `json:"enabled"`
+	Enabled UserEventPayload237ProjectMicrofrontends0Enabled `json:"enabled"`
 
 	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-	FreeProjectForLegacyLimits *UserEventPayload234ProjectMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	FreeProjectForLegacyLimits *UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
 
 	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
 	GroupIds     []string                                              `json:"groupIds"`
-	IsDefaultApp UserEventPayload234ProjectMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
+	IsDefaultApp UserEventPayload237ProjectMicrofrontends0IsDefaultApp `json:"isDefaultApp"`
 
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
 
-// UserEventPayload234ProjectMicrofrontends0Enabled Whether microfrontends are enabled for this project.
-type UserEventPayload234ProjectMicrofrontends0Enabled bool
+// UserEventPayload237ProjectMicrofrontends0Enabled Whether microfrontends are enabled for this project.
+type UserEventPayload237ProjectMicrofrontends0Enabled bool
 
-// UserEventPayload234ProjectMicrofrontends0FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-type UserEventPayload234ProjectMicrofrontends0FreeProjectForLegacyLimits bool
+// UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+type UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits bool
 
-// UserEventPayload234ProjectMicrofrontends0IsDefaultApp defines model for UserEvent.Payload.234.Project.Microfrontends.0.IsDefaultApp.
-type UserEventPayload234ProjectMicrofrontends0IsDefaultApp bool
+// UserEventPayload237ProjectMicrofrontends0IsDefaultApp defines model for UserEvent.Payload.237.Project.Microfrontends.0.IsDefaultApp.
+type UserEventPayload237ProjectMicrofrontends0IsDefaultApp bool
 
-// UserEventPayload234ProjectMicrofrontends1 defines model for UserEvent.Payload.234.Project.Microfrontends.1.
-type UserEventPayload234ProjectMicrofrontends1 struct {
+// UserEventPayload237ProjectMicrofrontends1 defines model for UserEvent.Payload.237.Project.Microfrontends.1.
+type UserEventPayload237ProjectMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-	DoNotRouteWithMicrofrontendsRouting *UserEventPayload234ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
+	DoNotRouteWithMicrofrontendsRouting *UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
 	// Enabled Whether microfrontends are enabled for this project.
-	Enabled UserEventPayload234ProjectMicrofrontends1Enabled `json:"enabled"`
+	Enabled UserEventPayload237ProjectMicrofrontends1Enabled `json:"enabled"`
 
 	// FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-	FreeProjectForLegacyLimits *UserEventPayload234ProjectMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+	FreeProjectForLegacyLimits *UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
 
 	// GroupIds The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
 	GroupIds     []string                                               `json:"groupIds"`
-	IsDefaultApp *UserEventPayload234ProjectMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
+	IsDefaultApp *UserEventPayload237ProjectMicrofrontends1IsDefaultApp `json:"isDefaultApp,omitempty"`
 
 	// RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
-	RouteObservabilityToThisProject *UserEventPayload234ProjectMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
+	RouteObservabilityToThisProject *UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject `json:"routeObservabilityToThisProject,omitempty"`
 
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
 
-// UserEventPayload234ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
-type UserEventPayload234ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
+// UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+type UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
 
-// UserEventPayload234ProjectMicrofrontends1Enabled Whether microfrontends are enabled for this project.
-type UserEventPayload234ProjectMicrofrontends1Enabled bool
+// UserEventPayload237ProjectMicrofrontends1Enabled Whether microfrontends are enabled for this project.
+type UserEventPayload237ProjectMicrofrontends1Enabled bool
 
-// UserEventPayload234ProjectMicrofrontends1FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
-type UserEventPayload234ProjectMicrofrontends1FreeProjectForLegacyLimits bool
+// UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+type UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits bool
 
-// UserEventPayload234ProjectMicrofrontends1IsDefaultApp defines model for UserEvent.Payload.234.Project.Microfrontends.1.IsDefaultApp.
-type UserEventPayload234ProjectMicrofrontends1IsDefaultApp bool
+// UserEventPayload237ProjectMicrofrontends1IsDefaultApp defines model for UserEvent.Payload.237.Project.Microfrontends.1.IsDefaultApp.
+type UserEventPayload237ProjectMicrofrontends1IsDefaultApp bool
 
-// UserEventPayload234ProjectMicrofrontends1RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
-type UserEventPayload234ProjectMicrofrontends1RouteObservabilityToThisProject bool
+// UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject Whether observability data should be routed to this microfrontend project or a root project.
+type UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject bool
 
-// UserEventPayload234ProjectMicrofrontends2 defines model for UserEvent.Payload.234.Project.Microfrontends.2.
-type UserEventPayload234ProjectMicrofrontends2 struct {
-	Enabled                    UserEventPayload234ProjectMicrofrontends2Enabled                     `json:"enabled"`
-	FreeProjectForLegacyLimits *UserEventPayload234ProjectMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
+// UserEventPayload237ProjectMicrofrontends2 defines model for UserEvent.Payload.237.Project.Microfrontends.2.
+type UserEventPayload237ProjectMicrofrontends2 struct {
+	Enabled                    UserEventPayload237ProjectMicrofrontends2Enabled                     `json:"enabled"`
+	FreeProjectForLegacyLimits *UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits `json:"freeProjectForLegacyLimits,omitempty"`
 	GroupIds                   []interface{}                                                        `json:"groupIds"`
 	UpdatedAt                  float32                                                              `json:"updatedAt"`
 }
 
-// UserEventPayload234ProjectMicrofrontends2Enabled defines model for UserEvent.Payload.234.Project.Microfrontends.2.Enabled.
-type UserEventPayload234ProjectMicrofrontends2Enabled bool
+// UserEventPayload237ProjectMicrofrontends2Enabled defines model for UserEvent.Payload.237.Project.Microfrontends.2.Enabled.
+type UserEventPayload237ProjectMicrofrontends2Enabled bool
 
-// UserEventPayload234ProjectMicrofrontends2FreeProjectForLegacyLimits defines model for UserEvent.Payload.234.Project.Microfrontends.2.FreeProjectForLegacyLimits.
-type UserEventPayload234ProjectMicrofrontends2FreeProjectForLegacyLimits bool
+// UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits defines model for UserEvent.Payload.237.Project.Microfrontends.2.FreeProjectForLegacyLimits.
+type UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits bool
 
-// UserEvent_Payload_234_Project_Microfrontends defines model for UserEvent.Payload.234.Project.Microfrontends.
-type UserEvent_Payload_234_Project_Microfrontends struct {
+// UserEvent_Payload_237_Project_Microfrontends defines model for UserEvent.Payload.237.Project.Microfrontends.
+type UserEvent_Payload_237_Project_Microfrontends struct {
 	union json.RawMessage
-}
-
-// UserEventPayload235 The payload of the event, if requested.
-type UserEventPayload235 struct {
-	AlertId   string `json:"alertId"`
-	AlertName string `json:"alertName"`
-}
-
-// UserEventPayload236 The payload of the event, if requested.
-type UserEventPayload236 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload236ActorType `json:"actorType"`
-	Reason    string                       `json:"reason"`
-}
-
-// UserEventPayload236ActorType defines model for UserEvent.Payload.236.ActorType.
-type UserEventPayload236ActorType string
-
-// UserEventPayload237 The payload of the event, if requested.
-type UserEventPayload237 struct {
-	ProjectId   *string `json:"projectId,omitempty"`
-	ProjectName string  `json:"projectName"`
 }
 
 // UserEventPayload238 The payload of the event, if requested.
 type UserEventPayload238 struct {
-	Avatar         *string `json:"avatar"`
-	OrganizationId string  `json:"organizationId"`
+	AlertId   string `json:"alertId"`
+	AlertName string `json:"alertName"`
 }
 
 // UserEventPayload239 The payload of the event, if requested.
 type UserEventPayload239 struct {
+	// ActorId Okta user id.
+	ActorId   string                       `json:"actorId"`
+	ActorName *string                      `json:"actorName,omitempty"`
+	ActorType UserEventPayload239ActorType `json:"actorType"`
+	Reason    string                       `json:"reason"`
+}
+
+// UserEventPayload239ActorType defines model for UserEvent.Payload.239.ActorType.
+type UserEventPayload239ActorType string
+
+// UserEventPayload240 The payload of the event, if requested.
+type UserEventPayload240 struct {
+	ProjectId   *string `json:"projectId,omitempty"`
+	ProjectName string  `json:"projectName"`
+}
+
+// UserEventPayload241 The payload of the event, if requested.
+type UserEventPayload241 struct {
+	Avatar         *string `json:"avatar"`
+	OrganizationId string  `json:"organizationId"`
+}
+
+// UserEventPayload242 The payload of the event, if requested.
+type UserEventPayload242 struct {
 	Name           string `json:"name"`
 	OrganizationId string `json:"organizationId"`
 	RootTeamId     string `json:"rootTeamId"`
 	Slug           string `json:"slug"`
 }
 
-// UserEventPayload240 The payload of the event, if requested.
-type UserEventPayload240 struct {
+// UserEventPayload243 The payload of the event, if requested.
+type UserEventPayload243 struct {
 	Domain         string `json:"domain"`
 	OrganizationId string `json:"organizationId"`
 }
 
-// UserEventPayload241 The payload of the event, if requested.
-type UserEventPayload241 struct {
+// UserEventPayload244 The payload of the event, if requested.
+type UserEventPayload244 struct {
 	DirectoryId    string `json:"directoryId"`
 	OrganizationId string `json:"organizationId"`
 }
 
-// UserEventPayload242 The payload of the event, if requested.
-type UserEventPayload242 struct {
+// UserEventPayload245 The payload of the event, if requested.
+type UserEventPayload245 struct {
 	DirectoryGroupId string `json:"directoryGroupId"`
 	DirectoryId      string `json:"directoryId"`
 	GroupName        string `json:"groupName"`
 	Next             struct {
-		OrganizationPermissions []UserEventPayload242NextOrganizationPermissions `json:"organizationPermissions"`
-		TeamRoles               []UserEventPayload242NextTeamRoles               `json:"teamRoles"`
+		OrganizationPermissions []UserEventPayload245NextOrganizationPermissions `json:"organizationPermissions"`
+		TeamRoles               []UserEventPayload245NextTeamRoles               `json:"teamRoles"`
 		Teams                   map[string]struct {
-			TeamRoles []UserEventPayload242NextTeamsTeamRoles `json:"teamRoles"`
+			TeamRoles []UserEventPayload245NextTeamsTeamRoles `json:"teamRoles"`
 		} `json:"teams"`
 	} `json:"next"`
 	OrganizationId string `json:"organizationId"`
 }
 
-// UserEventPayload242NextOrganizationPermissions defines model for UserEvent.Payload.242.Next.OrganizationPermissions.
-type UserEventPayload242NextOrganizationPermissions string
+// UserEventPayload245NextOrganizationPermissions defines model for UserEvent.Payload.245.Next.OrganizationPermissions.
+type UserEventPayload245NextOrganizationPermissions string
 
-// UserEventPayload242NextTeamRoles defines model for UserEvent.Payload.242.Next.TeamRoles.
-type UserEventPayload242NextTeamRoles string
+// UserEventPayload245NextTeamRoles defines model for UserEvent.Payload.245.Next.TeamRoles.
+type UserEventPayload245NextTeamRoles string
 
-// UserEventPayload242NextTeamsTeamRoles defines model for UserEvent.Payload.242.Next.Teams.TeamRoles.
-type UserEventPayload242NextTeamsTeamRoles string
+// UserEventPayload245NextTeamsTeamRoles defines model for UserEvent.Payload.245.Next.Teams.TeamRoles.
+type UserEventPayload245NextTeamsTeamRoles string
 
-// UserEventPayload243 The payload of the event, if requested.
-type UserEventPayload243 struct {
+// UserEventPayload246 The payload of the event, if requested.
+type UserEventPayload246 struct {
 	DirectoryGroupId string `json:"directoryGroupId"`
 	DirectoryId      string `json:"directoryId"`
 	OrganizationId   string `json:"organizationId"`
 }
 
-// UserEventPayload244 The payload of the event, if requested.
-type UserEventPayload244 struct {
+// UserEventPayload247 The payload of the event, if requested.
+type UserEventPayload247 struct {
 	CopiedDomains          []string                                  `json:"copiedDomains"`
-	EnabledOrganizationEmu UserEventPayload244EnabledOrganizationEmu `json:"enabledOrganizationEmu"`
+	EnabledOrganizationEmu UserEventPayload247EnabledOrganizationEmu `json:"enabledOrganizationEmu"`
 	EnabledTeamIds         []string                                  `json:"enabledTeamIds"`
 	OrganizationId         string                                    `json:"organizationId"`
 	TeamId                 string                                    `json:"teamId"`
 	TeamSlug               string                                    `json:"teamSlug"`
 }
 
-// UserEventPayload244EnabledOrganizationEmu defines model for UserEvent.Payload.244.EnabledOrganizationEmu.
-type UserEventPayload244EnabledOrganizationEmu bool
+// UserEventPayload247EnabledOrganizationEmu defines model for UserEvent.Payload.247.EnabledOrganizationEmu.
+type UserEventPayload247EnabledOrganizationEmu bool
 
-// UserEventPayload245 The payload of the event, if requested.
-type UserEventPayload245 struct {
-	Enabled           UserEventPayload245Enabled         `json:"enabled"`
+// UserEventPayload248 The payload of the event, if requested.
+type UserEventPayload248 struct {
+	Enabled           UserEventPayload248Enabled         `json:"enabled"`
 	EnforcedTeamIds   []string                           `json:"enforcedTeamIds"`
 	OrganizationId    string                             `json:"organizationId"`
-	PreviousEnabled   UserEventPayload245PreviousEnabled `json:"previousEnabled"`
-	Trigger           UserEventPayload245Trigger         `json:"trigger"`
+	PreviousEnabled   UserEventPayload248PreviousEnabled `json:"previousEnabled"`
+	Trigger           UserEventPayload248Trigger         `json:"trigger"`
 	UnenforcedTeamIds []string                           `json:"unenforcedTeamIds"`
 }
 
-// UserEventPayload245Enabled defines model for UserEvent.Payload.245.Enabled.
-type UserEventPayload245Enabled bool
+// UserEventPayload248Enabled defines model for UserEvent.Payload.248.Enabled.
+type UserEventPayload248Enabled bool
 
-// UserEventPayload245PreviousEnabled defines model for UserEvent.Payload.245.PreviousEnabled.
-type UserEventPayload245PreviousEnabled bool
+// UserEventPayload248PreviousEnabled defines model for UserEvent.Payload.248.PreviousEnabled.
+type UserEventPayload248PreviousEnabled bool
 
-// UserEventPayload245Trigger defines model for UserEvent.Payload.245.Trigger.
-type UserEventPayload245Trigger string
+// UserEventPayload248Trigger defines model for UserEvent.Payload.248.Trigger.
+type UserEventPayload248Trigger string
 
-// UserEventPayload246 The payload of the event, if requested.
-type UserEventPayload246 struct {
-	Enabled        UserEventPayload246Enabled `json:"enabled"`
+// UserEventPayload249 The payload of the event, if requested.
+type UserEventPayload249 struct {
+	Enabled        UserEventPayload249Enabled `json:"enabled"`
 	OrganizationId string                     `json:"organizationId"`
 	TeamId         string                     `json:"teamId"`
 	TeamSlug       string                     `json:"teamSlug"`
 }
 
-// UserEventPayload246Enabled defines model for UserEvent.Payload.246.Enabled.
-type UserEventPayload246Enabled bool
+// UserEventPayload249Enabled defines model for UserEvent.Payload.249.Enabled.
+type UserEventPayload249Enabled bool
 
-// UserEventPayload247 The payload of the event, if requested.
-type UserEventPayload247 struct {
+// UserEventPayload250 The payload of the event, if requested.
+type UserEventPayload250 struct {
 	Name           string `json:"name"`
 	OrganizationId string `json:"organizationId"`
 }
 
-// UserEventPayload248 The payload of the event, if requested.
-type UserEventPayload248 struct {
+// UserEventPayload251 The payload of the event, if requested.
+type UserEventPayload251 struct {
 	OrganizationId string `json:"organizationId"`
 	Slug           string `json:"slug"`
 }
 
-// UserEventPayload249 The payload of the event, if requested.
-type UserEventPayload249 struct {
-	BillingPlan    UserEventPayload249BillingPlan `json:"billingPlan"`
+// UserEventPayload252 The payload of the event, if requested.
+type UserEventPayload252 struct {
+	BillingPlan    UserEventPayload252BillingPlan `json:"billingPlan"`
 	OrganizationId string                         `json:"organizationId"`
 	TeamId         string                         `json:"teamId"`
 }
 
-// UserEventPayload249BillingPlan defines model for UserEvent.Payload.249.BillingPlan.
-type UserEventPayload249BillingPlan string
+// UserEventPayload252BillingPlan defines model for UserEvent.Payload.252.BillingPlan.
+type UserEventPayload252BillingPlan string
 
-// UserEventPayload250 The payload of the event, if requested.
-type UserEventPayload250 struct {
+// UserEventPayload253 The payload of the event, if requested.
+type UserEventPayload253 struct {
 	Next struct {
-		DsyncMode UserEventPayload250NextDsyncMode `json:"dsyncMode"`
+		DsyncMode UserEventPayload253NextDsyncMode `json:"dsyncMode"`
 	} `json:"next"`
 	OrganizationId string `json:"organizationId"`
 	Previous       struct {
-		DsyncMode UserEventPayload250PreviousDsyncMode `json:"dsyncMode"`
+		DsyncMode UserEventPayload253PreviousDsyncMode `json:"dsyncMode"`
 	} `json:"previous"`
 	TeamId   string `json:"teamId"`
 	TeamName string `json:"teamName"`
 }
 
-// UserEventPayload250NextDsyncMode defines model for UserEvent.Payload.250.Next.DsyncMode.
-type UserEventPayload250NextDsyncMode string
+// UserEventPayload253NextDsyncMode defines model for UserEvent.Payload.253.Next.DsyncMode.
+type UserEventPayload253NextDsyncMode string
 
-// UserEventPayload250PreviousDsyncMode defines model for UserEvent.Payload.250.Previous.DsyncMode.
-type UserEventPayload250PreviousDsyncMode string
+// UserEventPayload253PreviousDsyncMode defines model for UserEvent.Payload.253.Previous.DsyncMode.
+type UserEventPayload253PreviousDsyncMode string
 
-// UserEventPayload251 The payload of the event, if requested.
-type UserEventPayload251 struct {
+// UserEventPayload254 The payload of the event, if requested.
+type UserEventPayload254 struct {
 	ConnectionType   string `json:"connectionType"`
 	OrganizationId   string `json:"organizationId"`
 	OrganizationSlug string `json:"organizationSlug"`
 }
 
-// UserEventPayload252 The payload of the event, if requested.
-type UserEventPayload252 struct {
-	Enforced         UserEventPayload252Enforced         `json:"enforced"`
+// UserEventPayload255 The payload of the event, if requested.
+type UserEventPayload255 struct {
+	Enforced         UserEventPayload255Enforced         `json:"enforced"`
 	OrganizationId   string                              `json:"organizationId"`
 	OrganizationSlug string                              `json:"organizationSlug"`
-	PreviousEnforced UserEventPayload252PreviousEnforced `json:"previousEnforced"`
+	PreviousEnforced UserEventPayload255PreviousEnforced `json:"previousEnforced"`
 }
 
-// UserEventPayload252Enforced defines model for UserEvent.Payload.252.Enforced.
-type UserEventPayload252Enforced bool
+// UserEventPayload255Enforced defines model for UserEvent.Payload.255.Enforced.
+type UserEventPayload255Enforced bool
 
-// UserEventPayload252PreviousEnforced defines model for UserEvent.Payload.252.PreviousEnforced.
-type UserEventPayload252PreviousEnforced bool
+// UserEventPayload255PreviousEnforced defines model for UserEvent.Payload.255.PreviousEnforced.
+type UserEventPayload255PreviousEnforced bool
 
-// UserEventPayload253 The payload of the event, if requested.
-type UserEventPayload253 struct {
-	Enabled          UserEventPayload253Enabled         `json:"enabled"`
+// UserEventPayload256 The payload of the event, if requested.
+type UserEventPayload256 struct {
+	Enabled          UserEventPayload256Enabled         `json:"enabled"`
 	OrganizationId   string                             `json:"organizationId"`
 	OrganizationSlug string                             `json:"organizationSlug"`
-	PreviousEnabled  UserEventPayload253PreviousEnabled `json:"previousEnabled"`
+	PreviousEnabled  UserEventPayload256PreviousEnabled `json:"previousEnabled"`
 }
 
-// UserEventPayload253Enabled defines model for UserEvent.Payload.253.Enabled.
-type UserEventPayload253Enabled bool
+// UserEventPayload256Enabled defines model for UserEvent.Payload.256.Enabled.
+type UserEventPayload256Enabled bool
 
-// UserEventPayload253PreviousEnabled defines model for UserEvent.Payload.253.PreviousEnabled.
-type UserEventPayload253PreviousEnabled bool
+// UserEventPayload256PreviousEnabled defines model for UserEvent.Payload.256.PreviousEnabled.
+type UserEventPayload256PreviousEnabled bool
 
-// UserEventPayload254 The payload of the event, if requested.
-type UserEventPayload254 struct {
-	Mode           UserEventPayload254Mode         `json:"mode"`
+// UserEventPayload257 The payload of the event, if requested.
+type UserEventPayload257 struct {
+	Mode           UserEventPayload257Mode         `json:"mode"`
 	OrganizationId string                          `json:"organizationId"`
-	PreviousMode   UserEventPayload254PreviousMode `json:"previousMode"`
+	PreviousMode   UserEventPayload257PreviousMode `json:"previousMode"`
 	TeamId         string                          `json:"teamId"`
 	TeamName       string                          `json:"teamName"`
 }
 
-// UserEventPayload254Mode defines model for UserEvent.Payload.254.Mode.
-type UserEventPayload254Mode string
+// UserEventPayload257Mode defines model for UserEvent.Payload.257.Mode.
+type UserEventPayload257Mode string
 
-// UserEventPayload254PreviousMode defines model for UserEvent.Payload.254.PreviousMode.
-type UserEventPayload254PreviousMode string
+// UserEventPayload257PreviousMode defines model for UserEvent.Payload.257.PreviousMode.
+type UserEventPayload257PreviousMode string
 
-// UserEventPayload255 The payload of the event, if requested.
-type UserEventPayload255 struct {
+// UserEventPayload258 The payload of the event, if requested.
+type UserEventPayload258 struct {
 	BlockReason *string `json:"blockReason,omitempty"`
 	Cause       string  `json:"cause"`
 	OwnerId     string  `json:"ownerId"`
@@ -15242,118 +15525,118 @@ type UserEventPayload255 struct {
 	Source string `json:"source"`
 }
 
-// UserEventPayload256 The payload of the event, if requested.
-type UserEventPayload256 struct {
+// UserEventPayload259 The payload of the event, if requested.
+type UserEventPayload259 struct {
 	Cause   string  `json:"cause"`
 	OwnerId string  `json:"ownerId"`
 	Reason  *string `json:"reason,omitempty"`
 	Source  string  `json:"source"`
 }
 
-// UserEventPayload257 The payload of the event, if requested.
-type UserEventPayload257 struct {
+// UserEventPayload260 The payload of the event, if requested.
+type UserEventPayload260 struct {
 	BlockReason *string `json:"blockReason,omitempty"`
 	Cause       string  `json:"cause"`
 	OwnerId     string  `json:"ownerId"`
 	Source      string  `json:"source"`
 }
 
-// UserEventPayload258 The payload of the event, if requested.
-type UserEventPayload258 struct {
+// UserEventPayload261 The payload of the event, if requested.
+type UserEventPayload261 struct {
 	Cause   string `json:"cause"`
 	OwnerId string `json:"ownerId"`
 	Source  string `json:"source"`
 }
 
-// UserEventPayload259 The payload of the event, if requested.
-type UserEventPayload259 struct {
+// UserEventPayload262 The payload of the event, if requested.
+type UserEventPayload262 struct {
 	Next struct {
-		AllowUnsafeScriptSrcKeywords   UserEventPayload259NextAllowUnsafeScriptSrcKeywords    `json:"allowUnsafeScriptSrcKeywords"`
+		AllowUnsafeScriptSrcKeywords   UserEventPayload262NextAllowUnsafeScriptSrcKeywords    `json:"allowUnsafeScriptSrcKeywords"`
 		ComputedConnectSrc             *string                                                `json:"computedConnectSrc,omitempty"`
 		ComputedConnectSrcPreview      *string                                                `json:"computedConnectSrcPreview,omitempty"`
 		ComputedScriptSrc              *string                                                `json:"computedScriptSrc,omitempty"`
 		ComputedScriptSrcPreview       *string                                                `json:"computedScriptSrcPreview,omitempty"`
-		ConnectSrcNotificationsEnabled *UserEventPayload259NextConnectSrcNotificationsEnabled `json:"connectSrcNotificationsEnabled,omitempty"`
-		Enabled                        UserEventPayload259NextEnabled                         `json:"enabled"`
+		ConnectSrcNotificationsEnabled *UserEventPayload262NextConnectSrcNotificationsEnabled `json:"connectSrcNotificationsEnabled,omitempty"`
+		Enabled                        UserEventPayload262NextEnabled                         `json:"enabled"`
 		EnforcePercentage              float32                                                `json:"enforcePercentage"`
-		EnforcementScope               *UserEventPayload259NextEnforcementScope               `json:"enforcementScope,omitempty"`
+		EnforcementScope               *UserEventPayload262NextEnforcementScope               `json:"enforcementScope,omitempty"`
 		Mode                           string                                                 `json:"mode"`
-		NewResourceBlockingPolicy      UserEventPayload259NextNewResourceBlockingPolicy       `json:"newResourceBlockingPolicy"`
-		OmitScriptNonce                *UserEventPayload259NextOmitScriptNonce                `json:"omitScriptNonce,omitempty"`
+		NewResourceBlockingPolicy      UserEventPayload262NextNewResourceBlockingPolicy       `json:"newResourceBlockingPolicy"`
+		OmitScriptNonce                *UserEventPayload262NextOmitScriptNonce                `json:"omitScriptNonce,omitempty"`
 	} `json:"next"`
 	Previous *struct {
-		AllowUnsafeScriptSrcKeywords   UserEventPayload259PreviousAllowUnsafeScriptSrcKeywords    `json:"allowUnsafeScriptSrcKeywords"`
+		AllowUnsafeScriptSrcKeywords   UserEventPayload262PreviousAllowUnsafeScriptSrcKeywords    `json:"allowUnsafeScriptSrcKeywords"`
 		ComputedConnectSrc             *string                                                    `json:"computedConnectSrc,omitempty"`
 		ComputedConnectSrcPreview      *string                                                    `json:"computedConnectSrcPreview,omitempty"`
 		ComputedScriptSrc              *string                                                    `json:"computedScriptSrc,omitempty"`
 		ComputedScriptSrcPreview       *string                                                    `json:"computedScriptSrcPreview,omitempty"`
-		ConnectSrcNotificationsEnabled *UserEventPayload259PreviousConnectSrcNotificationsEnabled `json:"connectSrcNotificationsEnabled,omitempty"`
-		Enabled                        UserEventPayload259PreviousEnabled                         `json:"enabled"`
+		ConnectSrcNotificationsEnabled *UserEventPayload262PreviousConnectSrcNotificationsEnabled `json:"connectSrcNotificationsEnabled,omitempty"`
+		Enabled                        UserEventPayload262PreviousEnabled                         `json:"enabled"`
 		EnforcePercentage              float32                                                    `json:"enforcePercentage"`
-		EnforcementScope               *UserEventPayload259PreviousEnforcementScope               `json:"enforcementScope,omitempty"`
+		EnforcementScope               *UserEventPayload262PreviousEnforcementScope               `json:"enforcementScope,omitempty"`
 		Mode                           string                                                     `json:"mode"`
-		NewResourceBlockingPolicy      UserEventPayload259PreviousNewResourceBlockingPolicy       `json:"newResourceBlockingPolicy"`
-		OmitScriptNonce                *UserEventPayload259PreviousOmitScriptNonce                `json:"omitScriptNonce,omitempty"`
+		NewResourceBlockingPolicy      UserEventPayload262PreviousNewResourceBlockingPolicy       `json:"newResourceBlockingPolicy"`
+		OmitScriptNonce                *UserEventPayload262PreviousOmitScriptNonce                `json:"omitScriptNonce,omitempty"`
 	} `json:"previous"`
 	ProjectId string `json:"projectId"`
 }
 
-// UserEventPayload259NextAllowUnsafeScriptSrcKeywords defines model for UserEvent.Payload.259.Next.AllowUnsafeScriptSrcKeywords.
-type UserEventPayload259NextAllowUnsafeScriptSrcKeywords bool
+// UserEventPayload262NextAllowUnsafeScriptSrcKeywords defines model for UserEvent.Payload.262.Next.AllowUnsafeScriptSrcKeywords.
+type UserEventPayload262NextAllowUnsafeScriptSrcKeywords bool
 
-// UserEventPayload259NextConnectSrcNotificationsEnabled defines model for UserEvent.Payload.259.Next.ConnectSrcNotificationsEnabled.
-type UserEventPayload259NextConnectSrcNotificationsEnabled bool
+// UserEventPayload262NextConnectSrcNotificationsEnabled defines model for UserEvent.Payload.262.Next.ConnectSrcNotificationsEnabled.
+type UserEventPayload262NextConnectSrcNotificationsEnabled bool
 
-// UserEventPayload259NextEnabled defines model for UserEvent.Payload.259.Next.Enabled.
-type UserEventPayload259NextEnabled bool
+// UserEventPayload262NextEnabled defines model for UserEvent.Payload.262.Next.Enabled.
+type UserEventPayload262NextEnabled bool
 
-// UserEventPayload259NextEnforcementScope defines model for UserEvent.Payload.259.Next.EnforcementScope.
-type UserEventPayload259NextEnforcementScope string
+// UserEventPayload262NextEnforcementScope defines model for UserEvent.Payload.262.Next.EnforcementScope.
+type UserEventPayload262NextEnforcementScope string
 
-// UserEventPayload259NextNewResourceBlockingPolicy defines model for UserEvent.Payload.259.Next.NewResourceBlockingPolicy.
-type UserEventPayload259NextNewResourceBlockingPolicy string
+// UserEventPayload262NextNewResourceBlockingPolicy defines model for UserEvent.Payload.262.Next.NewResourceBlockingPolicy.
+type UserEventPayload262NextNewResourceBlockingPolicy string
 
-// UserEventPayload259NextOmitScriptNonce defines model for UserEvent.Payload.259.Next.OmitScriptNonce.
-type UserEventPayload259NextOmitScriptNonce bool
+// UserEventPayload262NextOmitScriptNonce defines model for UserEvent.Payload.262.Next.OmitScriptNonce.
+type UserEventPayload262NextOmitScriptNonce bool
 
-// UserEventPayload259PreviousAllowUnsafeScriptSrcKeywords defines model for UserEvent.Payload.259.Previous.AllowUnsafeScriptSrcKeywords.
-type UserEventPayload259PreviousAllowUnsafeScriptSrcKeywords bool
+// UserEventPayload262PreviousAllowUnsafeScriptSrcKeywords defines model for UserEvent.Payload.262.Previous.AllowUnsafeScriptSrcKeywords.
+type UserEventPayload262PreviousAllowUnsafeScriptSrcKeywords bool
 
-// UserEventPayload259PreviousConnectSrcNotificationsEnabled defines model for UserEvent.Payload.259.Previous.ConnectSrcNotificationsEnabled.
-type UserEventPayload259PreviousConnectSrcNotificationsEnabled bool
+// UserEventPayload262PreviousConnectSrcNotificationsEnabled defines model for UserEvent.Payload.262.Previous.ConnectSrcNotificationsEnabled.
+type UserEventPayload262PreviousConnectSrcNotificationsEnabled bool
 
-// UserEventPayload259PreviousEnabled defines model for UserEvent.Payload.259.Previous.Enabled.
-type UserEventPayload259PreviousEnabled bool
+// UserEventPayload262PreviousEnabled defines model for UserEvent.Payload.262.Previous.Enabled.
+type UserEventPayload262PreviousEnabled bool
 
-// UserEventPayload259PreviousEnforcementScope defines model for UserEvent.Payload.259.Previous.EnforcementScope.
-type UserEventPayload259PreviousEnforcementScope string
+// UserEventPayload262PreviousEnforcementScope defines model for UserEvent.Payload.262.Previous.EnforcementScope.
+type UserEventPayload262PreviousEnforcementScope string
 
-// UserEventPayload259PreviousNewResourceBlockingPolicy defines model for UserEvent.Payload.259.Previous.NewResourceBlockingPolicy.
-type UserEventPayload259PreviousNewResourceBlockingPolicy string
+// UserEventPayload262PreviousNewResourceBlockingPolicy defines model for UserEvent.Payload.262.Previous.NewResourceBlockingPolicy.
+type UserEventPayload262PreviousNewResourceBlockingPolicy string
 
-// UserEventPayload259PreviousOmitScriptNonce defines model for UserEvent.Payload.259.Previous.OmitScriptNonce.
-type UserEventPayload259PreviousOmitScriptNonce bool
+// UserEventPayload262PreviousOmitScriptNonce defines model for UserEvent.Payload.262.Previous.OmitScriptNonce.
+type UserEventPayload262PreviousOmitScriptNonce bool
 
-// UserEventPayload260 The payload of the event, if requested.
-type UserEventPayload260 struct {
+// UserEventPayload263 The payload of the event, if requested.
+type UserEventPayload263 struct {
 	HeaderName     string `json:"headerName"`
 	Justification  string `json:"justification"`
 	PreviousStatus string `json:"previousStatus"`
 	ProjectId      string `json:"projectId"`
 }
 
-// UserEventPayload261 The payload of the event, if requested.
-type UserEventPayload261 struct {
+// UserEventPayload264 The payload of the event, if requested.
+type UserEventPayload264 struct {
 	HeaderName     string  `json:"headerName"`
 	Justification  *string `json:"justification"`
 	PreviousStatus string  `json:"previousStatus"`
 	ProjectId      string  `json:"projectId"`
 }
 
-// UserEventPayload262 The payload of the event, if requested.
-type UserEventPayload262 struct {
+// UserEventPayload265 The payload of the event, if requested.
+type UserEventPayload265 struct {
 	ConnectSrcCount                      float32                                                 `json:"connectSrcCount"`
-	ConnectSrcNormalizationRulesCleared  *UserEventPayload262ConnectSrcNormalizationRulesCleared `json:"connectSrcNormalizationRulesCleared,omitempty"`
+	ConnectSrcNormalizationRulesCleared  *UserEventPayload265ConnectSrcNormalizationRulesCleared `json:"connectSrcNormalizationRulesCleared,omitempty"`
 	ConnectSrcOriginCount                float32                                                 `json:"connectSrcOriginCount"`
 	ConnectSrcUserNormalizationRuleCount *float32                                                `json:"connectSrcUserNormalizationRuleCount,omitempty"`
 	DeletedCount                         float32                                                 `json:"deletedCount"`
@@ -15363,70 +15646,70 @@ type UserEventPayload262 struct {
 	ScriptCount                          float32                                                 `json:"scriptCount"`
 }
 
-// UserEventPayload262ConnectSrcNormalizationRulesCleared defines model for UserEvent.Payload.262.ConnectSrcNormalizationRulesCleared.
-type UserEventPayload262ConnectSrcNormalizationRulesCleared bool
+// UserEventPayload265ConnectSrcNormalizationRulesCleared defines model for UserEvent.Payload.265.ConnectSrcNormalizationRulesCleared.
+type UserEventPayload265ConnectSrcNormalizationRulesCleared bool
 
-// UserEventPayload263 The payload of the event, if requested.
-type UserEventPayload263 struct {
-	ApprovalScope  *UserEventPayload263ApprovalScope `json:"approvalScope,omitempty"`
+// UserEventPayload266 The payload of the event, if requested.
+type UserEventPayload266 struct {
+	ApprovalScope  *UserEventPayload266ApprovalScope `json:"approvalScope,omitempty"`
 	Justification  string                            `json:"justification"`
-	Kind           *UserEventPayload263Kind          `json:"kind,omitempty"`
+	Kind           *UserEventPayload266Kind          `json:"kind,omitempty"`
 	PreviousStatus string                            `json:"previousStatus"`
 	ProjectId      string                            `json:"projectId"`
 	Url            string                            `json:"url"`
 }
 
-// UserEventPayload263ApprovalScope defines model for UserEvent.Payload.263.ApprovalScope.
-type UserEventPayload263ApprovalScope string
+// UserEventPayload266ApprovalScope defines model for UserEvent.Payload.266.ApprovalScope.
+type UserEventPayload266ApprovalScope string
 
-// UserEventPayload263Kind defines model for UserEvent.Payload.263.Kind.
-type UserEventPayload263Kind string
-
-// UserEventPayload264 The payload of the event, if requested.
-type UserEventPayload264 struct {
-	ProjectId   string                  `json:"projectId"`
-	ResourceUrl string                  `json:"resourceUrl"`
-	Type        UserEventPayload264Type `json:"type"`
-}
-
-// UserEventPayload264Type defines model for UserEvent.Payload.264.Type.
-type UserEventPayload264Type string
-
-// UserEventPayload265 The payload of the event, if requested.
-type UserEventPayload265 struct {
-	HeaderName string                  `json:"headerName"`
-	ProjectId  string                  `json:"projectId"`
-	Type       UserEventPayload265Type `json:"type"`
-}
-
-// UserEventPayload265Type defines model for UserEvent.Payload.265.Type.
-type UserEventPayload265Type string
-
-// UserEventPayload266 The payload of the event, if requested.
-type UserEventPayload266 struct {
-	ProjectId   string                  `json:"projectId"`
-	ResourceUrl string                  `json:"resourceUrl"`
-	Type        UserEventPayload266Type `json:"type"`
-}
-
-// UserEventPayload266Type defines model for UserEvent.Payload.266.Type.
-type UserEventPayload266Type string
+// UserEventPayload266Kind defines model for UserEvent.Payload.266.Kind.
+type UserEventPayload266Kind string
 
 // UserEventPayload267 The payload of the event, if requested.
 type UserEventPayload267 struct {
+	ProjectId   string                  `json:"projectId"`
+	ResourceUrl string                  `json:"resourceUrl"`
+	Type        UserEventPayload267Type `json:"type"`
+}
+
+// UserEventPayload267Type defines model for UserEvent.Payload.267.Type.
+type UserEventPayload267Type string
+
+// UserEventPayload268 The payload of the event, if requested.
+type UserEventPayload268 struct {
+	HeaderName string                  `json:"headerName"`
+	ProjectId  string                  `json:"projectId"`
+	Type       UserEventPayload268Type `json:"type"`
+}
+
+// UserEventPayload268Type defines model for UserEvent.Payload.268.Type.
+type UserEventPayload268Type string
+
+// UserEventPayload269 The payload of the event, if requested.
+type UserEventPayload269 struct {
+	ProjectId   string                  `json:"projectId"`
+	ResourceUrl string                  `json:"resourceUrl"`
+	Type        UserEventPayload269Type `json:"type"`
+}
+
+// UserEventPayload269Type defines model for UserEvent.Payload.269.Type.
+type UserEventPayload269Type string
+
+// UserEventPayload270 The payload of the event, if requested.
+type UserEventPayload270 struct {
 	HeaderName     *string                  `json:"headerName,omitempty"`
 	Justification  *string                  `json:"justification"`
-	Kind           *UserEventPayload267Kind `json:"kind,omitempty"`
+	Kind           *UserEventPayload270Kind `json:"kind,omitempty"`
 	PreviousStatus string                   `json:"previousStatus"`
 	ProjectId      string                   `json:"projectId"`
 	Url            *string                  `json:"url,omitempty"`
 }
 
-// UserEventPayload267Kind defines model for UserEvent.Payload.267.Kind.
-type UserEventPayload267Kind string
+// UserEventPayload270Kind defines model for UserEvent.Payload.270.Kind.
+type UserEventPayload270Kind string
 
-// UserEventPayload268 The payload of the event, if requested.
-type UserEventPayload268 struct {
+// UserEventPayload271 The payload of the event, if requested.
+type UserEventPayload271 struct {
 	Justification        string                 `json:"justification"`
 	Pattern              string                 `json:"pattern"`
 	ProjectId            string                 `json:"projectId"`
@@ -15434,18 +15717,18 @@ type UserEventPayload268 struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// UserEventPayload269 The payload of the event, if requested.
-type UserEventPayload269 struct {
+// UserEventPayload272 The payload of the event, if requested.
+type UserEventPayload272 struct {
 	NewName string `json:"newName"`
 	OldName string `json:"oldName"`
 }
 
-// UserEventPayload270 The payload of the event, if requested.
-type UserEventPayload270 struct {
+// UserEventPayload273 The payload of the event, if requested.
+type UserEventPayload273 struct {
 	ConnectorId      string                            `json:"connectorId"`
 	ConnectorService string                            `json:"connectorService"`
 	ConnectorType    string                            `json:"connectorType"`
-	EmailVerified    *UserEventPayload270EmailVerified `json:"emailVerified,omitempty"`
+	EmailVerified    *UserEventPayload273EmailVerified `json:"emailVerified,omitempty"`
 	Environment      string                            `json:"environment"`
 	ExternalIssuer   string                            `json:"externalIssuer"`
 	ExternalSubject  string                            `json:"externalSubject"`
@@ -15456,293 +15739,293 @@ type UserEventPayload270 struct {
 	TenantId         *string                           `json:"tenantId,omitempty"`
 }
 
-// UserEventPayload270EmailVerified defines model for UserEvent.Payload.270.EmailVerified.
-type UserEventPayload270EmailVerified bool
+// UserEventPayload273EmailVerified defines model for UserEvent.Payload.273.EmailVerified.
+type UserEventPayload273EmailVerified bool
 
-// UserEventPayload271 The payload of the event, if requested.
-type UserEventPayload271 struct {
+// UserEventPayload274 The payload of the event, if requested.
+type UserEventPayload274 struct {
 	Next struct {
 		Passport *struct {
 			ConnectorId    string                                        `json:"connectorId"`
-			DeploymentType UserEventPayload271NextPassportDeploymentType `json:"deploymentType"`
+			DeploymentType UserEventPayload274NextPassportDeploymentType `json:"deploymentType"`
 		} `json:"passport,omitempty"`
 	} `json:"next"`
 	Previous struct {
 		Passport *struct {
 			ConnectorId    string                                            `json:"connectorId"`
-			DeploymentType UserEventPayload271PreviousPassportDeploymentType `json:"deploymentType"`
+			DeploymentType UserEventPayload274PreviousPassportDeploymentType `json:"deploymentType"`
 		} `json:"passport,omitempty"`
 	} `json:"previous"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload271NextPassportDeploymentType defines model for UserEvent.Payload.271.Next.Passport.DeploymentType.
-type UserEventPayload271NextPassportDeploymentType string
+// UserEventPayload274NextPassportDeploymentType defines model for UserEvent.Payload.274.Next.Passport.DeploymentType.
+type UserEventPayload274NextPassportDeploymentType string
 
-// UserEventPayload271PreviousPassportDeploymentType defines model for UserEvent.Payload.271.Previous.Passport.DeploymentType.
-type UserEventPayload271PreviousPassportDeploymentType string
+// UserEventPayload274PreviousPassportDeploymentType defines model for UserEvent.Payload.274.Previous.Passport.DeploymentType.
+type UserEventPayload274PreviousPassportDeploymentType string
 
-// UserEventPayload272 The payload of the event, if requested.
-type UserEventPayload272 struct {
+// UserEventPayload275 The payload of the event, if requested.
+type UserEventPayload275 struct {
 	Next struct {
 		Passport *struct {
 			ConnectorId    string                                        `json:"connectorId"`
-			DeploymentType UserEventPayload272NextPassportDeploymentType `json:"deploymentType"`
+			DeploymentType UserEventPayload275NextPassportDeploymentType `json:"deploymentType"`
 		} `json:"passport,omitempty"`
 	} `json:"next"`
 	Previous struct {
 		Passport *struct {
 			ConnectorId    string                                            `json:"connectorId"`
-			DeploymentType UserEventPayload272PreviousPassportDeploymentType `json:"deploymentType"`
+			DeploymentType UserEventPayload275PreviousPassportDeploymentType `json:"deploymentType"`
 		} `json:"passport,omitempty"`
 	} `json:"previous"`
-	Scope *UserEventPayload272Scope `json:"scope,omitempty"`
+	Scope *UserEventPayload275Scope `json:"scope,omitempty"`
 }
 
-// UserEventPayload272NextPassportDeploymentType defines model for UserEvent.Payload.272.Next.Passport.DeploymentType.
-type UserEventPayload272NextPassportDeploymentType string
+// UserEventPayload275NextPassportDeploymentType defines model for UserEvent.Payload.275.Next.Passport.DeploymentType.
+type UserEventPayload275NextPassportDeploymentType string
 
-// UserEventPayload272PreviousPassportDeploymentType defines model for UserEvent.Payload.272.Previous.Passport.DeploymentType.
-type UserEventPayload272PreviousPassportDeploymentType string
+// UserEventPayload275PreviousPassportDeploymentType defines model for UserEvent.Payload.275.Previous.Passport.DeploymentType.
+type UserEventPayload275PreviousPassportDeploymentType string
 
-// UserEventPayload272Scope defines model for UserEvent.Payload.272.Scope.
-type UserEventPayload272Scope string
+// UserEventPayload275Scope defines model for UserEvent.Payload.275.Scope.
+type UserEventPayload275Scope string
 
-// UserEventPayload273 The payload of the event, if requested.
-type UserEventPayload273 struct {
+// UserEventPayload276 The payload of the event, if requested.
+type UserEventPayload276 struct {
 	Next []struct {
 		// EnableBuilds Explicit opt-in; missing values are false.
-		EnableBuilds *UserEventPayload273NextEnableBuilds `json:"enableBuilds,omitempty"`
+		EnableBuilds *UserEventPayload276NextEnableBuilds `json:"enableBuilds,omitempty"`
 
 		// EnableFunctions Explicit opt-in; missing values are false. Authorization does not enable a workload.
-		EnableFunctions *UserEventPayload273NextEnableFunctions `json:"enableFunctions,omitempty"`
-		EnvId           UserEvent_Payload_273_Next_EnvId        `json:"envId"`
+		EnableFunctions *UserEventPayload276NextEnableFunctions `json:"enableFunctions,omitempty"`
+		EnvId           UserEvent_Payload_276_Next_EnvId        `json:"envId"`
 		PerimeterId     string                                  `json:"perimeterId"`
 	} `json:"next"`
 	Previous []struct {
 		// EnableBuilds Explicit opt-in; missing values are false.
-		EnableBuilds *UserEventPayload273PreviousEnableBuilds `json:"enableBuilds,omitempty"`
+		EnableBuilds *UserEventPayload276PreviousEnableBuilds `json:"enableBuilds,omitempty"`
 
 		// EnableFunctions Explicit opt-in; missing values are false. Authorization does not enable a workload.
-		EnableFunctions *UserEventPayload273PreviousEnableFunctions `json:"enableFunctions,omitempty"`
-		EnvId           UserEvent_Payload_273_Previous_EnvId        `json:"envId"`
+		EnableFunctions *UserEventPayload276PreviousEnableFunctions `json:"enableFunctions,omitempty"`
+		EnvId           UserEvent_Payload_276_Previous_EnvId        `json:"envId"`
 		PerimeterId     string                                      `json:"perimeterId"`
 	} `json:"previous"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload273NextEnableBuilds Explicit opt-in; missing values are false.
-type UserEventPayload273NextEnableBuilds bool
+// UserEventPayload276NextEnableBuilds Explicit opt-in; missing values are false.
+type UserEventPayload276NextEnableBuilds bool
 
-// UserEventPayload273NextEnableFunctions Explicit opt-in; missing values are false. Authorization does not enable a workload.
-type UserEventPayload273NextEnableFunctions bool
+// UserEventPayload276NextEnableFunctions Explicit opt-in; missing values are false. Authorization does not enable a workload.
+type UserEventPayload276NextEnableFunctions bool
 
-// UserEventPayload273NextEnvId0 defines model for UserEvent.Payload.273.Next.EnvId.0.
-type UserEventPayload273NextEnvId0 = string
+// UserEventPayload276NextEnvId0 defines model for UserEvent.Payload.276.Next.EnvId.0.
+type UserEventPayload276NextEnvId0 = string
 
-// UserEventPayload273NextEnvId1 defines model for UserEvent.Payload.273.Next.EnvId.1.
-type UserEventPayload273NextEnvId1 string
+// UserEventPayload276NextEnvId1 defines model for UserEvent.Payload.276.Next.EnvId.1.
+type UserEventPayload276NextEnvId1 string
 
-// UserEvent_Payload_273_Next_EnvId defines model for UserEvent.Payload.273.Next.EnvId.
-type UserEvent_Payload_273_Next_EnvId struct {
+// UserEvent_Payload_276_Next_EnvId defines model for UserEvent.Payload.276.Next.EnvId.
+type UserEvent_Payload_276_Next_EnvId struct {
 	union json.RawMessage
 }
 
-// UserEventPayload273PreviousEnableBuilds Explicit opt-in; missing values are false.
-type UserEventPayload273PreviousEnableBuilds bool
+// UserEventPayload276PreviousEnableBuilds Explicit opt-in; missing values are false.
+type UserEventPayload276PreviousEnableBuilds bool
 
-// UserEventPayload273PreviousEnableFunctions Explicit opt-in; missing values are false. Authorization does not enable a workload.
-type UserEventPayload273PreviousEnableFunctions bool
+// UserEventPayload276PreviousEnableFunctions Explicit opt-in; missing values are false. Authorization does not enable a workload.
+type UserEventPayload276PreviousEnableFunctions bool
 
-// UserEventPayload273PreviousEnvId0 defines model for UserEvent.Payload.273.Previous.EnvId.0.
-type UserEventPayload273PreviousEnvId0 = string
+// UserEventPayload276PreviousEnvId0 defines model for UserEvent.Payload.276.Previous.EnvId.0.
+type UserEventPayload276PreviousEnvId0 = string
 
-// UserEventPayload273PreviousEnvId1 defines model for UserEvent.Payload.273.Previous.EnvId.1.
-type UserEventPayload273PreviousEnvId1 string
+// UserEventPayload276PreviousEnvId1 defines model for UserEvent.Payload.276.Previous.EnvId.1.
+type UserEventPayload276PreviousEnvId1 string
 
-// UserEvent_Payload_273_Previous_EnvId defines model for UserEvent.Payload.273.Previous.EnvId.
-type UserEvent_Payload_273_Previous_EnvId struct {
+// UserEvent_Payload_276_Previous_EnvId defines model for UserEvent.Payload.276.Previous.EnvId.
+type UserEvent_Payload_276_Previous_EnvId struct {
 	union json.RawMessage
 }
-
-// UserEventPayload274 The payload of the event, if requested.
-type UserEventPayload274 struct {
-	// Automated Whether the plan change was system-initiated rather than human-initiated.
-	Automated      *UserEventPayload274Automated      `json:"automated,omitempty"`
-	IsDowngrade    *UserEventPayload274IsDowngrade    `json:"isDowngrade,omitempty"`
-	IsReactivate   *UserEventPayload274IsReactivate   `json:"isReactivate,omitempty"`
-	IsTrialUpgrade *UserEventPayload274IsTrialUpgrade `json:"isTrialUpgrade,omitempty"`
-	Plan           string                             `json:"plan"`
-	PrevPlan       *string                            `json:"prevPlan,omitempty"`
-	PriorPlan      *string                            `json:"priorPlan,omitempty"`
-
-	// Reason Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`).
-	Reason             *string  `json:"reason,omitempty"`
-	RemovedMemberCount *float32 `json:"removedMemberCount,omitempty"`
-	RemovedUsers       *map[string]struct {
-		Confirmed   UserEventPayload274RemovedUsersConfirmed `json:"confirmed"`
-		ConfirmedAt *float32                                 `json:"confirmedAt,omitempty"`
-		JoinedFrom  *struct {
-			CommitId         *string                                                  `json:"commitId,omitempty"`
-			DsyncConnectedAt *float32                                                 `json:"dsyncConnectedAt,omitempty"`
-			DsyncUserId      *string                                                  `json:"dsyncUserId,omitempty"`
-			GitUserId        *UserEvent_Payload_274_RemovedUsers_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
-			GitUserLogin     *string                                                  `json:"gitUserLogin,omitempty"`
-			IdpUserId        *string                                                  `json:"idpUserId,omitempty"`
-			Origin           UserEventPayload274RemovedUsersJoinedFromOrigin          `json:"origin"`
-			RepoId           *string                                                  `json:"repoId,omitempty"`
-			RepoPath         *string                                                  `json:"repoPath,omitempty"`
-			SsoConnectedAt   *float32                                                 `json:"ssoConnectedAt,omitempty"`
-			SsoUserId        *string                                                  `json:"ssoUserId,omitempty"`
-		} `json:"joinedFrom,omitempty"`
-		Role UserEventPayload274RemovedUsersRole `json:"role"`
-	} `json:"removedUsers,omitempty"`
-	Timestamp *float32 `json:"timestamp,omitempty"`
-	UserAgent *string  `json:"userAgent,omitempty"`
-}
-
-// UserEventPayload274Automated Whether the plan change was system-initiated rather than human-initiated.
-type UserEventPayload274Automated bool
-
-// UserEventPayload274IsDowngrade defines model for UserEvent.Payload.274.IsDowngrade.
-type UserEventPayload274IsDowngrade bool
-
-// UserEventPayload274IsReactivate defines model for UserEvent.Payload.274.IsReactivate.
-type UserEventPayload274IsReactivate bool
-
-// UserEventPayload274IsTrialUpgrade defines model for UserEvent.Payload.274.IsTrialUpgrade.
-type UserEventPayload274IsTrialUpgrade bool
-
-// UserEventPayload274RemovedUsersConfirmed defines model for UserEvent.Payload.274.RemovedUsers.Confirmed.
-type UserEventPayload274RemovedUsersConfirmed bool
-
-// UserEventPayload274RemovedUsersJoinedFromGitUserId0 defines model for UserEvent.Payload.274.RemovedUsers.JoinedFrom.GitUserId.0.
-type UserEventPayload274RemovedUsersJoinedFromGitUserId0 = string
-
-// UserEventPayload274RemovedUsersJoinedFromGitUserId1 defines model for UserEvent.Payload.274.RemovedUsers.JoinedFrom.GitUserId.1.
-type UserEventPayload274RemovedUsersJoinedFromGitUserId1 = float32
-
-// UserEvent_Payload_274_RemovedUsers_JoinedFrom_GitUserId defines model for UserEvent.Payload.274.RemovedUsers.JoinedFrom.GitUserId.
-type UserEvent_Payload_274_RemovedUsers_JoinedFrom_GitUserId struct {
-	union json.RawMessage
-}
-
-// UserEventPayload274RemovedUsersJoinedFromOrigin defines model for UserEvent.Payload.274.RemovedUsers.JoinedFrom.Origin.
-type UserEventPayload274RemovedUsersJoinedFromOrigin string
-
-// UserEventPayload274RemovedUsersRole defines model for UserEvent.Payload.274.RemovedUsers.Role.
-type UserEventPayload274RemovedUsersRole string
-
-// UserEventPayload275 The payload of the event, if requested.
-type UserEventPayload275 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload275ActorType `json:"actorType"`
-
-	// Automated Whether the plan change was system-initiated rather than human-initiated.
-	Automated      *UserEventPayload275Automated      `json:"automated,omitempty"`
-	IsDowngrade    *UserEventPayload275IsDowngrade    `json:"isDowngrade,omitempty"`
-	IsReactivate   *UserEventPayload275IsReactivate   `json:"isReactivate,omitempty"`
-	IsTrialUpgrade *UserEventPayload275IsTrialUpgrade `json:"isTrialUpgrade,omitempty"`
-	Plan           string                             `json:"plan"`
-	PrevPlan       *string                            `json:"prevPlan,omitempty"`
-	PriorPlan      *string                            `json:"priorPlan,omitempty"`
-
-	// Reason Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`).
-	Reason             *string  `json:"reason,omitempty"`
-	RemovedMemberCount *float32 `json:"removedMemberCount,omitempty"`
-	RemovedUsers       *map[string]struct {
-		Confirmed   UserEventPayload275RemovedUsersConfirmed `json:"confirmed"`
-		ConfirmedAt *float32                                 `json:"confirmedAt,omitempty"`
-		JoinedFrom  *struct {
-			CommitId         *string                                                  `json:"commitId,omitempty"`
-			DsyncConnectedAt *float32                                                 `json:"dsyncConnectedAt,omitempty"`
-			DsyncUserId      *string                                                  `json:"dsyncUserId,omitempty"`
-			GitUserId        *UserEvent_Payload_275_RemovedUsers_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
-			GitUserLogin     *string                                                  `json:"gitUserLogin,omitempty"`
-			IdpUserId        *string                                                  `json:"idpUserId,omitempty"`
-			Origin           UserEventPayload275RemovedUsersJoinedFromOrigin          `json:"origin"`
-			RepoId           *string                                                  `json:"repoId,omitempty"`
-			RepoPath         *string                                                  `json:"repoPath,omitempty"`
-			SsoConnectedAt   *float32                                                 `json:"ssoConnectedAt,omitempty"`
-			SsoUserId        *string                                                  `json:"ssoUserId,omitempty"`
-		} `json:"joinedFrom,omitempty"`
-		Role UserEventPayload275RemovedUsersRole `json:"role"`
-	} `json:"removedUsers,omitempty"`
-	Timestamp *float32 `json:"timestamp,omitempty"`
-	UserAgent *string  `json:"userAgent,omitempty"`
-}
-
-// UserEventPayload275ActorType defines model for UserEvent.Payload.275.ActorType.
-type UserEventPayload275ActorType string
-
-// UserEventPayload275Automated Whether the plan change was system-initiated rather than human-initiated.
-type UserEventPayload275Automated bool
-
-// UserEventPayload275IsDowngrade defines model for UserEvent.Payload.275.IsDowngrade.
-type UserEventPayload275IsDowngrade bool
-
-// UserEventPayload275IsReactivate defines model for UserEvent.Payload.275.IsReactivate.
-type UserEventPayload275IsReactivate bool
-
-// UserEventPayload275IsTrialUpgrade defines model for UserEvent.Payload.275.IsTrialUpgrade.
-type UserEventPayload275IsTrialUpgrade bool
-
-// UserEventPayload275RemovedUsersConfirmed defines model for UserEvent.Payload.275.RemovedUsers.Confirmed.
-type UserEventPayload275RemovedUsersConfirmed bool
-
-// UserEventPayload275RemovedUsersJoinedFromGitUserId0 defines model for UserEvent.Payload.275.RemovedUsers.JoinedFrom.GitUserId.0.
-type UserEventPayload275RemovedUsersJoinedFromGitUserId0 = string
-
-// UserEventPayload275RemovedUsersJoinedFromGitUserId1 defines model for UserEvent.Payload.275.RemovedUsers.JoinedFrom.GitUserId.1.
-type UserEventPayload275RemovedUsersJoinedFromGitUserId1 = float32
-
-// UserEvent_Payload_275_RemovedUsers_JoinedFrom_GitUserId defines model for UserEvent.Payload.275.RemovedUsers.JoinedFrom.GitUserId.
-type UserEvent_Payload_275_RemovedUsers_JoinedFrom_GitUserId struct {
-	union json.RawMessage
-}
-
-// UserEventPayload275RemovedUsersJoinedFromOrigin defines model for UserEvent.Payload.275.RemovedUsers.JoinedFrom.Origin.
-type UserEventPayload275RemovedUsersJoinedFromOrigin string
-
-// UserEventPayload275RemovedUsersRole defines model for UserEvent.Payload.275.RemovedUsers.Role.
-type UserEventPayload275RemovedUsersRole string
-
-// UserEventPayload276 The payload of the event, if requested.
-type UserEventPayload276 struct {
-	Currency *string                     `json:"currency,omitempty"`
-	Enabled  *UserEventPayload276Enabled `json:"enabled,omitempty"`
-	Price    *float32                    `json:"price,omitempty"`
-}
-
-// UserEventPayload276Enabled defines model for UserEvent.Payload.276.Enabled.
-type UserEventPayload276Enabled bool
 
 // UserEventPayload277 The payload of the event, if requested.
 type UserEventPayload277 struct {
-	PreviewDeploymentSuffix         *string `json:"previewDeploymentSuffix,omitempty"`
-	PreviousPreviewDeploymentSuffix *string `json:"previousPreviewDeploymentSuffix,omitempty"`
+	// Automated Whether the plan change was system-initiated rather than human-initiated.
+	Automated      *UserEventPayload277Automated      `json:"automated,omitempty"`
+	IsDowngrade    *UserEventPayload277IsDowngrade    `json:"isDowngrade,omitempty"`
+	IsReactivate   *UserEventPayload277IsReactivate   `json:"isReactivate,omitempty"`
+	IsTrialUpgrade *UserEventPayload277IsTrialUpgrade `json:"isTrialUpgrade,omitempty"`
+	Plan           string                             `json:"plan"`
+	PrevPlan       *string                            `json:"prevPlan,omitempty"`
+	PriorPlan      *string                            `json:"priorPlan,omitempty"`
+
+	// Reason Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`).
+	Reason             *string  `json:"reason,omitempty"`
+	RemovedMemberCount *float32 `json:"removedMemberCount,omitempty"`
+	RemovedUsers       *map[string]struct {
+		Confirmed   UserEventPayload277RemovedUsersConfirmed `json:"confirmed"`
+		ConfirmedAt *float32                                 `json:"confirmedAt,omitempty"`
+		JoinedFrom  *struct {
+			CommitId         *string                                                  `json:"commitId,omitempty"`
+			DsyncConnectedAt *float32                                                 `json:"dsyncConnectedAt,omitempty"`
+			DsyncUserId      *string                                                  `json:"dsyncUserId,omitempty"`
+			GitUserId        *UserEvent_Payload_277_RemovedUsers_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
+			GitUserLogin     *string                                                  `json:"gitUserLogin,omitempty"`
+			IdpUserId        *string                                                  `json:"idpUserId,omitempty"`
+			Origin           UserEventPayload277RemovedUsersJoinedFromOrigin          `json:"origin"`
+			RepoId           *string                                                  `json:"repoId,omitempty"`
+			RepoPath         *string                                                  `json:"repoPath,omitempty"`
+			SsoConnectedAt   *float32                                                 `json:"ssoConnectedAt,omitempty"`
+			SsoUserId        *string                                                  `json:"ssoUserId,omitempty"`
+		} `json:"joinedFrom,omitempty"`
+		Role UserEventPayload277RemovedUsersRole `json:"role"`
+	} `json:"removedUsers,omitempty"`
+	Timestamp *float32 `json:"timestamp,omitempty"`
+	UserAgent *string  `json:"userAgent,omitempty"`
 }
+
+// UserEventPayload277Automated Whether the plan change was system-initiated rather than human-initiated.
+type UserEventPayload277Automated bool
+
+// UserEventPayload277IsDowngrade defines model for UserEvent.Payload.277.IsDowngrade.
+type UserEventPayload277IsDowngrade bool
+
+// UserEventPayload277IsReactivate defines model for UserEvent.Payload.277.IsReactivate.
+type UserEventPayload277IsReactivate bool
+
+// UserEventPayload277IsTrialUpgrade defines model for UserEvent.Payload.277.IsTrialUpgrade.
+type UserEventPayload277IsTrialUpgrade bool
+
+// UserEventPayload277RemovedUsersConfirmed defines model for UserEvent.Payload.277.RemovedUsers.Confirmed.
+type UserEventPayload277RemovedUsersConfirmed bool
+
+// UserEventPayload277RemovedUsersJoinedFromGitUserId0 defines model for UserEvent.Payload.277.RemovedUsers.JoinedFrom.GitUserId.0.
+type UserEventPayload277RemovedUsersJoinedFromGitUserId0 = string
+
+// UserEventPayload277RemovedUsersJoinedFromGitUserId1 defines model for UserEvent.Payload.277.RemovedUsers.JoinedFrom.GitUserId.1.
+type UserEventPayload277RemovedUsersJoinedFromGitUserId1 = float32
+
+// UserEvent_Payload_277_RemovedUsers_JoinedFrom_GitUserId defines model for UserEvent.Payload.277.RemovedUsers.JoinedFrom.GitUserId.
+type UserEvent_Payload_277_RemovedUsers_JoinedFrom_GitUserId struct {
+	union json.RawMessage
+}
+
+// UserEventPayload277RemovedUsersJoinedFromOrigin defines model for UserEvent.Payload.277.RemovedUsers.JoinedFrom.Origin.
+type UserEventPayload277RemovedUsersJoinedFromOrigin string
+
+// UserEventPayload277RemovedUsersRole defines model for UserEvent.Payload.277.RemovedUsers.Role.
+type UserEventPayload277RemovedUsersRole string
 
 // UserEventPayload278 The payload of the event, if requested.
 type UserEventPayload278 struct {
 	// ActorId Okta user id.
-	ActorId            string                       `json:"actorId"`
-	ActorName          *string                      `json:"actorName,omitempty"`
-	ActorType          UserEventPayload278ActorType `json:"actorType"`
-	PreviousTeamSuffix *string                      `json:"previousTeamSuffix"`
-	ProjectCount       float32                      `json:"projectCount"`
-	Reason             string                       `json:"reason"`
+	ActorId   string                       `json:"actorId"`
+	ActorName *string                      `json:"actorName,omitempty"`
+	ActorType UserEventPayload278ActorType `json:"actorType"`
+
+	// Automated Whether the plan change was system-initiated rather than human-initiated.
+	Automated      *UserEventPayload278Automated      `json:"automated,omitempty"`
+	IsDowngrade    *UserEventPayload278IsDowngrade    `json:"isDowngrade,omitempty"`
+	IsReactivate   *UserEventPayload278IsReactivate   `json:"isReactivate,omitempty"`
+	IsTrialUpgrade *UserEventPayload278IsTrialUpgrade `json:"isTrialUpgrade,omitempty"`
+	Plan           string                             `json:"plan"`
+	PrevPlan       *string                            `json:"prevPlan,omitempty"`
+	PriorPlan      *string                            `json:"priorPlan,omitempty"`
+
+	// Reason Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`).
+	Reason             *string  `json:"reason,omitempty"`
+	RemovedMemberCount *float32 `json:"removedMemberCount,omitempty"`
+	RemovedUsers       *map[string]struct {
+		Confirmed   UserEventPayload278RemovedUsersConfirmed `json:"confirmed"`
+		ConfirmedAt *float32                                 `json:"confirmedAt,omitempty"`
+		JoinedFrom  *struct {
+			CommitId         *string                                                  `json:"commitId,omitempty"`
+			DsyncConnectedAt *float32                                                 `json:"dsyncConnectedAt,omitempty"`
+			DsyncUserId      *string                                                  `json:"dsyncUserId,omitempty"`
+			GitUserId        *UserEvent_Payload_278_RemovedUsers_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
+			GitUserLogin     *string                                                  `json:"gitUserLogin,omitempty"`
+			IdpUserId        *string                                                  `json:"idpUserId,omitempty"`
+			Origin           UserEventPayload278RemovedUsersJoinedFromOrigin          `json:"origin"`
+			RepoId           *string                                                  `json:"repoId,omitempty"`
+			RepoPath         *string                                                  `json:"repoPath,omitempty"`
+			SsoConnectedAt   *float32                                                 `json:"ssoConnectedAt,omitempty"`
+			SsoUserId        *string                                                  `json:"ssoUserId,omitempty"`
+		} `json:"joinedFrom,omitempty"`
+		Role UserEventPayload278RemovedUsersRole `json:"role"`
+	} `json:"removedUsers,omitempty"`
+	Timestamp *float32 `json:"timestamp,omitempty"`
+	UserAgent *string  `json:"userAgent,omitempty"`
 }
 
 // UserEventPayload278ActorType defines model for UserEvent.Payload.278.ActorType.
 type UserEventPayload278ActorType string
 
+// UserEventPayload278Automated Whether the plan change was system-initiated rather than human-initiated.
+type UserEventPayload278Automated bool
+
+// UserEventPayload278IsDowngrade defines model for UserEvent.Payload.278.IsDowngrade.
+type UserEventPayload278IsDowngrade bool
+
+// UserEventPayload278IsReactivate defines model for UserEvent.Payload.278.IsReactivate.
+type UserEventPayload278IsReactivate bool
+
+// UserEventPayload278IsTrialUpgrade defines model for UserEvent.Payload.278.IsTrialUpgrade.
+type UserEventPayload278IsTrialUpgrade bool
+
+// UserEventPayload278RemovedUsersConfirmed defines model for UserEvent.Payload.278.RemovedUsers.Confirmed.
+type UserEventPayload278RemovedUsersConfirmed bool
+
+// UserEventPayload278RemovedUsersJoinedFromGitUserId0 defines model for UserEvent.Payload.278.RemovedUsers.JoinedFrom.GitUserId.0.
+type UserEventPayload278RemovedUsersJoinedFromGitUserId0 = string
+
+// UserEventPayload278RemovedUsersJoinedFromGitUserId1 defines model for UserEvent.Payload.278.RemovedUsers.JoinedFrom.GitUserId.1.
+type UserEventPayload278RemovedUsersJoinedFromGitUserId1 = float32
+
+// UserEvent_Payload_278_RemovedUsers_JoinedFrom_GitUserId defines model for UserEvent.Payload.278.RemovedUsers.JoinedFrom.GitUserId.
+type UserEvent_Payload_278_RemovedUsers_JoinedFrom_GitUserId struct {
+	union json.RawMessage
+}
+
+// UserEventPayload278RemovedUsersJoinedFromOrigin defines model for UserEvent.Payload.278.RemovedUsers.JoinedFrom.Origin.
+type UserEventPayload278RemovedUsersJoinedFromOrigin string
+
+// UserEventPayload278RemovedUsersRole defines model for UserEvent.Payload.278.RemovedUsers.Role.
+type UserEventPayload278RemovedUsersRole string
+
 // UserEventPayload279 The payload of the event, if requested.
 type UserEventPayload279 struct {
+	Currency *string                     `json:"currency,omitempty"`
+	Enabled  *UserEventPayload279Enabled `json:"enabled,omitempty"`
+	Price    *float32                    `json:"price,omitempty"`
+}
+
+// UserEventPayload279Enabled defines model for UserEvent.Payload.279.Enabled.
+type UserEventPayload279Enabled bool
+
+// UserEventPayload280 The payload of the event, if requested.
+type UserEventPayload280 struct {
+	PreviewDeploymentSuffix         *string `json:"previewDeploymentSuffix,omitempty"`
+	PreviousPreviewDeploymentSuffix *string `json:"previousPreviewDeploymentSuffix,omitempty"`
+}
+
+// UserEventPayload281 The payload of the event, if requested.
+type UserEventPayload281 struct {
+	// ActorId Okta user id.
+	ActorId            string                       `json:"actorId"`
+	ActorName          *string                      `json:"actorName,omitempty"`
+	ActorType          UserEventPayload281ActorType `json:"actorType"`
+	PreviousTeamSuffix *string                      `json:"previousTeamSuffix"`
+	ProjectCount       float32                      `json:"projectCount"`
+	Reason             string                       `json:"reason"`
+}
+
+// UserEventPayload281ActorType defines model for UserEvent.Payload.281.ActorType.
+type UserEventPayload281ActorType string
+
+// UserEventPayload282 The payload of the event, if requested.
+type UserEventPayload282 struct {
 	Endpoint struct {
 		AwsServiceName  string    `json:"awsServiceName"`
 		ConfigurationId string    `json:"configurationId"`
@@ -15752,14 +16035,14 @@ type UserEventPayload279 struct {
 		VercelRegion    string    `json:"vercelRegion"`
 	} `json:"endpoint"`
 	NetworkName *string                  `json:"networkName,omitempty"`
-	Scope       UserEventPayload279Scope `json:"scope"`
+	Scope       UserEventPayload282Scope `json:"scope"`
 }
 
-// UserEventPayload279Scope defines model for UserEvent.Payload.279.Scope.
-type UserEventPayload279Scope string
+// UserEventPayload282Scope defines model for UserEvent.Payload.282.Scope.
+type UserEventPayload282Scope string
 
-// UserEventPayload280 The payload of the event, if requested.
-type UserEventPayload280 struct {
+// UserEventPayload283 The payload of the event, if requested.
+type UserEventPayload283 struct {
 	Endpoint struct {
 		AwsServiceName  string    `json:"awsServiceName"`
 		Id              string    `json:"id"`
@@ -15769,28 +16052,28 @@ type UserEventPayload280 struct {
 		VercelRegion    string    `json:"vercelRegion"`
 	} `json:"endpoint"`
 	ProjectName *string                   `json:"projectName,omitempty"`
-	Scope       *UserEventPayload280Scope `json:"scope,omitempty"`
+	Scope       *UserEventPayload283Scope `json:"scope,omitempty"`
 }
 
-// UserEventPayload280Scope defines model for UserEvent.Payload.280.Scope.
-type UserEventPayload280Scope string
+// UserEventPayload283Scope defines model for UserEvent.Payload.283.Scope.
+type UserEventPayload283Scope string
 
-// UserEventPayload281 The payload of the event, if requested.
-type UserEventPayload281 struct {
+// UserEventPayload284 The payload of the event, if requested.
+type UserEventPayload284 struct {
 	PrivateLinkEndpoint struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
 	} `json:"privateLinkEndpoint"`
 	ProjectId   string                    `json:"projectId"`
 	ProjectName *string                   `json:"projectName,omitempty"`
-	Scope       *UserEventPayload281Scope `json:"scope,omitempty"`
+	Scope       *UserEventPayload284Scope `json:"scope,omitempty"`
 }
 
-// UserEventPayload281Scope defines model for UserEvent.Payload.281.Scope.
-type UserEventPayload281Scope string
+// UserEventPayload284Scope defines model for UserEvent.Payload.284.Scope.
+type UserEventPayload284Scope string
 
-// UserEventPayload282 The payload of the event, if requested.
-type UserEventPayload282 struct {
+// UserEventPayload285 The payload of the event, if requested.
+type UserEventPayload285 struct {
 	Current struct {
 		AwsServiceName  string    `json:"awsServiceName"`
 		ConfigurationId string    `json:"configurationId"`
@@ -15808,14 +16091,14 @@ type UserEventPayload282 struct {
 		PrivateDnsNames *[]string `json:"privateDnsNames,omitempty"`
 		VercelRegion    string    `json:"vercelRegion"`
 	} `json:"prev"`
-	Scope UserEventPayload282Scope `json:"scope"`
+	Scope UserEventPayload285Scope `json:"scope"`
 }
 
-// UserEventPayload282Scope defines model for UserEvent.Payload.282.Scope.
-type UserEventPayload282Scope string
+// UserEventPayload285Scope defines model for UserEvent.Payload.285.Scope.
+type UserEventPayload285Scope string
 
-// UserEventPayload283 The payload of the event, if requested.
-type UserEventPayload283 struct {
+// UserEventPayload286 The payload of the event, if requested.
+type UserEventPayload286 struct {
 	Current struct {
 		AwsServiceName  string    `json:"awsServiceName"`
 		Id              string    `json:"id"`
@@ -15833,14 +16116,14 @@ type UserEventPayload283 struct {
 		VercelRegion    string    `json:"vercelRegion"`
 	} `json:"prev"`
 	ProjectName *string                   `json:"projectName,omitempty"`
-	Scope       *UserEventPayload283Scope `json:"scope,omitempty"`
+	Scope       *UserEventPayload286Scope `json:"scope,omitempty"`
 }
 
-// UserEventPayload283Scope defines model for UserEvent.Payload.283.Scope.
-type UserEventPayload283Scope string
+// UserEventPayload286Scope defines model for UserEvent.Payload.286.Scope.
+type UserEventPayload286Scope string
 
-// UserEventPayload284 The payload of the event, if requested.
-type UserEventPayload284 struct {
+// UserEventPayload287 The payload of the event, if requested.
+type UserEventPayload287 struct {
 	PreviousEndpoint struct {
 		EnvironmentIds  *[]string `json:"environmentIds,omitempty"`
 		Name            string    `json:"name"`
@@ -15854,31 +16137,31 @@ type UserEventPayload284 struct {
 	} `json:"privateLinkEndpoint"`
 	ProjectId   string                    `json:"projectId"`
 	ProjectName *string                   `json:"projectName,omitempty"`
-	Scope       *UserEventPayload284Scope `json:"scope,omitempty"`
+	Scope       *UserEventPayload287Scope `json:"scope,omitempty"`
 }
 
-// UserEventPayload284Scope defines model for UserEvent.Payload.284.Scope.
-type UserEventPayload284Scope string
+// UserEventPayload287Scope defines model for UserEvent.Payload.287.Scope.
+type UserEventPayload287Scope string
 
-// UserEventPayload285 The payload of the event, if requested.
-type UserEventPayload285 struct {
+// UserEventPayload288 The payload of the event, if requested.
+type UserEventPayload288 struct {
 	Branch      string  `json:"branch"`
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName string  `json:"projectName"`
 }
 
-// UserEventPayload286 The payload of the event, if requested.
-type UserEventPayload286 struct {
-	DirectoryListing UserEventPayload286DirectoryListing `json:"directoryListing"`
+// UserEventPayload289 The payload of the event, if requested.
+type UserEventPayload289 struct {
+	DirectoryListing UserEventPayload289DirectoryListing `json:"directoryListing"`
 	ProjectId        string                              `json:"projectId"`
 	ProjectName      string                              `json:"projectName"`
 }
 
-// UserEventPayload286DirectoryListing defines model for UserEvent.Payload.286.DirectoryListing.
-type UserEventPayload286DirectoryListing bool
+// UserEventPayload289DirectoryListing defines model for UserEvent.Payload.289.DirectoryListing.
+type UserEventPayload289DirectoryListing bool
 
-// UserEventPayload287 The payload of the event, if requested.
-type UserEventPayload287 struct {
+// UserEventPayload290 The payload of the event, if requested.
+type UserEventPayload290 struct {
 	PrevProjectAnalytics *struct {
 		CanceledAt          *float32 `json:"canceledAt,omitempty"`
 		DisabledAt          float32  `json:"disabledAt"`
@@ -15901,96 +16184,96 @@ type UserEventPayload287 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload288 The payload of the event, if requested.
-type UserEventPayload288 struct {
+// UserEventPayload291 The payload of the event, if requested.
+type UserEventPayload291 struct {
 	PrevProjectAnalytics *map[string]interface{} `json:"prevProjectAnalytics,omitempty"`
 	ProjectAnalytics     *map[string]interface{} `json:"projectAnalytics,omitempty"`
 	ProjectId            string                  `json:"projectId"`
 	ProjectName          *string                 `json:"projectName,omitempty"`
 }
 
-// UserEventPayload289 The payload of the event, if requested.
-type UserEventPayload289 struct {
-	Action      UserEventPayload289Action    `json:"action"`
-	IsEnvVar    *UserEventPayload289IsEnvVar `json:"isEnvVar,omitempty"`
+// UserEventPayload292 The payload of the event, if requested.
+type UserEventPayload292 struct {
+	Action      UserEventPayload292Action    `json:"action"`
+	IsEnvVar    *UserEventPayload292IsEnvVar `json:"isEnvVar,omitempty"`
 	Note        *string                      `json:"note,omitempty"`
 	ProjectId   string                       `json:"projectId"`
 	ProjectName string                       `json:"projectName"`
 }
 
-// UserEventPayload289Action defines model for UserEvent.Payload.289.Action.
-type UserEventPayload289Action string
+// UserEventPayload292Action defines model for UserEvent.Payload.292.Action.
+type UserEventPayload292Action string
 
-// UserEventPayload289IsEnvVar defines model for UserEvent.Payload.289.IsEnvVar.
-type UserEventPayload289IsEnvVar bool
+// UserEventPayload292IsEnvVar defines model for UserEvent.Payload.292.IsEnvVar.
+type UserEventPayload292IsEnvVar bool
 
-// UserEventPayload290 The payload of the event, if requested.
-type UserEventPayload290 struct {
+// UserEventPayload293 The payload of the event, if requested.
+type UserEventPayload293 struct {
 	Avatar      *string `json:"avatar,omitempty"`
 	ProjectId   string  `json:"projectId"`
 	ProjectName string  `json:"projectName"`
 }
 
-// UserEventPayload291 The payload of the event, if requested.
-type UserEventPayload291 struct {
+// UserEventPayload294 The payload of the event, if requested.
+type UserEventPayload294 struct {
 	AvatarDarkMode *string `json:"avatarDarkMode,omitempty"`
 	ProjectId      string  `json:"projectId"`
 	ProjectName    string  `json:"projectName"`
 }
 
-// UserEventPayload292 The payload of the event, if requested.
-type UserEventPayload292 struct {
-	EnableAffectedProjectsDeployments UserEventPayload292EnableAffectedProjectsDeployments `json:"enableAffectedProjectsDeployments"`
+// UserEventPayload295 The payload of the event, if requested.
+type UserEventPayload295 struct {
+	EnableAffectedProjectsDeployments UserEventPayload295EnableAffectedProjectsDeployments `json:"enableAffectedProjectsDeployments"`
 	ProjectId                         string                                               `json:"projectId"`
 	ProjectName                       string                                               `json:"projectName"`
 }
 
-// UserEventPayload292EnableAffectedProjectsDeployments defines model for UserEvent.Payload.292.EnableAffectedProjectsDeployments.
-type UserEventPayload292EnableAffectedProjectsDeployments bool
+// UserEventPayload295EnableAffectedProjectsDeployments defines model for UserEvent.Payload.295.EnableAffectedProjectsDeployments.
+type UserEventPayload295EnableAffectedProjectsDeployments bool
 
-// UserEventPayload293 The payload of the event, if requested.
-type UserEventPayload293 struct {
-	EnableExternalRewriteCaching UserEventPayload293EnableExternalRewriteCaching `json:"enableExternalRewriteCaching"`
+// UserEventPayload296 The payload of the event, if requested.
+type UserEventPayload296 struct {
+	EnableExternalRewriteCaching UserEventPayload296EnableExternalRewriteCaching `json:"enableExternalRewriteCaching"`
 	ProjectId                    string                                          `json:"projectId"`
 	ProjectName                  string                                          `json:"projectName"`
 }
 
-// UserEventPayload293EnableExternalRewriteCaching defines model for UserEvent.Payload.293.EnableExternalRewriteCaching.
-type UserEventPayload293EnableExternalRewriteCaching bool
+// UserEventPayload296EnableExternalRewriteCaching defines model for UserEvent.Payload.296.EnableExternalRewriteCaching.
+type UserEventPayload296EnableExternalRewriteCaching bool
 
-// UserEventPayload294 The payload of the event, if requested.
-type UserEventPayload294 struct {
+// UserEventPayload297 The payload of the event, if requested.
+type UserEventPayload297 struct {
 	Next        map[string]interface{} `json:"next"`
 	Previous    map[string]interface{} `json:"previous"`
 	ProjectId   string                 `json:"projectId"`
 	ProjectName string                 `json:"projectName"`
 }
 
-// UserEventPayload295 The payload of the event, if requested.
-type UserEventPayload295 struct {
-	ProductionDeploymentsFastLane UserEventPayload295ProductionDeploymentsFastLane `json:"productionDeploymentsFastLane"`
+// UserEventPayload298 The payload of the event, if requested.
+type UserEventPayload298 struct {
+	ProductionDeploymentsFastLane UserEventPayload298ProductionDeploymentsFastLane `json:"productionDeploymentsFastLane"`
 	ProjectId                     string                                           `json:"projectId"`
 	ProjectName                   string                                           `json:"projectName"`
 }
 
-// UserEventPayload295ProductionDeploymentsFastLane defines model for UserEvent.Payload.295.ProductionDeploymentsFastLane.
-type UserEventPayload295ProductionDeploymentsFastLane bool
+// UserEventPayload298ProductionDeploymentsFastLane defines model for UserEvent.Payload.298.ProductionDeploymentsFastLane.
+type UserEventPayload298ProductionDeploymentsFastLane bool
 
-// UserEventPayload296 The payload of the event, if requested.
-type UserEventPayload296 struct {
+// UserEventPayload299 The payload of the event, if requested.
+type UserEventPayload299 struct {
 	ProjectId                       string                                             `json:"projectId"`
 	ProjectName                     string                                             `json:"projectName"`
-	SourceFilesOutsideRootDirectory UserEventPayload296SourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory"`
+	SourceFilesOutsideRootDirectory UserEventPayload299SourceFilesOutsideRootDirectory `json:"sourceFilesOutsideRootDirectory"`
 }
 
-// UserEventPayload296SourceFilesOutsideRootDirectory defines model for UserEvent.Payload.296.SourceFilesOutsideRootDirectory.
-type UserEventPayload296SourceFilesOutsideRootDirectory bool
+// UserEventPayload299SourceFilesOutsideRootDirectory defines model for UserEvent.Payload.299.SourceFilesOutsideRootDirectory.
+type UserEventPayload299SourceFilesOutsideRootDirectory bool
 
-// UserEventPayload297 The payload of the event, if requested.
-type UserEventPayload297 struct {
+// UserEventPayload300 The payload of the event, if requested.
+type UserEventPayload300 struct {
 	// DeploymentId Deployment whose outcome caused a system-initiated elastic resize.
 	DeploymentId                  *string                               `json:"deploymentId,omitempty"`
-	IsSystemInitiated             *UserEventPayload297IsSystemInitiated `json:"isSystemInitiated,omitempty"`
+	IsSystemInitiated             *UserEventPayload300IsSystemInitiated `json:"isSystemInitiated,omitempty"`
 	NextBuildMachineSelection     string                                `json:"nextBuildMachineSelection"`
 	NextBuildMachineType          string                                `json:"nextBuildMachineType"`
 	PreviousBuildMachineSelection string                                `json:"previousBuildMachineSelection"`
@@ -16002,40 +16285,40 @@ type UserEventPayload297 struct {
 	Reason *string `json:"reason,omitempty"`
 }
 
-// UserEventPayload297IsSystemInitiated defines model for UserEvent.Payload.297.IsSystemInitiated.
-type UserEventPayload297IsSystemInitiated bool
+// UserEventPayload300IsSystemInitiated defines model for UserEvent.Payload.300.IsSystemInitiated.
+type UserEventPayload300IsSystemInitiated bool
 
-// UserEventPayload298 The payload of the event, if requested.
-type UserEventPayload298 struct {
+// UserEventPayload301 The payload of the event, if requested.
+type UserEventPayload301 struct {
 	ProjectId   string                     `json:"projectId"`
 	ProjectName string                     `json:"projectName"`
-	Widget      *UserEventPayload298Widget `json:"widget"`
+	Widget      *UserEventPayload301Widget `json:"widget"`
 }
 
-// UserEventPayload298Widget defines model for UserEvent.Payload.298.Widget.
-type UserEventPayload298Widget string
+// UserEventPayload301Widget defines model for UserEvent.Payload.301.Widget.
+type UserEventPayload301Widget string
 
-// UserEventPayload299 The payload of the event, if requested.
-type UserEventPayload299 struct {
+// UserEventPayload302 The payload of the event, if requested.
+type UserEventPayload302 struct {
 	CertId      *string `json:"certId,omitempty"`
 	Origin      *string `json:"origin,omitempty"`
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload300 The payload of the event, if requested.
-type UserEventPayload300 struct {
+// UserEventPayload303 The payload of the event, if requested.
+type UserEventPayload303 struct {
 	ProjectId   *string                     `json:"projectId,omitempty"`
 	ProjectName *string                     `json:"projectName,omitempty"`
 	Target      *[]string                   `json:"target,omitempty"`
-	Updated     *UserEventPayload300Updated `json:"updated,omitempty"`
+	Updated     *UserEventPayload303Updated `json:"updated,omitempty"`
 }
 
-// UserEventPayload300Updated defines model for UserEvent.Payload.300.Updated.
-type UserEventPayload300Updated bool
+// UserEventPayload303Updated defines model for UserEvent.Payload.303.Updated.
+type UserEventPayload303Updated bool
 
-// UserEventPayload301 The payload of the event, if requested.
-type UserEventPayload301 struct {
+// UserEventPayload304 The payload of the event, if requested.
+type UserEventPayload304 struct {
 	Project struct {
 		Id                       string  `json:"id"`
 		Name                     *string `json:"name,omitempty"`
@@ -16044,12 +16327,12 @@ type UserEventPayload301 struct {
 				SecurityGroupId *string  `json:"securityGroupId,omitempty"`
 				SubnetIds       []string `json:"subnetIds"`
 			} `json:"aws,omitempty"`
-			BuildsEnabled          UserEventPayload301ProjectNewConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
+			BuildsEnabled          UserEventPayload304ProjectNewConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
 			ConnectConfigurationId string                                                          `json:"connectConfigurationId"`
 			CreatedAt              float32                                                         `json:"createdAt"`
 			Dc                     *string                                                         `json:"dc,omitempty"`
-			EnvId                  UserEvent_Payload_301_Project_NewConnectConfigurations_EnvId    `json:"envId"`
-			Passive                UserEventPayload301ProjectNewConnectConfigurationsPassive       `json:"passive"`
+			EnvId                  UserEvent_Payload_304_Project_NewConnectConfigurations_EnvId    `json:"envId"`
+			Passive                UserEventPayload304ProjectNewConnectConfigurationsPassive       `json:"passive"`
 			UpdatedAt              float32                                                         `json:"updatedAt"`
 		} `json:"newConnectConfigurations"`
 		OldConnectConfigurations *[]struct {
@@ -16057,12 +16340,12 @@ type UserEventPayload301 struct {
 				SecurityGroupId *string  `json:"securityGroupId,omitempty"`
 				SubnetIds       []string `json:"subnetIds"`
 			} `json:"aws,omitempty"`
-			BuildsEnabled          UserEventPayload301ProjectOldConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
+			BuildsEnabled          UserEventPayload304ProjectOldConnectConfigurationsBuildsEnabled `json:"buildsEnabled"`
 			ConnectConfigurationId string                                                          `json:"connectConfigurationId"`
 			CreatedAt              float32                                                         `json:"createdAt"`
 			Dc                     *string                                                         `json:"dc,omitempty"`
-			EnvId                  UserEvent_Payload_301_Project_OldConnectConfigurations_EnvId    `json:"envId"`
-			Passive                UserEventPayload301ProjectOldConnectConfigurationsPassive       `json:"passive"`
+			EnvId                  UserEvent_Payload_304_Project_OldConnectConfigurations_EnvId    `json:"envId"`
+			Passive                UserEventPayload304ProjectOldConnectConfigurationsPassive       `json:"passive"`
 			UpdatedAt              float32                                                         `json:"updatedAt"`
 		} `json:"oldConnectConfigurations"`
 	} `json:"project"`
@@ -16072,106 +16355,106 @@ type UserEventPayload301 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload301ProjectNewConnectConfigurationsBuildsEnabled defines model for UserEvent.Payload.301.Project.NewConnectConfigurations.BuildsEnabled.
-type UserEventPayload301ProjectNewConnectConfigurationsBuildsEnabled bool
+// UserEventPayload304ProjectNewConnectConfigurationsBuildsEnabled defines model for UserEvent.Payload.304.Project.NewConnectConfigurations.BuildsEnabled.
+type UserEventPayload304ProjectNewConnectConfigurationsBuildsEnabled bool
 
-// UserEventPayload301ProjectNewConnectConfigurationsEnvId0 defines model for UserEvent.Payload.301.Project.NewConnectConfigurations.EnvId.0.
-type UserEventPayload301ProjectNewConnectConfigurationsEnvId0 = string
+// UserEventPayload304ProjectNewConnectConfigurationsEnvId0 defines model for UserEvent.Payload.304.Project.NewConnectConfigurations.EnvId.0.
+type UserEventPayload304ProjectNewConnectConfigurationsEnvId0 = string
 
-// UserEventPayload301ProjectNewConnectConfigurationsEnvId1 defines model for UserEvent.Payload.301.Project.NewConnectConfigurations.EnvId.1.
-type UserEventPayload301ProjectNewConnectConfigurationsEnvId1 string
+// UserEventPayload304ProjectNewConnectConfigurationsEnvId1 defines model for UserEvent.Payload.304.Project.NewConnectConfigurations.EnvId.1.
+type UserEventPayload304ProjectNewConnectConfigurationsEnvId1 string
 
-// UserEvent_Payload_301_Project_NewConnectConfigurations_EnvId defines model for UserEvent.Payload.301.Project.NewConnectConfigurations.EnvId.
-type UserEvent_Payload_301_Project_NewConnectConfigurations_EnvId struct {
+// UserEvent_Payload_304_Project_NewConnectConfigurations_EnvId defines model for UserEvent.Payload.304.Project.NewConnectConfigurations.EnvId.
+type UserEvent_Payload_304_Project_NewConnectConfigurations_EnvId struct {
 	union json.RawMessage
 }
 
-// UserEventPayload301ProjectNewConnectConfigurationsPassive defines model for UserEvent.Payload.301.Project.NewConnectConfigurations.Passive.
-type UserEventPayload301ProjectNewConnectConfigurationsPassive bool
+// UserEventPayload304ProjectNewConnectConfigurationsPassive defines model for UserEvent.Payload.304.Project.NewConnectConfigurations.Passive.
+type UserEventPayload304ProjectNewConnectConfigurationsPassive bool
 
-// UserEventPayload301ProjectOldConnectConfigurationsBuildsEnabled defines model for UserEvent.Payload.301.Project.OldConnectConfigurations.BuildsEnabled.
-type UserEventPayload301ProjectOldConnectConfigurationsBuildsEnabled bool
+// UserEventPayload304ProjectOldConnectConfigurationsBuildsEnabled defines model for UserEvent.Payload.304.Project.OldConnectConfigurations.BuildsEnabled.
+type UserEventPayload304ProjectOldConnectConfigurationsBuildsEnabled bool
 
-// UserEventPayload301ProjectOldConnectConfigurationsEnvId0 defines model for UserEvent.Payload.301.Project.OldConnectConfigurations.EnvId.0.
-type UserEventPayload301ProjectOldConnectConfigurationsEnvId0 = string
+// UserEventPayload304ProjectOldConnectConfigurationsEnvId0 defines model for UserEvent.Payload.304.Project.OldConnectConfigurations.EnvId.0.
+type UserEventPayload304ProjectOldConnectConfigurationsEnvId0 = string
 
-// UserEventPayload301ProjectOldConnectConfigurationsEnvId1 defines model for UserEvent.Payload.301.Project.OldConnectConfigurations.EnvId.1.
-type UserEventPayload301ProjectOldConnectConfigurationsEnvId1 string
+// UserEventPayload304ProjectOldConnectConfigurationsEnvId1 defines model for UserEvent.Payload.304.Project.OldConnectConfigurations.EnvId.1.
+type UserEventPayload304ProjectOldConnectConfigurationsEnvId1 string
 
-// UserEvent_Payload_301_Project_OldConnectConfigurations_EnvId defines model for UserEvent.Payload.301.Project.OldConnectConfigurations.EnvId.
-type UserEvent_Payload_301_Project_OldConnectConfigurations_EnvId struct {
+// UserEvent_Payload_304_Project_OldConnectConfigurations_EnvId defines model for UserEvent.Payload.304.Project.OldConnectConfigurations.EnvId.
+type UserEvent_Payload_304_Project_OldConnectConfigurations_EnvId struct {
 	union json.RawMessage
 }
 
-// UserEventPayload301ProjectOldConnectConfigurationsPassive defines model for UserEvent.Payload.301.Project.OldConnectConfigurations.Passive.
-type UserEventPayload301ProjectOldConnectConfigurationsPassive bool
+// UserEventPayload304ProjectOldConnectConfigurationsPassive defines model for UserEvent.Payload.304.Project.OldConnectConfigurations.Passive.
+type UserEventPayload304ProjectOldConnectConfigurationsPassive bool
 
-// UserEventPayload302 The payload of the event, if requested.
-type UserEventPayload302 struct {
+// UserEventPayload305 The payload of the event, if requested.
+type UserEventPayload305 struct {
 	ProjectId   string  `json:"projectId"`
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload303 The payload of the event, if requested.
-type UserEventPayload303 struct {
-	Action      UserEventPayload303Action `json:"action"`
+// UserEventPayload306 The payload of the event, if requested.
+type UserEventPayload306 struct {
+	Action      UserEventPayload306Action `json:"action"`
 	ProjectId   string                    `json:"projectId"`
 	ProjectName string                    `json:"projectName"`
 }
 
-// UserEventPayload303Action defines model for UserEvent.Payload.303.Action.
-type UserEventPayload303Action string
+// UserEventPayload306Action defines model for UserEvent.Payload.306.Action.
+type UserEventPayload306Action string
 
-// UserEventPayload304 The payload of the event, if requested.
-type UserEventPayload304 struct {
+// UserEventPayload307 The payload of the event, if requested.
+type UserEventPayload307 struct {
 	Name    string `json:"name"`
 	OwnerId string `json:"ownerId"`
 }
 
-// UserEventPayload305 The payload of the event, if requested.
-type UserEventPayload305 struct {
-	BuildQueueConfiguration      *UserEventPayload305BuildQueueConfiguration     `json:"buildQueueConfiguration,omitempty"`
-	ElasticConcurrencyEnabled    UserEventPayload305ElasticConcurrencyEnabled    `json:"elasticConcurrencyEnabled"`
-	OldBuildQueueConfiguration   *UserEventPayload305OldBuildQueueConfiguration  `json:"oldBuildQueueConfiguration,omitempty"`
-	OldElasticConcurrencyEnabled UserEventPayload305OldElasticConcurrencyEnabled `json:"oldElasticConcurrencyEnabled"`
+// UserEventPayload308 The payload of the event, if requested.
+type UserEventPayload308 struct {
+	BuildQueueConfiguration      *UserEventPayload308BuildQueueConfiguration     `json:"buildQueueConfiguration,omitempty"`
+	ElasticConcurrencyEnabled    UserEventPayload308ElasticConcurrencyEnabled    `json:"elasticConcurrencyEnabled"`
+	OldBuildQueueConfiguration   *UserEventPayload308OldBuildQueueConfiguration  `json:"oldBuildQueueConfiguration,omitempty"`
+	OldElasticConcurrencyEnabled UserEventPayload308OldElasticConcurrencyEnabled `json:"oldElasticConcurrencyEnabled"`
 	ProjectId                    string                                          `json:"projectId"`
 	ProjectName                  string                                          `json:"projectName"`
 }
 
-// UserEventPayload305BuildQueueConfiguration defines model for UserEvent.Payload.305.BuildQueueConfiguration.
-type UserEventPayload305BuildQueueConfiguration string
+// UserEventPayload308BuildQueueConfiguration defines model for UserEvent.Payload.308.BuildQueueConfiguration.
+type UserEventPayload308BuildQueueConfiguration string
 
-// UserEventPayload305ElasticConcurrencyEnabled defines model for UserEvent.Payload.305.ElasticConcurrencyEnabled.
-type UserEventPayload305ElasticConcurrencyEnabled bool
+// UserEventPayload308ElasticConcurrencyEnabled defines model for UserEvent.Payload.308.ElasticConcurrencyEnabled.
+type UserEventPayload308ElasticConcurrencyEnabled bool
 
-// UserEventPayload305OldBuildQueueConfiguration defines model for UserEvent.Payload.305.OldBuildQueueConfiguration.
-type UserEventPayload305OldBuildQueueConfiguration string
+// UserEventPayload308OldBuildQueueConfiguration defines model for UserEvent.Payload.308.OldBuildQueueConfiguration.
+type UserEventPayload308OldBuildQueueConfiguration string
 
-// UserEventPayload305OldElasticConcurrencyEnabled defines model for UserEvent.Payload.305.OldElasticConcurrencyEnabled.
-type UserEventPayload305OldElasticConcurrencyEnabled bool
+// UserEventPayload308OldElasticConcurrencyEnabled defines model for UserEvent.Payload.308.OldElasticConcurrencyEnabled.
+type UserEventPayload308OldElasticConcurrencyEnabled bool
 
-// UserEventPayload306 The payload of the event, if requested.
-type UserEventPayload306 struct {
-	AutoAssignCustomDomains UserEventPayload306AutoAssignCustomDomains `json:"autoAssignCustomDomains"`
+// UserEventPayload309 The payload of the event, if requested.
+type UserEventPayload309 struct {
+	AutoAssignCustomDomains UserEventPayload309AutoAssignCustomDomains `json:"autoAssignCustomDomains"`
 	ProjectId               string                                     `json:"projectId"`
 	ProjectName             string                                     `json:"projectName"`
 }
 
-// UserEventPayload306AutoAssignCustomDomains defines model for UserEvent.Payload.306.AutoAssignCustomDomains.
-type UserEventPayload306AutoAssignCustomDomains bool
+// UserEventPayload309AutoAssignCustomDomains defines model for UserEvent.Payload.309.AutoAssignCustomDomains.
+type UserEventPayload309AutoAssignCustomDomains bool
 
-// UserEventPayload307 The payload of the event, if requested.
-type UserEventPayload307 struct {
-	PreviewDeploymentsEnabled UserEventPayload307PreviewDeploymentsEnabled `json:"previewDeploymentsEnabled"`
+// UserEventPayload310 The payload of the event, if requested.
+type UserEventPayload310 struct {
+	PreviewDeploymentsEnabled UserEventPayload310PreviewDeploymentsEnabled `json:"previewDeploymentsEnabled"`
 	ProjectId                 string                                       `json:"projectId"`
 	ProjectName               string                                       `json:"projectName"`
 }
 
-// UserEventPayload307PreviewDeploymentsEnabled defines model for UserEvent.Payload.307.PreviewDeploymentsEnabled.
-type UserEventPayload307PreviewDeploymentsEnabled bool
+// UserEventPayload310PreviewDeploymentsEnabled defines model for UserEvent.Payload.310.PreviewDeploymentsEnabled.
+type UserEventPayload310PreviewDeploymentsEnabled bool
 
-// UserEventPayload308 The payload of the event, if requested.
-type UserEventPayload308 struct {
+// UserEventPayload311 The payload of the event, if requested.
+type UserEventPayload311 struct {
 	CustomEnvironmentId   string `json:"customEnvironmentId"`
 	CustomEnvironmentSlug string `json:"customEnvironmentSlug"`
 	Next                  struct {
@@ -16180,7 +16463,7 @@ type UserEventPayload308 struct {
 			Pattern string `json:"pattern"`
 
 			// Type The type of matching to perform
-			Type UserEventPayload308NextBranchMatcherType `json:"type"`
+			Type UserEventPayload311NextBranchMatcherType `json:"type"`
 		} `json:"branchMatcher,omitempty"`
 	} `json:"next"`
 	Previous struct {
@@ -16189,63 +16472,63 @@ type UserEventPayload308 struct {
 			Pattern string `json:"pattern"`
 
 			// Type The type of matching to perform
-			Type UserEventPayload308PreviousBranchMatcherType `json:"type"`
+			Type UserEventPayload311PreviousBranchMatcherType `json:"type"`
 		} `json:"branchMatcher,omitempty"`
 	} `json:"previous"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload308NextBranchMatcherType The type of matching to perform
-type UserEventPayload308NextBranchMatcherType string
+// UserEventPayload311NextBranchMatcherType The type of matching to perform
+type UserEventPayload311NextBranchMatcherType string
 
-// UserEventPayload308PreviousBranchMatcherType The type of matching to perform
-type UserEventPayload308PreviousBranchMatcherType string
+// UserEventPayload311PreviousBranchMatcherType The type of matching to perform
+type UserEventPayload311PreviousBranchMatcherType string
 
-// UserEventPayload309 The payload of the event, if requested.
-type UserEventPayload309 struct {
+// UserEventPayload312 The payload of the event, if requested.
+type UserEventPayload312 struct {
 	CustomEnvironmentId      string                                      `json:"customEnvironmentId"`
 	CustomEnvironmentSlug    string                                      `json:"customEnvironmentSlug"`
-	EnableSchedulesByDefault UserEventPayload309EnableSchedulesByDefault `json:"enableSchedulesByDefault"`
+	EnableSchedulesByDefault UserEventPayload312EnableSchedulesByDefault `json:"enableSchedulesByDefault"`
 	ProjectId                string                                      `json:"projectId"`
 	ProjectName              string                                      `json:"projectName"`
 }
 
-// UserEventPayload309EnableSchedulesByDefault defines model for UserEvent.Payload.309.EnableSchedulesByDefault.
-type UserEventPayload309EnableSchedulesByDefault bool
+// UserEventPayload312EnableSchedulesByDefault defines model for UserEvent.Payload.312.EnableSchedulesByDefault.
+type UserEventPayload312EnableSchedulesByDefault bool
 
-// UserEventPayload310 The payload of the event, if requested.
-type UserEventPayload310 struct {
+// UserEventPayload313 The payload of the event, if requested.
+type UserEventPayload313 struct {
 	CustomEnvironmentId      string                                       `json:"customEnvironmentId"`
 	CustomEnvironmentSlug    string                                       `json:"customEnvironmentSlug"`
-	EnableSchedulesByDefault *UserEventPayload310EnableSchedulesByDefault `json:"enableSchedulesByDefault,omitempty"`
+	EnableSchedulesByDefault *UserEventPayload313EnableSchedulesByDefault `json:"enableSchedulesByDefault,omitempty"`
 	ProjectId                string                                       `json:"projectId"`
 	ProjectName              string                                       `json:"projectName"`
 }
 
-// UserEventPayload310EnableSchedulesByDefault defines model for UserEvent.Payload.310.EnableSchedulesByDefault.
-type UserEventPayload310EnableSchedulesByDefault bool
+// UserEventPayload313EnableSchedulesByDefault defines model for UserEvent.Payload.313.EnableSchedulesByDefault.
+type UserEventPayload313EnableSchedulesByDefault bool
 
-// UserEventPayload311 The payload of the event, if requested.
-type UserEventPayload311 struct {
+// UserEventPayload314 The payload of the event, if requested.
+type UserEventPayload314 struct {
 	CustomEnvironmentId   string `json:"customEnvironmentId"`
 	CustomEnvironmentSlug string `json:"customEnvironmentSlug"`
 	ProjectId             string `json:"projectId"`
 	ProjectName           string `json:"projectName"`
 }
 
-// UserEventPayload312 The payload of the event, if requested.
-type UserEventPayload312 struct {
-	EnableFunctionsBeta UserEventPayload312EnableFunctionsBeta `json:"enableFunctionsBeta"`
+// UserEventPayload315 The payload of the event, if requested.
+type UserEventPayload315 struct {
+	EnableFunctionsBeta UserEventPayload315EnableFunctionsBeta `json:"enableFunctionsBeta"`
 	ProjectId           string                                 `json:"projectId"`
 	ProjectName         *string                                `json:"projectName,omitempty"`
 }
 
-// UserEventPayload312EnableFunctionsBeta defines model for UserEvent.Payload.312.EnableFunctionsBeta.
-type UserEventPayload312EnableFunctionsBeta bool
+// UserEventPayload315EnableFunctionsBeta defines model for UserEvent.Payload.315.EnableFunctionsBeta.
+type UserEventPayload315EnableFunctionsBeta bool
 
-// UserEventPayload313 The payload of the event, if requested.
-type UserEventPayload313 struct {
+// UserEventPayload316 The payload of the event, if requested.
+type UserEventPayload316 struct {
 	Next struct {
 		FunctionDefaultTimeout float32 `json:"functionDefaultTimeout"`
 	} `json:"next"`
@@ -16256,8 +16539,8 @@ type UserEventPayload313 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload314 The payload of the event, if requested.
-type UserEventPayload314 struct {
+// UserEventPayload317 The payload of the event, if requested.
+type UserEventPayload317 struct {
 	Next struct {
 		FunctionDefaultMemoryType string `json:"functionDefaultMemoryType"`
 	} `json:"next"`
@@ -16268,8 +16551,8 @@ type UserEventPayload314 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload315 The payload of the event, if requested.
-type UserEventPayload315 struct {
+// UserEventPayload318 The payload of the event, if requested.
+type UserEventPayload318 struct {
 	Next struct {
 		FunctionDefaultRegions []string `json:"functionDefaultRegions"`
 	} `json:"next"`
@@ -16280,47 +16563,47 @@ type UserEventPayload315 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload316 The payload of the event, if requested.
-type UserEventPayload316 struct {
+// UserEventPayload319 The payload of the event, if requested.
+type UserEventPayload319 struct {
 	Next struct {
-		FunctionZeroConfigFailover UserEventPayload316NextFunctionZeroConfigFailover `json:"functionZeroConfigFailover"`
+		FunctionZeroConfigFailover UserEventPayload319NextFunctionZeroConfigFailover `json:"functionZeroConfigFailover"`
 	} `json:"next"`
 	Previous struct {
-		FunctionZeroConfigFailover *UserEventPayload316PreviousFunctionZeroConfigFailover `json:"functionZeroConfigFailover"`
+		FunctionZeroConfigFailover *UserEventPayload319PreviousFunctionZeroConfigFailover `json:"functionZeroConfigFailover"`
 	} `json:"previous"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload316NextFunctionZeroConfigFailover defines model for UserEvent.Payload.316.Next.FunctionZeroConfigFailover.
-type UserEventPayload316NextFunctionZeroConfigFailover bool
+// UserEventPayload319NextFunctionZeroConfigFailover defines model for UserEvent.Payload.319.Next.FunctionZeroConfigFailover.
+type UserEventPayload319NextFunctionZeroConfigFailover bool
 
-// UserEventPayload316PreviousFunctionZeroConfigFailover defines model for UserEvent.Payload.316.Previous.FunctionZeroConfigFailover.
-type UserEventPayload316PreviousFunctionZeroConfigFailover bool
+// UserEventPayload319PreviousFunctionZeroConfigFailover defines model for UserEvent.Payload.319.Previous.FunctionZeroConfigFailover.
+type UserEventPayload319PreviousFunctionZeroConfigFailover bool
 
-// UserEventPayload317 The payload of the event, if requested.
-type UserEventPayload317 struct {
+// UserEventPayload320 The payload of the event, if requested.
+type UserEventPayload320 struct {
 	PreviewDeploymentSuffix *string `json:"previewDeploymentSuffix"`
 	ProjectId               string  `json:"projectId"`
 	ProjectName             string  `json:"projectName"`
 }
 
-// UserEventPayload318 The payload of the event, if requested.
-type UserEventPayload318 struct {
+// UserEventPayload321 The payload of the event, if requested.
+type UserEventPayload321 struct {
 	NewProjectName string `json:"newProjectName"`
 	ProjectId      string `json:"projectId"`
 	ProjectName    string `json:"projectName"`
 }
 
-// UserEventPayload319 The payload of the event, if requested.
-type UserEventPayload319 struct {
+// UserEventPayload322 The payload of the event, if requested.
+type UserEventPayload322 struct {
 	Next struct {
-		GitProvider       UserEventPayload319NextGitProvider `json:"gitProvider"`
+		GitProvider       UserEventPayload322NextGitProvider `json:"gitProvider"`
 		GitRepoId         string                             `json:"gitRepoId"`
 		GitRepositoryName string                             `json:"gitRepositoryName"`
 	} `json:"next"`
 	Previous *struct {
-		GitProvider       UserEventPayload319PreviousGitProvider `json:"gitProvider"`
+		GitProvider       UserEventPayload322PreviousGitProvider `json:"gitProvider"`
 		GitRepoId         string                                 `json:"gitRepoId"`
 		GitRepositoryName string                                 `json:"gitRepositoryName"`
 	} `json:"previous,omitempty"`
@@ -16328,128 +16611,128 @@ type UserEventPayload319 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload319NextGitProvider defines model for UserEvent.Payload.319.Next.GitProvider.
-type UserEventPayload319NextGitProvider string
+// UserEventPayload322NextGitProvider defines model for UserEvent.Payload.322.Next.GitProvider.
+type UserEventPayload322NextGitProvider string
 
-// UserEventPayload319PreviousGitProvider defines model for UserEvent.Payload.319.Previous.GitProvider.
-type UserEventPayload319PreviousGitProvider string
+// UserEventPayload322PreviousGitProvider defines model for UserEvent.Payload.322.Previous.GitProvider.
+type UserEventPayload322PreviousGitProvider string
 
-// UserEventPayload320 The payload of the event, if requested.
-type UserEventPayload320 struct {
-	GitProvider       UserEventPayload320GitProvider `json:"gitProvider"`
+// UserEventPayload323 The payload of the event, if requested.
+type UserEventPayload323 struct {
+	GitProvider       UserEventPayload323GitProvider `json:"gitProvider"`
 	GitRepoId         string                         `json:"gitRepoId"`
 	GitRepositoryName string                         `json:"gitRepositoryName"`
 	ProjectId         string                         `json:"projectId"`
 	ProjectName       string                         `json:"projectName"`
 }
 
-// UserEventPayload320GitProvider defines model for UserEvent.Payload.320.GitProvider.
-type UserEventPayload320GitProvider string
+// UserEventPayload323GitProvider defines model for UserEvent.Payload.323.GitProvider.
+type UserEventPayload323GitProvider string
 
-// UserEventPayload321 The payload of the event, if requested.
-type UserEventPayload321 struct {
-	OnPullRequest UserEventPayload321OnPullRequest `json:"onPullRequest"`
+// UserEventPayload324 The payload of the event, if requested.
+type UserEventPayload324 struct {
+	OnPullRequest UserEventPayload324OnPullRequest `json:"onPullRequest"`
 	ProjectId     string                           `json:"projectId"`
 	ProjectName   string                           `json:"projectName"`
 }
 
-// UserEventPayload321OnPullRequest defines model for UserEvent.Payload.321.OnPullRequest.
-type UserEventPayload321OnPullRequest bool
+// UserEventPayload324OnPullRequest defines model for UserEvent.Payload.324.OnPullRequest.
+type UserEventPayload324OnPullRequest bool
 
-// UserEventPayload322 The payload of the event, if requested.
-type UserEventPayload322 struct {
-	OnCommit    UserEventPayload322OnCommit `json:"onCommit"`
+// UserEventPayload325 The payload of the event, if requested.
+type UserEventPayload325 struct {
+	OnCommit    UserEventPayload325OnCommit `json:"onCommit"`
 	ProjectId   string                      `json:"projectId"`
 	ProjectName string                      `json:"projectName"`
 }
 
-// UserEventPayload322OnCommit defines model for UserEvent.Payload.322.OnCommit.
-type UserEventPayload322OnCommit bool
+// UserEventPayload325OnCommit defines model for UserEvent.Payload.325.OnCommit.
+type UserEventPayload325OnCommit bool
 
-// UserEventPayload323 The payload of the event, if requested.
-type UserEventPayload323 struct {
-	DisableRepositoryDispatchEvents UserEventPayload323DisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents"`
+// UserEventPayload326 The payload of the event, if requested.
+type UserEventPayload326 struct {
+	DisableRepositoryDispatchEvents UserEventPayload326DisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents"`
 	ProjectId                       string                                             `json:"projectId"`
 	ProjectName                     string                                             `json:"projectName"`
 }
 
-// UserEventPayload323DisableRepositoryDispatchEvents defines model for UserEvent.Payload.323.DisableRepositoryDispatchEvents.
-type UserEventPayload323DisableRepositoryDispatchEvents bool
+// UserEventPayload326DisableRepositoryDispatchEvents defines model for UserEvent.Payload.326.DisableRepositoryDispatchEvents.
+type UserEventPayload326DisableRepositoryDispatchEvents bool
 
-// UserEventPayload324 The payload of the event, if requested.
-type UserEventPayload324 struct {
-	CreateDeployments UserEventPayload324CreateDeployments `json:"createDeployments"`
+// UserEventPayload327 The payload of the event, if requested.
+type UserEventPayload327 struct {
+	CreateDeployments UserEventPayload327CreateDeployments `json:"createDeployments"`
 	ProjectId         string                               `json:"projectId"`
 	ProjectName       string                               `json:"projectName"`
 }
 
-// UserEventPayload324CreateDeployments defines model for UserEvent.Payload.324.CreateDeployments.
-type UserEventPayload324CreateDeployments string
-
-// UserEventPayload325 The payload of the event, if requested.
-type UserEventPayload325 struct {
-	ProjectId              string                                     `json:"projectId"`
-	ProjectName            string                                     `json:"projectName"`
-	RequireVerifiedCommits *UserEventPayload325RequireVerifiedCommits `json:"requireVerifiedCommits"`
-}
-
-// UserEventPayload325RequireVerifiedCommits defines model for UserEvent.Payload.325.RequireVerifiedCommits.
-type UserEventPayload325RequireVerifiedCommits bool
-
-// UserEventPayload326 The payload of the event, if requested.
-type UserEventPayload326 struct {
-	RequireVerifiedCommits UserEventPayload326RequireVerifiedCommits `json:"requireVerifiedCommits"`
-}
-
-// UserEventPayload326RequireVerifiedCommits defines model for UserEvent.Payload.326.RequireVerifiedCommits.
-type UserEventPayload326RequireVerifiedCommits bool
-
-// UserEventPayload327 The payload of the event, if requested.
-type UserEventPayload327 struct {
-	DisableRepositoryDispatchEvents UserEventPayload327DisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents"`
-}
-
-// UserEventPayload327DisableRepositoryDispatchEvents defines model for UserEvent.Payload.327.DisableRepositoryDispatchEvents.
-type UserEventPayload327DisableRepositoryDispatchEvents bool
+// UserEventPayload327CreateDeployments defines model for UserEvent.Payload.327.CreateDeployments.
+type UserEventPayload327CreateDeployments string
 
 // UserEventPayload328 The payload of the event, if requested.
 type UserEventPayload328 struct {
-	GitCommitStatus UserEventPayload328GitCommitStatus `json:"gitCommitStatus"`
+	ProjectId              string                                     `json:"projectId"`
+	ProjectName            string                                     `json:"projectName"`
+	RequireVerifiedCommits *UserEventPayload328RequireVerifiedCommits `json:"requireVerifiedCommits"`
+}
+
+// UserEventPayload328RequireVerifiedCommits defines model for UserEvent.Payload.328.RequireVerifiedCommits.
+type UserEventPayload328RequireVerifiedCommits bool
+
+// UserEventPayload329 The payload of the event, if requested.
+type UserEventPayload329 struct {
+	RequireVerifiedCommits UserEventPayload329RequireVerifiedCommits `json:"requireVerifiedCommits"`
+}
+
+// UserEventPayload329RequireVerifiedCommits defines model for UserEvent.Payload.329.RequireVerifiedCommits.
+type UserEventPayload329RequireVerifiedCommits bool
+
+// UserEventPayload330 The payload of the event, if requested.
+type UserEventPayload330 struct {
+	DisableRepositoryDispatchEvents UserEventPayload330DisableRepositoryDispatchEvents `json:"disableRepositoryDispatchEvents"`
+}
+
+// UserEventPayload330DisableRepositoryDispatchEvents defines model for UserEvent.Payload.330.DisableRepositoryDispatchEvents.
+type UserEventPayload330DisableRepositoryDispatchEvents bool
+
+// UserEventPayload331 The payload of the event, if requested.
+type UserEventPayload331 struct {
+	GitCommitStatus UserEventPayload331GitCommitStatus `json:"gitCommitStatus"`
 	ProjectId       string                             `json:"projectId"`
 	ProjectName     string                             `json:"projectName"`
 }
 
-// UserEventPayload328GitCommitStatus defines model for UserEvent.Payload.328.GitCommitStatus.
-type UserEventPayload328GitCommitStatus bool
+// UserEventPayload331GitCommitStatus defines model for UserEvent.Payload.331.GitCommitStatus.
+type UserEventPayload331GitCommitStatus bool
 
-// UserEventPayload329 The payload of the event, if requested.
-type UserEventPayload329 struct {
-	GitLFS      UserEventPayload329GitLFS `json:"gitLFS"`
+// UserEventPayload332 The payload of the event, if requested.
+type UserEventPayload332 struct {
+	GitLFS      UserEventPayload332GitLFS `json:"gitLFS"`
 	ProjectId   string                    `json:"projectId"`
 	ProjectName string                    `json:"projectName"`
 }
 
-// UserEventPayload329GitLFS defines model for UserEvent.Payload.329.GitLFS.
-type UserEventPayload329GitLFS bool
+// UserEventPayload332GitLFS defines model for UserEvent.Payload.332.GitLFS.
+type UserEventPayload332GitLFS bool
 
-// UserEventPayload330 The payload of the event, if requested.
-type UserEventPayload330 struct {
+// UserEventPayload333 The payload of the event, if requested.
+type UserEventPayload333 struct {
 	ConsolidatedGitCommitStatus *struct {
-		Enabled           UserEventPayload330ConsolidatedGitCommitStatusEnabled           `json:"enabled"`
-		PropagateFailures UserEventPayload330ConsolidatedGitCommitStatusPropagateFailures `json:"propagateFailures"`
+		Enabled           UserEventPayload333ConsolidatedGitCommitStatusEnabled           `json:"enabled"`
+		PropagateFailures UserEventPayload333ConsolidatedGitCommitStatusPropagateFailures `json:"propagateFailures"`
 	} `json:"consolidatedGitCommitStatus"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload330ConsolidatedGitCommitStatusEnabled defines model for UserEvent.Payload.330.ConsolidatedGitCommitStatus.Enabled.
-type UserEventPayload330ConsolidatedGitCommitStatusEnabled bool
+// UserEventPayload333ConsolidatedGitCommitStatusEnabled defines model for UserEvent.Payload.333.ConsolidatedGitCommitStatus.Enabled.
+type UserEventPayload333ConsolidatedGitCommitStatusEnabled bool
 
-// UserEventPayload330ConsolidatedGitCommitStatusPropagateFailures defines model for UserEvent.Payload.330.ConsolidatedGitCommitStatus.PropagateFailures.
-type UserEventPayload330ConsolidatedGitCommitStatusPropagateFailures bool
+// UserEventPayload333ConsolidatedGitCommitStatusPropagateFailures defines model for UserEvent.Payload.333.ConsolidatedGitCommitStatus.PropagateFailures.
+type UserEventPayload333ConsolidatedGitCommitStatusPropagateFailures bool
 
-// UserEventPayload331 The payload of the event, if requested.
-type UserEventPayload331 struct {
+// UserEventPayload334 The payload of the event, if requested.
+type UserEventPayload334 struct {
 	Next struct {
 		CommandForIgnoringBuildStep *string `json:"commandForIgnoringBuildStep,omitempty"`
 	} `json:"next"`
@@ -16460,8 +16743,8 @@ type UserEventPayload331 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload332 The payload of the event, if requested.
-type UserEventPayload332 struct {
+// UserEventPayload335 The payload of the event, if requested.
+type UserEventPayload335 struct {
 	ConfiguredBy       *string  `json:"configuredBy,omitempty"`
 	Domain             string   `json:"domain"`
 	GitBranch          *string  `json:"gitBranch"`
@@ -16472,8 +16755,8 @@ type UserEventPayload332 struct {
 	Target             string   `json:"target"`
 }
 
-// UserEventPayload333 The payload of the event, if requested.
-type UserEventPayload333 struct {
+// UserEventPayload336 The payload of the event, if requested.
+type UserEventPayload336 struct {
 	Domain             string   `json:"domain"`
 	ProjectId          string   `json:"projectId"`
 	ProjectName        string   `json:"projectName"`
@@ -16482,8 +16765,8 @@ type UserEventPayload333 struct {
 	Target             string   `json:"target"`
 }
 
-// UserEventPayload334 The payload of the event, if requested.
-type UserEventPayload334 struct {
+// UserEventPayload337 The payload of the event, if requested.
+type UserEventPayload337 struct {
 	Domain         string `json:"domain"`
 	NewProjectId   string `json:"newProjectId"`
 	NewProjectName string `json:"newProjectName"`
@@ -16491,8 +16774,8 @@ type UserEventPayload334 struct {
 	OldProjectName string `json:"oldProjectName"`
 }
 
-// UserEventPayload335 The payload of the event, if requested.
-type UserEventPayload335 struct {
+// UserEventPayload338 The payload of the event, if requested.
+type UserEventPayload338 struct {
 	Domain             string   `json:"domain"`
 	ProjectId          string   `json:"projectId"`
 	ProjectName        string   `json:"projectName"`
@@ -16500,13 +16783,13 @@ type UserEventPayload335 struct {
 	RedirectStatusCode *float32 `json:"redirectStatusCode,omitempty"`
 }
 
-// UserEventPayload336 The payload of the event, if requested.
-type UserEventPayload336 struct {
+// UserEventPayload339 The payload of the event, if requested.
+type UserEventPayload339 struct {
 	DirectoryType *string `json:"directoryType,omitempty"`
 	Projects      []struct {
 		MembershipCreatedAt float32                         `json:"membershipCreatedAt"`
 		ProjectId           string                          `json:"projectId"`
-		Role                UserEventPayload336ProjectsRole `json:"role"`
+		Role                UserEventPayload339ProjectsRole `json:"role"`
 	} `json:"projects"`
 	TeamMembership *struct {
 		Uid      string  `json:"uid"`
@@ -16514,11 +16797,11 @@ type UserEventPayload336 struct {
 	} `json:"teamMembership,omitempty"`
 }
 
-// UserEventPayload336ProjectsRole defines model for UserEvent.Payload.336.Projects.Role.
-type UserEventPayload336ProjectsRole string
+// UserEventPayload339ProjectsRole defines model for UserEvent.Payload.339.Projects.Role.
+type UserEventPayload339ProjectsRole string
 
-// UserEventPayload337 The payload of the event, if requested.
-type UserEventPayload337 struct {
+// UserEventPayload340 The payload of the event, if requested.
+type UserEventPayload340 struct {
 	ConfiguredBy     *string `json:"configuredBy,omitempty"`
 	Domain           string  `json:"domain"`
 	PrevConfiguredBy *string `json:"prevConfiguredBy,omitempty"`
@@ -16527,77 +16810,77 @@ type UserEventPayload337 struct {
 	Target           string  `json:"target"`
 }
 
-// UserEventPayload338 The payload of the event, if requested.
-type UserEventPayload338 struct {
+// UserEventPayload341 The payload of the event, if requested.
+type UserEventPayload341 struct {
 	Project struct {
 		Id   *string `json:"id,omitempty"`
 		Name string  `json:"name"`
 	} `json:"project"`
 	ProjectMembership *struct {
 		CreatedAt float32                                  `json:"createdAt"`
-		Role      UserEventPayload338ProjectMembershipRole `json:"role"`
+		Role      UserEventPayload341ProjectMembershipRole `json:"role"`
 		Uid       string                                   `json:"uid"`
 		Username  *string                                  `json:"username,omitempty"`
 	} `json:"projectMembership"`
 }
-
-// UserEventPayload338ProjectMembershipRole defines model for UserEvent.Payload.338.ProjectMembership.Role.
-type UserEventPayload338ProjectMembershipRole string
-
-// UserEventPayload339 The payload of the event, if requested.
-type UserEventPayload339 struct {
-	Project struct {
-		Id              *string                        `json:"id,omitempty"`
-		InvitedUserId   *string                        `json:"invitedUserId,omitempty"`
-		InvitedUserName string                         `json:"invitedUserName"`
-		Name            string                         `json:"name"`
-		Role            UserEventPayload339ProjectRole `json:"role"`
-	} `json:"project"`
-}
-
-// UserEventPayload339ProjectRole defines model for UserEvent.Payload.339.Project.Role.
-type UserEventPayload339ProjectRole string
-
-// UserEventPayload340 The payload of the event, if requested.
-type UserEventPayload340 struct {
-	Project struct {
-		Id   *string `json:"id,omitempty"`
-		Name string  `json:"name"`
-	} `json:"project"`
-	RemovedMembership struct {
-		CreatedAt float32                                  `json:"createdAt"`
-		Role      UserEventPayload340RemovedMembershipRole `json:"role"`
-		Uid       string                                   `json:"uid"`
-		Username  *string                                  `json:"username,omitempty"`
-	} `json:"removedMembership"`
-}
-
-// UserEventPayload340RemovedMembershipRole defines model for UserEvent.Payload.340.RemovedMembership.Role.
-type UserEventPayload340RemovedMembershipRole string
-
-// UserEventPayload341 The payload of the event, if requested.
-type UserEventPayload341 struct {
-	Project struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"project"`
-	ProjectMembership struct {
-		CreatedAt    *float32                                          `json:"createdAt,omitempty"`
-		PreviousRole *UserEventPayload341ProjectMembershipPreviousRole `json:"previousRole,omitempty"`
-		Role         *UserEventPayload341ProjectMembershipRole         `json:"role,omitempty"`
-		Uid          *string                                           `json:"uid,omitempty"`
-		Username     *string                                           `json:"username,omitempty"`
-	} `json:"projectMembership"`
-}
-
-// UserEventPayload341ProjectMembershipPreviousRole defines model for UserEvent.Payload.341.ProjectMembership.PreviousRole.
-type UserEventPayload341ProjectMembershipPreviousRole string
 
 // UserEventPayload341ProjectMembershipRole defines model for UserEvent.Payload.341.ProjectMembership.Role.
 type UserEventPayload341ProjectMembershipRole string
 
 // UserEventPayload342 The payload of the event, if requested.
 type UserEventPayload342 struct {
+	Project struct {
+		Id              *string                        `json:"id,omitempty"`
+		InvitedUserId   *string                        `json:"invitedUserId,omitempty"`
+		InvitedUserName string                         `json:"invitedUserName"`
+		Name            string                         `json:"name"`
+		Role            UserEventPayload342ProjectRole `json:"role"`
+	} `json:"project"`
+}
+
+// UserEventPayload342ProjectRole defines model for UserEvent.Payload.342.Project.Role.
+type UserEventPayload342ProjectRole string
+
+// UserEventPayload343 The payload of the event, if requested.
+type UserEventPayload343 struct {
+	Project struct {
+		Id   *string `json:"id,omitempty"`
+		Name string  `json:"name"`
+	} `json:"project"`
+	RemovedMembership struct {
+		CreatedAt float32                                  `json:"createdAt"`
+		Role      UserEventPayload343RemovedMembershipRole `json:"role"`
+		Uid       string                                   `json:"uid"`
+		Username  *string                                  `json:"username,omitempty"`
+	} `json:"removedMembership"`
+}
+
+// UserEventPayload343RemovedMembershipRole defines model for UserEvent.Payload.343.RemovedMembership.Role.
+type UserEventPayload343RemovedMembershipRole string
+
+// UserEventPayload344 The payload of the event, if requested.
+type UserEventPayload344 struct {
+	Project struct {
+		Id   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"project"`
+	ProjectMembership struct {
+		CreatedAt    *float32                                          `json:"createdAt,omitempty"`
+		PreviousRole *UserEventPayload344ProjectMembershipPreviousRole `json:"previousRole,omitempty"`
+		Role         *UserEventPayload344ProjectMembershipRole         `json:"role,omitempty"`
+		Uid          *string                                           `json:"uid,omitempty"`
+		Username     *string                                           `json:"username,omitempty"`
+	} `json:"projectMembership"`
+}
+
+// UserEventPayload344ProjectMembershipPreviousRole defines model for UserEvent.Payload.344.ProjectMembership.PreviousRole.
+type UserEventPayload344ProjectMembershipPreviousRole string
+
+// UserEventPayload344ProjectMembershipRole defines model for UserEvent.Payload.344.ProjectMembership.Role.
+type UserEventPayload344ProjectMembershipRole string
+
+// UserEventPayload345 The payload of the event, if requested.
+type UserEventPayload345 struct {
 	NewProjectId        *string `json:"newProjectId,omitempty"`
 	NewProjectName      string  `json:"newProjectName"`
 	OriginAccountName   string  `json:"originAccountName"`
@@ -16606,16 +16889,16 @@ type UserEventPayload342 struct {
 	TransferId          *string `json:"transferId,omitempty"`
 }
 
-// UserEventPayload343 The payload of the event, if requested.
-type UserEventPayload343 struct {
+// UserEventPayload346 The payload of the event, if requested.
+type UserEventPayload346 struct {
 	DestinationAccountName *string `json:"destinationAccountName"`
 	PreviousProjectId      *string `json:"previousProjectId,omitempty"`
 	ProjectName            string  `json:"projectName"`
 	TransferId             *string `json:"transferId,omitempty"`
 }
 
-// UserEventPayload344 The payload of the event, if requested.
-type UserEventPayload344 struct {
+// UserEventPayload347 The payload of the event, if requested.
+type UserEventPayload347 struct {
 	DestinationAccountId   string  `json:"destinationAccountId"`
 	DestinationAccountName string  `json:"destinationAccountName"`
 	OriginAccountName      string  `json:"originAccountName"`
@@ -16624,8 +16907,8 @@ type UserEventPayload344 struct {
 	TransferId             *string `json:"transferId,omitempty"`
 }
 
-// UserEventPayload345 The payload of the event, if requested.
-type UserEventPayload345 struct {
+// UserEventPayload348 The payload of the event, if requested.
+type UserEventPayload348 struct {
 	DestinationAccountName string  `json:"destinationAccountName"`
 	NewProjectId           *string `json:"newProjectId,omitempty"`
 	NewProjectName         string  `json:"newProjectName"`
@@ -16634,15 +16917,15 @@ type UserEventPayload345 struct {
 	TransferId             *string `json:"transferId,omitempty"`
 }
 
-// UserEventPayload346 The payload of the event, if requested.
-type UserEventPayload346 struct {
+// UserEventPayload349 The payload of the event, if requested.
+type UserEventPayload349 struct {
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 	Source      string `json:"source"`
 }
 
-// UserEventPayload347 The payload of the event, if requested.
-type UserEventPayload347 struct {
+// UserEventPayload350 The payload of the event, if requested.
+type UserEventPayload350 struct {
 	OldOptionsAllowlist *struct {
 		Paths []struct {
 			Value string `json:"value"`
@@ -16657,91 +16940,91 @@ type UserEventPayload347 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload348 The payload of the event, if requested.
-type UserEventPayload348 struct {
-	OldPasswordProtection *UserEvent_Payload_348_OldPasswordProtection `json:"oldPasswordProtection"`
-	PasswordChanged       *UserEventPayload348PasswordChanged          `json:"passwordChanged,omitempty"`
-	PasswordProtection    *UserEvent_Payload_348_PasswordProtection    `json:"passwordProtection"`
+// UserEventPayload351 The payload of the event, if requested.
+type UserEventPayload351 struct {
+	OldPasswordProtection *UserEvent_Payload_351_OldPasswordProtection `json:"oldPasswordProtection"`
+	PasswordChanged       *UserEventPayload351PasswordChanged          `json:"passwordChanged,omitempty"`
+	PasswordProtection    *UserEvent_Payload_351_PasswordProtection    `json:"passwordProtection"`
 	ProjectId             *string                                      `json:"projectId,omitempty"`
 	ProjectName           *string                                      `json:"projectName,omitempty"`
 }
 
-// UserEventPayload348OldPasswordProtection0 defines model for UserEvent.Payload.348.OldPasswordProtection.0.
-type UserEventPayload348OldPasswordProtection0 struct {
-	DeploymentType UserEventPayload348OldPasswordProtection0DeploymentType `json:"deploymentType"`
+// UserEventPayload351OldPasswordProtection0 defines model for UserEvent.Payload.351.OldPasswordProtection.0.
+type UserEventPayload351OldPasswordProtection0 struct {
+	DeploymentType UserEventPayload351OldPasswordProtection0DeploymentType `json:"deploymentType"`
 }
 
-// UserEventPayload348OldPasswordProtection0DeploymentType defines model for UserEvent.Payload.348.OldPasswordProtection.0.DeploymentType.
-type UserEventPayload348OldPasswordProtection0DeploymentType string
+// UserEventPayload351OldPasswordProtection0DeploymentType defines model for UserEvent.Payload.351.OldPasswordProtection.0.DeploymentType.
+type UserEventPayload351OldPasswordProtection0DeploymentType string
 
-// UserEventPayload348OldPasswordProtection1 defines model for UserEvent.Payload.348.OldPasswordProtection.1.
-type UserEventPayload348OldPasswordProtection1 string
+// UserEventPayload351OldPasswordProtection1 defines model for UserEvent.Payload.351.OldPasswordProtection.1.
+type UserEventPayload351OldPasswordProtection1 string
 
-// UserEvent_Payload_348_OldPasswordProtection defines model for UserEvent.Payload.348.OldPasswordProtection.
-type UserEvent_Payload_348_OldPasswordProtection struct {
+// UserEvent_Payload_351_OldPasswordProtection defines model for UserEvent.Payload.351.OldPasswordProtection.
+type UserEvent_Payload_351_OldPasswordProtection struct {
 	union json.RawMessage
 }
 
-// UserEventPayload348PasswordChanged defines model for UserEvent.Payload.348.PasswordChanged.
-type UserEventPayload348PasswordChanged bool
+// UserEventPayload351PasswordChanged defines model for UserEvent.Payload.351.PasswordChanged.
+type UserEventPayload351PasswordChanged bool
 
-// UserEventPayload348PasswordProtection0 defines model for UserEvent.Payload.348.PasswordProtection.0.
-type UserEventPayload348PasswordProtection0 struct {
-	DeploymentType UserEventPayload348PasswordProtection0DeploymentType `json:"deploymentType"`
+// UserEventPayload351PasswordProtection0 defines model for UserEvent.Payload.351.PasswordProtection.0.
+type UserEventPayload351PasswordProtection0 struct {
+	DeploymentType UserEventPayload351PasswordProtection0DeploymentType `json:"deploymentType"`
 }
 
-// UserEventPayload348PasswordProtection0DeploymentType defines model for UserEvent.Payload.348.PasswordProtection.0.DeploymentType.
-type UserEventPayload348PasswordProtection0DeploymentType string
+// UserEventPayload351PasswordProtection0DeploymentType defines model for UserEvent.Payload.351.PasswordProtection.0.DeploymentType.
+type UserEventPayload351PasswordProtection0DeploymentType string
 
-// UserEventPayload348PasswordProtection1 defines model for UserEvent.Payload.348.PasswordProtection.1.
-type UserEventPayload348PasswordProtection1 string
+// UserEventPayload351PasswordProtection1 defines model for UserEvent.Payload.351.PasswordProtection.1.
+type UserEventPayload351PasswordProtection1 string
 
-// UserEvent_Payload_348_PasswordProtection defines model for UserEvent.Payload.348.PasswordProtection.
-type UserEvent_Payload_348_PasswordProtection struct {
+// UserEvent_Payload_351_PasswordProtection defines model for UserEvent.Payload.351.PasswordProtection.
+type UserEvent_Payload_351_PasswordProtection struct {
 	union json.RawMessage
 }
 
-// UserEventPayload349 The payload of the event, if requested.
-type UserEventPayload349 struct {
+// UserEventPayload352 The payload of the event, if requested.
+type UserEventPayload352 struct {
 	ProjectId string `json:"projectId"`
 }
 
-// UserEventPayload350 The payload of the event, if requested.
-type UserEventPayload350 struct {
+// UserEventPayload353 The payload of the event, if requested.
+type UserEventPayload353 struct {
 	ExpiresAt float32 `json:"expiresAt"`
 	ProjectId string  `json:"projectId"`
 }
 
-// UserEventPayload351 The payload of the event, if requested.
-type UserEventPayload351 struct {
+// UserEventPayload354 The payload of the event, if requested.
+type UserEventPayload354 struct {
 	// BudgetId The budget that paused the project, for `BUDGET_REACHED`. Absent on older events.
 	BudgetId    *string                         `json:"budgetId,omitempty"`
-	BudgetScope *UserEventPayload351BudgetScope `json:"budgetScope,omitempty"`
+	BudgetScope *UserEventPayload354BudgetScope `json:"budgetScope,omitempty"`
 	ProjectId   string                          `json:"projectId"`
 
 	// ProjectName Display name for Activity links. Optional for events stored before it was published.
 	ProjectName *string                        `json:"projectName,omitempty"`
-	ReasonCode  *UserEventPayload351ReasonCode `json:"reasonCode,omitempty"`
+	ReasonCode  *UserEventPayload354ReasonCode `json:"reasonCode,omitempty"`
 }
 
-// UserEventPayload351BudgetScope defines model for UserEvent.Payload.351.BudgetScope.
-type UserEventPayload351BudgetScope string
+// UserEventPayload354BudgetScope defines model for UserEvent.Payload.354.BudgetScope.
+type UserEventPayload354BudgetScope string
 
-// UserEventPayload351ReasonCode defines model for UserEvent.Payload.351.ReasonCode.
-type UserEventPayload351ReasonCode string
+// UserEventPayload354ReasonCode defines model for UserEvent.Payload.354.ReasonCode.
+type UserEventPayload354ReasonCode string
 
-// UserEventPayload352 The payload of the event, if requested.
-type UserEventPayload352 struct {
-	Consent     UserEventPayload352Consent `json:"consent"`
+// UserEventPayload355 The payload of the event, if requested.
+type UserEventPayload355 struct {
+	Consent     UserEventPayload355Consent `json:"consent"`
 	ProjectId   *string                    `json:"projectId,omitempty"`
 	ProjectName string                     `json:"projectName"`
 }
 
-// UserEventPayload352Consent defines model for UserEvent.Payload.352.Consent.
-type UserEventPayload352Consent string
+// UserEventPayload355Consent defines model for UserEvent.Payload.355.Consent.
+type UserEventPayload355Consent string
 
-// UserEventPayload353 The payload of the event, if requested.
-type UserEventPayload353 struct {
+// UserEventPayload356 The payload of the event, if requested.
+type UserEventPayload356 struct {
 	DeploymentId     string `json:"deploymentId"`
 	ProjectAccountId string `json:"projectAccountId"`
 	ProjectId        string `json:"projectId"`
@@ -16754,7 +17037,7 @@ type UserEventPayload353 struct {
 
 		// Description User-supplied explanation of why they rolled back the project. Limited to 250 characters.
 		Description string                                               `json:"description"`
-		Principal   *UserEvent_Payload_353_RollbackDescription_Principal `json:"principal,omitempty"`
+		Principal   *UserEvent_Payload_356_RollbackDescription_Principal `json:"principal,omitempty"`
 
 		// UserId The ID of the user who rolled back the project, when the principal was a user.
 		UserId *string `json:"userId,omitempty"`
@@ -16764,19 +17047,19 @@ type UserEventPayload353 struct {
 	} `json:"rollbackDescription,omitempty"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal0 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
-type UserEventPayload353RollbackDescriptionPrincipal0 struct {
+// UserEventPayload356RollbackDescriptionPrincipal0 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
+type UserEventPayload356RollbackDescriptionPrincipal0 struct {
 	Project struct {
 		Id string `json:"id"`
 	} `json:"project"`
-	Type UserEventPayload353RollbackDescriptionPrincipal0Type `json:"type"`
+	Type UserEventPayload356RollbackDescriptionPrincipal0Type `json:"type"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal0Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.0.Type.
-type UserEventPayload353RollbackDescriptionPrincipal0Type string
+// UserEventPayload356RollbackDescriptionPrincipal0Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.0.Type.
+type UserEventPayload356RollbackDescriptionPrincipal0Type string
 
-// UserEventPayload353RollbackDescriptionPrincipal1 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
-type UserEventPayload353RollbackDescriptionPrincipal1 struct {
+// UserEventPayload356RollbackDescriptionPrincipal1 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
+type UserEventPayload356RollbackDescriptionPrincipal1 struct {
 	App struct {
 		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
 		ClientId *string `json:"clientId,omitempty"`
@@ -16784,46 +17067,46 @@ type UserEventPayload353RollbackDescriptionPrincipal1 struct {
 		// Id The internal ID of the Vercel App backing this principal.
 		Id string `json:"id"`
 	} `json:"app"`
-	Type UserEventPayload353RollbackDescriptionPrincipal1Type `json:"type"`
+	Type UserEventPayload356RollbackDescriptionPrincipal1Type `json:"type"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal1Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.1.Type.
-type UserEventPayload353RollbackDescriptionPrincipal1Type string
+// UserEventPayload356RollbackDescriptionPrincipal1Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.1.Type.
+type UserEventPayload356RollbackDescriptionPrincipal1Type string
 
-// UserEventPayload353RollbackDescriptionPrincipal2 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
-type UserEventPayload353RollbackDescriptionPrincipal2 struct {
+// UserEventPayload356RollbackDescriptionPrincipal2 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
+type UserEventPayload356RollbackDescriptionPrincipal2 struct {
 	Integration struct {
 		ConfigurationId string `json:"configurationId"`
 		IntegrationId   string `json:"integrationId"`
 	} `json:"integration"`
-	Type UserEventPayload353RollbackDescriptionPrincipal2Type `json:"type"`
+	Type UserEventPayload356RollbackDescriptionPrincipal2Type `json:"type"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal2Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.2.Type.
-type UserEventPayload353RollbackDescriptionPrincipal2Type string
+// UserEventPayload356RollbackDescriptionPrincipal2Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.2.Type.
+type UserEventPayload356RollbackDescriptionPrincipal2Type string
 
-// UserEventPayload353RollbackDescriptionPrincipal3 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
-type UserEventPayload353RollbackDescriptionPrincipal3 struct {
-	Type UserEventPayload353RollbackDescriptionPrincipal3Type `json:"type"`
+// UserEventPayload356RollbackDescriptionPrincipal3 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
+type UserEventPayload356RollbackDescriptionPrincipal3 struct {
+	Type UserEventPayload356RollbackDescriptionPrincipal3Type `json:"type"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal3Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.3.Type.
-type UserEventPayload353RollbackDescriptionPrincipal3Type string
+// UserEventPayload356RollbackDescriptionPrincipal3Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.3.Type.
+type UserEventPayload356RollbackDescriptionPrincipal3Type string
 
-// UserEventPayload353RollbackDescriptionPrincipal4 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
-type UserEventPayload353RollbackDescriptionPrincipal4 struct {
-	Type UserEventPayload353RollbackDescriptionPrincipal4Type `json:"type"`
+// UserEventPayload356RollbackDescriptionPrincipal4 The principal who rolled back the project. Absent on historical rollbacks where the principal was a user (in this case, see `userId`).
+type UserEventPayload356RollbackDescriptionPrincipal4 struct {
+	Type UserEventPayload356RollbackDescriptionPrincipal4Type `json:"type"`
 	User struct {
 		Id string `json:"id"`
 	} `json:"user"`
-	Via *UserEvent_Payload_353_RollbackDescription_Principal_4_Via `json:"via"`
+	Via *UserEvent_Payload_356_RollbackDescription_Principal_4_Via `json:"via"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal4Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.4.Type.
-type UserEventPayload353RollbackDescriptionPrincipal4Type string
+// UserEventPayload356RollbackDescriptionPrincipal4Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.4.Type.
+type UserEventPayload356RollbackDescriptionPrincipal4Type string
 
-// UserEventPayload353RollbackDescriptionPrincipal4Via0 Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-type UserEventPayload353RollbackDescriptionPrincipal4Via0 struct {
+// UserEventPayload356RollbackDescriptionPrincipal4Via0 Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+type UserEventPayload356RollbackDescriptionPrincipal4Via0 struct {
 	App struct {
 		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
 		ClientId *string `json:"clientId,omitempty"`
@@ -16831,59 +17114,59 @@ type UserEventPayload353RollbackDescriptionPrincipal4Via0 struct {
 		// Id The internal ID of the Vercel App backing this principal.
 		Id string `json:"id"`
 	} `json:"app"`
-	Type UserEventPayload353RollbackDescriptionPrincipal4Via0Type `json:"type"`
+	Type UserEventPayload356RollbackDescriptionPrincipal4Via0Type `json:"type"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal4Via0Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.4.Via.0.Type.
-type UserEventPayload353RollbackDescriptionPrincipal4Via0Type string
+// UserEventPayload356RollbackDescriptionPrincipal4Via0Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.4.Via.0.Type.
+type UserEventPayload356RollbackDescriptionPrincipal4Via0Type string
 
-// UserEventPayload353RollbackDescriptionPrincipal4Via1 Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
-type UserEventPayload353RollbackDescriptionPrincipal4Via1 struct {
+// UserEventPayload356RollbackDescriptionPrincipal4Via1 Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+type UserEventPayload356RollbackDescriptionPrincipal4Via1 struct {
 	Integration struct {
 		ConfigurationId string `json:"configurationId"`
 		IntegrationId   string `json:"integrationId"`
 	} `json:"integration"`
-	Type UserEventPayload353RollbackDescriptionPrincipal4Via1Type `json:"type"`
+	Type UserEventPayload356RollbackDescriptionPrincipal4Via1Type `json:"type"`
 }
 
-// UserEventPayload353RollbackDescriptionPrincipal4Via1Type defines model for UserEvent.Payload.353.RollbackDescription.Principal.4.Via.1.Type.
-type UserEventPayload353RollbackDescriptionPrincipal4Via1Type string
+// UserEventPayload356RollbackDescriptionPrincipal4Via1Type defines model for UserEvent.Payload.356.RollbackDescription.Principal.4.Via.1.Type.
+type UserEventPayload356RollbackDescriptionPrincipal4Via1Type string
 
-// UserEvent_Payload_353_RollbackDescription_Principal_4_Via defines model for UserEvent.Payload.353.RollbackDescription.Principal.4.Via.
-type UserEvent_Payload_353_RollbackDescription_Principal_4_Via struct {
+// UserEvent_Payload_356_RollbackDescription_Principal_4_Via defines model for UserEvent.Payload.356.RollbackDescription.Principal.4.Via.
+type UserEvent_Payload_356_RollbackDescription_Principal_4_Via struct {
 	union json.RawMessage
 }
 
-// UserEvent_Payload_353_RollbackDescription_Principal defines model for UserEvent.Payload.353.RollbackDescription.Principal.
-type UserEvent_Payload_353_RollbackDescription_Principal struct {
+// UserEvent_Payload_356_RollbackDescription_Principal defines model for UserEvent.Payload.356.RollbackDescription.Principal.
+type UserEvent_Payload_356_RollbackDescription_Principal struct {
 	union json.RawMessage
 }
 
-// UserEventPayload354 The payload of the event, if requested.
-type UserEventPayload354 struct {
+// UserEventPayload357 The payload of the event, if requested.
+type UserEventPayload357 struct {
 	ProjectId          string  `json:"projectId"`
 	ProjectName        string  `json:"projectName"`
 	TargetDeploymentId *string `json:"targetDeploymentId,omitempty"`
 }
 
-// UserEventPayload355 The payload of the event, if requested.
-type UserEventPayload355 struct {
+// UserEventPayload358 The payload of the event, if requested.
+type UserEventPayload358 struct {
 	NewTargetPercentage *float32 `json:"newTargetPercentage,omitempty"`
 	ProjectId           string   `json:"projectId"`
 	ProjectName         string   `json:"projectName"`
 	TargetDeploymentId  *string  `json:"targetDeploymentId,omitempty"`
 }
 
-// UserEventPayload356 The payload of the event, if requested.
-type UserEventPayload356 struct {
+// UserEventPayload359 The payload of the event, if requested.
+type UserEventPayload359 struct {
 	Action             *string `json:"action,omitempty"`
 	ProjectId          string  `json:"projectId"`
 	ProjectName        string  `json:"projectName"`
 	TargetDeploymentId *string `json:"targetDeploymentId,omitempty"`
 }
 
-// UserEventPayload357 The payload of the event, if requested.
-type UserEventPayload357 struct {
+// UserEventPayload360 The payload of the event, if requested.
+type UserEventPayload360 struct {
 	Next *struct {
 		DeploymentSources *[]interface{} `json:"deploymentSources,omitempty"`
 		GitSources        *[]interface{} `json:"gitSources,omitempty"`
@@ -16896,84 +17179,84 @@ type UserEventPayload357 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload358 The payload of the event, if requested.
-type UserEventPayload358 struct {
+// UserEventPayload361 The payload of the event, if requested.
+type UserEventPayload361 struct {
 	FailoverRegions *[]string `json:"failoverRegions,omitempty"`
 	ProjectId       string    `json:"projectId"`
 	ProjectName     string    `json:"projectName"`
 	Region          *string   `json:"region,omitempty"`
 }
 
-// UserEventPayload359 The payload of the event, if requested.
-type UserEventPayload359 struct {
+// UserEventPayload362 The payload of the event, if requested.
+type UserEventPayload362 struct {
 	Next struct {
-		IssuerMode UserEventPayload359NextIssuerMode `json:"issuerMode"`
+		IssuerMode UserEventPayload362NextIssuerMode `json:"issuerMode"`
 	} `json:"next"`
 	Previous struct {
-		IssuerMode *UserEventPayload359PreviousIssuerMode `json:"issuerMode,omitempty"`
+		IssuerMode *UserEventPayload362PreviousIssuerMode `json:"issuerMode,omitempty"`
 	} `json:"previous"`
 	ProjectId   string `json:"projectId"`
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload359NextIssuerMode defines model for UserEvent.Payload.359.Next.IssuerMode.
-type UserEventPayload359NextIssuerMode string
+// UserEventPayload362NextIssuerMode defines model for UserEvent.Payload.362.Next.IssuerMode.
+type UserEventPayload362NextIssuerMode string
 
-// UserEventPayload359PreviousIssuerMode defines model for UserEvent.Payload.359.Previous.IssuerMode.
-type UserEventPayload359PreviousIssuerMode string
+// UserEventPayload362PreviousIssuerMode defines model for UserEvent.Payload.362.Previous.IssuerMode.
+type UserEventPayload362PreviousIssuerMode string
 
-// UserEventPayload360 The payload of the event, if requested.
-type UserEventPayload360 struct {
-	CustomerSupportCodeVisibility UserEventPayload360CustomerSupportCodeVisibility `json:"customerSupportCodeVisibility"`
+// UserEventPayload363 The payload of the event, if requested.
+type UserEventPayload363 struct {
+	CustomerSupportCodeVisibility UserEventPayload363CustomerSupportCodeVisibility `json:"customerSupportCodeVisibility"`
 	ProjectId                     string                                           `json:"projectId"`
 	ProjectName                   string                                           `json:"projectName"`
 }
 
-// UserEventPayload360CustomerSupportCodeVisibility defines model for UserEvent.Payload.360.CustomerSupportCodeVisibility.
-type UserEventPayload360CustomerSupportCodeVisibility bool
+// UserEventPayload363CustomerSupportCodeVisibility defines model for UserEvent.Payload.363.CustomerSupportCodeVisibility.
+type UserEventPayload363CustomerSupportCodeVisibility bool
 
-// UserEventPayload361 The payload of the event, if requested.
-type UserEventPayload361 struct {
-	GitForkProtection UserEventPayload361GitForkProtection `json:"gitForkProtection"`
+// UserEventPayload364 The payload of the event, if requested.
+type UserEventPayload364 struct {
+	GitForkProtection UserEventPayload364GitForkProtection `json:"gitForkProtection"`
 	ProjectId         string                               `json:"projectId"`
 	ProjectName       string                               `json:"projectName"`
 }
 
-// UserEventPayload361GitForkProtection defines model for UserEvent.Payload.361.GitForkProtection.
-type UserEventPayload361GitForkProtection bool
+// UserEventPayload364GitForkProtection defines model for UserEvent.Payload.364.GitForkProtection.
+type UserEventPayload364GitForkProtection bool
 
-// UserEventPayload362 The payload of the event, if requested.
-type UserEventPayload362 struct {
+// UserEventPayload365 The payload of the event, if requested.
+type UserEventPayload365 struct {
 	ProjectId           string                                 `json:"projectId"`
 	ProjectName         string                                 `json:"projectName"`
-	ProtectedSourcemaps UserEventPayload362ProtectedSourcemaps `json:"protectedSourcemaps"`
+	ProtectedSourcemaps UserEventPayload365ProtectedSourcemaps `json:"protectedSourcemaps"`
 }
 
-// UserEventPayload362ProtectedSourcemaps defines model for UserEvent.Payload.362.ProtectedSourcemaps.
-type UserEventPayload362ProtectedSourcemaps bool
+// UserEventPayload365ProtectedSourcemaps defines model for UserEvent.Payload.365.ProtectedSourcemaps.
+type UserEventPayload365ProtectedSourcemaps bool
 
-// UserEventPayload363 The payload of the event, if requested.
-type UserEventPayload363 struct {
-	InheritDeploymentProtection UserEventPayload363InheritDeploymentProtection `json:"inheritDeploymentProtection"`
+// UserEventPayload366 The payload of the event, if requested.
+type UserEventPayload366 struct {
+	InheritDeploymentProtection UserEventPayload366InheritDeploymentProtection `json:"inheritDeploymentProtection"`
 	ProjectId                   string                                         `json:"projectId"`
 	ProjectName                 string                                         `json:"projectName"`
 }
 
-// UserEventPayload363InheritDeploymentProtection defines model for UserEvent.Payload.363.InheritDeploymentProtection.
-type UserEventPayload363InheritDeploymentProtection bool
+// UserEventPayload366InheritDeploymentProtection defines model for UserEvent.Payload.366.InheritDeploymentProtection.
+type UserEventPayload366InheritDeploymentProtection bool
 
-// UserEventPayload364 The payload of the event, if requested.
-type UserEventPayload364 struct {
+// UserEventPayload367 The payload of the event, if requested.
+type UserEventPayload367 struct {
 	ProjectId    string                          `json:"projectId"`
 	ProjectName  string                          `json:"projectName"`
-	PublicSource UserEventPayload364PublicSource `json:"publicSource"`
+	PublicSource UserEventPayload367PublicSource `json:"publicSource"`
 }
 
-// UserEventPayload364PublicSource defines model for UserEvent.Payload.364.PublicSource.
-type UserEventPayload364PublicSource bool
+// UserEventPayload367PublicSource defines model for UserEvent.Payload.367.PublicSource.
+type UserEventPayload367PublicSource bool
 
-// UserEventPayload365 The payload of the event, if requested.
-type UserEventPayload365 struct {
+// UserEventPayload368 The payload of the event, if requested.
+type UserEventPayload368 struct {
 	Next struct {
 		Expiration           *string `json:"expiration,omitempty"`
 		ExpirationCanceled   *string `json:"expirationCanceled,omitempty"`
@@ -16990,8 +17273,8 @@ type UserEventPayload365 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload366 The payload of the event, if requested.
-type UserEventPayload366 struct {
+// UserEventPayload369 The payload of the event, if requested.
+type UserEventPayload369 struct {
 	Next struct {
 		SkewProtectionBoundaryAt float32 `json:"skewProtectionBoundaryAt"`
 	} `json:"next"`
@@ -17002,8 +17285,8 @@ type UserEventPayload366 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload367 The payload of the event, if requested.
-type UserEventPayload367 struct {
+// UserEventPayload370 The payload of the event, if requested.
+type UserEventPayload370 struct {
 	Next struct {
 		SkewProtectionMaxAge float32 `json:"skewProtectionMaxAge"`
 	} `json:"next"`
@@ -17014,8 +17297,8 @@ type UserEventPayload367 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload368 The payload of the event, if requested.
-type UserEventPayload368 struct {
+// UserEventPayload371 The payload of the event, if requested.
+type UserEventPayload371 struct {
 	Next struct {
 		SkewProtectionAllowedDomains []string `json:"skewProtectionAllowedDomains"`
 	} `json:"next"`
@@ -17026,71 +17309,71 @@ type UserEventPayload368 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload369 The payload of the event, if requested.
-type UserEventPayload369 struct {
-	OldSsoProtection *UserEvent_Payload_369_OldSsoProtection `json:"oldSsoProtection"`
+// UserEventPayload372 The payload of the event, if requested.
+type UserEventPayload372 struct {
+	OldSsoProtection *UserEvent_Payload_372_OldSsoProtection `json:"oldSsoProtection"`
 	ProjectId        *string                                 `json:"projectId,omitempty"`
 	ProjectName      *string                                 `json:"projectName,omitempty"`
-	SsoProtection    *UserEvent_Payload_369_SsoProtection    `json:"ssoProtection"`
+	SsoProtection    *UserEvent_Payload_372_SsoProtection    `json:"ssoProtection"`
 }
 
-// UserEventPayload369OldSsoProtection0 defines model for UserEvent.Payload.369.OldSsoProtection.0.
-type UserEventPayload369OldSsoProtection0 struct {
-	April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload369OldSsoProtection0April2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
-	Cve55182MigrationAppliedFrom                  *UserEventPayload369OldSsoProtection0Cve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
-	DeploymentType                                UserEventPayload369OldSsoProtection0DeploymentType                                 `json:"deploymentType"`
+// UserEventPayload372OldSsoProtection0 defines model for UserEvent.Payload.372.OldSsoProtection.0.
+type UserEventPayload372OldSsoProtection0 struct {
+	April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload372OldSsoProtection0April2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
+	Cve55182MigrationAppliedFrom                  *UserEventPayload372OldSsoProtection0Cve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
+	DeploymentType                                UserEventPayload372OldSsoProtection0DeploymentType                                 `json:"deploymentType"`
 }
 
-// UserEventPayload369OldSsoProtection0April2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.369.OldSsoProtection.0.April2026SecurityIncidentMigrationAppliedFrom.
-type UserEventPayload369OldSsoProtection0April2026SecurityIncidentMigrationAppliedFrom string
+// UserEventPayload372OldSsoProtection0April2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.372.OldSsoProtection.0.April2026SecurityIncidentMigrationAppliedFrom.
+type UserEventPayload372OldSsoProtection0April2026SecurityIncidentMigrationAppliedFrom string
 
-// UserEventPayload369OldSsoProtection0Cve55182MigrationAppliedFrom defines model for UserEvent.Payload.369.OldSsoProtection.0.Cve55182MigrationAppliedFrom.
-type UserEventPayload369OldSsoProtection0Cve55182MigrationAppliedFrom string
+// UserEventPayload372OldSsoProtection0Cve55182MigrationAppliedFrom defines model for UserEvent.Payload.372.OldSsoProtection.0.Cve55182MigrationAppliedFrom.
+type UserEventPayload372OldSsoProtection0Cve55182MigrationAppliedFrom string
 
-// UserEventPayload369OldSsoProtection0DeploymentType defines model for UserEvent.Payload.369.OldSsoProtection.0.DeploymentType.
-type UserEventPayload369OldSsoProtection0DeploymentType string
+// UserEventPayload372OldSsoProtection0DeploymentType defines model for UserEvent.Payload.372.OldSsoProtection.0.DeploymentType.
+type UserEventPayload372OldSsoProtection0DeploymentType string
 
-// UserEventPayload369OldSsoProtection1 defines model for UserEvent.Payload.369.OldSsoProtection.1.
-type UserEventPayload369OldSsoProtection1 string
+// UserEventPayload372OldSsoProtection1 defines model for UserEvent.Payload.372.OldSsoProtection.1.
+type UserEventPayload372OldSsoProtection1 string
 
-// UserEvent_Payload_369_OldSsoProtection defines model for UserEvent.Payload.369.OldSsoProtection.
-type UserEvent_Payload_369_OldSsoProtection struct {
+// UserEvent_Payload_372_OldSsoProtection defines model for UserEvent.Payload.372.OldSsoProtection.
+type UserEvent_Payload_372_OldSsoProtection struct {
 	union json.RawMessage
 }
 
-// UserEventPayload369SsoProtection0 defines model for UserEvent.Payload.369.SsoProtection.0.
-type UserEventPayload369SsoProtection0 struct {
-	April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload369SsoProtection0April2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
-	Cve55182MigrationAppliedFrom                  *UserEventPayload369SsoProtection0Cve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
-	DeploymentType                                UserEventPayload369SsoProtection0DeploymentType                                 `json:"deploymentType"`
+// UserEventPayload372SsoProtection0 defines model for UserEvent.Payload.372.SsoProtection.0.
+type UserEventPayload372SsoProtection0 struct {
+	April2026SecurityIncidentMigrationAppliedFrom *UserEventPayload372SsoProtection0April2026SecurityIncidentMigrationAppliedFrom `json:"april2026SecurityIncidentMigrationAppliedFrom,omitempty"`
+	Cve55182MigrationAppliedFrom                  *UserEventPayload372SsoProtection0Cve55182MigrationAppliedFrom                  `json:"cve55182MigrationAppliedFrom,omitempty"`
+	DeploymentType                                UserEventPayload372SsoProtection0DeploymentType                                 `json:"deploymentType"`
 }
 
-// UserEventPayload369SsoProtection0April2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.369.SsoProtection.0.April2026SecurityIncidentMigrationAppliedFrom.
-type UserEventPayload369SsoProtection0April2026SecurityIncidentMigrationAppliedFrom string
+// UserEventPayload372SsoProtection0April2026SecurityIncidentMigrationAppliedFrom defines model for UserEvent.Payload.372.SsoProtection.0.April2026SecurityIncidentMigrationAppliedFrom.
+type UserEventPayload372SsoProtection0April2026SecurityIncidentMigrationAppliedFrom string
 
-// UserEventPayload369SsoProtection0Cve55182MigrationAppliedFrom defines model for UserEvent.Payload.369.SsoProtection.0.Cve55182MigrationAppliedFrom.
-type UserEventPayload369SsoProtection0Cve55182MigrationAppliedFrom string
+// UserEventPayload372SsoProtection0Cve55182MigrationAppliedFrom defines model for UserEvent.Payload.372.SsoProtection.0.Cve55182MigrationAppliedFrom.
+type UserEventPayload372SsoProtection0Cve55182MigrationAppliedFrom string
 
-// UserEventPayload369SsoProtection0DeploymentType defines model for UserEvent.Payload.369.SsoProtection.0.DeploymentType.
-type UserEventPayload369SsoProtection0DeploymentType string
+// UserEventPayload372SsoProtection0DeploymentType defines model for UserEvent.Payload.372.SsoProtection.0.DeploymentType.
+type UserEventPayload372SsoProtection0DeploymentType string
 
-// UserEventPayload369SsoProtection1 defines model for UserEvent.Payload.369.SsoProtection.1.
-type UserEventPayload369SsoProtection1 string
+// UserEventPayload372SsoProtection1 defines model for UserEvent.Payload.372.SsoProtection.1.
+type UserEventPayload372SsoProtection1 string
 
-// UserEvent_Payload_369_SsoProtection defines model for UserEvent.Payload.369.SsoProtection.
-type UserEvent_Payload_369_SsoProtection struct {
+// UserEvent_Payload_372_SsoProtection defines model for UserEvent.Payload.372.SsoProtection.
+type UserEvent_Payload_372_SsoProtection struct {
 	union json.RawMessage
 }
 
-// UserEventPayload370 The payload of the event, if requested.
-type UserEventPayload370 struct {
+// UserEventPayload373 The payload of the event, if requested.
+type UserEventPayload373 struct {
 	Next struct {
 		Project struct {
 			Id        *string `json:"id,omitempty"`
 			StaticIps struct {
 				BuildRegion *string                                        `json:"buildRegion,omitempty"`
-				Builds      *UserEventPayload370NextProjectStaticIpsBuilds `json:"builds,omitempty"`
-				Enabled     UserEventPayload370NextProjectStaticIpsEnabled `json:"enabled"`
+				Builds      *UserEventPayload373NextProjectStaticIpsBuilds `json:"builds,omitempty"`
+				Enabled     UserEventPayload373NextProjectStaticIpsEnabled `json:"enabled"`
 				Regions     *[]string                                      `json:"regions,omitempty"`
 			} `json:"staticIps"`
 		} `json:"project"`
@@ -17100,8 +17383,8 @@ type UserEventPayload370 struct {
 			Id        *string `json:"id,omitempty"`
 			StaticIps struct {
 				BuildRegion *string                                            `json:"buildRegion,omitempty"`
-				Builds      *UserEventPayload370PreviousProjectStaticIpsBuilds `json:"builds,omitempty"`
-				Enabled     UserEventPayload370PreviousProjectStaticIpsEnabled `json:"enabled"`
+				Builds      *UserEventPayload373PreviousProjectStaticIpsBuilds `json:"builds,omitempty"`
+				Enabled     UserEventPayload373PreviousProjectStaticIpsEnabled `json:"enabled"`
 				Regions     *[]string                                          `json:"regions,omitempty"`
 			} `json:"staticIps"`
 		} `json:"project"`
@@ -17110,42 +17393,42 @@ type UserEventPayload370 struct {
 	ProjectName string `json:"projectName"`
 }
 
-// UserEventPayload370NextProjectStaticIpsBuilds defines model for UserEvent.Payload.370.Next.Project.StaticIps.Builds.
-type UserEventPayload370NextProjectStaticIpsBuilds bool
+// UserEventPayload373NextProjectStaticIpsBuilds defines model for UserEvent.Payload.373.Next.Project.StaticIps.Builds.
+type UserEventPayload373NextProjectStaticIpsBuilds bool
 
-// UserEventPayload370NextProjectStaticIpsEnabled defines model for UserEvent.Payload.370.Next.Project.StaticIps.Enabled.
-type UserEventPayload370NextProjectStaticIpsEnabled bool
+// UserEventPayload373NextProjectStaticIpsEnabled defines model for UserEvent.Payload.373.Next.Project.StaticIps.Enabled.
+type UserEventPayload373NextProjectStaticIpsEnabled bool
 
-// UserEventPayload370PreviousProjectStaticIpsBuilds defines model for UserEvent.Payload.370.Previous.Project.StaticIps.Builds.
-type UserEventPayload370PreviousProjectStaticIpsBuilds bool
+// UserEventPayload373PreviousProjectStaticIpsBuilds defines model for UserEvent.Payload.373.Previous.Project.StaticIps.Builds.
+type UserEventPayload373PreviousProjectStaticIpsBuilds bool
 
-// UserEventPayload370PreviousProjectStaticIpsEnabled defines model for UserEvent.Payload.370.Previous.Project.StaticIps.Enabled.
-type UserEventPayload370PreviousProjectStaticIpsEnabled bool
+// UserEventPayload373PreviousProjectStaticIpsEnabled defines model for UserEvent.Payload.373.Previous.Project.StaticIps.Enabled.
+type UserEventPayload373PreviousProjectStaticIpsEnabled bool
 
-// UserEventPayload371 The payload of the event, if requested.
-type UserEventPayload371 struct {
+// UserEventPayload374 The payload of the event, if requested.
+type UserEventPayload374 struct {
 	AddedAddresses   *[]string                         `json:"addedAddresses,omitempty"`
-	OldTrustedIps    *UserEventPayload371OldTrustedIps `json:"oldTrustedIps,omitempty"`
+	OldTrustedIps    *UserEventPayload374OldTrustedIps `json:"oldTrustedIps,omitempty"`
 	ProjectId        string                            `json:"projectId"`
 	ProjectName      string                            `json:"projectName"`
 	RemovedAddresses *[]string                         `json:"removedAddresses,omitempty"`
-	TrustedIps       *UserEventPayload371TrustedIps    `json:"trustedIps,omitempty"`
+	TrustedIps       *UserEventPayload374TrustedIps    `json:"trustedIps,omitempty"`
 }
 
-// UserEventPayload371OldTrustedIps defines model for UserEvent.Payload.371.OldTrustedIps.
-type UserEventPayload371OldTrustedIps string
+// UserEventPayload374OldTrustedIps defines model for UserEvent.Payload.374.OldTrustedIps.
+type UserEventPayload374OldTrustedIps string
 
-// UserEventPayload371TrustedIps defines model for UserEvent.Payload.371.TrustedIps.
-type UserEventPayload371TrustedIps string
+// UserEventPayload374TrustedIps defines model for UserEvent.Payload.374.TrustedIps.
+type UserEventPayload374TrustedIps string
 
-// UserEventPayload372 The payload of the event, if requested.
-type UserEventPayload372 struct {
+// UserEventPayload375 The payload of the event, if requested.
+type UserEventPayload375 struct {
 	AddedProjects []struct {
 		Id   string `json:"id"`
 		Name string `json:"name"`
 	} `json:"addedProjects"`
 	AddedProviders               []string                                         `json:"addedProviders"`
-	EnableVercelCiSameRepository *UserEventPayload372EnableVercelCiSameRepository `json:"enableVercelCiSameRepository,omitempty"`
+	EnableVercelCiSameRepository *UserEventPayload375EnableVercelCiSameRepository `json:"enableVercelCiSameRepository,omitempty"`
 	ProjectId                    string                                           `json:"projectId"`
 	ProjectName                  string                                           `json:"projectName"`
 	RemovedProjects              []struct {
@@ -17155,28 +17438,28 @@ type UserEventPayload372 struct {
 	RemovedProviders []string `json:"removedProviders"`
 }
 
-// UserEventPayload372EnableVercelCiSameRepository defines model for UserEvent.Payload.372.EnableVercelCiSameRepository.
-type UserEventPayload372EnableVercelCiSameRepository bool
+// UserEventPayload375EnableVercelCiSameRepository defines model for UserEvent.Payload.375.EnableVercelCiSameRepository.
+type UserEventPayload375EnableVercelCiSameRepository bool
 
-// UserEventPayload373 The payload of the event, if requested.
-type UserEventPayload373 struct {
+// UserEventPayload376 The payload of the event, if requested.
+type UserEventPayload376 struct {
 	ProjectId string `json:"projectId"`
 
 	// ProjectName Display name for Activity links. Optional for events stored before it was published.
 	ProjectName *string                        `json:"projectName,omitempty"`
-	ReasonCode  *UserEventPayload373ReasonCode `json:"reasonCode,omitempty"`
+	ReasonCode  *UserEventPayload376ReasonCode `json:"reasonCode,omitempty"`
 }
 
-// UserEventPayload373ReasonCode defines model for UserEvent.Payload.373.ReasonCode.
-type UserEventPayload373ReasonCode string
+// UserEventPayload376ReasonCode defines model for UserEvent.Payload.376.ReasonCode.
+type UserEventPayload376ReasonCode string
 
-// UserEventPayload374 The payload of the event, if requested.
-type UserEventPayload374 struct {
+// UserEventPayload377 The payload of the event, if requested.
+type UserEventPayload377 struct {
 	PrevProjectWebAnalytics *struct {
 		CanceledAt *float32                                           `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                           `json:"disabledAt,omitempty"`
 		EnabledAt  *float32                                           `json:"enabledAt,omitempty"`
-		HasData    *UserEventPayload374PrevProjectWebAnalyticsHasData `json:"hasData,omitempty"`
+		HasData    *UserEventPayload377PrevProjectWebAnalyticsHasData `json:"hasData,omitempty"`
 		Id         string                                             `json:"id"`
 	} `json:"prevProjectWebAnalytics,omitempty"`
 	ProjectId           string `json:"projectId"`
@@ -17185,195 +17468,195 @@ type UserEventPayload374 struct {
 		CanceledAt *float32                                       `json:"canceledAt,omitempty"`
 		DisabledAt *float32                                       `json:"disabledAt,omitempty"`
 		EnabledAt  *float32                                       `json:"enabledAt,omitempty"`
-		HasData    *UserEventPayload374ProjectWebAnalyticsHasData `json:"hasData,omitempty"`
+		HasData    *UserEventPayload377ProjectWebAnalyticsHasData `json:"hasData,omitempty"`
 		Id         string                                         `json:"id"`
 	} `json:"projectWebAnalytics,omitempty"`
 }
 
-// UserEventPayload374PrevProjectWebAnalyticsHasData defines model for UserEvent.Payload.374.PrevProjectWebAnalytics.HasData.
-type UserEventPayload374PrevProjectWebAnalyticsHasData bool
+// UserEventPayload377PrevProjectWebAnalyticsHasData defines model for UserEvent.Payload.377.PrevProjectWebAnalytics.HasData.
+type UserEventPayload377PrevProjectWebAnalyticsHasData bool
 
-// UserEventPayload374ProjectWebAnalyticsHasData defines model for UserEvent.Payload.374.ProjectWebAnalytics.HasData.
-type UserEventPayload374ProjectWebAnalyticsHasData bool
+// UserEventPayload377ProjectWebAnalyticsHasData defines model for UserEvent.Payload.377.ProjectWebAnalytics.HasData.
+type UserEventPayload377ProjectWebAnalyticsHasData bool
 
-// UserEventPayload375 The payload of the event, if requested.
-type UserEventPayload375 struct {
+// UserEventPayload378 The payload of the event, if requested.
+type UserEventPayload378 struct {
 	GitProvider                string `json:"gitProvider"`
 	GitProviderGroupDescriptor string `json:"gitProviderGroupDescriptor"`
 	GitScope                   string `json:"gitScope"`
 }
 
-// UserEventPayload376 The payload of the event, if requested.
-type UserEventPayload376 struct {
+// UserEventPayload379 The payload of the event, if requested.
+type UserEventPayload379 struct {
 	ConnectionId   string `json:"connectionId"`
 	ConnectionType string `json:"connectionType"`
 }
 
-// UserEventPayload377 The payload of the event, if requested.
-type UserEventPayload377 struct {
-	ActorName                       *string                      `json:"actorName,omitempty"`
-	ActorType                       UserEventPayload377ActorType `json:"actorType"`
-	CertificateFingerprints         []string                     `json:"certificateFingerprints"`
-	ConnectionId                    string                       `json:"connectionId"`
-	Created                         UserEventPayload377Created   `json:"created"`
-	PreviousCertificateFingerprints *[]string                    `json:"previousCertificateFingerprints,omitempty"`
-}
-
-// UserEventPayload377ActorType defines model for UserEvent.Payload.377.ActorType.
-type UserEventPayload377ActorType string
-
-// UserEventPayload377Created defines model for UserEvent.Payload.377.Created.
-type UserEventPayload377Created bool
-
-// UserEventPayload378 The payload of the event, if requested.
-type UserEventPayload378 struct {
-	ActorName               *string                       `json:"actorName,omitempty"`
-	ActorType               *UserEventPayload378ActorType `json:"actorType,omitempty"`
-	CertificateFingerprints *[]string                     `json:"certificateFingerprints,omitempty"`
-	ConnectionId            *string                       `json:"connectionId,omitempty"`
-}
-
-// UserEventPayload378ActorType defines model for UserEvent.Payload.378.ActorType.
-type UserEventPayload378ActorType string
-
-// UserEventPayload379 The payload of the event, if requested.
-type UserEventPayload379 struct {
-	ActorName    *string                      `json:"actorName,omitempty"`
-	ActorType    UserEventPayload379ActorType `json:"actorType"`
-	ConnectionId string                       `json:"connectionId"`
-	KeyId        string                       `json:"keyId"`
-}
-
-// UserEventPayload379ActorType defines model for UserEvent.Payload.379.ActorType.
-type UserEventPayload379ActorType string
-
 // UserEventPayload380 The payload of the event, if requested.
 type UserEventPayload380 struct {
-	ActorName      *string                           `json:"actorName,omitempty"`
-	ActorType      UserEventPayload380ActorType      `json:"actorType"`
-	ConnectionId   string                            `json:"connectionId"`
-	KeyId          string                            `json:"keyId"`
-	SigningEnabled UserEventPayload380SigningEnabled `json:"signingEnabled"`
-	SigningKeyId   *string                           `json:"signingKeyId"`
+	ActorName                       *string                      `json:"actorName,omitempty"`
+	ActorType                       UserEventPayload380ActorType `json:"actorType"`
+	CertificateFingerprints         []string                     `json:"certificateFingerprints"`
+	ConnectionId                    string                       `json:"connectionId"`
+	Created                         UserEventPayload380Created   `json:"created"`
+	PreviousCertificateFingerprints *[]string                    `json:"previousCertificateFingerprints,omitempty"`
 }
 
 // UserEventPayload380ActorType defines model for UserEvent.Payload.380.ActorType.
 type UserEventPayload380ActorType string
 
-// UserEventPayload380SigningEnabled defines model for UserEvent.Payload.380.SigningEnabled.
-type UserEventPayload380SigningEnabled bool
+// UserEventPayload380Created defines model for UserEvent.Payload.380.Created.
+type UserEventPayload380Created bool
 
 // UserEventPayload381 The payload of the event, if requested.
 type UserEventPayload381 struct {
+	ActorName               *string                       `json:"actorName,omitempty"`
+	ActorType               *UserEventPayload381ActorType `json:"actorType,omitempty"`
+	CertificateFingerprints *[]string                     `json:"certificateFingerprints,omitempty"`
+	ConnectionId            *string                       `json:"connectionId,omitempty"`
+}
+
+// UserEventPayload381ActorType defines model for UserEvent.Payload.381.ActorType.
+type UserEventPayload381ActorType string
+
+// UserEventPayload382 The payload of the event, if requested.
+type UserEventPayload382 struct {
+	ActorName    *string                      `json:"actorName,omitempty"`
+	ActorType    UserEventPayload382ActorType `json:"actorType"`
+	ConnectionId string                       `json:"connectionId"`
+	KeyId        string                       `json:"keyId"`
+}
+
+// UserEventPayload382ActorType defines model for UserEvent.Payload.382.ActorType.
+type UserEventPayload382ActorType string
+
+// UserEventPayload383 The payload of the event, if requested.
+type UserEventPayload383 struct {
+	ActorName      *string                           `json:"actorName,omitempty"`
+	ActorType      UserEventPayload383ActorType      `json:"actorType"`
+	ConnectionId   string                            `json:"connectionId"`
+	KeyId          string                            `json:"keyId"`
+	SigningEnabled UserEventPayload383SigningEnabled `json:"signingEnabled"`
+	SigningKeyId   *string                           `json:"signingKeyId"`
+}
+
+// UserEventPayload383ActorType defines model for UserEvent.Payload.383.ActorType.
+type UserEventPayload383ActorType string
+
+// UserEventPayload383SigningEnabled defines model for UserEvent.Payload.383.SigningEnabled.
+type UserEventPayload383SigningEnabled bool
+
+// UserEventPayload384 The payload of the event, if requested.
+type UserEventPayload384 struct {
 	Alias       string  `json:"alias"`
 	ProjectId   *string `json:"projectId,omitempty"`
 	SandboxId   *string `json:"sandboxId,omitempty"`
 	SandboxName string  `json:"sandboxName"`
 }
 
-// UserEventPayload382 The payload of the event, if requested.
-type UserEventPayload382 struct {
+// UserEventPayload385 The payload of the event, if requested.
+type UserEventPayload385 struct {
 	ProjectId string `json:"projectId"`
 	SandboxId string `json:"sandboxId"`
 }
 
-// UserEventPayload383 The payload of the event, if requested.
-type UserEventPayload383 struct {
+// UserEventPayload386 The payload of the event, if requested.
+type UserEventPayload386 struct {
 	ProjectId     string   `json:"projectId"`
 	ProjectName   string   `json:"projectName"`
 	SnapshotId    string   `json:"snapshotId"`
 	TargetRegions []string `json:"targetRegions"`
 }
 
-// UserEventPayload384 The payload of the event, if requested.
-type UserEventPayload384 struct {
+// UserEventPayload387 The payload of the event, if requested.
+type UserEventPayload387 struct {
 	Email     string `json:"email"`
 	Name      string `json:"name"`
 	ProjectId string `json:"projectId"`
 	SandboxId string `json:"sandboxId"`
 }
 
-// UserEventPayload385 The payload of the event, if requested.
-type UserEventPayload385 struct {
+// UserEventPayload388 The payload of the event, if requested.
+type UserEventPayload388 struct {
 	Instances float32 `json:"instances"`
 	Url       string  `json:"url"`
 }
 
-// UserEventPayload386 The payload of the event, if requested.
-type UserEventPayload386 struct {
-	Email    string                      `json:"email"`
-	Verified UserEventPayload386Verified `json:"verified"`
-}
-
-// UserEventPayload386Verified defines model for UserEvent.Payload.386.Verified.
-type UserEventPayload386Verified bool
-
-// UserEventPayload387 The payload of the event, if requested.
-type UserEventPayload387 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload387ActorType `json:"actorType"`
-	Email     string                       `json:"email"`
-	Verified  UserEventPayload387Verified  `json:"verified"`
-}
-
-// UserEventPayload387ActorType defines model for UserEvent.Payload.387.ActorType.
-type UserEventPayload387ActorType string
-
-// UserEventPayload387Verified defines model for UserEvent.Payload.387.Verified.
-type UserEventPayload387Verified bool
-
-// UserEventPayload388 The payload of the event, if requested.
-type UserEventPayload388 struct {
-	Email string `json:"email"`
-}
-
 // UserEventPayload389 The payload of the event, if requested.
 type UserEventPayload389 struct {
-	Name UserEvent_Payload_389_Name `json:"name"`
-	Uid  string                     `json:"uid"`
+	Email    string                      `json:"email"`
+	Verified UserEventPayload389Verified `json:"verified"`
 }
 
-// UserEventPayload389Name0 defines model for UserEvent.Payload.389.Name.0.
-type UserEventPayload389Name0 = string
-
-// UserEventPayload389Name1 defines model for UserEvent.Payload.389.Name.1.
-type UserEventPayload389Name1 struct {
-	Name string `json:"name"`
-}
-
-// UserEvent_Payload_389_Name defines model for UserEvent.Payload.389.Name.
-type UserEvent_Payload_389_Name struct {
-	union json.RawMessage
-}
+// UserEventPayload389Verified defines model for UserEvent.Payload.389.Verified.
+type UserEventPayload389Verified bool
 
 // UserEventPayload390 The payload of the event, if requested.
 type UserEventPayload390 struct {
+	// ActorId Okta user id.
+	ActorId   string                       `json:"actorId"`
+	ActorName *string                      `json:"actorName,omitempty"`
+	ActorType UserEventPayload390ActorType `json:"actorType"`
+	Email     string                       `json:"email"`
+	Verified  UserEventPayload390Verified  `json:"verified"`
+}
+
+// UserEventPayload390ActorType defines model for UserEvent.Payload.390.ActorType.
+type UserEventPayload390ActorType string
+
+// UserEventPayload390Verified defines model for UserEvent.Payload.390.Verified.
+type UserEventPayload390Verified bool
+
+// UserEventPayload391 The payload of the event, if requested.
+type UserEventPayload391 struct {
+	Email string `json:"email"`
+}
+
+// UserEventPayload392 The payload of the event, if requested.
+type UserEventPayload392 struct {
+	Name UserEvent_Payload_392_Name `json:"name"`
+	Uid  string                     `json:"uid"`
+}
+
+// UserEventPayload392Name0 defines model for UserEvent.Payload.392.Name.0.
+type UserEventPayload392Name0 = string
+
+// UserEventPayload392Name1 defines model for UserEvent.Payload.392.Name.1.
+type UserEventPayload392Name1 struct {
+	Name string `json:"name"`
+}
+
+// UserEvent_Payload_392_Name defines model for UserEvent.Payload.392.Name.
+type UserEvent_Payload_392_Name struct {
+	union json.RawMessage
+}
+
+// UserEventPayload393 The payload of the event, if requested.
+type UserEventPayload393 struct {
 	NewName string  `json:"newName"`
 	OldName string  `json:"oldName"`
 	Uid     *string `json:"uid,omitempty"`
 }
 
-// UserEventPayload391 The payload of the event, if requested.
-type UserEventPayload391 struct {
-	Enabled        UserEventPayload391Enabled `json:"enabled"`
+// UserEventPayload394 The payload of the event, if requested.
+type UserEventPayload394 struct {
+	Enabled        UserEventPayload394Enabled `json:"enabled"`
 	FirstEnabledAt *float32                   `json:"firstEnabledAt,omitempty"`
 	ProjectId      *string                    `json:"projectId,omitempty"`
 	ProjectName    *string                    `json:"projectName,omitempty"`
 	UpdatedAt      float32                    `json:"updatedAt"`
 }
 
-// UserEventPayload391Enabled defines model for UserEvent.Payload.391.Enabled.
-type UserEventPayload391Enabled bool
+// UserEventPayload394Enabled defines model for UserEvent.Payload.394.Enabled.
+type UserEventPayload394Enabled bool
 
-// UserEventPayload392 The payload of the event, if requested.
-type UserEventPayload392 struct {
+// UserEventPayload395 The payload of the event, if requested.
+type UserEventPayload395 struct {
 	Bio string `json:"bio"`
 }
 
-// UserEventPayload393 The payload of the event, if requested.
-type UserEventPayload393 struct {
+// UserEventPayload396 The payload of the event, if requested.
+type UserEventPayload396 struct {
 	Max          float32 `json:"max"`
 	Min          float32 `json:"min"`
 	ScalingRules map[string]struct {
@@ -17383,12 +17666,12 @@ type UserEventPayload393 struct {
 	Url string `json:"url"`
 }
 
-// UserEventPayload394 The payload of the event, if requested.
-type UserEventPayload394 struct {
+// UserEventPayload397 The payload of the event, if requested.
+type UserEventPayload397 struct {
 	Env     *string `json:"env,omitempty"`
 	Factors *[]struct {
-		Legacy   *UserEventPayload394FactorsLegacy `json:"legacy,omitempty"`
-		Origin   UserEventPayload394FactorsOrigin  `json:"origin"`
+		Legacy   *UserEventPayload397FactorsLegacy `json:"legacy,omitempty"`
+		Origin   UserEventPayload397FactorsOrigin  `json:"origin"`
 		SsoType  *string                           `json:"ssoType,omitempty"`
 		TeamId   *string                           `json:"teamId,omitempty"`
 		Username *string                           `json:"username,omitempty"`
@@ -17415,48 +17698,48 @@ type UserEventPayload394 struct {
 	SsoType      *string                          `json:"ssoType,omitempty"`
 	UserAgent    *string                          `json:"userAgent,omitempty"`
 	Username     *string                          `json:"username,omitempty"`
-	ViaApple     *UserEventPayload394ViaApple     `json:"viaApple,omitempty"`
-	ViaBitbucket *UserEventPayload394ViaBitbucket `json:"viaBitbucket,omitempty"`
-	ViaGithub    *UserEventPayload394ViaGithub    `json:"viaGithub,omitempty"`
-	ViaGitlab    *UserEventPayload394ViaGitlab    `json:"viaGitlab,omitempty"`
-	ViaGoogle    *UserEventPayload394ViaGoogle    `json:"viaGoogle,omitempty"`
-	ViaOTP       *UserEventPayload394ViaOTP       `json:"viaOTP,omitempty"`
-	ViaPasskey   *UserEventPayload394ViaPasskey   `json:"viaPasskey,omitempty"`
-	ViaSamlSso   *UserEventPayload394ViaSamlSso   `json:"viaSamlSso,omitempty"`
+	ViaApple     *UserEventPayload397ViaApple     `json:"viaApple,omitempty"`
+	ViaBitbucket *UserEventPayload397ViaBitbucket `json:"viaBitbucket,omitempty"`
+	ViaGithub    *UserEventPayload397ViaGithub    `json:"viaGithub,omitempty"`
+	ViaGitlab    *UserEventPayload397ViaGitlab    `json:"viaGitlab,omitempty"`
+	ViaGoogle    *UserEventPayload397ViaGoogle    `json:"viaGoogle,omitempty"`
+	ViaOTP       *UserEventPayload397ViaOTP       `json:"viaOTP,omitempty"`
+	ViaPasskey   *UserEventPayload397ViaPasskey   `json:"viaPasskey,omitempty"`
+	ViaSamlSso   *UserEventPayload397ViaSamlSso   `json:"viaSamlSso,omitempty"`
 }
 
-// UserEventPayload394FactorsLegacy defines model for UserEvent.Payload.394.Factors.Legacy.
-type UserEventPayload394FactorsLegacy bool
+// UserEventPayload397FactorsLegacy defines model for UserEvent.Payload.397.Factors.Legacy.
+type UserEventPayload397FactorsLegacy bool
 
-// UserEventPayload394FactorsOrigin defines model for UserEvent.Payload.394.Factors.Origin.
-type UserEventPayload394FactorsOrigin string
+// UserEventPayload397FactorsOrigin defines model for UserEvent.Payload.397.Factors.Origin.
+type UserEventPayload397FactorsOrigin string
 
-// UserEventPayload394ViaApple defines model for UserEvent.Payload.394.ViaApple.
-type UserEventPayload394ViaApple bool
+// UserEventPayload397ViaApple defines model for UserEvent.Payload.397.ViaApple.
+type UserEventPayload397ViaApple bool
 
-// UserEventPayload394ViaBitbucket defines model for UserEvent.Payload.394.ViaBitbucket.
-type UserEventPayload394ViaBitbucket bool
+// UserEventPayload397ViaBitbucket defines model for UserEvent.Payload.397.ViaBitbucket.
+type UserEventPayload397ViaBitbucket bool
 
-// UserEventPayload394ViaGithub defines model for UserEvent.Payload.394.ViaGithub.
-type UserEventPayload394ViaGithub bool
+// UserEventPayload397ViaGithub defines model for UserEvent.Payload.397.ViaGithub.
+type UserEventPayload397ViaGithub bool
 
-// UserEventPayload394ViaGitlab defines model for UserEvent.Payload.394.ViaGitlab.
-type UserEventPayload394ViaGitlab bool
+// UserEventPayload397ViaGitlab defines model for UserEvent.Payload.397.ViaGitlab.
+type UserEventPayload397ViaGitlab bool
 
-// UserEventPayload394ViaGoogle defines model for UserEvent.Payload.394.ViaGoogle.
-type UserEventPayload394ViaGoogle bool
+// UserEventPayload397ViaGoogle defines model for UserEvent.Payload.397.ViaGoogle.
+type UserEventPayload397ViaGoogle bool
 
-// UserEventPayload394ViaOTP defines model for UserEvent.Payload.394.ViaOTP.
-type UserEventPayload394ViaOTP bool
+// UserEventPayload397ViaOTP defines model for UserEvent.Payload.397.ViaOTP.
+type UserEventPayload397ViaOTP bool
 
-// UserEventPayload394ViaPasskey defines model for UserEvent.Payload.394.ViaPasskey.
-type UserEventPayload394ViaPasskey bool
+// UserEventPayload397ViaPasskey defines model for UserEvent.Payload.397.ViaPasskey.
+type UserEventPayload397ViaPasskey bool
 
-// UserEventPayload394ViaSamlSso defines model for UserEvent.Payload.394.ViaSamlSso.
-type UserEventPayload394ViaSamlSso bool
+// UserEventPayload397ViaSamlSso defines model for UserEvent.Payload.397.ViaSamlSso.
+type UserEventPayload397ViaSamlSso bool
 
-// UserEventPayload395 The payload of the event, if requested.
-type UserEventPayload395 struct {
+// UserEventPayload398 The payload of the event, if requested.
+type UserEventPayload398 struct {
 	BitbucketEmail  string `json:"bitbucketEmail"`
 	BitbucketLogin  string `json:"bitbucketLogin"`
 	BitbucketName   string `json:"bitbucketName"`
@@ -17465,16 +17748,16 @@ type UserEventPayload395 struct {
 	ZeitAccountType string `json:"zeitAccountType"`
 }
 
-// UserEventPayload396 The payload of the event, if requested.
-type UserEventPayload396 struct {
+// UserEventPayload399 The payload of the event, if requested.
+type UserEventPayload399 struct {
 	Email           string `json:"email"`
 	GithubLogin     string `json:"githubLogin"`
 	ZeitAccount     string `json:"zeitAccount"`
 	ZeitAccountType string `json:"zeitAccountType"`
 }
 
-// UserEventPayload397 The payload of the event, if requested.
-type UserEventPayload397 struct {
+// UserEventPayload400 The payload of the event, if requested.
+type UserEventPayload400 struct {
 	Email           string `json:"email"`
 	GitlabEmail     string `json:"gitlabEmail"`
 	GitlabLogin     string `json:"gitlabLogin"`
@@ -17483,8 +17766,8 @@ type UserEventPayload397 struct {
 	ZeitAccountType string `json:"zeitAccountType"`
 }
 
-// UserEventPayload398 The payload of the event, if requested.
-type UserEventPayload398 struct {
+// UserEventPayload401 The payload of the event, if requested.
+type UserEventPayload401 struct {
 	AnalyticsId *string `json:"analyticsId,omitempty"`
 	Previous    struct {
 		SampleRatePercent   *float32 `json:"sampleRatePercent"`
@@ -17496,8 +17779,8 @@ type UserEventPayload398 struct {
 	SpendLimitInDollars *float32 `json:"spendLimitInDollars"`
 }
 
-// UserEventPayload399 The payload of the event, if requested.
-type UserEventPayload399 struct {
+// UserEventPayload402 The payload of the event, if requested.
+type UserEventPayload402 struct {
 	Budget struct {
 		// BudgetItem Represents a budget for tracking and notifying teams on their spending.
 		BudgetItem struct {
@@ -17511,22 +17794,22 @@ type UserEventPayload399 struct {
 			Id string `json:"id"`
 
 			// IsActive Is the budget currently active for a customer
-			IsActive UserEventPayload399BudgetBudgetItemIsActive `json:"isActive"`
+			IsActive UserEventPayload402BudgetBudgetItemIsActive `json:"isActive"`
 
 			// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
 			NotifiedAt []float32 `json:"notifiedAt"`
 
 			// PauseProjects Should all projects be paused if budget is exceeded
-			PauseProjects *UserEventPayload399BudgetBudgetItemPauseProjects `json:"pauseProjects,omitempty"`
+			PauseProjects *UserEventPayload402BudgetBudgetItemPauseProjects `json:"pauseProjects,omitempty"`
 
 			// PreviousSpend Array of the last 3 months of spend data
 			PreviousSpend []float32 `json:"previousSpend"`
 
 			// PricingPlan The acive pricing plan the team is billed with
-			PricingPlan *UserEventPayload399BudgetBudgetItemPricingPlan `json:"pricingPlan,omitempty"`
+			PricingPlan *UserEventPayload402BudgetBudgetItemPricingPlan `json:"pricingPlan,omitempty"`
 
 			// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-			Scope *UserEventPayload399BudgetBudgetItemScope `json:"scope,omitempty"`
+			Scope *UserEventPayload402BudgetBudgetItemScope `json:"scope,omitempty"`
 
 			// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
 			ScopeId *string `json:"scopeId,omitempty"`
@@ -17535,7 +17818,7 @@ type UserEventPayload399 struct {
 			TeamId string `json:"teamId"`
 
 			// Type The budget type
-			Type UserEventPayload399BudgetBudgetItemType `json:"type"`
+			Type UserEventPayload402BudgetBudgetItemType `json:"type"`
 
 			// UpdatedAt Date time when budget is updated last
 			UpdatedAt *float32 `json:"updatedAt,omitempty"`
@@ -17544,7 +17827,7 @@ type UserEventPayload399 struct {
 			WebhookId *string `json:"webhookId,omitempty"`
 
 			// WebhookNotified Keep track if the webhook has been called for the month
-			WebhookNotified *UserEventPayload399BudgetBudgetItemWebhookNotified `json:"webhookNotified,omitempty"`
+			WebhookNotified *UserEventPayload402BudgetBudgetItemWebhookNotified `json:"webhookNotified,omitempty"`
 		} `json:"budgetItem"`
 	} `json:"budget"`
 
@@ -17553,26 +17836,26 @@ type UserEventPayload399 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload399BudgetBudgetItemIsActive Is the budget currently active for a customer
-type UserEventPayload399BudgetBudgetItemIsActive bool
+// UserEventPayload402BudgetBudgetItemIsActive Is the budget currently active for a customer
+type UserEventPayload402BudgetBudgetItemIsActive bool
 
-// UserEventPayload399BudgetBudgetItemPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload399BudgetBudgetItemPauseProjects bool
+// UserEventPayload402BudgetBudgetItemPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload402BudgetBudgetItemPauseProjects bool
 
-// UserEventPayload399BudgetBudgetItemPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload399BudgetBudgetItemPricingPlan string
+// UserEventPayload402BudgetBudgetItemPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload402BudgetBudgetItemPricingPlan string
 
-// UserEventPayload399BudgetBudgetItemScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload399BudgetBudgetItemScope string
+// UserEventPayload402BudgetBudgetItemScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload402BudgetBudgetItemScope string
 
-// UserEventPayload399BudgetBudgetItemType The budget type
-type UserEventPayload399BudgetBudgetItemType string
+// UserEventPayload402BudgetBudgetItemType The budget type
+type UserEventPayload402BudgetBudgetItemType string
 
-// UserEventPayload399BudgetBudgetItemWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload399BudgetBudgetItemWebhookNotified bool
+// UserEventPayload402BudgetBudgetItemWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload402BudgetBudgetItemWebhookNotified bool
 
-// UserEventPayload400 The payload of the event, if requested.
-type UserEventPayload400 struct {
+// UserEventPayload403 The payload of the event, if requested.
+type UserEventPayload403 struct {
 	// Budget Represents a budget for tracking and notifying teams on their spending.
 	Budget struct {
 		// CreatedAt Date time when budget is created
@@ -17585,22 +17868,22 @@ type UserEventPayload400 struct {
 		Id string `json:"id"`
 
 		// IsActive Is the budget currently active for a customer
-		IsActive UserEventPayload400BudgetIsActive `json:"isActive"`
+		IsActive UserEventPayload403BudgetIsActive `json:"isActive"`
 
 		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
 		NotifiedAt []float32 `json:"notifiedAt"`
 
 		// PauseProjects Should all projects be paused if budget is exceeded
-		PauseProjects *UserEventPayload400BudgetPauseProjects `json:"pauseProjects,omitempty"`
+		PauseProjects *UserEventPayload403BudgetPauseProjects `json:"pauseProjects,omitempty"`
 
 		// PreviousSpend Array of the last 3 months of spend data
 		PreviousSpend []float32 `json:"previousSpend"`
 
 		// PricingPlan The acive pricing plan the team is billed with
-		PricingPlan *UserEventPayload400BudgetPricingPlan `json:"pricingPlan,omitempty"`
+		PricingPlan *UserEventPayload403BudgetPricingPlan `json:"pricingPlan,omitempty"`
 
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-		Scope *UserEventPayload400BudgetScope `json:"scope,omitempty"`
+		Scope *UserEventPayload403BudgetScope `json:"scope,omitempty"`
 
 		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
@@ -17609,7 +17892,7 @@ type UserEventPayload400 struct {
 		TeamId string `json:"teamId"`
 
 		// Type The budget type
-		Type UserEventPayload400BudgetType `json:"type"`
+		Type UserEventPayload403BudgetType `json:"type"`
 
 		// UpdatedAt Date time when budget is updated last
 		UpdatedAt *float32 `json:"updatedAt,omitempty"`
@@ -17618,7 +17901,7 @@ type UserEventPayload400 struct {
 		WebhookId *string `json:"webhookId,omitempty"`
 
 		// WebhookNotified Keep track if the webhook has been called for the month
-		WebhookNotified *UserEventPayload400BudgetWebhookNotified `json:"webhookNotified,omitempty"`
+		WebhookNotified *UserEventPayload403BudgetWebhookNotified `json:"webhookNotified,omitempty"`
 	} `json:"budget"`
 
 	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
@@ -17630,26 +17913,26 @@ type UserEventPayload400 struct {
 	WebhookUrl *string `json:"webhookUrl,omitempty"`
 }
 
-// UserEventPayload400BudgetIsActive Is the budget currently active for a customer
-type UserEventPayload400BudgetIsActive bool
+// UserEventPayload403BudgetIsActive Is the budget currently active for a customer
+type UserEventPayload403BudgetIsActive bool
 
-// UserEventPayload400BudgetPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload400BudgetPauseProjects bool
+// UserEventPayload403BudgetPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload403BudgetPauseProjects bool
 
-// UserEventPayload400BudgetPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload400BudgetPricingPlan string
+// UserEventPayload403BudgetPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload403BudgetPricingPlan string
 
-// UserEventPayload400BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload400BudgetScope string
+// UserEventPayload403BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload403BudgetScope string
 
-// UserEventPayload400BudgetType The budget type
-type UserEventPayload400BudgetType string
+// UserEventPayload403BudgetType The budget type
+type UserEventPayload403BudgetType string
 
-// UserEventPayload400BudgetWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload400BudgetWebhookNotified bool
+// UserEventPayload403BudgetWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload403BudgetWebhookNotified bool
 
-// UserEventPayload401 The payload of the event, if requested.
-type UserEventPayload401 struct {
+// UserEventPayload404 The payload of the event, if requested.
+type UserEventPayload404 struct {
 	// Budget Represents a budget for tracking and notifying teams on their spending.
 	Budget struct {
 		// CreatedAt Date time when budget is created
@@ -17662,22 +17945,22 @@ type UserEventPayload401 struct {
 		Id string `json:"id"`
 
 		// IsActive Is the budget currently active for a customer
-		IsActive UserEventPayload401BudgetIsActive `json:"isActive"`
+		IsActive UserEventPayload404BudgetIsActive `json:"isActive"`
 
 		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
 		NotifiedAt []float32 `json:"notifiedAt"`
 
 		// PauseProjects Should all projects be paused if budget is exceeded
-		PauseProjects *UserEventPayload401BudgetPauseProjects `json:"pauseProjects,omitempty"`
+		PauseProjects *UserEventPayload404BudgetPauseProjects `json:"pauseProjects,omitempty"`
 
 		// PreviousSpend Array of the last 3 months of spend data
 		PreviousSpend []float32 `json:"previousSpend"`
 
 		// PricingPlan The acive pricing plan the team is billed with
-		PricingPlan *UserEventPayload401BudgetPricingPlan `json:"pricingPlan,omitempty"`
+		PricingPlan *UserEventPayload404BudgetPricingPlan `json:"pricingPlan,omitempty"`
 
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-		Scope *UserEventPayload401BudgetScope `json:"scope,omitempty"`
+		Scope *UserEventPayload404BudgetScope `json:"scope,omitempty"`
 
 		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
@@ -17686,7 +17969,7 @@ type UserEventPayload401 struct {
 		TeamId string `json:"teamId"`
 
 		// Type The budget type
-		Type UserEventPayload401BudgetType `json:"type"`
+		Type UserEventPayload404BudgetType `json:"type"`
 
 		// UpdatedAt Date time when budget is updated last
 		UpdatedAt *float32 `json:"updatedAt,omitempty"`
@@ -17695,7 +17978,7 @@ type UserEventPayload401 struct {
 		WebhookId *string `json:"webhookId,omitempty"`
 
 		// WebhookNotified Keep track if the webhook has been called for the month
-		WebhookNotified *UserEventPayload401BudgetWebhookNotified `json:"webhookNotified,omitempty"`
+		WebhookNotified *UserEventPayload404BudgetWebhookNotified `json:"webhookNotified,omitempty"`
 	} `json:"budget"`
 
 	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
@@ -17706,26 +17989,26 @@ type UserEventPayload401 struct {
 	ScopeName *string `json:"scopeName,omitempty"`
 }
 
-// UserEventPayload401BudgetIsActive Is the budget currently active for a customer
-type UserEventPayload401BudgetIsActive bool
+// UserEventPayload404BudgetIsActive Is the budget currently active for a customer
+type UserEventPayload404BudgetIsActive bool
 
-// UserEventPayload401BudgetPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload401BudgetPauseProjects bool
+// UserEventPayload404BudgetPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload404BudgetPauseProjects bool
 
-// UserEventPayload401BudgetPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload401BudgetPricingPlan string
+// UserEventPayload404BudgetPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload404BudgetPricingPlan string
 
-// UserEventPayload401BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload401BudgetScope string
+// UserEventPayload404BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload404BudgetScope string
 
-// UserEventPayload401BudgetType The budget type
-type UserEventPayload401BudgetType string
+// UserEventPayload404BudgetType The budget type
+type UserEventPayload404BudgetType string
 
-// UserEventPayload401BudgetWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload401BudgetWebhookNotified bool
+// UserEventPayload404BudgetWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload404BudgetWebhookNotified bool
 
-// UserEventPayload402 The payload of the event, if requested.
-type UserEventPayload402 struct {
+// UserEventPayload405 The payload of the event, if requested.
+type UserEventPayload405 struct {
 	// Budget Represents a budget for tracking and notifying teams on their spending.
 	Budget struct {
 		// CreatedAt Date time when budget is created
@@ -17738,22 +18021,22 @@ type UserEventPayload402 struct {
 		Id string `json:"id"`
 
 		// IsActive Is the budget currently active for a customer
-		IsActive UserEventPayload402BudgetIsActive `json:"isActive"`
+		IsActive UserEventPayload405BudgetIsActive `json:"isActive"`
 
 		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
 		NotifiedAt []float32 `json:"notifiedAt"`
 
 		// PauseProjects Should all projects be paused if budget is exceeded
-		PauseProjects *UserEventPayload402BudgetPauseProjects `json:"pauseProjects,omitempty"`
+		PauseProjects *UserEventPayload405BudgetPauseProjects `json:"pauseProjects,omitempty"`
 
 		// PreviousSpend Array of the last 3 months of spend data
 		PreviousSpend []float32 `json:"previousSpend"`
 
 		// PricingPlan The acive pricing plan the team is billed with
-		PricingPlan *UserEventPayload402BudgetPricingPlan `json:"pricingPlan,omitempty"`
+		PricingPlan *UserEventPayload405BudgetPricingPlan `json:"pricingPlan,omitempty"`
 
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-		Scope *UserEventPayload402BudgetScope `json:"scope,omitempty"`
+		Scope *UserEventPayload405BudgetScope `json:"scope,omitempty"`
 
 		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
@@ -17762,7 +18045,7 @@ type UserEventPayload402 struct {
 		TeamId string `json:"teamId"`
 
 		// Type The budget type
-		Type UserEventPayload402BudgetType `json:"type"`
+		Type UserEventPayload405BudgetType `json:"type"`
 
 		// UpdatedAt Date time when budget is updated last
 		UpdatedAt *float32 `json:"updatedAt,omitempty"`
@@ -17771,7 +18054,7 @@ type UserEventPayload402 struct {
 		WebhookId *string `json:"webhookId,omitempty"`
 
 		// WebhookNotified Keep track if the webhook has been called for the month
-		WebhookNotified *UserEventPayload402BudgetWebhookNotified `json:"webhookNotified,omitempty"`
+		WebhookNotified *UserEventPayload405BudgetWebhookNotified `json:"webhookNotified,omitempty"`
 	} `json:"budget"`
 
 	// PrevBudget Represents a budget for tracking and notifying teams on their spending.
@@ -17786,22 +18069,22 @@ type UserEventPayload402 struct {
 		Id string `json:"id"`
 
 		// IsActive Is the budget currently active for a customer
-		IsActive UserEventPayload402PrevBudgetIsActive `json:"isActive"`
+		IsActive UserEventPayload405PrevBudgetIsActive `json:"isActive"`
 
 		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
 		NotifiedAt []float32 `json:"notifiedAt"`
 
 		// PauseProjects Should all projects be paused if budget is exceeded
-		PauseProjects *UserEventPayload402PrevBudgetPauseProjects `json:"pauseProjects,omitempty"`
+		PauseProjects *UserEventPayload405PrevBudgetPauseProjects `json:"pauseProjects,omitempty"`
 
 		// PreviousSpend Array of the last 3 months of spend data
 		PreviousSpend []float32 `json:"previousSpend"`
 
 		// PricingPlan The acive pricing plan the team is billed with
-		PricingPlan *UserEventPayload402PrevBudgetPricingPlan `json:"pricingPlan,omitempty"`
+		PricingPlan *UserEventPayload405PrevBudgetPricingPlan `json:"pricingPlan,omitempty"`
 
 		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-		Scope *UserEventPayload402PrevBudgetScope `json:"scope,omitempty"`
+		Scope *UserEventPayload405PrevBudgetScope `json:"scope,omitempty"`
 
 		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
 		ScopeId *string `json:"scopeId,omitempty"`
@@ -17810,7 +18093,7 @@ type UserEventPayload402 struct {
 		TeamId string `json:"teamId"`
 
 		// Type The budget type
-		Type UserEventPayload402PrevBudgetType `json:"type"`
+		Type UserEventPayload405PrevBudgetType `json:"type"`
 
 		// UpdatedAt Date time when budget is updated last
 		UpdatedAt *float32 `json:"updatedAt,omitempty"`
@@ -17819,7 +18102,7 @@ type UserEventPayload402 struct {
 		WebhookId *string `json:"webhookId,omitempty"`
 
 		// WebhookNotified Keep track if the webhook has been called for the month
-		WebhookNotified *UserEventPayload402PrevBudgetWebhookNotified `json:"webhookNotified,omitempty"`
+		WebhookNotified *UserEventPayload405PrevBudgetWebhookNotified `json:"webhookNotified,omitempty"`
 	} `json:"prevBudget,omitempty"`
 	PrevWebhookUrl *string `json:"prevWebhookUrl,omitempty"`
 
@@ -17834,116 +18117,116 @@ type UserEventPayload402 struct {
 	WebhookUrl *string `json:"webhookUrl,omitempty"`
 }
 
-// UserEventPayload402BudgetIsActive Is the budget currently active for a customer
-type UserEventPayload402BudgetIsActive bool
+// UserEventPayload405BudgetIsActive Is the budget currently active for a customer
+type UserEventPayload405BudgetIsActive bool
 
-// UserEventPayload402BudgetPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload402BudgetPauseProjects bool
+// UserEventPayload405BudgetPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload405BudgetPauseProjects bool
 
-// UserEventPayload402BudgetPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload402BudgetPricingPlan string
+// UserEventPayload405BudgetPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload405BudgetPricingPlan string
 
-// UserEventPayload402BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload402BudgetScope string
+// UserEventPayload405BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload405BudgetScope string
 
-// UserEventPayload402BudgetType The budget type
-type UserEventPayload402BudgetType string
+// UserEventPayload405BudgetType The budget type
+type UserEventPayload405BudgetType string
 
-// UserEventPayload402BudgetWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload402BudgetWebhookNotified bool
+// UserEventPayload405BudgetWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload405BudgetWebhookNotified bool
 
-// UserEventPayload402PrevBudgetIsActive Is the budget currently active for a customer
-type UserEventPayload402PrevBudgetIsActive bool
+// UserEventPayload405PrevBudgetIsActive Is the budget currently active for a customer
+type UserEventPayload405PrevBudgetIsActive bool
 
-// UserEventPayload402PrevBudgetPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload402PrevBudgetPauseProjects bool
+// UserEventPayload405PrevBudgetPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload405PrevBudgetPauseProjects bool
 
-// UserEventPayload402PrevBudgetPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload402PrevBudgetPricingPlan string
+// UserEventPayload405PrevBudgetPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload405PrevBudgetPricingPlan string
 
-// UserEventPayload402PrevBudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload402PrevBudgetScope string
+// UserEventPayload405PrevBudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload405PrevBudgetScope string
 
-// UserEventPayload402PrevBudgetType The budget type
-type UserEventPayload402PrevBudgetType string
+// UserEventPayload405PrevBudgetType The budget type
+type UserEventPayload405PrevBudgetType string
 
-// UserEventPayload402PrevBudgetWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload402PrevBudgetWebhookNotified bool
+// UserEventPayload405PrevBudgetWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload405PrevBudgetWebhookNotified bool
 
-// UserEventPayload403 The payload of the event, if requested.
-type UserEventPayload403 struct {
+// UserEventPayload406 The payload of the event, if requested.
+type UserEventPayload406 struct {
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
 	WebhookUrl  *string `json:"webhookUrl,omitempty"`
 }
 
-// UserEventPayload404 The payload of the event, if requested.
-type UserEventPayload404 struct {
-	StoreType UserEventPayload404StoreType `json:"storeType"`
+// UserEventPayload407 The payload of the event, if requested.
+type UserEventPayload407 struct {
+	StoreType UserEventPayload407StoreType `json:"storeType"`
 }
 
-// UserEventPayload404StoreType defines model for UserEvent.Payload.404.StoreType.
-type UserEventPayload404StoreType string
+// UserEventPayload407StoreType defines model for UserEvent.Payload.407.StoreType.
+type UserEventPayload407StoreType string
 
-// UserEventPayload405 The payload of the event, if requested.
-type UserEventPayload405 struct {
+// UserEventPayload408 The payload of the event, if requested.
+type UserEventPayload408 struct {
 	Store struct {
 		Id   string                       `json:"id"`
 		Name *string                      `json:"name,omitempty"`
-		Type UserEventPayload405StoreType `json:"type"`
+		Type UserEventPayload408StoreType `json:"type"`
 	} `json:"store"`
 }
 
-// UserEventPayload405StoreType defines model for UserEvent.Payload.405.Store.Type.
-type UserEventPayload405StoreType string
+// UserEventPayload408StoreType defines model for UserEvent.Payload.408.Store.Type.
+type UserEventPayload408StoreType string
 
-// UserEventPayload406 The payload of the event, if requested.
-type UserEventPayload406 struct {
+// UserEventPayload409 The payload of the event, if requested.
+type UserEventPayload409 struct {
 	DestinationTeamId   string `json:"destinationTeamId"`
 	DestinationTeamName string `json:"destinationTeamName"`
 	Store               struct {
 		Id   string                       `json:"id"`
 		Name *string                      `json:"name,omitempty"`
-		Type UserEventPayload406StoreType `json:"type"`
+		Type UserEventPayload409StoreType `json:"type"`
 	} `json:"store"`
 }
 
-// UserEventPayload406StoreType defines model for UserEvent.Payload.406.Store.Type.
-type UserEventPayload406StoreType string
+// UserEventPayload409StoreType defines model for UserEvent.Payload.409.Store.Type.
+type UserEventPayload409StoreType string
 
-// UserEventPayload407 The payload of the event, if requested.
-type UserEventPayload407 struct {
+// UserEventPayload410 The payload of the event, if requested.
+type UserEventPayload410 struct {
 	OriginTeamId   string `json:"originTeamId"`
 	OriginTeamName string `json:"originTeamName"`
 	Store          struct {
 		Id   string                       `json:"id"`
 		Name *string                      `json:"name,omitempty"`
-		Type UserEventPayload407StoreType `json:"type"`
+		Type UserEventPayload410StoreType `json:"type"`
 	} `json:"store"`
 }
 
-// UserEventPayload407StoreType defines model for UserEvent.Payload.407.Store.Type.
-type UserEventPayload407StoreType string
+// UserEventPayload410StoreType defines model for UserEvent.Payload.410.Store.Type.
+type UserEventPayload410StoreType string
 
-// UserEventPayload408 The payload of the event, if requested.
-type UserEventPayload408 struct {
-	Access                *UserEventPayload408Access `json:"access,omitempty"`
+// UserEventPayload411 The payload of the event, if requested.
+type UserEventPayload411 struct {
+	Access                *UserEventPayload411Access `json:"access,omitempty"`
 	ComputeUnitsMax       *float32                   `json:"computeUnitsMax,omitempty"`
 	ComputeUnitsMin       *float32                   `json:"computeUnitsMin,omitempty"`
 	Id                    string                     `json:"id"`
 	Name                  *string                    `json:"name,omitempty"`
 	SuspendTimeoutSeconds *float32                   `json:"suspendTimeoutSeconds,omitempty"`
-	Type                  UserEventPayload408Type    `json:"type"`
+	Type                  UserEventPayload411Type    `json:"type"`
 }
 
-// UserEventPayload408Access defines model for UserEvent.Payload.408.Access.
-type UserEventPayload408Access string
+// UserEventPayload411Access defines model for UserEvent.Payload.411.Access.
+type UserEventPayload411Access string
 
-// UserEventPayload408Type defines model for UserEvent.Payload.408.Type.
-type UserEventPayload408Type string
+// UserEventPayload411Type defines model for UserEvent.Payload.411.Type.
+type UserEventPayload411Type string
 
-// UserEventPayload409 The payload of the event, if requested.
-type UserEventPayload409 struct {
+// UserEventPayload412 The payload of the event, if requested.
+type UserEventPayload412 struct {
 	OwnerId *string `json:"ownerId,omitempty"`
 	Store   struct {
 		Id   string `json:"id"`
@@ -17951,111 +18234,111 @@ type UserEventPayload409 struct {
 	} `json:"store"`
 }
 
-// UserEventPayload410 The payload of the event, if requested.
-type UserEventPayload410 struct {
-	Access                *UserEventPayload410Access `json:"access,omitempty"`
+// UserEventPayload413 The payload of the event, if requested.
+type UserEventPayload413 struct {
+	Access                *UserEventPayload413Access `json:"access,omitempty"`
 	ComputeUnitsMax       *float32                   `json:"computeUnitsMax,omitempty"`
 	ComputeUnitsMin       *float32                   `json:"computeUnitsMin,omitempty"`
 	Id                    string                     `json:"id"`
-	Locked                UserEventPayload410Locked  `json:"locked"`
+	Locked                UserEventPayload413Locked  `json:"locked"`
 	Name                  *string                    `json:"name,omitempty"`
 	SuspendTimeoutSeconds *float32                   `json:"suspendTimeoutSeconds,omitempty"`
-	Type                  UserEventPayload410Type    `json:"type"`
+	Type                  UserEventPayload413Type    `json:"type"`
 }
 
-// UserEventPayload410Access defines model for UserEvent.Payload.410.Access.
-type UserEventPayload410Access string
+// UserEventPayload413Access defines model for UserEvent.Payload.413.Access.
+type UserEventPayload413Access string
 
-// UserEventPayload410Locked defines model for UserEvent.Payload.410.Locked.
-type UserEventPayload410Locked bool
+// UserEventPayload413Locked defines model for UserEvent.Payload.413.Locked.
+type UserEventPayload413Locked bool
 
-// UserEventPayload410Type defines model for UserEvent.Payload.410.Type.
-type UserEventPayload410Type string
+// UserEventPayload413Type defines model for UserEvent.Payload.413.Type.
+type UserEventPayload413Type string
 
-// UserEventPayload411 The payload of the event, if requested.
-type UserEventPayload411 struct {
+// UserEventPayload414 The payload of the event, if requested.
+type UserEventPayload414 struct {
 	ActorId    *string                       `json:"actorId,omitempty"`
-	ActorType  *UserEventPayload411ActorType `json:"actorType,omitempty"`
+	ActorType  *UserEventPayload414ActorType `json:"actorType,omitempty"`
 	CaseNumber *string                       `json:"caseNumber,omitempty"`
 	Client     *string                       `json:"client,omitempty"`
 	Reason     *string                       `json:"reason,omitempty"`
 }
 
-// UserEventPayload411ActorType defines model for UserEvent.Payload.411.ActorType.
-type UserEventPayload411ActorType string
+// UserEventPayload414ActorType defines model for UserEvent.Payload.414.ActorType.
+type UserEventPayload414ActorType string
 
-// UserEventPayload412 The payload of the event, if requested.
-type UserEventPayload412 struct {
+// UserEventPayload415 The payload of the event, if requested.
+type UserEventPayload415 struct {
 	Slug string `json:"slug"`
 }
 
-// UserEventPayload413 The payload of the event, if requested.
-type UserEventPayload413 struct {
-	Action              UserEventPayload413Action            `json:"action"`
-	CodeReviewEnabled   UserEventPayload413CodeReviewEnabled `json:"codeReviewEnabled"`
+// UserEventPayload416 The payload of the event, if requested.
+type UserEventPayload416 struct {
+	Action              UserEventPayload416Action            `json:"action"`
+	CodeReviewEnabled   UserEventPayload416CodeReviewEnabled `json:"codeReviewEnabled"`
 	CodeReviewSelection *struct {
-		Initial   UserEventPayload413CodeReviewSelectionInitial   `json:"initial"`
-		Submitted UserEventPayload413CodeReviewSelectionSubmitted `json:"submitted"`
+		Initial   UserEventPayload416CodeReviewSelectionInitial   `json:"initial"`
+		Submitted UserEventPayload416CodeReviewSelectionSubmitted `json:"submitted"`
 	} `json:"codeReviewSelection,omitempty"`
 	CumulativeBalance string                      `json:"cumulativeBalance"`
-	Endpoint          UserEventPayload413Endpoint `json:"endpoint"`
+	Endpoint          UserEventPayload416Endpoint `json:"endpoint"`
 	LedgerId          string                      `json:"ledgerId"`
 	Next              struct {
-		Enabled          UserEventPayload413NextEnabled `json:"enabled"`
+		Enabled          UserEventPayload416NextEnabled `json:"enabled"`
 		MaximumOverdraft *string                        `json:"maximumOverdraft"`
 	} `json:"next"`
 	Previous struct {
-		Enabled          UserEventPayload413PreviousEnabled `json:"enabled"`
+		Enabled          UserEventPayload416PreviousEnabled `json:"enabled"`
 		MaximumOverdraft *string                            `json:"maximumOverdraft"`
 	} `json:"previous"`
 	RemovedTopupIds       []string                                 `json:"removedTopupIds"`
 	Source                string                                   `json:"source"`
-	TopupCleanupCompleted UserEventPayload413TopupCleanupCompleted `json:"topupCleanupCompleted"`
+	TopupCleanupCompleted UserEventPayload416TopupCleanupCompleted `json:"topupCleanupCompleted"`
 }
 
-// UserEventPayload413Action defines model for UserEvent.Payload.413.Action.
-type UserEventPayload413Action string
+// UserEventPayload416Action defines model for UserEvent.Payload.416.Action.
+type UserEventPayload416Action string
 
-// UserEventPayload413CodeReviewEnabled defines model for UserEvent.Payload.413.CodeReviewEnabled.
-type UserEventPayload413CodeReviewEnabled bool
+// UserEventPayload416CodeReviewEnabled defines model for UserEvent.Payload.416.CodeReviewEnabled.
+type UserEventPayload416CodeReviewEnabled bool
 
-// UserEventPayload413CodeReviewSelectionInitial defines model for UserEvent.Payload.413.CodeReviewSelection.Initial.
-type UserEventPayload413CodeReviewSelectionInitial bool
+// UserEventPayload416CodeReviewSelectionInitial defines model for UserEvent.Payload.416.CodeReviewSelection.Initial.
+type UserEventPayload416CodeReviewSelectionInitial bool
 
-// UserEventPayload413CodeReviewSelectionSubmitted defines model for UserEvent.Payload.413.CodeReviewSelection.Submitted.
-type UserEventPayload413CodeReviewSelectionSubmitted bool
+// UserEventPayload416CodeReviewSelectionSubmitted defines model for UserEvent.Payload.416.CodeReviewSelection.Submitted.
+type UserEventPayload416CodeReviewSelectionSubmitted bool
 
-// UserEventPayload413Endpoint defines model for UserEvent.Payload.413.Endpoint.
-type UserEventPayload413Endpoint string
+// UserEventPayload416Endpoint defines model for UserEvent.Payload.416.Endpoint.
+type UserEventPayload416Endpoint string
 
-// UserEventPayload413NextEnabled defines model for UserEvent.Payload.413.Next.Enabled.
-type UserEventPayload413NextEnabled bool
+// UserEventPayload416NextEnabled defines model for UserEvent.Payload.416.Next.Enabled.
+type UserEventPayload416NextEnabled bool
 
-// UserEventPayload413PreviousEnabled defines model for UserEvent.Payload.413.Previous.Enabled.
-type UserEventPayload413PreviousEnabled bool
+// UserEventPayload416PreviousEnabled defines model for UserEvent.Payload.416.Previous.Enabled.
+type UserEventPayload416PreviousEnabled bool
 
-// UserEventPayload413TopupCleanupCompleted defines model for UserEvent.Payload.413.TopupCleanupCompleted.
-type UserEventPayload413TopupCleanupCompleted bool
+// UserEventPayload416TopupCleanupCompleted defines model for UserEvent.Payload.416.TopupCleanupCompleted.
+type UserEventPayload416TopupCleanupCompleted bool
 
-// UserEventPayload414 The payload of the event, if requested.
-type UserEventPayload414 struct {
-	Action              *UserEventPayload414Action `json:"action,omitempty"`
+// UserEventPayload417 The payload of the event, if requested.
+type UserEventPayload417 struct {
+	Action              *UserEventPayload417Action `json:"action,omitempty"`
 	CodeReviewSelection *struct {
-		Initial   UserEventPayload414CodeReviewSelectionInitial   `json:"initial"`
-		Submitted UserEventPayload414CodeReviewSelectionSubmitted `json:"submitted"`
+		Initial   UserEventPayload417CodeReviewSelectionInitial   `json:"initial"`
+		Submitted UserEventPayload417CodeReviewSelectionSubmitted `json:"submitted"`
 	} `json:"codeReviewSelection,omitempty"`
-	Endpoint *UserEventPayload414Endpoint `json:"endpoint,omitempty"`
+	Endpoint *UserEventPayload417Endpoint `json:"endpoint,omitempty"`
 
 	// Next Automatic code review settings
 	Next struct {
 		// Enabled Whether automatic code reviews are enabled
-		Enabled UserEventPayload414NextEnabled `json:"enabled"`
+		Enabled UserEventPayload417NextEnabled `json:"enabled"`
 
 		// IncludeDrafts Whether to include draft pull requests in automatic reviews
-		IncludeDrafts UserEventPayload414NextIncludeDrafts `json:"includeDrafts"`
+		IncludeDrafts UserEventPayload417NextIncludeDrafts `json:"includeDrafts"`
 
 		// Scope Which repository visibilities get automatic reviews
-		Scope UserEventPayload414NextScope `json:"scope"`
+		Scope UserEventPayload417NextScope `json:"scope"`
 
 		// SelectedRepos GitHub repos to scope automatic reviews to. Format: "owner/repo" (lowercase). Only used when scope='selected_repos'.
 		SelectedRepos *[]string `json:"selectedRepos,omitempty"`
@@ -18064,13 +18347,13 @@ type UserEventPayload414 struct {
 	// Previous Automatic code review settings
 	Previous *struct {
 		// Enabled Whether automatic code reviews are enabled
-		Enabled UserEventPayload414PreviousEnabled `json:"enabled"`
+		Enabled UserEventPayload417PreviousEnabled `json:"enabled"`
 
 		// IncludeDrafts Whether to include draft pull requests in automatic reviews
-		IncludeDrafts UserEventPayload414PreviousIncludeDrafts `json:"includeDrafts"`
+		IncludeDrafts UserEventPayload417PreviousIncludeDrafts `json:"includeDrafts"`
 
 		// Scope Which repository visibilities get automatic reviews
-		Scope UserEventPayload414PreviousScope `json:"scope"`
+		Scope UserEventPayload417PreviousScope `json:"scope"`
 
 		// SelectedRepos GitHub repos to scope automatic reviews to. Format: "owner/repo" (lowercase). Only used when scope='selected_repos'.
 		SelectedRepos *[]string `json:"selectedRepos,omitempty"`
@@ -18080,83 +18363,83 @@ type UserEventPayload414 struct {
 	Source *string `json:"source,omitempty"`
 }
 
-// UserEventPayload414Action defines model for UserEvent.Payload.414.Action.
-type UserEventPayload414Action string
+// UserEventPayload417Action defines model for UserEvent.Payload.417.Action.
+type UserEventPayload417Action string
 
-// UserEventPayload414CodeReviewSelectionInitial defines model for UserEvent.Payload.414.CodeReviewSelection.Initial.
-type UserEventPayload414CodeReviewSelectionInitial bool
+// UserEventPayload417CodeReviewSelectionInitial defines model for UserEvent.Payload.417.CodeReviewSelection.Initial.
+type UserEventPayload417CodeReviewSelectionInitial bool
 
-// UserEventPayload414CodeReviewSelectionSubmitted defines model for UserEvent.Payload.414.CodeReviewSelection.Submitted.
-type UserEventPayload414CodeReviewSelectionSubmitted bool
+// UserEventPayload417CodeReviewSelectionSubmitted defines model for UserEvent.Payload.417.CodeReviewSelection.Submitted.
+type UserEventPayload417CodeReviewSelectionSubmitted bool
 
-// UserEventPayload414Endpoint defines model for UserEvent.Payload.414.Endpoint.
-type UserEventPayload414Endpoint string
+// UserEventPayload417Endpoint defines model for UserEvent.Payload.417.Endpoint.
+type UserEventPayload417Endpoint string
 
-// UserEventPayload414NextEnabled Whether automatic code reviews are enabled
-type UserEventPayload414NextEnabled bool
+// UserEventPayload417NextEnabled Whether automatic code reviews are enabled
+type UserEventPayload417NextEnabled bool
 
-// UserEventPayload414NextIncludeDrafts Whether to include draft pull requests in automatic reviews
-type UserEventPayload414NextIncludeDrafts bool
+// UserEventPayload417NextIncludeDrafts Whether to include draft pull requests in automatic reviews
+type UserEventPayload417NextIncludeDrafts bool
 
-// UserEventPayload414NextScope Which repository visibilities get automatic reviews
-type UserEventPayload414NextScope string
+// UserEventPayload417NextScope Which repository visibilities get automatic reviews
+type UserEventPayload417NextScope string
 
-// UserEventPayload414PreviousEnabled Whether automatic code reviews are enabled
-type UserEventPayload414PreviousEnabled bool
+// UserEventPayload417PreviousEnabled Whether automatic code reviews are enabled
+type UserEventPayload417PreviousEnabled bool
 
-// UserEventPayload414PreviousIncludeDrafts Whether to include draft pull requests in automatic reviews
-type UserEventPayload414PreviousIncludeDrafts bool
+// UserEventPayload417PreviousIncludeDrafts Whether to include draft pull requests in automatic reviews
+type UserEventPayload417PreviousIncludeDrafts bool
 
-// UserEventPayload414PreviousScope Which repository visibilities get automatic reviews
-type UserEventPayload414PreviousScope string
+// UserEventPayload417PreviousScope Which repository visibilities get automatic reviews
+type UserEventPayload417PreviousScope string
 
-// UserEventPayload415 The payload of the event, if requested.
-type UserEventPayload415 struct {
+// UserEventPayload418 The payload of the event, if requested.
+type UserEventPayload418 struct {
 	// Next Mirrors the `security-review` setting value in `@api/api-settings`.
 	Next struct {
-		Enabled         UserEventPayload415NextEnabled          `json:"enabled"`
+		Enabled         UserEventPayload418NextEnabled          `json:"enabled"`
 		ProjectIds      *[]string                               `json:"projectIds,omitempty"`
-		ProjectScope    UserEventPayload415NextProjectScope     `json:"projectScope"`
-		RepositoryScope *UserEventPayload415NextRepositoryScope `json:"repositoryScope,omitempty"`
+		ProjectScope    UserEventPayload418NextProjectScope     `json:"projectScope"`
+		RepositoryScope *UserEventPayload418NextRepositoryScope `json:"repositoryScope,omitempty"`
 	} `json:"next"`
 
 	// Previous Mirrors the `security-review` setting value in `@api/api-settings`.
 	Previous struct {
-		Enabled         UserEventPayload415PreviousEnabled          `json:"enabled"`
+		Enabled         UserEventPayload418PreviousEnabled          `json:"enabled"`
 		ProjectIds      *[]string                                   `json:"projectIds,omitempty"`
-		ProjectScope    UserEventPayload415PreviousProjectScope     `json:"projectScope"`
-		RepositoryScope *UserEventPayload415PreviousRepositoryScope `json:"repositoryScope,omitempty"`
+		ProjectScope    UserEventPayload418PreviousProjectScope     `json:"projectScope"`
+		RepositoryScope *UserEventPayload418PreviousRepositoryScope `json:"repositoryScope,omitempty"`
 	} `json:"previous"`
 }
 
-// UserEventPayload415NextEnabled defines model for UserEvent.Payload.415.Next.Enabled.
-type UserEventPayload415NextEnabled bool
+// UserEventPayload418NextEnabled defines model for UserEvent.Payload.418.Next.Enabled.
+type UserEventPayload418NextEnabled bool
 
-// UserEventPayload415NextProjectScope defines model for UserEvent.Payload.415.Next.ProjectScope.
-type UserEventPayload415NextProjectScope string
+// UserEventPayload418NextProjectScope defines model for UserEvent.Payload.418.Next.ProjectScope.
+type UserEventPayload418NextProjectScope string
 
-// UserEventPayload415NextRepositoryScope defines model for UserEvent.Payload.415.Next.RepositoryScope.
-type UserEventPayload415NextRepositoryScope string
+// UserEventPayload418NextRepositoryScope defines model for UserEvent.Payload.418.Next.RepositoryScope.
+type UserEventPayload418NextRepositoryScope string
 
-// UserEventPayload415PreviousEnabled defines model for UserEvent.Payload.415.Previous.Enabled.
-type UserEventPayload415PreviousEnabled bool
+// UserEventPayload418PreviousEnabled defines model for UserEvent.Payload.418.Previous.Enabled.
+type UserEventPayload418PreviousEnabled bool
 
-// UserEventPayload415PreviousProjectScope defines model for UserEvent.Payload.415.Previous.ProjectScope.
-type UserEventPayload415PreviousProjectScope string
+// UserEventPayload418PreviousProjectScope defines model for UserEvent.Payload.418.Previous.ProjectScope.
+type UserEventPayload418PreviousProjectScope string
 
-// UserEventPayload415PreviousRepositoryScope defines model for UserEvent.Payload.415.Previous.RepositoryScope.
-type UserEventPayload415PreviousRepositoryScope string
+// UserEventPayload418PreviousRepositoryScope defines model for UserEvent.Payload.418.Previous.RepositoryScope.
+type UserEventPayload418PreviousRepositoryScope string
 
-// UserEventPayload416 The payload of the event, if requested.
-type UserEventPayload416 struct {
+// UserEventPayload419 The payload of the event, if requested.
+type UserEventPayload419 struct {
 	Amount               string  `json:"amount"`
 	Currency             string  `json:"currency"`
 	ExpiresAt            string  `json:"expiresAt"`
 	TrialCreditsIssuedAt float32 `json:"trialCreditsIssuedAt"`
 }
 
-// UserEventPayload417 The payload of the event, if requested.
-type UserEventPayload417 struct {
+// UserEventPayload420 The payload of the event, if requested.
+type UserEventPayload420 struct {
 	EventId    string  `json:"eventId"`
 	OccurredAt float32 `json:"occurredAt"`
 	SessionId  string  `json:"sessionId"`
@@ -18168,8 +18451,8 @@ type UserEventPayload417 struct {
 	Surface string `json:"surface"`
 }
 
-// UserEventPayload418 The payload of the event, if requested.
-type UserEventPayload418 struct {
+// UserEventPayload421 The payload of the event, if requested.
+type UserEventPayload421 struct {
 	ElevatedScopeCount float32 `json:"elevatedScopeCount"`
 
 	// ElevatedScopes Requested Vercel scopes that are not included in the baseline token.
@@ -18198,8 +18481,8 @@ type UserEventPayload418 struct {
 	Surface string `json:"surface"`
 }
 
-// UserEventPayload419 The payload of the event, if requested.
-type UserEventPayload419 struct {
+// UserEventPayload422 The payload of the event, if requested.
+type UserEventPayload422 struct {
 	BranchRef *string `json:"branchRef"`
 	CommitSha *string `json:"commitSha,omitempty"`
 
@@ -18227,22 +18510,22 @@ type UserEventPayload419 struct {
 	TargetId string `json:"targetId"`
 
 	// TargetKind A repository's findings are in code no project runs.
-	TargetKind         UserEventPayload419TargetKind `json:"targetKind"`
+	TargetKind         UserEventPayload422TargetKind `json:"targetKind"`
 	TargetName         string                        `json:"targetName"`
 	VulnerabilityClass string                        `json:"vulnerabilityClass"`
 }
 
-// UserEventPayload419TargetKind A repository's findings are in code no project runs.
-type UserEventPayload419TargetKind string
+// UserEventPayload422TargetKind A repository's findings are in code no project runs.
+type UserEventPayload422TargetKind string
 
-// UserEventPayload420 The payload of the event, if requested.
-type UserEventPayload420 struct {
+// UserEventPayload423 The payload of the event, if requested.
+type UserEventPayload423 struct {
 	BranchRef *string `json:"branchRef"`
 	CommitSha *string `json:"commitSha,omitempty"`
 
 	// DeploymentId Null for a repository's findings and those of an undeployed commit.
 	DeploymentId    *string                            `json:"deploymentId"`
-	DismissalReason UserEventPayload420DismissalReason `json:"dismissalReason"`
+	DismissalReason UserEventPayload423DismissalReason `json:"dismissalReason"`
 
 	// Environment Null for a repository's findings.
 	Environment       *string  `json:"environment"`
@@ -18265,78 +18548,78 @@ type UserEventPayload420 struct {
 	TargetId string `json:"targetId"`
 
 	// TargetKind A repository's findings are in code no project runs.
-	TargetKind         UserEventPayload420TargetKind `json:"targetKind"`
+	TargetKind         UserEventPayload423TargetKind `json:"targetKind"`
 	TargetName         string                        `json:"targetName"`
 	VulnerabilityClass string                        `json:"vulnerabilityClass"`
 }
 
-// UserEventPayload420DismissalReason defines model for UserEvent.Payload.420.DismissalReason.
-type UserEventPayload420DismissalReason string
+// UserEventPayload423DismissalReason defines model for UserEvent.Payload.423.DismissalReason.
+type UserEventPayload423DismissalReason string
 
-// UserEventPayload420TargetKind A repository's findings are in code no project runs.
-type UserEventPayload420TargetKind string
-
-// UserEventPayload421 The payload of the event, if requested.
-type UserEventPayload421 struct {
-	Next     *UserEventPayload421Next     `json:"next"`
-	Previous *UserEventPayload421Previous `json:"previous"`
-	TeamSlug *string                      `json:"teamSlug,omitempty"`
-}
-
-// UserEventPayload421Next defines model for UserEvent.Payload.421.Next.
-type UserEventPayload421Next string
-
-// UserEventPayload421Previous defines model for UserEvent.Payload.421.Previous.
-type UserEventPayload421Previous string
-
-// UserEventPayload422 The payload of the event, if requested.
-type UserEventPayload422 struct {
-	ActorName *string                       `json:"actorName,omitempty"`
-	ActorType *UserEventPayload422ActorType `json:"actorType,omitempty"`
-	Disabled  *UserEventPayload422Disabled  `json:"disabled,omitempty"`
-}
-
-// UserEventPayload422ActorType defines model for UserEvent.Payload.422.ActorType.
-type UserEventPayload422ActorType string
-
-// UserEventPayload422Disabled defines model for UserEvent.Payload.422.Disabled.
-type UserEventPayload422Disabled bool
-
-// UserEventPayload423 The payload of the event, if requested.
-type UserEventPayload423 struct {
-	IsSystemInitiated *UserEventPayload423IsSystemInitiated `json:"isSystemInitiated,omitempty"`
-	Next              *UserEventPayload423Next              `json:"next,omitempty"`
-	Previous          *UserEventPayload423Previous          `json:"previous,omitempty"`
-	Reason            *UserEventPayload423Reason            `json:"reason,omitempty"`
-}
-
-// UserEventPayload423IsSystemInitiated defines model for UserEvent.Payload.423.IsSystemInitiated.
-type UserEventPayload423IsSystemInitiated bool
-
-// UserEventPayload423Next defines model for UserEvent.Payload.423.Next.
-type UserEventPayload423Next string
-
-// UserEventPayload423Previous defines model for UserEvent.Payload.423.Previous.
-type UserEventPayload423Previous string
-
-// UserEventPayload423Reason defines model for UserEvent.Payload.423.Reason.
-type UserEventPayload423Reason string
+// UserEventPayload423TargetKind A repository's findings are in code no project runs.
+type UserEventPayload423TargetKind string
 
 // UserEventPayload424 The payload of the event, if requested.
 type UserEventPayload424 struct {
-	ActorName *string                       `json:"actorName,omitempty"`
-	ActorType *UserEventPayload424ActorType `json:"actorType,omitempty"`
-	Enrolled  *UserEventPayload424Enrolled  `json:"enrolled,omitempty"`
+	Next     *UserEventPayload424Next     `json:"next"`
+	Previous *UserEventPayload424Previous `json:"previous"`
+	TeamSlug *string                      `json:"teamSlug,omitempty"`
 }
 
-// UserEventPayload424ActorType defines model for UserEvent.Payload.424.ActorType.
-type UserEventPayload424ActorType string
+// UserEventPayload424Next defines model for UserEvent.Payload.424.Next.
+type UserEventPayload424Next string
 
-// UserEventPayload424Enrolled defines model for UserEvent.Payload.424.Enrolled.
-type UserEventPayload424Enrolled bool
+// UserEventPayload424Previous defines model for UserEvent.Payload.424.Previous.
+type UserEventPayload424Previous string
 
 // UserEventPayload425 The payload of the event, if requested.
 type UserEventPayload425 struct {
+	ActorName *string                       `json:"actorName,omitempty"`
+	ActorType *UserEventPayload425ActorType `json:"actorType,omitempty"`
+	Disabled  *UserEventPayload425Disabled  `json:"disabled,omitempty"`
+}
+
+// UserEventPayload425ActorType defines model for UserEvent.Payload.425.ActorType.
+type UserEventPayload425ActorType string
+
+// UserEventPayload425Disabled defines model for UserEvent.Payload.425.Disabled.
+type UserEventPayload425Disabled bool
+
+// UserEventPayload426 The payload of the event, if requested.
+type UserEventPayload426 struct {
+	IsSystemInitiated *UserEventPayload426IsSystemInitiated `json:"isSystemInitiated,omitempty"`
+	Next              *UserEventPayload426Next              `json:"next,omitempty"`
+	Previous          *UserEventPayload426Previous          `json:"previous,omitempty"`
+	Reason            *UserEventPayload426Reason            `json:"reason,omitempty"`
+}
+
+// UserEventPayload426IsSystemInitiated defines model for UserEvent.Payload.426.IsSystemInitiated.
+type UserEventPayload426IsSystemInitiated bool
+
+// UserEventPayload426Next defines model for UserEvent.Payload.426.Next.
+type UserEventPayload426Next string
+
+// UserEventPayload426Previous defines model for UserEvent.Payload.426.Previous.
+type UserEventPayload426Previous string
+
+// UserEventPayload426Reason defines model for UserEvent.Payload.426.Reason.
+type UserEventPayload426Reason string
+
+// UserEventPayload427 The payload of the event, if requested.
+type UserEventPayload427 struct {
+	ActorName *string                       `json:"actorName,omitempty"`
+	ActorType *UserEventPayload427ActorType `json:"actorType,omitempty"`
+	Enrolled  *UserEventPayload427Enrolled  `json:"enrolled,omitempty"`
+}
+
+// UserEventPayload427ActorType defines model for UserEvent.Payload.427.ActorType.
+type UserEventPayload427ActorType string
+
+// UserEventPayload427Enrolled defines model for UserEvent.Payload.427.Enrolled.
+type UserEventPayload427Enrolled bool
+
+// UserEventPayload428 The payload of the event, if requested.
+type UserEventPayload428 struct {
 	By      string  `json:"by"`
 	ByUid   *string `json:"byUid,omitempty"`
 	Reasons *[]struct {
@@ -18345,35 +18628,35 @@ type UserEventPayload425 struct {
 	} `json:"reasons,omitempty"`
 	RemovedMemberCount *float32 `json:"removedMemberCount,omitempty"`
 	RemovedUsers       *map[string]struct {
-		Confirmed   UserEventPayload425RemovedUsersConfirmed `json:"confirmed"`
+		Confirmed   UserEventPayload428RemovedUsersConfirmed `json:"confirmed"`
 		ConfirmedAt *float32                                 `json:"confirmedAt,omitempty"`
-		Role        UserEventPayload425RemovedUsersRole      `json:"role"`
+		Role        UserEventPayload428RemovedUsersRole      `json:"role"`
 	} `json:"removedUsers,omitempty"`
 	Slug      string   `json:"slug"`
 	TeamId    string   `json:"teamId"`
 	Timestamp *float32 `json:"timestamp,omitempty"`
 }
 
-// UserEventPayload425RemovedUsersConfirmed defines model for UserEvent.Payload.425.RemovedUsers.Confirmed.
-type UserEventPayload425RemovedUsersConfirmed bool
+// UserEventPayload428RemovedUsersConfirmed defines model for UserEvent.Payload.428.RemovedUsers.Confirmed.
+type UserEventPayload428RemovedUsersConfirmed bool
 
-// UserEventPayload425RemovedUsersRole defines model for UserEvent.Payload.425.RemovedUsers.Role.
-type UserEventPayload425RemovedUsersRole string
+// UserEventPayload428RemovedUsersRole defines model for UserEvent.Payload.428.RemovedUsers.Role.
+type UserEventPayload428RemovedUsersRole string
 
-// UserEventPayload426 The payload of the event, if requested.
-type UserEventPayload426 struct {
-	Enabled UserEventPayload426Enabled `json:"enabled"`
-	Scope   *UserEventPayload426Scope  `json:"scope,omitempty"`
+// UserEventPayload429 The payload of the event, if requested.
+type UserEventPayload429 struct {
+	Enabled UserEventPayload429Enabled `json:"enabled"`
+	Scope   *UserEventPayload429Scope  `json:"scope,omitempty"`
 }
 
-// UserEventPayload426Enabled defines model for UserEvent.Payload.426.Enabled.
-type UserEventPayload426Enabled bool
+// UserEventPayload429Enabled defines model for UserEvent.Payload.429.Enabled.
+type UserEventPayload429Enabled bool
 
-// UserEventPayload426Scope defines model for UserEvent.Payload.426.Scope.
-type UserEventPayload426Scope string
+// UserEventPayload429Scope defines model for UserEvent.Payload.429.Scope.
+type UserEventPayload429Scope string
 
-// UserEventPayload427 The payload of the event, if requested.
-type UserEventPayload427 struct {
+// UserEventPayload430 The payload of the event, if requested.
+type UserEventPayload430 struct {
 	Next *struct {
 		DeploymentSources *[]interface{} `json:"deploymentSources,omitempty"`
 		GitSources        *[]interface{} `json:"gitSources,omitempty"`
@@ -18384,63 +18667,63 @@ type UserEventPayload427 struct {
 	} `json:"previous"`
 }
 
-// UserEventPayload428 The payload of the event, if requested.
-type UserEventPayload428 struct {
-	Action   UserEventPayload428Action `json:"action"`
+// UserEventPayload431 The payload of the event, if requested.
+type UserEventPayload431 struct {
+	Action   UserEventPayload431Action `json:"action"`
 	TargetId string                    `json:"targetId"`
 }
 
-// UserEventPayload428Action defines model for UserEvent.Payload.428.Action.
-type UserEventPayload428Action string
+// UserEventPayload431Action defines model for UserEvent.Payload.431.Action.
+type UserEventPayload431Action string
 
-// UserEventPayload429 The payload of the event, if requested.
-type UserEventPayload429 struct {
+// UserEventPayload432 The payload of the event, if requested.
+type UserEventPayload432 struct {
 	Domain  *string                    `json:"domain,omitempty"`
-	Enabled UserEventPayload429Enabled `json:"enabled"`
+	Enabled UserEventPayload432Enabled `json:"enabled"`
 }
 
-// UserEventPayload429Enabled defines model for UserEvent.Payload.429.Enabled.
-type UserEventPayload429Enabled bool
+// UserEventPayload432Enabled defines model for UserEvent.Payload.432.Enabled.
+type UserEventPayload432Enabled bool
 
-// UserEventPayload430 The payload of the event, if requested.
-type UserEventPayload430 struct {
-	Enabled     *UserEventPayload430Enabled    `json:"enabled"`
-	Environment UserEventPayload430Environment `json:"environment"`
+// UserEventPayload433 The payload of the event, if requested.
+type UserEventPayload433 struct {
+	Enabled     *UserEventPayload433Enabled    `json:"enabled"`
+	Environment UserEventPayload433Environment `json:"environment"`
 	ProjectId   string                         `json:"projectId"`
 	ProjectName string                         `json:"projectName"`
 }
 
-// UserEventPayload430Enabled defines model for UserEvent.Payload.430.Enabled.
-type UserEventPayload430Enabled bool
+// UserEventPayload433Enabled defines model for UserEvent.Payload.433.Enabled.
+type UserEventPayload433Enabled bool
 
-// UserEventPayload430Environment defines model for UserEvent.Payload.430.Environment.
-type UserEventPayload430Environment string
+// UserEventPayload433Environment defines model for UserEvent.Payload.433.Environment.
+type UserEventPayload433Environment string
 
-// UserEventPayload431 The payload of the event, if requested.
-type UserEventPayload431 struct {
-	Enabled     UserEventPayload431Enabled     `json:"enabled"`
-	Environment UserEventPayload431Environment `json:"environment"`
+// UserEventPayload434 The payload of the event, if requested.
+type UserEventPayload434 struct {
+	Enabled     UserEventPayload434Enabled     `json:"enabled"`
+	Environment UserEventPayload434Environment `json:"environment"`
 }
 
-// UserEventPayload431Enabled defines model for UserEvent.Payload.431.Enabled.
-type UserEventPayload431Enabled string
+// UserEventPayload434Enabled defines model for UserEvent.Payload.434.Enabled.
+type UserEventPayload434Enabled string
 
-// UserEventPayload431Environment defines model for UserEvent.Payload.431.Environment.
-type UserEventPayload431Environment string
+// UserEventPayload434Environment defines model for UserEvent.Payload.434.Environment.
+type UserEventPayload434Environment string
 
-// UserEventPayload432 The payload of the event, if requested.
-type UserEventPayload432 struct {
+// UserEventPayload435 The payload of the event, if requested.
+type UserEventPayload435 struct {
 	EmailDomain *string `json:"emailDomain,omitempty"`
 }
 
-// UserEventPayload433 The payload of the event, if requested.
-type UserEventPayload433 struct {
+// UserEventPayload436 The payload of the event, if requested.
+type UserEventPayload436 struct {
 	DeletedCount float32  `json:"deletedCount"`
 	InviteIds    []string `json:"inviteIds"`
 }
 
-// UserEventPayload434 The payload of the event, if requested.
-type UserEventPayload434 struct {
+// UserEventPayload437 The payload of the event, if requested.
+type UserEventPayload437 struct {
 	DirectoryType  *string   `json:"directoryType,omitempty"`
 	Entitlements   *[]string `json:"entitlements,omitempty"`
 	InvitationRole *string   `json:"invitationRole,omitempty"`
@@ -18455,8 +18738,8 @@ type UserEventPayload434 struct {
 	TeamSlug *string `json:"teamSlug,omitempty"`
 }
 
-// UserEventPayload435 The payload of the event, if requested.
-type UserEventPayload435 struct {
+// UserEventPayload438 The payload of the event, if requested.
+type UserEventPayload438 struct {
 	BitbucketUsername *string `json:"bitbucketUsername,omitempty"`
 	GitUsername       *string `json:"gitUsername,omitempty"`
 	GithubUsername    *string `json:"githubUsername,omitempty"`
@@ -18467,8 +18750,8 @@ type UserEventPayload435 struct {
 	Username          *string `json:"username,omitempty"`
 }
 
-// UserEventPayload436 The payload of the event, if requested.
-type UserEventPayload436 struct {
+// UserEventPayload439 The payload of the event, if requested.
+type UserEventPayload439 struct {
 	BitbucketUsername *string `json:"bitbucketUsername,omitempty"`
 	GitUsername       *string `json:"gitUsername,omitempty"`
 	GithubUsername    *string `json:"githubUsername,omitempty"`
@@ -18477,10 +18760,10 @@ type UserEventPayload436 struct {
 	Username          *string `json:"username,omitempty"`
 }
 
-// UserEventPayload437 The payload of the event, if requested.
-type UserEventPayload437 struct {
+// UserEventPayload440 The payload of the event, if requested.
+type UserEventPayload440 struct {
 	// Automated Whether the removal was system-initiated rather than human-initiated.
-	Automated         *UserEventPayload437Automated `json:"automated,omitempty"`
+	Automated         *UserEventPayload440Automated `json:"automated,omitempty"`
 	BitbucketUsername *string                       `json:"bitbucketUsername,omitempty"`
 	DeletedUid        *string                       `json:"deletedUid,omitempty"`
 	DeletedUser       *struct {
@@ -18490,28 +18773,28 @@ type UserEventPayload437 struct {
 	DirectoryType  *string                          `json:"directoryType,omitempty"`
 	GithubUsername *string                          `json:"githubUsername,omitempty"`
 	GitlabUsername *string                          `json:"gitlabUsername,omitempty"`
-	NewPlan        *UserEventPayload437NewPlan      `json:"newPlan,omitempty"`
-	PreviousPlan   *UserEventPayload437PreviousPlan `json:"previousPlan,omitempty"`
+	NewPlan        *UserEventPayload440NewPlan      `json:"newPlan,omitempty"`
+	PreviousPlan   *UserEventPayload440PreviousPlan `json:"previousPlan,omitempty"`
 
 	// Reason Why the member was removed. When removed due to a plan downgrade, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `trial_expired`, `user_downgrade`).
 	Reason *string                  `json:"reason,omitempty"`
-	Role   *UserEventPayload437Role `json:"role,omitempty"`
+	Role   *UserEventPayload440Role `json:"role,omitempty"`
 }
 
-// UserEventPayload437Automated Whether the removal was system-initiated rather than human-initiated.
-type UserEventPayload437Automated bool
+// UserEventPayload440Automated Whether the removal was system-initiated rather than human-initiated.
+type UserEventPayload440Automated bool
 
-// UserEventPayload437NewPlan defines model for UserEvent.Payload.437.NewPlan.
-type UserEventPayload437NewPlan string
+// UserEventPayload440NewPlan defines model for UserEvent.Payload.440.NewPlan.
+type UserEventPayload440NewPlan string
 
-// UserEventPayload437PreviousPlan defines model for UserEvent.Payload.437.PreviousPlan.
-type UserEventPayload437PreviousPlan string
+// UserEventPayload440PreviousPlan defines model for UserEvent.Payload.440.PreviousPlan.
+type UserEventPayload440PreviousPlan string
 
-// UserEventPayload437Role defines model for UserEvent.Payload.437.Role.
-type UserEventPayload437Role string
+// UserEventPayload440Role defines model for UserEvent.Payload.440.Role.
+type UserEventPayload440Role string
 
-// UserEventPayload438 The payload of the event, if requested.
-type UserEventPayload438 struct {
+// UserEventPayload441 The payload of the event, if requested.
+type UserEventPayload441 struct {
 	Entitlement string `json:"entitlement"`
 	User        struct {
 		Id       string `json:"id"`
@@ -18519,8 +18802,8 @@ type UserEventPayload438 struct {
 	} `json:"user"`
 }
 
-// UserEventPayload439 The payload of the event, if requested.
-type UserEventPayload439 struct {
+// UserEventPayload442 The payload of the event, if requested.
+type UserEventPayload442 struct {
 	Entitlement        string  `json:"entitlement"`
 	PreviousCanceledAt *string `json:"previousCanceledAt,omitempty"`
 	User               struct {
@@ -18529,8 +18812,8 @@ type UserEventPayload439 struct {
 	} `json:"user"`
 }
 
-// UserEventPayload440 The payload of the event, if requested.
-type UserEventPayload440 struct {
+// UserEventPayload443 The payload of the event, if requested.
+type UserEventPayload443 struct {
 	Entitlements *[]string `json:"entitlements,omitempty"`
 	InvitedBy    *struct {
 		Email  string  `json:"email"`
@@ -18550,8 +18833,8 @@ type UserEventPayload440 struct {
 	} `json:"updatedUser,omitempty"`
 }
 
-// UserEventPayload441 The payload of the event, if requested.
-type UserEventPayload441 struct {
+// UserEventPayload444 The payload of the event, if requested.
+type UserEventPayload444 struct {
 	BitbucketUsername *string                    `json:"bitbucketUsername,omitempty"`
 	GitUsername       *string                    `json:"gitUsername,omitempty"`
 	GithubUsername    *string                    `json:"githubUsername,omitempty"`
@@ -18559,23 +18842,23 @@ type UserEventPayload441 struct {
 	RequestedTeamName string                     `json:"requestedTeamName"`
 	RequestedTeamSlug *string                    `json:"requestedTeamSlug,omitempty"`
 	RequestedUserName *string                    `json:"requestedUserName,omitempty"`
-	Source            *UserEventPayload441Source `json:"source,omitempty"`
+	Source            *UserEventPayload444Source `json:"source,omitempty"`
 }
 
-// UserEventPayload441Source defines model for UserEvent.Payload.441.Source.
-type UserEventPayload441Source string
+// UserEventPayload444Source defines model for UserEvent.Payload.444.Source.
+type UserEventPayload444Source string
 
-// UserEventPayload442 The payload of the event, if requested.
-type UserEventPayload442 struct {
+// UserEventPayload445 The payload of the event, if requested.
+type UserEventPayload445 struct {
 	DirectoryType           *string                                       `json:"directoryType,omitempty"`
 	Origin                  *string                                       `json:"origin,omitempty"`
 	PreviousRole            string                                        `json:"previousRole"`
-	PreviousTeamPermissions *[]UserEventPayload442PreviousTeamPermissions `json:"previousTeamPermissions,omitempty"`
-	PreviousTeamRoles       *[]UserEventPayload442PreviousTeamRoles       `json:"previousTeamRoles,omitempty"`
+	PreviousTeamPermissions *[]UserEventPayload445PreviousTeamPermissions `json:"previousTeamPermissions,omitempty"`
+	PreviousTeamRoles       *[]UserEventPayload445PreviousTeamRoles       `json:"previousTeamRoles,omitempty"`
 	Role                    *string                                       `json:"role,omitempty"`
 	SsoType                 *string                                       `json:"ssoType,omitempty"`
-	TeamPermissions         *[]UserEventPayload442TeamPermissions         `json:"teamPermissions,omitempty"`
-	TeamRoles               *[]UserEventPayload442TeamRoles               `json:"teamRoles,omitempty"`
+	TeamPermissions         *[]UserEventPayload445TeamPermissions         `json:"teamPermissions,omitempty"`
+	TeamRoles               *[]UserEventPayload445TeamRoles               `json:"teamRoles,omitempty"`
 	TeamSlug                *string                                       `json:"teamSlug,omitempty"`
 	UpdatedUid              *string                                       `json:"updatedUid,omitempty"`
 	UpdatedUser             *struct {
@@ -18584,38 +18867,38 @@ type UserEventPayload442 struct {
 	} `json:"updatedUser,omitempty"`
 }
 
-// UserEventPayload442PreviousTeamPermissions defines model for UserEvent.Payload.442.PreviousTeamPermissions.
-type UserEventPayload442PreviousTeamPermissions string
+// UserEventPayload445PreviousTeamPermissions defines model for UserEvent.Payload.445.PreviousTeamPermissions.
+type UserEventPayload445PreviousTeamPermissions string
 
-// UserEventPayload442PreviousTeamRoles defines model for UserEvent.Payload.442.PreviousTeamRoles.
-type UserEventPayload442PreviousTeamRoles string
+// UserEventPayload445PreviousTeamRoles defines model for UserEvent.Payload.445.PreviousTeamRoles.
+type UserEventPayload445PreviousTeamRoles string
 
-// UserEventPayload442TeamPermissions defines model for UserEvent.Payload.442.TeamPermissions.
-type UserEventPayload442TeamPermissions string
+// UserEventPayload445TeamPermissions defines model for UserEvent.Payload.445.TeamPermissions.
+type UserEventPayload445TeamPermissions string
 
-// UserEventPayload442TeamRoles defines model for UserEvent.Payload.442.TeamRoles.
-type UserEventPayload442TeamRoles string
+// UserEventPayload445TeamRoles defines model for UserEvent.Payload.445.TeamRoles.
+type UserEventPayload445TeamRoles string
 
-// UserEventPayload443 The payload of the event, if requested.
-type UserEventPayload443 struct {
-	Authorized UserEventPayload443Authorized `json:"authorized"`
+// UserEventPayload446 The payload of the event, if requested.
+type UserEventPayload446 struct {
+	Authorized UserEventPayload446Authorized `json:"authorized"`
 	Email      *string                       `json:"email,omitempty"`
 	Reason     *string                       `json:"reason,omitempty"`
 }
 
-// UserEventPayload443Authorized defines model for UserEvent.Payload.443.Authorized.
-type UserEventPayload443Authorized bool
+// UserEventPayload446Authorized defines model for UserEvent.Payload.446.Authorized.
+type UserEventPayload446Authorized bool
 
-// UserEventPayload444 The payload of the event, if requested.
-type UserEventPayload444 struct {
-	Enforced UserEventPayload444Enforced `json:"enforced"`
+// UserEventPayload447 The payload of the event, if requested.
+type UserEventPayload447 struct {
+	Enforced UserEventPayload447Enforced `json:"enforced"`
 }
 
-// UserEventPayload444Enforced defines model for UserEvent.Payload.444.Enforced.
-type UserEventPayload444Enforced bool
+// UserEventPayload447Enforced defines model for UserEvent.Payload.447.Enforced.
+type UserEventPayload447Enforced bool
 
-// UserEventPayload445 The payload of the event, if requested.
-type UserEventPayload445 struct {
+// UserEventPayload448 The payload of the event, if requested.
+type UserEventPayload448 struct {
 	ExpiresAt string  `json:"expiresAt"`
 	MaxUses   float32 `json:"maxUses"`
 	Name      *string `json:"name,omitempty"`
@@ -18623,575 +18906,575 @@ type UserEventPayload445 struct {
 	Role      string  `json:"role"`
 }
 
-// UserEventPayload446 The payload of the event, if requested.
-type UserEventPayload446 struct {
+// UserEventPayload449 The payload of the event, if requested.
+type UserEventPayload449 struct {
 	Name     *string `json:"name,omitempty"`
 	PublicId string  `json:"publicId"`
 }
 
-// UserEventPayload447 The payload of the event, if requested.
-type UserEventPayload447 struct {
+// UserEventPayload450 The payload of the event, if requested.
+type UserEventPayload450 struct {
 	NextConcurrentBuilds     float32 `json:"nextConcurrentBuilds"`
 	PreviousConcurrentBuilds float32 `json:"previousConcurrentBuilds"`
 }
 
-// UserEventPayload448 The payload of the event, if requested.
-type UserEventPayload448 struct {
-	Plan  UserEventPayload448Plan `json:"plan"`
+// UserEventPayload451 The payload of the event, if requested.
+type UserEventPayload451 struct {
+	Plan  UserEventPayload451Plan `json:"plan"`
 	Trial *struct {
 		End   float32 `json:"end"`
 		Start float32 `json:"start"`
 	} `json:"trial,omitempty"`
 }
 
-// UserEventPayload448Plan defines model for UserEvent.Payload.448.Plan.
-type UserEventPayload448Plan string
-
-// UserEventPayload449 The payload of the event, if requested.
-type UserEventPayload449 struct {
-	ConvertedFromTrial UserEventPayload449ConvertedFromTrial `json:"convertedFromTrial"`
-	InvoiceId          string                                `json:"invoiceId"`
-	Plan               UserEventPayload449Plan               `json:"plan"`
-}
-
-// UserEventPayload449ConvertedFromTrial defines model for UserEvent.Payload.449.ConvertedFromTrial.
-type UserEventPayload449ConvertedFromTrial bool
-
-// UserEventPayload449Plan defines model for UserEvent.Payload.449.Plan.
-type UserEventPayload449Plan string
-
-// UserEventPayload450 The payload of the event, if requested.
-type UserEventPayload450 struct {
-	InviteCode *string `json:"inviteCode,omitempty"`
-}
-
-// UserEventPayload451 The payload of the event, if requested.
-type UserEventPayload451 struct {
-	Name *string `json:"name,omitempty"`
-}
+// UserEventPayload451Plan defines model for UserEvent.Payload.451.Plan.
+type UserEventPayload451Plan string
 
 // UserEventPayload452 The payload of the event, if requested.
 type UserEventPayload452 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload452ActorType `json:"actorType"`
-	Name      *string                      `json:"name,omitempty"`
+	ConvertedFromTrial UserEventPayload452ConvertedFromTrial `json:"convertedFromTrial"`
+	InvoiceId          string                                `json:"invoiceId"`
+	Plan               UserEventPayload452Plan               `json:"plan"`
 }
 
-// UserEventPayload452ActorType defines model for UserEvent.Payload.452.ActorType.
-type UserEventPayload452ActorType string
+// UserEventPayload452ConvertedFromTrial defines model for UserEvent.Payload.452.ConvertedFromTrial.
+type UserEventPayload452ConvertedFromTrial bool
+
+// UserEventPayload452Plan defines model for UserEvent.Payload.452.Plan.
+type UserEventPayload452Plan string
 
 // UserEventPayload453 The payload of the event, if requested.
 type UserEventPayload453 struct {
-	Decision UserEventPayload453Decision `json:"decision"`
-	Version  string                      `json:"version"`
+	InviteCode *string `json:"inviteCode,omitempty"`
 }
-
-// UserEventPayload453Decision defines model for UserEvent.Payload.453.Decision.
-type UserEventPayload453Decision string
 
 // UserEventPayload454 The payload of the event, if requested.
 type UserEventPayload454 struct {
-	AcceptanceId string `json:"acceptanceId"`
-	TermsVersion string `json:"termsVersion"`
+	Name *string `json:"name,omitempty"`
 }
 
 // UserEventPayload455 The payload of the event, if requested.
 type UserEventPayload455 struct {
-	Consent UserEventPayload455Consent `json:"consent"`
+	// ActorId Okta user id.
+	ActorId   string                       `json:"actorId"`
+	ActorName *string                      `json:"actorName,omitempty"`
+	ActorType UserEventPayload455ActorType `json:"actorType"`
+	Name      *string                      `json:"name,omitempty"`
 }
 
-// UserEventPayload455Consent defines model for UserEvent.Payload.455.Consent.
-type UserEventPayload455Consent string
+// UserEventPayload455ActorType defines model for UserEvent.Payload.455.ActorType.
+type UserEventPayload455ActorType string
 
 // UserEventPayload456 The payload of the event, if requested.
 type UserEventPayload456 struct {
-	// RemoteCaching Represents configuration for remote caching
-	RemoteCaching *struct {
-		Enabled *UserEventPayload456RemoteCachingEnabled `json:"enabled,omitempty"`
-	} `json:"remoteCaching,omitempty"`
+	Decision UserEventPayload456Decision `json:"decision"`
+	Version  string                      `json:"version"`
 }
 
-// UserEventPayload456RemoteCachingEnabled defines model for UserEvent.Payload.456.RemoteCaching.Enabled.
-type UserEventPayload456RemoteCachingEnabled bool
+// UserEventPayload456Decision defines model for UserEvent.Payload.456.Decision.
+type UserEventPayload456Decision string
 
 // UserEventPayload457 The payload of the event, if requested.
 type UserEventPayload457 struct {
-	DeletedCount float32 `json:"deletedCount"`
+	AcceptanceId string `json:"acceptanceId"`
+	TermsVersion string `json:"termsVersion"`
 }
 
 // UserEventPayload458 The payload of the event, if requested.
 type UserEventPayload458 struct {
-	Enabled UserEventPayload458Enabled `json:"enabled"`
+	Consent UserEventPayload458Consent `json:"consent"`
 }
 
-// UserEventPayload458Enabled defines model for UserEvent.Payload.458.Enabled.
-type UserEventPayload458Enabled string
+// UserEventPayload458Consent defines model for UserEvent.Payload.458.Consent.
+type UserEventPayload458Consent string
 
 // UserEventPayload459 The payload of the event, if requested.
 type UserEventPayload459 struct {
-	Enabled UserEventPayload459Enabled `json:"enabled"`
-	Scope   UserEventPayload459Scope   `json:"scope"`
+	// RemoteCaching Represents configuration for remote caching
+	RemoteCaching *struct {
+		Enabled *UserEventPayload459RemoteCachingEnabled `json:"enabled,omitempty"`
+	} `json:"remoteCaching,omitempty"`
 }
 
-// UserEventPayload459Enabled defines model for UserEvent.Payload.459.Enabled.
-type UserEventPayload459Enabled bool
-
-// UserEventPayload459Scope defines model for UserEvent.Payload.459.Scope.
-type UserEventPayload459Scope string
+// UserEventPayload459RemoteCachingEnabled defines model for UserEvent.Payload.459.RemoteCaching.Enabled.
+type UserEventPayload459RemoteCachingEnabled bool
 
 // UserEventPayload460 The payload of the event, if requested.
 type UserEventPayload460 struct {
-	Next     *map[string]UserEvent_Payload_460_Next_AdditionalProperties     `json:"next,omitempty"`
-	Previous *map[string]UserEvent_Payload_460_Previous_AdditionalProperties `json:"previous,omitempty"`
-}
-
-// UserEventPayload460Next0 defines model for UserEvent.Payload.460.Next.0.
-type UserEventPayload460Next0 struct {
-	AccessGroupId string `json:"accessGroupId"`
-}
-
-// UserEventPayload460Next1 defines model for UserEvent.Payload.460.Next.1.
-type UserEventPayload460Next1 struct {
-	TeamPermissions *[]UserEventPayload460Next1TeamPermissions `json:"teamPermissions,omitempty"`
-	TeamRoles       []UserEventPayload460Next1TeamRoles        `json:"teamRoles"`
-}
-
-// UserEventPayload460Next1TeamPermissions defines model for UserEvent.Payload.460.Next.1.TeamPermissions.
-type UserEventPayload460Next1TeamPermissions string
-
-// UserEventPayload460Next1TeamRoles defines model for UserEvent.Payload.460.Next.1.TeamRoles.
-type UserEventPayload460Next1TeamRoles string
-
-// UserEventPayload460Next2 defines model for UserEvent.Payload.460.Next.2.
-type UserEventPayload460Next2 string
-
-// UserEvent_Payload_460_Next_AdditionalProperties defines model for UserEvent.payload.460.next.AdditionalProperties.
-type UserEvent_Payload_460_Next_AdditionalProperties struct {
-	union json.RawMessage
-}
-
-// UserEventPayload460Previous0 defines model for UserEvent.Payload.460.Previous.0.
-type UserEventPayload460Previous0 struct {
-	AccessGroupId string `json:"accessGroupId"`
-}
-
-// UserEventPayload460Previous1 defines model for UserEvent.Payload.460.Previous.1.
-type UserEventPayload460Previous1 struct {
-	TeamPermissions *[]UserEventPayload460Previous1TeamPermissions `json:"teamPermissions,omitempty"`
-	TeamRoles       []UserEventPayload460Previous1TeamRoles        `json:"teamRoles"`
-}
-
-// UserEventPayload460Previous1TeamPermissions defines model for UserEvent.Payload.460.Previous.1.TeamPermissions.
-type UserEventPayload460Previous1TeamPermissions string
-
-// UserEventPayload460Previous1TeamRoles defines model for UserEvent.Payload.460.Previous.1.TeamRoles.
-type UserEventPayload460Previous1TeamRoles string
-
-// UserEventPayload460Previous2 defines model for UserEvent.Payload.460.Previous.2.
-type UserEventPayload460Previous2 string
-
-// UserEvent_Payload_460_Previous_AdditionalProperties defines model for UserEvent.payload.460.previous.AdditionalProperties.
-type UserEvent_Payload_460_Previous_AdditionalProperties struct {
-	union json.RawMessage
+	DeletedCount float32 `json:"deletedCount"`
 }
 
 // UserEventPayload461 The payload of the event, if requested.
 type UserEventPayload461 struct {
+	Enabled UserEventPayload461Enabled `json:"enabled"`
+}
+
+// UserEventPayload461Enabled defines model for UserEvent.Payload.461.Enabled.
+type UserEventPayload461Enabled string
+
+// UserEventPayload462 The payload of the event, if requested.
+type UserEventPayload462 struct {
+	Enabled UserEventPayload462Enabled `json:"enabled"`
+	Scope   UserEventPayload462Scope   `json:"scope"`
+}
+
+// UserEventPayload462Enabled defines model for UserEvent.Payload.462.Enabled.
+type UserEventPayload462Enabled bool
+
+// UserEventPayload462Scope defines model for UserEvent.Payload.462.Scope.
+type UserEventPayload462Scope string
+
+// UserEventPayload463 The payload of the event, if requested.
+type UserEventPayload463 struct {
+	Next     *map[string]UserEvent_Payload_463_Next_AdditionalProperties     `json:"next,omitempty"`
+	Previous *map[string]UserEvent_Payload_463_Previous_AdditionalProperties `json:"previous,omitempty"`
+}
+
+// UserEventPayload463Next0 defines model for UserEvent.Payload.463.Next.0.
+type UserEventPayload463Next0 struct {
+	AccessGroupId string `json:"accessGroupId"`
+}
+
+// UserEventPayload463Next1 defines model for UserEvent.Payload.463.Next.1.
+type UserEventPayload463Next1 struct {
+	TeamPermissions *[]UserEventPayload463Next1TeamPermissions `json:"teamPermissions,omitempty"`
+	TeamRoles       []UserEventPayload463Next1TeamRoles        `json:"teamRoles"`
+}
+
+// UserEventPayload463Next1TeamPermissions defines model for UserEvent.Payload.463.Next.1.TeamPermissions.
+type UserEventPayload463Next1TeamPermissions string
+
+// UserEventPayload463Next1TeamRoles defines model for UserEvent.Payload.463.Next.1.TeamRoles.
+type UserEventPayload463Next1TeamRoles string
+
+// UserEventPayload463Next2 defines model for UserEvent.Payload.463.Next.2.
+type UserEventPayload463Next2 string
+
+// UserEvent_Payload_463_Next_AdditionalProperties defines model for UserEvent.payload.463.next.AdditionalProperties.
+type UserEvent_Payload_463_Next_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// UserEventPayload463Previous0 defines model for UserEvent.Payload.463.Previous.0.
+type UserEventPayload463Previous0 struct {
+	AccessGroupId string `json:"accessGroupId"`
+}
+
+// UserEventPayload463Previous1 defines model for UserEvent.Payload.463.Previous.1.
+type UserEventPayload463Previous1 struct {
+	TeamPermissions *[]UserEventPayload463Previous1TeamPermissions `json:"teamPermissions,omitempty"`
+	TeamRoles       []UserEventPayload463Previous1TeamRoles        `json:"teamRoles"`
+}
+
+// UserEventPayload463Previous1TeamPermissions defines model for UserEvent.Payload.463.Previous.1.TeamPermissions.
+type UserEventPayload463Previous1TeamPermissions string
+
+// UserEventPayload463Previous1TeamRoles defines model for UserEvent.Payload.463.Previous.1.TeamRoles.
+type UserEventPayload463Previous1TeamRoles string
+
+// UserEventPayload463Previous2 defines model for UserEvent.Payload.463.Previous.2.
+type UserEventPayload463Previous2 string
+
+// UserEvent_Payload_463_Previous_AdditionalProperties defines model for UserEvent.payload.463.previous.AdditionalProperties.
+type UserEvent_Payload_463_Previous_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// UserEventPayload464 The payload of the event, if requested.
+type UserEventPayload464 struct {
 	Domain string   `json:"domain"`
 	Ips    []string `json:"ips"`
 }
 
-// UserEventPayload462 The payload of the event, if requested.
-type UserEventPayload462 struct {
+// UserEventPayload465 The payload of the event, if requested.
+type UserEventPayload465 struct {
 	TokenTypes []string `json:"tokenTypes"`
 }
 
-// UserEventPayload463 The payload of the event, if requested.
-type UserEventPayload463 struct {
+// UserEventPayload466 The payload of the event, if requested.
+type UserEventPayload466 struct {
 	ExportId string  `json:"exportId"`
 	Format   string  `json:"format"`
 	From     float32 `json:"from"`
 	To       float32 `json:"to"`
 }
 
-// UserEventPayload464 The payload of the event, if requested.
-type UserEventPayload464 struct {
+// UserEventPayload467 The payload of the event, if requested.
+type UserEventPayload467 struct {
 	FileId string `json:"fileId"`
 }
 
-// UserEventPayload465 The payload of the event, if requested.
-type UserEventPayload465 struct {
+// UserEventPayload468 The payload of the event, if requested.
+type UserEventPayload468 struct {
 	Slug *string `json:"slug,omitempty"`
 }
 
-// UserEventPayload466 The payload of the event, if requested.
-type UserEventPayload466 struct {
+// UserEventPayload469 The payload of the event, if requested.
+type UserEventPayload469 struct {
 	// ActorId Okta user id.
 	ActorId   string                       `json:"actorId"`
 	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload466ActorType `json:"actorType"`
+	ActorType UserEventPayload469ActorType `json:"actorType"`
 	Slug      *string                      `json:"slug,omitempty"`
 }
 
-// UserEventPayload466ActorType defines model for UserEvent.Payload.466.ActorType.
-type UserEventPayload466ActorType string
-
-// UserEventPayload467 The payload of the event, if requested.
-type UserEventPayload467 struct {
-	ProjectId   string `json:"projectId"`
-	ProjectName string `json:"projectName"`
-	Sampling    *[]struct {
-		Env         *UserEventPayload467SamplingEnv `json:"env,omitempty"`
-		Rate        float32                         `json:"rate"`
-		RequestPath *string                         `json:"requestPath,omitempty"`
-		Type        UserEventPayload467SamplingType `json:"type"`
-	} `json:"sampling,omitempty"`
-}
-
-// UserEventPayload467SamplingEnv defines model for UserEvent.Payload.467.Sampling.Env.
-type UserEventPayload467SamplingEnv string
-
-// UserEventPayload467SamplingType defines model for UserEvent.Payload.467.Sampling.Type.
-type UserEventPayload467SamplingType string
-
-// UserEventPayload468 The payload of the event, if requested.
-type UserEventPayload468 struct {
-	Reason UserEventPayload468Reason `json:"reason"`
-}
-
-// UserEventPayload468Reason defines model for UserEvent.Payload.468.Reason.
-type UserEventPayload468Reason string
-
-// UserEventPayload469 The payload of the event, if requested.
-type UserEventPayload469 struct {
-	OrganizationId string `json:"organizationId"`
-}
+// UserEventPayload469ActorType defines model for UserEvent.Payload.469.ActorType.
+type UserEventPayload469ActorType string
 
 // UserEventPayload470 The payload of the event, if requested.
 type UserEventPayload470 struct {
+	ProjectId   string `json:"projectId"`
+	ProjectName string `json:"projectName"`
+	Sampling    *[]struct {
+		Env         *UserEventPayload470SamplingEnv `json:"env,omitempty"`
+		Rate        float32                         `json:"rate"`
+		RequestPath *string                         `json:"requestPath,omitempty"`
+		Type        UserEventPayload470SamplingType `json:"type"`
+	} `json:"sampling,omitempty"`
+}
+
+// UserEventPayload470SamplingEnv defines model for UserEvent.Payload.470.Sampling.Env.
+type UserEventPayload470SamplingEnv string
+
+// UserEventPayload470SamplingType defines model for UserEvent.Payload.470.Sampling.Type.
+type UserEventPayload470SamplingType string
+
+// UserEventPayload471 The payload of the event, if requested.
+type UserEventPayload471 struct {
+	Reason UserEventPayload471Reason `json:"reason"`
+}
+
+// UserEventPayload471Reason defines model for UserEvent.Payload.471.Reason.
+type UserEventPayload471Reason string
+
+// UserEventPayload472 The payload of the event, if requested.
+type UserEventPayload472 struct {
+	OrganizationId string `json:"organizationId"`
+}
+
+// UserEventPayload473 The payload of the event, if requested.
+type UserEventPayload473 struct {
 	OrganizationId string   `json:"organizationId"`
 	TeamIds        []string `json:"teamIds"`
 }
 
-// UserEventPayload471 The payload of the event, if requested.
-type UserEventPayload471 struct {
+// UserEventPayload474 The payload of the event, if requested.
+type UserEventPayload474 struct {
 	TeamName *string `json:"teamName,omitempty"`
 }
 
-// UserEventPayload472 The payload of the event, if requested.
-type UserEventPayload472 struct {
+// UserEventPayload475 The payload of the event, if requested.
+type UserEventPayload475 struct {
 	ActorId *string `json:"actorId,omitempty"`
 
 	// ActorName Human-readable admin who performed the removal.
 	ActorName     *string                       `json:"actorName,omitempty"`
-	ActorType     *UserEventPayload472ActorType `json:"actorType,omitempty"`
+	ActorType     *UserEventPayload475ActorType `json:"actorType,omitempty"`
 	Reason        *string                       `json:"reason,omitempty"`
 	RecoveryCodes float32                       `json:"recoveryCodes"`
-	Totp          UserEventPayload472Totp       `json:"totp"`
+	Totp          UserEventPayload475Totp       `json:"totp"`
 }
 
-// UserEventPayload472ActorType defines model for UserEvent.Payload.472.ActorType.
-type UserEventPayload472ActorType string
+// UserEventPayload475ActorType defines model for UserEvent.Payload.475.ActorType.
+type UserEventPayload475ActorType string
 
-// UserEventPayload472Totp defines model for UserEvent.Payload.472.Totp.
-type UserEventPayload472Totp bool
+// UserEventPayload475Totp defines model for UserEvent.Payload.475.Totp.
+type UserEventPayload475Totp bool
 
-// UserEventPayload473 The payload of the event, if requested.
-type UserEventPayload473 struct {
+// UserEventPayload476 The payload of the event, if requested.
+type UserEventPayload476 struct {
 	DeletedAt *float32 `json:"deletedAt,omitempty"`
 	Username  string   `json:"username"`
 }
 
-// UserEventPayload474 The payload of the event, if requested.
-type UserEventPayload474 struct {
+// UserEventPayload477 The payload of the event, if requested.
+type UserEventPayload477 struct {
 	// ActorId Okta user id.
 	ActorId   string                       `json:"actorId"`
 	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload474ActorType `json:"actorType"`
+	ActorType UserEventPayload477ActorType `json:"actorType"`
 	DeletedAt *float32                     `json:"deletedAt,omitempty"`
 	Username  string                       `json:"username"`
 }
 
-// UserEventPayload474ActorType defines model for UserEvent.Payload.474.ActorType.
-type UserEventPayload474ActorType string
+// UserEventPayload477ActorType defines model for UserEvent.Payload.477.ActorType.
+type UserEventPayload477ActorType string
 
-// UserEventPayload475 The payload of the event, if requested.
-type UserEventPayload475 struct {
+// UserEventPayload478 The payload of the event, if requested.
+type UserEventPayload478 struct {
 	Username string `json:"username"`
 }
 
-// UserEventPayload476 The payload of the event, if requested.
-type UserEventPayload476 struct {
+// UserEventPayload479 The payload of the event, if requested.
+type UserEventPayload479 struct {
 	TeamName string `json:"teamName"`
 }
 
-// UserEventPayload477 The payload of the event, if requested.
-type UserEventPayload477 struct {
+// UserEventPayload480 The payload of the event, if requested.
+type UserEventPayload480 struct {
 	TeamId   string `json:"teamId"`
 	TeamName string `json:"teamName"`
 }
 
-// UserEventPayload478 The payload of the event, if requested.
-type UserEventPayload478 struct {
-	ActorId   string                       `json:"actorId"`
-	ActorType UserEventPayload478ActorType `json:"actorType"`
-	Reason    *string                      `json:"reason,omitempty"`
-}
-
-// UserEventPayload478ActorType defines model for UserEvent.Payload.478.ActorType.
-type UserEventPayload478ActorType string
-
-// UserEventPayload479 The payload of the event, if requested.
-type UserEventPayload479 struct {
-	ActorId   string                       `json:"actorId"`
-	ActorType UserEventPayload479ActorType `json:"actorType"`
-}
-
-// UserEventPayload479ActorType defines model for UserEvent.Payload.479.ActorType.
-type UserEventPayload479ActorType string
-
-// UserEventPayload480 The payload of the event, if requested.
-type UserEventPayload480 struct {
-	ActorId   string                       `json:"actorId"`
-	ActorType UserEventPayload480ActorType `json:"actorType"`
-	Enabled   UserEventPayload480Enabled   `json:"enabled"`
-}
-
-// UserEventPayload480ActorType defines model for UserEvent.Payload.480.ActorType.
-type UserEventPayload480ActorType string
-
-// UserEventPayload480Enabled defines model for UserEvent.Payload.480.Enabled.
-type UserEventPayload480Enabled bool
-
 // UserEventPayload481 The payload of the event, if requested.
 type UserEventPayload481 struct {
-	ActorId            string                                `json:"actorId"`
-	ActorType          UserEventPayload481ActorType          `json:"actorType"`
-	AutoBlockPrevented UserEventPayload481AutoBlockPrevented `json:"autoBlockPrevented"`
-	PreventUntil       *float32                              `json:"preventUntil,omitempty"`
-	Reason             *string                               `json:"reason,omitempty"`
+	ActorId   string                       `json:"actorId"`
+	ActorType UserEventPayload481ActorType `json:"actorType"`
+	Reason    *string                      `json:"reason,omitempty"`
 }
 
 // UserEventPayload481ActorType defines model for UserEvent.Payload.481.ActorType.
 type UserEventPayload481ActorType string
 
-// UserEventPayload481AutoBlockPrevented defines model for UserEvent.Payload.481.AutoBlockPrevented.
-type UserEventPayload481AutoBlockPrevented bool
-
 // UserEventPayload482 The payload of the event, if requested.
 type UserEventPayload482 struct {
-	Scope   UserEventPayload482Scope `json:"scope"`
-	ScopeId *string                  `json:"scopeId,omitempty"`
+	ActorId   string                       `json:"actorId"`
+	ActorType UserEventPayload482ActorType `json:"actorType"`
 }
 
-// UserEventPayload482Scope defines model for UserEvent.Payload.482.Scope.
-type UserEventPayload482Scope string
+// UserEventPayload482ActorType defines model for UserEvent.Payload.482.ActorType.
+type UserEventPayload482ActorType string
 
 // UserEventPayload483 The payload of the event, if requested.
 type UserEventPayload483 struct {
-	FlowId         *string                   `json:"flowId,omitempty"`
-	LoginSessionId *string                   `json:"loginSessionId,omitempty"`
-	Method         UserEventPayload483Method `json:"method"`
-	Reason         string                    `json:"reason"`
+	ActorId   string                       `json:"actorId"`
+	ActorType UserEventPayload483ActorType `json:"actorType"`
+	Enabled   UserEventPayload483Enabled   `json:"enabled"`
 }
 
-// UserEventPayload483Method defines model for UserEvent.Payload.483.Method.
-type UserEventPayload483Method string
+// UserEventPayload483ActorType defines model for UserEvent.Payload.483.ActorType.
+type UserEventPayload483ActorType string
+
+// UserEventPayload483Enabled defines model for UserEvent.Payload.483.Enabled.
+type UserEventPayload483Enabled bool
 
 // UserEventPayload484 The payload of the event, if requested.
 type UserEventPayload484 struct {
-	AllowedMethods []UserEventPayload484AllowedMethods `json:"allowedMethods"`
-	FirstFactor    string                              `json:"firstFactor"`
-	FlowId         string                              `json:"flowId"`
-	LoginSessionId *string                             `json:"loginSessionId,omitempty"`
+	ActorId            string                                `json:"actorId"`
+	ActorType          UserEventPayload484ActorType          `json:"actorType"`
+	AutoBlockPrevented UserEventPayload484AutoBlockPrevented `json:"autoBlockPrevented"`
+	PreventUntil       *float32                              `json:"preventUntil,omitempty"`
+	Reason             *string                               `json:"reason,omitempty"`
 }
 
-// UserEventPayload484AllowedMethods defines model for UserEvent.Payload.484.AllowedMethods.
-type UserEventPayload484AllowedMethods string
+// UserEventPayload484ActorType defines model for UserEvent.Payload.484.ActorType.
+type UserEventPayload484ActorType string
+
+// UserEventPayload484AutoBlockPrevented defines model for UserEvent.Payload.484.AutoBlockPrevented.
+type UserEventPayload484AutoBlockPrevented bool
 
 // UserEventPayload485 The payload of the event, if requested.
 type UserEventPayload485 struct {
-	Action UserEventPayload485Action `json:"action"`
-	Reason string                    `json:"reason"`
+	Scope   UserEventPayload485Scope `json:"scope"`
+	ScopeId *string                  `json:"scopeId,omitempty"`
 }
 
-// UserEventPayload485Action defines model for UserEvent.Payload.485.Action.
-type UserEventPayload485Action string
+// UserEventPayload485Scope defines model for UserEvent.Payload.485.Scope.
+type UserEventPayload485Scope string
 
 // UserEventPayload486 The payload of the event, if requested.
 type UserEventPayload486 struct {
-	Method *UserEventPayload486Method `json:"method,omitempty"`
-	Next   struct {
-		Enabled      UserEventPayload486NextEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload486NextTotpVerified `json:"totpVerified"`
-	} `json:"next"`
-	Previous struct {
-		Enabled      UserEventPayload486PreviousEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload486PreviousTotpVerified `json:"totpVerified"`
-	} `json:"previous"`
+	FlowId         *string                   `json:"flowId,omitempty"`
+	LoginSessionId *string                   `json:"loginSessionId,omitempty"`
+	Method         UserEventPayload486Method `json:"method"`
+	Reason         string                    `json:"reason"`
 }
 
 // UserEventPayload486Method defines model for UserEvent.Payload.486.Method.
 type UserEventPayload486Method string
 
-// UserEventPayload486NextEnabled defines model for UserEvent.Payload.486.Next.Enabled.
-type UserEventPayload486NextEnabled bool
-
-// UserEventPayload486NextTotpVerified defines model for UserEvent.Payload.486.Next.TotpVerified.
-type UserEventPayload486NextTotpVerified bool
-
-// UserEventPayload486PreviousEnabled defines model for UserEvent.Payload.486.Previous.Enabled.
-type UserEventPayload486PreviousEnabled bool
-
-// UserEventPayload486PreviousTotpVerified defines model for UserEvent.Payload.486.Previous.TotpVerified.
-type UserEventPayload486PreviousTotpVerified bool
-
 // UserEventPayload487 The payload of the event, if requested.
 type UserEventPayload487 struct {
-	// Context Absent on events predating the field; those were all logins.
-	Context   *UserEventPayload487Context `json:"context,omitempty"`
-	Remaining float32                     `json:"remaining"`
+	AllowedMethods []UserEventPayload487AllowedMethods `json:"allowedMethods"`
+	FirstFactor    string                              `json:"firstFactor"`
+	FlowId         string                              `json:"flowId"`
+	LoginSessionId *string                             `json:"loginSessionId,omitempty"`
 }
 
-// UserEventPayload487Context Absent on events predating the field; those were all logins.
-type UserEventPayload487Context string
+// UserEventPayload487AllowedMethods defines model for UserEvent.Payload.487.AllowedMethods.
+type UserEventPayload487AllowedMethods string
 
 // UserEventPayload488 The payload of the event, if requested.
 type UserEventPayload488 struct {
-	MfaEnabled UserEventPayload488MfaEnabled `json:"mfaEnabled"`
+	Action UserEventPayload488Action `json:"action"`
+	Reason string                    `json:"reason"`
 }
 
-// UserEventPayload488MfaEnabled defines model for UserEvent.Payload.488.MfaEnabled.
-type UserEventPayload488MfaEnabled bool
+// UserEventPayload488Action defines model for UserEvent.Payload.488.Action.
+type UserEventPayload488Action string
 
 // UserEventPayload489 The payload of the event, if requested.
 type UserEventPayload489 struct {
-	Mfa struct {
-		Enabled      UserEventPayload489MfaEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload489MfaTotpVerified `json:"totpVerified"`
-	} `json:"mfa"`
-}
-
-// UserEventPayload489MfaEnabled defines model for UserEvent.Payload.489.Mfa.Enabled.
-type UserEventPayload489MfaEnabled bool
-
-// UserEventPayload489MfaTotpVerified defines model for UserEvent.Payload.489.Mfa.TotpVerified.
-type UserEventPayload489MfaTotpVerified bool
-
-// UserEventPayload490 The payload of the event, if requested.
-type UserEventPayload490 struct {
-	Enabled      UserEventPayload490Enabled      `json:"enabled"`
-	TotpVerified UserEventPayload490TotpVerified `json:"totpVerified"`
-}
-
-// UserEventPayload490Enabled defines model for UserEvent.Payload.490.Enabled.
-type UserEventPayload490Enabled bool
-
-// UserEventPayload490TotpVerified defines model for UserEvent.Payload.490.TotpVerified.
-type UserEventPayload490TotpVerified bool
-
-// UserEventPayload491 The payload of the event, if requested.
-type UserEventPayload491 struct {
-	Next struct {
-		Enabled      UserEventPayload491NextEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload491NextTotpVerified `json:"totpVerified"`
+	Method *UserEventPayload489Method `json:"method,omitempty"`
+	Next   struct {
+		Enabled      UserEventPayload489NextEnabled      `json:"enabled"`
+		TotpVerified UserEventPayload489NextTotpVerified `json:"totpVerified"`
 	} `json:"next"`
 	Previous struct {
-		Enabled      UserEventPayload491PreviousEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload491PreviousTotpVerified `json:"totpVerified"`
+		Enabled      UserEventPayload489PreviousEnabled      `json:"enabled"`
+		TotpVerified UserEventPayload489PreviousTotpVerified `json:"totpVerified"`
 	} `json:"previous"`
 }
 
-// UserEventPayload491NextEnabled defines model for UserEvent.Payload.491.Next.Enabled.
-type UserEventPayload491NextEnabled bool
+// UserEventPayload489Method defines model for UserEvent.Payload.489.Method.
+type UserEventPayload489Method string
 
-// UserEventPayload491NextTotpVerified defines model for UserEvent.Payload.491.Next.TotpVerified.
-type UserEventPayload491NextTotpVerified bool
+// UserEventPayload489NextEnabled defines model for UserEvent.Payload.489.Next.Enabled.
+type UserEventPayload489NextEnabled bool
 
-// UserEventPayload491PreviousEnabled defines model for UserEvent.Payload.491.Previous.Enabled.
-type UserEventPayload491PreviousEnabled bool
+// UserEventPayload489NextTotpVerified defines model for UserEvent.Payload.489.Next.TotpVerified.
+type UserEventPayload489NextTotpVerified bool
 
-// UserEventPayload491PreviousTotpVerified defines model for UserEvent.Payload.491.Previous.TotpVerified.
-type UserEventPayload491PreviousTotpVerified bool
+// UserEventPayload489PreviousEnabled defines model for UserEvent.Payload.489.Previous.Enabled.
+type UserEventPayload489PreviousEnabled bool
+
+// UserEventPayload489PreviousTotpVerified defines model for UserEvent.Payload.489.Previous.TotpVerified.
+type UserEventPayload489PreviousTotpVerified bool
+
+// UserEventPayload490 The payload of the event, if requested.
+type UserEventPayload490 struct {
+	// Context Absent on events predating the field; those were all logins.
+	Context   *UserEventPayload490Context `json:"context,omitempty"`
+	Remaining float32                     `json:"remaining"`
+}
+
+// UserEventPayload490Context Absent on events predating the field; those were all logins.
+type UserEventPayload490Context string
+
+// UserEventPayload491 The payload of the event, if requested.
+type UserEventPayload491 struct {
+	MfaEnabled UserEventPayload491MfaEnabled `json:"mfaEnabled"`
+}
+
+// UserEventPayload491MfaEnabled defines model for UserEvent.Payload.491.MfaEnabled.
+type UserEventPayload491MfaEnabled bool
 
 // UserEventPayload492 The payload of the event, if requested.
 type UserEventPayload492 struct {
-	Decision struct {
-		Authoritative     UserEventPayload492DecisionAuthoritative     `json:"authoritative"`
-		Basis             UserEventPayload492DecisionBasis             `json:"basis"`
-		EmailDomain       string                                       `json:"emailDomain"`
-		EmailVerified     UserEventPayload492DecisionEmailVerified     `json:"emailVerified"`
-		HostedDomainMatch UserEventPayload492DecisionHostedDomainMatch `json:"hostedDomainMatch"`
-		MxOutcome         UserEventPayload492DecisionMxOutcome         `json:"mxOutcome"`
-	} `json:"decision"`
-	Outcome           UserEventPayload492Outcome  `json:"outcome"`
-	Provider          UserEventPayload492Provider `json:"provider"`
-	ProviderSubjectId string                      `json:"providerSubjectId"`
+	Mfa struct {
+		Enabled      UserEventPayload492MfaEnabled      `json:"enabled"`
+		TotpVerified UserEventPayload492MfaTotpVerified `json:"totpVerified"`
+	} `json:"mfa"`
 }
 
-// UserEventPayload492DecisionAuthoritative defines model for UserEvent.Payload.492.Decision.Authoritative.
-type UserEventPayload492DecisionAuthoritative bool
+// UserEventPayload492MfaEnabled defines model for UserEvent.Payload.492.Mfa.Enabled.
+type UserEventPayload492MfaEnabled bool
 
-// UserEventPayload492DecisionBasis defines model for UserEvent.Payload.492.Decision.Basis.
-type UserEventPayload492DecisionBasis string
-
-// UserEventPayload492DecisionEmailVerified defines model for UserEvent.Payload.492.Decision.EmailVerified.
-type UserEventPayload492DecisionEmailVerified bool
-
-// UserEventPayload492DecisionHostedDomainMatch defines model for UserEvent.Payload.492.Decision.HostedDomainMatch.
-type UserEventPayload492DecisionHostedDomainMatch bool
-
-// UserEventPayload492DecisionMxOutcome defines model for UserEvent.Payload.492.Decision.MxOutcome.
-type UserEventPayload492DecisionMxOutcome string
-
-// UserEventPayload492Outcome defines model for UserEvent.Payload.492.Outcome.
-type UserEventPayload492Outcome string
-
-// UserEventPayload492Provider defines model for UserEvent.Payload.492.Provider.
-type UserEventPayload492Provider string
+// UserEventPayload492MfaTotpVerified defines model for UserEvent.Payload.492.Mfa.TotpVerified.
+type UserEventPayload492MfaTotpVerified bool
 
 // UserEventPayload493 The payload of the event, if requested.
 type UserEventPayload493 struct {
+	Enabled      UserEventPayload493Enabled      `json:"enabled"`
+	TotpVerified UserEventPayload493TotpVerified `json:"totpVerified"`
+}
+
+// UserEventPayload493Enabled defines model for UserEvent.Payload.493.Enabled.
+type UserEventPayload493Enabled bool
+
+// UserEventPayload493TotpVerified defines model for UserEvent.Payload.493.TotpVerified.
+type UserEventPayload493TotpVerified bool
+
+// UserEventPayload494 The payload of the event, if requested.
+type UserEventPayload494 struct {
+	Next struct {
+		Enabled      UserEventPayload494NextEnabled      `json:"enabled"`
+		TotpVerified UserEventPayload494NextTotpVerified `json:"totpVerified"`
+	} `json:"next"`
+	Previous struct {
+		Enabled      UserEventPayload494PreviousEnabled      `json:"enabled"`
+		TotpVerified UserEventPayload494PreviousTotpVerified `json:"totpVerified"`
+	} `json:"previous"`
+}
+
+// UserEventPayload494NextEnabled defines model for UserEvent.Payload.494.Next.Enabled.
+type UserEventPayload494NextEnabled bool
+
+// UserEventPayload494NextTotpVerified defines model for UserEvent.Payload.494.Next.TotpVerified.
+type UserEventPayload494NextTotpVerified bool
+
+// UserEventPayload494PreviousEnabled defines model for UserEvent.Payload.494.Previous.Enabled.
+type UserEventPayload494PreviousEnabled bool
+
+// UserEventPayload494PreviousTotpVerified defines model for UserEvent.Payload.494.Previous.TotpVerified.
+type UserEventPayload494PreviousTotpVerified bool
+
+// UserEventPayload495 The payload of the event, if requested.
+type UserEventPayload495 struct {
+	Decision struct {
+		Authoritative     UserEventPayload495DecisionAuthoritative     `json:"authoritative"`
+		Basis             UserEventPayload495DecisionBasis             `json:"basis"`
+		EmailDomain       string                                       `json:"emailDomain"`
+		EmailVerified     UserEventPayload495DecisionEmailVerified     `json:"emailVerified"`
+		HostedDomainMatch UserEventPayload495DecisionHostedDomainMatch `json:"hostedDomainMatch"`
+		MxOutcome         UserEventPayload495DecisionMxOutcome         `json:"mxOutcome"`
+	} `json:"decision"`
+	Outcome           UserEventPayload495Outcome  `json:"outcome"`
+	Provider          UserEventPayload495Provider `json:"provider"`
+	ProviderSubjectId string                      `json:"providerSubjectId"`
+}
+
+// UserEventPayload495DecisionAuthoritative defines model for UserEvent.Payload.495.Decision.Authoritative.
+type UserEventPayload495DecisionAuthoritative bool
+
+// UserEventPayload495DecisionBasis defines model for UserEvent.Payload.495.Decision.Basis.
+type UserEventPayload495DecisionBasis string
+
+// UserEventPayload495DecisionEmailVerified defines model for UserEvent.Payload.495.Decision.EmailVerified.
+type UserEventPayload495DecisionEmailVerified bool
+
+// UserEventPayload495DecisionHostedDomainMatch defines model for UserEvent.Payload.495.Decision.HostedDomainMatch.
+type UserEventPayload495DecisionHostedDomainMatch bool
+
+// UserEventPayload495DecisionMxOutcome defines model for UserEvent.Payload.495.Decision.MxOutcome.
+type UserEventPayload495DecisionMxOutcome string
+
+// UserEventPayload495Outcome defines model for UserEvent.Payload.495.Outcome.
+type UserEventPayload495Outcome string
+
+// UserEventPayload495Provider defines model for UserEvent.Payload.495.Provider.
+type UserEventPayload495Provider string
+
+// UserEventPayload496 The payload of the event, if requested.
+type UserEventPayload496 struct {
 	Email     string `json:"email"`
 	PrevEmail string `json:"prevEmail"`
 }
 
-// UserEventPayload494 The payload of the event, if requested.
-type UserEventPayload494 struct {
+// UserEventPayload497 The payload of the event, if requested.
+type UserEventPayload497 struct {
 	// ActorId Okta user id.
 	ActorId   string                       `json:"actorId"`
 	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload494ActorType `json:"actorType"`
+	ActorType UserEventPayload497ActorType `json:"actorType"`
 	Email     string                       `json:"email"`
 	PrevEmail string                       `json:"prevEmail"`
 }
 
-// UserEventPayload494ActorType defines model for UserEvent.Payload.494.ActorType.
-type UserEventPayload494ActorType string
+// UserEventPayload497ActorType defines model for UserEvent.Payload.497.ActorType.
+type UserEventPayload497ActorType string
 
-// UserEventPayload495 The payload of the event, if requested.
-type UserEventPayload495 struct {
+// UserEventPayload498 The payload of the event, if requested.
+type UserEventPayload498 struct {
 	// ActorId Okta user id.
 	ActorId   string                       `json:"actorId"`
 	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload495ActorType `json:"actorType"`
+	ActorType UserEventPayload498ActorType `json:"actorType"`
 	Username  string                       `json:"username"`
 }
 
-// UserEventPayload495ActorType defines model for UserEvent.Payload.495.ActorType.
-type UserEventPayload495ActorType string
+// UserEventPayload498ActorType defines model for UserEvent.Payload.498.ActorType.
+type UserEventPayload498ActorType string
 
-// UserEventPayload496 The payload of the event, if requested.
-type UserEventPayload496 struct {
+// UserEventPayload499 The payload of the event, if requested.
+type UserEventPayload499 struct {
 	ProjectId      string `json:"projectId"`
 	ProjectName    string `json:"projectName"`
 	RepositoryName string `json:"repositoryName"`
 }
 
-// UserEventPayload497 The payload of the event, if requested.
-type UserEventPayload497 struct {
+// UserEventPayload500 The payload of the event, if requested.
+type UserEventPayload500 struct {
 	Digest         string `json:"digest"`
 	ProjectId      string `json:"projectId"`
 	ProjectName    string `json:"projectName"`
@@ -19199,16 +19482,16 @@ type UserEventPayload497 struct {
 	RepositoryName string `json:"repositoryName"`
 }
 
-// UserEventPayload498 The payload of the event, if requested.
-type UserEventPayload498 struct {
+// UserEventPayload501 The payload of the event, if requested.
+type UserEventPayload501 struct {
 	ProjectId      string `json:"projectId"`
 	ProjectName    string `json:"projectName"`
 	Reference      string `json:"reference"`
 	RepositoryName string `json:"repositoryName"`
 }
 
-// UserEventPayload499 The payload of the event, if requested.
-type UserEventPayload499 struct {
+// UserEventPayload502 The payload of the event, if requested.
+type UserEventPayload502 struct {
 	ProjectId          string `json:"projectId"`
 	ProjectName        string `json:"projectName"`
 	RepositoryName     string `json:"repositoryName"`
@@ -19216,71 +19499,82 @@ type UserEventPayload499 struct {
 	SharedWithTeamSlug string `json:"sharedWithTeamSlug"`
 }
 
-// UserEventPayload500 The payload of the event, if requested.
-type UserEventPayload500 struct {
+// UserEventPayload503 The payload of the event, if requested.
+type UserEventPayload503 struct {
 	ProjectId        string `json:"projectId"`
 	ProjectName      string `json:"projectName"`
 	RepositoryName   string `json:"repositoryName"`
 	SharedWithTeamId string `json:"sharedWithTeamId"`
 }
 
-// UserEventPayload501 The payload of the event, if requested.
-type UserEventPayload501 struct {
+// UserEventPayload504 The payload of the event, if requested.
+type UserEventPayload504 struct {
 	ProjectId      string                    `json:"projectId"`
 	ProjectName    string                    `json:"projectName"`
-	Public         UserEventPayload501Public `json:"public"`
+	Public         UserEventPayload504Public `json:"public"`
 	RepositoryName string                    `json:"repositoryName"`
 }
 
-// UserEventPayload501Public defines model for UserEvent.Payload.501.Public.
-type UserEventPayload501Public bool
+// UserEventPayload504Public defines model for UserEvent.Payload.504.Public.
+type UserEventPayload504Public bool
 
-// UserEventPayload502 The payload of the event, if requested.
-type UserEventPayload502 struct {
+// UserEventPayload505 The payload of the event, if requested.
+type UserEventPayload505 struct {
 	ProjectId      string   `json:"projectId"`
 	ProjectName    string   `json:"projectName"`
 	RemovedTeamIds []string `json:"removedTeamIds"`
 	RepositoryName string   `json:"repositoryName"`
 }
 
-// UserEventPayload503 The payload of the event, if requested.
-type UserEventPayload503 struct {
+// UserEventPayload506 The payload of the event, if requested.
+type UserEventPayload506 struct {
 	RuleName string `json:"ruleName"`
 }
 
-// UserEventPayload504 The payload of the event, if requested.
-type UserEventPayload504 struct {
+// UserEventPayload507 The payload of the event, if requested.
+type UserEventPayload507 struct {
 	NextProjectCount     *float32 `json:"nextProjectCount"`
 	PreviousProjectCount *float32 `json:"previousProjectCount"`
 }
 
-// UserEventPayload505 The payload of the event, if requested.
-type UserEventPayload505 struct {
+// UserEventPayload508 The payload of the event, if requested.
+type UserEventPayload508 struct {
 	CustomAlertTitle string `json:"customAlertTitle"`
 }
 
-// UserEventPayload506 The payload of the event, if requested.
-type UserEventPayload506 struct {
-	CiEnabled      UserEventPayload506CiEnabled `json:"ciEnabled"`
+// UserEventPayload509 The payload of the event, if requested.
+type UserEventPayload509 struct {
+	Enabled        UserEventPayload509Enabled `json:"enabled"`
+	OrganizationId *string                    `json:"organizationId,omitempty"`
+	Repository     *string                    `json:"repository,omitempty"`
+	RepositoryId   string                     `json:"repositoryId"`
+}
+
+// UserEventPayload509Enabled defines model for UserEvent.Payload.509.Enabled.
+type UserEventPayload509Enabled bool
+
+// UserEventPayload510 The payload of the event, if requested.
+type UserEventPayload510 struct {
+	CiEnabled      UserEventPayload510CiEnabled `json:"ciEnabled"`
 	OrganizationId string                       `json:"organizationId"`
 	Repository     string                       `json:"repository"`
 }
 
-// UserEventPayload506CiEnabled defines model for UserEvent.Payload.506.CiEnabled.
-type UserEventPayload506CiEnabled bool
+// UserEventPayload510CiEnabled defines model for UserEvent.Payload.510.CiEnabled.
+type UserEventPayload510CiEnabled bool
 
-// UserEventPayload507 The payload of the event, if requested.
-type UserEventPayload507 struct {
+// UserEventPayload511 The payload of the event, if requested.
+type UserEventPayload511 struct {
 	ProtectedProjectCount float32                              `json:"protectedProjectCount"`
-	ProtectionEnabled     UserEventPayload507ProtectionEnabled `json:"protectionEnabled"`
+	ProtectionEnabled     UserEventPayload511ProtectionEnabled `json:"protectionEnabled"`
 	Vulnerabilities       []string                             `json:"vulnerabilities"`
 }
 
-// UserEventPayload507ProtectionEnabled defines model for UserEvent.Payload.507.ProtectionEnabled.
-type UserEventPayload507ProtectionEnabled bool
+// UserEventPayload511ProtectionEnabled defines model for UserEvent.Payload.511.ProtectionEnabled.
+type UserEventPayload511ProtectionEnabled bool
 
-// UserEventPayload508 The payload of the event, if requested.
-type UserEventPayload508 struct {
+// UserEventPayload512 The payload of the event, if requested.
+type UserEventPayload512 struct {
 	Configuration struct {
 		Id   string  `json:"id"`
 		Name *string `json:"name,omitempty"`
@@ -19297,8 +19591,8 @@ type UserEventPayload508 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload509 The payload of the event, if requested.
-type UserEventPayload509 struct {
+// UserEventPayload513 The payload of the event, if requested.
+type UserEventPayload513 struct {
 	Configuration struct {
 		Id   string  `json:"id"`
 		Name *string `json:"name,omitempty"`
@@ -19313,8 +19607,8 @@ type UserEventPayload509 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload510 The payload of the event, if requested.
-type UserEventPayload510 struct {
+// UserEventPayload514 The payload of the event, if requested.
+type UserEventPayload514 struct {
 	Configuration struct {
 		Id   string  `json:"id"`
 		Name *string `json:"name,omitempty"`
@@ -19330,9 +19624,9 @@ type UserEventPayload510 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload511 The payload of the event, if requested.
-type UserEventPayload511 struct {
-	Cadence    UserEventPayload511Cadence `json:"cadence"`
+// UserEventPayload515 The payload of the event, if requested.
+type UserEventPayload515 struct {
+	Cadence    UserEventPayload515Cadence `json:"cadence"`
 	ProjectIds []string                   `json:"projectIds"`
 	Team       struct {
 		Id   string  `json:"id"`
@@ -19340,31 +19634,31 @@ type UserEventPayload511 struct {
 	} `json:"team"`
 }
 
-// UserEventPayload511Cadence defines model for UserEvent.Payload.511.Cadence.
-type UserEventPayload511Cadence string
+// UserEventPayload515Cadence defines model for UserEvent.Payload.515.Cadence.
+type UserEventPayload515Cadence string
 
-// UserEventPayload512 The payload of the event, if requested.
-type UserEventPayload512 struct {
-	Tier UserEventPayload512Tier `json:"tier"`
+// UserEventPayload516 The payload of the event, if requested.
+type UserEventPayload516 struct {
+	Tier UserEventPayload516Tier `json:"tier"`
 }
 
-// UserEventPayload512Tier defines model for UserEvent.Payload.512.Tier.
-type UserEventPayload512Tier string
+// UserEventPayload516Tier defines model for UserEvent.Payload.516.Tier.
+type UserEventPayload516Tier string
 
-// UserEventPayload513 The payload of the event, if requested.
-type UserEventPayload513 struct {
+// UserEventPayload517 The payload of the event, if requested.
+type UserEventPayload517 struct {
 	Id  string `json:"id"`
 	Url string `json:"url"`
 }
 
-// UserEventPayload514 The payload of the event, if requested.
-type UserEventPayload514 struct {
+// UserEventPayload518 The payload of the event, if requested.
+type UserEventPayload518 struct {
 	ChatId    string  `json:"chatId"`
 	ChatTitle *string `json:"chatTitle,omitempty"`
 }
 
-// UserEventPayload515 The payload of the event, if requested.
-type UserEventPayload515 struct {
+// UserEventPayload519 The payload of the event, if requested.
+type UserEventPayload519 struct {
 	ChatId string `json:"chatId"`
 	Events []struct {
 		CacheCreationInputTokens float32 `json:"cacheCreationInputTokens"`
@@ -19384,151 +19678,151 @@ type UserEventPayload515 struct {
 	UseCase      string  `json:"useCase"`
 }
 
-// UserEventPayload516 The payload of the event, if requested.
-type UserEventPayload516 struct {
+// UserEventPayload520 The payload of the event, if requested.
+type UserEventPayload520 struct {
 	ChatId    string  `json:"chatId"`
 	ChatTitle *string `json:"chatTitle,omitempty"`
 	MessageId string  `json:"messageId"`
 }
 
-// UserEventPayload517 The payload of the event, if requested.
-type UserEventPayload517 struct {
-	Next     UserEvent_Payload_517_Next     `json:"next"`
-	Previous UserEvent_Payload_517_Previous `json:"previous"`
+// UserEventPayload521 The payload of the event, if requested.
+type UserEventPayload521 struct {
+	Next     UserEvent_Payload_521_Next     `json:"next"`
+	Previous UserEvent_Payload_521_Previous `json:"previous"`
 	UserId   string                         `json:"userId"`
 	UserName *string                        `json:"userName,omitempty"`
 }
 
-// UserEventPayload517Next0 defines model for UserEvent.Payload.517.Next.0.
-type UserEventPayload517Next0 struct {
-	Access UserEventPayload517Next0Access `json:"access"`
+// UserEventPayload521Next0 defines model for UserEvent.Payload.521.Next.0.
+type UserEventPayload521Next0 struct {
+	Access UserEventPayload521Next0Access `json:"access"`
 }
 
-// UserEventPayload517Next0Access defines model for UserEvent.Payload.517.Next.0.Access.
-type UserEventPayload517Next0Access string
+// UserEventPayload521Next0Access defines model for UserEvent.Payload.521.Next.0.Access.
+type UserEventPayload521Next0Access string
 
-// UserEventPayload517Next1 defines model for UserEvent.Payload.517.Next.1.
-type UserEventPayload517Next1 struct {
-	Access UserEventPayload517Next1Access `json:"access"`
+// UserEventPayload521Next1 defines model for UserEvent.Payload.521.Next.1.
+type UserEventPayload521Next1 struct {
+	Access UserEventPayload521Next1Access `json:"access"`
 	Limit  string                         `json:"limit"`
 }
 
-// UserEventPayload517Next1Access defines model for UserEvent.Payload.517.Next.1.Access.
-type UserEventPayload517Next1Access string
+// UserEventPayload521Next1Access defines model for UserEvent.Payload.521.Next.1.Access.
+type UserEventPayload521Next1Access string
 
-// UserEvent_Payload_517_Next defines model for UserEvent.Payload.517.Next.
-type UserEvent_Payload_517_Next struct {
+// UserEvent_Payload_521_Next defines model for UserEvent.Payload.521.Next.
+type UserEvent_Payload_521_Next struct {
 	union json.RawMessage
 }
 
-// UserEventPayload517Previous0 defines model for UserEvent.Payload.517.Previous.0.
-type UserEventPayload517Previous0 struct {
-	Access UserEventPayload517Previous0Access `json:"access"`
+// UserEventPayload521Previous0 defines model for UserEvent.Payload.521.Previous.0.
+type UserEventPayload521Previous0 struct {
+	Access UserEventPayload521Previous0Access `json:"access"`
 }
 
-// UserEventPayload517Previous0Access defines model for UserEvent.Payload.517.Previous.0.Access.
-type UserEventPayload517Previous0Access string
+// UserEventPayload521Previous0Access defines model for UserEvent.Payload.521.Previous.0.Access.
+type UserEventPayload521Previous0Access string
 
-// UserEventPayload517Previous1 defines model for UserEvent.Payload.517.Previous.1.
-type UserEventPayload517Previous1 struct {
-	Access UserEventPayload517Previous1Access `json:"access"`
+// UserEventPayload521Previous1 defines model for UserEvent.Payload.521.Previous.1.
+type UserEventPayload521Previous1 struct {
+	Access UserEventPayload521Previous1Access `json:"access"`
 	Limit  string                             `json:"limit"`
 }
 
-// UserEventPayload517Previous1Access defines model for UserEvent.Payload.517.Previous.1.Access.
-type UserEventPayload517Previous1Access string
+// UserEventPayload521Previous1Access defines model for UserEvent.Payload.521.Previous.1.Access.
+type UserEventPayload521Previous1Access string
 
-// UserEvent_Payload_517_Previous defines model for UserEvent.Payload.517.Previous.
-type UserEvent_Payload_517_Previous struct {
+// UserEvent_Payload_521_Previous defines model for UserEvent.Payload.521.Previous.
+type UserEvent_Payload_521_Previous struct {
 	union json.RawMessage
 }
 
-// UserEventPayload518 The payload of the event, if requested.
-type UserEventPayload518 struct {
-	Next     UserEvent_Payload_518_Next     `json:"next"`
-	Previous UserEvent_Payload_518_Previous `json:"previous"`
+// UserEventPayload522 The payload of the event, if requested.
+type UserEventPayload522 struct {
+	Next     UserEvent_Payload_522_Next     `json:"next"`
+	Previous UserEvent_Payload_522_Previous `json:"previous"`
 }
 
-// UserEventPayload518Next0 defines model for UserEvent.Payload.518.Next.0.
-type UserEventPayload518Next0 struct {
-	Access UserEventPayload518Next0Access `json:"access"`
+// UserEventPayload522Next0 defines model for UserEvent.Payload.522.Next.0.
+type UserEventPayload522Next0 struct {
+	Access UserEventPayload522Next0Access `json:"access"`
 }
 
-// UserEventPayload518Next0Access defines model for UserEvent.Payload.518.Next.0.Access.
-type UserEventPayload518Next0Access string
+// UserEventPayload522Next0Access defines model for UserEvent.Payload.522.Next.0.Access.
+type UserEventPayload522Next0Access string
 
-// UserEventPayload518Next1 defines model for UserEvent.Payload.518.Next.1.
-type UserEventPayload518Next1 struct {
-	Access UserEventPayload518Next1Access `json:"access"`
+// UserEventPayload522Next1 defines model for UserEvent.Payload.522.Next.1.
+type UserEventPayload522Next1 struct {
+	Access UserEventPayload522Next1Access `json:"access"`
 	Limit  string                         `json:"limit"`
 }
 
-// UserEventPayload518Next1Access defines model for UserEvent.Payload.518.Next.1.Access.
-type UserEventPayload518Next1Access string
+// UserEventPayload522Next1Access defines model for UserEvent.Payload.522.Next.1.Access.
+type UserEventPayload522Next1Access string
 
-// UserEvent_Payload_518_Next defines model for UserEvent.Payload.518.Next.
-type UserEvent_Payload_518_Next struct {
+// UserEvent_Payload_522_Next defines model for UserEvent.Payload.522.Next.
+type UserEvent_Payload_522_Next struct {
 	union json.RawMessage
 }
 
-// UserEventPayload518Previous0 defines model for UserEvent.Payload.518.Previous.0.
-type UserEventPayload518Previous0 struct {
-	Access UserEventPayload518Previous0Access `json:"access"`
+// UserEventPayload522Previous0 defines model for UserEvent.Payload.522.Previous.0.
+type UserEventPayload522Previous0 struct {
+	Access UserEventPayload522Previous0Access `json:"access"`
 }
 
-// UserEventPayload518Previous0Access defines model for UserEvent.Payload.518.Previous.0.Access.
-type UserEventPayload518Previous0Access string
+// UserEventPayload522Previous0Access defines model for UserEvent.Payload.522.Previous.0.Access.
+type UserEventPayload522Previous0Access string
 
-// UserEventPayload518Previous1 defines model for UserEvent.Payload.518.Previous.1.
-type UserEventPayload518Previous1 struct {
-	Access UserEventPayload518Previous1Access `json:"access"`
+// UserEventPayload522Previous1 defines model for UserEvent.Payload.522.Previous.1.
+type UserEventPayload522Previous1 struct {
+	Access UserEventPayload522Previous1Access `json:"access"`
 	Limit  string                             `json:"limit"`
 }
 
-// UserEventPayload518Previous1Access defines model for UserEvent.Payload.518.Previous.1.Access.
-type UserEventPayload518Previous1Access string
+// UserEventPayload522Previous1Access defines model for UserEvent.Payload.522.Previous.1.Access.
+type UserEventPayload522Previous1Access string
 
-// UserEvent_Payload_518_Previous defines model for UserEvent.Payload.518.Previous.
-type UserEvent_Payload_518_Previous struct {
+// UserEvent_Payload_522_Previous defines model for UserEvent.Payload.522.Previous.
+type UserEvent_Payload_522_Previous struct {
 	union json.RawMessage
 }
 
-// UserEventPayload519 The payload of the event, if requested.
-type UserEventPayload519 struct {
+// UserEventPayload523 The payload of the event, if requested.
+type UserEventPayload523 struct {
 	DeploymentId string  `json:"deploymentId"`
 	ProjectId    string  `json:"projectId"`
 	ProjectName  *string `json:"projectName,omitempty"`
 	RunId        string  `json:"runId"`
 }
 
-// UserEventPayload520 The payload of the event, if requested.
-type UserEventPayload520 struct {
+// UserEventPayload524 The payload of the event, if requested.
+type UserEventPayload524 struct {
 	Next struct {
-		Enabled    UserEventPayload520NextEnabled `json:"enabled"`
+		Enabled    UserEventPayload524NextEnabled `json:"enabled"`
 		IssuerUrls []string                       `json:"issuerUrls"`
 	} `json:"next"`
 	Previous struct {
-		Enabled    UserEventPayload520PreviousEnabled `json:"enabled"`
+		Enabled    UserEventPayload524PreviousEnabled `json:"enabled"`
 		IssuerUrls []string                           `json:"issuerUrls"`
 	} `json:"previous"`
-	Scope UserEventPayload520Scope `json:"scope"`
+	Scope UserEventPayload524Scope `json:"scope"`
 }
 
-// UserEventPayload520NextEnabled defines model for UserEvent.Payload.520.Next.Enabled.
-type UserEventPayload520NextEnabled bool
+// UserEventPayload524NextEnabled defines model for UserEvent.Payload.524.Next.Enabled.
+type UserEventPayload524NextEnabled bool
 
-// UserEventPayload520PreviousEnabled defines model for UserEvent.Payload.520.Previous.Enabled.
-type UserEventPayload520PreviousEnabled bool
+// UserEventPayload524PreviousEnabled defines model for UserEvent.Payload.524.Previous.Enabled.
+type UserEventPayload524PreviousEnabled bool
 
-// UserEventPayload520Scope defines model for UserEvent.Payload.520.Scope.
-type UserEventPayload520Scope string
+// UserEventPayload524Scope defines model for UserEvent.Payload.524.Scope.
+type UserEventPayload524Scope string
 
-// UserEventPayload521 The payload of the event, if requested.
-type UserEventPayload521 struct {
+// UserEventPayload525 The payload of the event, if requested.
+type UserEventPayload525 struct {
 	// App optional since entries prior to 2025-10-13 do not contain app information
 	App *struct {
 		ClientAuthenticationUsed struct {
-			Method   UserEventPayload521AppClientAuthenticationUsedMethod `json:"method"`
+			Method   UserEventPayload525AppClientAuthenticationUsedMethod `json:"method"`
 			SecretId *string                                              `json:"secretId,omitempty"`
 		} `json:"clientAuthenticationUsed"`
 		ClientId string `json:"clientId"`
@@ -19542,7 +19836,7 @@ type UserEventPayload521 struct {
 
 	// AtTTL access_token TTL
 	AtTTL      float32                       `json:"atTTL"`
-	AuthMethod UserEventPayload521AuthMethod `json:"authMethod"`
+	AuthMethod UserEventPayload525AuthMethod `json:"authMethod"`
 
 	// Geolocation optional since entries prior to 2026-04-23 do not contain this field
 	Geolocation *struct {
@@ -19563,10 +19857,10 @@ type UserEventPayload521 struct {
 		} `json:"most_specific_subdivision,omitempty"`
 		RegionName *string `json:"regionName,omitempty"`
 	} `json:"geolocation,omitempty"`
-	GrantType UserEventPayload521GrantType `json:"grantType"`
+	GrantType UserEventPayload525GrantType `json:"grantType"`
 
 	// IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
-	IncludesRefreshToken *UserEventPayload521IncludesRefreshToken `json:"includesRefreshToken,omitempty"`
+	IncludesRefreshToken *UserEventPayload525IncludesRefreshToken `json:"includesRefreshToken,omitempty"`
 
 	// Ip optional since entries prior to 2026-04-23 do not contain this field
 	Ip *string `json:"ip,omitempty"`
@@ -19584,7 +19878,7 @@ type UserEventPayload521 struct {
 	PublicId *string `json:"publicId,omitempty"`
 
 	// RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
-	RefreshTokenPrefix *UserEventPayload521RefreshTokenPrefix `json:"refreshTokenPrefix,omitempty"`
+	RefreshTokenPrefix *UserEventPayload525RefreshTokenPrefix `json:"refreshTokenPrefix,omitempty"`
 
 	// RefreshTokenPublicId optional; only present when a refresh token was issued (offline_access).
 	RefreshTokenPublicId *string `json:"refreshTokenPublicId,omitempty"`
@@ -19600,7 +19894,7 @@ type UserEventPayload521 struct {
 	SessionId *string `json:"sessionId,omitempty"`
 
 	// TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
-	TokenPrefix *UserEventPayload521TokenPrefix `json:"tokenPrefix,omitempty"`
+	TokenPrefix *UserEventPayload525TokenPrefix `json:"tokenPrefix,omitempty"`
 
 	// TokenSuffix optional since entries prior to 2026-04-23 do not contain this field
 	TokenSuffix *string `json:"tokenSuffix,omitempty"`
@@ -19609,32 +19903,32 @@ type UserEventPayload521 struct {
 	UserAgent *string `json:"userAgent,omitempty"`
 }
 
-// UserEventPayload521AppClientAuthenticationUsedMethod defines model for UserEvent.Payload.521.App.ClientAuthenticationUsed.Method.
-type UserEventPayload521AppClientAuthenticationUsedMethod string
+// UserEventPayload525AppClientAuthenticationUsedMethod defines model for UserEvent.Payload.525.App.ClientAuthenticationUsed.Method.
+type UserEventPayload525AppClientAuthenticationUsedMethod string
 
-// UserEventPayload521AuthMethod defines model for UserEvent.Payload.521.AuthMethod.
-type UserEventPayload521AuthMethod string
+// UserEventPayload525AuthMethod defines model for UserEvent.Payload.525.AuthMethod.
+type UserEventPayload525AuthMethod string
 
-// UserEventPayload521GrantType defines model for UserEvent.Payload.521.GrantType.
-type UserEventPayload521GrantType string
+// UserEventPayload525GrantType defines model for UserEvent.Payload.525.GrantType.
+type UserEventPayload525GrantType string
 
-// UserEventPayload521IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
-type UserEventPayload521IncludesRefreshToken bool
+// UserEventPayload525IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
+type UserEventPayload525IncludesRefreshToken bool
 
-// UserEventPayload521RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
-type UserEventPayload521RefreshTokenPrefix string
+// UserEventPayload525RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
+type UserEventPayload525RefreshTokenPrefix string
 
-// UserEventPayload521TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
-type UserEventPayload521TokenPrefix string
+// UserEventPayload525TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
+type UserEventPayload525TokenPrefix string
 
-// UserEventPayload522 The payload of the event, if requested.
-type UserEventPayload522 struct {
+// UserEventPayload526 The payload of the event, if requested.
+type UserEventPayload526 struct {
 	Domain    string `json:"domain"`
 	ProjectId string `json:"projectId"`
 }
 
-// UserEventPayload523 The payload of the event, if requested.
-type UserEventPayload523 struct {
+// UserEventPayload527 The payload of the event, if requested.
+type UserEventPayload527 struct {
 	AppName *string `json:"appName,omitempty"`
 
 	// Policy A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
@@ -19644,7 +19938,7 @@ type UserEventPayload523 struct {
 			Name   string `json:"name"`
 			Values []struct {
 				Value     string                                         `json:"value"`
-				Wildcards UserEventPayload523PolicyClaimsValuesWildcards `json:"wildcards"`
+				Wildcards UserEventPayload527PolicyClaimsValuesWildcards `json:"wildcards"`
 			} `json:"values"`
 		} `json:"claims"`
 		ClientId string `json:"clientId"`
@@ -19671,11 +19965,11 @@ type UserEventPayload523 struct {
 	} `json:"policy"`
 }
 
-// UserEventPayload523PolicyClaimsValuesWildcards defines model for UserEvent.Payload.523.Policy.Claims.Values.Wildcards.
-type UserEventPayload523PolicyClaimsValuesWildcards bool
+// UserEventPayload527PolicyClaimsValuesWildcards defines model for UserEvent.Payload.527.Policy.Claims.Values.Wildcards.
+type UserEventPayload527PolicyClaimsValuesWildcards bool
 
-// UserEventPayload524 The payload of the event, if requested.
-type UserEventPayload524 struct {
+// UserEventPayload528 The payload of the event, if requested.
+type UserEventPayload528 struct {
 	// After A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
 	After struct {
 		// Claims Claim matchers an OIDC token must satisfy to use the policy.
@@ -19683,7 +19977,7 @@ type UserEventPayload524 struct {
 			Name   string `json:"name"`
 			Values []struct {
 				Value     string                                        `json:"value"`
-				Wildcards UserEventPayload524AfterClaimsValuesWildcards `json:"wildcards"`
+				Wildcards UserEventPayload528AfterClaimsValuesWildcards `json:"wildcards"`
 			} `json:"values"`
 		} `json:"claims"`
 		ClientId string `json:"clientId"`
@@ -19717,7 +20011,7 @@ type UserEventPayload524 struct {
 			Name   string `json:"name"`
 			Values []struct {
 				Value     string                                         `json:"value"`
-				Wildcards UserEventPayload524BeforeClaimsValuesWildcards `json:"wildcards"`
+				Wildcards UserEventPayload528BeforeClaimsValuesWildcards `json:"wildcards"`
 			} `json:"values"`
 		} `json:"claims"`
 		ClientId string `json:"clientId"`
@@ -19743,269 +20037,3 @@ type UserEventPayload524 struct {
 		UpdatedAt float32 `json:"updatedAt"`
 	} `json:"before"`
 }
-
-// UserEventPayload524AfterClaimsValuesWildcards defines model for UserEvent.Payload.524.After.Claims.Values.Wildcards.
-type UserEventPayload524AfterClaimsValuesWildcards bool
-
-// UserEventPayload524BeforeClaimsValuesWildcards defines model for UserEvent.Payload.524.Before.Claims.Values.Wildcards.
-type UserEventPayload524BeforeClaimsValuesWildcards bool
-
-// UserEventPayload525 The payload of the event, if requested.
-type UserEventPayload525 struct {
-	CreatedByParentTeamId *string `json:"createdByParentTeamId,omitempty"`
-
-	// ExpiresAt Unix epoch milliseconds. Absent when the token never expires.
-	ExpiresAt   *float32 `json:"expiresAt,omitempty"`
-	Geolocation *struct {
-		City *struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"city,omitempty"`
-		Country struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"country"`
-		MostSpecificSubdivision *struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"most_specific_subdivision,omitempty"`
-		RegionName *string `json:"regionName,omitempty"`
-	} `json:"geolocation,omitempty"`
-
-	// HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
-	HasAuthorizationDetails *UserEventPayload525HasAuthorizationDetails `json:"hasAuthorizationDetails,omitempty"`
-	Ip                      *string                                     `json:"ip,omitempty"`
-
-	// OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
-	OrganizationScope *UserEventPayload525OrganizationScope `json:"organizationScope,omitempty"`
-
-	// Origin How the token was issued. Always `'manual'` for explicit PAT creation.
-	Origin UserEventPayload525Origin `json:"origin"`
-
-	// ProjectId Present when `scope` is `'project'`.
-	ProjectId *string `json:"projectId,omitempty"`
-
-	// ProjectName Present when `scope` is `'project'`.
-	ProjectName *string `json:"projectName,omitempty"`
-
-	// ProjectScope Present when `scope` is `'project'`.
-	ProjectScope *UserEventPayload525ProjectScope `json:"projectScope,omitempty"`
-	ReqId        *string                          `json:"reqId,omitempty"`
-	ReqUrl       *string                          `json:"reqUrl,omitempty"`
-
-	// Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
-	Scope  UserEventPayload525Scope   `json:"scope"`
-	Source *UserEventPayload525Source `json:"source,omitempty"`
-
-	// TeamId Present when `scope` is `'team'` or `'project'`.
-	TeamId *string `json:"teamId,omitempty"`
-
-	// TeamSlug Present when `scope` is `'team'` or `'project'`.
-	TeamSlug *string `json:"teamSlug,omitempty"`
-
-	// TokenId The token's public ID.
-	TokenId string `json:"tokenId"`
-
-	// TokenName User-supplied name of the token.
-	TokenName string `json:"tokenName"`
-
-	// TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
-	TokenPrefix *UserEventPayload525TokenPrefix `json:"tokenPrefix,omitempty"`
-
-	// TokenSuffix The token checksum suffix.
-	TokenSuffix *string `json:"tokenSuffix,omitempty"`
-	UserAgent   *string `json:"userAgent,omitempty"`
-}
-
-// UserEventPayload525HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
-type UserEventPayload525HasAuthorizationDetails bool
-
-// UserEventPayload525OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
-type UserEventPayload525OrganizationScope bool
-
-// UserEventPayload525Origin How the token was issued. Always `'manual'` for explicit PAT creation.
-type UserEventPayload525Origin string
-
-// UserEventPayload525ProjectScope Present when `scope` is `'project'`.
-type UserEventPayload525ProjectScope string
-
-// UserEventPayload525Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
-type UserEventPayload525Scope string
-
-// UserEventPayload525Source defines model for UserEvent.Payload.525.Source.
-type UserEventPayload525Source string
-
-// UserEventPayload525TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
-type UserEventPayload525TokenPrefix string
-
-// UserEventPayload526 The payload of the event, if requested.
-type UserEventPayload526 struct {
-	// ActorTokenId The token's public ID.
-	ActorTokenId          string                      `json:"actorTokenId"`
-	CreatedByParentTeamId *string                     `json:"createdByParentTeamId,omitempty"`
-	Expired               *UserEventPayload526Expired `json:"expired,omitempty"`
-	Geolocation           *struct {
-		City *struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"city,omitempty"`
-		Country struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"country"`
-		MostSpecificSubdivision *struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"most_specific_subdivision,omitempty"`
-		RegionName *string `json:"regionName,omitempty"`
-	} `json:"geolocation,omitempty"`
-	Ip           *string                          `json:"ip,omitempty"`
-	Leaked       *UserEventPayload526Leaked       `json:"leaked,omitempty"`
-	LogoutSource *UserEventPayload526LogoutSource `json:"logoutSource,omitempty"`
-	Origin       *UserEventPayload526Origin       `json:"origin,omitempty"`
-	Reason       *UserEventPayload526Reason       `json:"reason,omitempty"`
-	ReqId        *string                          `json:"reqId,omitempty"`
-	ReqUrl       *string                          `json:"reqUrl,omitempty"`
-	Revoked      *UserEventPayload526Revoked      `json:"revoked,omitempty"`
-	Scope        *UserEventPayload526Scope        `json:"scope,omitempty"`
-	Source       *UserEventPayload526Source       `json:"source,omitempty"`
-	TeamId       *string                          `json:"teamId,omitempty"`
-	TokenId      string                           `json:"tokenId"`
-	TokenName    string                           `json:"tokenName"`
-	TokenType    string                           `json:"tokenType"`
-	UserAgent    *string                          `json:"userAgent,omitempty"`
-}
-
-// UserEventPayload526Expired defines model for UserEvent.Payload.526.Expired.
-type UserEventPayload526Expired bool
-
-// UserEventPayload526Leaked defines model for UserEvent.Payload.526.Leaked.
-type UserEventPayload526Leaked bool
-
-// UserEventPayload526LogoutSource defines model for UserEvent.Payload.526.LogoutSource.
-type UserEventPayload526LogoutSource string
-
-// UserEventPayload526Origin defines model for UserEvent.Payload.526.Origin.
-type UserEventPayload526Origin string
-
-// UserEventPayload526Reason defines model for UserEvent.Payload.526.Reason.
-type UserEventPayload526Reason string
-
-// UserEventPayload526Revoked defines model for UserEvent.Payload.526.Revoked.
-type UserEventPayload526Revoked bool
-
-// UserEventPayload526Scope defines model for UserEvent.Payload.526.Scope.
-type UserEventPayload526Scope string
-
-// UserEventPayload526Source defines model for UserEvent.Payload.526.Source.
-type UserEventPayload526Source string
-
-// UserEventPayload527 The payload of the event, if requested.
-type UserEventPayload527 struct {
-	// ActorTokenId The token's public ID.
-	ActorTokenId string  `json:"actorTokenId"`
-	DeletedCount float32 `json:"deletedCount"`
-	Geolocation  *struct {
-		City *struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"city,omitempty"`
-		Country struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"country"`
-		MostSpecificSubdivision *struct {
-			Names struct {
-				En string `json:"en"`
-			} `json:"names"`
-		} `json:"most_specific_subdivision,omitempty"`
-		RegionName *string `json:"regionName,omitempty"`
-	} `json:"geolocation,omitempty"`
-	Ip        *string `json:"ip,omitempty"`
-	ReqId     *string `json:"reqId,omitempty"`
-	ReqUrl    *string `json:"reqUrl,omitempty"`
-	UserAgent *string `json:"userAgent,omitempty"`
-}
-
-// UserEvent_Payload defines model for UserEvent.Payload.
-type UserEvent_Payload struct {
-	union json.RawMessage
-}
-
-// UserEventPrincipal0 Metadata for {@link principalId}.
-type UserEventPrincipal0 struct {
-	Avatar   string                   `json:"avatar"`
-	Email    string                   `json:"email"`
-	Slug     *string                  `json:"slug,omitempty"`
-	Type     *UserEventPrincipal0Type `json:"type,omitempty"`
-	Uid      string                   `json:"uid"`
-	Username string                   `json:"username"`
-}
-
-// UserEventPrincipal0Type defines model for UserEvent.Principal.0.Type.
-type UserEventPrincipal0Type string
-
-// UserEventPrincipal1 Metadata for {@link principalId}.
-type UserEventPrincipal1 struct {
-	// ClientId The OAuth 2.0 client ID, which may be a CIMD URL.
-	ClientId string `json:"clientId"`
-
-	// Id The backing Vercel App ID. When absent, defaults to `clientId`.
-	Id   *string                 `json:"id,omitempty"`
-	Name string                  `json:"name"`
-	Type UserEventPrincipal1Type `json:"type"`
-}
-
-// UserEventPrincipal1Type defines model for UserEvent.Principal.1.Type.
-type UserEventPrincipal1Type string
-
-// UserEventPrincipal2 Metadata for {@link principalId}.
-type UserEventPrincipal2 struct {
-	Avatar *string `json:"avatar,omitempty"`
-
-	// Id The OAuth2 integration ID.
-	Id   string                  `json:"id"`
-	Name string                  `json:"name"`
-	Slug *string                 `json:"slug,omitempty"`
-	Type UserEventPrincipal2Type `json:"type"`
-}
-
-// UserEventPrincipal2Type defines model for UserEvent.Principal.2.Type.
-type UserEventPrincipal2Type string
-
-// UserEventPrincipal3 Metadata for {@link principalId}.
-type UserEventPrincipal3 struct {
-	Email *string                 `json:"email,omitempty"`
-	Id    string                  `json:"id"`
-	Name  string                  `json:"name"`
-	Type  UserEventPrincipal3Type `json:"type"`
-}
-
-// UserEventPrincipal3Type defines model for UserEvent.Principal.3.Type.
-type UserEventPrincipal3Type string
-
-// UserEventPrincipal4 Metadata for {@link principalId}.
-type UserEventPrincipal4 struct {
-	Type UserEventPrincipal4Type `json:"type"`
-}
-
-// UserEventPrincipal4Type defines model for UserEvent.Principal.4.Type.
-type UserEventPrincipal4Type string
-
-// UserEvent_Principal defines model for UserEvent.Principal.
-type UserEvent_Principal struct {
-	union json.RawMessage
-}
-
-// UserEventType The type of the event.
-//
-// Example: login
-type UserEventType string

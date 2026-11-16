@@ -14,6 +14,118 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+func (t CreateSandboxesV2JSONBody_Source) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CreateSandboxesV2JSONBody_Source) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsListSessions200JSONResponseBody0 returns the union data inside the ListSessions200JSONResponseBody as a ListSessions200JSONResponseBody0
+func (t ListSessions200JSONResponseBody) AsListSessions200JSONResponseBody0() (ListSessions200JSONResponseBody0, error) {
+	var body ListSessions200JSONResponseBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListSessions200JSONResponseBody0 overwrites any union data inside the ListSessions200JSONResponseBody as the provided ListSessions200JSONResponseBody0
+func (t *ListSessions200JSONResponseBody) FromListSessions200JSONResponseBody0(v ListSessions200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListSessions200JSONResponseBody0 performs a merge with any union data inside the ListSessions200JSONResponseBody, using the provided ListSessions200JSONResponseBody0
+func (t *ListSessions200JSONResponseBody) MergeListSessions200JSONResponseBody0(v ListSessions200JSONResponseBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsListSessions200JSONResponseBody1 returns the union data inside the ListSessions200JSONResponseBody as a ListSessions200JSONResponseBody1
+func (t ListSessions200JSONResponseBody) AsListSessions200JSONResponseBody1() (ListSessions200JSONResponseBody1, error) {
+	var body ListSessions200JSONResponseBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromListSessions200JSONResponseBody1 overwrites any union data inside the ListSessions200JSONResponseBody as the provided ListSessions200JSONResponseBody1
+func (t *ListSessions200JSONResponseBody) FromListSessions200JSONResponseBody1(v ListSessions200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeListSessions200JSONResponseBody1 performs a merge with any union data inside the ListSessions200JSONResponseBody, using the provided ListSessions200JSONResponseBody1
+func (t *ListSessions200JSONResponseBody) MergeListSessions200JSONResponseBody1(v ListSessions200JSONResponseBody1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ListSessions200JSONResponseBody) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ListSessions200JSONResponseBody) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateSessionNetworkPolicyJSONBody0 returns the union data inside the UpdateSessionNetworkPolicyJSONBody as a UpdateSessionNetworkPolicyJSONBody0
+func (t UpdateSessionNetworkPolicyJSONBody) AsUpdateSessionNetworkPolicyJSONBody0() (UpdateSessionNetworkPolicyJSONBody0, error) {
+	var body UpdateSessionNetworkPolicyJSONBody0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSessionNetworkPolicyJSONBody0 overwrites any union data inside the UpdateSessionNetworkPolicyJSONBody as the provided UpdateSessionNetworkPolicyJSONBody0
+func (t *UpdateSessionNetworkPolicyJSONBody) FromUpdateSessionNetworkPolicyJSONBody0(v UpdateSessionNetworkPolicyJSONBody0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateSessionNetworkPolicyJSONBody0 performs a merge with any union data inside the UpdateSessionNetworkPolicyJSONBody, using the provided UpdateSessionNetworkPolicyJSONBody0
+func (t *UpdateSessionNetworkPolicyJSONBody) MergeUpdateSessionNetworkPolicyJSONBody0(v UpdateSessionNetworkPolicyJSONBody0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateSessionNetworkPolicyJSONBody1 returns the union data inside the UpdateSessionNetworkPolicyJSONBody as a UpdateSessionNetworkPolicyJSONBody1
+func (t UpdateSessionNetworkPolicyJSONBody) AsUpdateSessionNetworkPolicyJSONBody1() (UpdateSessionNetworkPolicyJSONBody1, error) {
+	var body UpdateSessionNetworkPolicyJSONBody1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateSessionNetworkPolicyJSONBody1 overwrites any union data inside the UpdateSessionNetworkPolicyJSONBody as the provided UpdateSessionNetworkPolicyJSONBody1
+func (t *UpdateSessionNetworkPolicyJSONBody) FromUpdateSessionNetworkPolicyJSONBody1(v UpdateSessionNetworkPolicyJSONBody1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
 // MergeUpdateSessionNetworkPolicyJSONBody1 performs a merge with any union data inside the UpdateSessionNetworkPolicyJSONBody, using the provided UpdateSessionNetworkPolicyJSONBody1
 func (t *UpdateSessionNetworkPolicyJSONBody) MergeUpdateSessionNetworkPolicyJSONBody1(v UpdateSessionNetworkPolicyJSONBody1) error {
 	b, err := json.Marshal(v)
@@ -15198,19 +15310,19 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/drives (the `ListDrivesV1` operationId).
 	ListDrivesV1(ctx context.Context, params *ListDrivesV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// DeleteDriveV1 Delete a drive
+	//
+	// Deletes a drive by project and name or drive ID. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+	//
+	// Corresponds with DELETE /v1/drives/{nameOrId} (the `DeleteDriveV1` operationId).
+	DeleteDriveV1(ctx context.Context, nameOrId string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetDriveV1 Get a drive
 	//
 	// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
 	//
 	// Corresponds with GET /v1/drives/{nameOrId} (the `GetDriveV1` operationId).
 	GetDriveV1(ctx context.Context, nameOrId string, params *GetDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteDriveV1 Delete a drive
-	//
-	// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
-	//
-	// Corresponds with DELETE /v1/drives/{name} (the `DeleteDriveV1` operationId).
-	DeleteDriveV1(ctx context.Context, name string, params *DeleteDriveV1Params, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetOrCreateDriveV1WithBody Get or create a drive
 	//
@@ -18588,6 +18700,16 @@ type ClientInterface interface {
 	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	ListDrives(ctx context.Context, params *ListDrivesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// DeleteDrive Deprecated: Use DELETE /v1/drives/:nameOrId. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
+	// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
+	//
+	// Deletes a drive by project and name or drive ID. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
+	//
+	// Corresponds with DELETE /v2/sandboxes/drives/{nameOrId} (the `DeleteDrive` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	DeleteDrive(ctx context.Context, nameOrId string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetDrive Deprecated: Use GET /v1/drives/:nameOrId. Requires the read:drive app scope instead of read:sandbox, and drive:read instead of vercelRun:read. Get a drive
 	//
 	// Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
@@ -18596,16 +18718,6 @@ type ClientInterface interface {
 	//
 	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	GetDrive(ctx context.Context, nameOrId string, params *GetDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteDrive Deprecated: Use DELETE /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:delete instead of vercelRun:delete.
-	// Emits drive-deleted activity events instead of sandbox-drive-deleted. Delete a drive
-	//
-	// Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
-	//
-	// Corresponds with DELETE /v2/sandboxes/drives/{name} (the `DeleteDrive` operationId).
-	//
-	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
-	DeleteDrive(ctx context.Context, name string, params *DeleteDriveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetOrCreateDriveWithBody Deprecated: Use POST /v1/drives/:name. Requires the read-write:drive app scope instead of read-write:sandbox, and drive:create instead of vercelRun:create.
 	// Emits drive-created activity events instead of sandbox-drive-created. Get or create a drive
@@ -18678,7 +18790,7 @@ type ClientInterface interface {
 
 	// RunSessionCommandWithBody Execute a command
 	//
-	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion. When `wait` is true, send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the stream as a CBOR Sequence (RFC 8742) instead of ND-JSON. Each item is a two-element array `[TYPE, PAYLOAD]`. `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, `3` for a stream failure with a `{ code, message }` map, or `128` for the `SessionCommand` as a map, sent when the command starts and again when it finishes.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -18687,7 +18799,7 @@ type ClientInterface interface {
 
 	// RunSessionCommand Execute a command
 	//
-	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+	// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion. When `wait` is true, send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the stream as a CBOR Sequence (RFC 8742) instead of ND-JSON. Each item is a two-element array `[TYPE, PAYLOAD]`. `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, `3` for a stream failure with a `{ code, message }` map, or `128` for the `SessionCommand` as a map, sent when the command starts and again when it finishes.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -18721,7 +18833,7 @@ type ClientInterface interface {
 
 	// GetSessionCommandLogs Stream command logs
 	//
-	// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
+	// Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures). Send `Accept: application/vnd.vercel.sandbox.command-stream+cbor-seq` to receive the raw output bytes as a CBOR Sequence (RFC 8742) instead. Each item is a two-element array `[TYPE, PAYLOAD]`, where `TYPE` is `1` for stdout or `2` for stderr with the raw output as a byte string, or `3` for a stream failure with a `{ code, message }` map.
 	//
 	// Corresponds with GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs (the `GetSessionCommandLogs` operationId).
 	GetSessionCommandLogs(ctx context.Context, sessionId string, cmdId string, params *GetSessionCommandLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19910,108 +20022,6 @@ func (c *Client) UpdateAiGatewayByokCredentialWithBody(ctx context.Context, cred
 // Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
 func (c *Client) UpdateAiGatewayByokCredential(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, body UpdateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateAiGatewayByokCredentialRequest(c.Server, credentialId, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAiGatewayRule Delete rule
-//
-// Delete a routing rule (soft delete).
-//
-// Corresponds with DELETE /ai-gateway/rules (the `DeleteAiGatewayRule` operationId).
-func (c *Client) DeleteAiGatewayRule(ctx context.Context, params *DeleteAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAiGatewayRuleRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// ListAiGatewayRules List rules
-//
-// List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
-//
-// Corresponds with GET /ai-gateway/rules (the `ListAiGatewayRules` operationId).
-func (c *Client) ListAiGatewayRules(ctx context.Context, params *ListAiGatewayRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAiGatewayRulesRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// UpdateAiGatewayRule Update rule
-//
-// Update a routing rule (enabled, action, or description)
-//
-// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
-func (c *Client) UpdateAiGatewayRule(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAiGatewayRuleRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// CreateAiGatewayRule Create rule
-//
-// Create a routing rule.
-//
-// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
-func (c *Client) CreateAiGatewayRule(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAiGatewayRuleRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteAiGatewayVirtualModelConfig Delete virtual model config
-//
-// Delete a virtual model config (soft delete).
-//
-// Corresponds with DELETE /ai-gateway/virtual-model-configs (the `DeleteAiGatewayVirtualModelConfig` operationId).
-func (c *Client) DeleteAiGatewayVirtualModelConfig(ctx context.Context, params *DeleteAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteAiGatewayVirtualModelConfigRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetAiGatewayVirtualModelConfig Get virtual model config
-//
-// Get a virtual model config.
-//
-// Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
-func (c *Client) GetAiGatewayVirtualModelConfig(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetAiGatewayVirtualModelConfigRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
