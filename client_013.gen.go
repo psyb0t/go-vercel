@@ -12,6 +12,1873 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateRecordJSONBody2 defines parameters for CreateRecord.
+type CreateRecordJSONBody2 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Name A subdomain name or an empty string for the root domain.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `ALIAS`.
+	Type CreateRecordJSONBody2Type `json:"type"`
+
+	// Value An ALIAS virtual record pointing to a hostname resolved to an A record on server side.
+	//
+	// Example: cname.vercel-dns.com
+	Value string `json:"value"`
+}
+
+// CreateRecordJSONBody2Type defines parameters for CreateRecord.
+type CreateRecordJSONBody2Type string
+
+// CreateRecordJSONBody3 defines parameters for CreateRecord.
+type CreateRecordJSONBody3 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Name A subdomain name or an empty string for the root domain.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `CAA`.
+	Type CreateRecordJSONBody3Type `json:"type"`
+
+	// Value A CAA record to specify which Certificate Authorities (CAs) are allowed to issue certificates for the domain.
+	//
+	// Example: 0 issue "letsencrypt.org"
+	Value string `json:"value"`
+}
+
+// CreateRecordJSONBody3Type defines parameters for CreateRecord.
+type CreateRecordJSONBody3Type string
+
+// CreateRecordJSONBody4 defines parameters for CreateRecord.
+type CreateRecordJSONBody4 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Name A subdomain name or an empty string for the root domain.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `CNAME`.
+	Type CreateRecordJSONBody4Type `json:"type"`
+
+	// Value A CNAME record mapping to another domain name.
+	//
+	// Example: cname.vercel-dns.com
+	Value *string `json:"value,omitempty"`
+}
+
+// CreateRecordJSONBody4Type defines parameters for CreateRecord.
+type CreateRecordJSONBody4Type string
+
+// CreateRecordJSONBody5 defines parameters for CreateRecord.
+type CreateRecordJSONBody5 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// MxPriority Example: 10
+	MxPriority float32 `json:"mxPriority"`
+
+	// Name A subdomain name or an empty string for the root domain.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `MX`.
+	Type CreateRecordJSONBody5Type `json:"type"`
+
+	// Value An MX record specifying the mail server responsible for accepting messages on behalf of the domain name.
+	//
+	// Example: 10 mail.example.com.
+	Value string `json:"value"`
+}
+
+// CreateRecordJSONBody5Type defines parameters for CreateRecord.
+type CreateRecordJSONBody5Type string
+
+// CreateRecordJSONBody6 defines parameters for CreateRecord.
+type CreateRecordJSONBody6 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+	Srv     struct {
+		Port     *CreateRecordJSONBody_6_Srv_Port     `json:"port"`
+		Priority *CreateRecordJSONBody_6_Srv_Priority `json:"priority"`
+
+		// Target Example: host.example.com
+		Target string                             `json:"target"`
+		Weight *CreateRecordJSONBody_6_Srv_Weight `json:"weight"`
+	} `json:"srv"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `SRV`.
+	Type CreateRecordJSONBody6Type `json:"type"`
+}
+
+// CreateRecordJSONBody6SrvPort0 defines parameters for CreateRecord.
+type CreateRecordJSONBody6SrvPort0 = float32
+
+// CreateRecordJSONBody_6_Srv_Port defines parameters for CreateRecord.
+type CreateRecordJSONBody_6_Srv_Port struct {
+	union json.RawMessage
+}
+
+// CreateRecordJSONBody6SrvPriority0 defines parameters for CreateRecord.
+type CreateRecordJSONBody6SrvPriority0 = float32
+
+// CreateRecordJSONBody_6_Srv_Priority defines parameters for CreateRecord.
+type CreateRecordJSONBody_6_Srv_Priority struct {
+	union json.RawMessage
+}
+
+// CreateRecordJSONBody6SrvWeight0 defines parameters for CreateRecord.
+type CreateRecordJSONBody6SrvWeight0 = float32
+
+// CreateRecordJSONBody_6_Srv_Weight defines parameters for CreateRecord.
+type CreateRecordJSONBody_6_Srv_Weight struct {
+	union json.RawMessage
+}
+
+// CreateRecordJSONBody6Type defines parameters for CreateRecord.
+type CreateRecordJSONBody6Type string
+
+// CreateRecordJSONBody7 defines parameters for CreateRecord.
+type CreateRecordJSONBody7 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `TXT`.
+	Type CreateRecordJSONBody7Type `json:"type"`
+
+	// Value A TXT record containing arbitrary text.
+	//
+	// Example: hello
+	Value string `json:"value"`
+}
+
+// CreateRecordJSONBody7Type defines parameters for CreateRecord.
+type CreateRecordJSONBody7Type string
+
+// CreateRecordJSONBody8 defines parameters for CreateRecord.
+type CreateRecordJSONBody8 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Name A subdomain name.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `NS`.
+	Type CreateRecordJSONBody8Type `json:"type"`
+
+	// Value An NS domain value.
+	//
+	// Example: ns1.example.com
+	Value *string `json:"value,omitempty"`
+}
+
+// CreateRecordJSONBody8Type defines parameters for CreateRecord.
+type CreateRecordJSONBody8Type string
+
+// CreateRecordJSONBody9 defines parameters for CreateRecord.
+type CreateRecordJSONBody9 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+	Https   struct {
+		// Params Example: alpn=h2,h3
+		Params   *string                                `json:"params,omitempty"`
+		Priority *CreateRecordJSONBody_9_Https_Priority `json:"priority"`
+
+		// Target Example: host.example.com
+		Target string `json:"target"`
+	} `json:"https"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `HTTPS`.
+	Type CreateRecordJSONBody9Type `json:"type"`
+}
+
+// CreateRecordJSONBody9HttpsPriority0 defines parameters for CreateRecord.
+type CreateRecordJSONBody9HttpsPriority0 = float32
+
+// CreateRecordJSONBody_9_Https_Priority defines parameters for CreateRecord.
+type CreateRecordJSONBody_9_Https_Priority struct {
+	union json.RawMessage
+}
+
+// CreateRecordJSONBody9Type defines parameters for CreateRecord.
+type CreateRecordJSONBody9Type string
+
+// CreateRecord200JSONResponseBody0 defines parameters for CreateRecord.
+type CreateRecord200JSONResponseBody0 struct {
+	Uid     *string `json:"uid,omitempty"`
+	Updated float32 `json:"updated"`
+}
+
+// CreateRecord200JSONResponseBody1 defines parameters for CreateRecord.
+type CreateRecord200JSONResponseBody1 struct {
+	// Uid The id of the newly created DNS record
+	//
+	// Example: rec_V0fra8eEgQwEpFhYG2vTzC3K
+	Uid string `json:"uid"`
+}
+
+// CreateRecord200JSONResponseBody defines parameters for CreateRecord.
+type CreateRecord200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// RemoveRecordParams defines parameters for RemoveRecord.
+type RemoveRecordParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UploadFileParams defines parameters for UploadFile.
+type UploadFileParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+
+	// ContentLength The file size in bytes
+	ContentLength *float32 `json:"Content-Length,omitempty"`
+
+	// XVercelDigest The file SHA1 used to check the integrity
+	XVercelDigest *string `json:"x-vercel-digest,omitempty"`
+
+	// XNowDigest The file SHA1 used to check the integrity
+	XNowDigest *string `json:"x-now-digest,omitempty"`
+
+	// XNowSize The file size as an alternative to `Content-Length`
+	XNowSize *float32 `json:"x-now-size,omitempty"`
+}
+
+// UploadFile200JSONResponseBody0 defines parameters for UploadFile.
+type UploadFile200JSONResponseBody0 struct {
+	// Urls Array of URLs where the file was updated
+	//
+	// Example: ["example-upload.aws.com"]
+	Urls []string `json:"urls"`
+}
+
+// UploadFile200JSONResponseBody1 defines parameters for UploadFile.
+type UploadFile200JSONResponseBody1 = map[string]interface{}
+
+// UploadFile200JSONResponseBody defines parameters for UploadFile.
+type UploadFile200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GetIntegrationLogDrainsParams defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrainsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetIntegrationLogDrains200JSONResponseBodyCreatedFrom defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodyCreatedFrom string
+
+// GetIntegrationLogDrains200JSONResponseBodyDeliveryFormat defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodyDeliveryFormat string
+
+// GetIntegrationLogDrains200JSONResponseBodyEnvironments defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodyEnvironments string
+
+// GetIntegrationLogDrains200JSONResponseBodySource0 defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodySource0 struct {
+	// DefaultFor Informational marker for a system-owned default drain.
+	DefaultFor *GetIntegrationLogDrains200JSONResponseBodySource0DefaultFor `json:"defaultFor,omitempty"`
+	Kind       GetIntegrationLogDrains200JSONResponseBodySource0Kind        `json:"kind"`
+}
+
+// GetIntegrationLogDrains200JSONResponseBodySource0DefaultFor defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodySource0DefaultFor string
+
+// GetIntegrationLogDrains200JSONResponseBodySource0Kind defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodySource0Kind string
+
+// GetIntegrationLogDrains200JSONResponseBodySource1 defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodySource1 struct {
+	ExternalResourceId         *string                                               `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                                `json:"integrationConfigurationId"`
+	IntegrationId              string                                                `json:"integrationId"`
+	Kind                       GetIntegrationLogDrains200JSONResponseBodySource1Kind `json:"kind"`
+	ResourceId                 *string                                               `json:"resourceId,omitempty"`
+}
+
+// GetIntegrationLogDrains200JSONResponseBodySource1Kind defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodySource1Kind string
+
+// GetIntegrationLogDrains200JSONResponseBody_Source defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBody_Source struct {
+	union json.RawMessage
+}
+
+// GetIntegrationLogDrains200JSONResponseBodySources defines parameters for GetIntegrationLogDrains.
+type GetIntegrationLogDrains200JSONResponseBodySources string
+
+// CreateLogDrainJSONBody defines parameters for CreateLogDrain.
+type CreateLogDrainJSONBody struct {
+	// DeliveryFormat The delivery log format
+	//
+	// Example: json
+	DeliveryFormat interface{}                           `json:"deliveryFormat,omitempty"`
+	Environments   *[]CreateLogDrainJSONBodyEnvironments `json:"environments,omitempty"`
+
+	// Headers Headers to be sent together with the request
+	Headers *map[string]string `json:"headers,omitempty"`
+
+	// Name The name of the log drain
+	//
+	// Example: My first log drain
+	Name       string    `json:"name"`
+	ProjectIds *[]string `json:"projectIds,omitempty"`
+
+	// Secret A secret to sign log drain notification headers so a consumer can verify their authenticity
+	//
+	// Example: a1Xsfd325fXcs
+	Secret  *string                          `json:"secret,omitempty"`
+	Sources *[]CreateLogDrainJSONBodySources `json:"sources,omitempty"`
+
+	// Url The url where you will receive logs. The protocol must be `https://` or `http://` when type is `json` and `ndjson`.
+	//
+	// Example: https://example.com/log-drain
+	Url string `json:"url"`
+}
+
+// CreateLogDrainParams defines parameters for CreateLogDrain.
+type CreateLogDrainParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateLogDrainJSONBodyEnvironments defines parameters for CreateLogDrain.
+type CreateLogDrainJSONBodyEnvironments string
+
+// CreateLogDrainJSONBodySources defines parameters for CreateLogDrain.
+type CreateLogDrainJSONBodySources string
+
+// CreateLogDrain200JSONResponseBodyCreatedFrom defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodyCreatedFrom string
+
+// CreateLogDrain200JSONResponseBodyDeliveryFormat defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodyDeliveryFormat string
+
+// CreateLogDrain200JSONResponseBodyEnvironments defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodyEnvironments string
+
+// CreateLogDrain200JSONResponseBodySource0 defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodySource0 struct {
+	// DefaultFor Informational marker for a system-owned default drain.
+	DefaultFor *CreateLogDrain200JSONResponseBodySource0DefaultFor `json:"defaultFor,omitempty"`
+	Kind       CreateLogDrain200JSONResponseBodySource0Kind        `json:"kind"`
+}
+
+// CreateLogDrain200JSONResponseBodySource0DefaultFor defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodySource0DefaultFor string
+
+// CreateLogDrain200JSONResponseBodySource0Kind defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodySource0Kind string
+
+// CreateLogDrain200JSONResponseBodySource1 defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodySource1 struct {
+	ExternalResourceId         *string                                      `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                       `json:"integrationConfigurationId"`
+	IntegrationId              string                                       `json:"integrationId"`
+	Kind                       CreateLogDrain200JSONResponseBodySource1Kind `json:"kind"`
+	ResourceId                 *string                                      `json:"resourceId,omitempty"`
+}
+
+// CreateLogDrain200JSONResponseBodySource1Kind defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodySource1Kind string
+
+// CreateLogDrain200JSONResponseBody_Source defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBody_Source struct {
+	union json.RawMessage
+}
+
+// CreateLogDrain200JSONResponseBodySources defines parameters for CreateLogDrain.
+type CreateLogDrain200JSONResponseBodySources string
+
+// CreateObservabilityQueryJSONBody defines parameters for CreateObservabilityQuery.
+type CreateObservabilityQueryJSONBody struct {
+	// Aggregation Aggregation function to apply. Some aggregations require a dimension: use <agg>/<dimension>, for example unique/visitor_id.
+	Aggregation *string `json:"aggregation,omitempty"`
+
+	// BucketTimezone IANA timezone (e.g. Europe/Paris) used only to align calendar buckets (1d/1mo) to that zone's day/month boundaries. startTime/endTime and all output timestamps are always UTC. No effect on sub-day granularities.
+	BucketTimezone *string `json:"bucketTimezone,omitempty"`
+
+	// EndTime End timestamp
+	EndTime *string `json:"endTime,omitempty"`
+
+	// Filter Filter to apply to the query. JSON dimensions support nested refs, for example event_data/checkout_step eq 'payment'. Nested keys containing characters that OData cannot parse as an identifier, such as '-', spaces, quotes, or '/', must be wrapped in single quotes (escape embedded single quotes by doubling them), for example flags/'enable-comments-view' eq true or event_data/'some property''s/value' eq true.
+	Filter *string `json:"filter,omitempty"`
+
+	// Granularity Time bucket size
+	Granularity *map[string]interface{} `json:"granularity,omitempty"`
+
+	// GroupBy Dimensions to group results by. JSON dimensions support nested refs, for example event_data/checkout_step. Nested keys containing characters that OData cannot parse as an identifier, such as '-', spaces, quotes, or '/', must be wrapped in single quotes (escape embedded single quotes by doubling them), for example flags/'enable-comments-view' or event_data/'some property''s/value'.
+	GroupBy *[]string `json:"groupBy,omitempty"`
+
+	// Limit Maximum number of results
+	Limit *float32 `json:"limit,omitempty"`
+
+	// Metric Metric id
+	Metric string `json:"metric"`
+
+	// OrderBy Rollup column to order grouped results by. Use the generated rollup key for the requested metric and aggregation. Defaults to the query engine count rollup.
+	OrderBy *string `json:"orderBy,omitempty"`
+
+	// OrderDirection Direction to order grouped results by. Defaults to desc.
+	OrderDirection *CreateObservabilityQueryJSONBodyOrderDirection `json:"orderDirection,omitempty"`
+
+	// Scope Owner or project scope for the query
+	Scope map[string]interface{} `json:"scope"`
+
+	// StartTime Start timestamp
+	StartTime            *string                `json:"startTime,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// CreateObservabilityQueryJSONBodyOrderDirection defines parameters for CreateObservabilityQuery.
+type CreateObservabilityQueryJSONBodyOrderDirection string
+
+// ListProjectChecksParams defines parameters for ListProjectChecks.
+type ListProjectChecksParams struct {
+	Blocks *ListProjectChecksParamsBlocks `form:"blocks,omitempty" json:"blocks,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListProjectChecksParamsBlocks defines parameters for ListProjectChecks.
+type ListProjectChecksParamsBlocks string
+
+// ListProjectChecks200JSONResponseBodyChecksBlocks defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksBlocks string
+
+// ListProjectChecks200JSONResponseBodyChecksIsRerequestable defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksIsRerequestable bool
+
+// ListProjectChecks200JSONResponseBodyChecksRequires defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksRequires string
+
+// ListProjectChecks200JSONResponseBodyChecksSource0 defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource0 struct {
+	ExternalResourceId         *string                                               `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                                `json:"integrationConfigurationId"`
+	IntegrationId              string                                                `json:"integrationId"`
+	Kind                       ListProjectChecks200JSONResponseBodyChecksSource0Kind `json:"kind"`
+	ResourceId                 *string                                               `json:"resourceId,omitempty"`
+}
+
+// ListProjectChecks200JSONResponseBodyChecksSource0Kind defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource0Kind string
+
+// ListProjectChecks200JSONResponseBodyChecksSource1 defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource1 struct {
+	Kind      ListProjectChecks200JSONResponseBodyChecksSource1Kind `json:"kind"`
+	WebhookId *string                                               `json:"webhookId,omitempty"`
+}
+
+// ListProjectChecks200JSONResponseBodyChecksSource1Kind defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource1Kind string
+
+// ListProjectChecks200JSONResponseBodyChecksSource2 defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource2 struct {
+	ExternalCheckName string                                                    `json:"externalCheckName"`
+	Kind              ListProjectChecks200JSONResponseBodyChecksSource2Kind     `json:"kind"`
+	Provider          ListProjectChecks200JSONResponseBodyChecksSource2Provider `json:"provider"`
+}
+
+// ListProjectChecks200JSONResponseBodyChecksSource2Kind defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource2Kind string
+
+// ListProjectChecks200JSONResponseBodyChecksSource2Provider defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSource2Provider string
+
+// ListProjectChecks200JSONResponseBody_Checks_Source defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBody_Checks_Source struct {
+	union json.RawMessage
+}
+
+// ListProjectChecks200JSONResponseBodyChecksSourceKind defines parameters for ListProjectChecks.
+type ListProjectChecks200JSONResponseBodyChecksSourceKind string
+
+// CreateProjectCheckJSONBody defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBody struct {
+	Blocks *CreateProjectCheckJSONBodyBlocks `json:"blocks,omitempty"`
+
+	// IsRerequestable Whether check runs can be manually re-requested. Git provider checks cannot be re-requested.
+	IsRerequestable *bool                              `json:"isRerequestable,omitempty"`
+	Name            string                             `json:"name"`
+	Requires        CreateProjectCheckJSONBodyRequires `json:"requires"`
+	Source          *CreateProjectCheckJSONBody_Source `json:"source,omitempty"`
+
+	// Targets Deployment targets where this check applies. Valid values are "production", "preview", "all", or a Custom Environment ID such as "env_...". If omitted, defaults to ["production"]. "all" cannot be combined with other targets.
+	Targets *[]string `json:"targets,omitempty"`
+	Timeout *float32  `json:"timeout,omitempty"`
+}
+
+// CreateProjectCheckParams defines parameters for CreateProjectCheck.
+type CreateProjectCheckParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateProjectCheckJSONBodyBlocks defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBodyBlocks string
+
+// CreateProjectCheckJSONBodyRequires defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBodyRequires string
+
+// CreateProjectCheckJSONBodySource0 defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBodySource0 struct {
+	ExternalResourceId         *string `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId *string `json:"integrationConfigurationId,omitempty"`
+	IntegrationId              *string `json:"integrationId,omitempty"`
+	Kind                       *string `json:"kind,omitempty"`
+	ResourceId                 *string `json:"resourceId,omitempty"`
+}
+
+// CreateProjectCheckJSONBodySource1 defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBodySource1 struct {
+	Kind      string  `json:"kind"`
+	WebhookId *string `json:"webhookId,omitempty"`
+}
+
+// CreateProjectCheckJSONBodySource2 defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBodySource2 struct {
+	// ExternalCheckName The Git provider check name or context to match, for example a GitHub Actions job name.
+	ExternalCheckName string `json:"externalCheckName"`
+
+	// Kind Imports Git provider check results, such as GitHub check runs or commit statuses, as Deployment Checks.
+	Kind     string                                    `json:"kind"`
+	Provider CreateProjectCheckJSONBodySource2Provider `json:"provider"`
+}
+
+// CreateProjectCheckJSONBodySource2Provider defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBodySource2Provider string
+
+// CreateProjectCheckJSONBody_Source defines parameters for CreateProjectCheck.
+type CreateProjectCheckJSONBody_Source struct {
+	union json.RawMessage
+}
+
+// CreateProjectCheck200JSONResponseBodyBlocks defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodyBlocks string
+
+// CreateProjectCheck200JSONResponseBodyIsRerequestable defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodyIsRerequestable bool
+
+// CreateProjectCheck200JSONResponseBodyRequires defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodyRequires string
+
+// CreateProjectCheck200JSONResponseBodySource0 defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource0 struct {
+	ExternalResourceId         *string                                          `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                           `json:"integrationConfigurationId"`
+	IntegrationId              string                                           `json:"integrationId"`
+	Kind                       CreateProjectCheck200JSONResponseBodySource0Kind `json:"kind"`
+	ResourceId                 *string                                          `json:"resourceId,omitempty"`
+}
+
+// CreateProjectCheck200JSONResponseBodySource0Kind defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource0Kind string
+
+// CreateProjectCheck200JSONResponseBodySource1 defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource1 struct {
+	Kind      CreateProjectCheck200JSONResponseBodySource1Kind `json:"kind"`
+	WebhookId *string                                          `json:"webhookId,omitempty"`
+}
+
+// CreateProjectCheck200JSONResponseBodySource1Kind defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource1Kind string
+
+// CreateProjectCheck200JSONResponseBodySource2 defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource2 struct {
+	ExternalCheckName string                                               `json:"externalCheckName"`
+	Kind              CreateProjectCheck200JSONResponseBodySource2Kind     `json:"kind"`
+	Provider          CreateProjectCheck200JSONResponseBodySource2Provider `json:"provider"`
+}
+
+// CreateProjectCheck200JSONResponseBodySource2Kind defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource2Kind string
+
+// CreateProjectCheck200JSONResponseBodySource2Provider defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySource2Provider string
+
+// CreateProjectCheck200JSONResponseBody_Source defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBody_Source struct {
+	union json.RawMessage
+}
+
+// CreateProjectCheck200JSONResponseBodySourceKind defines parameters for CreateProjectCheck.
+type CreateProjectCheck200JSONResponseBodySourceKind string
+
+// DeleteProjectCheckParams defines parameters for DeleteProjectCheck.
+type DeleteProjectCheckParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteProjectCheck200JSONResponseBodySuccess defines parameters for DeleteProjectCheck.
+type DeleteProjectCheck200JSONResponseBodySuccess bool
+
+// GetProjectCheckParams defines parameters for GetProjectCheck.
+type GetProjectCheckParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetProjectCheck200JSONResponseBodyBlocks defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodyBlocks string
+
+// GetProjectCheck200JSONResponseBodyIsRerequestable defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodyIsRerequestable bool
+
+// GetProjectCheck200JSONResponseBodyRequires defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodyRequires string
+
+// GetProjectCheck200JSONResponseBodySource0 defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource0 struct {
+	ExternalResourceId         *string                                       `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                        `json:"integrationConfigurationId"`
+	IntegrationId              string                                        `json:"integrationId"`
+	Kind                       GetProjectCheck200JSONResponseBodySource0Kind `json:"kind"`
+	ResourceId                 *string                                       `json:"resourceId,omitempty"`
+}
+
+// GetProjectCheck200JSONResponseBodySource0Kind defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource0Kind string
+
+// GetProjectCheck200JSONResponseBodySource1 defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource1 struct {
+	Kind      GetProjectCheck200JSONResponseBodySource1Kind `json:"kind"`
+	WebhookId *string                                       `json:"webhookId,omitempty"`
+}
+
+// GetProjectCheck200JSONResponseBodySource1Kind defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource1Kind string
+
+// GetProjectCheck200JSONResponseBodySource2 defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource2 struct {
+	ExternalCheckName string                                            `json:"externalCheckName"`
+	Kind              GetProjectCheck200JSONResponseBodySource2Kind     `json:"kind"`
+	Provider          GetProjectCheck200JSONResponseBodySource2Provider `json:"provider"`
+}
+
+// GetProjectCheck200JSONResponseBodySource2Kind defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource2Kind string
+
+// GetProjectCheck200JSONResponseBodySource2Provider defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySource2Provider string
+
+// GetProjectCheck200JSONResponseBody_Source defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBody_Source struct {
+	union json.RawMessage
+}
+
+// GetProjectCheck200JSONResponseBodySourceKind defines parameters for GetProjectCheck.
+type GetProjectCheck200JSONResponseBodySourceKind string
+
+// UpdateProjectCheckJSONBody defines parameters for UpdateProjectCheck.
+type UpdateProjectCheckJSONBody struct {
+	Blocks *UpdateProjectCheckJSONBodyBlocks `json:"blocks,omitempty"`
+
+	// IsRerequestable Whether check runs can be manually re-requested. Git provider checks cannot be re-requested.
+	IsRerequestable *bool                               `json:"isRerequestable,omitempty"`
+	Name            *string                             `json:"name,omitempty"`
+	Requires        *UpdateProjectCheckJSONBodyRequires `json:"requires,omitempty"`
+
+	// Targets Deployment targets where this check applies. Valid values are "production", "preview", "all", or a Custom Environment ID such as "env_...". "all" cannot be combined with other targets.
+	Targets *[]string `json:"targets,omitempty"`
+	Timeout *float32  `json:"timeout,omitempty"`
+}
+
+// UpdateProjectCheckParams defines parameters for UpdateProjectCheck.
+type UpdateProjectCheckParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateProjectCheckJSONBodyBlocks defines parameters for UpdateProjectCheck.
+type UpdateProjectCheckJSONBodyBlocks string
+
+// UpdateProjectCheckJSONBodyRequires defines parameters for UpdateProjectCheck.
+type UpdateProjectCheckJSONBodyRequires string
+
+// UpdateProjectCheck200JSONResponseBodyBlocks defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodyBlocks string
+
+// UpdateProjectCheck200JSONResponseBodyIsRerequestable defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodyIsRerequestable bool
+
+// UpdateProjectCheck200JSONResponseBodyRequires defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodyRequires string
+
+// UpdateProjectCheck200JSONResponseBodySource0 defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource0 struct {
+	ExternalResourceId         *string                                          `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                           `json:"integrationConfigurationId"`
+	IntegrationId              string                                           `json:"integrationId"`
+	Kind                       UpdateProjectCheck200JSONResponseBodySource0Kind `json:"kind"`
+	ResourceId                 *string                                          `json:"resourceId,omitempty"`
+}
+
+// UpdateProjectCheck200JSONResponseBodySource0Kind defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource0Kind string
+
+// UpdateProjectCheck200JSONResponseBodySource1 defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource1 struct {
+	Kind      UpdateProjectCheck200JSONResponseBodySource1Kind `json:"kind"`
+	WebhookId *string                                          `json:"webhookId,omitempty"`
+}
+
+// UpdateProjectCheck200JSONResponseBodySource1Kind defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource1Kind string
+
+// UpdateProjectCheck200JSONResponseBodySource2 defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource2 struct {
+	ExternalCheckName string                                               `json:"externalCheckName"`
+	Kind              UpdateProjectCheck200JSONResponseBodySource2Kind     `json:"kind"`
+	Provider          UpdateProjectCheck200JSONResponseBodySource2Provider `json:"provider"`
+}
+
+// UpdateProjectCheck200JSONResponseBodySource2Kind defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource2Kind string
+
+// UpdateProjectCheck200JSONResponseBodySource2Provider defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySource2Provider string
+
+// UpdateProjectCheck200JSONResponseBody_Source defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBody_Source struct {
+	union json.RawMessage
+}
+
+// UpdateProjectCheck200JSONResponseBodySourceKind defines parameters for UpdateProjectCheck.
+type UpdateProjectCheck200JSONResponseBodySourceKind string
+
+// ListCheckRunsParams defines parameters for ListCheckRuns.
+type ListCheckRunsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0 struct {
+	Blocks         *ListCheckRuns200JSONResponseBodyRuns0Blocks     `json:"blocks,omitempty"`
+	CheckId        string                                           `json:"checkId"`
+	CompletedAt    *float32                                         `json:"completedAt,omitempty"`
+	Conclusion     *ListCheckRuns200JSONResponseBodyRuns0Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                          `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                          `json:"createdAt"`
+	DeploymentId   string                                           `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                       `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                        `json:"externalId,omitempty"`
+	ExternalUrl         *string                                        `json:"externalUrl,omitempty"`
+	Id                  string                                         `json:"id"`
+	Name                string                                         `json:"name"`
+	Output              *map[string]interface{}                        `json:"output,omitempty"`
+	OwnerId             string                                         `json:"ownerId"`
+	ProjectId           *string                                        `json:"projectId,omitempty"`
+	Requires            *ListCheckRuns200JSONResponseBodyRuns0Requires `json:"requires,omitempty"`
+	Source              ListCheckRuns200JSONResponseBody_Runs_0_Source `json:"source"`
+	StartedAt           *float32                                       `json:"startedAt,omitempty"`
+	Status              ListCheckRuns200JSONResponseBodyRuns0Status    `json:"status"`
+	Targets             *[]string                                      `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Blocks defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Blocks string
+
+// ListCheckRuns200JSONResponseBodyRuns0Conclusion defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Conclusion string
+
+// ListCheckRuns200JSONResponseBodyRuns0Requires defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Requires string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source0 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source0 struct {
+	ExternalResourceId         *string                                          `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                           `json:"integrationConfigurationId"`
+	IntegrationId              string                                           `json:"integrationId"`
+	Kind                       ListCheckRuns200JSONResponseBodyRuns0Source0Kind `json:"kind"`
+	ResourceId                 *string                                          `json:"resourceId,omitempty"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source0Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source0Kind string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source1 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source1 struct {
+	Kind      ListCheckRuns200JSONResponseBodyRuns0Source1Kind `json:"kind"`
+	WebhookId *string                                          `json:"webhookId,omitempty"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source1Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source1Kind string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source2 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source2 struct {
+	ExternalCheckName string                                               `json:"externalCheckName"`
+	Kind              ListCheckRuns200JSONResponseBodyRuns0Source2Kind     `json:"kind"`
+	Provider          ListCheckRuns200JSONResponseBodyRuns0Source2Provider `json:"provider"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source2Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source2Kind string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source2Provider defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source2Provider string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source3 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source3 struct {
+	Origin  *ListCheckRuns200JSONResponseBodyRuns0Source3Origin  `json:"origin,omitempty"`
+	SubKind *ListCheckRuns200JSONResponseBodyRuns0Source3SubKind `json:"subKind,omitempty"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source3Origin defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source3Origin string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source3SubKind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source3SubKind string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4 struct {
+	Origin    ListCheckRuns200JSONResponseBodyRuns0Source4Origin         `json:"origin"`
+	Selection ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection `json:"selection"`
+	SubKind   ListCheckRuns200JSONResponseBodyRuns0Source4SubKind        `json:"subKind"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Origin defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Origin string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection0 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection0 struct {
+	Kind ListCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind `json:"kind"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection1 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection1 struct {
+	Kind ListCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind `json:"kind"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2 struct {
+	FailIfNoMatch *ListCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	Filters       []string                                                             `json:"filters"`
+	Job           ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Job            `json:"job"`
+	Kind          ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind           `json:"kind"`
+	Task          string                                                               `json:"task"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch bool
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Job defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Job string
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
+
+// ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection struct {
+	union json.RawMessage
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Source4SubKind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Source4SubKind string
+
+// ListCheckRuns200JSONResponseBody_Runs_0_Source defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBody_Runs_0_Source struct {
+	union json.RawMessage
+}
+
+// ListCheckRuns200JSONResponseBodyRuns0Status defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns0Status string
+
+// ListCheckRuns200JSONResponseBodyRuns1 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1 struct {
+	Blocks         *ListCheckRuns200JSONResponseBodyRuns1Blocks     `json:"blocks,omitempty"`
+	CompletedAt    *float32                                         `json:"completedAt,omitempty"`
+	Conclusion     *ListCheckRuns200JSONResponseBodyRuns1Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                          `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                          `json:"createdAt"`
+	DeploymentId   string                                           `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                       `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                        `json:"externalId,omitempty"`
+	ExternalUrl         *string                                        `json:"externalUrl,omitempty"`
+	Id                  string                                         `json:"id"`
+	Name                string                                         `json:"name"`
+	Output              *map[string]interface{}                        `json:"output,omitempty"`
+	OwnerId             string                                         `json:"ownerId"`
+	ProjectId           *string                                        `json:"projectId,omitempty"`
+	Requires            *ListCheckRuns200JSONResponseBodyRuns1Requires `json:"requires,omitempty"`
+	Source              ListCheckRuns200JSONResponseBody_Runs_1_Source `json:"source"`
+	StartedAt           *float32                                       `json:"startedAt,omitempty"`
+	Status              ListCheckRuns200JSONResponseBodyRuns1Status    `json:"status"`
+	Targets             *[]string                                      `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns1Blocks defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Blocks string
+
+// ListCheckRuns200JSONResponseBodyRuns1Conclusion defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Conclusion string
+
+// ListCheckRuns200JSONResponseBodyRuns1Requires defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Requires string
+
+// ListCheckRuns200JSONResponseBodyRuns1Source0 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Source0 struct {
+	InvocationAttempt *float32                                            `json:"invocationAttempt,omitempty"`
+	InvocationId      string                                              `json:"invocationId"`
+	JobDefinitionId   string                                              `json:"jobDefinitionId"`
+	Origin            ListCheckRuns200JSONResponseBodyRuns1Source0Origin  `json:"origin"`
+	SubKind           ListCheckRuns200JSONResponseBodyRuns1Source0SubKind `json:"subKind"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns1Source0Origin defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Source0Origin string
+
+// ListCheckRuns200JSONResponseBodyRuns1Source0SubKind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Source0SubKind string
+
+// ListCheckRuns200JSONResponseBodyRuns1Source1 defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Source1 struct {
+	Origin  ListCheckRuns200JSONResponseBodyRuns1Source1Origin  `json:"origin"`
+	SubKind ListCheckRuns200JSONResponseBodyRuns1Source1SubKind `json:"subKind"`
+}
+
+// ListCheckRuns200JSONResponseBodyRuns1Source1Origin defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Source1Origin string
+
+// ListCheckRuns200JSONResponseBodyRuns1Source1SubKind defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Source1SubKind string
+
+// ListCheckRuns200JSONResponseBody_Runs_1_Source defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBody_Runs_1_Source struct {
+	union json.RawMessage
+}
+
+// ListCheckRuns200JSONResponseBodyRuns1Status defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBodyRuns1Status string
+
+// ListCheckRuns200JSONResponseBody_Runs_Item defines parameters for ListCheckRuns.
+type ListCheckRuns200JSONResponseBody_Runs_Item struct {
+	union json.RawMessage
+}
+
+// ListFlagsV2Params defines parameters for ListFlagsV2.
+type ListFlagsV2Params struct {
+	// State The state of the flags to retrieve. Defaults to `active`.
+	State *ListFlagsV2ParamsState `form:"state,omitempty" json:"state,omitempty"`
+
+	// Limit Maximum number of flags to return.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Pagination cursor to continue from.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// Search Search flags by their slug or description. Case-insensitive.
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// Tags Filter flags by tag. Repeat the parameter for multiple tags (all must match).
+	Tags *[]string `form:"tags,omitempty" json:"tags,omitempty"`
+
+	// CreatedBy Filter flags by the id of the entity that created them (a user or team id).
+	CreatedBy *string `form:"createdBy,omitempty" json:"createdBy,omitempty"`
+
+	// MaintainerIds Filter flags by maintainer user id. Repeat the parameter for multiple maintainers (any may match).
+	MaintainerIds *[]string `form:"maintainerIds,omitempty" json:"maintainerIds,omitempty"`
+
+	// IncludeMarketplaceFlags Whether to include Marketplace experimentation items in the paginated response. Defaults to false.
+	IncludeMarketplaceFlags *bool `form:"includeMarketplaceFlags,omitempty" json:"includeMarketplaceFlags,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListFlagsV2ParamsState defines parameters for ListFlagsV2.
+type ListFlagsV2ParamsState string
+
+// ListFlagsV2200JSONResponseBody_Data_Item defines parameters for ListFlagsV2.
+type ListFlagsV2200JSONResponseBody_Data_Item struct {
+	union json.RawMessage
+}
+
+// ListNamedSandboxesParams defines parameters for ListNamedSandboxes.
+type ListNamedSandboxesParams struct {
+	// Project The unique identifier or name of the project to list named sandboxes for.
+	Project *string `form:"project,omitempty" json:"project,omitempty"`
+
+	// Limit Maximum number of named sandboxes to return in the response. Used for pagination.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SortBy Field to sort by.
+	SortBy *ListNamedSandboxesParamsSortBy `form:"sortBy,omitempty" json:"sortBy,omitempty"`
+
+	// NamePrefix Filter named sandboxes whose name starts with this prefix. Only valid when sortBy=name.
+	NamePrefix *string `form:"namePrefix,omitempty" json:"namePrefix,omitempty"`
+
+	// Cursor Opaque pagination cursor from a previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// SortOrder Sort direction. Defaults to desc.
+	SortOrder *ListNamedSandboxesParamsSortOrder `form:"sortOrder,omitempty" json:"sortOrder,omitempty"`
+
+	// Status Filter named sandboxes by status. Only valid when sortBy is createdAt.
+	Status *ListNamedSandboxesParamsStatus `form:"status,omitempty" json:"status,omitempty"`
+
+	// Tags Filter sandboxes by tag. Format: \"key:value\". Only one tag filter is supported at a time.
+	Tags *struct {
+		union json.RawMessage
+	} `form:"tags,omitempty" json:"tags,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListNamedSandboxesParamsSortBy defines parameters for ListNamedSandboxes.
+type ListNamedSandboxesParamsSortBy string
+
+// ListNamedSandboxesParamsSortOrder defines parameters for ListNamedSandboxes.
+type ListNamedSandboxesParamsSortOrder string
+
+// ListNamedSandboxesParamsStatus defines parameters for ListNamedSandboxes.
+type ListNamedSandboxesParamsStatus string
+
+// ListNamedSandboxesParamsTags0 defines parameters for ListNamedSandboxes.
+type ListNamedSandboxesParamsTags0 = string
+
+// ListNamedSandboxesParamsTags1 defines parameters for ListNamedSandboxes.
+type ListNamedSandboxesParamsTags1 = []string
+
+// CreateSandboxesV2JSONBody defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBody struct {
+	// Architecture CPU architecture. Inherits a snapshot or single image manifest when omitted. Image indexes default to amd64. Must match the source. ARM64 creation requires API v3 or v4 without runtime and team access.
+	//
+	// Example: arm64
+	Architecture *CreateSandboxesV2JSONBodyArchitecture `json:"architecture,omitempty"`
+
+	// Env Default environment variables for the sandbox. These are inherited by all commands unless overridden.
+	//
+	// Example: {"HELLO":"world","NODE_ENV":"production"}
+	Env *map[string]string `json:"env,omitempty"`
+
+	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
+	//
+	// Example: ["sfo1","cle1"]
+	FailoverRegions *[]CreateSandboxesV2JSONBodyFailoverRegions `json:"failoverRegions,omitempty"`
+
+	// Image Image to use for the sandbox.
+	Image *string `json:"image,omitempty"`
+
+	// KeepLastSnapshots Protect the N most recent snapshots with different expiration/deletion behavior.
+	KeepLastSnapshots *struct {
+		// Count Number of most recent snapshots to keep.
+		Count int `json:"count"`
+
+		// DeleteEvicted Whether to immediately delete evicted snapshots. Defaults to true.
+		DeleteEvicted *bool `json:"deleteEvicted,omitempty"`
+
+		// Expiration Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
+		Expiration *CreateSandboxesV2JSONBody_KeepLastSnapshots_Expiration `json:"expiration,omitempty"`
+	} `json:"keepLastSnapshots,omitempty"`
+
+	// Mounts List of drives to mount to the sandbox at the provided path.
+	Mounts *map[string]struct {
+		// Drive Name of the drive to mount. The drive must already exist.
+		Drive string `json:"drive"`
+
+		// Mode Mount the drive as read-write, or as a read-only snapshot. One writer is permitted at a time.
+		Mode *CreateSandboxesV2JSONBodyMountsMode `json:"mode,omitempty"`
+	} `json:"mounts,omitempty"`
+
+	// Name Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).
+	//
+	// Example: my-sandbox
+	Name *string `json:"name,omitempty"`
+
+	// NetworkId The Connect network id for the target Secure Compute private network.
+	NetworkId     *string                                  `json:"networkId,omitempty"`
+	NetworkPolicy *CreateSandboxesV2JSONBody_NetworkPolicy `json:"networkPolicy,omitempty"`
+
+	// Persistent Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to true.
+	Persistent *bool `json:"persistent,omitempty"`
+
+	// Ports List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.
+	//
+	// Example: [3000,4000]
+	Ports *[]int `json:"ports,omitempty"`
+
+	// ProjectId The target project slug or ID in which the sandbox will be assigned to.
+	//
+	// Example: prj_abc123
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// Region The Vercel region in which to create the sandbox.
+	//
+	// Example: iad1
+	Region *CreateSandboxesV2JSONBodyRegion `json:"region,omitempty"`
+
+	// Resources Resources to define the VM
+	Resources *struct {
+		// Memory The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+		//
+		// Example: 4096
+		Memory *int `json:"memory,omitempty"`
+
+		// Vcpus The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
+		//
+		// Example: 2
+		Vcpus *int `json:"vcpus,omitempty"`
+	} `json:"resources,omitempty"`
+
+	// Runtime The runtime environment for the sandbox. Determines the pre-installed language runtimes and tools available.
+	//
+	// Example: node24
+	Runtime *CreateSandboxesV2JSONBodyRuntime `json:"runtime,omitempty"`
+
+	// SnapshotExpiration Default snapshot expiration time in milliseconds. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.
+	//
+	// Example: 604800000
+	SnapshotExpiration *CreateSandboxesV2JSONBody_SnapshotExpiration `json:"snapshotExpiration,omitempty"`
+
+	// Source The source from which to initialize the sandbox filesystem. Can be a Git repository, a tarball URL, or an existing snapshot.
+	Source *CreateSandboxesV2JSONBody_Source `json:"source,omitempty"`
+
+	// Tags Key-value tags to associate with the sandbox. Maximum 5 tags.
+	//
+	// Example: {"env":"staging","team":"platform"}
+	Tags *map[string]string `json:"tags,omitempty"`
+
+	// Timeout Maximum duration in milliseconds that the sandbox can run before being automatically stopped.
+	//
+	// Example: 300000
+	Timeout *int `json:"timeout,omitempty"`
+}
+
+// CreateSandboxesV2Params defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2Params struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateSandboxesV2JSONBodyArchitecture defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyArchitecture string
+
+// CreateSandboxesV2JSONBodyFailoverRegions defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyFailoverRegions string
+
+// CreateSandboxesV2JSONBodyKeepLastSnapshotsExpiration0 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyKeepLastSnapshotsExpiration0 = interface{}
+
+// CreateSandboxesV2JSONBodyKeepLastSnapshotsExpiration1 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyKeepLastSnapshotsExpiration1 = int
+
+// CreateSandboxesV2JSONBody_KeepLastSnapshots_Expiration defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBody_KeepLastSnapshots_Expiration struct {
+	union json.RawMessage
+}
+
+// CreateSandboxesV2JSONBodyMountsMode defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyMountsMode string
+
+// CreateSandboxesV2JSONBodyNetworkPolicy0 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyNetworkPolicy0 struct {
+	// AllowedCIDRs List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
+	//
+	// Example: ["35.192.0.0/12","104.16.0.0/12"]
+	AllowedCIDRs *[]string `json:"allowedCIDRs,omitempty"`
+
+	// AllowedDomains List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+	//
+	// Example: ["api.github.com","*.npmjs.org"]
+	AllowedDomains *[]string `json:"allowedDomains,omitempty"`
+
+	// DeniedCIDRs List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+	//
+	// Example: ["35.192.0.0/12"]
+	DeniedCIDRs *[]string `json:"deniedCIDRs,omitempty"`
+
+	// InjectionRules HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
+	InjectionRules *[]struct {
+		// Domain The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
+		Domain string `json:"domain"`
+
+		// Headers HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
+		Headers map[string]string `json:"headers"`
+
+		// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+		Match *struct {
+			// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+			Headers *[]struct {
+				// Key Matcher for the entry key (header name or query key).
+				Key *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"key,omitempty"`
+
+				// Value Matcher for the entry value.
+				Value *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"value,omitempty"`
+			} `json:"headers,omitempty"`
+
+			// Method HTTP methods to match. Any single match succeeds (OR semantics).
+			Method *[]string `json:"method,omitempty"`
+
+			// Path Match on the request path. Comparison is case-sensitive.
+			Path *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"path,omitempty"`
+
+			// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+			QueryString *[]struct {
+				// Key Matcher for the entry key (header name or query key).
+				Key *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"key,omitempty"`
+
+				// Value Matcher for the entry value.
+				Value *struct {
+					// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+					Exact *string `json:"exact,omitempty"`
+
+					// StartsWith Match values that start with the given prefix.
+					StartsWith *string `json:"startsWith,omitempty"`
+				} `json:"value,omitempty"`
+			} `json:"queryString,omitempty"`
+		} `json:"match,omitempty"`
+	} `json:"injectionRules,omitempty"`
+
+	// Mode The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
+	//
+	// Example: custom
+	Mode CreateSandboxesV2JSONBodyNetworkPolicy0Mode `json:"mode"`
+}
+
+// CreateSandboxesV2JSONBodyNetworkPolicy0Mode defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyNetworkPolicy0Mode string
+
+// CreateSandboxesV2JSONBodyNetworkPolicy1 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyNetworkPolicy1 struct {
+	Allow   *CreateSandboxesV2JSONBody_NetworkPolicy_1_Allow `json:"allow,omitempty"`
+	Subnets *struct {
+		Allow *[]string `json:"allow,omitempty"`
+		Deny  *[]string `json:"deny,omitempty"`
+	} `json:"subnets,omitempty"`
+}
+
+// CreateSandboxesV2JSONBodyNetworkPolicy1Allow0 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyNetworkPolicy1Allow0 = []string
+
+// CreateSandboxesV2JSONBodyNetworkPolicy1Allow1 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyNetworkPolicy1Allow1 map[string][]struct {
+	// ForwardURL HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment.
+	ForwardURL *string `json:"forwardURL,omitempty"`
+
+	// Match Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+	Match *struct {
+		// Headers Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+		Headers *[]struct {
+			// Key Matcher for the entry key (header name or query key).
+			Key *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"key,omitempty"`
+
+			// Value Matcher for the entry value.
+			Value *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"value,omitempty"`
+		} `json:"headers,omitempty"`
+
+		// Method HTTP methods to match. Any single match succeeds (OR semantics).
+		Method *[]string `json:"method,omitempty"`
+
+		// Path Match on the request path. Comparison is case-sensitive.
+		Path *struct {
+			// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+			Exact *string `json:"exact,omitempty"`
+
+			// StartsWith Match values that start with the given prefix.
+			StartsWith *string `json:"startsWith,omitempty"`
+		} `json:"path,omitempty"`
+
+		// QueryString Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+		QueryString *[]struct {
+			// Key Matcher for the entry key (header name or query key).
+			Key *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"key,omitempty"`
+
+			// Value Matcher for the entry value.
+			Value *struct {
+				// Exact Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+				Exact *string `json:"exact,omitempty"`
+
+				// StartsWith Match values that start with the given prefix.
+				StartsWith *string `json:"startsWith,omitempty"`
+			} `json:"value,omitempty"`
+		} `json:"queryString,omitempty"`
+	} `json:"match,omitempty"`
+
+	// Response Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
+	Response *struct {
+		// Body UTF-8 response body. Requires `contentType`.
+		Body *string `json:"body,omitempty"`
+
+		// ContentType Value of the `Content-Type` response header. Required when `body` is set.
+		ContentType *string `json:"contentType,omitempty"`
+
+		// Headers HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set.
+		Headers *map[string]string `json:"headers,omitempty"`
+
+		// StatusCode HTTP status code returned to the sandbox.
+		StatusCode int `json:"statusCode"`
+	} `json:"response,omitempty"`
+	Transform *[]struct {
+		Headers *map[string]string `json:"headers,omitempty"`
+	} `json:"transform,omitempty"`
+}
+
+// CreateSandboxesV2JSONBody_NetworkPolicy_1_Allow defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBody_NetworkPolicy_1_Allow struct {
+	union json.RawMessage
+}
+
+// CreateSandboxesV2JSONBody_NetworkPolicy defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBody_NetworkPolicy struct {
+	union json.RawMessage
+}
+
+// CreateSandboxesV2JSONBodyRegion defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyRegion string
+
+// CreateSandboxesV2JSONBodyRuntime defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodyRuntime string
+
+// CreateSandboxesV2JSONBodySnapshotExpiration0 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodySnapshotExpiration0 = interface{}
+
+// CreateSandboxesV2JSONBodySnapshotExpiration1 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodySnapshotExpiration1 = int
+
+// CreateSandboxesV2JSONBody_SnapshotExpiration defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBody_SnapshotExpiration struct {
+	union json.RawMessage
+}
+
+// CreateSandboxesV2JSONBodySource0 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodySource0 struct {
+	// Depth Create a shallow clone with history truncated to the specified number of commits. Useful for faster cloning of large repositories.
+	//
+	// Example: 1
+	Depth *int `json:"depth,omitempty"`
+
+	// Password Password or personal access token for Git authentication. Required together with username for private repositories.
+	Password *string `json:"password,omitempty"`
+
+	// Revision The specific commit SHA, branch name, or tag to checkout after cloning.
+	//
+	// Example: main
+	Revision *string `json:"revision,omitempty"`
+
+	// Type Indicates the source is a Git repository.
+	Type interface{} `json:"type"`
+
+	// Url The URL of the Git repository to clone.
+	//
+	// Example: https://github.com/vercel/next.js.git
+	Url string `json:"url"`
+
+	// Username Username for Git authentication. Required together with password for private repositories.
+	Username *string `json:"username,omitempty"`
+}
+
+// CreateSandboxesV2JSONBodySource1 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodySource1 struct {
+	// Type Indicates the source is a tarball.
+	Type interface{} `json:"type"`
+
+	// Url URL of a gzipped tarball (.tar.gz) to download and extract.
+	//
+	// Example: https://example.com/project.tar.gz
+	Url string `json:"url"`
+}
+
+// CreateSandboxesV2JSONBodySource2 defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBodySource2 struct {
+	// SnapshotId The unique identifier of the snapshot to restore.
+	//
+	// Example: snap_abc123
+	SnapshotId string `json:"snapshotId"`
+
+	// Type Indicates the source is a snapshot.
+	Type interface{} `json:"type"`
+}
+
+// CreateSandboxesV2JSONBody_Source defines parameters for CreateSandboxesV2.
+type CreateSandboxesV2JSONBody_Source struct {
+	union json.RawMessage
+}
+
+// ListDrivesParams defines parameters for ListDrives.
+type ListDrivesParams struct {
+	// ProjectId The project ID or name associated with the drives. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// Limit Maximum number of drives to return in the response. Used for pagination.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Opaque pagination cursor from a previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// SortBy Field to sort drives by.
+	SortBy *ListDrivesParamsSortBy `form:"sortBy,omitempty" json:"sortBy,omitempty"`
+
+	// NamePrefix Filter drives whose name starts with this prefix. Only valid when sortBy=name.
+	NamePrefix *string `form:"namePrefix,omitempty" json:"namePrefix,omitempty"`
+
+	// SortOrder Sort direction for results.
+	SortOrder *ListDrivesParamsSortOrder `form:"sortOrder,omitempty" json:"sortOrder,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListDrivesParamsSortBy defines parameters for ListDrives.
+type ListDrivesParamsSortBy string
+
+// ListDrivesParamsSortOrder defines parameters for ListDrives.
+type ListDrivesParamsSortOrder string
+
+// DeleteDriveParams defines parameters for DeleteDrive.
+type DeleteDriveParams struct {
+	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetDriveParams defines parameters for GetDrive.
+type GetDriveParams struct {
+	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetOrCreateDriveJSONBody defines parameters for GetOrCreateDrive.
+type GetOrCreateDriveJSONBody struct {
+	// MaxSizeBytes Maximum drive size in bytes. Must be a multiple of 4096 bytes. Defaults to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help.
+	MaxSizeBytes *int `json:"maxSizeBytes,omitempty"`
+
+	// ProjectId The project ID or name to associate the drive with. Required unless using a Vercel OIDC token scoped to a project.
+	//
+	// Example: prj_abc123
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// Region Region where the drive is stored. Defaults to iad1.
+	//
+	// Example: iad1
+	Region *GetOrCreateDriveJSONBodyRegion `json:"region,omitempty"`
+}
+
+// GetOrCreateDriveParams defines parameters for GetOrCreateDrive.
+type GetOrCreateDriveParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetOrCreateDriveJSONBodyRegion defines parameters for GetOrCreateDrive.
+type GetOrCreateDriveJSONBodyRegion string
+
+// ForkDriveJSONBody defines parameters for ForkDrive.
+type ForkDriveJSONBody struct {
+	// Name Name for the forked drive. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).
+	//
+	// Example: workspace-fork
+	Name string `json:"name"`
+}
+
+// ForkDriveParams defines parameters for ForkDrive.
+type ForkDriveParams struct {
+	// ProjectId The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListSessionsParams defines parameters for ListSessions.
+type ListSessionsParams struct {
+	// Project The unique identifier or name of the project to list sessions for.
+	Project *string `form:"project,omitempty" json:"project,omitempty"`
+
+	// Name Filter sessions by sandbox name. Only sessions belonging to the specified sandbox are returned.
+	Name *string `form:"name,omitempty" json:"name,omitempty"`
+
+	// Limit Maximum number of sessions to return in the response. Used for pagination.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Opaque pagination cursor from a previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// SortOrder Sort direction for results by creation time.
+	SortOrder *ListSessionsParamsSortOrder `form:"sortOrder,omitempty" json:"sortOrder,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListSessionsParamsSortOrder defines parameters for ListSessions.
+type ListSessionsParamsSortOrder string
+
+// ListSessions200JSONResponseBody0 defines parameters for ListSessions.
+type ListSessions200JSONResponseBody0 = map[string]interface{}
+
+// ListSessions200JSONResponseBody1 defines parameters for ListSessions.
+type ListSessions200JSONResponseBody1 struct {
+	Pagination struct {
+		Count float32 `json:"count"`
+		Next  *string `json:"next"`
+	} `json:"pagination"`
+	Sessions []Session `json:"sessions"`
+}
+
+// ListSessions200JSONResponseBody defines parameters for ListSessions.
+type ListSessions200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GetSessionParams defines parameters for GetSession.
+type GetSessionParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListSessionCommandsParams defines parameters for ListSessionCommands.
+type ListSessionCommandsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// RunSessionCommandJSONBody defines parameters for RunSessionCommand.
+type RunSessionCommandJSONBody struct {
+	// Args Arguments to pass to the command. Each argument should be a separate array element.
+	//
+	// Example: ["install","--save","lodash"]
+	Args *[]string `json:"args,omitempty"`
+
+	// AttachStdin If true, keeps the command stdin open so it can be written to with the stdin endpoint while the command runs. When false, the command reads from an empty stdin.
+	AttachStdin *bool `json:"attachStdin,omitempty"`
+
+	// Command The executable or shell command to run. This is the program name without arguments.
+	//
+	// Example: npm
+	Command string `json:"command"`
+
+	// Cwd The working directory in which to execute the command. Defaults to the sandbox home directory if not specified.
+	//
+	// Example: /home/vercel-sandbox
+	Cwd *string `json:"cwd,omitempty"`
+
+	// Env Additional environment variables to set for this command. These are merged with the sandbox environment.
+	//
+	// Example: {"DEBUG":"true","NODE_ENV":"production"}
+	Env *map[string]string `json:"env,omitempty"`
+
+	// Logs If true, stream the logs of the command execution in real-time via ND-JSON. This is only applicable if `wait` is also true.
+	Logs *bool `json:"logs,omitempty"`
+
+	// Sudo Execute the command with root (superuser) privileges.
+	Sudo *bool `json:"sudo,omitempty"`
+
+	// Timeout Maximum duration in milliseconds the command may run before it is killed with SIGKILL, up to 5 hours. Enforced at exec time, independently of `wait`.
+	//
+	// Example: 30000
+	Timeout *int `json:"timeout,omitempty"`
+
+	// Wait If true, returns an ND-JSON stream that emits the command status when started and again when finished. Useful for synchronously waiting for command completion.
+	Wait *bool `json:"wait,omitempty"`
+}
+
+// RunSessionCommandParams defines parameters for RunSessionCommand.
+type RunSessionCommandParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetSessionCommandParams defines parameters for GetSessionCommand.
+type GetSessionCommandParams struct {
+	// Wait If set to "true", the request will block until the command finishes execution and the response will include its exit code. Otherwise, `exitCode` is `null` unless a previous request waited for the command to finish.
+	Wait *GetSessionCommandParamsWait `form:"wait,omitempty" json:"wait,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetSessionCommandParamsWait defines parameters for GetSessionCommand.
+type GetSessionCommandParamsWait string
+
+// KillSessionCommandJSONBody defines parameters for KillSessionCommand.
+type KillSessionCommandJSONBody struct {
+	// Signal The POSIX signal number to send to the process. Common values: 15 (SIGTERM) for graceful termination, 9 (SIGKILL) for forced termination.
+	//
+	// Example: 15
+	Signal float32 `json:"signal"`
+}
+
+// KillSessionCommandParams defines parameters for KillSessionCommand.
+type KillSessionCommandParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetSessionCommandLogsParams defines parameters for GetSessionCommandLogs.
+type GetSessionCommandLogsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// WriteSessionCommandStdinJSONBody defines parameters for WriteSessionCommandStdin.
+type WriteSessionCommandStdinJSONBody struct {
+	// Close If true, closes the command stdin after writing `data`. Use this for commands that wait for end of input.
+	Close *bool `json:"close,omitempty"`
+
+	// Data Base64-encoded bytes to write to the command stdin. The request body is limited to 1 MB, so send at most about 700 KB of data per request.
+	//
+	// Example: aGVsbG8K
+	Data *string `json:"data,omitempty"`
+
+	// Offset The position in the command stdin where `data` starts. Bytes before the total already written are skipped, so a resent request does not write them twice. Fails with 409 if it is past the bytes written so far. Without it, `data` is appended.
+	//
+	// Example: 0
+	Offset *int `json:"offset,omitempty"`
+}
+
+// WriteSessionCommandStdinParams defines parameters for WriteSessionCommandStdin.
+type WriteSessionCommandStdinParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ExtendSessionTimeoutJSONBody defines parameters for ExtendSessionTimeout.
+type ExtendSessionTimeoutJSONBody struct {
+	// Duration The amount of time in milliseconds to add to the current timeout. Must be at least 1000ms (1 second).
+	//
+	// Example: 300000
+	Duration float32 `json:"duration"`
+}
+
 // ExtendSessionTimeoutParams defines parameters for ExtendSessionTimeout.
 type ExtendSessionTimeoutParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -1155,8 +3022,27 @@ type GetTeamsParams struct {
 	Until *float32 `form:"until,omitempty" json:"until,omitempty"`
 }
 
-// GetTeams200JSONResponseBody_Teams_Item defines parameters for GetTeams.
-type GetTeams200JSONResponseBody_Teams_Item struct {
+// GetTeams200JSONResponseBody0 defines parameters for GetTeams.
+type GetTeams200JSONResponseBody0 struct {
+	// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+	Pagination Pagination `json:"pagination"`
+	Teams      []Team     `json:"teams"`
+}
+
+// GetTeams200JSONResponseBody1 defines parameters for GetTeams.
+type GetTeams200JSONResponseBody1 struct {
+	// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+	Pagination Pagination                                 `json:"pagination"`
+	Teams      []GetTeams200JSONResponseBody_1_Teams_Item `json:"teams"`
+}
+
+// GetTeams200JSONResponseBody_1_Teams_Item defines parameters for GetTeams.
+type GetTeams200JSONResponseBody_1_Teams_Item struct {
+	union json.RawMessage
+}
+
+// GetTeams200JSONResponseBody defines parameters for GetTeams.
+type GetTeams200JSONResponseBody struct {
 	union json.RawMessage
 }
 
@@ -6138,18 +8024,6 @@ type GetProject200JSONResponseBody_RollbackDescription_Principal struct {
 // GetProject200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for GetProject.
 type GetProject200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
 
-// GetProject200JSONResponseBodyRollingReleaseGateAction defines parameters for GetProject.
-type GetProject200JSONResponseBodyRollingReleaseGateAction string
-
-// GetProject200JSONResponseBodyRollingReleaseGateChecksType defines parameters for GetProject.
-type GetProject200JSONResponseBodyRollingReleaseGateChecksType string
-
-// GetProject200JSONResponseBodyRollingReleaseGateDryRun defines parameters for GetProject.
-type GetProject200JSONResponseBodyRollingReleaseGateDryRun bool
-
-// GetProject200JSONResponseBodyRollingReleaseGateEnabled defines parameters for GetProject.
-type GetProject200JSONResponseBodyRollingReleaseGateEnabled bool
-
 // GetProject200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for GetProject.
 type GetProject200JSONResponseBodyRollingReleaseStagesLinearShift bool
 
@@ -8472,18 +10346,6 @@ type UpdateProject200JSONResponseBody_RollbackDescription_Principal struct {
 // UpdateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
 
-// UpdateProject200JSONResponseBodyRollingReleaseGateAction defines parameters for UpdateProject.
-type UpdateProject200JSONResponseBodyRollingReleaseGateAction string
-
-// UpdateProject200JSONResponseBodyRollingReleaseGateChecksType defines parameters for UpdateProject.
-type UpdateProject200JSONResponseBodyRollingReleaseGateChecksType string
-
-// UpdateProject200JSONResponseBodyRollingReleaseGateDryRun defines parameters for UpdateProject.
-type UpdateProject200JSONResponseBodyRollingReleaseGateDryRun bool
-
-// UpdateProject200JSONResponseBodyRollingReleaseGateEnabled defines parameters for UpdateProject.
-type UpdateProject200JSONResponseBodyRollingReleaseGateEnabled bool
-
 // UpdateProject200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyRollingReleaseStagesLinearShift bool
 
@@ -10101,6 +11963,21 @@ type CreateAiGatewayByokCredentialJSONRequestBody CreateAiGatewayByokCredentialJ
 
 // UpdateAiGatewayByokCredentialJSONRequestBody defines body for UpdateAiGatewayByokCredential for application/json ContentType.
 type UpdateAiGatewayByokCredentialJSONRequestBody UpdateAiGatewayByokCredentialJSONBody
+
+// UpdateAiGatewayRuleJSONRequestBody defines body for UpdateAiGatewayRule for application/json ContentType.
+type UpdateAiGatewayRuleJSONRequestBody UpdateAiGatewayRuleJSONBody
+
+// CreateAiGatewayRuleJSONRequestBody defines body for CreateAiGatewayRule for application/json ContentType.
+type CreateAiGatewayRuleJSONRequestBody CreateAiGatewayRuleJSONBody
+
+// UpdateAiGatewayVirtualModelConfigJSONRequestBody defines body for UpdateAiGatewayVirtualModelConfig for application/json ContentType.
+type UpdateAiGatewayVirtualModelConfigJSONRequestBody UpdateAiGatewayVirtualModelConfigJSONBody
+
+// CreateAiGatewayVirtualModelConfigJSONRequestBody defines body for CreateAiGatewayVirtualModelConfig for application/json ContentType.
+type CreateAiGatewayVirtualModelConfigJSONRequestBody CreateAiGatewayVirtualModelConfigJSONBody
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONRequestBody defines body for UpdateAiGatewayVirtualModelConfigBySlug for application/json ContentType.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONRequestBody UpdateAiGatewayVirtualModelConfigBySlugJSONBody
 
 // PatchUrlProtectionBypassJSONRequestBody defines body for PatchUrlProtectionBypass for application/json ContentType.
 type PatchUrlProtectionBypassJSONRequestBody PatchUrlProtectionBypassJSONBody
@@ -13142,25 +15019,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload122. Returns the specified
+// Getter for additional properties for UserEventPayload123. Returns the specified
 // element and whether it was found
-func (a UserEventPayload122) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload123) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload122
-func (a *UserEventPayload122) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload123
+func (a *UserEventPayload123) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload122 to handle AdditionalProperties
-func (a *UserEventPayload122) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload123 to handle AdditionalProperties
+func (a *UserEventPayload123) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -13189,8 +15066,8 @@ func (a *UserEventPayload122) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload122 to handle AdditionalProperties
-func (a UserEventPayload122) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload123 to handle AdditionalProperties
+func (a UserEventPayload123) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -13208,25 +15085,25 @@ func (a UserEventPayload122) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload271. Returns the specified
+// Getter for additional properties for UserEventPayload273. Returns the specified
 // element and whether it was found
-func (a UserEventPayload271) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload273) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload271
-func (a *UserEventPayload271) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload273
+func (a *UserEventPayload273) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload271 to handle AdditionalProperties
-func (a *UserEventPayload271) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload273 to handle AdditionalProperties
+func (a *UserEventPayload273) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -13279,8 +15156,8 @@ func (a *UserEventPayload271) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload271 to handle AdditionalProperties
-func (a UserEventPayload271) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload273 to handle AdditionalProperties
+func (a UserEventPayload273) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -18139,1877 +20016,4 @@ func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData11(v Connect
 	merged, err := runtime.JSONMerge(t.union, b)
 	t.union = merged
 	return err
-}
-
-func (t ConnectConnectorUpdateData) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorUpdateData) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdateData1Instructions0 returns the union data inside the ConnectConnectorUpdateData_1_Instructions as a ConnectConnectorUpdateData1Instructions0
-func (t ConnectConnectorUpdateData_1_Instructions) AsConnectConnectorUpdateData1Instructions0() (ConnectConnectorUpdateData1Instructions0, error) {
-	var body ConnectConnectorUpdateData1Instructions0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1Instructions0 overwrites any union data inside the ConnectConnectorUpdateData_1_Instructions as the provided ConnectConnectorUpdateData1Instructions0
-func (t *ConnectConnectorUpdateData_1_Instructions) FromConnectConnectorUpdateData1Instructions0(v ConnectConnectorUpdateData1Instructions0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1Instructions0 performs a merge with any union data inside the ConnectConnectorUpdateData_1_Instructions, using the provided ConnectConnectorUpdateData1Instructions0
-func (t *ConnectConnectorUpdateData_1_Instructions) MergeConnectConnectorUpdateData1Instructions0(v ConnectConnectorUpdateData1Instructions0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData1Instructions1 returns the union data inside the ConnectConnectorUpdateData_1_Instructions as a ConnectConnectorUpdateData1Instructions1
-func (t ConnectConnectorUpdateData_1_Instructions) AsConnectConnectorUpdateData1Instructions1() (ConnectConnectorUpdateData1Instructions1, error) {
-	var body ConnectConnectorUpdateData1Instructions1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1Instructions1 overwrites any union data inside the ConnectConnectorUpdateData_1_Instructions as the provided ConnectConnectorUpdateData1Instructions1
-func (t *ConnectConnectorUpdateData_1_Instructions) FromConnectConnectorUpdateData1Instructions1(v ConnectConnectorUpdateData1Instructions1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1Instructions1 performs a merge with any union data inside the ConnectConnectorUpdateData_1_Instructions, using the provided ConnectConnectorUpdateData1Instructions1
-func (t *ConnectConnectorUpdateData_1_Instructions) MergeConnectConnectorUpdateData1Instructions1(v ConnectConnectorUpdateData1Instructions1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorUpdateData_1_Instructions) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorUpdateData_1_Instructions) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdateData1ToUpdateExpiresAt0 returns the union data inside the ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt as a ConnectConnectorUpdateData1ToUpdateExpiresAt0
-func (t ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) AsConnectConnectorUpdateData1ToUpdateExpiresAt0() (ConnectConnectorUpdateData1ToUpdateExpiresAt0, error) {
-	var body ConnectConnectorUpdateData1ToUpdateExpiresAt0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1ToUpdateExpiresAt0 overwrites any union data inside the ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt as the provided ConnectConnectorUpdateData1ToUpdateExpiresAt0
-func (t *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) FromConnectConnectorUpdateData1ToUpdateExpiresAt0(v ConnectConnectorUpdateData1ToUpdateExpiresAt0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1ToUpdateExpiresAt0 performs a merge with any union data inside the ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt, using the provided ConnectConnectorUpdateData1ToUpdateExpiresAt0
-func (t *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) MergeConnectConnectorUpdateData1ToUpdateExpiresAt0(v ConnectConnectorUpdateData1ToUpdateExpiresAt0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData1ToUpdateExpiresAt1 returns the union data inside the ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt as a ConnectConnectorUpdateData1ToUpdateExpiresAt1
-func (t ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) AsConnectConnectorUpdateData1ToUpdateExpiresAt1() (ConnectConnectorUpdateData1ToUpdateExpiresAt1, error) {
-	var body ConnectConnectorUpdateData1ToUpdateExpiresAt1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1ToUpdateExpiresAt1 overwrites any union data inside the ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt as the provided ConnectConnectorUpdateData1ToUpdateExpiresAt1
-func (t *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) FromConnectConnectorUpdateData1ToUpdateExpiresAt1(v ConnectConnectorUpdateData1ToUpdateExpiresAt1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1ToUpdateExpiresAt1 performs a merge with any union data inside the ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt, using the provided ConnectConnectorUpdateData1ToUpdateExpiresAt1
-func (t *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) MergeConnectConnectorUpdateData1ToUpdateExpiresAt1(v ConnectConnectorUpdateData1ToUpdateExpiresAt1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorUpdateData_1_ToUpdate_ExpiresAt) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdateData1ToUpdateScope0 returns the union data inside the ConnectConnectorUpdateData_1_ToUpdate_Scope as a ConnectConnectorUpdateData1ToUpdateScope0
-func (t ConnectConnectorUpdateData_1_ToUpdate_Scope) AsConnectConnectorUpdateData1ToUpdateScope0() (ConnectConnectorUpdateData1ToUpdateScope0, error) {
-	var body ConnectConnectorUpdateData1ToUpdateScope0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1ToUpdateScope0 overwrites any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Scope as the provided ConnectConnectorUpdateData1ToUpdateScope0
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Scope) FromConnectConnectorUpdateData1ToUpdateScope0(v ConnectConnectorUpdateData1ToUpdateScope0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1ToUpdateScope0 performs a merge with any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Scope, using the provided ConnectConnectorUpdateData1ToUpdateScope0
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Scope) MergeConnectConnectorUpdateData1ToUpdateScope0(v ConnectConnectorUpdateData1ToUpdateScope0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData1ToUpdateScope1 returns the union data inside the ConnectConnectorUpdateData_1_ToUpdate_Scope as a ConnectConnectorUpdateData1ToUpdateScope1
-func (t ConnectConnectorUpdateData_1_ToUpdate_Scope) AsConnectConnectorUpdateData1ToUpdateScope1() (ConnectConnectorUpdateData1ToUpdateScope1, error) {
-	var body ConnectConnectorUpdateData1ToUpdateScope1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1ToUpdateScope1 overwrites any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Scope as the provided ConnectConnectorUpdateData1ToUpdateScope1
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Scope) FromConnectConnectorUpdateData1ToUpdateScope1(v ConnectConnectorUpdateData1ToUpdateScope1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1ToUpdateScope1 performs a merge with any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Scope, using the provided ConnectConnectorUpdateData1ToUpdateScope1
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Scope) MergeConnectConnectorUpdateData1ToUpdateScope1(v ConnectConnectorUpdateData1ToUpdateScope1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorUpdateData_1_ToUpdate_Scope) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Scope) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdateData1ToUpdateValue0 returns the union data inside the ConnectConnectorUpdateData_1_ToUpdate_Value as a ConnectConnectorUpdateData1ToUpdateValue0
-func (t ConnectConnectorUpdateData_1_ToUpdate_Value) AsConnectConnectorUpdateData1ToUpdateValue0() (ConnectConnectorUpdateData1ToUpdateValue0, error) {
-	var body ConnectConnectorUpdateData1ToUpdateValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1ToUpdateValue0 overwrites any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Value as the provided ConnectConnectorUpdateData1ToUpdateValue0
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Value) FromConnectConnectorUpdateData1ToUpdateValue0(v ConnectConnectorUpdateData1ToUpdateValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1ToUpdateValue0 performs a merge with any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Value, using the provided ConnectConnectorUpdateData1ToUpdateValue0
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Value) MergeConnectConnectorUpdateData1ToUpdateValue0(v ConnectConnectorUpdateData1ToUpdateValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData1ToUpdateValue1 returns the union data inside the ConnectConnectorUpdateData_1_ToUpdate_Value as a ConnectConnectorUpdateData1ToUpdateValue1
-func (t ConnectConnectorUpdateData_1_ToUpdate_Value) AsConnectConnectorUpdateData1ToUpdateValue1() (ConnectConnectorUpdateData1ToUpdateValue1, error) {
-	var body ConnectConnectorUpdateData1ToUpdateValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1ToUpdateValue1 overwrites any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Value as the provided ConnectConnectorUpdateData1ToUpdateValue1
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Value) FromConnectConnectorUpdateData1ToUpdateValue1(v ConnectConnectorUpdateData1ToUpdateValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1ToUpdateValue1 performs a merge with any union data inside the ConnectConnectorUpdateData_1_ToUpdate_Value, using the provided ConnectConnectorUpdateData1ToUpdateValue1
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Value) MergeConnectConnectorUpdateData1ToUpdateValue1(v ConnectConnectorUpdateData1ToUpdateValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorUpdateData_1_ToUpdate_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorUpdateData_1_ToUpdate_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectCreateConnectorRequest0 returns the union data inside the ConnectCreateConnectorRequest as a ConnectCreateConnectorRequest0
-func (t ConnectCreateConnectorRequest) AsConnectCreateConnectorRequest0() (ConnectCreateConnectorRequest0, error) {
-	var body ConnectCreateConnectorRequest0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequest0 overwrites any union data inside the ConnectCreateConnectorRequest as the provided ConnectCreateConnectorRequest0
-func (t *ConnectCreateConnectorRequest) FromConnectCreateConnectorRequest0(v ConnectCreateConnectorRequest0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequest0 performs a merge with any union data inside the ConnectCreateConnectorRequest, using the provided ConnectCreateConnectorRequest0
-func (t *ConnectCreateConnectorRequest) MergeConnectCreateConnectorRequest0(v ConnectCreateConnectorRequest0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectCreateConnectorRequest1 returns the union data inside the ConnectCreateConnectorRequest as a ConnectCreateConnectorRequest1
-func (t ConnectCreateConnectorRequest) AsConnectCreateConnectorRequest1() (ConnectCreateConnectorRequest1, error) {
-	var body ConnectCreateConnectorRequest1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequest1 overwrites any union data inside the ConnectCreateConnectorRequest as the provided ConnectCreateConnectorRequest1
-func (t *ConnectCreateConnectorRequest) FromConnectCreateConnectorRequest1(v ConnectCreateConnectorRequest1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequest1 performs a merge with any union data inside the ConnectCreateConnectorRequest, using the provided ConnectCreateConnectorRequest1
-func (t *ConnectCreateConnectorRequest) MergeConnectCreateConnectorRequest1(v ConnectCreateConnectorRequest1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectCreateConnectorRequest) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	if err != nil {
-		return nil, err
-	}
-	object := make(map[string]json.RawMessage)
-	if t.union != nil {
-		err = json.Unmarshal(b, &object)
-		if err != nil {
-			return nil, err
-		}
-	}
-
-	if t.AccentColor != nil {
-		object["accentColor"], err = json.Marshal(t.AccentColor)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'accentColor': %w", err)
-		}
-	}
-
-	if t.BackgroundColor != nil {
-		object["backgroundColor"], err = json.Marshal(t.BackgroundColor)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'backgroundColor': %w", err)
-		}
-	}
-
-	if t.ConnectionMethod != nil {
-		object["connectionMethod"], err = json.Marshal(t.ConnectionMethod)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'connectionMethod': %w", err)
-		}
-	}
-
-	object["data"], err = json.Marshal(t.Data)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'data': %w", err)
-	}
-
-	if t.Environments != nil {
-		object["environments"], err = json.Marshal(t.Environments)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'environments': %w", err)
-		}
-	}
-
-	if t.Events != nil {
-		object["events"], err = json.Marshal(t.Events)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'events': %w", err)
-		}
-	}
-
-	if t.Icon != nil {
-		object["icon"], err = json.Marshal(t.Icon)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'icon': %w", err)
-		}
-	}
-
-	if t.Name != nil {
-		object["name"], err = json.Marshal(t.Name)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'name': %w", err)
-		}
-	}
-
-	if t.Params != nil {
-		object["params"], err = json.Marshal(t.Params)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'params': %w", err)
-		}
-	}
-
-	if t.ProjectId != nil {
-		object["projectId"], err = json.Marshal(t.ProjectId)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'projectId': %w", err)
-		}
-	}
-
-	if t.Service != nil {
-		object["service"], err = json.Marshal(t.Service)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'service': %w", err)
-		}
-	}
-
-	if t.Target != nil {
-		object["target"], err = json.Marshal(t.Target)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'target': %w", err)
-		}
-	}
-
-	if t.TriggerDestination != nil {
-		object["triggerDestination"], err = json.Marshal(t.TriggerDestination)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'triggerDestination': %w", err)
-		}
-	}
-
-	if t.TriggerRegistrationInput != nil {
-		object["triggerRegistrationInput"], err = json.Marshal(t.TriggerRegistrationInput)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'triggerRegistrationInput': %w", err)
-		}
-	}
-
-	if t.TriggerType != nil {
-		object["triggerType"], err = json.Marshal(t.TriggerType)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'triggerType': %w", err)
-		}
-	}
-
-	if t.TriggerVerificationInput != nil {
-		object["triggerVerificationInput"], err = json.Marshal(t.TriggerVerificationInput)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'triggerVerificationInput': %w", err)
-		}
-	}
-
-	if t.Triggers != nil {
-		object["triggers"], err = json.Marshal(t.Triggers)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'triggers': %w", err)
-		}
-	}
-
-	if t.Type != nil {
-		object["type"], err = json.Marshal(t.Type)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'type': %w", err)
-		}
-	}
-
-	if t.Uid != nil {
-		object["uid"], err = json.Marshal(t.Uid)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'uid': %w", err)
-		}
-	}
-	b, err = json.Marshal(object)
-	return b, err
-}
-
-func (t *ConnectCreateConnectorRequest) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	if err != nil {
-		return err
-	}
-	object := make(map[string]json.RawMessage)
-	err = json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["accentColor"]; found {
-		err = json.Unmarshal(raw, &t.AccentColor)
-		if err != nil {
-			return fmt.Errorf("error reading 'accentColor': %w", err)
-		}
-	}
-
-	if raw, found := object["backgroundColor"]; found {
-		err = json.Unmarshal(raw, &t.BackgroundColor)
-		if err != nil {
-			return fmt.Errorf("error reading 'backgroundColor': %w", err)
-		}
-	}
-
-	if raw, found := object["connectionMethod"]; found {
-		err = json.Unmarshal(raw, &t.ConnectionMethod)
-		if err != nil {
-			return fmt.Errorf("error reading 'connectionMethod': %w", err)
-		}
-	}
-
-	if raw, found := object["data"]; found {
-		err = json.Unmarshal(raw, &t.Data)
-		if err != nil {
-			return fmt.Errorf("error reading 'data': %w", err)
-		}
-	}
-
-	if raw, found := object["environments"]; found {
-		err = json.Unmarshal(raw, &t.Environments)
-		if err != nil {
-			return fmt.Errorf("error reading 'environments': %w", err)
-		}
-	}
-
-	if raw, found := object["events"]; found {
-		err = json.Unmarshal(raw, &t.Events)
-		if err != nil {
-			return fmt.Errorf("error reading 'events': %w", err)
-		}
-	}
-
-	if raw, found := object["icon"]; found {
-		err = json.Unmarshal(raw, &t.Icon)
-		if err != nil {
-			return fmt.Errorf("error reading 'icon': %w", err)
-		}
-	}
-
-	if raw, found := object["name"]; found {
-		err = json.Unmarshal(raw, &t.Name)
-		if err != nil {
-			return fmt.Errorf("error reading 'name': %w", err)
-		}
-	}
-
-	if raw, found := object["params"]; found {
-		err = json.Unmarshal(raw, &t.Params)
-		if err != nil {
-			return fmt.Errorf("error reading 'params': %w", err)
-		}
-	}
-
-	if raw, found := object["projectId"]; found {
-		err = json.Unmarshal(raw, &t.ProjectId)
-		if err != nil {
-			return fmt.Errorf("error reading 'projectId': %w", err)
-		}
-	}
-
-	if raw, found := object["service"]; found {
-		err = json.Unmarshal(raw, &t.Service)
-		if err != nil {
-			return fmt.Errorf("error reading 'service': %w", err)
-		}
-	}
-
-	if raw, found := object["target"]; found {
-		err = json.Unmarshal(raw, &t.Target)
-		if err != nil {
-			return fmt.Errorf("error reading 'target': %w", err)
-		}
-	}
-
-	if raw, found := object["triggerDestination"]; found {
-		err = json.Unmarshal(raw, &t.TriggerDestination)
-		if err != nil {
-			return fmt.Errorf("error reading 'triggerDestination': %w", err)
-		}
-	}
-
-	if raw, found := object["triggerRegistrationInput"]; found {
-		err = json.Unmarshal(raw, &t.TriggerRegistrationInput)
-		if err != nil {
-			return fmt.Errorf("error reading 'triggerRegistrationInput': %w", err)
-		}
-	}
-
-	if raw, found := object["triggerType"]; found {
-		err = json.Unmarshal(raw, &t.TriggerType)
-		if err != nil {
-			return fmt.Errorf("error reading 'triggerType': %w", err)
-		}
-	}
-
-	if raw, found := object["triggerVerificationInput"]; found {
-		err = json.Unmarshal(raw, &t.TriggerVerificationInput)
-		if err != nil {
-			return fmt.Errorf("error reading 'triggerVerificationInput': %w", err)
-		}
-	}
-
-	if raw, found := object["triggers"]; found {
-		err = json.Unmarshal(raw, &t.Triggers)
-		if err != nil {
-			return fmt.Errorf("error reading 'triggers': %w", err)
-		}
-	}
-
-	if raw, found := object["type"]; found {
-		err = json.Unmarshal(raw, &t.Type)
-		if err != nil {
-			return fmt.Errorf("error reading 'type': %w", err)
-		}
-	}
-
-	if raw, found := object["uid"]; found {
-		err = json.Unmarshal(raw, &t.Uid)
-		if err != nil {
-			return fmt.Errorf("error reading 'uid': %w", err)
-		}
-	}
-
-	return err
-}
-
-// AsConnectCreateConnectorRequestEnvironments0 returns the union data inside the ConnectCreateConnectorRequest_Environments_Item as a ConnectCreateConnectorRequestEnvironments0
-func (t ConnectCreateConnectorRequest_Environments_Item) AsConnectCreateConnectorRequestEnvironments0() (ConnectCreateConnectorRequestEnvironments0, error) {
-	var body ConnectCreateConnectorRequestEnvironments0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequestEnvironments0 overwrites any union data inside the ConnectCreateConnectorRequest_Environments_Item as the provided ConnectCreateConnectorRequestEnvironments0
-func (t *ConnectCreateConnectorRequest_Environments_Item) FromConnectCreateConnectorRequestEnvironments0(v ConnectCreateConnectorRequestEnvironments0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequestEnvironments0 performs a merge with any union data inside the ConnectCreateConnectorRequest_Environments_Item, using the provided ConnectCreateConnectorRequestEnvironments0
-func (t *ConnectCreateConnectorRequest_Environments_Item) MergeConnectCreateConnectorRequestEnvironments0(v ConnectCreateConnectorRequestEnvironments0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectCreateConnectorRequestEnvironments1 returns the union data inside the ConnectCreateConnectorRequest_Environments_Item as a ConnectCreateConnectorRequestEnvironments1
-func (t ConnectCreateConnectorRequest_Environments_Item) AsConnectCreateConnectorRequestEnvironments1() (ConnectCreateConnectorRequestEnvironments1, error) {
-	var body ConnectCreateConnectorRequestEnvironments1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequestEnvironments1 overwrites any union data inside the ConnectCreateConnectorRequest_Environments_Item as the provided ConnectCreateConnectorRequestEnvironments1
-func (t *ConnectCreateConnectorRequest_Environments_Item) FromConnectCreateConnectorRequestEnvironments1(v ConnectCreateConnectorRequestEnvironments1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequestEnvironments1 performs a merge with any union data inside the ConnectCreateConnectorRequest_Environments_Item, using the provided ConnectCreateConnectorRequestEnvironments1
-func (t *ConnectCreateConnectorRequest_Environments_Item) MergeConnectCreateConnectorRequestEnvironments1(v ConnectCreateConnectorRequestEnvironments1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectCreateConnectorRequest_Environments_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectCreateConnectorRequest_Environments_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectCreateConnectorRequestTriggerDestination0 returns the union data inside the ConnectCreateConnectorRequest_TriggerDestination as a ConnectCreateConnectorRequestTriggerDestination0
-func (t ConnectCreateConnectorRequest_TriggerDestination) AsConnectCreateConnectorRequestTriggerDestination0() (ConnectCreateConnectorRequestTriggerDestination0, error) {
-	var body ConnectCreateConnectorRequestTriggerDestination0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequestTriggerDestination0 overwrites any union data inside the ConnectCreateConnectorRequest_TriggerDestination as the provided ConnectCreateConnectorRequestTriggerDestination0
-func (t *ConnectCreateConnectorRequest_TriggerDestination) FromConnectCreateConnectorRequestTriggerDestination0(v ConnectCreateConnectorRequestTriggerDestination0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequestTriggerDestination0 performs a merge with any union data inside the ConnectCreateConnectorRequest_TriggerDestination, using the provided ConnectCreateConnectorRequestTriggerDestination0
-func (t *ConnectCreateConnectorRequest_TriggerDestination) MergeConnectCreateConnectorRequestTriggerDestination0(v ConnectCreateConnectorRequestTriggerDestination0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectCreateConnectorRequestTriggerDestination1 returns the union data inside the ConnectCreateConnectorRequest_TriggerDestination as a ConnectCreateConnectorRequestTriggerDestination1
-func (t ConnectCreateConnectorRequest_TriggerDestination) AsConnectCreateConnectorRequestTriggerDestination1() (ConnectCreateConnectorRequestTriggerDestination1, error) {
-	var body ConnectCreateConnectorRequestTriggerDestination1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequestTriggerDestination1 overwrites any union data inside the ConnectCreateConnectorRequest_TriggerDestination as the provided ConnectCreateConnectorRequestTriggerDestination1
-func (t *ConnectCreateConnectorRequest_TriggerDestination) FromConnectCreateConnectorRequestTriggerDestination1(v ConnectCreateConnectorRequestTriggerDestination1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequestTriggerDestination1 performs a merge with any union data inside the ConnectCreateConnectorRequest_TriggerDestination, using the provided ConnectCreateConnectorRequestTriggerDestination1
-func (t *ConnectCreateConnectorRequest_TriggerDestination) MergeConnectCreateConnectorRequestTriggerDestination1(v ConnectCreateConnectorRequestTriggerDestination1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectCreateConnectorRequestTriggerDestination2 returns the union data inside the ConnectCreateConnectorRequest_TriggerDestination as a ConnectCreateConnectorRequestTriggerDestination2
-func (t ConnectCreateConnectorRequest_TriggerDestination) AsConnectCreateConnectorRequestTriggerDestination2() (ConnectCreateConnectorRequestTriggerDestination2, error) {
-	var body ConnectCreateConnectorRequestTriggerDestination2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectCreateConnectorRequestTriggerDestination2 overwrites any union data inside the ConnectCreateConnectorRequest_TriggerDestination as the provided ConnectCreateConnectorRequestTriggerDestination2
-func (t *ConnectCreateConnectorRequest_TriggerDestination) FromConnectCreateConnectorRequestTriggerDestination2(v ConnectCreateConnectorRequestTriggerDestination2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectCreateConnectorRequestTriggerDestination2 performs a merge with any union data inside the ConnectCreateConnectorRequest_TriggerDestination, using the provided ConnectCreateConnectorRequestTriggerDestination2
-func (t *ConnectCreateConnectorRequest_TriggerDestination) MergeConnectCreateConnectorRequestTriggerDestination2(v ConnectCreateConnectorRequestTriggerDestination2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectCreateConnectorRequest_TriggerDestination) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectCreateConnectorRequest_TriggerDestination) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectProjectConnectionEnabledEnvironments0 returns the union data inside the ConnectProjectConnection_EnabledEnvironments_Item as a ConnectProjectConnectionEnabledEnvironments0
-func (t ConnectProjectConnection_EnabledEnvironments_Item) AsConnectProjectConnectionEnabledEnvironments0() (ConnectProjectConnectionEnabledEnvironments0, error) {
-	var body ConnectProjectConnectionEnabledEnvironments0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectProjectConnectionEnabledEnvironments0 overwrites any union data inside the ConnectProjectConnection_EnabledEnvironments_Item as the provided ConnectProjectConnectionEnabledEnvironments0
-func (t *ConnectProjectConnection_EnabledEnvironments_Item) FromConnectProjectConnectionEnabledEnvironments0(v ConnectProjectConnectionEnabledEnvironments0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectProjectConnectionEnabledEnvironments0 performs a merge with any union data inside the ConnectProjectConnection_EnabledEnvironments_Item, using the provided ConnectProjectConnectionEnabledEnvironments0
-func (t *ConnectProjectConnection_EnabledEnvironments_Item) MergeConnectProjectConnectionEnabledEnvironments0(v ConnectProjectConnectionEnabledEnvironments0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectProjectConnectionEnabledEnvironments1 returns the union data inside the ConnectProjectConnection_EnabledEnvironments_Item as a ConnectProjectConnectionEnabledEnvironments1
-func (t ConnectProjectConnection_EnabledEnvironments_Item) AsConnectProjectConnectionEnabledEnvironments1() (ConnectProjectConnectionEnabledEnvironments1, error) {
-	var body ConnectProjectConnectionEnabledEnvironments1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectProjectConnectionEnabledEnvironments1 overwrites any union data inside the ConnectProjectConnection_EnabledEnvironments_Item as the provided ConnectProjectConnectionEnabledEnvironments1
-func (t *ConnectProjectConnection_EnabledEnvironments_Item) FromConnectProjectConnectionEnabledEnvironments1(v ConnectProjectConnectionEnabledEnvironments1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectProjectConnectionEnabledEnvironments1 performs a merge with any union data inside the ConnectProjectConnection_EnabledEnvironments_Item, using the provided ConnectProjectConnectionEnabledEnvironments1
-func (t *ConnectProjectConnection_EnabledEnvironments_Item) MergeConnectProjectConnectionEnabledEnvironments1(v ConnectProjectConnectionEnabledEnvironments1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectProjectConnection_EnabledEnvironments_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectProjectConnection_EnabledEnvironments_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectTriggerDestinationInput0 returns the union data inside the ConnectTriggerDestinationInput as a ConnectTriggerDestinationInput0
-func (t ConnectTriggerDestinationInput) AsConnectTriggerDestinationInput0() (ConnectTriggerDestinationInput0, error) {
-	var body ConnectTriggerDestinationInput0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectTriggerDestinationInput0 overwrites any union data inside the ConnectTriggerDestinationInput as the provided ConnectTriggerDestinationInput0
-func (t *ConnectTriggerDestinationInput) FromConnectTriggerDestinationInput0(v ConnectTriggerDestinationInput0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectTriggerDestinationInput0 performs a merge with any union data inside the ConnectTriggerDestinationInput, using the provided ConnectTriggerDestinationInput0
-func (t *ConnectTriggerDestinationInput) MergeConnectTriggerDestinationInput0(v ConnectTriggerDestinationInput0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectTriggerDestinationInput1 returns the union data inside the ConnectTriggerDestinationInput as a ConnectTriggerDestinationInput1
-func (t ConnectTriggerDestinationInput) AsConnectTriggerDestinationInput1() (ConnectTriggerDestinationInput1, error) {
-	var body ConnectTriggerDestinationInput1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectTriggerDestinationInput1 overwrites any union data inside the ConnectTriggerDestinationInput as the provided ConnectTriggerDestinationInput1
-func (t *ConnectTriggerDestinationInput) FromConnectTriggerDestinationInput1(v ConnectTriggerDestinationInput1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectTriggerDestinationInput1 performs a merge with any union data inside the ConnectTriggerDestinationInput, using the provided ConnectTriggerDestinationInput1
-func (t *ConnectTriggerDestinationInput) MergeConnectTriggerDestinationInput1(v ConnectTriggerDestinationInput1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectTriggerDestinationInput2 returns the union data inside the ConnectTriggerDestinationInput as a ConnectTriggerDestinationInput2
-func (t ConnectTriggerDestinationInput) AsConnectTriggerDestinationInput2() (ConnectTriggerDestinationInput2, error) {
-	var body ConnectTriggerDestinationInput2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectTriggerDestinationInput2 overwrites any union data inside the ConnectTriggerDestinationInput as the provided ConnectTriggerDestinationInput2
-func (t *ConnectTriggerDestinationInput) FromConnectTriggerDestinationInput2(v ConnectTriggerDestinationInput2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectTriggerDestinationInput2 performs a merge with any union data inside the ConnectTriggerDestinationInput, using the provided ConnectTriggerDestinationInput2
-func (t *ConnectTriggerDestinationInput) MergeConnectTriggerDestinationInput2(v ConnectTriggerDestinationInput2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectTriggerDestinationInput) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectTriggerDestinationInput) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectUpsertProjectConnectionRequestEnvironments0 returns the union data inside the ConnectUpsertProjectConnectionRequest_Environments_Item as a ConnectUpsertProjectConnectionRequestEnvironments0
-func (t ConnectUpsertProjectConnectionRequest_Environments_Item) AsConnectUpsertProjectConnectionRequestEnvironments0() (ConnectUpsertProjectConnectionRequestEnvironments0, error) {
-	var body ConnectUpsertProjectConnectionRequestEnvironments0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectUpsertProjectConnectionRequestEnvironments0 overwrites any union data inside the ConnectUpsertProjectConnectionRequest_Environments_Item as the provided ConnectUpsertProjectConnectionRequestEnvironments0
-func (t *ConnectUpsertProjectConnectionRequest_Environments_Item) FromConnectUpsertProjectConnectionRequestEnvironments0(v ConnectUpsertProjectConnectionRequestEnvironments0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectUpsertProjectConnectionRequestEnvironments0 performs a merge with any union data inside the ConnectUpsertProjectConnectionRequest_Environments_Item, using the provided ConnectUpsertProjectConnectionRequestEnvironments0
-func (t *ConnectUpsertProjectConnectionRequest_Environments_Item) MergeConnectUpsertProjectConnectionRequestEnvironments0(v ConnectUpsertProjectConnectionRequestEnvironments0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectUpsertProjectConnectionRequestEnvironments1 returns the union data inside the ConnectUpsertProjectConnectionRequest_Environments_Item as a ConnectUpsertProjectConnectionRequestEnvironments1
-func (t ConnectUpsertProjectConnectionRequest_Environments_Item) AsConnectUpsertProjectConnectionRequestEnvironments1() (ConnectUpsertProjectConnectionRequestEnvironments1, error) {
-	var body ConnectUpsertProjectConnectionRequestEnvironments1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectUpsertProjectConnectionRequestEnvironments1 overwrites any union data inside the ConnectUpsertProjectConnectionRequest_Environments_Item as the provided ConnectUpsertProjectConnectionRequestEnvironments1
-func (t *ConnectUpsertProjectConnectionRequest_Environments_Item) FromConnectUpsertProjectConnectionRequestEnvironments1(v ConnectUpsertProjectConnectionRequestEnvironments1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectUpsertProjectConnectionRequestEnvironments1 performs a merge with any union data inside the ConnectUpsertProjectConnectionRequest_Environments_Item, using the provided ConnectUpsertProjectConnectionRequestEnvironments1
-func (t *ConnectUpsertProjectConnectionRequest_Environments_Item) MergeConnectUpsertProjectConnectionRequestEnvironments1(v ConnectUpsertProjectConnectionRequestEnvironments1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectUpsertProjectConnectionRequest_Environments_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectUpsertProjectConnectionRequest_Environments_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagEnvironmentsFallthrough0 returns the union data inside the Flag_Environments_Fallthrough as a FlagEnvironmentsFallthrough0
-func (t Flag_Environments_Fallthrough) AsFlagEnvironmentsFallthrough0() (FlagEnvironmentsFallthrough0, error) {
-	var body FlagEnvironmentsFallthrough0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsFallthrough0 overwrites any union data inside the Flag_Environments_Fallthrough as the provided FlagEnvironmentsFallthrough0
-func (t *Flag_Environments_Fallthrough) FromFlagEnvironmentsFallthrough0(v FlagEnvironmentsFallthrough0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsFallthrough0 performs a merge with any union data inside the Flag_Environments_Fallthrough, using the provided FlagEnvironmentsFallthrough0
-func (t *Flag_Environments_Fallthrough) MergeFlagEnvironmentsFallthrough0(v FlagEnvironmentsFallthrough0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsFallthrough1 returns the union data inside the Flag_Environments_Fallthrough as a FlagEnvironmentsFallthrough1
-func (t Flag_Environments_Fallthrough) AsFlagEnvironmentsFallthrough1() (FlagEnvironmentsFallthrough1, error) {
-	var body FlagEnvironmentsFallthrough1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsFallthrough1 overwrites any union data inside the Flag_Environments_Fallthrough as the provided FlagEnvironmentsFallthrough1
-func (t *Flag_Environments_Fallthrough) FromFlagEnvironmentsFallthrough1(v FlagEnvironmentsFallthrough1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsFallthrough1 performs a merge with any union data inside the Flag_Environments_Fallthrough, using the provided FlagEnvironmentsFallthrough1
-func (t *Flag_Environments_Fallthrough) MergeFlagEnvironmentsFallthrough1(v FlagEnvironmentsFallthrough1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsFallthrough2 returns the union data inside the Flag_Environments_Fallthrough as a FlagEnvironmentsFallthrough2
-func (t Flag_Environments_Fallthrough) AsFlagEnvironmentsFallthrough2() (FlagEnvironmentsFallthrough2, error) {
-	var body FlagEnvironmentsFallthrough2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsFallthrough2 overwrites any union data inside the Flag_Environments_Fallthrough as the provided FlagEnvironmentsFallthrough2
-func (t *Flag_Environments_Fallthrough) FromFlagEnvironmentsFallthrough2(v FlagEnvironmentsFallthrough2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsFallthrough2 performs a merge with any union data inside the Flag_Environments_Fallthrough, using the provided FlagEnvironmentsFallthrough2
-func (t *Flag_Environments_Fallthrough) MergeFlagEnvironmentsFallthrough2(v FlagEnvironmentsFallthrough2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsFallthrough3 returns the union data inside the Flag_Environments_Fallthrough as a FlagEnvironmentsFallthrough3
-func (t Flag_Environments_Fallthrough) AsFlagEnvironmentsFallthrough3() (FlagEnvironmentsFallthrough3, error) {
-	var body FlagEnvironmentsFallthrough3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsFallthrough3 overwrites any union data inside the Flag_Environments_Fallthrough as the provided FlagEnvironmentsFallthrough3
-func (t *Flag_Environments_Fallthrough) FromFlagEnvironmentsFallthrough3(v FlagEnvironmentsFallthrough3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsFallthrough3 performs a merge with any union data inside the Flag_Environments_Fallthrough, using the provided FlagEnvironmentsFallthrough3
-func (t *Flag_Environments_Fallthrough) MergeFlagEnvironmentsFallthrough3(v FlagEnvironmentsFallthrough3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Flag_Environments_Fallthrough) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Flag_Environments_Fallthrough) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsLhs0 returns the union data inside the Flag_Environments_Rules_Conditions_Lhs as a FlagEnvironmentsRulesConditionsLhs0
-func (t Flag_Environments_Rules_Conditions_Lhs) AsFlagEnvironmentsRulesConditionsLhs0() (FlagEnvironmentsRulesConditionsLhs0, error) {
-	var body FlagEnvironmentsRulesConditionsLhs0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsLhs0 overwrites any union data inside the Flag_Environments_Rules_Conditions_Lhs as the provided FlagEnvironmentsRulesConditionsLhs0
-func (t *Flag_Environments_Rules_Conditions_Lhs) FromFlagEnvironmentsRulesConditionsLhs0(v FlagEnvironmentsRulesConditionsLhs0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsLhs0 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Lhs, using the provided FlagEnvironmentsRulesConditionsLhs0
-func (t *Flag_Environments_Rules_Conditions_Lhs) MergeFlagEnvironmentsRulesConditionsLhs0(v FlagEnvironmentsRulesConditionsLhs0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsLhs1 returns the union data inside the Flag_Environments_Rules_Conditions_Lhs as a FlagEnvironmentsRulesConditionsLhs1
-func (t Flag_Environments_Rules_Conditions_Lhs) AsFlagEnvironmentsRulesConditionsLhs1() (FlagEnvironmentsRulesConditionsLhs1, error) {
-	var body FlagEnvironmentsRulesConditionsLhs1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsLhs1 overwrites any union data inside the Flag_Environments_Rules_Conditions_Lhs as the provided FlagEnvironmentsRulesConditionsLhs1
-func (t *Flag_Environments_Rules_Conditions_Lhs) FromFlagEnvironmentsRulesConditionsLhs1(v FlagEnvironmentsRulesConditionsLhs1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsLhs1 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Lhs, using the provided FlagEnvironmentsRulesConditionsLhs1
-func (t *Flag_Environments_Rules_Conditions_Lhs) MergeFlagEnvironmentsRulesConditionsLhs1(v FlagEnvironmentsRulesConditionsLhs1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Flag_Environments_Rules_Conditions_Lhs) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Flag_Environments_Rules_Conditions_Lhs) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs2Items0 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs_2_Items_Item as a FlagEnvironmentsRulesConditionsRhs2Items0
-func (t Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) AsFlagEnvironmentsRulesConditionsRhs2Items0() (FlagEnvironmentsRulesConditionsRhs2Items0, error) {
-	var body FlagEnvironmentsRulesConditionsRhs2Items0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs2Items0 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs_2_Items_Item as the provided FlagEnvironmentsRulesConditionsRhs2Items0
-func (t *Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) FromFlagEnvironmentsRulesConditionsRhs2Items0(v FlagEnvironmentsRulesConditionsRhs2Items0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs2Items0 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs_2_Items_Item, using the provided FlagEnvironmentsRulesConditionsRhs2Items0
-func (t *Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) MergeFlagEnvironmentsRulesConditionsRhs2Items0(v FlagEnvironmentsRulesConditionsRhs2Items0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs2Items1 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs_2_Items_Item as a FlagEnvironmentsRulesConditionsRhs2Items1
-func (t Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) AsFlagEnvironmentsRulesConditionsRhs2Items1() (FlagEnvironmentsRulesConditionsRhs2Items1, error) {
-	var body FlagEnvironmentsRulesConditionsRhs2Items1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs2Items1 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs_2_Items_Item as the provided FlagEnvironmentsRulesConditionsRhs2Items1
-func (t *Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) FromFlagEnvironmentsRulesConditionsRhs2Items1(v FlagEnvironmentsRulesConditionsRhs2Items1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs2Items1 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs_2_Items_Item, using the provided FlagEnvironmentsRulesConditionsRhs2Items1
-func (t *Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) MergeFlagEnvironmentsRulesConditionsRhs2Items1(v FlagEnvironmentsRulesConditionsRhs2Items1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Flag_Environments_Rules_Conditions_Rhs_2_Items_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs0 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs as a FlagEnvironmentsRulesConditionsRhs0
-func (t Flag_Environments_Rules_Conditions_Rhs) AsFlagEnvironmentsRulesConditionsRhs0() (FlagEnvironmentsRulesConditionsRhs0, error) {
-	var body FlagEnvironmentsRulesConditionsRhs0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs0 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs as the provided FlagEnvironmentsRulesConditionsRhs0
-func (t *Flag_Environments_Rules_Conditions_Rhs) FromFlagEnvironmentsRulesConditionsRhs0(v FlagEnvironmentsRulesConditionsRhs0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs0 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs, using the provided FlagEnvironmentsRulesConditionsRhs0
-func (t *Flag_Environments_Rules_Conditions_Rhs) MergeFlagEnvironmentsRulesConditionsRhs0(v FlagEnvironmentsRulesConditionsRhs0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs1 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs as a FlagEnvironmentsRulesConditionsRhs1
-func (t Flag_Environments_Rules_Conditions_Rhs) AsFlagEnvironmentsRulesConditionsRhs1() (FlagEnvironmentsRulesConditionsRhs1, error) {
-	var body FlagEnvironmentsRulesConditionsRhs1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs1 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs as the provided FlagEnvironmentsRulesConditionsRhs1
-func (t *Flag_Environments_Rules_Conditions_Rhs) FromFlagEnvironmentsRulesConditionsRhs1(v FlagEnvironmentsRulesConditionsRhs1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs1 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs, using the provided FlagEnvironmentsRulesConditionsRhs1
-func (t *Flag_Environments_Rules_Conditions_Rhs) MergeFlagEnvironmentsRulesConditionsRhs1(v FlagEnvironmentsRulesConditionsRhs1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs2 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs as a FlagEnvironmentsRulesConditionsRhs2
-func (t Flag_Environments_Rules_Conditions_Rhs) AsFlagEnvironmentsRulesConditionsRhs2() (FlagEnvironmentsRulesConditionsRhs2, error) {
-	var body FlagEnvironmentsRulesConditionsRhs2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs2 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs as the provided FlagEnvironmentsRulesConditionsRhs2
-func (t *Flag_Environments_Rules_Conditions_Rhs) FromFlagEnvironmentsRulesConditionsRhs2(v FlagEnvironmentsRulesConditionsRhs2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs2 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs, using the provided FlagEnvironmentsRulesConditionsRhs2
-func (t *Flag_Environments_Rules_Conditions_Rhs) MergeFlagEnvironmentsRulesConditionsRhs2(v FlagEnvironmentsRulesConditionsRhs2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs3 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs as a FlagEnvironmentsRulesConditionsRhs3
-func (t Flag_Environments_Rules_Conditions_Rhs) AsFlagEnvironmentsRulesConditionsRhs3() (FlagEnvironmentsRulesConditionsRhs3, error) {
-	var body FlagEnvironmentsRulesConditionsRhs3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs3 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs as the provided FlagEnvironmentsRulesConditionsRhs3
-func (t *Flag_Environments_Rules_Conditions_Rhs) FromFlagEnvironmentsRulesConditionsRhs3(v FlagEnvironmentsRulesConditionsRhs3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs3 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs, using the provided FlagEnvironmentsRulesConditionsRhs3
-func (t *Flag_Environments_Rules_Conditions_Rhs) MergeFlagEnvironmentsRulesConditionsRhs3(v FlagEnvironmentsRulesConditionsRhs3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesConditionsRhs4 returns the union data inside the Flag_Environments_Rules_Conditions_Rhs as a FlagEnvironmentsRulesConditionsRhs4
-func (t Flag_Environments_Rules_Conditions_Rhs) AsFlagEnvironmentsRulesConditionsRhs4() (FlagEnvironmentsRulesConditionsRhs4, error) {
-	var body FlagEnvironmentsRulesConditionsRhs4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesConditionsRhs4 overwrites any union data inside the Flag_Environments_Rules_Conditions_Rhs as the provided FlagEnvironmentsRulesConditionsRhs4
-func (t *Flag_Environments_Rules_Conditions_Rhs) FromFlagEnvironmentsRulesConditionsRhs4(v FlagEnvironmentsRulesConditionsRhs4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesConditionsRhs4 performs a merge with any union data inside the Flag_Environments_Rules_Conditions_Rhs, using the provided FlagEnvironmentsRulesConditionsRhs4
-func (t *Flag_Environments_Rules_Conditions_Rhs) MergeFlagEnvironmentsRulesConditionsRhs4(v FlagEnvironmentsRulesConditionsRhs4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Flag_Environments_Rules_Conditions_Rhs) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Flag_Environments_Rules_Conditions_Rhs) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagEnvironmentsRulesOutcome0 returns the union data inside the Flag_Environments_Rules_Outcome as a FlagEnvironmentsRulesOutcome0
-func (t Flag_Environments_Rules_Outcome) AsFlagEnvironmentsRulesOutcome0() (FlagEnvironmentsRulesOutcome0, error) {
-	var body FlagEnvironmentsRulesOutcome0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesOutcome0 overwrites any union data inside the Flag_Environments_Rules_Outcome as the provided FlagEnvironmentsRulesOutcome0
-func (t *Flag_Environments_Rules_Outcome) FromFlagEnvironmentsRulesOutcome0(v FlagEnvironmentsRulesOutcome0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesOutcome0 performs a merge with any union data inside the Flag_Environments_Rules_Outcome, using the provided FlagEnvironmentsRulesOutcome0
-func (t *Flag_Environments_Rules_Outcome) MergeFlagEnvironmentsRulesOutcome0(v FlagEnvironmentsRulesOutcome0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesOutcome1 returns the union data inside the Flag_Environments_Rules_Outcome as a FlagEnvironmentsRulesOutcome1
-func (t Flag_Environments_Rules_Outcome) AsFlagEnvironmentsRulesOutcome1() (FlagEnvironmentsRulesOutcome1, error) {
-	var body FlagEnvironmentsRulesOutcome1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesOutcome1 overwrites any union data inside the Flag_Environments_Rules_Outcome as the provided FlagEnvironmentsRulesOutcome1
-func (t *Flag_Environments_Rules_Outcome) FromFlagEnvironmentsRulesOutcome1(v FlagEnvironmentsRulesOutcome1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesOutcome1 performs a merge with any union data inside the Flag_Environments_Rules_Outcome, using the provided FlagEnvironmentsRulesOutcome1
-func (t *Flag_Environments_Rules_Outcome) MergeFlagEnvironmentsRulesOutcome1(v FlagEnvironmentsRulesOutcome1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesOutcome2 returns the union data inside the Flag_Environments_Rules_Outcome as a FlagEnvironmentsRulesOutcome2
-func (t Flag_Environments_Rules_Outcome) AsFlagEnvironmentsRulesOutcome2() (FlagEnvironmentsRulesOutcome2, error) {
-	var body FlagEnvironmentsRulesOutcome2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesOutcome2 overwrites any union data inside the Flag_Environments_Rules_Outcome as the provided FlagEnvironmentsRulesOutcome2
-func (t *Flag_Environments_Rules_Outcome) FromFlagEnvironmentsRulesOutcome2(v FlagEnvironmentsRulesOutcome2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesOutcome2 performs a merge with any union data inside the Flag_Environments_Rules_Outcome, using the provided FlagEnvironmentsRulesOutcome2
-func (t *Flag_Environments_Rules_Outcome) MergeFlagEnvironmentsRulesOutcome2(v FlagEnvironmentsRulesOutcome2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesOutcome3 returns the union data inside the Flag_Environments_Rules_Outcome as a FlagEnvironmentsRulesOutcome3
-func (t Flag_Environments_Rules_Outcome) AsFlagEnvironmentsRulesOutcome3() (FlagEnvironmentsRulesOutcome3, error) {
-	var body FlagEnvironmentsRulesOutcome3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesOutcome3 overwrites any union data inside the Flag_Environments_Rules_Outcome as the provided FlagEnvironmentsRulesOutcome3
-func (t *Flag_Environments_Rules_Outcome) FromFlagEnvironmentsRulesOutcome3(v FlagEnvironmentsRulesOutcome3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesOutcome3 performs a merge with any union data inside the Flag_Environments_Rules_Outcome, using the provided FlagEnvironmentsRulesOutcome3
-func (t *Flag_Environments_Rules_Outcome) MergeFlagEnvironmentsRulesOutcome3(v FlagEnvironmentsRulesOutcome3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Flag_Environments_Rules_Outcome) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Flag_Environments_Rules_Outcome) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagVariantsValue0 returns the union data inside the Flag_Variants_Value as a FlagVariantsValue0
-func (t Flag_Variants_Value) AsFlagVariantsValue0() (FlagVariantsValue0, error) {
-	var body FlagVariantsValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagVariantsValue0 overwrites any union data inside the Flag_Variants_Value as the provided FlagVariantsValue0
-func (t *Flag_Variants_Value) FromFlagVariantsValue0(v FlagVariantsValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagVariantsValue0 performs a merge with any union data inside the Flag_Variants_Value, using the provided FlagVariantsValue0
-func (t *Flag_Variants_Value) MergeFlagVariantsValue0(v FlagVariantsValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagVariantsValue1 returns the union data inside the Flag_Variants_Value as a FlagVariantsValue1
-func (t Flag_Variants_Value) AsFlagVariantsValue1() (FlagVariantsValue1, error) {
-	var body FlagVariantsValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagVariantsValue1 overwrites any union data inside the Flag_Variants_Value as the provided FlagVariantsValue1
-func (t *Flag_Variants_Value) FromFlagVariantsValue1(v FlagVariantsValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagVariantsValue1 performs a merge with any union data inside the Flag_Variants_Value, using the provided FlagVariantsValue1
-func (t *Flag_Variants_Value) MergeFlagVariantsValue1(v FlagVariantsValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagVariantsValue2 returns the union data inside the Flag_Variants_Value as a FlagVariantsValue2
-func (t Flag_Variants_Value) AsFlagVariantsValue2() (FlagVariantsValue2, error) {
-	var body FlagVariantsValue2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagVariantsValue2 overwrites any union data inside the Flag_Variants_Value as the provided FlagVariantsValue2
-func (t *Flag_Variants_Value) FromFlagVariantsValue2(v FlagVariantsValue2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagVariantsValue2 performs a merge with any union data inside the Flag_Variants_Value, using the provided FlagVariantsValue2
-func (t *Flag_Variants_Value) MergeFlagVariantsValue2(v FlagVariantsValue2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagVariantsValue3 returns the union data inside the Flag_Variants_Value as a FlagVariantsValue3
-func (t Flag_Variants_Value) AsFlagVariantsValue3() (FlagVariantsValue3, error) {
-	var body FlagVariantsValue3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagVariantsValue3 overwrites any union data inside the Flag_Variants_Value as the provided FlagVariantsValue3
-func (t *Flag_Variants_Value) FromFlagVariantsValue3(v FlagVariantsValue3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagVariantsValue3 performs a merge with any union data inside the Flag_Variants_Value, using the provided FlagVariantsValue3
-func (t *Flag_Variants_Value) MergeFlagVariantsValue3(v FlagVariantsValue3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagVariantsValue4 returns the union data inside the Flag_Variants_Value as a FlagVariantsValue4
-func (t Flag_Variants_Value) AsFlagVariantsValue4() (FlagVariantsValue4, error) {
-	var body FlagVariantsValue4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagVariantsValue4 overwrites any union data inside the Flag_Variants_Value as the provided FlagVariantsValue4
-func (t *Flag_Variants_Value) FromFlagVariantsValue4(v FlagVariantsValue4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagVariantsValue4 performs a merge with any union data inside the Flag_Variants_Value, using the provided FlagVariantsValue4
-func (t *Flag_Variants_Value) MergeFlagVariantsValue4(v FlagVariantsValue4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Flag_Variants_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Flag_Variants_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFlagJSONValue0 returns the union data inside the FlagJSONValue as a FlagJSONValue0
-func (t FlagJSONValue) AsFlagJSONValue0() (FlagJSONValue0, error) {
-	var body FlagJSONValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagJSONValue0 overwrites any union data inside the FlagJSONValue as the provided FlagJSONValue0
-func (t *FlagJSONValue) FromFlagJSONValue0(v FlagJSONValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagJSONValue0 performs a merge with any union data inside the FlagJSONValue, using the provided FlagJSONValue0
-func (t *FlagJSONValue) MergeFlagJSONValue0(v FlagJSONValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagJSONValue1 returns the union data inside the FlagJSONValue as a FlagJSONValue1
-func (t FlagJSONValue) AsFlagJSONValue1() (FlagJSONValue1, error) {
-	var body FlagJSONValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagJSONValue1 overwrites any union data inside the FlagJSONValue as the provided FlagJSONValue1
-func (t *FlagJSONValue) FromFlagJSONValue1(v FlagJSONValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagJSONValue1 performs a merge with any union data inside the FlagJSONValue, using the provided FlagJSONValue1
-func (t *FlagJSONValue) MergeFlagJSONValue1(v FlagJSONValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagJSONValue2 returns the union data inside the FlagJSONValue as a FlagJSONValue2
-func (t FlagJSONValue) AsFlagJSONValue2() (FlagJSONValue2, error) {
-	var body FlagJSONValue2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagJSONValue2 overwrites any union data inside the FlagJSONValue as the provided FlagJSONValue2
-func (t *FlagJSONValue) FromFlagJSONValue2(v FlagJSONValue2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagJSONValue2 performs a merge with any union data inside the FlagJSONValue, using the provided FlagJSONValue2
-func (t *FlagJSONValue) MergeFlagJSONValue2(v FlagJSONValue2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagJSONValue3 returns the union data inside the FlagJSONValue as a FlagJSONValue3
-func (t FlagJSONValue) AsFlagJSONValue3() (FlagJSONValue3, error) {
-	var body FlagJSONValue3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagJSONValue3 overwrites any union data inside the FlagJSONValue as the provided FlagJSONValue3
-func (t *FlagJSONValue) FromFlagJSONValue3(v FlagJSONValue3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagJSONValue3 performs a merge with any union data inside the FlagJSONValue, using the provided FlagJSONValue3
-func (t *FlagJSONValue) MergeFlagJSONValue3(v FlagJSONValue3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagJSONValue4 returns the union data inside the FlagJSONValue as a FlagJSONValue4
-func (t FlagJSONValue) AsFlagJSONValue4() (FlagJSONValue4, error) {
-	var body FlagJSONValue4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagJSONValue4 overwrites any union data inside the FlagJSONValue as the provided FlagJSONValue4
-func (t *FlagJSONValue) FromFlagJSONValue4(v FlagJSONValue4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagJSONValue4 performs a merge with any union data inside the FlagJSONValue, using the provided FlagJSONValue4
-func (t *FlagJSONValue) MergeFlagJSONValue4(v FlagJSONValue4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t FlagJSONValue) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *FlagJSONValue) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGlobalConfigItemValue0 returns the union data inside the GlobalConfigItemValue as a GlobalConfigItemValue0
-func (t GlobalConfigItemValue) AsGlobalConfigItemValue0() (GlobalConfigItemValue0, error) {
-	var body GlobalConfigItemValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGlobalConfigItemValue0 overwrites any union data inside the GlobalConfigItemValue as the provided GlobalConfigItemValue0
-func (t *GlobalConfigItemValue) FromGlobalConfigItemValue0(v GlobalConfigItemValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGlobalConfigItemValue0 performs a merge with any union data inside the GlobalConfigItemValue, using the provided GlobalConfigItemValue0
-func (t *GlobalConfigItemValue) MergeGlobalConfigItemValue0(v GlobalConfigItemValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGlobalConfigItemValue1 returns the union data inside the GlobalConfigItemValue as a GlobalConfigItemValue1
-func (t GlobalConfigItemValue) AsGlobalConfigItemValue1() (GlobalConfigItemValue1, error) {
-	var body GlobalConfigItemValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGlobalConfigItemValue1 overwrites any union data inside the GlobalConfigItemValue as the provided GlobalConfigItemValue1
-func (t *GlobalConfigItemValue) FromGlobalConfigItemValue1(v GlobalConfigItemValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGlobalConfigItemValue1 performs a merge with any union data inside the GlobalConfigItemValue, using the provided GlobalConfigItemValue1
-func (t *GlobalConfigItemValue) MergeGlobalConfigItemValue1(v GlobalConfigItemValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGlobalConfigItemValue2 returns the union data inside the GlobalConfigItemValue as a GlobalConfigItemValue2
-func (t GlobalConfigItemValue) AsGlobalConfigItemValue2() (GlobalConfigItemValue2, error) {
-	var body GlobalConfigItemValue2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGlobalConfigItemValue2 overwrites any union data inside the GlobalConfigItemValue as the provided GlobalConfigItemValue2
-func (t *GlobalConfigItemValue) FromGlobalConfigItemValue2(v GlobalConfigItemValue2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGlobalConfigItemValue2 performs a merge with any union data inside the GlobalConfigItemValue, using the provided GlobalConfigItemValue2
-func (t *GlobalConfigItemValue) MergeGlobalConfigItemValue2(v GlobalConfigItemValue2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGlobalConfigItemValue3 returns the union data inside the GlobalConfigItemValue as a GlobalConfigItemValue3
-func (t GlobalConfigItemValue) AsGlobalConfigItemValue3() (GlobalConfigItemValue3, error) {
-	var body GlobalConfigItemValue3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGlobalConfigItemValue3 overwrites any union data inside the GlobalConfigItemValue as the provided GlobalConfigItemValue3
-func (t *GlobalConfigItemValue) FromGlobalConfigItemValue3(v GlobalConfigItemValue3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGlobalConfigItemValue3 performs a merge with any union data inside the GlobalConfigItemValue, using the provided GlobalConfigItemValue3
-func (t *GlobalConfigItemValue) MergeGlobalConfigItemValue3(v GlobalConfigItemValue3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGlobalConfigItemValue4 returns the union data inside the GlobalConfigItemValue as a GlobalConfigItemValue4
-func (t GlobalConfigItemValue) AsGlobalConfigItemValue4() (GlobalConfigItemValue4, error) {
-	var body GlobalConfigItemValue4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGlobalConfigItemValue4 overwrites any union data inside the GlobalConfigItemValue as the provided GlobalConfigItemValue4
-func (t *GlobalConfigItemValue) FromGlobalConfigItemValue4(v GlobalConfigItemValue4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGlobalConfigItemValue4 performs a merge with any union data inside the GlobalConfigItemValue, using the provided GlobalConfigItemValue4
-func (t *GlobalConfigItemValue) MergeGlobalConfigItemValue4(v GlobalConfigItemValue4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GlobalConfigItemValue) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
 }

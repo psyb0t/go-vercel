@@ -10,14 +10,270 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// UserEventPayload528AfterClaimsValuesWildcards defines model for UserEvent.Payload.528.After.Claims.Values.Wildcards.
-type UserEventPayload528AfterClaimsValuesWildcards bool
+// UserEvent_Payload_532_Previous defines model for UserEvent.Payload.532.Previous.
+type UserEvent_Payload_532_Previous struct {
+	union json.RawMessage
+}
 
-// UserEventPayload528BeforeClaimsValuesWildcards defines model for UserEvent.Payload.528.Before.Claims.Values.Wildcards.
-type UserEventPayload528BeforeClaimsValuesWildcards bool
+// UserEventPayload533 The payload of the event, if requested.
+type UserEventPayload533 struct {
+	DeploymentId string  `json:"deploymentId"`
+	ProjectId    string  `json:"projectId"`
+	ProjectName  *string `json:"projectName,omitempty"`
+	RunId        string  `json:"runId"`
+}
 
-// UserEventPayload529 The payload of the event, if requested.
-type UserEventPayload529 struct {
+// UserEventPayload534 The payload of the event, if requested.
+type UserEventPayload534 struct {
+	Next struct {
+		Enabled    UserEventPayload534NextEnabled `json:"enabled"`
+		IssuerUrls []string                       `json:"issuerUrls"`
+	} `json:"next"`
+	Previous struct {
+		Enabled    UserEventPayload534PreviousEnabled `json:"enabled"`
+		IssuerUrls []string                           `json:"issuerUrls"`
+	} `json:"previous"`
+	Scope UserEventPayload534Scope `json:"scope"`
+}
+
+// UserEventPayload534NextEnabled defines model for UserEvent.Payload.534.Next.Enabled.
+type UserEventPayload534NextEnabled bool
+
+// UserEventPayload534PreviousEnabled defines model for UserEvent.Payload.534.Previous.Enabled.
+type UserEventPayload534PreviousEnabled bool
+
+// UserEventPayload534Scope defines model for UserEvent.Payload.534.Scope.
+type UserEventPayload534Scope string
+
+// UserEventPayload535 The payload of the event, if requested.
+type UserEventPayload535 struct {
+	// App optional since entries prior to 2025-10-13 do not contain app information
+	App *struct {
+		ClientAuthenticationUsed struct {
+			Method   UserEventPayload535AppClientAuthenticationUsedMethod `json:"method"`
+			SecretId *string                                              `json:"secretId,omitempty"`
+		} `json:"clientAuthenticationUsed"`
+		ClientId string `json:"clientId"`
+
+		// Name the app's name at the time the event was published (it could have changed since then)
+		Name string `json:"name"`
+	} `json:"app,omitempty"`
+
+	// AppName the app's name at the time the event was published (it could have changed since then)
+	AppName string `json:"appName"`
+
+	// AtTTL access_token TTL
+	AtTTL      float32                       `json:"atTTL"`
+	AuthMethod UserEventPayload535AuthMethod `json:"authMethod"`
+
+	// Geolocation optional since entries prior to 2026-04-23 do not contain this field
+	Geolocation *struct {
+		City *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"city,omitempty"`
+		Country struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"country"`
+		MostSpecificSubdivision *struct {
+			Names struct {
+				En string `json:"en"`
+			} `json:"names"`
+		} `json:"most_specific_subdivision,omitempty"`
+		RegionName *string `json:"regionName,omitempty"`
+	} `json:"geolocation,omitempty"`
+	GrantType UserEventPayload535GrantType `json:"grantType"`
+
+	// IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
+	IncludesRefreshToken *UserEventPayload535IncludesRefreshToken `json:"includesRefreshToken,omitempty"`
+
+	// Ip optional since entries prior to 2026-04-23 do not contain this field
+	Ip *string `json:"ip,omitempty"`
+
+	// IssuerUrl OIDC issuer (`iss`) of the token that authenticated the request. Present for OIDC-authenticated flows: the token-exchange grant, or `client_credentials` with the `oidc_token` client-authentication method.
+	IssuerUrl *string `json:"issuerUrl,omitempty"`
+
+	// OidcSubject `sub` claim of the OIDC token. Present for OIDC-authenticated flows (see {@link issuerUrl}).
+	OidcSubject *string `json:"oidcSubject,omitempty"`
+
+	// PolicyId ID of the OIDC-exchange policy that authorized a token-exchange grant. Absent for the `client_credentials` + `oidc_token` flow, which matches an app `oidcProviders` entry rather than a policy.
+	PolicyId *string `json:"policyId,omitempty"`
+
+	// PublicId optional since entries prior to 2025-10-13 do not contain this field
+	PublicId *string `json:"publicId,omitempty"`
+
+	// RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
+	RefreshTokenPrefix *UserEventPayload535RefreshTokenPrefix `json:"refreshTokenPrefix,omitempty"`
+
+	// RefreshTokenPublicId optional; only present when a refresh token was issued (offline_access).
+	RefreshTokenPublicId *string `json:"refreshTokenPublicId,omitempty"`
+
+	// RefreshTokenSuffix optional; only present when a refresh token was issued (offline_access).
+	RefreshTokenSuffix *string `json:"refreshTokenSuffix,omitempty"`
+
+	// RtTTL refresh_token TTL
+	RtTTL *float32 `json:"rtTTL,omitempty"`
+	Scope string   `json:"scope"`
+
+	// SessionId optional since entries prior to 2025-10-13 do not contain this field
+	SessionId *string `json:"sessionId,omitempty"`
+
+	// TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
+	TokenPrefix *UserEventPayload535TokenPrefix `json:"tokenPrefix,omitempty"`
+
+	// TokenSuffix optional since entries prior to 2026-04-23 do not contain this field
+	TokenSuffix *string `json:"tokenSuffix,omitempty"`
+
+	// UserAgent optional since entries prior to 2026-04-23 do not contain this field
+	UserAgent *string `json:"userAgent,omitempty"`
+}
+
+// UserEventPayload535AppClientAuthenticationUsedMethod defines model for UserEvent.Payload.535.App.ClientAuthenticationUsed.Method.
+type UserEventPayload535AppClientAuthenticationUsedMethod string
+
+// UserEventPayload535AuthMethod defines model for UserEvent.Payload.535.AuthMethod.
+type UserEventPayload535AuthMethod string
+
+// UserEventPayload535GrantType defines model for UserEvent.Payload.535.GrantType.
+type UserEventPayload535GrantType string
+
+// UserEventPayload535IncludesRefreshToken optional since entries prior to 2025-10-13 do not contain this field
+type UserEventPayload535IncludesRefreshToken bool
+
+// UserEventPayload535RefreshTokenPrefix optional; only present when a refresh token was issued (offline_access).
+type UserEventPayload535RefreshTokenPrefix string
+
+// UserEventPayload535TokenPrefix optional since entries prior to 2026-04-23 do not contain this field
+type UserEventPayload535TokenPrefix string
+
+// UserEventPayload536 The payload of the event, if requested.
+type UserEventPayload536 struct {
+	Domain    string `json:"domain"`
+	ProjectId string `json:"projectId"`
+}
+
+// UserEventPayload537 The payload of the event, if requested.
+type UserEventPayload537 struct {
+	AppName *string `json:"appName,omitempty"`
+
+	// Policy A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+	Policy struct {
+		// Claims Claim matchers an OIDC token must satisfy to use the policy.
+		Claims []struct {
+			Name   string `json:"name"`
+			Values []struct {
+				Value     string                                         `json:"value"`
+				Wildcards UserEventPayload537PolicyClaimsValuesWildcards `json:"wildcards"`
+			} `json:"values"`
+		} `json:"claims"`
+		ClientId string `json:"clientId"`
+
+		// CreatedAt Creation time (epoch ms).
+		CreatedAt float32 `json:"createdAt"`
+		IssuerUrl string  `json:"issuerUrl"`
+
+		// Name Human-readable policy name, or `null` when unnamed.
+		Name *string `json:"name"`
+
+		// Permissions Permission boundary (`['*']` = the app's full declared permissions).
+		Permissions []string `json:"permissions"`
+		PolicyId    string   `json:"policyId"`
+
+		// Resources Resource boundary, or `null` when the policy has none.
+		Resources *struct {
+			ProjectIds []string `json:"projectIds"`
+		} `json:"resources"`
+		TeamId string `json:"teamId"`
+
+		// UpdatedAt Last-update time (epoch ms).
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"policy"`
+}
+
+// UserEventPayload537PolicyClaimsValuesWildcards defines model for UserEvent.Payload.537.Policy.Claims.Values.Wildcards.
+type UserEventPayload537PolicyClaimsValuesWildcards bool
+
+// UserEventPayload538 The payload of the event, if requested.
+type UserEventPayload538 struct {
+	// After A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+	After struct {
+		// Claims Claim matchers an OIDC token must satisfy to use the policy.
+		Claims []struct {
+			Name   string `json:"name"`
+			Values []struct {
+				Value     string                                        `json:"value"`
+				Wildcards UserEventPayload538AfterClaimsValuesWildcards `json:"wildcards"`
+			} `json:"values"`
+		} `json:"claims"`
+		ClientId string `json:"clientId"`
+
+		// CreatedAt Creation time (epoch ms).
+		CreatedAt float32 `json:"createdAt"`
+		IssuerUrl string  `json:"issuerUrl"`
+
+		// Name Human-readable policy name, or `null` when unnamed.
+		Name *string `json:"name"`
+
+		// Permissions Permission boundary (`['*']` = the app's full declared permissions).
+		Permissions []string `json:"permissions"`
+		PolicyId    string   `json:"policyId"`
+
+		// Resources Resource boundary, or `null` when the policy has none.
+		Resources *struct {
+			ProjectIds []string `json:"projectIds"`
+		} `json:"resources"`
+		TeamId string `json:"teamId"`
+
+		// UpdatedAt Last-update time (epoch ms).
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"after"`
+	AppName *string `json:"appName,omitempty"`
+
+	// Before A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape.
+	Before struct {
+		// Claims Claim matchers an OIDC token must satisfy to use the policy.
+		Claims []struct {
+			Name   string `json:"name"`
+			Values []struct {
+				Value     string                                         `json:"value"`
+				Wildcards UserEventPayload538BeforeClaimsValuesWildcards `json:"wildcards"`
+			} `json:"values"`
+		} `json:"claims"`
+		ClientId string `json:"clientId"`
+
+		// CreatedAt Creation time (epoch ms).
+		CreatedAt float32 `json:"createdAt"`
+		IssuerUrl string  `json:"issuerUrl"`
+
+		// Name Human-readable policy name, or `null` when unnamed.
+		Name *string `json:"name"`
+
+		// Permissions Permission boundary (`['*']` = the app's full declared permissions).
+		Permissions []string `json:"permissions"`
+		PolicyId    string   `json:"policyId"`
+
+		// Resources Resource boundary, or `null` when the policy has none.
+		Resources *struct {
+			ProjectIds []string `json:"projectIds"`
+		} `json:"resources"`
+		TeamId string `json:"teamId"`
+
+		// UpdatedAt Last-update time (epoch ms).
+		UpdatedAt float32 `json:"updatedAt"`
+	} `json:"before"`
+}
+
+// UserEventPayload538AfterClaimsValuesWildcards defines model for UserEvent.Payload.538.After.Claims.Values.Wildcards.
+type UserEventPayload538AfterClaimsValuesWildcards bool
+
+// UserEventPayload538BeforeClaimsValuesWildcards defines model for UserEvent.Payload.538.Before.Claims.Values.Wildcards.
+type UserEventPayload538BeforeClaimsValuesWildcards bool
+
+// UserEventPayload539 The payload of the event, if requested.
+type UserEventPayload539 struct {
 	CreatedByParentTeamId *string `json:"createdByParentTeamId,omitempty"`
 
 	// ExpiresAt Unix epoch milliseconds. Absent when the token never expires.
@@ -42,14 +298,14 @@ type UserEventPayload529 struct {
 	} `json:"geolocation,omitempty"`
 
 	// HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
-	HasAuthorizationDetails *UserEventPayload529HasAuthorizationDetails `json:"hasAuthorizationDetails,omitempty"`
+	HasAuthorizationDetails *UserEventPayload539HasAuthorizationDetails `json:"hasAuthorizationDetails,omitempty"`
 	Ip                      *string                                     `json:"ip,omitempty"`
 
 	// OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
-	OrganizationScope *UserEventPayload529OrganizationScope `json:"organizationScope,omitempty"`
+	OrganizationScope *UserEventPayload539OrganizationScope `json:"organizationScope,omitempty"`
 
 	// Origin How the token was issued. Always `'manual'` for explicit PAT creation.
-	Origin UserEventPayload529Origin `json:"origin"`
+	Origin UserEventPayload539Origin `json:"origin"`
 
 	// ProjectId Present when `scope` is `'project'`.
 	ProjectId *string `json:"projectId,omitempty"`
@@ -58,13 +314,13 @@ type UserEventPayload529 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 
 	// ProjectScope Present when `scope` is `'project'`.
-	ProjectScope *UserEventPayload529ProjectScope `json:"projectScope,omitempty"`
+	ProjectScope *UserEventPayload539ProjectScope `json:"projectScope,omitempty"`
 	ReqId        *string                          `json:"reqId,omitempty"`
 	ReqUrl       *string                          `json:"reqUrl,omitempty"`
 
 	// Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
-	Scope  UserEventPayload529Scope   `json:"scope"`
-	Source *UserEventPayload529Source `json:"source,omitempty"`
+	Scope  UserEventPayload539Scope   `json:"scope"`
+	Source *UserEventPayload539Source `json:"source,omitempty"`
 
 	// TeamId Present when `scope` is `'team'` or `'project'`.
 	TeamId *string `json:"teamId,omitempty"`
@@ -79,40 +335,40 @@ type UserEventPayload529 struct {
 	TokenName string `json:"tokenName"`
 
 	// TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
-	TokenPrefix *UserEventPayload529TokenPrefix `json:"tokenPrefix,omitempty"`
+	TokenPrefix *UserEventPayload539TokenPrefix `json:"tokenPrefix,omitempty"`
 
 	// TokenSuffix The token checksum suffix.
 	TokenSuffix *string `json:"tokenSuffix,omitempty"`
 	UserAgent   *string `json:"userAgent,omitempty"`
 }
 
-// UserEventPayload529HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
-type UserEventPayload529HasAuthorizationDetails bool
+// UserEventPayload539HasAuthorizationDetails Whether the token was issued with RFC 9396 authorization details.
+type UserEventPayload539HasAuthorizationDetails bool
 
-// UserEventPayload529OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
-type UserEventPayload529OrganizationScope bool
+// UserEventPayload539OrganizationScope Present when the token is also scoped to the Organization backing team, granting OrgAdmin access to child teams after the Organization enforces SSO.
+type UserEventPayload539OrganizationScope bool
 
-// UserEventPayload529Origin How the token was issued. Always `'manual'` for explicit PAT creation.
-type UserEventPayload529Origin string
+// UserEventPayload539Origin How the token was issued. Always `'manual'` for explicit PAT creation.
+type UserEventPayload539Origin string
 
-// UserEventPayload529ProjectScope Present when `scope` is `'project'`.
-type UserEventPayload529ProjectScope string
+// UserEventPayload539ProjectScope Present when `scope` is `'project'`.
+type UserEventPayload539ProjectScope string
 
-// UserEventPayload529Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
-type UserEventPayload529Scope string
+// UserEventPayload539Scope Scope of the token: - `'user'`: full-account token (not tied to any team). - `'team'`: scoped to a single team. - `'project'`: scoped to a single project within a team.
+type UserEventPayload539Scope string
 
-// UserEventPayload529Source defines model for UserEvent.Payload.529.Source.
-type UserEventPayload529Source string
+// UserEventPayload539Source defines model for UserEvent.Payload.539.Source.
+type UserEventPayload539Source string
 
-// UserEventPayload529TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
-type UserEventPayload529TokenPrefix string
+// UserEventPayload539TokenPrefix The token prefix used when showing a safe checksum-style fingerprint.
+type UserEventPayload539TokenPrefix string
 
-// UserEventPayload530 The payload of the event, if requested.
-type UserEventPayload530 struct {
+// UserEventPayload540 The payload of the event, if requested.
+type UserEventPayload540 struct {
 	// ActorTokenId The token's public ID.
 	ActorTokenId          string                      `json:"actorTokenId"`
 	CreatedByParentTeamId *string                     `json:"createdByParentTeamId,omitempty"`
-	Expired               *UserEventPayload530Expired `json:"expired,omitempty"`
+	Expired               *UserEventPayload540Expired `json:"expired,omitempty"`
 	Geolocation           *struct {
 		City *struct {
 			Names struct {
@@ -132,15 +388,15 @@ type UserEventPayload530 struct {
 		RegionName *string `json:"regionName,omitempty"`
 	} `json:"geolocation,omitempty"`
 	Ip           *string                          `json:"ip,omitempty"`
-	Leaked       *UserEventPayload530Leaked       `json:"leaked,omitempty"`
-	LogoutSource *UserEventPayload530LogoutSource `json:"logoutSource,omitempty"`
-	Origin       *UserEventPayload530Origin       `json:"origin,omitempty"`
-	Reason       *UserEventPayload530Reason       `json:"reason,omitempty"`
+	Leaked       *UserEventPayload540Leaked       `json:"leaked,omitempty"`
+	LogoutSource *UserEventPayload540LogoutSource `json:"logoutSource,omitempty"`
+	Origin       *UserEventPayload540Origin       `json:"origin,omitempty"`
+	Reason       *UserEventPayload540Reason       `json:"reason,omitempty"`
 	ReqId        *string                          `json:"reqId,omitempty"`
 	ReqUrl       *string                          `json:"reqUrl,omitempty"`
-	Revoked      *UserEventPayload530Revoked      `json:"revoked,omitempty"`
-	Scope        *UserEventPayload530Scope        `json:"scope,omitempty"`
-	Source       *UserEventPayload530Source       `json:"source,omitempty"`
+	Revoked      *UserEventPayload540Revoked      `json:"revoked,omitempty"`
+	Scope        *UserEventPayload540Scope        `json:"scope,omitempty"`
+	Source       *UserEventPayload540Source       `json:"source,omitempty"`
 	TeamId       *string                          `json:"teamId,omitempty"`
 	TokenId      string                           `json:"tokenId"`
 	TokenName    string                           `json:"tokenName"`
@@ -148,32 +404,32 @@ type UserEventPayload530 struct {
 	UserAgent    *string                          `json:"userAgent,omitempty"`
 }
 
-// UserEventPayload530Expired defines model for UserEvent.Payload.530.Expired.
-type UserEventPayload530Expired bool
+// UserEventPayload540Expired defines model for UserEvent.Payload.540.Expired.
+type UserEventPayload540Expired bool
 
-// UserEventPayload530Leaked defines model for UserEvent.Payload.530.Leaked.
-type UserEventPayload530Leaked bool
+// UserEventPayload540Leaked defines model for UserEvent.Payload.540.Leaked.
+type UserEventPayload540Leaked bool
 
-// UserEventPayload530LogoutSource defines model for UserEvent.Payload.530.LogoutSource.
-type UserEventPayload530LogoutSource string
+// UserEventPayload540LogoutSource defines model for UserEvent.Payload.540.LogoutSource.
+type UserEventPayload540LogoutSource string
 
-// UserEventPayload530Origin defines model for UserEvent.Payload.530.Origin.
-type UserEventPayload530Origin string
+// UserEventPayload540Origin defines model for UserEvent.Payload.540.Origin.
+type UserEventPayload540Origin string
 
-// UserEventPayload530Reason defines model for UserEvent.Payload.530.Reason.
-type UserEventPayload530Reason string
+// UserEventPayload540Reason defines model for UserEvent.Payload.540.Reason.
+type UserEventPayload540Reason string
 
-// UserEventPayload530Revoked defines model for UserEvent.Payload.530.Revoked.
-type UserEventPayload530Revoked bool
+// UserEventPayload540Revoked defines model for UserEvent.Payload.540.Revoked.
+type UserEventPayload540Revoked bool
 
-// UserEventPayload530Scope defines model for UserEvent.Payload.530.Scope.
-type UserEventPayload530Scope string
+// UserEventPayload540Scope defines model for UserEvent.Payload.540.Scope.
+type UserEventPayload540Scope string
 
-// UserEventPayload530Source defines model for UserEvent.Payload.530.Source.
-type UserEventPayload530Source string
+// UserEventPayload540Source defines model for UserEvent.Payload.540.Source.
+type UserEventPayload540Source string
 
-// UserEventPayload531 The payload of the event, if requested.
-type UserEventPayload531 struct {
+// UserEventPayload541 The payload of the event, if requested.
+type UserEventPayload541 struct {
 	// ActorTokenId The token's public ID.
 	ActorTokenId string  `json:"actorTokenId"`
 	DeletedCount float32 `json:"deletedCount"`
@@ -998,6 +1254,27 @@ type ListAiGatewayRulesParams struct {
 // ListAiGatewayRulesParamsIncludeDisabled defines parameters for ListAiGatewayRules.
 type ListAiGatewayRulesParamsIncludeDisabled string
 
+// UpdateAiGatewayRuleJSONBody defines parameters for UpdateAiGatewayRule.
+type UpdateAiGatewayRuleJSONBody struct {
+	// Action Replaces the stored action. For a rewrite rule it must contain `rewriteModel`.
+	Action *struct {
+		// Reason Why the model is denied, for a deny rule.
+		Reason *string `json:"reason,omitempty"`
+
+		// RewriteModel The model that serves the request, for a rewrite rule: a catalog model, or one of your virtual models as `vmc/<slug>`. It must exist and be active.
+		RewriteModel *string `json:"rewriteModel,omitempty"`
+	} `json:"action,omitempty"`
+
+	// Description A free-text note about the rule.
+	Description *string `json:"description,omitempty"`
+
+	// Enabled Whether the rule is enabled.
+	Enabled *bool `json:"enabled,omitempty"`
+
+	// RuleId The ID of the rule to update. Send at least one of `enabled`, `description`, or `action` with it.
+	RuleId string `json:"ruleId"`
+}
+
 // UpdateAiGatewayRuleParams defines parameters for UpdateAiGatewayRule.
 type UpdateAiGatewayRuleParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -1005,6 +1282,31 @@ type UpdateAiGatewayRuleParams struct {
 
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateAiGatewayRuleJSONBody defines parameters for CreateAiGatewayRule.
+type CreateAiGatewayRuleJSONBody struct {
+	// Action Required when `type` is `rewrite`.
+	Action *struct {
+		// Reason Why the model is denied. Used when `type` is `deny`.
+		Reason *string `json:"reason,omitempty"`
+
+		// RewriteModel The model that serves the request: a catalog model, or one of your virtual models as `vmc/<slug>`. It must exist and be active. Required when `type` is `rewrite`.
+		RewriteModel *string `json:"rewriteModel,omitempty"`
+	} `json:"action,omitempty"`
+
+	// Description A free-text note about the rule.
+	Description *string `json:"description,omitempty"`
+
+	// Enabled Whether the rule is enabled. Defaults to `true`.
+	Enabled *bool `json:"enabled,omitempty"`
+	Match   struct {
+		// Model The model that the rule applies to.
+		Model string `json:"model"`
+	} `json:"match"`
+
+	// Type `rewrite` sends requests for the matched model to another model. `deny` rejects them.
+	Type CreateAiGatewayRuleJSONBodyType `json:"type"`
 }
 
 // CreateAiGatewayRuleParams defines parameters for CreateAiGatewayRule.
@@ -1015,6 +1317,9 @@ type CreateAiGatewayRuleParams struct {
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
+
+// CreateAiGatewayRuleJSONBodyType defines parameters for CreateAiGatewayRule.
+type CreateAiGatewayRuleJSONBodyType string
 
 // DeleteAiGatewayVirtualModelConfigParams defines parameters for DeleteAiGatewayVirtualModelConfig.
 type DeleteAiGatewayVirtualModelConfigParams struct {
@@ -1050,6 +1355,91 @@ type GetAiGatewayVirtualModelConfig200JSONResponseBody struct {
 	union json.RawMessage
 }
 
+// UpdateAiGatewayVirtualModelConfigJSONBody defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBody struct {
+	// AllowFallbackFromFast Allow fallback from fast to standard providers on failure. `null` removes the stored value.
+	AllowFallbackFromFast *bool `json:"allowFallbackFromFast,omitempty"`
+
+	// ByokCredentialIds The BYOK credentials that this virtual model can use. `null` removes the stored value.
+	ByokCredentialIds *[]string `json:"byokCredentialIds,omitempty"`
+
+	// Caching Use caching if available. `@default` ignores the value from the inference request. `null` removes the stored value.
+	Caching *UpdateAiGatewayVirtualModelConfigJSONBodyCaching `json:"caching,omitempty"`
+
+	// Deleted Set to `false` to restore a deleted virtual model.
+	Deleted     *UpdateAiGatewayVirtualModelConfigJSONBodyDeleted `json:"deleted,omitempty"`
+	Description *string                                           `json:"description,omitempty"`
+
+	// DisallowPromptTraining Only use providers that do not train on prompts. `null` removes the stored value.
+	DisallowPromptTraining *bool `json:"disallowPromptTraining,omitempty"`
+
+	// DisplayName The name shown in the UI.
+	DisplayName *string `json:"displayName,omitempty"`
+
+	// Has Limit providers to those with these features. `null` removes the stored value.
+	Has *[]UpdateAiGatewayVirtualModelConfigJSONBodyHas `json:"has,omitempty"`
+
+	// HipaaCompliant Only use HIPAA-compliant providers. `null` removes the stored value.
+	HipaaCompliant *bool `json:"hipaaCompliant,omitempty"`
+
+	// InferenceRegion The region that requests are pinned to. `null` removes the stored value.
+	InferenceRegion *struct {
+		// GeoRegion The geo zone, for example `us` or `eu`. Required when `scope` is `zone`.
+		GeoRegion *string `json:"geoRegion,omitempty"`
+
+		// Providers Region overrides for each provider, keyed by provider slug.
+		Providers *map[string]*struct {
+			// GeoRegion The geo zone, for example `us` or `eu`. Required when `scope` is `zone`.
+			GeoRegion *string `json:"geoRegion,omitempty"`
+
+			// Scope The pin scope: `zone` (a geo zone) or `global`.
+			Scope *UpdateAiGatewayVirtualModelConfigJSONBodyInferenceRegionProvidersScope `json:"scope,omitempty"`
+		} `json:"providers,omitempty"`
+
+		// Scope The pin scope: `zone` (a geo zone) or `global`.
+		Scope *UpdateAiGatewayVirtualModelConfigJSONBodyInferenceRegionScope `json:"scope,omitempty"`
+	} `json:"inferenceRegion,omitempty"`
+
+	// ModelSlug The model that the virtual model resolves to: a catalog model such as `openai/gpt-4o-mini`, or one of your team's private models as `private/<slug>`. Required on create.
+	ModelSlug *string `json:"modelSlug,omitempty"`
+
+	// Models The ordered fallback models, optionally led by one conditional `{ model, when }` entry.
+	Models *[]UpdateAiGatewayVirtualModelConfigJSONBody_Models_Item `json:"models,omitempty"`
+
+	// ObservabilityTags Observability tags attached to requests through this virtual model.
+	ObservabilityTags *[]string `json:"observabilityTags,omitempty"`
+
+	// ProviderOnly Restrict routing to these providers.
+	ProviderOnly *[]string `json:"providerOnly,omitempty"`
+
+	// ProviderOptions Provider-specific options, keyed by provider slug. The slug of one of your team's private providers is also valid. `null` removes the stored value.
+	ProviderOptions *map[string]map[string]interface{} `json:"providerOptions,omitempty"`
+
+	// ProviderOrder The providers to try, in order.
+	ProviderOrder *[]string `json:"providerOrder,omitempty"`
+
+	// ProviderTimeouts Provider timeouts in milliseconds. `@default` ignores the value from the inference request. `null` removes the stored value.
+	ProviderTimeouts *UpdateAiGatewayVirtualModelConfigJSONBody_ProviderTimeouts `json:"providerTimeouts,omitempty"`
+
+	// ServiceTier The service tier for providers that support it. `@default` ignores the value from the inference request. `null` removes the stored value.
+	ServiceTier *UpdateAiGatewayVirtualModelConfigJSONBodyServiceTier `json:"serviceTier,omitempty"`
+
+	// Sort Rank eligible providers by an attribute. `@default` ignores the value from the inference request. `null` removes the stored value.
+	Sort *UpdateAiGatewayVirtualModelConfigJSONBodySort `json:"sort,omitempty"`
+
+	// Speed Only use the fastest providers, with short timeouts. `null` removes the stored value.
+	Speed *UpdateAiGatewayVirtualModelConfigJSONBodySpeed `json:"speed,omitempty"`
+
+	// Status The lifecycle status: `draft`, `active`, or `archived`. Any value other than `active` stops it serving requests. Defaults to `active`.
+	Status *string `json:"status,omitempty"`
+
+	// VirtualModelSlug The slug of the virtual model to update.
+	VirtualModelSlug string `json:"virtualModelSlug"`
+
+	// ZeroDataRetention Only use providers with zero data retention. `null` removes the stored value.
+	ZeroDataRetention *bool `json:"zeroDataRetention,omitempty"`
+}
+
 // UpdateAiGatewayVirtualModelConfigParams defines parameters for UpdateAiGatewayVirtualModelConfig.
 type UpdateAiGatewayVirtualModelConfigParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -1057,6 +1447,163 @@ type UpdateAiGatewayVirtualModelConfigParams struct {
 
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyCaching defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyCaching string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyDeleted defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyDeleted bool
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyHas defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyHas string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyInferenceRegionProvidersScope defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyInferenceRegionProvidersScope string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyInferenceRegionScope defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyInferenceRegionScope string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyModels0 defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyModels0 = string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyModels1 defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyModels1 struct {
+	// Model A model ID: a catalog model such as `openai/gpt-4o`, or one of your team's private models as `private/<slug>`. A fallback can also name a virtual model as `vmc/<slug>`.
+	Model string `json:"model"`
+
+	// When The fallback model is used when the answers of the primary model match this condition. Set exactly one of `confidenceBelow`, `probabilityBetween`, `any`, `all`, or `atLeast`. A condition tree can be 5 levels deep and can hold 100 conditions.
+	When struct {
+		// All Nested conditions. Each one has the same shape as `when`.
+		All *[]map[string]interface{} `json:"all,omitempty"`
+
+		// Any Nested conditions. Each one has the same shape as `when`.
+		Any     *[]map[string]interface{} `json:"any,omitempty"`
+		AtLeast *struct {
+			// Conditions Nested conditions. Each one has the same shape as `when`.
+			Conditions []map[string]interface{} `json:"conditions"`
+
+			// Count Must not be more than the number of conditions.
+			Count int `json:"count"`
+		} `json:"atLeast,omitempty"`
+		ConfidenceBelow *float32 `json:"confidenceBelow,omitempty"`
+
+		// ProbabilityBetween A `[lower, upper]` pair.
+		ProbabilityBetween *[]float32 `json:"probabilityBetween,omitempty"`
+
+		// Question The question to check, with `confidenceBelow` or `probabilityBetween`. Without it, the condition checks every question of the applicable type.
+		Question *string `json:"question,omitempty"`
+	} `json:"when"`
+}
+
+// UpdateAiGatewayVirtualModelConfigJSONBody_Models_Item defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBody_Models_Item struct {
+	union json.RawMessage
+}
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts0 defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts0 string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts1 defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts1 struct {
+	// Byok The timeout for each provider that uses a BYOK credential, keyed by provider slug.
+	Byok *map[string]int `json:"byok,omitempty"`
+}
+
+// UpdateAiGatewayVirtualModelConfigJSONBody_ProviderTimeouts defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBody_ProviderTimeouts struct {
+	union json.RawMessage
+}
+
+// UpdateAiGatewayVirtualModelConfigJSONBodyServiceTier defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodyServiceTier string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodySort defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodySort string
+
+// UpdateAiGatewayVirtualModelConfigJSONBodySpeed defines parameters for UpdateAiGatewayVirtualModelConfig.
+type UpdateAiGatewayVirtualModelConfigJSONBodySpeed string
+
+// CreateAiGatewayVirtualModelConfigJSONBody defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBody struct {
+	// AllowFallbackFromFast Allow fallback from fast to standard providers on failure.
+	AllowFallbackFromFast *bool `json:"allowFallbackFromFast,omitempty"`
+
+	// ByokCredentialIds The BYOK credentials that this virtual model can use.
+	ByokCredentialIds *[]string `json:"byokCredentialIds,omitempty"`
+
+	// Caching Use caching if available. `@default` ignores the value from the inference request.
+	Caching     *CreateAiGatewayVirtualModelConfigJSONBodyCaching `json:"caching,omitempty"`
+	Description *string                                           `json:"description,omitempty"`
+
+	// DisallowPromptTraining Only use providers that do not train on prompts.
+	DisallowPromptTraining *bool `json:"disallowPromptTraining,omitempty"`
+
+	// DisplayName The name shown in the UI.
+	DisplayName *string `json:"displayName,omitempty"`
+
+	// Has Limit providers to those with these features.
+	Has *[]CreateAiGatewayVirtualModelConfigJSONBodyHas `json:"has,omitempty"`
+
+	// HipaaCompliant Only use HIPAA-compliant providers.
+	HipaaCompliant *bool `json:"hipaaCompliant,omitempty"`
+
+	// InferenceRegion The region that requests are pinned to.
+	InferenceRegion *struct {
+		// GeoRegion The geo zone, for example `us` or `eu`. Required when `scope` is `zone`.
+		GeoRegion *string `json:"geoRegion,omitempty"`
+
+		// Providers Region overrides for each provider, keyed by provider slug.
+		Providers *map[string]*struct {
+			// GeoRegion The geo zone, for example `us` or `eu`. Required when `scope` is `zone`.
+			GeoRegion *string `json:"geoRegion,omitempty"`
+
+			// Scope The pin scope: `zone` (a geo zone) or `global`.
+			Scope *CreateAiGatewayVirtualModelConfigJSONBodyInferenceRegionProvidersScope `json:"scope,omitempty"`
+		} `json:"providers,omitempty"`
+
+		// Scope The pin scope: `zone` (a geo zone) or `global`.
+		Scope *CreateAiGatewayVirtualModelConfigJSONBodyInferenceRegionScope `json:"scope,omitempty"`
+	} `json:"inferenceRegion,omitempty"`
+
+	// ModelSlug The model that the virtual model resolves to: a catalog model such as `openai/gpt-4o-mini`, or one of your team's private models as `private/<slug>`. Required on create.
+	ModelSlug *string `json:"modelSlug,omitempty"`
+
+	// Models The ordered fallback models, optionally led by one conditional `{ model, when }` entry.
+	Models *[]CreateAiGatewayVirtualModelConfigJSONBody_Models_Item `json:"models,omitempty"`
+
+	// ObservabilityTags Observability tags attached to requests through this virtual model.
+	ObservabilityTags *[]string `json:"observabilityTags,omitempty"`
+
+	// ProviderOnly Restrict routing to these providers.
+	ProviderOnly *[]string `json:"providerOnly,omitempty"`
+
+	// ProviderOptions Provider-specific options, keyed by provider slug. The slug of one of your team's private providers is also valid.
+	ProviderOptions *map[string]map[string]interface{} `json:"providerOptions,omitempty"`
+
+	// ProviderOrder The providers to try, in order.
+	ProviderOrder *[]string `json:"providerOrder,omitempty"`
+
+	// ProviderTimeouts Provider timeouts in milliseconds. `@default` ignores the value from the inference request.
+	ProviderTimeouts *CreateAiGatewayVirtualModelConfigJSONBody_ProviderTimeouts `json:"providerTimeouts,omitempty"`
+
+	// ServiceTier The service tier for providers that support it. `@default` ignores the value from the inference request.
+	ServiceTier *CreateAiGatewayVirtualModelConfigJSONBodyServiceTier `json:"serviceTier,omitempty"`
+
+	// Sort Rank eligible providers by an attribute. `@default` ignores the value from the inference request.
+	Sort *CreateAiGatewayVirtualModelConfigJSONBodySort `json:"sort,omitempty"`
+
+	// Speed Only use the fastest providers, with short timeouts.
+	Speed *CreateAiGatewayVirtualModelConfigJSONBodySpeed `json:"speed,omitempty"`
+
+	// Status The lifecycle status: `draft`, `active`, or `archived`. Any value other than `active` stops it serving requests. Defaults to `active`.
+	Status *string `json:"status,omitempty"`
+
+	// VirtualModelSlug The slug of the virtual model. Requests name it as `vmc/<slug>`. `list` is reserved.
+	VirtualModelSlug string `json:"virtualModelSlug"`
+
+	// ZeroDataRetention Only use providers with zero data retention.
+	ZeroDataRetention *bool `json:"zeroDataRetention,omitempty"`
 }
 
 // CreateAiGatewayVirtualModelConfigParams defines parameters for CreateAiGatewayVirtualModelConfig.
@@ -1067,6 +1614,78 @@ type CreateAiGatewayVirtualModelConfigParams struct {
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
+
+// CreateAiGatewayVirtualModelConfigJSONBodyCaching defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyCaching string
+
+// CreateAiGatewayVirtualModelConfigJSONBodyHas defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyHas string
+
+// CreateAiGatewayVirtualModelConfigJSONBodyInferenceRegionProvidersScope defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyInferenceRegionProvidersScope string
+
+// CreateAiGatewayVirtualModelConfigJSONBodyInferenceRegionScope defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyInferenceRegionScope string
+
+// CreateAiGatewayVirtualModelConfigJSONBodyModels0 defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyModels0 = string
+
+// CreateAiGatewayVirtualModelConfigJSONBodyModels1 defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyModels1 struct {
+	// Model A model ID: a catalog model such as `openai/gpt-4o`, or one of your team's private models as `private/<slug>`. A fallback can also name a virtual model as `vmc/<slug>`.
+	Model string `json:"model"`
+
+	// When The fallback model is used when the answers of the primary model match this condition. Set exactly one of `confidenceBelow`, `probabilityBetween`, `any`, `all`, or `atLeast`. A condition tree can be 5 levels deep and can hold 100 conditions.
+	When struct {
+		// All Nested conditions. Each one has the same shape as `when`.
+		All *[]map[string]interface{} `json:"all,omitempty"`
+
+		// Any Nested conditions. Each one has the same shape as `when`.
+		Any     *[]map[string]interface{} `json:"any,omitempty"`
+		AtLeast *struct {
+			// Conditions Nested conditions. Each one has the same shape as `when`.
+			Conditions []map[string]interface{} `json:"conditions"`
+
+			// Count Must not be more than the number of conditions.
+			Count int `json:"count"`
+		} `json:"atLeast,omitempty"`
+		ConfidenceBelow *float32 `json:"confidenceBelow,omitempty"`
+
+		// ProbabilityBetween A `[lower, upper]` pair.
+		ProbabilityBetween *[]float32 `json:"probabilityBetween,omitempty"`
+
+		// Question The question to check, with `confidenceBelow` or `probabilityBetween`. Without it, the condition checks every question of the applicable type.
+		Question *string `json:"question,omitempty"`
+	} `json:"when"`
+}
+
+// CreateAiGatewayVirtualModelConfigJSONBody_Models_Item defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBody_Models_Item struct {
+	union json.RawMessage
+}
+
+// CreateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts0 defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts0 string
+
+// CreateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts1 defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyProviderTimeouts1 struct {
+	// Byok The timeout for each provider that uses a BYOK credential, keyed by provider slug.
+	Byok *map[string]int `json:"byok,omitempty"`
+}
+
+// CreateAiGatewayVirtualModelConfigJSONBody_ProviderTimeouts defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBody_ProviderTimeouts struct {
+	union json.RawMessage
+}
+
+// CreateAiGatewayVirtualModelConfigJSONBodyServiceTier defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodyServiceTier string
+
+// CreateAiGatewayVirtualModelConfigJSONBodySort defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodySort string
+
+// CreateAiGatewayVirtualModelConfigJSONBodySpeed defines parameters for CreateAiGatewayVirtualModelConfig.
+type CreateAiGatewayVirtualModelConfigJSONBodySpeed string
 
 // ListAiGatewayVirtualModelConfigsParams defines parameters for ListAiGatewayVirtualModelConfigs.
 type ListAiGatewayVirtualModelConfigsParams struct {
@@ -1110,6 +1729,88 @@ type GetAiGatewayVirtualModelConfigBySlugParams struct {
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
 
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBody defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBody struct {
+	// AllowFallbackFromFast Allow fallback from fast to standard providers on failure. `null` removes the stored value.
+	AllowFallbackFromFast *bool `json:"allowFallbackFromFast,omitempty"`
+
+	// ByokCredentialIds The BYOK credentials that this virtual model can use. `null` removes the stored value.
+	ByokCredentialIds *[]string `json:"byokCredentialIds,omitempty"`
+
+	// Caching Use caching if available. `@default` ignores the value from the inference request. `null` removes the stored value.
+	Caching *UpdateAiGatewayVirtualModelConfigBySlugJSONBodyCaching `json:"caching,omitempty"`
+
+	// Deleted Set to `false` to restore a deleted virtual model.
+	Deleted     *UpdateAiGatewayVirtualModelConfigBySlugJSONBodyDeleted `json:"deleted,omitempty"`
+	Description *string                                                 `json:"description,omitempty"`
+
+	// DisallowPromptTraining Only use providers that do not train on prompts. `null` removes the stored value.
+	DisallowPromptTraining *bool `json:"disallowPromptTraining,omitempty"`
+
+	// DisplayName The name shown in the UI.
+	DisplayName *string `json:"displayName,omitempty"`
+
+	// Has Limit providers to those with these features. `null` removes the stored value.
+	Has *[]UpdateAiGatewayVirtualModelConfigBySlugJSONBodyHas `json:"has,omitempty"`
+
+	// HipaaCompliant Only use HIPAA-compliant providers. `null` removes the stored value.
+	HipaaCompliant *bool `json:"hipaaCompliant,omitempty"`
+
+	// InferenceRegion The region that requests are pinned to. `null` removes the stored value.
+	InferenceRegion *struct {
+		// GeoRegion The geo zone, for example `us` or `eu`. Required when `scope` is `zone`.
+		GeoRegion *string `json:"geoRegion,omitempty"`
+
+		// Providers Region overrides for each provider, keyed by provider slug.
+		Providers *map[string]*struct {
+			// GeoRegion The geo zone, for example `us` or `eu`. Required when `scope` is `zone`.
+			GeoRegion *string `json:"geoRegion,omitempty"`
+
+			// Scope The pin scope: `zone` (a geo zone) or `global`.
+			Scope *UpdateAiGatewayVirtualModelConfigBySlugJSONBodyInferenceRegionProvidersScope `json:"scope,omitempty"`
+		} `json:"providers,omitempty"`
+
+		// Scope The pin scope: `zone` (a geo zone) or `global`.
+		Scope *UpdateAiGatewayVirtualModelConfigBySlugJSONBodyInferenceRegionScope `json:"scope,omitempty"`
+	} `json:"inferenceRegion,omitempty"`
+
+	// ModelSlug The model that the virtual model resolves to: a catalog model such as `openai/gpt-4o-mini`, or one of your team's private models as `private/<slug>`. Required on create.
+	ModelSlug *string `json:"modelSlug,omitempty"`
+
+	// Models The ordered fallback models, optionally led by one conditional `{ model, when }` entry.
+	Models *[]UpdateAiGatewayVirtualModelConfigBySlugJSONBody_Models_Item `json:"models,omitempty"`
+
+	// ObservabilityTags Observability tags attached to requests through this virtual model.
+	ObservabilityTags *[]string `json:"observabilityTags,omitempty"`
+
+	// ProviderOnly Restrict routing to these providers.
+	ProviderOnly *[]string `json:"providerOnly,omitempty"`
+
+	// ProviderOptions Provider-specific options, keyed by provider slug. The slug of one of your team's private providers is also valid. `null` removes the stored value.
+	ProviderOptions *map[string]map[string]interface{} `json:"providerOptions,omitempty"`
+
+	// ProviderOrder The providers to try, in order.
+	ProviderOrder *[]string `json:"providerOrder,omitempty"`
+
+	// ProviderTimeouts Provider timeouts in milliseconds. `@default` ignores the value from the inference request. `null` removes the stored value.
+	ProviderTimeouts *UpdateAiGatewayVirtualModelConfigBySlugJSONBody_ProviderTimeouts `json:"providerTimeouts,omitempty"`
+
+	// ServiceTier The service tier for providers that support it. `@default` ignores the value from the inference request. `null` removes the stored value.
+	ServiceTier *UpdateAiGatewayVirtualModelConfigBySlugJSONBodyServiceTier `json:"serviceTier,omitempty"`
+
+	// Sort Rank eligible providers by an attribute. `@default` ignores the value from the inference request. `null` removes the stored value.
+	Sort *UpdateAiGatewayVirtualModelConfigBySlugJSONBodySort `json:"sort,omitempty"`
+
+	// Speed Only use the fastest providers, with short timeouts. `null` removes the stored value.
+	Speed *UpdateAiGatewayVirtualModelConfigBySlugJSONBodySpeed `json:"speed,omitempty"`
+
+	// Status The lifecycle status: `draft`, `active`, or `archived`. Any value other than `active` stops it serving requests. Defaults to `active`.
+	Status *string `json:"status,omitempty"`
+
+	// ZeroDataRetention Only use providers with zero data retention. `null` removes the stored value.
+	ZeroDataRetention *bool `json:"zeroDataRetention,omitempty"`
+}
+
 // UpdateAiGatewayVirtualModelConfigBySlugParams defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
 type UpdateAiGatewayVirtualModelConfigBySlugParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
@@ -1118,6 +1819,81 @@ type UpdateAiGatewayVirtualModelConfigBySlugParams struct {
 	// Slug The Team slug to perform the request on behalf of.
 	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
 }
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyCaching defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyCaching string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyDeleted defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyDeleted bool
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyHas defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyHas string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyInferenceRegionProvidersScope defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyInferenceRegionProvidersScope string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyInferenceRegionScope defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyInferenceRegionScope string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyModels0 defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyModels0 = string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyModels1 defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyModels1 struct {
+	// Model A model ID: a catalog model such as `openai/gpt-4o`, or one of your team's private models as `private/<slug>`. A fallback can also name a virtual model as `vmc/<slug>`.
+	Model string `json:"model"`
+
+	// When The fallback model is used when the answers of the primary model match this condition. Set exactly one of `confidenceBelow`, `probabilityBetween`, `any`, `all`, or `atLeast`. A condition tree can be 5 levels deep and can hold 100 conditions.
+	When struct {
+		// All Nested conditions. Each one has the same shape as `when`.
+		All *[]map[string]interface{} `json:"all,omitempty"`
+
+		// Any Nested conditions. Each one has the same shape as `when`.
+		Any     *[]map[string]interface{} `json:"any,omitempty"`
+		AtLeast *struct {
+			// Conditions Nested conditions. Each one has the same shape as `when`.
+			Conditions []map[string]interface{} `json:"conditions"`
+
+			// Count Must not be more than the number of conditions.
+			Count int `json:"count"`
+		} `json:"atLeast,omitempty"`
+		ConfidenceBelow *float32 `json:"confidenceBelow,omitempty"`
+
+		// ProbabilityBetween A `[lower, upper]` pair.
+		ProbabilityBetween *[]float32 `json:"probabilityBetween,omitempty"`
+
+		// Question The question to check, with `confidenceBelow` or `probabilityBetween`. Without it, the condition checks every question of the applicable type.
+		Question *string `json:"question,omitempty"`
+	} `json:"when"`
+}
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBody_Models_Item defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBody_Models_Item struct {
+	union json.RawMessage
+}
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyProviderTimeouts0 defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyProviderTimeouts0 string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyProviderTimeouts1 defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyProviderTimeouts1 struct {
+	// Byok The timeout for each provider that uses a BYOK credential, keyed by provider slug.
+	Byok *map[string]int `json:"byok,omitempty"`
+}
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBody_ProviderTimeouts defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBody_ProviderTimeouts struct {
+	union json.RawMessage
+}
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodyServiceTier defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodyServiceTier string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodySort defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodySort string
+
+// UpdateAiGatewayVirtualModelConfigBySlugJSONBodySpeed defines parameters for UpdateAiGatewayVirtualModelConfigBySlug.
+type UpdateAiGatewayVirtualModelConfigBySlugJSONBodySpeed string
 
 // PatchUrlProtectionBypassJSONBody defines parameters for PatchUrlProtectionBypass.
 type PatchUrlProtectionBypassJSONBody struct {
@@ -13586,18 +14362,6 @@ type GetMicrofrontendsInGroup200JSONResponseBody_Projects_RollbackDescription_Pr
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseCanaryResponseHeader defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseCanaryResponseHeader bool
 
-// GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateAction defines parameters for GetMicrofrontendsInGroup.
-type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateAction string
-
-// GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateChecksType defines parameters for GetMicrofrontendsInGroup.
-type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateChecksType string
-
-// GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateDryRun defines parameters for GetMicrofrontendsInGroup.
-type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateDryRun bool
-
-// GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateEnabled defines parameters for GetMicrofrontendsInGroup.
-type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateEnabled bool
-
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseStagesLinearShift defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseStagesLinearShift bool
 
@@ -15766,18 +16530,6 @@ type DeleteProjectAvatar200JSONResponseBody_RollbackDescription_Principal struct
 // DeleteProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
 
-// DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateAction defines parameters for DeleteProjectAvatar.
-type DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateAction string
-
-// DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType defines parameters for DeleteProjectAvatar.
-type DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType string
-
-// DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun defines parameters for DeleteProjectAvatar.
-type DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun bool
-
-// DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled defines parameters for DeleteProjectAvatar.
-type DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled bool
-
 // DeleteProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift bool
 
@@ -17521,18 +18273,6 @@ type UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal struct
 // UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
 
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseGateAction defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateAction string
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType string
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun bool
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled bool
-
 // UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift bool
 
@@ -19232,18 +19972,6 @@ type GetRollingReleaseConfigParams struct {
 // GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for GetRollingReleaseConfig.
 type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
 
-// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateAction defines parameters for GetRollingReleaseConfig.
-type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateAction string
-
-// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateChecksType defines parameters for GetRollingReleaseConfig.
-type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateChecksType string
-
-// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateDryRun defines parameters for GetRollingReleaseConfig.
-type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateDryRun bool
-
-// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateEnabled defines parameters for GetRollingReleaseConfig.
-type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseGateEnabled bool
-
 // GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for GetRollingReleaseConfig.
 type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift bool
 
@@ -19289,735 +20017,4 @@ type UpdateRollingReleaseConfig200JSONResponseBody1 struct {
 			TargetPercentage float32 `json:"targetPercentage"`
 		} `json:"stages,omitempty"`
 	} `json:"rollingRelease"`
-}
-
-// UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesLinearShift defines parameters for UpdateRollingReleaseConfig.
-type UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesLinearShift bool
-
-// UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesRequireApproval defines parameters for UpdateRollingReleaseConfig.
-type UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesRequireApproval bool
-
-// UpdateRollingReleaseConfig200JSONResponseBody defines parameters for UpdateRollingReleaseConfig.
-type UpdateRollingReleaseConfig200JSONResponseBody struct {
-	union json.RawMessage
-}
-
-// StartRollingReleaseJSONBody defines parameters for StartRollingRelease.
-type StartRollingReleaseJSONBody struct {
-	// CanaryDeploymentId The ID of the canary deployment to start the rolling release for
-	CanaryDeploymentId string `json:"canaryDeploymentId"`
-}
-
-// StartRollingReleaseParams defines parameters for StartRollingRelease.
-type StartRollingReleaseParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseAdvancementType defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseAdvancementType string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval bool
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseState defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseState string
-
-// StartRollingRelease200JSONResponseBodyRollingReleaseSubstate defines parameters for StartRollingRelease.
-type StartRollingRelease200JSONResponseBodyRollingReleaseSubstate string
-
-// UpdateStaticIpsJSONBody defines parameters for UpdateStaticIps.
-type UpdateStaticIpsJSONBody struct {
-	// Builds Whether to use Static IPs for builds.
-	Builds  *bool     `json:"builds,omitempty"`
-	Regions *[]string `json:"regions,omitempty"`
-	union   json.RawMessage
-}
-
-// UpdateStaticIpsParams defines parameters for UpdateStaticIps.
-type UpdateStaticIpsParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// UpdateStaticIpsJSONBody0 defines parameters for UpdateStaticIps.
-type UpdateStaticIpsJSONBody0 = interface{}
-
-// UpdateStaticIpsJSONBody1 defines parameters for UpdateStaticIps.
-type UpdateStaticIpsJSONBody1 = interface{}
-
-// UpdateStaticIps200JSONResponseBodyBuildsEnabled defines parameters for UpdateStaticIps.
-type UpdateStaticIps200JSONResponseBodyBuildsEnabled bool
-
-// UpdateStaticIps200JSONResponseBodyEnvId0 defines parameters for UpdateStaticIps.
-type UpdateStaticIps200JSONResponseBodyEnvId0 = string
-
-// UpdateStaticIps200JSONResponseBodyEnvId1 defines parameters for UpdateStaticIps.
-type UpdateStaticIps200JSONResponseBodyEnvId1 string
-
-// UpdateStaticIps200JSONResponseBody_EnvId defines parameters for UpdateStaticIps.
-type UpdateStaticIps200JSONResponseBody_EnvId struct {
-	union json.RawMessage
-}
-
-// UpdateStaticIps200JSONResponseBodyPassive defines parameters for UpdateStaticIps.
-type UpdateStaticIps200JSONResponseBodyPassive bool
-
-// GetProjectTokenJSONBody defines parameters for GetProjectToken.
-type GetProjectTokenJSONBody struct {
-	// Source The source that is calling the endpoint.
-	//
-	// Example: vercel-cli:pull
-	Source *string `json:"source,omitempty"`
-}
-
-// GetProjectTokenParams defines parameters for GetProjectToken.
-type GetProjectTokenParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetFlagsProjectConnectionsParams defines parameters for GetFlagsProjectConnections.
-type GetFlagsProjectConnectionsParams struct {
-	// Role List connections where this project is the source (default) or the consumer
-	Role *GetFlagsProjectConnectionsParamsRole `form:"role,omitempty" json:"role,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// GetFlagsProjectConnectionsParamsRole defines parameters for GetFlagsProjectConnections.
-type GetFlagsProjectConnectionsParamsRole string
-
-// GetFlagsProjectConnections200JSONResponseBody0 defines parameters for GetFlagsProjectConnections.
-type GetFlagsProjectConnections200JSONResponseBody0 = map[string]interface{}
-
-// GetFlagsProjectConnections200JSONResponseBody1 defines parameters for GetFlagsProjectConnections.
-type GetFlagsProjectConnections200JSONResponseBody1 struct {
-	Data []struct {
-		ConsumerProjectId   string  `json:"consumerProjectId"`
-		ConsumerProjectName *string `json:"consumerProjectName,omitempty"`
-		CreatedAt           float32 `json:"createdAt"`
-		CreatedBy           string  `json:"createdBy"`
-		SourceProjectId     string  `json:"sourceProjectId"`
-		SourceProjectName   *string `json:"sourceProjectName,omitempty"`
-	} `json:"data"`
-}
-
-// GetFlagsProjectConnections200JSONResponseBody defines parameters for GetFlagsProjectConnections.
-type GetFlagsProjectConnections200JSONResponseBody struct {
-	union json.RawMessage
-}
-
-// CreateFlagsProjectConnectionJSONBody defines parameters for CreateFlagsProjectConnection.
-type CreateFlagsProjectConnectionJSONBody struct {
-	// ConsumerProjectId The project in the same team that may read the flags of this project
-	ConsumerProjectId string `json:"consumerProjectId"`
-}
-
-// CreateFlagsProjectConnectionParams defines parameters for CreateFlagsProjectConnection.
-type CreateFlagsProjectConnectionParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// DeleteFlagsProjectConnectionParams defines parameters for DeleteFlagsProjectConnection.
-type DeleteFlagsProjectConnectionParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagsParams defines parameters for ListFlags.
-type ListFlagsParams struct {
-	// State The state of the flags to retrieve. Defaults to `active`.
-	State *ListFlagsParamsState `form:"state,omitempty" json:"state,omitempty"`
-
-	// WithMetadata Deprecated. Whether to include creator metadata in each flag in the response. Resolve creator identity client-side (e.g. via the team members endpoint) instead; this parameter will be removed in a future release. Use `GET /v1/projects/:id/feature-flags/flags/:flagIdOrSlug?withMetadata=true` for single-flag lookups that need creator metadata.
-	WithMetadata *bool `form:"withMetadata,omitempty" json:"withMetadata,omitempty"`
-
-	// Limit Maximum number of flags to return. When not set, all flags are returned.
-	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Cursor Pagination cursor to continue from.
-	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-
-	// Search Search flags by their slug or description. Case-insensitive.
-	Search *string `form:"search,omitempty" json:"search,omitempty"`
-
-	// Tags Filter flags by tag. Repeat the parameter for multiple tags (all must match).
-	Tags *[]string `form:"tags,omitempty" json:"tags,omitempty"`
-
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// ListFlagsParamsState defines parameters for ListFlags.
-type ListFlagsParamsState string
-
-// CreateFlagJSONBody defines parameters for CreateFlag.
-type CreateFlagJSONBody struct {
-	// Description A description of the flag
-	Description *string `json:"description,omitempty"`
-
-	// Environments The configuration for the flag in different environments
-	Environments map[string]struct {
-		Active        bool                                        `json:"active"`
-		Fallthrough   CreateFlagJSONBody_Environments_Fallthrough `json:"fallthrough"`
-		PausedOutcome struct {
-			Type      interface{} `json:"type"`
-			VariantId string      `json:"variantId"`
-		} `json:"pausedOutcome"`
-
-		// Reuse Allows linking this environment to another environment so this flag will be evaluated with the other flag's configuration
-		Reuse *struct {
-			// Active Whether the reuse is active or not
-			Active bool `json:"active"`
-
-			// Environment The environment to link to
-			Environment string `json:"environment"`
-		} `json:"reuse,omitempty"`
-
-		// Revision The revision of the environment config
-		Revision *float32 `json:"revision,omitempty"`
-		Rules    []struct {
-			Conditions []struct {
-				Cmp        CreateFlagJSONBodyEnvironmentsRulesConditionsCmp `json:"cmp"`
-				CmpOptions *struct {
-					IgnoreCase *bool `json:"ignoreCase,omitempty"`
-				} `json:"cmpOptions,omitempty"`
-				Lhs CreateFlagJSONBody_Environments_Rules_Conditions_Lhs  `json:"lhs"`
-				Rhs *CreateFlagJSONBody_Environments_Rules_Conditions_Rhs `json:"rhs,omitempty"`
-			} `json:"conditions"`
-			Id      string                                        `json:"id"`
-			Outcome CreateFlagJSONBody_Environments_Rules_Outcome `json:"outcome"`
-		} `json:"rules"`
-
-		// Targets Allows assigning targets to variants while bypassing the flag's rules
-		Targets *map[string]map[string]map[string][]struct {
-			Note  *string `json:"note,omitempty"`
-			Value string  `json:"value"`
-		} `json:"targets,omitempty"`
-	} `json:"environments"`
-
-	// Kind The kind of flag
-	Kind interface{} `json:"kind"`
-
-	// MaintainerIds The user ids of the maintainers of the flag
-	MaintainerIds *[]string `json:"maintainerIds,omitempty"`
-
-	// Permanent Whether this flag is marked as permanent, indicating it should not be removed
-	Permanent *bool `json:"permanent,omitempty"`
-
-	// Seed A random seed to prevent split points in different flags from having the same targets
-	Seed *float32 `json:"seed,omitempty"`
-
-	// Slug A unique (per project) key for the flag, composed of letters, numbers, dashes, and underscores
-	Slug  string                   `json:"slug"`
-	State *CreateFlagJSONBodyState `json:"state,omitempty"`
-
-	// Tags Tags for categorizing the flag
-	Tags *[]string `json:"tags,omitempty"`
-
-	// Variants The variants of the flag
-	Variants *[]struct {
-		// Description A description of the variant
-		Description *string `json:"description,omitempty"`
-
-		// Id The id of the variant
-		Id string `json:"id"`
-
-		// Label A label for the variant
-		Label *string                           `json:"label,omitempty"`
-		Value CreateFlagJSONBody_Variants_Value `json:"value"`
-	} `json:"variants,omitempty"`
-}
-
-// CreateFlagParams defines parameters for CreateFlag.
-type CreateFlagParams struct {
-	// TeamId The Team identifier to perform the request on behalf of.
-	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
-
-	// Slug The Team slug to perform the request on behalf of.
-	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
-}
-
-// CreateFlagJSONBodyEnvironmentsFallthrough0 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsFallthrough0 struct {
-	Type      interface{} `json:"type"`
-	VariantId string      `json:"variantId"`
-}
-
-// CreateFlagJSONBodyEnvironmentsFallthrough1 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsFallthrough1 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string      `json:"defaultVariantId"`
-	Type             interface{} `json:"type"`
-
-	// Weights The distribution for each variant
-	Weights map[string]float32 `json:"weights"`
-}
-
-// CreateFlagJSONBodyEnvironmentsFallthrough2 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsFallthrough2 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string `json:"defaultVariantId"`
-
-	// FinalPromille Traffic for rollToVariant after all slots expire (0-100_000, where 1_000 = 1%). Defaults to 100_000 (100%). Set 50_000 to end at 50%.
-	FinalPromille *float32 `json:"finalPromille,omitempty"`
-
-	// RollFromVariantId The variant to roll away from
-	RollFromVariantId string `json:"rollFromVariantId"`
-
-	// RollToVariantId The variant to roll towards
-	RollToVariantId string `json:"rollToVariantId"`
-
-	// Slots Each slot defines a promille and how long it is served for. After all slots expire, finalPromille is served indefinitely (100% when omitted). The final percentage does not need its own slot.
-	Slots []struct {
-		// DurationMs How long this promille is served in ms before moving to the next slot.
-		DurationMs float32 `json:"durationMs"`
-
-		// Promille Promille of traffic for rollToVariant (0-100_000, where 1_000 = 1%)
-		Promille float32 `json:"promille"`
-	} `json:"slots"`
-
-	// StartTimestamp Epoch ms when the rollout begins
-	StartTimestamp float32     `json:"startTimestamp"`
-	Type           interface{} `json:"type"`
-}
-
-// CreateFlagJSONBody_Environments_Fallthrough defines parameters for CreateFlag.
-type CreateFlagJSONBody_Environments_Fallthrough struct {
-	union json.RawMessage
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsCmp defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsCmp string
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsLhs0 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsLhs0 struct {
-	Type interface{} `json:"type"`
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsLhs1 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsLhs1 struct {
-	Attribute string      `json:"attribute"`
-	Kind      string      `json:"kind"`
-	Type      interface{} `json:"type"`
-}
-
-// CreateFlagJSONBody_Environments_Rules_Conditions_Lhs defines parameters for CreateFlag.
-type CreateFlagJSONBody_Environments_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0 struct {
-	Items []CreateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item `json:"items"`
-	Type  CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type               `json:"type"`
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items0 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items1 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// CreateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item defines parameters for CreateFlag.
-type CreateFlagJSONBody_Environments_Rules_Conditions_Rhs_0_Items_Item struct {
-	union json.RawMessage
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs0Type string
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs1 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs1 struct {
-	Flags   string      `json:"flags"`
-	Pattern string      `json:"pattern"`
-	Type    interface{} `json:"type"`
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs2 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs2 = string
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs3 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs3 = float32
-
-// CreateFlagJSONBodyEnvironmentsRulesConditionsRhs4 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesConditionsRhs4 = bool
-
-// CreateFlagJSONBody_Environments_Rules_Conditions_Rhs defines parameters for CreateFlag.
-type CreateFlagJSONBody_Environments_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesOutcome0 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesOutcome0 struct {
-	Type      interface{} `json:"type"`
-	VariantId string      `json:"variantId"`
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesOutcome1 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesOutcome1 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string      `json:"defaultVariantId"`
-	Type             interface{} `json:"type"`
-
-	// Weights The distribution for each variant
-	Weights map[string]float32 `json:"weights"`
-}
-
-// CreateFlagJSONBodyEnvironmentsRulesOutcome2 defines parameters for CreateFlag.
-type CreateFlagJSONBodyEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string      `json:"attribute"`
-		Kind      string      `json:"kind"`
-		Type      interface{} `json:"type"`
-	} `json:"base"`
-
-	// DefaultVariantId This variant will be used when the base attribute does not exist
-	DefaultVariantId string `json:"defaultVariantId"`
-
-	// FinalPromille Traffic for rollToVariant after all slots expire (0-100_000, where 1_000 = 1%). Defaults to 100_000 (100%). Set 50_000 to end at 50%.
-	FinalPromille *float32 `json:"finalPromille,omitempty"`
-
-	// RollFromVariantId The variant to roll away from
-	RollFromVariantId string `json:"rollFromVariantId"`
-
-	// RollToVariantId The variant to roll towards
-	RollToVariantId string `json:"rollToVariantId"`
-
-	// Slots Each slot defines a promille and how long it is served for. After all slots expire, finalPromille is served indefinitely (100% when omitted). The final percentage does not need its own slot.
-	Slots []struct {
-		// DurationMs How long this promille is served in ms before moving to the next slot.
-		DurationMs float32 `json:"durationMs"`
-
-		// Promille Promille of traffic for rollToVariant (0-100_000, where 1_000 = 1%)
-		Promille float32 `json:"promille"`
-	} `json:"slots"`
-
-	// StartTimestamp Epoch ms when the rollout begins
-	StartTimestamp float32     `json:"startTimestamp"`
-	Type           interface{} `json:"type"`
-}
-
-// CreateFlagJSONBody_Environments_Rules_Outcome defines parameters for CreateFlag.
-type CreateFlagJSONBody_Environments_Rules_Outcome struct {
-	union json.RawMessage
-}
-
-// CreateFlagJSONBodyState defines parameters for CreateFlag.
-type CreateFlagJSONBodyState string
-
-// CreateFlagJSONBodyVariantsValue0 defines parameters for CreateFlag.
-type CreateFlagJSONBodyVariantsValue0 = string
-
-// CreateFlagJSONBodyVariantsValue1 defines parameters for CreateFlag.
-type CreateFlagJSONBodyVariantsValue1 = float32
-
-// CreateFlagJSONBodyVariantsValue2 defines parameters for CreateFlag.
-type CreateFlagJSONBodyVariantsValue2 = bool
-
-// CreateFlagJSONBodyVariantsValue3 defines parameters for CreateFlag.
-type CreateFlagJSONBodyVariantsValue3 = map[string]interface{}
-
-// CreateFlagJSONBodyVariantsValue4 defines parameters for CreateFlag.
-type CreateFlagJSONBodyVariantsValue4 = []interface{}
-
-// CreateFlagJSONBodyVariantsValue5 defines parameters for CreateFlag.
-type CreateFlagJSONBodyVariantsValue5 = string
-
-// CreateFlagJSONBody_Variants_Value defines parameters for CreateFlag.
-type CreateFlagJSONBody_Variants_Value struct {
-	union json.RawMessage
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsActive defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsActive bool
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough0 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough0 struct {
-	Type      CreateFlag201JSONResponseBodyEnvironmentsFallthrough0Type `json:"type"`
-	VariantId string                                                    `json:"variantId"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough0Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough0Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough1 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough1 struct {
-	Base struct {
-		Attribute string                                                        `json:"attribute"`
-		Kind      string                                                        `json:"kind"`
-		Type      CreateFlag201JSONResponseBodyEnvironmentsFallthrough1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                                                    `json:"defaultVariantId"`
-	Type             CreateFlag201JSONResponseBodyEnvironmentsFallthrough1Type `json:"type"`
-	Weights          map[string]float32                                        `json:"weights"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough1BaseType defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough1BaseType string
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough1Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough1Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough2 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough2 struct {
-	Base struct {
-		Attribute string                                                        `json:"attribute"`
-		Kind      string                                                        `json:"kind"`
-		Type      CreateFlag201JSONResponseBodyEnvironmentsFallthrough2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                   `json:"startTimestamp"`
-	Type           CreateFlag201JSONResponseBodyEnvironmentsFallthrough2Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough2BaseType defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough2BaseType string
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough2Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough2Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough3 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough3 struct {
-	Type CreateFlag201JSONResponseBodyEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough3Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough3Type string
-
-// CreateFlag201JSONResponseBody_Environments_Fallthrough defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBody_Environments_Fallthrough struct {
-	union json.RawMessage
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsPausedOutcomeType defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsPausedOutcomeType string
-
-// CreateFlag201JSONResponseBodyEnvironmentsReuseActive defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsReuseActive bool
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmp defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmp string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsCmpOptionsIgnoreCase bool
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs0 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs0 struct {
-	Type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs0Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs0Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs0Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs1 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs1 struct {
-	Attribute string                                                           `json:"attribute"`
-	Kind      string                                                           `json:"kind"`
-	Type      CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs1Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs1Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsLhs1Type string
-
-// CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Lhs defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Lhs struct {
-	union json.RawMessage
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs0 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs0 = string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs1 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs1 = float32
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2 struct {
-	Items []CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item `json:"items"`
-	Type  CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Type               `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Items0 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Items0 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value float32 `json:"value"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Items1 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Items1 struct {
-	Label *string `json:"label,omitempty"`
-	Note  *string `json:"note,omitempty"`
-	Value string  `json:"value"`
-}
-
-// CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs_2_Items_Item struct {
-	union json.RawMessage
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs2Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs3 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs3 struct {
-	Flags   string                                                           `json:"flags"`
-	Pattern string                                                           `json:"pattern"`
-	Type    CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs3Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs3Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs3Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs4 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesConditionsRhs4 bool
-
-// CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBody_Environments_Rules_Conditions_Rhs struct {
-	union json.RawMessage
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome0 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome0 struct {
-	Type      CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome0Type `json:"type"`
-	VariantId string                                                     `json:"variantId"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome0Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome0Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1 struct {
-	Base struct {
-		Attribute string                                                         `json:"attribute"`
-		Kind      string                                                         `json:"kind"`
-		Type      CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId string                                                     `json:"defaultVariantId"`
-	Type             CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1Type `json:"type"`
-	Weights          map[string]float32                                         `json:"weights"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1BaseType defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1BaseType string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome1Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2 struct {
-	Base struct {
-		Attribute string                                                         `json:"attribute"`
-		Kind      string                                                         `json:"kind"`
-		Type      CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2BaseType `json:"type"`
-	} `json:"base"`
-	DefaultVariantId  string   `json:"defaultVariantId"`
-	FinalPromille     *float32 `json:"finalPromille,omitempty"`
-	RollFromVariantId string   `json:"rollFromVariantId"`
-	RollToVariantId   string   `json:"rollToVariantId"`
-	Slots             []struct {
-		DurationMs float32 `json:"durationMs"`
-		Promille   float32 `json:"promille"`
-	} `json:"slots"`
-	StartTimestamp float32                                                    `json:"startTimestamp"`
-	Type           CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type `json:"type"`
 }

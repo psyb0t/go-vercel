@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.30.0, 2026-11-17
+
+- Breaking: `CreateAiGatewayRule`, `UpdateAiGatewayRule`, `CreateAiGatewayVirtualModelConfig`, `UpdateAiGatewayVirtualModelConfig` and `UpdateAiGatewayVirtualModelConfigBySlug` on `Client` now take a JSON body argument (for example `CreateAiGatewayRuleJSONRequestBody`) before the editor functions. The matching `...WithResponse` methods on `ClientWithResponses` and the `ClientInterface` methods change the same way.
+- Added `CreateAiGatewayRuleWithBody`, `UpdateAiGatewayRuleWithBody`, `CreateAiGatewayVirtualModelConfigWithBody`, `UpdateAiGatewayVirtualModelConfigWithBody` and `UpdateAiGatewayVirtualModelConfigBySlugWithBody`, with `...WithBodyWithResponse` variants, for raw request bodies.
+- Added the body types `CreateAiGatewayRuleJSONBody`, `CreateAiGatewayRuleJSONRequestBody` and `CreateAiGatewayVirtualModelConfigJSONBody`, with their enum constants, and matching types for the update calls.
+- Breaking: the `RollingReleaseGate` action, checks type, dry run and enabled enum types and constants are removed from the project responses, for example `GetProject200JSONResponseBodyRollingReleaseGateAction` and `CreateProject200JSONResponseBodyRollingReleaseGateActionPause`. `GetProjectResponse.JSON200`, `GetProjectsResponse` bodies such as `GetProjects200JSONResponseBody0` and `GetMicrofrontendsInGroupResponse.JSON200` change type.
+- Breaking: about 3900 exported identifiers are removed, mostly `UserEventPayload` types, fields and methods and `UserEvent_Payload_NNN_...` types, because numbering shifted again. `UserEventPayload122` and `UserEventPayload271` lose `Set` and `UnmarshalJSON`, and `UserEvent_Payload` loses `FromUserEventPayload132` and `MergeUserEventPayload132`.
+- Added about 4000 identifiers, mostly renumbered `UserEventPayload` types. `UserEventPayload123` and `UserEventPayload273` gain `Set` and `UnmarshalJSON`, and `UserEvent_Payload` gains `FromUserEventPayload131`, `MergeUserEventPayload131` and the methods for `UserEventPayload532` to `UserEventPayload541`.
+- Generated from spec version 0.0.1.
+
 ## v0.29.0, 2026-11-16
 
 - Breaking: `GetDeploymentEventsResponse.JSON200` and `GetJSON200` change from `*[]*GetDeploymentEvents200JSONResponseBody_Item` to `*[]GetDeploymentEvents200JSONResponseBody_Item`.

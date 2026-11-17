@@ -13,118 +13,6 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// ParseGetProjectsResponse parses an HTTP response from a GetProjectsWithResponse call
-func ParseGetProjectsResponse(rsp *http.Response) (*GetProjectsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetProjects200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseAddProjectDomainResponse parses an HTTP response from a AddProjectDomainWithResponse call
-func ParseAddProjectDomainResponse(rsp *http.Response) (*AddProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AddProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ApexName            string                                                 `json:"apexName"`
-			CreatedAt           *float32                                               `json:"createdAt,omitempty"`
-			CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
-			GitBranch           *string                                                `json:"gitBranch,omitempty"`
-			Name                string                                                 `json:"name"`
-			ProjectId           string                                                 `json:"projectId"`
-			Redirect            *string                                                `json:"redirect,omitempty"`
-			RedirectStatusCode  *AddProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
-
-			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-			Verification *[]struct {
-				Domain string `json:"domain"`
-				Reason string `json:"reason"`
-				Type   string `json:"type"`
-				Value  string `json:"value"`
-			} `json:"verification,omitempty"`
-
-			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-			Verified AddProjectDomain200JSONResponseBodyVerified `json:"verified"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
 // ParseFilterProjectEnvsResponse parses an HTTP response from a FilterProjectEnvsWithResponse call
 func ParseFilterProjectEnvsResponse(rsp *http.Response) (*FilterProjectEnvsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -1345,6 +1233,12 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+				// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+				// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 				// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -1753,54 +1647,6 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				//
 				// Example: false
 				CanaryResponseHeader *CreateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-				Gate *struct {
-					// Action What to do when the gate trips: pause the rollout, or roll it back.
-					Action CreateProject200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-					// Checks The checks to evaluate. An empty array means nothing is evaluated.
-					Checks []struct {
-						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-						//
-						// Example: ["/api/health"]
-						ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-						//
-						// Example: [503]
-						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-						//
-						// Example: 30
-						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-						//
-						// Example: 0.05
-						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-						// Type The metric this check evaluates.
-						Type CreateProject200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-					} `json:"checks"`
-
-					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-					DryRun CreateProject200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-					// Enabled Whether automated gating is enabled for this project's rollouts.
-					Enabled CreateProject200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-					//
-					// Example: 3
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-					//
-					// Example: 5
-					WindowSize *float32 `json:"windowSize,omitempty"`
-				} `json:"gate,omitempty"`
 
 				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 				Stages *[]struct {
@@ -5961,11 +5807,7 @@ func ParseGetTeamsResponse(rsp *http.Response) (*GetTeamsResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Pagination This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-			Pagination Pagination                               `json:"pagination"`
-			Teams      []GetTeams200JSONResponseBody_Teams_Item `json:"teams"`
-		}
+		var dest GetTeams200JSONResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -5978,6 +5820,9 @@ func ParseGetTeamsResponse(rsp *http.Response) (*GetTeamsResponse, error) {
 		break // No content-type
 
 	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
 		break // No content-type
 
 	case rsp.StatusCode == 410:
@@ -10735,6 +10580,12 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+				// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+				// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 				// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -11143,54 +10994,6 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				//
 				// Example: false
 				CanaryResponseHeader *GetProject200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-				Gate *struct {
-					// Action What to do when the gate trips: pause the rollout, or roll it back.
-					Action GetProject200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-					// Checks The checks to evaluate. An empty array means nothing is evaluated.
-					Checks []struct {
-						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-						//
-						// Example: ["/api/health"]
-						ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-						//
-						// Example: [503]
-						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-						//
-						// Example: 30
-						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-						//
-						// Example: 0.05
-						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-						// Type The metric this check evaluates.
-						Type GetProject200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-					} `json:"checks"`
-
-					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-					DryRun GetProject200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-					// Enabled Whether automated gating is enabled for this project's rollouts.
-					Enabled GetProject200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-					//
-					// Example: 3
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-					//
-					// Example: 5
-					WindowSize *float32 `json:"windowSize,omitempty"`
-				} `json:"gate,omitempty"`
 
 				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 				Stages *[]struct {
@@ -12581,6 +12384,12 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+				// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+				// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 				// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -12989,54 +12798,6 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				//
 				// Example: false
 				CanaryResponseHeader *UpdateProject200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-				Gate *struct {
-					// Action What to do when the gate trips: pause the rollout, or roll it back.
-					Action UpdateProject200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-					// Checks The checks to evaluate. An empty array means nothing is evaluated.
-					Checks []struct {
-						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-						//
-						// Example: ["/api/health"]
-						ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-						//
-						// Example: [503]
-						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-						//
-						// Example: 30
-						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-						//
-						// Example: 0.05
-						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-						// Type The metric this check evaluates.
-						Type UpdateProject200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-					} `json:"checks"`
-
-					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-					DryRun UpdateProject200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-					// Enabled Whether automated gating is enabled for this project's rollouts.
-					Enabled UpdateProject200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-					//
-					// Example: 3
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-					//
-					// Example: 5
-					WindowSize *float32 `json:"windowSize,omitempty"`
-				} `json:"gate,omitempty"`
 
 				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 				Stages *[]struct {

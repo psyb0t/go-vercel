@@ -16,6 +16,277 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// ArchiveAiGatewayBudget Archive AI Gateway budget
+//
+// Archive a team-, project-, or user-scope AI Gateway budget.
+//
+// Corresponds with DELETE /ai-gateway/budgets (the `ArchiveAiGatewayBudget` operationId).
+func (c *Client) ArchiveAiGatewayBudget(ctx context.Context, params *ArchiveAiGatewayBudgetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewArchiveAiGatewayBudgetRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpsertAiGatewayBudgetWithBody Upsert AI Gateway budget
+//
+// Create or update a team-, project-, or user-scope AI Gateway budget.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
+func (c *Client) UpsertAiGatewayBudgetWithBody(ctx context.Context, params *UpsertAiGatewayBudgetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpsertAiGatewayBudgetRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpsertAiGatewayBudget Upsert AI Gateway budget
+//
+// Create or update a team-, project-, or user-scope AI Gateway budget.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /ai-gateway/budgets (the `UpsertAiGatewayBudget` operationId).
+func (c *Client) UpsertAiGatewayBudget(ctx context.Context, params *UpsertAiGatewayBudgetParams, body UpsertAiGatewayBudgetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpsertAiGatewayBudgetRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ArchiveAiGatewayBudgetDefault Archive AI Gateway budget default
+//
+// Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
+//
+// Corresponds with DELETE /ai-gateway/budgets/defaults (the `ArchiveAiGatewayBudgetDefault` operationId).
+func (c *Client) ArchiveAiGatewayBudgetDefault(ctx context.Context, params *ArchiveAiGatewayBudgetDefaultParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewArchiveAiGatewayBudgetDefaultRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpsertAiGatewayBudgetDefaultWithBody Upsert AI Gateway budget default
+//
+// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
+func (c *Client) UpsertAiGatewayBudgetDefaultWithBody(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpsertAiGatewayBudgetDefaultRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpsertAiGatewayBudgetDefault Upsert AI Gateway budget default
+//
+// Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /ai-gateway/budgets/defaults (the `UpsertAiGatewayBudgetDefault` operationId).
+func (c *Client) UpsertAiGatewayBudgetDefault(ctx context.Context, params *UpsertAiGatewayBudgetDefaultParams, body UpsertAiGatewayBudgetDefaultJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpsertAiGatewayBudgetDefaultRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAiGatewayBudgetDefaults List AI Gateway budget defaults
+//
+// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+//
+// Corresponds with GET /ai-gateway/budgets/defaults/list (the `ListAiGatewayBudgetDefaults` operationId).
+func (c *Client) ListAiGatewayBudgetDefaults(ctx context.Context, params *ListAiGatewayBudgetDefaultsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiGatewayBudgetDefaultsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAiGatewayBudgets List AI Gateway budgets
+//
+// List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
+//
+// Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
+func (c *Client) ListAiGatewayBudgets(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiGatewayBudgetsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayByokCredentialWithBody Create a BYOK credential
+//
+// Create a new BYOK credential.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /ai-gateway/byok-credentials (the `CreateAiGatewayByokCredential` operationId).
+func (c *Client) CreateAiGatewayByokCredentialWithBody(ctx context.Context, params *CreateAiGatewayByokCredentialParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayByokCredentialRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayByokCredential Create a BYOK credential
+//
+// Create a new BYOK credential.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /ai-gateway/byok-credentials (the `CreateAiGatewayByokCredential` operationId).
+func (c *Client) CreateAiGatewayByokCredential(ctx context.Context, params *CreateAiGatewayByokCredentialParams, body CreateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayByokCredentialRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ListAiGatewayByokCredentials List BYOK credentials
+//
+// # List BYOK credentials for an owner, optionally filtered by provider
+//
+// Corresponds with GET /ai-gateway/byok-credentials/list (the `ListAiGatewayByokCredentials` operationId).
+func (c *Client) ListAiGatewayByokCredentials(ctx context.Context, params *ListAiGatewayByokCredentialsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAiGatewayByokCredentialsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteAiGatewayByokCredential Delete a BYOK credential
+//
+// Delete a BYOK credential (soft delete) and its model mappings.
+//
+// Corresponds with DELETE /ai-gateway/byok-credentials/{credentialId} (the `DeleteAiGatewayByokCredential` operationId).
+func (c *Client) DeleteAiGatewayByokCredential(ctx context.Context, credentialId string, params *DeleteAiGatewayByokCredentialParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAiGatewayByokCredentialRequest(c.Server, credentialId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetAiGatewayByokCredential Get a BYOK credential
+//
+// Get a BYOK credential by ID. The credential value is never returned.
+//
+// Corresponds with GET /ai-gateway/byok-credentials/{credentialId} (the `GetAiGatewayByokCredential` operationId).
+func (c *Client) GetAiGatewayByokCredential(ctx context.Context, credentialId string, params *GetAiGatewayByokCredentialParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAiGatewayByokCredentialRequest(c.Server, credentialId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAiGatewayByokCredentialWithBody Update a BYOK credential
+//
+// Update a BYOK credential. Send `credential` to replace the key value in place, which keeps the credential ID, settings and model mappings.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
+func (c *Client) UpdateAiGatewayByokCredentialWithBody(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayByokCredentialRequestWithBody(c.Server, credentialId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// UpdateAiGatewayByokCredential Update a BYOK credential
+//
+// Update a BYOK credential. Send `credential` to replace the key value in place, which keeps the credential ID, settings and model mappings.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /ai-gateway/byok-credentials/{credentialId} (the `UpdateAiGatewayByokCredential` operationId).
+func (c *Client) UpdateAiGatewayByokCredential(ctx context.Context, credentialId string, params *UpdateAiGatewayByokCredentialParams, body UpdateAiGatewayByokCredentialJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayByokCredentialRequest(c.Server, credentialId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteAiGatewayRule Delete rule
 //
 // Delete a routing rule (soft delete).
@@ -50,13 +321,53 @@ func (c *Client) ListAiGatewayRules(ctx context.Context, params *ListAiGatewayRu
 	return c.Client.Do(req)
 }
 
+// UpdateAiGatewayRuleWithBody Update rule
+//
+// Update a routing rule (enabled, action, or description)
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
+func (c *Client) UpdateAiGatewayRuleWithBody(ctx context.Context, params *UpdateAiGatewayRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayRuleRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // UpdateAiGatewayRule Update rule
 //
 // Update a routing rule (enabled, action, or description)
 //
+// Takes a body of the `application/json` content type.
+//
 // Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
-func (c *Client) UpdateAiGatewayRule(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAiGatewayRuleRequest(c.Server, params)
+func (c *Client) UpdateAiGatewayRule(ctx context.Context, params *UpdateAiGatewayRuleParams, body UpdateAiGatewayRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayRuleRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayRuleWithBody Create rule
+//
+// Create a routing rule.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
+func (c *Client) CreateAiGatewayRuleWithBody(ctx context.Context, params *CreateAiGatewayRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayRuleRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -71,9 +382,11 @@ func (c *Client) UpdateAiGatewayRule(ctx context.Context, params *UpdateAiGatewa
 //
 // Create a routing rule.
 //
+// Takes a body of the `application/json` content type.
+//
 // Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
-func (c *Client) CreateAiGatewayRule(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAiGatewayRuleRequest(c.Server, params)
+func (c *Client) CreateAiGatewayRule(ctx context.Context, params *CreateAiGatewayRuleParams, body CreateAiGatewayRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayRuleRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -118,13 +431,53 @@ func (c *Client) GetAiGatewayVirtualModelConfig(ctx context.Context, params *Get
 	return c.Client.Do(req)
 }
 
+// UpdateAiGatewayVirtualModelConfigWithBody Update virtual model config
+//
+// Update a virtual model config.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
+func (c *Client) UpdateAiGatewayVirtualModelConfigWithBody(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayVirtualModelConfigRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // UpdateAiGatewayVirtualModelConfig Update virtual model config
 //
 // Update a virtual model config.
 //
+// Takes a body of the `application/json` content type.
+//
 // Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
-func (c *Client) UpdateAiGatewayVirtualModelConfig(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAiGatewayVirtualModelConfigRequest(c.Server, params)
+func (c *Client) UpdateAiGatewayVirtualModelConfig(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, body UpdateAiGatewayVirtualModelConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayVirtualModelConfigRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CreateAiGatewayVirtualModelConfigWithBody Create virtual model config
+//
+// Create a virtual model config (VMC).
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
+func (c *Client) CreateAiGatewayVirtualModelConfigWithBody(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayVirtualModelConfigRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -139,9 +492,11 @@ func (c *Client) UpdateAiGatewayVirtualModelConfig(ctx context.Context, params *
 //
 // Create a virtual model config (VMC).
 //
+// Takes a body of the `application/json` content type.
+//
 // Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
-func (c *Client) CreateAiGatewayVirtualModelConfig(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateAiGatewayVirtualModelConfigRequest(c.Server, params)
+func (c *Client) CreateAiGatewayVirtualModelConfig(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, body CreateAiGatewayVirtualModelConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAiGatewayVirtualModelConfigRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -203,13 +558,34 @@ func (c *Client) GetAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSl
 	return c.Client.Do(req)
 }
 
+// UpdateAiGatewayVirtualModelConfigBySlugWithBody Update virtual model config
+//
+// Update a virtual model config by path slug.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
+func (c *Client) UpdateAiGatewayVirtualModelConfigBySlugWithBody(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayVirtualModelConfigBySlugRequestWithBody(c.Server, vmcSlug, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // UpdateAiGatewayVirtualModelConfigBySlug Update virtual model config
 //
 // Update a virtual model config by path slug.
 //
+// Takes a body of the `application/json` content type.
+//
 // Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *Client) UpdateAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUpdateAiGatewayVirtualModelConfigBySlugRequest(c.Server, vmcSlug, params)
+func (c *Client) UpdateAiGatewayVirtualModelConfigBySlug(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, body UpdateAiGatewayVirtualModelConfigBySlugJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAiGatewayVirtualModelConfigBySlugRequest(c.Server, vmcSlug, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -10239,7 +10615,7 @@ func (c *Client) CreateSandboxesByNameForkV2(ctx context.Context, name string, p
 
 // GetTeams List all teams
 //
-// Get a paginated list of all the Teams the authenticated User is a member of.
+// Get a paginated list of all the Teams the authenticated User is a member of. An app-principal token needs `read:team` and lists only the team it is bound to.
 //
 // Corresponds with GET /v2/teams (the `GetTeams` operationId).
 func (c *Client) GetTeams(ctx context.Context, params *GetTeamsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -13111,8 +13487,19 @@ func NewListAiGatewayRulesRequest(server string, params *ListAiGatewayRulesParam
 	return req, nil
 }
 
-// NewUpdateAiGatewayRuleRequest constructs an http.Request for the UpdateAiGatewayRule method
-func NewUpdateAiGatewayRuleRequest(server string, params *UpdateAiGatewayRuleParams) (*http.Request, error) {
+// NewUpdateAiGatewayRuleRequest calls the generic UpdateAiGatewayRule builder with application/json body
+func NewUpdateAiGatewayRuleRequest(server string, params *UpdateAiGatewayRuleParams, body UpdateAiGatewayRuleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAiGatewayRuleRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewUpdateAiGatewayRuleRequestWithBody constructs an http.Request for the UpdateAiGatewayRule method, with any body, and a specified content type
+func NewUpdateAiGatewayRuleRequestWithBody(server string, params *UpdateAiGatewayRuleParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -13169,16 +13556,29 @@ func NewUpdateAiGatewayRuleRequest(server string, params *UpdateAiGatewayRulePar
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
 
-// NewCreateAiGatewayRuleRequest constructs an http.Request for the CreateAiGatewayRule method
-func NewCreateAiGatewayRuleRequest(server string, params *CreateAiGatewayRuleParams) (*http.Request, error) {
+// NewCreateAiGatewayRuleRequest calls the generic CreateAiGatewayRule builder with application/json body
+func NewCreateAiGatewayRuleRequest(server string, params *CreateAiGatewayRuleParams, body CreateAiGatewayRuleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAiGatewayRuleRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateAiGatewayRuleRequestWithBody constructs an http.Request for the CreateAiGatewayRule method, with any body, and a specified content type
+func NewCreateAiGatewayRuleRequestWithBody(server string, params *CreateAiGatewayRuleParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -13235,10 +13635,12 @@ func NewCreateAiGatewayRuleRequest(server string, params *CreateAiGatewayRulePar
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -13479,8 +13881,19 @@ func NewGetAiGatewayVirtualModelConfigRequest(server string, params *GetAiGatewa
 	return req, nil
 }
 
-// NewUpdateAiGatewayVirtualModelConfigRequest constructs an http.Request for the UpdateAiGatewayVirtualModelConfig method
-func NewUpdateAiGatewayVirtualModelConfigRequest(server string, params *UpdateAiGatewayVirtualModelConfigParams) (*http.Request, error) {
+// NewUpdateAiGatewayVirtualModelConfigRequest calls the generic UpdateAiGatewayVirtualModelConfig builder with application/json body
+func NewUpdateAiGatewayVirtualModelConfigRequest(server string, params *UpdateAiGatewayVirtualModelConfigParams, body UpdateAiGatewayVirtualModelConfigJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAiGatewayVirtualModelConfigRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewUpdateAiGatewayVirtualModelConfigRequestWithBody constructs an http.Request for the UpdateAiGatewayVirtualModelConfig method, with any body, and a specified content type
+func NewUpdateAiGatewayVirtualModelConfigRequestWithBody(server string, params *UpdateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -13537,16 +13950,29 @@ func NewUpdateAiGatewayVirtualModelConfigRequest(server string, params *UpdateAi
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
 
-// NewCreateAiGatewayVirtualModelConfigRequest constructs an http.Request for the CreateAiGatewayVirtualModelConfig method
-func NewCreateAiGatewayVirtualModelConfigRequest(server string, params *CreateAiGatewayVirtualModelConfigParams) (*http.Request, error) {
+// NewCreateAiGatewayVirtualModelConfigRequest calls the generic CreateAiGatewayVirtualModelConfig builder with application/json body
+func NewCreateAiGatewayVirtualModelConfigRequest(server string, params *CreateAiGatewayVirtualModelConfigParams, body CreateAiGatewayVirtualModelConfigJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAiGatewayVirtualModelConfigRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateAiGatewayVirtualModelConfigRequestWithBody constructs an http.Request for the CreateAiGatewayVirtualModelConfig method, with any body, and a specified content type
+func NewCreateAiGatewayVirtualModelConfigRequestWithBody(server string, params *CreateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -13603,10 +14029,12 @@ func NewCreateAiGatewayVirtualModelConfigRequest(server string, params *CreateAi
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -13931,8 +14359,19 @@ func NewGetAiGatewayVirtualModelConfigBySlugRequest(server string, vmcSlug strin
 	return req, nil
 }
 
-// NewUpdateAiGatewayVirtualModelConfigBySlugRequest constructs an http.Request for the UpdateAiGatewayVirtualModelConfigBySlug method
-func NewUpdateAiGatewayVirtualModelConfigBySlugRequest(server string, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams) (*http.Request, error) {
+// NewUpdateAiGatewayVirtualModelConfigBySlugRequest calls the generic UpdateAiGatewayVirtualModelConfigBySlug builder with application/json body
+func NewUpdateAiGatewayVirtualModelConfigBySlugRequest(server string, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, body UpdateAiGatewayVirtualModelConfigBySlugJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAiGatewayVirtualModelConfigBySlugRequestWithBody(server, vmcSlug, params, "application/json", bodyReader)
+}
+
+// NewUpdateAiGatewayVirtualModelConfigBySlugRequestWithBody constructs an http.Request for the UpdateAiGatewayVirtualModelConfigBySlug method, with any body, and a specified content type
+func NewUpdateAiGatewayVirtualModelConfigBySlugRequestWithBody(server string, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -13996,10 +14435,12 @@ func NewUpdateAiGatewayVirtualModelConfigBySlugRequest(server string, vmcSlug st
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), nil)
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -19579,449 +20020,4 @@ func NewGetOrCreateDriveV1Request(server string, name string, params *GetOrCreat
 	}
 	bodyReader = bytes.NewReader(buf)
 	return NewGetOrCreateDriveV1RequestWithBody(server, name, params, "application/json", bodyReader)
-}
-
-// NewGetOrCreateDriveV1RequestWithBody constructs an http.Request for the GetOrCreateDriveV1 method, with any body, and a specified content type
-func NewGetOrCreateDriveV1RequestWithBody(server string, name string, params *GetOrCreateDriveV1Params, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/drives/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewForkDriveV1Request calls the generic ForkDriveV1 builder with application/json body
-func NewForkDriveV1Request(server string, name string, params *ForkDriveV1Params, body ForkDriveV1JSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewForkDriveV1RequestWithBody(server, name, params, "application/json", bodyReader)
-}
-
-// NewForkDriveV1RequestWithBody constructs an http.Request for the ForkDriveV1 method, with any body, and a specified content type
-func NewForkDriveV1RequestWithBody(server string, name string, params *ForkDriveV1Params, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "name", name, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/drives/%s/fork", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ProjectId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDangerouslyDeleteBySrcImagesRequest calls the generic DangerouslyDeleteBySrcImages builder with application/json body
-func NewDangerouslyDeleteBySrcImagesRequest(server string, params *DangerouslyDeleteBySrcImagesParams, body DangerouslyDeleteBySrcImagesJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewDangerouslyDeleteBySrcImagesRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewDangerouslyDeleteBySrcImagesRequestWithBody constructs an http.Request for the DangerouslyDeleteBySrcImages method, with any body, and a specified content type
-func NewDangerouslyDeleteBySrcImagesRequestWithBody(server string, params *DangerouslyDeleteBySrcImagesParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/edge-cache/dangerously-delete-by-src-images")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIdOrName", params.ProjectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDangerouslyDeleteByTagsRequest calls the generic DangerouslyDeleteByTags builder with application/json body
-func NewDangerouslyDeleteByTagsRequest(server string, params *DangerouslyDeleteByTagsParams, body DangerouslyDeleteByTagsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewDangerouslyDeleteByTagsRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewDangerouslyDeleteByTagsRequestWithBody constructs an http.Request for the DangerouslyDeleteByTags method, with any body, and a specified content type
-func NewDangerouslyDeleteByTagsRequestWithBody(server string, params *DangerouslyDeleteByTagsParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/edge-cache/dangerously-delete-by-tags")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIdOrName", params.ProjectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewInvalidateBySrcImagesRequest calls the generic InvalidateBySrcImages builder with application/json body
-func NewInvalidateBySrcImagesRequest(server string, params *InvalidateBySrcImagesParams, body InvalidateBySrcImagesJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewInvalidateBySrcImagesRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewInvalidateBySrcImagesRequestWithBody constructs an http.Request for the InvalidateBySrcImages method, with any body, and a specified content type
-func NewInvalidateBySrcImagesRequestWithBody(server string, params *InvalidateBySrcImagesParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/edge-cache/invalidate-by-src-images")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectIdOrName", params.ProjectIdOrName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewInvalidateByTagsRequest calls the generic InvalidateByTags builder with application/json body
-func NewInvalidateByTagsRequest(server string, params *InvalidateByTagsParams, body InvalidateByTagsJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewInvalidateByTagsRequestWithBody(server, params, "application/json", bodyReader)
 }

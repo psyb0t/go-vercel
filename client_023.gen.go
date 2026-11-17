@@ -16,6 +16,419 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewCreateVercelCiTaskAnalysisRequest calls the generic CreateVercelCiTaskAnalysis builder with application/json body
+func NewCreateVercelCiTaskAnalysisRequest(server string, params *CreateVercelCiTaskAnalysisParams, body CreateVercelCiTaskAnalysisJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateVercelCiTaskAnalysisRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateVercelCiTaskAnalysisRequestWithBody constructs an http.Request for the CreateVercelCiTaskAnalysis method, with any body, and a specified content type
+func NewCreateVercelCiTaskAnalysisRequestWithBody(server string, params *CreateVercelCiTaskAnalysisParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/task-analyses")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetVercelCiTaskAnalysisRequest constructs an http.Request for the GetVercelCiTaskAnalysis method
+func NewGetVercelCiTaskAnalysisRequest(server string, analysisId string, params *GetVercelCiTaskAnalysisParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "analysisId", analysisId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/task-analyses/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateVercelCiTaskConfigurationPullRequestRequest calls the generic CreateVercelCiTaskConfigurationPullRequest builder with application/json body
+func NewCreateVercelCiTaskConfigurationPullRequestRequest(server string, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, body CreateVercelCiTaskConfigurationPullRequestJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateVercelCiTaskConfigurationPullRequestRequestWithBody(server, analysisId, params, "application/json", bodyReader)
+}
+
+// NewCreateVercelCiTaskConfigurationPullRequestRequestWithBody constructs an http.Request for the CreateVercelCiTaskConfigurationPullRequest method, with any body, and a specified content type
+func NewCreateVercelCiTaskConfigurationPullRequestRequestWithBody(server string, analysisId string, params *CreateVercelCiTaskConfigurationPullRequestParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "analysisId", analysisId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/task-analyses/%s/pull-request", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListVercelCiTaskAnalysisTasksRequest constructs an http.Request for the ListVercelCiTaskAnalysisTasks method
+func NewListVercelCiTaskAnalysisTasksRequest(server string, analysisId string, params *ListVercelCiTaskAnalysisTasksParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "analysisId", analysisId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/task-analyses/%s/tasks", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetWebhooksRequest constructs an http.Request for the GetWebhooks method
+func NewGetWebhooksRequest(server string, params *GetWebhooksParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/webhooks")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCreateWebhookRequest calls the generic CreateWebhook builder with application/json body
 func NewCreateWebhookRequest(server string, params *CreateWebhookParams, body CreateWebhookJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -13025,23 +13438,41 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /ai-gateway/rules (the `ListAiGatewayRules` operationId).
 	ListAiGatewayRulesWithResponse(ctx context.Context, params *ListAiGatewayRulesParams, reqEditors ...RequestEditorFn) (*ListAiGatewayRulesResponse, error)
 
+	// UpdateAiGatewayRuleWithBodyWithResponse Update rule
+	//
+	// Update a routing rule (enabled, action, or description)
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
+	UpdateAiGatewayRuleWithBodyWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error)
+
 	// UpdateAiGatewayRuleWithResponse Update rule
 	//
 	// Update a routing rule (enabled, action, or description)
 	//
-	// Returns a wrapper object for the known response body format(s).
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
-	UpdateAiGatewayRuleWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error)
+	UpdateAiGatewayRuleWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, body UpdateAiGatewayRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error)
+
+	// CreateAiGatewayRuleWithBodyWithResponse Create rule
+	//
+	// Create a routing rule.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
+	CreateAiGatewayRuleWithBodyWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error)
 
 	// CreateAiGatewayRuleWithResponse Create rule
 	//
 	// Create a routing rule.
 	//
-	// Returns a wrapper object for the known response body format(s).
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
-	CreateAiGatewayRuleWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error)
+	CreateAiGatewayRuleWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, body CreateAiGatewayRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error)
 
 	// DeleteAiGatewayVirtualModelConfigWithResponse Delete virtual model config
 	//
@@ -13061,23 +13492,41 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /ai-gateway/virtual-model-configs (the `GetAiGatewayVirtualModelConfig` operationId).
 	GetAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *GetAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigResponse, error)
 
+	// UpdateAiGatewayVirtualModelConfigWithBodyWithResponse Update virtual model config
+	//
+	// Update a virtual model config.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
+	UpdateAiGatewayVirtualModelConfigWithBodyWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error)
+
 	// UpdateAiGatewayVirtualModelConfigWithResponse Update virtual model config
 	//
 	// Update a virtual model config.
 	//
-	// Returns a wrapper object for the known response body format(s).
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
-	UpdateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error)
+	UpdateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, body UpdateAiGatewayVirtualModelConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error)
+
+	// CreateAiGatewayVirtualModelConfigWithBodyWithResponse Create virtual model config
+	//
+	// Create a virtual model config (VMC).
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
+	CreateAiGatewayVirtualModelConfigWithBodyWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error)
 
 	// CreateAiGatewayVirtualModelConfigWithResponse Create virtual model config
 	//
 	// Create a virtual model config (VMC).
 	//
-	// Returns a wrapper object for the known response body format(s).
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
-	CreateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error)
+	CreateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, body CreateAiGatewayVirtualModelConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error)
 
 	// ListAiGatewayVirtualModelConfigsWithResponse List virtual model configs
 	//
@@ -13106,14 +13555,23 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /ai-gateway/virtual-model-configs/{vmcSlug} (the `GetAiGatewayVirtualModelConfigBySlug` operationId).
 	GetAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *GetAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*GetAiGatewayVirtualModelConfigBySlugResponse, error)
 
+	// UpdateAiGatewayVirtualModelConfigBySlugWithBodyWithResponse Update virtual model config
+	//
+	// Update a virtual model config by path slug.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
+	UpdateAiGatewayVirtualModelConfigBySlugWithBodyWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error)
+
 	// UpdateAiGatewayVirtualModelConfigBySlugWithResponse Update virtual model config
 	//
 	// Update a virtual model config by path slug.
 	//
-	// Returns a wrapper object for the known response body format(s).
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-	UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error)
+	UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, body UpdateAiGatewayVirtualModelConfigBySlugJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error)
 
 	// PatchUrlProtectionBypassWithBodyWithResponse Update the protection bypass for a URL
 	//
@@ -18064,7 +18522,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetTeamsWithResponse List all teams
 	//
-	// Get a paginated list of all the Teams the authenticated User is a member of.
+	// Get a paginated list of all the Teams the authenticated User is a member of. An app-principal token needs `read:team` and lists only the team it is bound to.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -19559,467 +20017,4 @@ func (r UpdateAiGatewayRuleResponse) StatusCode() int {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateAiGatewayRuleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateAiGatewayRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *AiGatewayRule
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateAiGatewayRuleResponse) GetJSON201() *AiGatewayRule {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateAiGatewayRuleResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAiGatewayRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAiGatewayRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAiGatewayRuleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAiGatewayVirtualModelConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON204 the response for an HTTP 204 `application/json` response
-	JSON204 *interface{}
-}
-
-// GetJSON204 returns the response for an HTTP 204 `application/json` response
-func (r DeleteAiGatewayVirtualModelConfigResponse) GetJSON204() *interface{} {
-	return r.JSON204
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteAiGatewayVirtualModelConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAiGatewayVirtualModelConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAiGatewayVirtualModelConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAiGatewayVirtualModelConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAiGatewayVirtualModelConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *GetAiGatewayVirtualModelConfig200JSONResponseBody
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAiGatewayVirtualModelConfigResponse) GetJSON200() *GetAiGatewayVirtualModelConfig200JSONResponseBody {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAiGatewayVirtualModelConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAiGatewayVirtualModelConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAiGatewayVirtualModelConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAiGatewayVirtualModelConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateAiGatewayVirtualModelConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayVirtualModelConfig
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateAiGatewayVirtualModelConfigResponse) GetJSON200() *AiGatewayVirtualModelConfig {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateAiGatewayVirtualModelConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateAiGatewayVirtualModelConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateAiGatewayVirtualModelConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateAiGatewayVirtualModelConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateAiGatewayVirtualModelConfigResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *AiGatewayVirtualModelConfig
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateAiGatewayVirtualModelConfigResponse) GetJSON201() *AiGatewayVirtualModelConfig {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateAiGatewayVirtualModelConfigResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAiGatewayVirtualModelConfigResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAiGatewayVirtualModelConfigResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAiGatewayVirtualModelConfigResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiGatewayVirtualModelConfigsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayVirtualModelConfigList
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAiGatewayVirtualModelConfigsResponse) GetJSON200() *AiGatewayVirtualModelConfigList {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListAiGatewayVirtualModelConfigsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiGatewayVirtualModelConfigsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiGatewayVirtualModelConfigsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiGatewayVirtualModelConfigsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAiGatewayVirtualModelConfigBySlugResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON204 the response for an HTTP 204 `application/json` response
-	JSON204 *interface{}
-}
-
-// GetJSON204 returns the response for an HTTP 204 `application/json` response
-func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) GetJSON204() *interface{} {
-	return r.JSON204
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAiGatewayVirtualModelConfigBySlugResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayVirtualModelConfig
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAiGatewayVirtualModelConfigBySlugResponse) GetJSON200() *AiGatewayVirtualModelConfig {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAiGatewayVirtualModelConfigBySlugResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAiGatewayVirtualModelConfigBySlugResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAiGatewayVirtualModelConfigBySlugResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAiGatewayVirtualModelConfigBySlugResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateAiGatewayVirtualModelConfigBySlugResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayVirtualModelConfig
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) GetJSON200() *AiGatewayVirtualModelConfig {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PatchUrlProtectionBypassResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *map[string]interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PatchUrlProtectionBypassResponse) GetJSON200() *map[string]interface{} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r PatchUrlProtectionBypassResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PatchUrlProtectionBypassResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PatchUrlProtectionBypassResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PatchUrlProtectionBypassResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateApiKeysResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// ApiKey Represents an API key.
-		ApiKey APIKey `json:"apiKey"`
-
-		// ApiKeyString The API key's actual value. This value is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
-		//
-		// Example: uRKJSTt0L4RaSkiMj41QTkxM
-		ApiKeyString string `json:"apiKeyString"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *struct {
-		Error struct {
-			Code    string  `json:"code"`
-			Limit   float32 `json:"limit"`
-			Message string  `json:"message"`
-			Name    string  `json:"name"`
-		} `json:"error"`
-	}
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *struct {
-		Error struct {
-			Code    string `json:"code"`
-			Message string `json:"message"`
-		} `json:"error"`
-	}
 }

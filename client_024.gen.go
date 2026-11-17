@@ -8,6 +8,469 @@ import (
 	"time"
 )
 
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAiGatewayRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAiGatewayRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *AiGatewayRule
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r CreateAiGatewayRuleResponse) GetJSON201() *AiGatewayRule {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateAiGatewayRuleResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAiGatewayRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAiGatewayRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAiGatewayRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAiGatewayVirtualModelConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON204 the response for an HTTP 204 `application/json` response
+	JSON204 *interface{}
+}
+
+// GetJSON204 returns the response for an HTTP 204 `application/json` response
+func (r DeleteAiGatewayVirtualModelConfigResponse) GetJSON204() *interface{} {
+	return r.JSON204
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteAiGatewayVirtualModelConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAiGatewayVirtualModelConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAiGatewayVirtualModelConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAiGatewayVirtualModelConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAiGatewayVirtualModelConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetAiGatewayVirtualModelConfig200JSONResponseBody
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetAiGatewayVirtualModelConfigResponse) GetJSON200() *GetAiGatewayVirtualModelConfig200JSONResponseBody {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetAiGatewayVirtualModelConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAiGatewayVirtualModelConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAiGatewayVirtualModelConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAiGatewayVirtualModelConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAiGatewayVirtualModelConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayVirtualModelConfig
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateAiGatewayVirtualModelConfigResponse) GetJSON200() *AiGatewayVirtualModelConfig {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateAiGatewayVirtualModelConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAiGatewayVirtualModelConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAiGatewayVirtualModelConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAiGatewayVirtualModelConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAiGatewayVirtualModelConfigResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *AiGatewayVirtualModelConfig
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r CreateAiGatewayVirtualModelConfigResponse) GetJSON201() *AiGatewayVirtualModelConfig {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateAiGatewayVirtualModelConfigResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAiGatewayVirtualModelConfigResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAiGatewayVirtualModelConfigResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAiGatewayVirtualModelConfigResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiGatewayVirtualModelConfigsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayVirtualModelConfigList
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAiGatewayVirtualModelConfigsResponse) GetJSON200() *AiGatewayVirtualModelConfigList {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAiGatewayVirtualModelConfigsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiGatewayVirtualModelConfigsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiGatewayVirtualModelConfigsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiGatewayVirtualModelConfigsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAiGatewayVirtualModelConfigBySlugResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON204 the response for an HTTP 204 `application/json` response
+	JSON204 *interface{}
+}
+
+// GetJSON204 returns the response for an HTTP 204 `application/json` response
+func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) GetJSON204() *interface{} {
+	return r.JSON204
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAiGatewayVirtualModelConfigBySlugResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAiGatewayVirtualModelConfigBySlugResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayVirtualModelConfig
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetAiGatewayVirtualModelConfigBySlugResponse) GetJSON200() *AiGatewayVirtualModelConfig {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetAiGatewayVirtualModelConfigBySlugResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAiGatewayVirtualModelConfigBySlugResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAiGatewayVirtualModelConfigBySlugResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAiGatewayVirtualModelConfigBySlugResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAiGatewayVirtualModelConfigBySlugResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayVirtualModelConfig
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) GetJSON200() *AiGatewayVirtualModelConfig {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAiGatewayVirtualModelConfigBySlugResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchUrlProtectionBypassResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *map[string]interface{}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchUrlProtectionBypassResponse) GetJSON200() *map[string]interface{} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchUrlProtectionBypassResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchUrlProtectionBypassResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchUrlProtectionBypassResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchUrlProtectionBypassResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateApiKeysResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// ApiKey Represents an API key.
+		ApiKey APIKey `json:"apiKey"`
+
+		// ApiKeyString The API key's actual value. This value is only provided in this response, and can never be retrieved again in the future. Be sure to save it somewhere safe!
+		//
+		// Example: uRKJSTt0L4RaSkiMj41QTkxM
+		ApiKeyString string `json:"apiKeyString"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *struct {
+		Error struct {
+			Code    string  `json:"code"`
+			Limit   float32 `json:"limit"`
+			Message string  `json:"message"`
+			Name    string  `json:"name"`
+		} `json:"error"`
+	}
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+}
+
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CreateApiKeysResponse) GetJSON200() *struct {
 	// ApiKey Represents an API key.
@@ -11614,6 +12077,12 @@ type GetMicrofrontendsInGroupResponse struct {
 				// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+				// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+				// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+				PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 				// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 				Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -12022,54 +12491,6 @@ type GetMicrofrontendsInGroupResponse struct {
 				//
 				// Example: false
 				CanaryResponseHeader *GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-				// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-				Gate *struct {
-					// Action What to do when the gate trips: pause the rollout, or roll it back.
-					Action GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateAction `json:"action"`
-
-					// Checks The checks to evaluate. An empty array means nothing is evaluated.
-					Checks []struct {
-						// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-						//
-						// Example: ["/api/health"]
-						ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-						// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-						//
-						// Example: [503]
-						ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-						// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-						//
-						// Example: 30
-						IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-						// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-						//
-						// Example: 0.05
-						SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-						// Type The metric this check evaluates.
-						Type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateChecksType `json:"type"`
-					} `json:"checks"`
-
-					// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-					DryRun GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateDryRun `json:"dryRun"`
-
-					// Enabled Whether automated gating is enabled for this project's rollouts.
-					Enabled GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateEnabled `json:"enabled"`
-
-					// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-					//
-					// Example: 3
-					FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-					// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-					//
-					// Example: 5
-					WindowSize *float32 `json:"windowSize,omitempty"`
-				} `json:"gate,omitempty"`
 
 				// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 				Stages *[]struct {
@@ -13425,6 +13846,12 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+			// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+			// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 			// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -13833,54 +14260,6 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			//
 			// Example: false
 			CanaryResponseHeader *GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-			// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-			Gate *struct {
-				// Action What to do when the gate trips: pause the rollout, or roll it back.
-				Action GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateAction `json:"action"`
-
-				// Checks The checks to evaluate. An empty array means nothing is evaluated.
-				Checks []struct {
-					// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-					//
-					// Example: ["/api/health"]
-					ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-					// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-					//
-					// Example: [503]
-					ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-					// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-					//
-					// Example: 30
-					IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-					// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-					//
-					// Example: 0.05
-					SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-					// Type The metric this check evaluates.
-					Type GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateChecksType `json:"type"`
-				} `json:"checks"`
-
-				// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-				DryRun GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateDryRun `json:"dryRun"`
-
-				// Enabled Whether automated gating is enabled for this project's rollouts.
-				Enabled GetMicrofrontendsInGroup200JSONResponseBodyProjectsRollingReleaseGateEnabled `json:"enabled"`
-
-				// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-				//
-				// Example: 3
-				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-				// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-				//
-				// Example: 5
-				WindowSize *float32 `json:"windowSize,omitempty"`
-			} `json:"gate,omitempty"`
 
 			// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 			Stages *[]struct {
@@ -16192,6 +16571,12 @@ type DeleteProjectAvatarResponse struct {
 			// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+			// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+			// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 			// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -16600,54 +16985,6 @@ type DeleteProjectAvatarResponse struct {
 			//
 			// Example: false
 			CanaryResponseHeader *DeleteProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-			// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-			Gate *struct {
-				// Action What to do when the gate trips: pause the rollout, or roll it back.
-				Action DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-				// Checks The checks to evaluate. An empty array means nothing is evaluated.
-				Checks []struct {
-					// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-					//
-					// Example: ["/api/health"]
-					ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-					// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-					//
-					// Example: [503]
-					ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-					// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-					//
-					// Example: 30
-					IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-					// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-					//
-					// Example: 0.05
-					SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-					// Type The metric this check evaluates.
-					Type DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-				} `json:"checks"`
-
-				// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-				DryRun DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-				// Enabled Whether automated gating is enabled for this project's rollouts.
-				Enabled DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-				// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-				//
-				// Example: 3
-				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-				// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-				//
-				// Example: 5
-				WindowSize *float32 `json:"windowSize,omitempty"`
-			} `json:"gate,omitempty"`
 
 			// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 			Stages *[]struct {
@@ -18001,6 +18338,12 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+		// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+		// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+		PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 		// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 		Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -18409,54 +18752,6 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		//
 		// Example: false
 		CanaryResponseHeader *DeleteProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-		// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-		Gate *struct {
-			// Action What to do when the gate trips: pause the rollout, or roll it back.
-			Action DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-			// Checks The checks to evaluate. An empty array means nothing is evaluated.
-			Checks []struct {
-				// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-				//
-				// Example: ["/api/health"]
-				ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-				// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-				//
-				// Example: [503]
-				ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-				// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-				//
-				// Example: 30
-				IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-				// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-				//
-				// Example: 0.05
-				SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-				// Type The metric this check evaluates.
-				Type DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-			} `json:"checks"`
-
-			// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-			DryRun DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-			// Enabled Whether automated gating is enabled for this project's rollouts.
-			Enabled DeleteProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-			// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-			//
-			// Example: 3
-			FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-			// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-			//
-			// Example: 5
-			WindowSize *float32 `json:"windowSize,omitempty"`
-		} `json:"gate,omitempty"`
 
 		// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 		Stages *[]struct {
@@ -19843,6 +20138,12 @@ type UploadProjectAvatarResponse struct {
 			// PaymentMethod Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			PaymentMethod *[]ACLAction `json:"paymentMethod,omitempty"`
 
+			// Perimeter Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			Perimeter *[]ACLAction `json:"perimeter,omitempty"`
+
+			// PerimeterLink Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+			PerimeterLink *[]ACLAction `json:"perimeterLink,omitempty"`
+
 			// Permissions Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
 			Permissions *[]ACLAction `json:"permissions,omitempty"`
 
@@ -20251,54 +20552,6 @@ type UploadProjectAvatarResponse struct {
 			//
 			// Example: false
 			CanaryResponseHeader *UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader `json:"canaryResponseHeader,omitempty"`
-
-			// Gate Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
-			Gate *struct {
-				// Action What to do when the gate trips: pause the rollout, or roll it back.
-				Action UploadProjectAvatar200JSONResponseBodyRollingReleaseGateAction `json:"action"`
-
-				// Checks The checks to evaluate. An empty array means nothing is evaluated.
-				Checks []struct {
-					// ExcludePaths Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-					//
-					// Example: ["/api/health"]
-					ExcludePaths *[]string `json:"excludePaths,omitempty"`
-
-					// ExcludeStatusCodes Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
-					//
-					// Example: [503]
-					ExcludeStatusCodes *[]float32 `json:"excludeStatusCodes,omitempty"`
-
-					// IngestWatermarkSeconds Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
-					//
-					// Example: 30
-					IngestWatermarkSeconds *float32 `json:"ingestWatermarkSeconds,omitempty"`
-
-					// SignificanceLevel A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
-					//
-					// Example: 0.05
-					SignificanceLevel *float32 `json:"significanceLevel,omitempty"`
-
-					// Type The metric this check evaluates.
-					Type UploadProjectAvatar200JSONResponseBodyRollingReleaseGateChecksType `json:"type"`
-				} `json:"checks"`
-
-				// DryRun When true, a tripped gate is only reported — {@link action} is not taken.
-				DryRun UploadProjectAvatar200JSONResponseBodyRollingReleaseGateDryRun `json:"dryRun"`
-
-				// Enabled Whether automated gating is enabled for this project's rollouts.
-				Enabled UploadProjectAvatar200JSONResponseBodyRollingReleaseGateEnabled `json:"enabled"`
-
-				// FailureThreshold How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
-				//
-				// Example: 3
-				FailureThreshold *float32 `json:"failureThreshold,omitempty"`
-
-				// WindowSize How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
-				//
-				// Example: 5
-				WindowSize *float32 `json:"windowSize,omitempty"`
-			} `json:"gate,omitempty"`
 
 			// Stages An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
 			Stages *[]struct {

@@ -4224,6 +4224,8 @@ const (
 	ListEventTypeNameAiGatewayInferenceHooksEndpointUpdated          ListEventTypeName = "ai-gateway-inference-hooks-endpoint-updated"
 	ListEventTypeNameAiGatewayInferenceHooksRemoved                  ListEventTypeName = "ai-gateway-inference-hooks-removed"
 	ListEventTypeNameAiGatewayInferenceHooksSettingsUpdated          ListEventTypeName = "ai-gateway-inference-hooks-settings-updated"
+	ListEventTypeNameAiGatewayInferenceHooksSigningSecretCreated     ListEventTypeName = "ai-gateway-inference-hooks-signing-secret-created"
+	ListEventTypeNameAiGatewayInferenceHooksSigningSecretRotated     ListEventTypeName = "ai-gateway-inference-hooks-signing-secret-rotated"
 	ListEventTypeNameAiGatewayInferenceHooksToggled                  ListEventTypeName = "ai-gateway-inference-hooks-toggled"
 	ListEventTypeNameAiGatewayInferenceRegionsUpdated                ListEventTypeName = "ai-gateway-inference-regions-updated"
 	ListEventTypeNameAiGatewayMemberBudgetChanges                    ListEventTypeName = "ai-gateway-member-budget-changes"
@@ -4296,6 +4298,7 @@ const (
 	ListEventTypeNameCertRenew                                       ListEventTypeName = "cert-renew"
 	ListEventTypeNameCertReplace                                     ListEventTypeName = "cert-replace"
 	ListEventTypeNameCertSystemCreate                                ListEventTypeName = "cert-system-create"
+	ListEventTypeNameCodeOwnersAssumeOwners                          ListEventTypeName = "code-owners-assume-owners"
 	ListEventTypeNameCodeOwnersConfigUpdated                         ListEventTypeName = "code-owners-config-updated"
 	ListEventTypeNameComplianceDocumentDownloaded                    ListEventTypeName = "compliance-document-downloaded"
 	ListEventTypeNameComplianceDocumentPreviewed                     ListEventTypeName = "compliance-document-previewed"
@@ -4469,6 +4472,7 @@ const (
 	ListEventTypeNameFlagsSettings                                   ListEventTypeName = "flags-settings"
 	ListEventTypeNameFlagsTransferred                                ListEventTypeName = "flags-transferred"
 	ListEventTypeNameFlatRateCdnAutoUpgradeConsent                   ListEventTypeName = "flat-rate-cdn-auto-upgrade-consent"
+	ListEventTypeNameFlatRateCdnMigrationOptOut                      ListEventTypeName = "flat-rate-cdn-migration-opt-out"
 	ListEventTypeNameGitAccountIntegrationLinkAdded                  ListEventTypeName = "git_account_integration_link_added"
 	ListEventTypeNameGitIntegrationRepoPush                          ListEventTypeName = "git-integration-repo-push"
 	ListEventTypeNameGlobalConfigBackupRestored                      ListEventTypeName = "global-config-backup-restored"
@@ -4618,6 +4622,11 @@ const (
 	ListEventTypeNamePaymentMethodAdded                              ListEventTypeName = "payment-method-added"
 	ListEventTypeNamePaymentMethodDefaultUpdated                     ListEventTypeName = "payment-method-default-updated"
 	ListEventTypeNamePaymentMethodRemoved                            ListEventTypeName = "payment-method-removed"
+	ListEventTypeNamePerimeterCreated                                ListEventTypeName = "perimeter-created"
+	ListEventTypeNamePerimeterDeleted                                ListEventTypeName = "perimeter-deleted"
+	ListEventTypeNamePerimeterRenamed                                ListEventTypeName = "perimeter-renamed"
+	ListEventTypeNamePerimeterRolledBack                             ListEventTypeName = "perimeter-rolled-back"
+	ListEventTypeNamePerimeterUpdated                                ListEventTypeName = "perimeter-updated"
 	ListEventTypeNamePlan                                            ListEventTypeName = "plan"
 	ListEventTypeNamePreviewDeploymentSuffixDisabled                 ListEventTypeName = "preview-deployment-suffix-disabled"
 	ListEventTypeNamePreviewDeploymentSuffixEnabled                  ListEventTypeName = "preview-deployment-suffix-enabled"
@@ -4722,6 +4731,7 @@ const (
 	ListEventTypeNameProjectPrioritizeProductionBuildsUpdated        ListEventTypeName = "project-prioritize-production-builds-updated"
 	ListEventTypeNameProjectProgramEnrollmentChanged                 ListEventTypeName = "project-program-enrollment-changed"
 	ListEventTypeNameProjectProtectedSourcemapsUpdated               ListEventTypeName = "project-protected-sourcemaps-updated"
+	ListEventTypeNameProjectRemoveVercelRequestHeadersUpdated        ListEventTypeName = "project-remove-vercel-request-headers-updated"
 	ListEventTypeNameProjectRollbackDescriptionUpdated               ListEventTypeName = "project-rollback-description-updated"
 	ListEventTypeNameProjectRollingReleaseAborted                    ListEventTypeName = "project-rolling-release-aborted"
 	ListEventTypeNameProjectRollingReleaseApproved                   ListEventTypeName = "project-rolling-release-approved"
@@ -4761,6 +4771,10 @@ const (
 	ListEventTypeNameRuntimeCachePurgeAll                            ListEventTypeName = "runtime-cache-purge-all"
 	ListEventTypeNameSamlConnectionCreated                           ListEventTypeName = "saml-connection-created"
 	ListEventTypeNameSamlConnectionDeleted                           ListEventTypeName = "saml-connection-deleted"
+	ListEventTypeNameSamlIdpMaterialDeleted                          ListEventTypeName = "saml-idp-material-deleted"
+	ListEventTypeNameSamlIdpMaterialSet                              ListEventTypeName = "saml-idp-material-set"
+	ListEventTypeNameSamlIdpMaterialSystemDeleted                    ListEventTypeName = "saml-idp-material-system-deleted"
+	ListEventTypeNameSamlIdpMaterialSystemSet                        ListEventTypeName = "saml-idp-material-system-set"
 	ListEventTypeNameSandboxAliasAssigned                            ListEventTypeName = "sandbox-alias-assigned"
 	ListEventTypeNameSandboxAliasDelete                              ListEventTypeName = "sandbox-alias-delete"
 	ListEventTypeNameSandboxDriveCreated                             ListEventTypeName = "sandbox-drive-created"
@@ -4946,10 +4960,13 @@ const (
 	ListEventTypeNameVcrRepositoryVisibilityChanged                  ListEventTypeName = "vcr-repository-visibility-changed"
 	ListEventTypeNameVercelAgentElevatedPermissionsApproved          ListEventTypeName = "vercel-agent-elevated-permissions-approved"
 	ListEventTypeNameVercelAgentElevatedPermissionsRequested         ListEventTypeName = "vercel-agent-elevated-permissions-requested"
+	ListEventTypeNameVercelAgentSecurityFindingClosed                ListEventTypeName = "vercel-agent-security-finding-closed"
 	ListEventTypeNameVercelAgentSecurityFindingCreated               ListEventTypeName = "vercel-agent-security-finding-created"
 	ListEventTypeNameVercelAgentSecurityFindingDismissed             ListEventTypeName = "vercel-agent-security-finding-dismissed"
 	ListEventTypeNameVercelAgentSecurityFindingReopened              ListEventTypeName = "vercel-agent-security-finding-reopened"
 	ListEventTypeNameVercelAgentSecurityFindingResolved              ListEventTypeName = "vercel-agent-security-finding-resolved"
+	ListEventTypeNameVercelAgentSecurityReviewPolicyDeleted          ListEventTypeName = "vercel-agent-security-review-policy-deleted"
+	ListEventTypeNameVercelAgentSecurityReviewPolicyUpdated          ListEventTypeName = "vercel-agent-security-review-policy-updated"
 	ListEventTypeNameVercelAgentSessionCreated                       ListEventTypeName = "vercel-agent-session-created"
 	ListEventTypeNameVercelAgentTeamTrialCreditsApplied              ListEventTypeName = "vercel-agent-team-trial-credits-applied"
 	ListEventTypeNameVercelAppInstallationRequestDismissed           ListEventTypeName = "vercel-app-installation-request-dismissed"
@@ -4960,6 +4977,7 @@ const (
 	ListEventTypeNameVercelAppUninstalled                            ListEventTypeName = "vercel-app-uninstalled"
 	ListEventTypeNameVercelCiRepositoryGithubRunnersUpdated          ListEventTypeName = "vercel-ci-repository-github-runners-updated"
 	ListEventTypeNameVercelCiRepositorySettingsUpdated               ListEventTypeName = "vercel-ci-repository-settings-updated"
+	ListEventTypeNameVercelCiRunApproved                             ListEventTypeName = "vercel-ci-run-approved"
 	ListEventTypeNameVercelToolbar                                   ListEventTypeName = "vercel-toolbar"
 	ListEventTypeNameVpcPeeringConnectionAccepted                    ListEventTypeName = "vpc-peering-connection-accepted"
 	ListEventTypeNameVpcPeeringConnectionDeleted                     ListEventTypeName = "vpc-peering-connection-deleted"
@@ -5081,6 +5099,10 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameAiGatewayInferenceHooksRemoved:
 		return true
 	case ListEventTypeNameAiGatewayInferenceHooksSettingsUpdated:
+		return true
+	case ListEventTypeNameAiGatewayInferenceHooksSigningSecretCreated:
+		return true
+	case ListEventTypeNameAiGatewayInferenceHooksSigningSecretRotated:
 		return true
 	case ListEventTypeNameAiGatewayInferenceHooksToggled:
 		return true
@@ -5225,6 +5247,8 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameCertReplace:
 		return true
 	case ListEventTypeNameCertSystemCreate:
+		return true
+	case ListEventTypeNameCodeOwnersAssumeOwners:
 		return true
 	case ListEventTypeNameCodeOwnersConfigUpdated:
 		return true
@@ -5572,6 +5596,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameFlatRateCdnAutoUpgradeConsent:
 		return true
+	case ListEventTypeNameFlatRateCdnMigrationOptOut:
+		return true
 	case ListEventTypeNameGitAccountIntegrationLinkAdded:
 		return true
 	case ListEventTypeNameGitIntegrationRepoPush:
@@ -5870,6 +5896,16 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNamePaymentMethodRemoved:
 		return true
+	case ListEventTypeNamePerimeterCreated:
+		return true
+	case ListEventTypeNamePerimeterDeleted:
+		return true
+	case ListEventTypeNamePerimeterRenamed:
+		return true
+	case ListEventTypeNamePerimeterRolledBack:
+		return true
+	case ListEventTypeNamePerimeterUpdated:
+		return true
 	case ListEventTypeNamePlan:
 		return true
 	case ListEventTypeNamePreviewDeploymentSuffixDisabled:
@@ -6078,6 +6114,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameProjectProtectedSourcemapsUpdated:
 		return true
+	case ListEventTypeNameProjectRemoveVercelRequestHeadersUpdated:
+		return true
 	case ListEventTypeNameProjectRollbackDescriptionUpdated:
 		return true
 	case ListEventTypeNameProjectRollingReleaseAborted:
@@ -6155,6 +6193,14 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameSamlConnectionCreated:
 		return true
 	case ListEventTypeNameSamlConnectionDeleted:
+		return true
+	case ListEventTypeNameSamlIdpMaterialDeleted:
+		return true
+	case ListEventTypeNameSamlIdpMaterialSet:
+		return true
+	case ListEventTypeNameSamlIdpMaterialSystemDeleted:
+		return true
+	case ListEventTypeNameSamlIdpMaterialSystemSet:
 		return true
 	case ListEventTypeNameSandboxAliasAssigned:
 		return true
@@ -6526,6 +6572,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameVercelAgentElevatedPermissionsRequested:
 		return true
+	case ListEventTypeNameVercelAgentSecurityFindingClosed:
+		return true
 	case ListEventTypeNameVercelAgentSecurityFindingCreated:
 		return true
 	case ListEventTypeNameVercelAgentSecurityFindingDismissed:
@@ -6533,6 +6581,10 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameVercelAgentSecurityFindingReopened:
 		return true
 	case ListEventTypeNameVercelAgentSecurityFindingResolved:
+		return true
+	case ListEventTypeNameVercelAgentSecurityReviewPolicyDeleted:
+		return true
+	case ListEventTypeNameVercelAgentSecurityReviewPolicyUpdated:
 		return true
 	case ListEventTypeNameVercelAgentSessionCreated:
 		return true
@@ -6553,6 +6605,8 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameVercelCiRepositoryGithubRunnersUpdated:
 		return true
 	case ListEventTypeNameVercelCiRepositorySettingsUpdated:
+		return true
+	case ListEventTypeNameVercelCiRunApproved:
 		return true
 	case ListEventTypeNameVercelToolbar:
 		return true
@@ -6639,6 +6693,8 @@ const (
 	ListEventTypeReplacedByAiGatewayInferenceHooksEndpointUpdated          ListEventTypeReplacedBy = "ai-gateway-inference-hooks-endpoint-updated"
 	ListEventTypeReplacedByAiGatewayInferenceHooksRemoved                  ListEventTypeReplacedBy = "ai-gateway-inference-hooks-removed"
 	ListEventTypeReplacedByAiGatewayInferenceHooksSettingsUpdated          ListEventTypeReplacedBy = "ai-gateway-inference-hooks-settings-updated"
+	ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretCreated     ListEventTypeReplacedBy = "ai-gateway-inference-hooks-signing-secret-created"
+	ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretRotated     ListEventTypeReplacedBy = "ai-gateway-inference-hooks-signing-secret-rotated"
 	ListEventTypeReplacedByAiGatewayInferenceHooksToggled                  ListEventTypeReplacedBy = "ai-gateway-inference-hooks-toggled"
 	ListEventTypeReplacedByAiGatewayInferenceRegionsUpdated                ListEventTypeReplacedBy = "ai-gateway-inference-regions-updated"
 	ListEventTypeReplacedByAiGatewayMemberBudgetChanges                    ListEventTypeReplacedBy = "ai-gateway-member-budget-changes"
@@ -6711,6 +6767,7 @@ const (
 	ListEventTypeReplacedByCertRenew                                       ListEventTypeReplacedBy = "cert-renew"
 	ListEventTypeReplacedByCertReplace                                     ListEventTypeReplacedBy = "cert-replace"
 	ListEventTypeReplacedByCertSystemCreate                                ListEventTypeReplacedBy = "cert-system-create"
+	ListEventTypeReplacedByCodeOwnersAssumeOwners                          ListEventTypeReplacedBy = "code-owners-assume-owners"
 	ListEventTypeReplacedByCodeOwnersConfigUpdated                         ListEventTypeReplacedBy = "code-owners-config-updated"
 	ListEventTypeReplacedByComplianceDocumentDownloaded                    ListEventTypeReplacedBy = "compliance-document-downloaded"
 	ListEventTypeReplacedByComplianceDocumentPreviewed                     ListEventTypeReplacedBy = "compliance-document-previewed"
@@ -6884,6 +6941,7 @@ const (
 	ListEventTypeReplacedByFlagsSettings                                   ListEventTypeReplacedBy = "flags-settings"
 	ListEventTypeReplacedByFlagsTransferred                                ListEventTypeReplacedBy = "flags-transferred"
 	ListEventTypeReplacedByFlatRateCdnAutoUpgradeConsent                   ListEventTypeReplacedBy = "flat-rate-cdn-auto-upgrade-consent"
+	ListEventTypeReplacedByFlatRateCdnMigrationOptOut                      ListEventTypeReplacedBy = "flat-rate-cdn-migration-opt-out"
 	ListEventTypeReplacedByGitAccountIntegrationLinkAdded                  ListEventTypeReplacedBy = "git_account_integration_link_added"
 	ListEventTypeReplacedByGitIntegrationRepoPush                          ListEventTypeReplacedBy = "git-integration-repo-push"
 	ListEventTypeReplacedByGlobalConfigBackupRestored                      ListEventTypeReplacedBy = "global-config-backup-restored"
@@ -7033,6 +7091,11 @@ const (
 	ListEventTypeReplacedByPaymentMethodAdded                              ListEventTypeReplacedBy = "payment-method-added"
 	ListEventTypeReplacedByPaymentMethodDefaultUpdated                     ListEventTypeReplacedBy = "payment-method-default-updated"
 	ListEventTypeReplacedByPaymentMethodRemoved                            ListEventTypeReplacedBy = "payment-method-removed"
+	ListEventTypeReplacedByPerimeterCreated                                ListEventTypeReplacedBy = "perimeter-created"
+	ListEventTypeReplacedByPerimeterDeleted                                ListEventTypeReplacedBy = "perimeter-deleted"
+	ListEventTypeReplacedByPerimeterRenamed                                ListEventTypeReplacedBy = "perimeter-renamed"
+	ListEventTypeReplacedByPerimeterRolledBack                             ListEventTypeReplacedBy = "perimeter-rolled-back"
+	ListEventTypeReplacedByPerimeterUpdated                                ListEventTypeReplacedBy = "perimeter-updated"
 	ListEventTypeReplacedByPlan                                            ListEventTypeReplacedBy = "plan"
 	ListEventTypeReplacedByPreviewDeploymentSuffixDisabled                 ListEventTypeReplacedBy = "preview-deployment-suffix-disabled"
 	ListEventTypeReplacedByPreviewDeploymentSuffixEnabled                  ListEventTypeReplacedBy = "preview-deployment-suffix-enabled"
@@ -7137,6 +7200,7 @@ const (
 	ListEventTypeReplacedByProjectPrioritizeProductionBuildsUpdated        ListEventTypeReplacedBy = "project-prioritize-production-builds-updated"
 	ListEventTypeReplacedByProjectProgramEnrollmentChanged                 ListEventTypeReplacedBy = "project-program-enrollment-changed"
 	ListEventTypeReplacedByProjectProtectedSourcemapsUpdated               ListEventTypeReplacedBy = "project-protected-sourcemaps-updated"
+	ListEventTypeReplacedByProjectRemoveVercelRequestHeadersUpdated        ListEventTypeReplacedBy = "project-remove-vercel-request-headers-updated"
 	ListEventTypeReplacedByProjectRollbackDescriptionUpdated               ListEventTypeReplacedBy = "project-rollback-description-updated"
 	ListEventTypeReplacedByProjectRollingReleaseAborted                    ListEventTypeReplacedBy = "project-rolling-release-aborted"
 	ListEventTypeReplacedByProjectRollingReleaseApproved                   ListEventTypeReplacedBy = "project-rolling-release-approved"
@@ -7176,6 +7240,10 @@ const (
 	ListEventTypeReplacedByRuntimeCachePurgeAll                            ListEventTypeReplacedBy = "runtime-cache-purge-all"
 	ListEventTypeReplacedBySamlConnectionCreated                           ListEventTypeReplacedBy = "saml-connection-created"
 	ListEventTypeReplacedBySamlConnectionDeleted                           ListEventTypeReplacedBy = "saml-connection-deleted"
+	ListEventTypeReplacedBySamlIdpMaterialDeleted                          ListEventTypeReplacedBy = "saml-idp-material-deleted"
+	ListEventTypeReplacedBySamlIdpMaterialSet                              ListEventTypeReplacedBy = "saml-idp-material-set"
+	ListEventTypeReplacedBySamlIdpMaterialSystemDeleted                    ListEventTypeReplacedBy = "saml-idp-material-system-deleted"
+	ListEventTypeReplacedBySamlIdpMaterialSystemSet                        ListEventTypeReplacedBy = "saml-idp-material-system-set"
 	ListEventTypeReplacedBySandboxAliasAssigned                            ListEventTypeReplacedBy = "sandbox-alias-assigned"
 	ListEventTypeReplacedBySandboxAliasDelete                              ListEventTypeReplacedBy = "sandbox-alias-delete"
 	ListEventTypeReplacedBySandboxDriveCreated                             ListEventTypeReplacedBy = "sandbox-drive-created"
@@ -7361,10 +7429,13 @@ const (
 	ListEventTypeReplacedByVcrRepositoryVisibilityChanged                  ListEventTypeReplacedBy = "vcr-repository-visibility-changed"
 	ListEventTypeReplacedByVercelAgentElevatedPermissionsApproved          ListEventTypeReplacedBy = "vercel-agent-elevated-permissions-approved"
 	ListEventTypeReplacedByVercelAgentElevatedPermissionsRequested         ListEventTypeReplacedBy = "vercel-agent-elevated-permissions-requested"
+	ListEventTypeReplacedByVercelAgentSecurityFindingClosed                ListEventTypeReplacedBy = "vercel-agent-security-finding-closed"
 	ListEventTypeReplacedByVercelAgentSecurityFindingCreated               ListEventTypeReplacedBy = "vercel-agent-security-finding-created"
 	ListEventTypeReplacedByVercelAgentSecurityFindingDismissed             ListEventTypeReplacedBy = "vercel-agent-security-finding-dismissed"
 	ListEventTypeReplacedByVercelAgentSecurityFindingReopened              ListEventTypeReplacedBy = "vercel-agent-security-finding-reopened"
 	ListEventTypeReplacedByVercelAgentSecurityFindingResolved              ListEventTypeReplacedBy = "vercel-agent-security-finding-resolved"
+	ListEventTypeReplacedByVercelAgentSecurityReviewPolicyDeleted          ListEventTypeReplacedBy = "vercel-agent-security-review-policy-deleted"
+	ListEventTypeReplacedByVercelAgentSecurityReviewPolicyUpdated          ListEventTypeReplacedBy = "vercel-agent-security-review-policy-updated"
 	ListEventTypeReplacedByVercelAgentSessionCreated                       ListEventTypeReplacedBy = "vercel-agent-session-created"
 	ListEventTypeReplacedByVercelAgentTeamTrialCreditsApplied              ListEventTypeReplacedBy = "vercel-agent-team-trial-credits-applied"
 	ListEventTypeReplacedByVercelAppInstallationRequestDismissed           ListEventTypeReplacedBy = "vercel-app-installation-request-dismissed"
@@ -7375,6 +7446,7 @@ const (
 	ListEventTypeReplacedByVercelAppUninstalled                            ListEventTypeReplacedBy = "vercel-app-uninstalled"
 	ListEventTypeReplacedByVercelCiRepositoryGithubRunnersUpdated          ListEventTypeReplacedBy = "vercel-ci-repository-github-runners-updated"
 	ListEventTypeReplacedByVercelCiRepositorySettingsUpdated               ListEventTypeReplacedBy = "vercel-ci-repository-settings-updated"
+	ListEventTypeReplacedByVercelCiRunApproved                             ListEventTypeReplacedBy = "vercel-ci-run-approved"
 	ListEventTypeReplacedByVercelToolbar                                   ListEventTypeReplacedBy = "vercel-toolbar"
 	ListEventTypeReplacedByVpcPeeringConnectionAccepted                    ListEventTypeReplacedBy = "vpc-peering-connection-accepted"
 	ListEventTypeReplacedByVpcPeeringConnectionDeleted                     ListEventTypeReplacedBy = "vpc-peering-connection-deleted"
@@ -7496,6 +7568,10 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByAiGatewayInferenceHooksRemoved:
 		return true
 	case ListEventTypeReplacedByAiGatewayInferenceHooksSettingsUpdated:
+		return true
+	case ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretCreated:
+		return true
+	case ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretRotated:
 		return true
 	case ListEventTypeReplacedByAiGatewayInferenceHooksToggled:
 		return true
@@ -7640,6 +7716,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByCertReplace:
 		return true
 	case ListEventTypeReplacedByCertSystemCreate:
+		return true
+	case ListEventTypeReplacedByCodeOwnersAssumeOwners:
 		return true
 	case ListEventTypeReplacedByCodeOwnersConfigUpdated:
 		return true
@@ -7987,6 +8065,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedByFlatRateCdnAutoUpgradeConsent:
 		return true
+	case ListEventTypeReplacedByFlatRateCdnMigrationOptOut:
+		return true
 	case ListEventTypeReplacedByGitAccountIntegrationLinkAdded:
 		return true
 	case ListEventTypeReplacedByGitIntegrationRepoPush:
@@ -8285,6 +8365,16 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedByPaymentMethodRemoved:
 		return true
+	case ListEventTypeReplacedByPerimeterCreated:
+		return true
+	case ListEventTypeReplacedByPerimeterDeleted:
+		return true
+	case ListEventTypeReplacedByPerimeterRenamed:
+		return true
+	case ListEventTypeReplacedByPerimeterRolledBack:
+		return true
+	case ListEventTypeReplacedByPerimeterUpdated:
+		return true
 	case ListEventTypeReplacedByPlan:
 		return true
 	case ListEventTypeReplacedByPreviewDeploymentSuffixDisabled:
@@ -8493,6 +8583,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedByProjectProtectedSourcemapsUpdated:
 		return true
+	case ListEventTypeReplacedByProjectRemoveVercelRequestHeadersUpdated:
+		return true
 	case ListEventTypeReplacedByProjectRollbackDescriptionUpdated:
 		return true
 	case ListEventTypeReplacedByProjectRollingReleaseAborted:
@@ -8570,6 +8662,14 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedBySamlConnectionCreated:
 		return true
 	case ListEventTypeReplacedBySamlConnectionDeleted:
+		return true
+	case ListEventTypeReplacedBySamlIdpMaterialDeleted:
+		return true
+	case ListEventTypeReplacedBySamlIdpMaterialSet:
+		return true
+	case ListEventTypeReplacedBySamlIdpMaterialSystemDeleted:
+		return true
+	case ListEventTypeReplacedBySamlIdpMaterialSystemSet:
 		return true
 	case ListEventTypeReplacedBySandboxAliasAssigned:
 		return true
@@ -8941,6 +9041,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedByVercelAgentElevatedPermissionsRequested:
 		return true
+	case ListEventTypeReplacedByVercelAgentSecurityFindingClosed:
+		return true
 	case ListEventTypeReplacedByVercelAgentSecurityFindingCreated:
 		return true
 	case ListEventTypeReplacedByVercelAgentSecurityFindingDismissed:
@@ -8948,6 +9050,10 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByVercelAgentSecurityFindingReopened:
 		return true
 	case ListEventTypeReplacedByVercelAgentSecurityFindingResolved:
+		return true
+	case ListEventTypeReplacedByVercelAgentSecurityReviewPolicyDeleted:
+		return true
+	case ListEventTypeReplacedByVercelAgentSecurityReviewPolicyUpdated:
 		return true
 	case ListEventTypeReplacedByVercelAgentSessionCreated:
 		return true
@@ -8968,6 +9074,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByVercelCiRepositoryGithubRunnersUpdated:
 		return true
 	case ListEventTypeReplacedByVercelCiRepositorySettingsUpdated:
+		return true
+	case ListEventTypeReplacedByVercelCiRunApproved:
 		return true
 	case ListEventTypeReplacedByVercelToolbar:
 		return true
@@ -12407,14 +12515,17 @@ func (e UserEventPayload27ToPlan) Valid() bool {
 
 // Defines values for UserEventPayload30MemberKind.
 const (
-	UserEventPayload30MemberKindProject UserEventPayload30MemberKind = "project"
-	UserEventPayload30MemberKindTeam    UserEventPayload30MemberKind = "team"
-	UserEventPayload30MemberKindUser    UserEventPayload30MemberKind = "user"
+	UserEventPayload30MemberKindIamAccessGroup UserEventPayload30MemberKind = "iam-access-group"
+	UserEventPayload30MemberKindProject        UserEventPayload30MemberKind = "project"
+	UserEventPayload30MemberKindTeam           UserEventPayload30MemberKind = "team"
+	UserEventPayload30MemberKindUser           UserEventPayload30MemberKind = "user"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload30MemberKind enum.
 func (e UserEventPayload30MemberKind) Valid() bool {
 	switch e {
+	case UserEventPayload30MemberKindIamAccessGroup:
+		return true
 	case UserEventPayload30MemberKindProject:
 		return true
 	case UserEventPayload30MemberKindTeam:
@@ -15039,90 +15150,72 @@ func (e UserEventPayload100Custom) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload106NextAutoAddReviewers.
+// Defines values for UserEventPayload107NextAutoAddReviewers.
 const (
-	UserEventPayload106NextAutoAddReviewersFalse UserEventPayload106NextAutoAddReviewers = false
-	UserEventPayload106NextAutoAddReviewersTrue  UserEventPayload106NextAutoAddReviewers = true
+	UserEventPayload107NextAutoAddReviewersFalse UserEventPayload107NextAutoAddReviewers = false
+	UserEventPayload107NextAutoAddReviewersTrue  UserEventPayload107NextAutoAddReviewers = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload106NextAutoAddReviewers enum.
-func (e UserEventPayload106NextAutoAddReviewers) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload107NextAutoAddReviewers enum.
+func (e UserEventPayload107NextAutoAddReviewers) Valid() bool {
 	switch e {
-	case UserEventPayload106NextAutoAddReviewersFalse:
+	case UserEventPayload107NextAutoAddReviewersFalse:
 		return true
-	case UserEventPayload106NextAutoAddReviewersTrue:
+	case UserEventPayload107NextAutoAddReviewersTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload106NextEnabled.
+// Defines values for UserEventPayload107NextEnabled.
 const (
-	UserEventPayload106NextEnabledFalse UserEventPayload106NextEnabled = false
-	UserEventPayload106NextEnabledTrue  UserEventPayload106NextEnabled = true
+	UserEventPayload107NextEnabledFalse UserEventPayload107NextEnabled = false
+	UserEventPayload107NextEnabledTrue  UserEventPayload107NextEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload106NextEnabled enum.
-func (e UserEventPayload106NextEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload107NextEnabled enum.
+func (e UserEventPayload107NextEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload106NextEnabledFalse:
+	case UserEventPayload107NextEnabledFalse:
 		return true
-	case UserEventPayload106NextEnabledTrue:
+	case UserEventPayload107NextEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload106PreviousAutoAddReviewers.
+// Defines values for UserEventPayload107PreviousAutoAddReviewers.
 const (
-	UserEventPayload106PreviousAutoAddReviewersFalse UserEventPayload106PreviousAutoAddReviewers = false
-	UserEventPayload106PreviousAutoAddReviewersTrue  UserEventPayload106PreviousAutoAddReviewers = true
+	UserEventPayload107PreviousAutoAddReviewersFalse UserEventPayload107PreviousAutoAddReviewers = false
+	UserEventPayload107PreviousAutoAddReviewersTrue  UserEventPayload107PreviousAutoAddReviewers = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload106PreviousAutoAddReviewers enum.
-func (e UserEventPayload106PreviousAutoAddReviewers) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload107PreviousAutoAddReviewers enum.
+func (e UserEventPayload107PreviousAutoAddReviewers) Valid() bool {
 	switch e {
-	case UserEventPayload106PreviousAutoAddReviewersFalse:
+	case UserEventPayload107PreviousAutoAddReviewersFalse:
 		return true
-	case UserEventPayload106PreviousAutoAddReviewersTrue:
+	case UserEventPayload107PreviousAutoAddReviewersTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload106PreviousEnabled.
+// Defines values for UserEventPayload107PreviousEnabled.
 const (
-	UserEventPayload106PreviousEnabledFalse UserEventPayload106PreviousEnabled = false
-	UserEventPayload106PreviousEnabledTrue  UserEventPayload106PreviousEnabled = true
+	UserEventPayload107PreviousEnabledFalse UserEventPayload107PreviousEnabled = false
+	UserEventPayload107PreviousEnabledTrue  UserEventPayload107PreviousEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload106PreviousEnabled enum.
-func (e UserEventPayload106PreviousEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload107PreviousEnabled enum.
+func (e UserEventPayload107PreviousEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload106PreviousEnabledFalse:
+	case UserEventPayload107PreviousEnabledFalse:
 		return true
-	case UserEventPayload106PreviousEnabledTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload110BuildsEnabled.
-const (
-	UserEventPayload110BuildsEnabledFalse UserEventPayload110BuildsEnabled = false
-	UserEventPayload110BuildsEnabledTrue  UserEventPayload110BuildsEnabled = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload110BuildsEnabled enum.
-func (e UserEventPayload110BuildsEnabled) Valid() bool {
-	switch e {
-	case UserEventPayload110BuildsEnabledFalse:
-		return true
-	case UserEventPayload110BuildsEnabledTrue:
+	case UserEventPayload107PreviousEnabledTrue:
 		return true
 	default:
 		return false
@@ -15147,171 +15240,102 @@ func (e UserEventPayload111BuildsEnabled) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload111Passive.
+// Defines values for UserEventPayload112BuildsEnabled.
 const (
-	UserEventPayload111PassiveFalse UserEventPayload111Passive = false
-	UserEventPayload111PassiveTrue  UserEventPayload111Passive = true
+	UserEventPayload112BuildsEnabledFalse UserEventPayload112BuildsEnabled = false
+	UserEventPayload112BuildsEnabledTrue  UserEventPayload112BuildsEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload111Passive enum.
-func (e UserEventPayload111Passive) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload112BuildsEnabled enum.
+func (e UserEventPayload112BuildsEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload111PassiveFalse:
+	case UserEventPayload112BuildsEnabledFalse:
 		return true
-	case UserEventPayload111PassiveTrue:
+	case UserEventPayload112BuildsEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload126OldPasswordProtectionDeploymentType.
+// Defines values for UserEventPayload112Passive.
 const (
-	UserEventPayload126OldPasswordProtectionDeploymentTypeAll                              UserEventPayload126OldPasswordProtectionDeploymentType = "all"
-	UserEventPayload126OldPasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload126OldPasswordProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload126OldPasswordProtectionDeploymentTypePreview                          UserEventPayload126OldPasswordProtectionDeploymentType = "preview"
-	UserEventPayload126OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload126OldPasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+	UserEventPayload112PassiveFalse UserEventPayload112Passive = false
+	UserEventPayload112PassiveTrue  UserEventPayload112Passive = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload126OldPasswordProtectionDeploymentType enum.
-func (e UserEventPayload126OldPasswordProtectionDeploymentType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload112Passive enum.
+func (e UserEventPayload112Passive) Valid() bool {
 	switch e {
-	case UserEventPayload126OldPasswordProtectionDeploymentTypeAll:
+	case UserEventPayload112PassiveFalse:
 		return true
-	case UserEventPayload126OldPasswordProtectionDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload126OldPasswordProtectionDeploymentTypePreview:
-		return true
-	case UserEventPayload126OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload112PassiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload126PasswordChanged.
+// Defines values for UserEventPayload127OldPasswordProtectionDeploymentType.
 const (
-	UserEventPayload126PasswordChangedFalse UserEventPayload126PasswordChanged = false
-	UserEventPayload126PasswordChangedTrue  UserEventPayload126PasswordChanged = true
+	UserEventPayload127OldPasswordProtectionDeploymentTypeAll                              UserEventPayload127OldPasswordProtectionDeploymentType = "all"
+	UserEventPayload127OldPasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload127OldPasswordProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload127OldPasswordProtectionDeploymentTypePreview                          UserEventPayload127OldPasswordProtectionDeploymentType = "preview"
+	UserEventPayload127OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload127OldPasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload126PasswordChanged enum.
-func (e UserEventPayload126PasswordChanged) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload127OldPasswordProtectionDeploymentType enum.
+func (e UserEventPayload127OldPasswordProtectionDeploymentType) Valid() bool {
 	switch e {
-	case UserEventPayload126PasswordChangedFalse:
+	case UserEventPayload127OldPasswordProtectionDeploymentTypeAll:
 		return true
-	case UserEventPayload126PasswordChangedTrue:
+	case UserEventPayload127OldPasswordProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case UserEventPayload127OldPasswordProtectionDeploymentTypePreview:
+		return true
+	case UserEventPayload127OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload126PasswordProtectionDeploymentType.
+// Defines values for UserEventPayload127PasswordChanged.
 const (
-	UserEventPayload126PasswordProtectionDeploymentTypeAll                              UserEventPayload126PasswordProtectionDeploymentType = "all"
-	UserEventPayload126PasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload126PasswordProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload126PasswordProtectionDeploymentTypePreview                          UserEventPayload126PasswordProtectionDeploymentType = "preview"
-	UserEventPayload126PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload126PasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+	UserEventPayload127PasswordChangedFalse UserEventPayload127PasswordChanged = false
+	UserEventPayload127PasswordChangedTrue  UserEventPayload127PasswordChanged = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload126PasswordProtectionDeploymentType enum.
-func (e UserEventPayload126PasswordProtectionDeploymentType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload127PasswordChanged enum.
+func (e UserEventPayload127PasswordChanged) Valid() bool {
 	switch e {
-	case UserEventPayload126PasswordProtectionDeploymentTypeAll:
+	case UserEventPayload127PasswordChangedFalse:
 		return true
-	case UserEventPayload126PasswordProtectionDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload126PasswordProtectionDeploymentTypePreview:
-		return true
-	case UserEventPayload126PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload127PasswordChangedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload126Scope.
+// Defines values for UserEventPayload127PasswordProtectionDeploymentType.
 const (
-	UserEventPayload126ScopeTeam UserEventPayload126Scope = "team"
+	UserEventPayload127PasswordProtectionDeploymentTypeAll                              UserEventPayload127PasswordProtectionDeploymentType = "all"
+	UserEventPayload127PasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload127PasswordProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload127PasswordProtectionDeploymentTypePreview                          UserEventPayload127PasswordProtectionDeploymentType = "preview"
+	UserEventPayload127PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload127PasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload126Scope enum.
-func (e UserEventPayload126Scope) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload127PasswordProtectionDeploymentType enum.
+func (e UserEventPayload127PasswordProtectionDeploymentType) Valid() bool {
 	switch e {
-	case UserEventPayload126ScopeTeam:
+	case UserEventPayload127PasswordProtectionDeploymentTypeAll:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
-const (
-	UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
-	UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
-	UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
-func (e UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
-	switch e {
-	case UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
+	case UserEventPayload127PasswordProtectionDeploymentTypeAllExceptCustomDomains:
 		return true
-	case UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
+	case UserEventPayload127PasswordProtectionDeploymentTypePreview:
 		return true
-	case UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
-		return true
-	case UserEventPayload127OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom.
-const (
-	UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom = "all"
-	UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom = "preview"
-	UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom enum.
-func (e UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
-	switch e {
-	case UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromAll:
-		return true
-	case UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
-		return true
-	case UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromPreview:
-		return true
-	case UserEventPayload127OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload127OldSsoProtectionDeploymentType.
-const (
-	UserEventPayload127OldSsoProtectionDeploymentTypeAll                              UserEventPayload127OldSsoProtectionDeploymentType = "all"
-	UserEventPayload127OldSsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload127OldSsoProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload127OldSsoProtectionDeploymentTypePreview                          UserEventPayload127OldSsoProtectionDeploymentType = "preview"
-	UserEventPayload127OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload127OldSsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload127OldSsoProtectionDeploymentType enum.
-func (e UserEventPayload127OldSsoProtectionDeploymentType) Valid() bool {
-	switch e {
-	case UserEventPayload127OldSsoProtectionDeploymentTypeAll:
-		return true
-	case UserEventPayload127OldSsoProtectionDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload127OldSsoProtectionDeploymentTypePreview:
-		return true
-	case UserEventPayload127OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload127PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
@@ -15320,15 +15344,12 @@ func (e UserEventPayload127OldSsoProtectionDeploymentType) Valid() bool {
 
 // Defines values for UserEventPayload127Scope.
 const (
-	UserEventPayload127ScopeOrganization UserEventPayload127Scope = "organization"
-	UserEventPayload127ScopeTeam         UserEventPayload127Scope = "team"
+	UserEventPayload127ScopeTeam UserEventPayload127Scope = "team"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload127Scope enum.
 func (e UserEventPayload127Scope) Valid() bool {
 	switch e {
-	case UserEventPayload127ScopeOrganization:
-		return true
 	case UserEventPayload127ScopeTeam:
 		return true
 	default:
@@ -15336,2223 +15357,2268 @@ func (e UserEventPayload127Scope) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
+// Defines values for UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
 const (
-	UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
-	UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
-	UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+	UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
+	UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
+	UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
-func (e UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
+func (e UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
 	switch e {
-	case UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
+	case UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
 		return true
-	case UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
+	case UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
 		return true
-	case UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
+	case UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
 		return true
-	case UserEventPayload127SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload128OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom.
+// Defines values for UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom.
 const (
-	UserEventPayload127SsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom = "all"
-	UserEventPayload127SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload127SsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom = "preview"
-	UserEventPayload127SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+	UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom = "all"
+	UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom = "preview"
+	UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom enum.
-func (e UserEventPayload127SsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom enum.
+func (e UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
 	switch e {
-	case UserEventPayload127SsoProtectionCve55182MigrationAppliedFromAll:
+	case UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromAll:
 		return true
-	case UserEventPayload127SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
+	case UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
 		return true
-	case UserEventPayload127SsoProtectionCve55182MigrationAppliedFromPreview:
+	case UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromPreview:
 		return true
-	case UserEventPayload127SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload128OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload127SsoProtectionDeploymentType.
+// Defines values for UserEventPayload128OldSsoProtectionDeploymentType.
 const (
-	UserEventPayload127SsoProtectionDeploymentTypeAll                              UserEventPayload127SsoProtectionDeploymentType = "all"
-	UserEventPayload127SsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload127SsoProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload127SsoProtectionDeploymentTypePreview                          UserEventPayload127SsoProtectionDeploymentType = "preview"
-	UserEventPayload127SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload127SsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+	UserEventPayload128OldSsoProtectionDeploymentTypeAll                              UserEventPayload128OldSsoProtectionDeploymentType = "all"
+	UserEventPayload128OldSsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload128OldSsoProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload128OldSsoProtectionDeploymentTypePreview                          UserEventPayload128OldSsoProtectionDeploymentType = "preview"
+	UserEventPayload128OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload128OldSsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload127SsoProtectionDeploymentType enum.
-func (e UserEventPayload127SsoProtectionDeploymentType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload128OldSsoProtectionDeploymentType enum.
+func (e UserEventPayload128OldSsoProtectionDeploymentType) Valid() bool {
 	switch e {
-	case UserEventPayload127SsoProtectionDeploymentTypeAll:
+	case UserEventPayload128OldSsoProtectionDeploymentTypeAll:
 		return true
-	case UserEventPayload127SsoProtectionDeploymentTypeAllExceptCustomDomains:
+	case UserEventPayload128OldSsoProtectionDeploymentTypeAllExceptCustomDomains:
 		return true
-	case UserEventPayload127SsoProtectionDeploymentTypePreview:
+	case UserEventPayload128OldSsoProtectionDeploymentTypePreview:
 		return true
-	case UserEventPayload127SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload128OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload132DeploymentAllowListedReadyStateReasonInternal.
+// Defines values for UserEventPayload128Scope.
 const (
-	UserEventPayload132DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP   UserEventPayload132DeploymentAllowListedReadyStateReasonInternal = "EARLY_IGNORE_STEP"
-	UserEventPayload132DeploymentAllowListedReadyStateReasonInternalIGNORESTEP        UserEventPayload132DeploymentAllowListedReadyStateReasonInternal = "IGNORE_STEP"
-	UserEventPayload132DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED   UserEventPayload132DeploymentAllowListedReadyStateReasonInternal = "NAMESPACE_PRUNED"
-	UserEventPayload132DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT UserEventPayload132DeploymentAllowListedReadyStateReasonInternal = "UNAFFECTED_PROJECT"
-	UserEventPayload132DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT  UserEventPayload132DeploymentAllowListedReadyStateReasonInternal = "UNVERIFIED_COMMIT"
+	UserEventPayload128ScopeOrganization UserEventPayload128Scope = "organization"
+	UserEventPayload128ScopeTeam         UserEventPayload128Scope = "team"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload132DeploymentAllowListedReadyStateReasonInternal enum.
-func (e UserEventPayload132DeploymentAllowListedReadyStateReasonInternal) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload128Scope enum.
+func (e UserEventPayload128Scope) Valid() bool {
 	switch e {
-	case UserEventPayload132DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP:
+	case UserEventPayload128ScopeOrganization:
 		return true
-	case UserEventPayload132DeploymentAllowListedReadyStateReasonInternalIGNORESTEP:
+	case UserEventPayload128ScopeTeam:
 		return true
-	case UserEventPayload132DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED:
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
+const (
+	UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
+	UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
+	UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
+func (e UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
+	switch e {
+	case UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
+		return true
+	case UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
+		return true
+	case UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
+		return true
+	case UserEventPayload128SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom.
+const (
+	UserEventPayload128SsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom = "all"
+	UserEventPayload128SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload128SsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom = "preview"
+	UserEventPayload128SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom enum.
+func (e UserEventPayload128SsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
+	switch e {
+	case UserEventPayload128SsoProtectionCve55182MigrationAppliedFromAll:
+		return true
+	case UserEventPayload128SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
+		return true
+	case UserEventPayload128SsoProtectionCve55182MigrationAppliedFromPreview:
+		return true
+	case UserEventPayload128SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload128SsoProtectionDeploymentType.
+const (
+	UserEventPayload128SsoProtectionDeploymentTypeAll                              UserEventPayload128SsoProtectionDeploymentType = "all"
+	UserEventPayload128SsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload128SsoProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload128SsoProtectionDeploymentTypePreview                          UserEventPayload128SsoProtectionDeploymentType = "preview"
+	UserEventPayload128SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload128SsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload128SsoProtectionDeploymentType enum.
+func (e UserEventPayload128SsoProtectionDeploymentType) Valid() bool {
+	switch e {
+	case UserEventPayload128SsoProtectionDeploymentTypeAll:
+		return true
+	case UserEventPayload128SsoProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case UserEventPayload128SsoProtectionDeploymentTypePreview:
+		return true
+	case UserEventPayload128SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload133DeploymentAllowListedReadyStateReasonInternal.
+const (
+	UserEventPayload133DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP   UserEventPayload133DeploymentAllowListedReadyStateReasonInternal = "EARLY_IGNORE_STEP"
+	UserEventPayload133DeploymentAllowListedReadyStateReasonInternalIGNORESTEP        UserEventPayload133DeploymentAllowListedReadyStateReasonInternal = "IGNORE_STEP"
+	UserEventPayload133DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED   UserEventPayload133DeploymentAllowListedReadyStateReasonInternal = "NAMESPACE_PRUNED"
+	UserEventPayload133DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT UserEventPayload133DeploymentAllowListedReadyStateReasonInternal = "UNAFFECTED_PROJECT"
+	UserEventPayload133DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT  UserEventPayload133DeploymentAllowListedReadyStateReasonInternal = "UNVERIFIED_COMMIT"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload133DeploymentAllowListedReadyStateReasonInternal enum.
+func (e UserEventPayload133DeploymentAllowListedReadyStateReasonInternal) Valid() bool {
+	switch e {
+	case UserEventPayload133DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP:
+		return true
+	case UserEventPayload133DeploymentAllowListedReadyStateReasonInternalIGNORESTEP:
+		return true
+	case UserEventPayload133DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED:
 		return true
-	case UserEventPayload132DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT:
+	case UserEventPayload133DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT:
 		return true
-	case UserEventPayload132DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT:
+	case UserEventPayload133DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload132Forced.
+// Defines values for UserEventPayload133Forced.
 const (
-	UserEventPayload132ForcedFalse UserEventPayload132Forced = false
-	UserEventPayload132ForcedTrue  UserEventPayload132Forced = true
+	UserEventPayload133ForcedFalse UserEventPayload133Forced = false
+	UserEventPayload133ForcedTrue  UserEventPayload133Forced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload132Forced enum.
-func (e UserEventPayload132Forced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload133Forced enum.
+func (e UserEventPayload133Forced) Valid() bool {
 	switch e {
-	case UserEventPayload132ForcedFalse:
+	case UserEventPayload133ForcedFalse:
 		return true
-	case UserEventPayload132ForcedTrue:
+	case UserEventPayload133ForcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload132GitCredentialSource.
+// Defines values for UserEventPayload133GitCredentialSource.
 const (
-	UserEventPayload132GitCredentialSourceExternalToken UserEventPayload132GitCredentialSource = "external-token"
+	UserEventPayload133GitCredentialSourceExternalToken UserEventPayload133GitCredentialSource = "external-token"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload132GitCredentialSource enum.
-func (e UserEventPayload132GitCredentialSource) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload133GitCredentialSource enum.
+func (e UserEventPayload133GitCredentialSource) Valid() bool {
 	switch e {
-	case UserEventPayload132GitCredentialSourceExternalToken:
+	case UserEventPayload133GitCredentialSourceExternalToken:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0Authorized.
+// Defines values for UserEventPayload134Job0Authorized.
 const (
-	UserEventPayload133Job0AuthorizedFalse UserEventPayload133Job0Authorized = false
-	UserEventPayload133Job0AuthorizedTrue  UserEventPayload133Job0Authorized = true
+	UserEventPayload134Job0AuthorizedFalse UserEventPayload134Job0Authorized = false
+	UserEventPayload134Job0AuthorizedTrue  UserEventPayload134Job0Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0Authorized enum.
-func (e UserEventPayload133Job0Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0Authorized enum.
+func (e UserEventPayload134Job0Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0AuthorizedFalse:
+	case UserEventPayload134Job0AuthorizedFalse:
 		return true
-	case UserEventPayload133Job0AuthorizedTrue:
+	case UserEventPayload134Job0AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0CommitVerification.
+// Defines values for UserEventPayload134Job0CommitVerification.
 const (
-	UserEventPayload133Job0CommitVerificationUnknown    UserEventPayload133Job0CommitVerification = "unknown"
-	UserEventPayload133Job0CommitVerificationUnverified UserEventPayload133Job0CommitVerification = "unverified"
-	UserEventPayload133Job0CommitVerificationVerified   UserEventPayload133Job0CommitVerification = "verified"
+	UserEventPayload134Job0CommitVerificationUnknown    UserEventPayload134Job0CommitVerification = "unknown"
+	UserEventPayload134Job0CommitVerificationUnverified UserEventPayload134Job0CommitVerification = "unverified"
+	UserEventPayload134Job0CommitVerificationVerified   UserEventPayload134Job0CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0CommitVerification enum.
-func (e UserEventPayload133Job0CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0CommitVerification enum.
+func (e UserEventPayload134Job0CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0CommitVerificationUnknown:
+	case UserEventPayload134Job0CommitVerificationUnknown:
 		return true
-	case UserEventPayload133Job0CommitVerificationUnverified:
+	case UserEventPayload134Job0CommitVerificationUnverified:
 		return true
-	case UserEventPayload133Job0CommitVerificationVerified:
+	case UserEventPayload134Job0CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0Eventful.
+// Defines values for UserEventPayload134Job0Eventful.
 const (
-	UserEventPayload133Job0EventfulFalse UserEventPayload133Job0Eventful = false
-	UserEventPayload133Job0EventfulTrue  UserEventPayload133Job0Eventful = true
+	UserEventPayload134Job0EventfulFalse UserEventPayload134Job0Eventful = false
+	UserEventPayload134Job0EventfulTrue  UserEventPayload134Job0Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0Eventful enum.
-func (e UserEventPayload133Job0Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0Eventful enum.
+func (e UserEventPayload134Job0Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0EventfulFalse:
+	case UserEventPayload134Job0EventfulFalse:
 		return true
-	case UserEventPayload133Job0EventfulTrue:
+	case UserEventPayload134Job0EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0ForceNew.
+// Defines values for UserEventPayload134Job0ForceNew.
 const (
-	UserEventPayload133Job0ForceNewFalse UserEventPayload133Job0ForceNew = false
-	UserEventPayload133Job0ForceNewTrue  UserEventPayload133Job0ForceNew = true
+	UserEventPayload134Job0ForceNewFalse UserEventPayload134Job0ForceNew = false
+	UserEventPayload134Job0ForceNewTrue  UserEventPayload134Job0ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0ForceNew enum.
-func (e UserEventPayload133Job0ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0ForceNew enum.
+func (e UserEventPayload134Job0ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0ForceNewFalse:
+	case UserEventPayload134Job0ForceNewFalse:
 		return true
-	case UserEventPayload133Job0ForceNewTrue:
+	case UserEventPayload134Job0ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job0GitCommentsOnCommit.
 const (
-	UserEventPayload133Job0GitCommentsOnCommitFalse UserEventPayload133Job0GitCommentsOnCommit = false
-	UserEventPayload133Job0GitCommentsOnCommitTrue  UserEventPayload133Job0GitCommentsOnCommit = true
+	UserEventPayload134Job0GitCommentsOnCommitFalse UserEventPayload134Job0GitCommentsOnCommit = false
+	UserEventPayload134Job0GitCommentsOnCommitTrue  UserEventPayload134Job0GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0GitCommentsOnCommit enum.
-func (e UserEventPayload133Job0GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0GitCommentsOnCommit enum.
+func (e UserEventPayload134Job0GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0GitCommentsOnCommitFalse:
+	case UserEventPayload134Job0GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job0GitCommentsOnCommitTrue:
+	case UserEventPayload134Job0GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job0GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job0GitCommentsOnPullRequestFalse UserEventPayload133Job0GitCommentsOnPullRequest = false
-	UserEventPayload133Job0GitCommentsOnPullRequestTrue  UserEventPayload133Job0GitCommentsOnPullRequest = true
+	UserEventPayload134Job0GitCommentsOnPullRequestFalse UserEventPayload134Job0GitCommentsOnPullRequest = false
+	UserEventPayload134Job0GitCommentsOnPullRequestTrue  UserEventPayload134Job0GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job0GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job0GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job0GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job0GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job0GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0GitHashtagVercel.
+// Defines values for UserEventPayload134Job0GitHashtagVercel.
 const (
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELSKIP                          UserEventPayload133Job0GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload133Job0GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload133Job0GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELSKIP                          UserEventPayload134Job0GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload134Job0GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload134Job0GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0GitHashtagVercel enum.
-func (e UserEventPayload133Job0GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0GitHashtagVercel enum.
+func (e UserEventPayload134Job0GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload133Job0GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload134Job0GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0IsManualGitDeploy.
+// Defines values for UserEventPayload134Job0IsManualGitDeploy.
 const (
-	UserEventPayload133Job0IsManualGitDeployFalse UserEventPayload133Job0IsManualGitDeploy = false
-	UserEventPayload133Job0IsManualGitDeployTrue  UserEventPayload133Job0IsManualGitDeploy = true
+	UserEventPayload134Job0IsManualGitDeployFalse UserEventPayload134Job0IsManualGitDeploy = false
+	UserEventPayload134Job0IsManualGitDeployTrue  UserEventPayload134Job0IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0IsManualGitDeploy enum.
-func (e UserEventPayload133Job0IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0IsManualGitDeploy enum.
+func (e UserEventPayload134Job0IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0IsManualGitDeployFalse:
+	case UserEventPayload134Job0IsManualGitDeployFalse:
 		return true
-	case UserEventPayload133Job0IsManualGitDeployTrue:
+	case UserEventPayload134Job0IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0NsnbSideEffectAction.
+// Defines values for UserEventPayload134Job0NsnbSideEffectAction.
 const (
-	UserEventPayload133Job0NsnbSideEffectActionAutoApprovedMember        UserEventPayload133Job0NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload133Job0NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload133Job0NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload134Job0NsnbSideEffectActionAutoApprovedMember        UserEventPayload134Job0NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload134Job0NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload134Job0NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0NsnbSideEffectAction enum.
-func (e UserEventPayload133Job0NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0NsnbSideEffectAction enum.
+func (e UserEventPayload134Job0NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload134Job0NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload133Job0NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload134Job0NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0Provider.
+// Defines values for UserEventPayload134Job0Provider.
 const (
-	UserEventPayload133Job0ProviderBitbucket UserEventPayload133Job0Provider = "bitbucket"
+	UserEventPayload134Job0ProviderBitbucket UserEventPayload134Job0Provider = "bitbucket"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0Provider enum.
-func (e UserEventPayload133Job0Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0Provider enum.
+func (e UserEventPayload134Job0Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0ProviderBitbucket:
+	case UserEventPayload134Job0ProviderBitbucket:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0Silent.
+// Defines values for UserEventPayload134Job0Silent.
 const (
-	UserEventPayload133Job0SilentFalse UserEventPayload133Job0Silent = false
-	UserEventPayload133Job0SilentTrue  UserEventPayload133Job0Silent = true
+	UserEventPayload134Job0SilentFalse UserEventPayload134Job0Silent = false
+	UserEventPayload134Job0SilentTrue  UserEventPayload134Job0Silent = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0Silent enum.
-func (e UserEventPayload133Job0Silent) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0Silent enum.
+func (e UserEventPayload134Job0Silent) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0SilentFalse:
+	case UserEventPayload134Job0SilentFalse:
 		return true
-	case UserEventPayload133Job0SilentTrue:
+	case UserEventPayload134Job0SilentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0Type.
+// Defines values for UserEventPayload134Job0Type.
 const (
-	UserEventPayload133Job0TypeBitbucketPush UserEventPayload133Job0Type = "bitbucket-push"
+	UserEventPayload134Job0TypeBitbucketPush UserEventPayload134Job0Type = "bitbucket-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0Type enum.
-func (e UserEventPayload133Job0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0Type enum.
+func (e UserEventPayload134Job0Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0TypeBitbucketPush:
+	case UserEventPayload134Job0TypeBitbucketPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job0WithCache.
+// Defines values for UserEventPayload134Job0WithCache.
 const (
-	UserEventPayload133Job0WithCacheFalse UserEventPayload133Job0WithCache = false
-	UserEventPayload133Job0WithCacheTrue  UserEventPayload133Job0WithCache = true
+	UserEventPayload134Job0WithCacheFalse UserEventPayload134Job0WithCache = false
+	UserEventPayload134Job0WithCacheTrue  UserEventPayload134Job0WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job0WithCache enum.
-func (e UserEventPayload133Job0WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job0WithCache enum.
+func (e UserEventPayload134Job0WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload133Job0WithCacheFalse:
+	case UserEventPayload134Job0WithCacheFalse:
 		return true
-	case UserEventPayload133Job0WithCacheTrue:
+	case UserEventPayload134Job0WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job1Eventful.
+// Defines values for UserEventPayload134Job1Eventful.
 const (
-	UserEventPayload133Job1EventfulFalse UserEventPayload133Job1Eventful = false
-	UserEventPayload133Job1EventfulTrue  UserEventPayload133Job1Eventful = true
+	UserEventPayload134Job1EventfulFalse UserEventPayload134Job1Eventful = false
+	UserEventPayload134Job1EventfulTrue  UserEventPayload134Job1Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job1Eventful enum.
-func (e UserEventPayload133Job1Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job1Eventful enum.
+func (e UserEventPayload134Job1Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job1EventfulFalse:
+	case UserEventPayload134Job1EventfulFalse:
 		return true
-	case UserEventPayload133Job1EventfulTrue:
+	case UserEventPayload134Job1EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job1GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job1GitCommentsOnCommit.
 const (
-	UserEventPayload133Job1GitCommentsOnCommitFalse UserEventPayload133Job1GitCommentsOnCommit = false
-	UserEventPayload133Job1GitCommentsOnCommitTrue  UserEventPayload133Job1GitCommentsOnCommit = true
+	UserEventPayload134Job1GitCommentsOnCommitFalse UserEventPayload134Job1GitCommentsOnCommit = false
+	UserEventPayload134Job1GitCommentsOnCommitTrue  UserEventPayload134Job1GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job1GitCommentsOnCommit enum.
-func (e UserEventPayload133Job1GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job1GitCommentsOnCommit enum.
+func (e UserEventPayload134Job1GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job1GitCommentsOnCommitFalse:
+	case UserEventPayload134Job1GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job1GitCommentsOnCommitTrue:
+	case UserEventPayload134Job1GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job1GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job1GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job1GitCommentsOnPullRequestFalse UserEventPayload133Job1GitCommentsOnPullRequest = false
-	UserEventPayload133Job1GitCommentsOnPullRequestTrue  UserEventPayload133Job1GitCommentsOnPullRequest = true
+	UserEventPayload134Job1GitCommentsOnPullRequestFalse UserEventPayload134Job1GitCommentsOnPullRequest = false
+	UserEventPayload134Job1GitCommentsOnPullRequestTrue  UserEventPayload134Job1GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job1GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job1GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job1GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job1GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job1GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job1GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job1GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job1GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job1Provider.
+// Defines values for UserEventPayload134Job1Provider.
 const (
-	UserEventPayload133Job1ProviderBitbucket UserEventPayload133Job1Provider = "bitbucket"
+	UserEventPayload134Job1ProviderBitbucket UserEventPayload134Job1Provider = "bitbucket"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job1Provider enum.
-func (e UserEventPayload133Job1Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job1Provider enum.
+func (e UserEventPayload134Job1Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job1ProviderBitbucket:
+	case UserEventPayload134Job1ProviderBitbucket:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job1Type.
+// Defines values for UserEventPayload134Job1Type.
 const (
-	UserEventPayload133Job1TypeBitbucketNowComment UserEventPayload133Job1Type = "bitbucket-now-comment"
+	UserEventPayload134Job1TypeBitbucketNowComment UserEventPayload134Job1Type = "bitbucket-now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job1Type enum.
-func (e UserEventPayload133Job1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job1Type enum.
+func (e UserEventPayload134Job1Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job1TypeBitbucketNowComment:
+	case UserEventPayload134Job1TypeBitbucketNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2Authorized.
+// Defines values for UserEventPayload134Job2Authorized.
 const (
-	UserEventPayload133Job2AuthorizedFalse UserEventPayload133Job2Authorized = false
-	UserEventPayload133Job2AuthorizedTrue  UserEventPayload133Job2Authorized = true
+	UserEventPayload134Job2AuthorizedFalse UserEventPayload134Job2Authorized = false
+	UserEventPayload134Job2AuthorizedTrue  UserEventPayload134Job2Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2Authorized enum.
-func (e UserEventPayload133Job2Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2Authorized enum.
+func (e UserEventPayload134Job2Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2AuthorizedFalse:
+	case UserEventPayload134Job2AuthorizedFalse:
 		return true
-	case UserEventPayload133Job2AuthorizedTrue:
+	case UserEventPayload134Job2AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2CommitVerification.
+// Defines values for UserEventPayload134Job2CommitVerification.
 const (
-	UserEventPayload133Job2CommitVerificationUnknown    UserEventPayload133Job2CommitVerification = "unknown"
-	UserEventPayload133Job2CommitVerificationUnverified UserEventPayload133Job2CommitVerification = "unverified"
-	UserEventPayload133Job2CommitVerificationVerified   UserEventPayload133Job2CommitVerification = "verified"
+	UserEventPayload134Job2CommitVerificationUnknown    UserEventPayload134Job2CommitVerification = "unknown"
+	UserEventPayload134Job2CommitVerificationUnverified UserEventPayload134Job2CommitVerification = "unverified"
+	UserEventPayload134Job2CommitVerificationVerified   UserEventPayload134Job2CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2CommitVerification enum.
-func (e UserEventPayload133Job2CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2CommitVerification enum.
+func (e UserEventPayload134Job2CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2CommitVerificationUnknown:
+	case UserEventPayload134Job2CommitVerificationUnknown:
 		return true
-	case UserEventPayload133Job2CommitVerificationUnverified:
+	case UserEventPayload134Job2CommitVerificationUnverified:
 		return true
-	case UserEventPayload133Job2CommitVerificationVerified:
+	case UserEventPayload134Job2CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2Eventful.
+// Defines values for UserEventPayload134Job2Eventful.
 const (
-	UserEventPayload133Job2EventfulFalse UserEventPayload133Job2Eventful = false
-	UserEventPayload133Job2EventfulTrue  UserEventPayload133Job2Eventful = true
+	UserEventPayload134Job2EventfulFalse UserEventPayload134Job2Eventful = false
+	UserEventPayload134Job2EventfulTrue  UserEventPayload134Job2Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2Eventful enum.
-func (e UserEventPayload133Job2Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2Eventful enum.
+func (e UserEventPayload134Job2Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2EventfulFalse:
+	case UserEventPayload134Job2EventfulFalse:
 		return true
-	case UserEventPayload133Job2EventfulTrue:
+	case UserEventPayload134Job2EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2ForceNew.
+// Defines values for UserEventPayload134Job2ForceNew.
 const (
-	UserEventPayload133Job2ForceNewFalse UserEventPayload133Job2ForceNew = false
-	UserEventPayload133Job2ForceNewTrue  UserEventPayload133Job2ForceNew = true
+	UserEventPayload134Job2ForceNewFalse UserEventPayload134Job2ForceNew = false
+	UserEventPayload134Job2ForceNewTrue  UserEventPayload134Job2ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2ForceNew enum.
-func (e UserEventPayload133Job2ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2ForceNew enum.
+func (e UserEventPayload134Job2ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2ForceNewFalse:
+	case UserEventPayload134Job2ForceNewFalse:
 		return true
-	case UserEventPayload133Job2ForceNewTrue:
+	case UserEventPayload134Job2ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job2GitCommentsOnCommit.
 const (
-	UserEventPayload133Job2GitCommentsOnCommitFalse UserEventPayload133Job2GitCommentsOnCommit = false
-	UserEventPayload133Job2GitCommentsOnCommitTrue  UserEventPayload133Job2GitCommentsOnCommit = true
+	UserEventPayload134Job2GitCommentsOnCommitFalse UserEventPayload134Job2GitCommentsOnCommit = false
+	UserEventPayload134Job2GitCommentsOnCommitTrue  UserEventPayload134Job2GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2GitCommentsOnCommit enum.
-func (e UserEventPayload133Job2GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2GitCommentsOnCommit enum.
+func (e UserEventPayload134Job2GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2GitCommentsOnCommitFalse:
+	case UserEventPayload134Job2GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job2GitCommentsOnCommitTrue:
+	case UserEventPayload134Job2GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job2GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job2GitCommentsOnPullRequestFalse UserEventPayload133Job2GitCommentsOnPullRequest = false
-	UserEventPayload133Job2GitCommentsOnPullRequestTrue  UserEventPayload133Job2GitCommentsOnPullRequest = true
+	UserEventPayload134Job2GitCommentsOnPullRequestFalse UserEventPayload134Job2GitCommentsOnPullRequest = false
+	UserEventPayload134Job2GitCommentsOnPullRequestTrue  UserEventPayload134Job2GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job2GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job2GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job2GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job2GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job2GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2GitHashtagVercel.
+// Defines values for UserEventPayload134Job2GitHashtagVercel.
 const (
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELSKIP                          UserEventPayload133Job2GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload133Job2GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload133Job2GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELSKIP                          UserEventPayload134Job2GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload134Job2GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload134Job2GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2GitHashtagVercel enum.
-func (e UserEventPayload133Job2GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2GitHashtagVercel enum.
+func (e UserEventPayload134Job2GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload133Job2GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload134Job2GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2IsManualGitDeploy.
+// Defines values for UserEventPayload134Job2IsManualGitDeploy.
 const (
-	UserEventPayload133Job2IsManualGitDeployFalse UserEventPayload133Job2IsManualGitDeploy = false
-	UserEventPayload133Job2IsManualGitDeployTrue  UserEventPayload133Job2IsManualGitDeploy = true
+	UserEventPayload134Job2IsManualGitDeployFalse UserEventPayload134Job2IsManualGitDeploy = false
+	UserEventPayload134Job2IsManualGitDeployTrue  UserEventPayload134Job2IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2IsManualGitDeploy enum.
-func (e UserEventPayload133Job2IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2IsManualGitDeploy enum.
+func (e UserEventPayload134Job2IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2IsManualGitDeployFalse:
+	case UserEventPayload134Job2IsManualGitDeployFalse:
 		return true
-	case UserEventPayload133Job2IsManualGitDeployTrue:
+	case UserEventPayload134Job2IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2IsPrivate.
+// Defines values for UserEventPayload134Job2IsPrivate.
 const (
-	UserEventPayload133Job2IsPrivateFalse UserEventPayload133Job2IsPrivate = false
-	UserEventPayload133Job2IsPrivateTrue  UserEventPayload133Job2IsPrivate = true
+	UserEventPayload134Job2IsPrivateFalse UserEventPayload134Job2IsPrivate = false
+	UserEventPayload134Job2IsPrivateTrue  UserEventPayload134Job2IsPrivate = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2IsPrivate enum.
-func (e UserEventPayload133Job2IsPrivate) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2IsPrivate enum.
+func (e UserEventPayload134Job2IsPrivate) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2IsPrivateFalse:
+	case UserEventPayload134Job2IsPrivateFalse:
 		return true
-	case UserEventPayload133Job2IsPrivateTrue:
+	case UserEventPayload134Job2IsPrivateTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2NsnbSideEffectAction.
+// Defines values for UserEventPayload134Job2NsnbSideEffectAction.
 const (
-	UserEventPayload133Job2NsnbSideEffectActionAutoApprovedMember        UserEventPayload133Job2NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload133Job2NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload133Job2NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload134Job2NsnbSideEffectActionAutoApprovedMember        UserEventPayload134Job2NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload134Job2NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload134Job2NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2NsnbSideEffectAction enum.
-func (e UserEventPayload133Job2NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2NsnbSideEffectAction enum.
+func (e UserEventPayload134Job2NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload134Job2NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload133Job2NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload134Job2NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2Provider.
+// Defines values for UserEventPayload134Job2Provider.
 const (
-	UserEventPayload133Job2ProviderGithub           UserEventPayload133Job2Provider = "github"
-	UserEventPayload133Job2ProviderGithubCustomHost UserEventPayload133Job2Provider = "github-custom-host"
-	UserEventPayload133Job2ProviderGithubLimited    UserEventPayload133Job2Provider = "github-limited"
+	UserEventPayload134Job2ProviderGithub           UserEventPayload134Job2Provider = "github"
+	UserEventPayload134Job2ProviderGithubCustomHost UserEventPayload134Job2Provider = "github-custom-host"
+	UserEventPayload134Job2ProviderGithubLimited    UserEventPayload134Job2Provider = "github-limited"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2Provider enum.
-func (e UserEventPayload133Job2Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2Provider enum.
+func (e UserEventPayload134Job2Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2ProviderGithub:
+	case UserEventPayload134Job2ProviderGithub:
 		return true
-	case UserEventPayload133Job2ProviderGithubCustomHost:
+	case UserEventPayload134Job2ProviderGithubCustomHost:
 		return true
-	case UserEventPayload133Job2ProviderGithubLimited:
+	case UserEventPayload134Job2ProviderGithubLimited:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2Type.
+// Defines values for UserEventPayload134Job2Type.
 const (
-	UserEventPayload133Job2TypePr UserEventPayload133Job2Type = "pr"
+	UserEventPayload134Job2TypePr UserEventPayload134Job2Type = "pr"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2Type enum.
-func (e UserEventPayload133Job2Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2Type enum.
+func (e UserEventPayload134Job2Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2TypePr:
+	case UserEventPayload134Job2TypePr:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job2WithCache.
+// Defines values for UserEventPayload134Job2WithCache.
 const (
-	UserEventPayload133Job2WithCacheFalse UserEventPayload133Job2WithCache = false
-	UserEventPayload133Job2WithCacheTrue  UserEventPayload133Job2WithCache = true
+	UserEventPayload134Job2WithCacheFalse UserEventPayload134Job2WithCache = false
+	UserEventPayload134Job2WithCacheTrue  UserEventPayload134Job2WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job2WithCache enum.
-func (e UserEventPayload133Job2WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job2WithCache enum.
+func (e UserEventPayload134Job2WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload133Job2WithCacheFalse:
+	case UserEventPayload134Job2WithCacheFalse:
 		return true
-	case UserEventPayload133Job2WithCacheTrue:
+	case UserEventPayload134Job2WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3Authorized.
+// Defines values for UserEventPayload134Job3Authorized.
 const (
-	UserEventPayload133Job3AuthorizedFalse UserEventPayload133Job3Authorized = false
-	UserEventPayload133Job3AuthorizedTrue  UserEventPayload133Job3Authorized = true
+	UserEventPayload134Job3AuthorizedFalse UserEventPayload134Job3Authorized = false
+	UserEventPayload134Job3AuthorizedTrue  UserEventPayload134Job3Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3Authorized enum.
-func (e UserEventPayload133Job3Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3Authorized enum.
+func (e UserEventPayload134Job3Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3AuthorizedFalse:
+	case UserEventPayload134Job3AuthorizedFalse:
 		return true
-	case UserEventPayload133Job3AuthorizedTrue:
+	case UserEventPayload134Job3AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3CommitVerification.
+// Defines values for UserEventPayload134Job3CommitVerification.
 const (
-	UserEventPayload133Job3CommitVerificationUnknown    UserEventPayload133Job3CommitVerification = "unknown"
-	UserEventPayload133Job3CommitVerificationUnverified UserEventPayload133Job3CommitVerification = "unverified"
-	UserEventPayload133Job3CommitVerificationVerified   UserEventPayload133Job3CommitVerification = "verified"
+	UserEventPayload134Job3CommitVerificationUnknown    UserEventPayload134Job3CommitVerification = "unknown"
+	UserEventPayload134Job3CommitVerificationUnverified UserEventPayload134Job3CommitVerification = "unverified"
+	UserEventPayload134Job3CommitVerificationVerified   UserEventPayload134Job3CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3CommitVerification enum.
-func (e UserEventPayload133Job3CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3CommitVerification enum.
+func (e UserEventPayload134Job3CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3CommitVerificationUnknown:
+	case UserEventPayload134Job3CommitVerificationUnknown:
 		return true
-	case UserEventPayload133Job3CommitVerificationUnverified:
+	case UserEventPayload134Job3CommitVerificationUnverified:
 		return true
-	case UserEventPayload133Job3CommitVerificationVerified:
+	case UserEventPayload134Job3CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3Eventful.
+// Defines values for UserEventPayload134Job3Eventful.
 const (
-	UserEventPayload133Job3EventfulFalse UserEventPayload133Job3Eventful = false
-	UserEventPayload133Job3EventfulTrue  UserEventPayload133Job3Eventful = true
+	UserEventPayload134Job3EventfulFalse UserEventPayload134Job3Eventful = false
+	UserEventPayload134Job3EventfulTrue  UserEventPayload134Job3Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3Eventful enum.
-func (e UserEventPayload133Job3Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3Eventful enum.
+func (e UserEventPayload134Job3Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3EventfulFalse:
+	case UserEventPayload134Job3EventfulFalse:
 		return true
-	case UserEventPayload133Job3EventfulTrue:
+	case UserEventPayload134Job3EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3ForceNew.
+// Defines values for UserEventPayload134Job3ForceNew.
 const (
-	UserEventPayload133Job3ForceNewFalse UserEventPayload133Job3ForceNew = false
-	UserEventPayload133Job3ForceNewTrue  UserEventPayload133Job3ForceNew = true
+	UserEventPayload134Job3ForceNewFalse UserEventPayload134Job3ForceNew = false
+	UserEventPayload134Job3ForceNewTrue  UserEventPayload134Job3ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3ForceNew enum.
-func (e UserEventPayload133Job3ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3ForceNew enum.
+func (e UserEventPayload134Job3ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3ForceNewFalse:
+	case UserEventPayload134Job3ForceNewFalse:
 		return true
-	case UserEventPayload133Job3ForceNewTrue:
+	case UserEventPayload134Job3ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3Forced.
+// Defines values for UserEventPayload134Job3Forced.
 const (
-	UserEventPayload133Job3ForcedFalse UserEventPayload133Job3Forced = false
-	UserEventPayload133Job3ForcedTrue  UserEventPayload133Job3Forced = true
+	UserEventPayload134Job3ForcedFalse UserEventPayload134Job3Forced = false
+	UserEventPayload134Job3ForcedTrue  UserEventPayload134Job3Forced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3Forced enum.
-func (e UserEventPayload133Job3Forced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3Forced enum.
+func (e UserEventPayload134Job3Forced) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3ForcedFalse:
+	case UserEventPayload134Job3ForcedFalse:
 		return true
-	case UserEventPayload133Job3ForcedTrue:
+	case UserEventPayload134Job3ForcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job3GitCommentsOnCommit.
 const (
-	UserEventPayload133Job3GitCommentsOnCommitFalse UserEventPayload133Job3GitCommentsOnCommit = false
-	UserEventPayload133Job3GitCommentsOnCommitTrue  UserEventPayload133Job3GitCommentsOnCommit = true
+	UserEventPayload134Job3GitCommentsOnCommitFalse UserEventPayload134Job3GitCommentsOnCommit = false
+	UserEventPayload134Job3GitCommentsOnCommitTrue  UserEventPayload134Job3GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3GitCommentsOnCommit enum.
-func (e UserEventPayload133Job3GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3GitCommentsOnCommit enum.
+func (e UserEventPayload134Job3GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3GitCommentsOnCommitFalse:
+	case UserEventPayload134Job3GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job3GitCommentsOnCommitTrue:
+	case UserEventPayload134Job3GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job3GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job3GitCommentsOnPullRequestFalse UserEventPayload133Job3GitCommentsOnPullRequest = false
-	UserEventPayload133Job3GitCommentsOnPullRequestTrue  UserEventPayload133Job3GitCommentsOnPullRequest = true
+	UserEventPayload134Job3GitCommentsOnPullRequestFalse UserEventPayload134Job3GitCommentsOnPullRequest = false
+	UserEventPayload134Job3GitCommentsOnPullRequestTrue  UserEventPayload134Job3GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job3GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job3GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job3GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job3GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job3GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3GitHashtagVercel.
+// Defines values for UserEventPayload134Job3GitHashtagVercel.
 const (
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELSKIP                          UserEventPayload133Job3GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload133Job3GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload133Job3GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELSKIP                          UserEventPayload134Job3GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload134Job3GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload134Job3GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3GitHashtagVercel enum.
-func (e UserEventPayload133Job3GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3GitHashtagVercel enum.
+func (e UserEventPayload134Job3GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload133Job3GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload134Job3GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3IsManualGitDeploy.
+// Defines values for UserEventPayload134Job3IsManualGitDeploy.
 const (
-	UserEventPayload133Job3IsManualGitDeployFalse UserEventPayload133Job3IsManualGitDeploy = false
-	UserEventPayload133Job3IsManualGitDeployTrue  UserEventPayload133Job3IsManualGitDeploy = true
+	UserEventPayload134Job3IsManualGitDeployFalse UserEventPayload134Job3IsManualGitDeploy = false
+	UserEventPayload134Job3IsManualGitDeployTrue  UserEventPayload134Job3IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3IsManualGitDeploy enum.
-func (e UserEventPayload133Job3IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3IsManualGitDeploy enum.
+func (e UserEventPayload134Job3IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3IsManualGitDeployFalse:
+	case UserEventPayload134Job3IsManualGitDeployFalse:
 		return true
-	case UserEventPayload133Job3IsManualGitDeployTrue:
+	case UserEventPayload134Job3IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3IsPrivate.
+// Defines values for UserEventPayload134Job3IsPrivate.
 const (
-	UserEventPayload133Job3IsPrivateFalse UserEventPayload133Job3IsPrivate = false
-	UserEventPayload133Job3IsPrivateTrue  UserEventPayload133Job3IsPrivate = true
+	UserEventPayload134Job3IsPrivateFalse UserEventPayload134Job3IsPrivate = false
+	UserEventPayload134Job3IsPrivateTrue  UserEventPayload134Job3IsPrivate = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3IsPrivate enum.
-func (e UserEventPayload133Job3IsPrivate) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3IsPrivate enum.
+func (e UserEventPayload134Job3IsPrivate) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3IsPrivateFalse:
+	case UserEventPayload134Job3IsPrivateFalse:
 		return true
-	case UserEventPayload133Job3IsPrivateTrue:
+	case UserEventPayload134Job3IsPrivateTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3NsnbSideEffectAction.
+// Defines values for UserEventPayload134Job3NsnbSideEffectAction.
 const (
-	UserEventPayload133Job3NsnbSideEffectActionAutoApprovedMember        UserEventPayload133Job3NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload133Job3NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload133Job3NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload134Job3NsnbSideEffectActionAutoApprovedMember        UserEventPayload134Job3NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload134Job3NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload134Job3NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3NsnbSideEffectAction enum.
-func (e UserEventPayload133Job3NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3NsnbSideEffectAction enum.
+func (e UserEventPayload134Job3NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload134Job3NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload133Job3NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload134Job3NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3Provider.
+// Defines values for UserEventPayload134Job3Provider.
 const (
-	UserEventPayload133Job3ProviderGithub           UserEventPayload133Job3Provider = "github"
-	UserEventPayload133Job3ProviderGithubCustomHost UserEventPayload133Job3Provider = "github-custom-host"
-	UserEventPayload133Job3ProviderGithubLimited    UserEventPayload133Job3Provider = "github-limited"
+	UserEventPayload134Job3ProviderGithub           UserEventPayload134Job3Provider = "github"
+	UserEventPayload134Job3ProviderGithubCustomHost UserEventPayload134Job3Provider = "github-custom-host"
+	UserEventPayload134Job3ProviderGithubLimited    UserEventPayload134Job3Provider = "github-limited"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3Provider enum.
-func (e UserEventPayload133Job3Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3Provider enum.
+func (e UserEventPayload134Job3Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3ProviderGithub:
+	case UserEventPayload134Job3ProviderGithub:
 		return true
-	case UserEventPayload133Job3ProviderGithubCustomHost:
+	case UserEventPayload134Job3ProviderGithubCustomHost:
 		return true
-	case UserEventPayload133Job3ProviderGithubLimited:
+	case UserEventPayload134Job3ProviderGithubLimited:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3Type.
+// Defines values for UserEventPayload134Job3Type.
 const (
-	UserEventPayload133Job3TypePush UserEventPayload133Job3Type = "push"
+	UserEventPayload134Job3TypePush UserEventPayload134Job3Type = "push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3Type enum.
-func (e UserEventPayload133Job3Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3Type enum.
+func (e UserEventPayload134Job3Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3TypePush:
+	case UserEventPayload134Job3TypePush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job3WithCache.
+// Defines values for UserEventPayload134Job3WithCache.
 const (
-	UserEventPayload133Job3WithCacheFalse UserEventPayload133Job3WithCache = false
-	UserEventPayload133Job3WithCacheTrue  UserEventPayload133Job3WithCache = true
+	UserEventPayload134Job3WithCacheFalse UserEventPayload134Job3WithCache = false
+	UserEventPayload134Job3WithCacheTrue  UserEventPayload134Job3WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job3WithCache enum.
-func (e UserEventPayload133Job3WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job3WithCache enum.
+func (e UserEventPayload134Job3WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload133Job3WithCacheFalse:
+	case UserEventPayload134Job3WithCacheFalse:
 		return true
-	case UserEventPayload133Job3WithCacheTrue:
+	case UserEventPayload134Job3WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job4Eventful.
+// Defines values for UserEventPayload134Job4Eventful.
 const (
-	UserEventPayload133Job4EventfulFalse UserEventPayload133Job4Eventful = false
-	UserEventPayload133Job4EventfulTrue  UserEventPayload133Job4Eventful = true
+	UserEventPayload134Job4EventfulFalse UserEventPayload134Job4Eventful = false
+	UserEventPayload134Job4EventfulTrue  UserEventPayload134Job4Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job4Eventful enum.
-func (e UserEventPayload133Job4Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job4Eventful enum.
+func (e UserEventPayload134Job4Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job4EventfulFalse:
+	case UserEventPayload134Job4EventfulFalse:
 		return true
-	case UserEventPayload133Job4EventfulTrue:
+	case UserEventPayload134Job4EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job4GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job4GitCommentsOnCommit.
 const (
-	UserEventPayload133Job4GitCommentsOnCommitFalse UserEventPayload133Job4GitCommentsOnCommit = false
-	UserEventPayload133Job4GitCommentsOnCommitTrue  UserEventPayload133Job4GitCommentsOnCommit = true
+	UserEventPayload134Job4GitCommentsOnCommitFalse UserEventPayload134Job4GitCommentsOnCommit = false
+	UserEventPayload134Job4GitCommentsOnCommitTrue  UserEventPayload134Job4GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job4GitCommentsOnCommit enum.
-func (e UserEventPayload133Job4GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job4GitCommentsOnCommit enum.
+func (e UserEventPayload134Job4GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job4GitCommentsOnCommitFalse:
+	case UserEventPayload134Job4GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job4GitCommentsOnCommitTrue:
+	case UserEventPayload134Job4GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job4GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job4GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job4GitCommentsOnPullRequestFalse UserEventPayload133Job4GitCommentsOnPullRequest = false
-	UserEventPayload133Job4GitCommentsOnPullRequestTrue  UserEventPayload133Job4GitCommentsOnPullRequest = true
+	UserEventPayload134Job4GitCommentsOnPullRequestFalse UserEventPayload134Job4GitCommentsOnPullRequest = false
+	UserEventPayload134Job4GitCommentsOnPullRequestTrue  UserEventPayload134Job4GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job4GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job4GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job4GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job4GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job4GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job4GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job4GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job4GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job4IsPrivate.
+// Defines values for UserEventPayload134Job4IsPrivate.
 const (
-	UserEventPayload133Job4IsPrivateFalse UserEventPayload133Job4IsPrivate = false
-	UserEventPayload133Job4IsPrivateTrue  UserEventPayload133Job4IsPrivate = true
+	UserEventPayload134Job4IsPrivateFalse UserEventPayload134Job4IsPrivate = false
+	UserEventPayload134Job4IsPrivateTrue  UserEventPayload134Job4IsPrivate = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job4IsPrivate enum.
-func (e UserEventPayload133Job4IsPrivate) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job4IsPrivate enum.
+func (e UserEventPayload134Job4IsPrivate) Valid() bool {
 	switch e {
-	case UserEventPayload133Job4IsPrivateFalse:
+	case UserEventPayload134Job4IsPrivateFalse:
 		return true
-	case UserEventPayload133Job4IsPrivateTrue:
+	case UserEventPayload134Job4IsPrivateTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job4Provider.
+// Defines values for UserEventPayload134Job4Provider.
 const (
-	UserEventPayload133Job4ProviderGithub           UserEventPayload133Job4Provider = "github"
-	UserEventPayload133Job4ProviderGithubCustomHost UserEventPayload133Job4Provider = "github-custom-host"
-	UserEventPayload133Job4ProviderGithubLimited    UserEventPayload133Job4Provider = "github-limited"
+	UserEventPayload134Job4ProviderGithub           UserEventPayload134Job4Provider = "github"
+	UserEventPayload134Job4ProviderGithubCustomHost UserEventPayload134Job4Provider = "github-custom-host"
+	UserEventPayload134Job4ProviderGithubLimited    UserEventPayload134Job4Provider = "github-limited"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job4Provider enum.
-func (e UserEventPayload133Job4Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job4Provider enum.
+func (e UserEventPayload134Job4Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job4ProviderGithub:
+	case UserEventPayload134Job4ProviderGithub:
 		return true
-	case UserEventPayload133Job4ProviderGithubCustomHost:
+	case UserEventPayload134Job4ProviderGithubCustomHost:
 		return true
-	case UserEventPayload133Job4ProviderGithubLimited:
+	case UserEventPayload134Job4ProviderGithubLimited:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job4Type.
+// Defines values for UserEventPayload134Job4Type.
 const (
-	UserEventPayload133Job4TypeNowComment UserEventPayload133Job4Type = "now-comment"
+	UserEventPayload134Job4TypeNowComment UserEventPayload134Job4Type = "now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job4Type enum.
-func (e UserEventPayload133Job4Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job4Type enum.
+func (e UserEventPayload134Job4Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job4TypeNowComment:
+	case UserEventPayload134Job4TypeNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5Authorized.
+// Defines values for UserEventPayload134Job5Authorized.
 const (
-	UserEventPayload133Job5AuthorizedFalse UserEventPayload133Job5Authorized = false
-	UserEventPayload133Job5AuthorizedTrue  UserEventPayload133Job5Authorized = true
+	UserEventPayload134Job5AuthorizedFalse UserEventPayload134Job5Authorized = false
+	UserEventPayload134Job5AuthorizedTrue  UserEventPayload134Job5Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5Authorized enum.
-func (e UserEventPayload133Job5Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5Authorized enum.
+func (e UserEventPayload134Job5Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5AuthorizedFalse:
+	case UserEventPayload134Job5AuthorizedFalse:
 		return true
-	case UserEventPayload133Job5AuthorizedTrue:
+	case UserEventPayload134Job5AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5CommitVerification.
+// Defines values for UserEventPayload134Job5CommitVerification.
 const (
-	UserEventPayload133Job5CommitVerificationUnknown    UserEventPayload133Job5CommitVerification = "unknown"
-	UserEventPayload133Job5CommitVerificationUnverified UserEventPayload133Job5CommitVerification = "unverified"
-	UserEventPayload133Job5CommitVerificationVerified   UserEventPayload133Job5CommitVerification = "verified"
+	UserEventPayload134Job5CommitVerificationUnknown    UserEventPayload134Job5CommitVerification = "unknown"
+	UserEventPayload134Job5CommitVerificationUnverified UserEventPayload134Job5CommitVerification = "unverified"
+	UserEventPayload134Job5CommitVerificationVerified   UserEventPayload134Job5CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5CommitVerification enum.
-func (e UserEventPayload133Job5CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5CommitVerification enum.
+func (e UserEventPayload134Job5CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5CommitVerificationUnknown:
+	case UserEventPayload134Job5CommitVerificationUnknown:
 		return true
-	case UserEventPayload133Job5CommitVerificationUnverified:
+	case UserEventPayload134Job5CommitVerificationUnverified:
 		return true
-	case UserEventPayload133Job5CommitVerificationVerified:
+	case UserEventPayload134Job5CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5Eventful.
+// Defines values for UserEventPayload134Job5Eventful.
 const (
-	UserEventPayload133Job5EventfulFalse UserEventPayload133Job5Eventful = false
-	UserEventPayload133Job5EventfulTrue  UserEventPayload133Job5Eventful = true
+	UserEventPayload134Job5EventfulFalse UserEventPayload134Job5Eventful = false
+	UserEventPayload134Job5EventfulTrue  UserEventPayload134Job5Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5Eventful enum.
-func (e UserEventPayload133Job5Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5Eventful enum.
+func (e UserEventPayload134Job5Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5EventfulFalse:
+	case UserEventPayload134Job5EventfulFalse:
 		return true
-	case UserEventPayload133Job5EventfulTrue:
+	case UserEventPayload134Job5EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5ForceNew.
+// Defines values for UserEventPayload134Job5ForceNew.
 const (
-	UserEventPayload133Job5ForceNewFalse UserEventPayload133Job5ForceNew = false
-	UserEventPayload133Job5ForceNewTrue  UserEventPayload133Job5ForceNew = true
+	UserEventPayload134Job5ForceNewFalse UserEventPayload134Job5ForceNew = false
+	UserEventPayload134Job5ForceNewTrue  UserEventPayload134Job5ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5ForceNew enum.
-func (e UserEventPayload133Job5ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5ForceNew enum.
+func (e UserEventPayload134Job5ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5ForceNewFalse:
+	case UserEventPayload134Job5ForceNewFalse:
 		return true
-	case UserEventPayload133Job5ForceNewTrue:
+	case UserEventPayload134Job5ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job5GitCommentsOnCommit.
 const (
-	UserEventPayload133Job5GitCommentsOnCommitFalse UserEventPayload133Job5GitCommentsOnCommit = false
-	UserEventPayload133Job5GitCommentsOnCommitTrue  UserEventPayload133Job5GitCommentsOnCommit = true
+	UserEventPayload134Job5GitCommentsOnCommitFalse UserEventPayload134Job5GitCommentsOnCommit = false
+	UserEventPayload134Job5GitCommentsOnCommitTrue  UserEventPayload134Job5GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5GitCommentsOnCommit enum.
-func (e UserEventPayload133Job5GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5GitCommentsOnCommit enum.
+func (e UserEventPayload134Job5GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5GitCommentsOnCommitFalse:
+	case UserEventPayload134Job5GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job5GitCommentsOnCommitTrue:
+	case UserEventPayload134Job5GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job5GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job5GitCommentsOnPullRequestFalse UserEventPayload133Job5GitCommentsOnPullRequest = false
-	UserEventPayload133Job5GitCommentsOnPullRequestTrue  UserEventPayload133Job5GitCommentsOnPullRequest = true
+	UserEventPayload134Job5GitCommentsOnPullRequestFalse UserEventPayload134Job5GitCommentsOnPullRequest = false
+	UserEventPayload134Job5GitCommentsOnPullRequestTrue  UserEventPayload134Job5GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job5GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job5GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job5GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job5GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job5GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5GitHashtagVercel.
+// Defines values for UserEventPayload134Job5GitHashtagVercel.
 const (
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELSKIP                          UserEventPayload133Job5GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload133Job5GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload133Job5GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELSKIP                          UserEventPayload134Job5GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload134Job5GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload134Job5GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5GitHashtagVercel enum.
-func (e UserEventPayload133Job5GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5GitHashtagVercel enum.
+func (e UserEventPayload134Job5GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload133Job5GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload134Job5GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5IsManualGitDeploy.
+// Defines values for UserEventPayload134Job5IsManualGitDeploy.
 const (
-	UserEventPayload133Job5IsManualGitDeployFalse UserEventPayload133Job5IsManualGitDeploy = false
-	UserEventPayload133Job5IsManualGitDeployTrue  UserEventPayload133Job5IsManualGitDeploy = true
+	UserEventPayload134Job5IsManualGitDeployFalse UserEventPayload134Job5IsManualGitDeploy = false
+	UserEventPayload134Job5IsManualGitDeployTrue  UserEventPayload134Job5IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5IsManualGitDeploy enum.
-func (e UserEventPayload133Job5IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5IsManualGitDeploy enum.
+func (e UserEventPayload134Job5IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5IsManualGitDeployFalse:
+	case UserEventPayload134Job5IsManualGitDeployFalse:
 		return true
-	case UserEventPayload133Job5IsManualGitDeployTrue:
+	case UserEventPayload134Job5IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5NsnbSideEffectAction.
+// Defines values for UserEventPayload134Job5NsnbSideEffectAction.
 const (
-	UserEventPayload133Job5NsnbSideEffectActionAutoApprovedMember        UserEventPayload133Job5NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload133Job5NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload133Job5NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload134Job5NsnbSideEffectActionAutoApprovedMember        UserEventPayload134Job5NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload134Job5NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload134Job5NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5NsnbSideEffectAction enum.
-func (e UserEventPayload133Job5NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5NsnbSideEffectAction enum.
+func (e UserEventPayload134Job5NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload134Job5NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload133Job5NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload134Job5NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5Provider.
+// Defines values for UserEventPayload134Job5Provider.
 const (
-	UserEventPayload133Job5ProviderGitlab UserEventPayload133Job5Provider = "gitlab"
+	UserEventPayload134Job5ProviderGitlab UserEventPayload134Job5Provider = "gitlab"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5Provider enum.
-func (e UserEventPayload133Job5Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5Provider enum.
+func (e UserEventPayload134Job5Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5ProviderGitlab:
+	case UserEventPayload134Job5ProviderGitlab:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5Silent.
+// Defines values for UserEventPayload134Job5Silent.
 const (
-	UserEventPayload133Job5SilentFalse UserEventPayload133Job5Silent = false
-	UserEventPayload133Job5SilentTrue  UserEventPayload133Job5Silent = true
+	UserEventPayload134Job5SilentFalse UserEventPayload134Job5Silent = false
+	UserEventPayload134Job5SilentTrue  UserEventPayload134Job5Silent = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5Silent enum.
-func (e UserEventPayload133Job5Silent) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5Silent enum.
+func (e UserEventPayload134Job5Silent) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5SilentFalse:
+	case UserEventPayload134Job5SilentFalse:
 		return true
-	case UserEventPayload133Job5SilentTrue:
+	case UserEventPayload134Job5SilentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5Type.
+// Defines values for UserEventPayload134Job5Type.
 const (
-	UserEventPayload133Job5TypeGitlabPush UserEventPayload133Job5Type = "gitlab-push"
+	UserEventPayload134Job5TypeGitlabPush UserEventPayload134Job5Type = "gitlab-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5Type enum.
-func (e UserEventPayload133Job5Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5Type enum.
+func (e UserEventPayload134Job5Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5TypeGitlabPush:
+	case UserEventPayload134Job5TypeGitlabPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job5WithCache.
+// Defines values for UserEventPayload134Job5WithCache.
 const (
-	UserEventPayload133Job5WithCacheFalse UserEventPayload133Job5WithCache = false
-	UserEventPayload133Job5WithCacheTrue  UserEventPayload133Job5WithCache = true
+	UserEventPayload134Job5WithCacheFalse UserEventPayload134Job5WithCache = false
+	UserEventPayload134Job5WithCacheTrue  UserEventPayload134Job5WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job5WithCache enum.
-func (e UserEventPayload133Job5WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job5WithCache enum.
+func (e UserEventPayload134Job5WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload133Job5WithCacheFalse:
+	case UserEventPayload134Job5WithCacheFalse:
 		return true
-	case UserEventPayload133Job5WithCacheTrue:
+	case UserEventPayload134Job5WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job6Eventful.
+// Defines values for UserEventPayload134Job6Eventful.
 const (
-	UserEventPayload133Job6EventfulFalse UserEventPayload133Job6Eventful = false
-	UserEventPayload133Job6EventfulTrue  UserEventPayload133Job6Eventful = true
+	UserEventPayload134Job6EventfulFalse UserEventPayload134Job6Eventful = false
+	UserEventPayload134Job6EventfulTrue  UserEventPayload134Job6Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job6Eventful enum.
-func (e UserEventPayload133Job6Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job6Eventful enum.
+func (e UserEventPayload134Job6Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job6EventfulFalse:
+	case UserEventPayload134Job6EventfulFalse:
 		return true
-	case UserEventPayload133Job6EventfulTrue:
+	case UserEventPayload134Job6EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job6GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job6GitCommentsOnCommit.
 const (
-	UserEventPayload133Job6GitCommentsOnCommitFalse UserEventPayload133Job6GitCommentsOnCommit = false
-	UserEventPayload133Job6GitCommentsOnCommitTrue  UserEventPayload133Job6GitCommentsOnCommit = true
+	UserEventPayload134Job6GitCommentsOnCommitFalse UserEventPayload134Job6GitCommentsOnCommit = false
+	UserEventPayload134Job6GitCommentsOnCommitTrue  UserEventPayload134Job6GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job6GitCommentsOnCommit enum.
-func (e UserEventPayload133Job6GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job6GitCommentsOnCommit enum.
+func (e UserEventPayload134Job6GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job6GitCommentsOnCommitFalse:
+	case UserEventPayload134Job6GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job6GitCommentsOnCommitTrue:
+	case UserEventPayload134Job6GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job6GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job6GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job6GitCommentsOnPullRequestFalse UserEventPayload133Job6GitCommentsOnPullRequest = false
-	UserEventPayload133Job6GitCommentsOnPullRequestTrue  UserEventPayload133Job6GitCommentsOnPullRequest = true
+	UserEventPayload134Job6GitCommentsOnPullRequestFalse UserEventPayload134Job6GitCommentsOnPullRequest = false
+	UserEventPayload134Job6GitCommentsOnPullRequestTrue  UserEventPayload134Job6GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job6GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job6GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job6GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job6GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job6GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job6GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job6GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job6GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job6Provider.
+// Defines values for UserEventPayload134Job6Provider.
 const (
-	UserEventPayload133Job6ProviderGitlab UserEventPayload133Job6Provider = "gitlab"
+	UserEventPayload134Job6ProviderGitlab UserEventPayload134Job6Provider = "gitlab"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job6Provider enum.
-func (e UserEventPayload133Job6Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job6Provider enum.
+func (e UserEventPayload134Job6Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job6ProviderGitlab:
+	case UserEventPayload134Job6ProviderGitlab:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job6Type.
+// Defines values for UserEventPayload134Job6Type.
 const (
-	UserEventPayload133Job6TypeGitlabNowComment UserEventPayload133Job6Type = "gitlab-now-comment"
+	UserEventPayload134Job6TypeGitlabNowComment UserEventPayload134Job6Type = "gitlab-now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job6Type enum.
-func (e UserEventPayload133Job6Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job6Type enum.
+func (e UserEventPayload134Job6Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job6TypeGitlabNowComment:
+	case UserEventPayload134Job6TypeGitlabNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7Authorized.
+// Defines values for UserEventPayload134Job7Authorized.
 const (
-	UserEventPayload133Job7AuthorizedFalse UserEventPayload133Job7Authorized = false
-	UserEventPayload133Job7AuthorizedTrue  UserEventPayload133Job7Authorized = true
+	UserEventPayload134Job7AuthorizedFalse UserEventPayload134Job7Authorized = false
+	UserEventPayload134Job7AuthorizedTrue  UserEventPayload134Job7Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7Authorized enum.
-func (e UserEventPayload133Job7Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7Authorized enum.
+func (e UserEventPayload134Job7Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7AuthorizedFalse:
+	case UserEventPayload134Job7AuthorizedFalse:
 		return true
-	case UserEventPayload133Job7AuthorizedTrue:
+	case UserEventPayload134Job7AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7CommitVerification.
+// Defines values for UserEventPayload134Job7CommitVerification.
 const (
-	UserEventPayload133Job7CommitVerificationUnknown    UserEventPayload133Job7CommitVerification = "unknown"
-	UserEventPayload133Job7CommitVerificationUnverified UserEventPayload133Job7CommitVerification = "unverified"
-	UserEventPayload133Job7CommitVerificationVerified   UserEventPayload133Job7CommitVerification = "verified"
+	UserEventPayload134Job7CommitVerificationUnknown    UserEventPayload134Job7CommitVerification = "unknown"
+	UserEventPayload134Job7CommitVerificationUnverified UserEventPayload134Job7CommitVerification = "unverified"
+	UserEventPayload134Job7CommitVerificationVerified   UserEventPayload134Job7CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7CommitVerification enum.
-func (e UserEventPayload133Job7CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7CommitVerification enum.
+func (e UserEventPayload134Job7CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7CommitVerificationUnknown:
+	case UserEventPayload134Job7CommitVerificationUnknown:
 		return true
-	case UserEventPayload133Job7CommitVerificationUnverified:
+	case UserEventPayload134Job7CommitVerificationUnverified:
 		return true
-	case UserEventPayload133Job7CommitVerificationVerified:
+	case UserEventPayload134Job7CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job7GitCommentsOnCommit.
 const (
-	UserEventPayload133Job7GitCommentsOnCommitFalse UserEventPayload133Job7GitCommentsOnCommit = false
-	UserEventPayload133Job7GitCommentsOnCommitTrue  UserEventPayload133Job7GitCommentsOnCommit = true
+	UserEventPayload134Job7GitCommentsOnCommitFalse UserEventPayload134Job7GitCommentsOnCommit = false
+	UserEventPayload134Job7GitCommentsOnCommitTrue  UserEventPayload134Job7GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7GitCommentsOnCommit enum.
-func (e UserEventPayload133Job7GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7GitCommentsOnCommit enum.
+func (e UserEventPayload134Job7GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7GitCommentsOnCommitFalse:
+	case UserEventPayload134Job7GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job7GitCommentsOnCommitTrue:
+	case UserEventPayload134Job7GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job7GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job7GitCommentsOnPullRequestFalse UserEventPayload133Job7GitCommentsOnPullRequest = false
-	UserEventPayload133Job7GitCommentsOnPullRequestTrue  UserEventPayload133Job7GitCommentsOnPullRequest = true
+	UserEventPayload134Job7GitCommentsOnPullRequestFalse UserEventPayload134Job7GitCommentsOnPullRequest = false
+	UserEventPayload134Job7GitCommentsOnPullRequestTrue  UserEventPayload134Job7GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job7GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job7GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job7GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job7GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job7GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7GitHashtagVercel.
+// Defines values for UserEventPayload134Job7GitHashtagVercel.
 const (
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELSKIP                          UserEventPayload133Job7GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload133Job7GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload133Job7GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELSKIP                          UserEventPayload134Job7GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload134Job7GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload134Job7GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7GitHashtagVercel enum.
-func (e UserEventPayload133Job7GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7GitHashtagVercel enum.
+func (e UserEventPayload134Job7GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload133Job7GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload134Job7GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7IsManualGitDeploy.
+// Defines values for UserEventPayload134Job7IsManualGitDeploy.
 const (
-	UserEventPayload133Job7IsManualGitDeployFalse UserEventPayload133Job7IsManualGitDeploy = false
-	UserEventPayload133Job7IsManualGitDeployTrue  UserEventPayload133Job7IsManualGitDeploy = true
+	UserEventPayload134Job7IsManualGitDeployFalse UserEventPayload134Job7IsManualGitDeploy = false
+	UserEventPayload134Job7IsManualGitDeployTrue  UserEventPayload134Job7IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7IsManualGitDeploy enum.
-func (e UserEventPayload133Job7IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7IsManualGitDeploy enum.
+func (e UserEventPayload134Job7IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7IsManualGitDeployFalse:
+	case UserEventPayload134Job7IsManualGitDeployFalse:
 		return true
-	case UserEventPayload133Job7IsManualGitDeployTrue:
+	case UserEventPayload134Job7IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7NsnbSideEffectAction.
+// Defines values for UserEventPayload134Job7NsnbSideEffectAction.
 const (
-	UserEventPayload133Job7NsnbSideEffectActionAutoApprovedMember        UserEventPayload133Job7NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload133Job7NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload133Job7NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload134Job7NsnbSideEffectActionAutoApprovedMember        UserEventPayload134Job7NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload134Job7NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload134Job7NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7NsnbSideEffectAction enum.
-func (e UserEventPayload133Job7NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7NsnbSideEffectAction enum.
+func (e UserEventPayload134Job7NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload134Job7NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload133Job7NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload134Job7NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7Provider.
+// Defines values for UserEventPayload134Job7Provider.
 const (
-	UserEventPayload133Job7ProviderVercel UserEventPayload133Job7Provider = "vercel"
+	UserEventPayload134Job7ProviderVercel UserEventPayload134Job7Provider = "vercel"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7Provider enum.
-func (e UserEventPayload133Job7Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7Provider enum.
+func (e UserEventPayload134Job7Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7ProviderVercel:
+	case UserEventPayload134Job7ProviderVercel:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job7Type.
+// Defines values for UserEventPayload134Job7Type.
 const (
-	UserEventPayload133Job7TypeVercelPush UserEventPayload133Job7Type = "vercel-push"
+	UserEventPayload134Job7TypeVercelPush UserEventPayload134Job7Type = "vercel-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job7Type enum.
-func (e UserEventPayload133Job7Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job7Type enum.
+func (e UserEventPayload134Job7Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job7TypeVercelPush:
+	case UserEventPayload134Job7TypeVercelPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8Authorized.
+// Defines values for UserEventPayload134Job8Authorized.
 const (
-	UserEventPayload133Job8AuthorizedFalse UserEventPayload133Job8Authorized = false
-	UserEventPayload133Job8AuthorizedTrue  UserEventPayload133Job8Authorized = true
+	UserEventPayload134Job8AuthorizedFalse UserEventPayload134Job8Authorized = false
+	UserEventPayload134Job8AuthorizedTrue  UserEventPayload134Job8Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8Authorized enum.
-func (e UserEventPayload133Job8Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8Authorized enum.
+func (e UserEventPayload134Job8Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8AuthorizedFalse:
+	case UserEventPayload134Job8AuthorizedFalse:
 		return true
-	case UserEventPayload133Job8AuthorizedTrue:
+	case UserEventPayload134Job8AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8CommitVerification.
+// Defines values for UserEventPayload134Job8CommitVerification.
 const (
-	UserEventPayload133Job8CommitVerificationUnknown    UserEventPayload133Job8CommitVerification = "unknown"
-	UserEventPayload133Job8CommitVerificationUnverified UserEventPayload133Job8CommitVerification = "unverified"
-	UserEventPayload133Job8CommitVerificationVerified   UserEventPayload133Job8CommitVerification = "verified"
+	UserEventPayload134Job8CommitVerificationUnknown    UserEventPayload134Job8CommitVerification = "unknown"
+	UserEventPayload134Job8CommitVerificationUnverified UserEventPayload134Job8CommitVerification = "unverified"
+	UserEventPayload134Job8CommitVerificationVerified   UserEventPayload134Job8CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8CommitVerification enum.
-func (e UserEventPayload133Job8CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8CommitVerification enum.
+func (e UserEventPayload134Job8CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8CommitVerificationUnknown:
+	case UserEventPayload134Job8CommitVerificationUnknown:
 		return true
-	case UserEventPayload133Job8CommitVerificationUnverified:
+	case UserEventPayload134Job8CommitVerificationUnverified:
 		return true
-	case UserEventPayload133Job8CommitVerificationVerified:
+	case UserEventPayload134Job8CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8Eventful.
+// Defines values for UserEventPayload134Job8Eventful.
 const (
-	UserEventPayload133Job8EventfulFalse UserEventPayload133Job8Eventful = false
-	UserEventPayload133Job8EventfulTrue  UserEventPayload133Job8Eventful = true
+	UserEventPayload134Job8EventfulFalse UserEventPayload134Job8Eventful = false
+	UserEventPayload134Job8EventfulTrue  UserEventPayload134Job8Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8Eventful enum.
-func (e UserEventPayload133Job8Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8Eventful enum.
+func (e UserEventPayload134Job8Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8EventfulFalse:
+	case UserEventPayload134Job8EventfulFalse:
 		return true
-	case UserEventPayload133Job8EventfulTrue:
+	case UserEventPayload134Job8EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8ForceNew.
+// Defines values for UserEventPayload134Job8ForceNew.
 const (
-	UserEventPayload133Job8ForceNewFalse UserEventPayload133Job8ForceNew = false
-	UserEventPayload133Job8ForceNewTrue  UserEventPayload133Job8ForceNew = true
+	UserEventPayload134Job8ForceNewFalse UserEventPayload134Job8ForceNew = false
+	UserEventPayload134Job8ForceNewTrue  UserEventPayload134Job8ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8ForceNew enum.
-func (e UserEventPayload133Job8ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8ForceNew enum.
+func (e UserEventPayload134Job8ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8ForceNewFalse:
+	case UserEventPayload134Job8ForceNewFalse:
 		return true
-	case UserEventPayload133Job8ForceNewTrue:
+	case UserEventPayload134Job8ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8Forced.
+// Defines values for UserEventPayload134Job8Forced.
 const (
-	UserEventPayload133Job8ForcedFalse UserEventPayload133Job8Forced = false
-	UserEventPayload133Job8ForcedTrue  UserEventPayload133Job8Forced = true
+	UserEventPayload134Job8ForcedFalse UserEventPayload134Job8Forced = false
+	UserEventPayload134Job8ForcedTrue  UserEventPayload134Job8Forced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8Forced enum.
-func (e UserEventPayload133Job8Forced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8Forced enum.
+func (e UserEventPayload134Job8Forced) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8ForcedFalse:
+	case UserEventPayload134Job8ForcedFalse:
 		return true
-	case UserEventPayload133Job8ForcedTrue:
+	case UserEventPayload134Job8ForcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job8GitCommentsOnCommit.
 const (
-	UserEventPayload133Job8GitCommentsOnCommitFalse UserEventPayload133Job8GitCommentsOnCommit = false
-	UserEventPayload133Job8GitCommentsOnCommitTrue  UserEventPayload133Job8GitCommentsOnCommit = true
+	UserEventPayload134Job8GitCommentsOnCommitFalse UserEventPayload134Job8GitCommentsOnCommit = false
+	UserEventPayload134Job8GitCommentsOnCommitTrue  UserEventPayload134Job8GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8GitCommentsOnCommit enum.
-func (e UserEventPayload133Job8GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8GitCommentsOnCommit enum.
+func (e UserEventPayload134Job8GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8GitCommentsOnCommitFalse:
+	case UserEventPayload134Job8GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job8GitCommentsOnCommitTrue:
+	case UserEventPayload134Job8GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job8GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job8GitCommentsOnPullRequestFalse UserEventPayload133Job8GitCommentsOnPullRequest = false
-	UserEventPayload133Job8GitCommentsOnPullRequestTrue  UserEventPayload133Job8GitCommentsOnPullRequest = true
+	UserEventPayload134Job8GitCommentsOnPullRequestFalse UserEventPayload134Job8GitCommentsOnPullRequest = false
+	UserEventPayload134Job8GitCommentsOnPullRequestTrue  UserEventPayload134Job8GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job8GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job8GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job8GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job8GitCommentsOnPullRequestTrue:
+	case UserEventPayload134Job8GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8GitHashtagVercel.
+// Defines values for UserEventPayload134Job8GitHashtagVercel.
 const (
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELSKIP                          UserEventPayload133Job8GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload133Job8GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload133Job8GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELSKIP                          UserEventPayload134Job8GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload134Job8GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload134Job8GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8GitHashtagVercel enum.
-func (e UserEventPayload133Job8GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8GitHashtagVercel enum.
+func (e UserEventPayload134Job8GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload133Job8GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload134Job8GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8IsManualGitDeploy.
+// Defines values for UserEventPayload134Job8IsManualGitDeploy.
 const (
-	UserEventPayload133Job8IsManualGitDeployFalse UserEventPayload133Job8IsManualGitDeploy = false
-	UserEventPayload133Job8IsManualGitDeployTrue  UserEventPayload133Job8IsManualGitDeploy = true
+	UserEventPayload134Job8IsManualGitDeployFalse UserEventPayload134Job8IsManualGitDeploy = false
+	UserEventPayload134Job8IsManualGitDeployTrue  UserEventPayload134Job8IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8IsManualGitDeploy enum.
-func (e UserEventPayload133Job8IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8IsManualGitDeploy enum.
+func (e UserEventPayload134Job8IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8IsManualGitDeployFalse:
+	case UserEventPayload134Job8IsManualGitDeployFalse:
 		return true
-	case UserEventPayload133Job8IsManualGitDeployTrue:
+	case UserEventPayload134Job8IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8NsnbSideEffectAction.
+// Defines values for UserEventPayload134Job8NsnbSideEffectAction.
 const (
-	UserEventPayload133Job8NsnbSideEffectActionAutoApprovedMember        UserEventPayload133Job8NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload133Job8NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload133Job8NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload134Job8NsnbSideEffectActionAutoApprovedMember        UserEventPayload134Job8NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload134Job8NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload134Job8NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8NsnbSideEffectAction enum.
-func (e UserEventPayload133Job8NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8NsnbSideEffectAction enum.
+func (e UserEventPayload134Job8NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload134Job8NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload133Job8NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload134Job8NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8Provider.
+// Defines values for UserEventPayload134Job8Provider.
 const (
-	UserEventPayload133Job8ProviderCursorOrigin UserEventPayload133Job8Provider = "cursor-origin"
+	UserEventPayload134Job8ProviderCursorOrigin UserEventPayload134Job8Provider = "cursor-origin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8Provider enum.
-func (e UserEventPayload133Job8Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8Provider enum.
+func (e UserEventPayload134Job8Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8ProviderCursorOrigin:
+	case UserEventPayload134Job8ProviderCursorOrigin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job8Type.
+// Defines values for UserEventPayload134Job8Type.
 const (
-	UserEventPayload133Job8TypeCursorOriginPush UserEventPayload133Job8Type = "cursor-origin-push"
+	UserEventPayload134Job8TypeCursorOriginPush UserEventPayload134Job8Type = "cursor-origin-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job8Type enum.
-func (e UserEventPayload133Job8Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job8Type enum.
+func (e UserEventPayload134Job8Type) Valid() bool {
 	switch e {
-	case UserEventPayload133Job8TypeCursorOriginPush:
+	case UserEventPayload134Job8TypeCursorOriginPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job9Eventful.
+// Defines values for UserEventPayload134Job9Eventful.
 const (
-	UserEventPayload133Job9EventfulFalse UserEventPayload133Job9Eventful = false
-	UserEventPayload133Job9EventfulTrue  UserEventPayload133Job9Eventful = true
+	UserEventPayload134Job9EventfulFalse UserEventPayload134Job9Eventful = false
+	UserEventPayload134Job9EventfulTrue  UserEventPayload134Job9Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job9Eventful enum.
-func (e UserEventPayload133Job9Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job9Eventful enum.
+func (e UserEventPayload134Job9Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload133Job9EventfulFalse:
+	case UserEventPayload134Job9EventfulFalse:
 		return true
-	case UserEventPayload133Job9EventfulTrue:
+	case UserEventPayload134Job9EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job9GitCommentsOnCommit.
+// Defines values for UserEventPayload134Job9GitCommentsOnCommit.
 const (
-	UserEventPayload133Job9GitCommentsOnCommitFalse UserEventPayload133Job9GitCommentsOnCommit = false
-	UserEventPayload133Job9GitCommentsOnCommitTrue  UserEventPayload133Job9GitCommentsOnCommit = true
+	UserEventPayload134Job9GitCommentsOnCommitFalse UserEventPayload134Job9GitCommentsOnCommit = false
+	UserEventPayload134Job9GitCommentsOnCommitTrue  UserEventPayload134Job9GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job9GitCommentsOnCommit enum.
-func (e UserEventPayload133Job9GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job9GitCommentsOnCommit enum.
+func (e UserEventPayload134Job9GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload133Job9GitCommentsOnCommitFalse:
+	case UserEventPayload134Job9GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload133Job9GitCommentsOnCommitTrue:
+	case UserEventPayload134Job9GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job9GitCommentsOnPullRequest.
+// Defines values for UserEventPayload134Job9GitCommentsOnPullRequest.
 const (
-	UserEventPayload133Job9GitCommentsOnPullRequestFalse UserEventPayload133Job9GitCommentsOnPullRequest = false
-	UserEventPayload133Job9GitCommentsOnPullRequestTrue  UserEventPayload133Job9GitCommentsOnPullRequest = true
+	UserEventPayload134Job9GitCommentsOnPullRequestFalse UserEventPayload134Job9GitCommentsOnPullRequest = false
+	UserEventPayload134Job9GitCommentsOnPullRequestTrue  UserEventPayload134Job9GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job9GitCommentsOnPullRequest enum.
-func (e UserEventPayload133Job9GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job9GitCommentsOnPullRequest enum.
+func (e UserEventPayload134Job9GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload133Job9GitCommentsOnPullRequestFalse:
+	case UserEventPayload134Job9GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload133Job9GitCommentsOnPullRequestTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload133Job9Provider.
-const (
-	UserEventPayload133Job9ProviderCursorOrigin UserEventPayload133Job9Provider = "cursor-origin"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload133Job9Provider enum.
-func (e UserEventPayload133Job9Provider) Valid() bool {
-	switch e {
-	case UserEventPayload133Job9ProviderCursorOrigin:
+	case UserEventPayload134Job9GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload133Job9Type.
+// Defines values for UserEventPayload134Job9Provider.
 const (
-	UserEventPayload133Job9TypeCursorOriginNowComment UserEventPayload133Job9Type = "cursor-origin-now-comment"
+	UserEventPayload134Job9ProviderCursorOrigin UserEventPayload134Job9Provider = "cursor-origin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload133Job9Type enum.
-func (e UserEventPayload133Job9Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job9Provider enum.
+func (e UserEventPayload134Job9Provider) Valid() bool {
 	switch e {
-	case UserEventPayload133Job9TypeCursorOriginNowComment:
+	case UserEventPayload134Job9ProviderCursorOrigin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Reason.
+// Defines values for UserEventPayload134Job9Type.
 const (
-	UserEventPayload135ReasonIpAllowList UserEventPayload135Reason = "ip_allow_list"
+	UserEventPayload134Job9TypeCursorOriginNowComment UserEventPayload134Job9Type = "cursor-origin-now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Reason enum.
-func (e UserEventPayload135Reason) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload134Job9Type enum.
+func (e UserEventPayload134Job9Type) Valid() bool {
 	switch e {
-	case UserEventPayload135ReasonIpAllowList:
+	case UserEventPayload134Job9TypeCursorOriginNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload137RuleName.
+// Defines values for UserEventPayload136Reason.
 const (
-	UserEventPayload137RuleNameDeploymentSources UserEventPayload137RuleName = "deploymentSources"
-	UserEventPayload137RuleNameGitSources        UserEventPayload137RuleName = "gitSources"
+	UserEventPayload136ReasonIpAllowList UserEventPayload136Reason = "ip_allow_list"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload137RuleName enum.
-func (e UserEventPayload137RuleName) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Reason enum.
+func (e UserEventPayload136Reason) Valid() bool {
 	switch e {
-	case UserEventPayload137RuleNameDeploymentSources:
+	case UserEventPayload136ReasonIpAllowList:
 		return true
-	case UserEventPayload137RuleNameGitSources:
-		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload137RuleProvenance.
+// Defines values for UserEventPayload138RuleName.
 const (
-	UserEventPayload137RuleProvenanceDefault UserEventPayload137RuleProvenance = "default"
-	UserEventPayload137RuleProvenanceProject UserEventPayload137RuleProvenance = "project"
-	UserEventPayload137RuleProvenanceTeam    UserEventPayload137RuleProvenance = "team"
+	UserEventPayload138RuleNameDeploymentSources UserEventPayload138RuleName = "deploymentSources"
+	UserEventPayload138RuleNameGitSources        UserEventPayload138RuleName = "gitSources"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload137RuleProvenance enum.
-func (e UserEventPayload137RuleProvenance) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload138RuleName enum.
+func (e UserEventPayload138RuleName) Valid() bool {
 	switch e {
-	case UserEventPayload137RuleProvenanceDefault:
-		return true
-	case UserEventPayload137RuleProvenanceProject:
+	case UserEventPayload138RuleNameDeploymentSources:
 		return true
-	case UserEventPayload137RuleProvenanceTeam:
+	case UserEventPayload138RuleNameGitSources:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload138Mode.
+// Defines values for UserEventPayload138RuleProvenance.
 const (
-	UserEventPayload138ModeNone UserEventPayload138Mode = "none"
+	UserEventPayload138RuleProvenanceDefault UserEventPayload138RuleProvenance = "default"
+	UserEventPayload138RuleProvenanceProject UserEventPayload138RuleProvenance = "project"
+	UserEventPayload138RuleProvenanceTeam    UserEventPayload138RuleProvenance = "team"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload138Mode enum.
-func (e UserEventPayload138Mode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload138RuleProvenance enum.
+func (e UserEventPayload138RuleProvenance) Valid() bool {
 	switch e {
-	case UserEventPayload138ModeNone:
+	case UserEventPayload138RuleProvenanceDefault:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload138PreviousMode.
-const (
-	UserEventPayload138PreviousModeNone UserEventPayload138PreviousMode = "none"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload138PreviousMode enum.
-func (e UserEventPayload138PreviousMode) Valid() bool {
-	switch e {
-	case UserEventPayload138PreviousModeNone:
+	case UserEventPayload138RuleProvenanceProject:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload138Scope.
-const (
-	UserEventPayload138ScopeOrganization UserEventPayload138Scope = "organization"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload138Scope enum.
-func (e UserEventPayload138Scope) Valid() bool {
-	switch e {
-	case UserEventPayload138ScopeOrganization:
+	case UserEventPayload138RuleProvenanceTeam:
 		return true
 	default:
 		return false
@@ -17561,18 +17627,12 @@ func (e UserEventPayload138Scope) Valid() bool {
 
 // Defines values for UserEventPayload139Mode.
 const (
-	UserEventPayload139ModeAll         UserEventPayload139Mode = "all"
-	UserEventPayload139ModeEmailDomain UserEventPayload139Mode = "email-domain"
-	UserEventPayload139ModeNone        UserEventPayload139Mode = "none"
+	UserEventPayload139ModeNone UserEventPayload139Mode = "none"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload139Mode enum.
 func (e UserEventPayload139Mode) Valid() bool {
 	switch e {
-	case UserEventPayload139ModeAll:
-		return true
-	case UserEventPayload139ModeEmailDomain:
-		return true
 	case UserEventPayload139ModeNone:
 		return true
 	default:
@@ -17582,18 +17642,12 @@ func (e UserEventPayload139Mode) Valid() bool {
 
 // Defines values for UserEventPayload139PreviousMode.
 const (
-	UserEventPayload139PreviousModeAll         UserEventPayload139PreviousMode = "all"
-	UserEventPayload139PreviousModeEmailDomain UserEventPayload139PreviousMode = "email-domain"
-	UserEventPayload139PreviousModeNone        UserEventPayload139PreviousMode = "none"
+	UserEventPayload139PreviousModeNone UserEventPayload139PreviousMode = "none"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload139PreviousMode enum.
 func (e UserEventPayload139PreviousMode) Valid() bool {
 	switch e {
-	case UserEventPayload139PreviousModeAll:
-		return true
-	case UserEventPayload139PreviousModeEmailDomain:
-		return true
 	case UserEventPayload139PreviousModeNone:
 		return true
 	default:
@@ -17601,171 +17655,174 @@ func (e UserEventPayload139PreviousMode) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload143Action.
+// Defines values for UserEventPayload139Scope.
 const (
-	UserEventPayload143ActionAdd    UserEventPayload143Action = "add"
-	UserEventPayload143ActionDelete UserEventPayload143Action = "delete"
-	UserEventPayload143ActionUpdate UserEventPayload143Action = "update"
+	UserEventPayload139ScopeOrganization UserEventPayload139Scope = "organization"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload143Action enum.
-func (e UserEventPayload143Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload139Scope enum.
+func (e UserEventPayload139Scope) Valid() bool {
 	switch e {
-	case UserEventPayload143ActionAdd:
-		return true
-	case UserEventPayload143ActionDelete:
-		return true
-	case UserEventPayload143ActionUpdate:
+	case UserEventPayload139ScopeOrganization:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload143Initiator.
+// Defines values for UserEventPayload140Mode.
 const (
-	UserEventPayload143InitiatorSystem UserEventPayload143Initiator = "system"
-	UserEventPayload143InitiatorUser   UserEventPayload143Initiator = "user"
+	UserEventPayload140ModeAll         UserEventPayload140Mode = "all"
+	UserEventPayload140ModeEmailDomain UserEventPayload140Mode = "email-domain"
+	UserEventPayload140ModeNone        UserEventPayload140Mode = "none"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload143Initiator enum.
-func (e UserEventPayload143Initiator) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload140Mode enum.
+func (e UserEventPayload140Mode) Valid() bool {
 	switch e {
-	case UserEventPayload143InitiatorSystem:
+	case UserEventPayload140ModeAll:
 		return true
-	case UserEventPayload143InitiatorUser:
+	case UserEventPayload140ModeEmailDomain:
+		return true
+	case UserEventPayload140ModeNone:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload145Zone.
+// Defines values for UserEventPayload140PreviousMode.
 const (
-	UserEventPayload145ZoneFalse UserEventPayload145Zone = false
-	UserEventPayload145ZoneTrue  UserEventPayload145Zone = true
+	UserEventPayload140PreviousModeAll         UserEventPayload140PreviousMode = "all"
+	UserEventPayload140PreviousModeEmailDomain UserEventPayload140PreviousMode = "email-domain"
+	UserEventPayload140PreviousModeNone        UserEventPayload140PreviousMode = "none"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload145Zone enum.
-func (e UserEventPayload145Zone) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload140PreviousMode enum.
+func (e UserEventPayload140PreviousMode) Valid() bool {
 	switch e {
-	case UserEventPayload145ZoneFalse:
+	case UserEventPayload140PreviousModeAll:
 		return true
-	case UserEventPayload145ZoneTrue:
+	case UserEventPayload140PreviousModeEmailDomain:
+		return true
+	case UserEventPayload140PreviousModeNone:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload147CdnEnabled.
+// Defines values for UserEventPayload144Action.
 const (
-	UserEventPayload147CdnEnabledFalse UserEventPayload147CdnEnabled = false
-	UserEventPayload147CdnEnabledTrue  UserEventPayload147CdnEnabled = true
+	UserEventPayload144ActionAdd    UserEventPayload144Action = "add"
+	UserEventPayload144ActionDelete UserEventPayload144Action = "delete"
+	UserEventPayload144ActionUpdate UserEventPayload144Action = "update"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload147CdnEnabled enum.
-func (e UserEventPayload147CdnEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload144Action enum.
+func (e UserEventPayload144Action) Valid() bool {
 	switch e {
-	case UserEventPayload147CdnEnabledFalse:
+	case UserEventPayload144ActionAdd:
 		return true
-	case UserEventPayload147CdnEnabledTrue:
+	case UserEventPayload144ActionDelete:
+		return true
+	case UserEventPayload144ActionUpdate:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload154EchMode.
+// Defines values for UserEventPayload144Initiator.
 const (
-	UserEventPayload154EchModeAuto     UserEventPayload154EchMode = "auto"
-	UserEventPayload154EchModeDisabled UserEventPayload154EchMode = "disabled"
-	UserEventPayload154EchModeEnabled  UserEventPayload154EchMode = "enabled"
+	UserEventPayload144InitiatorSystem UserEventPayload144Initiator = "system"
+	UserEventPayload144InitiatorUser   UserEventPayload144Initiator = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload154EchMode enum.
-func (e UserEventPayload154EchMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload144Initiator enum.
+func (e UserEventPayload144Initiator) Valid() bool {
 	switch e {
-	case UserEventPayload154EchModeAuto:
+	case UserEventPayload144InitiatorSystem:
 		return true
-	case UserEventPayload154EchModeDisabled:
-		return true
-	case UserEventPayload154EchModeEnabled:
+	case UserEventPayload144InitiatorUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload154PreviousEchMode.
+// Defines values for UserEventPayload146Zone.
 const (
-	UserEventPayload154PreviousEchModeAuto     UserEventPayload154PreviousEchMode = "auto"
-	UserEventPayload154PreviousEchModeDisabled UserEventPayload154PreviousEchMode = "disabled"
-	UserEventPayload154PreviousEchModeEnabled  UserEventPayload154PreviousEchMode = "enabled"
+	UserEventPayload146ZoneFalse UserEventPayload146Zone = false
+	UserEventPayload146ZoneTrue  UserEventPayload146Zone = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload154PreviousEchMode enum.
-func (e UserEventPayload154PreviousEchMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload146Zone enum.
+func (e UserEventPayload146Zone) Valid() bool {
 	switch e {
-	case UserEventPayload154PreviousEchModeAuto:
+	case UserEventPayload146ZoneFalse:
 		return true
-	case UserEventPayload154PreviousEchModeDisabled:
-		return true
-	case UserEventPayload154PreviousEchModeEnabled:
+	case UserEventPayload146ZoneTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload155Zone.
+// Defines values for UserEventPayload148CdnEnabled.
 const (
-	UserEventPayload155ZoneFalse UserEventPayload155Zone = false
-	UserEventPayload155ZoneTrue  UserEventPayload155Zone = true
+	UserEventPayload148CdnEnabledFalse UserEventPayload148CdnEnabled = false
+	UserEventPayload148CdnEnabledTrue  UserEventPayload148CdnEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload155Zone enum.
-func (e UserEventPayload155Zone) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload148CdnEnabled enum.
+func (e UserEventPayload148CdnEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload155ZoneFalse:
+	case UserEventPayload148CdnEnabledFalse:
 		return true
-	case UserEventPayload155ZoneTrue:
+	case UserEventPayload148CdnEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload156Initiator.
+// Defines values for UserEventPayload155EchMode.
 const (
-	UserEventPayload156InitiatorSystem UserEventPayload156Initiator = "system"
-	UserEventPayload156InitiatorUser   UserEventPayload156Initiator = "user"
+	UserEventPayload155EchModeAuto     UserEventPayload155EchMode = "auto"
+	UserEventPayload155EchModeDisabled UserEventPayload155EchMode = "disabled"
+	UserEventPayload155EchModeEnabled  UserEventPayload155EchMode = "enabled"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload156Initiator enum.
-func (e UserEventPayload156Initiator) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload155EchMode enum.
+func (e UserEventPayload155EchMode) Valid() bool {
 	switch e {
-	case UserEventPayload156InitiatorSystem:
+	case UserEventPayload155EchModeAuto:
 		return true
-	case UserEventPayload156InitiatorUser:
+	case UserEventPayload155EchModeDisabled:
+		return true
+	case UserEventPayload155EchModeEnabled:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload156PreviousZone.
+// Defines values for UserEventPayload155PreviousEchMode.
 const (
-	UserEventPayload156PreviousZoneFalse UserEventPayload156PreviousZone = false
-	UserEventPayload156PreviousZoneTrue  UserEventPayload156PreviousZone = true
+	UserEventPayload155PreviousEchModeAuto     UserEventPayload155PreviousEchMode = "auto"
+	UserEventPayload155PreviousEchModeDisabled UserEventPayload155PreviousEchMode = "disabled"
+	UserEventPayload155PreviousEchModeEnabled  UserEventPayload155PreviousEchMode = "enabled"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload156PreviousZone enum.
-func (e UserEventPayload156PreviousZone) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload155PreviousEchMode enum.
+func (e UserEventPayload155PreviousEchMode) Valid() bool {
 	switch e {
-	case UserEventPayload156PreviousZoneFalse:
+	case UserEventPayload155PreviousEchModeAuto:
 		return true
-	case UserEventPayload156PreviousZoneTrue:
+	case UserEventPayload155PreviousEchModeDisabled:
+		return true
+	case UserEventPayload155PreviousEchModeEnabled:
 		return true
 	default:
 		return false
@@ -17790,279 +17847,288 @@ func (e UserEventPayload156Zone) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload160Renew.
+// Defines values for UserEventPayload157Initiator.
 const (
-	UserEventPayload160RenewFalse UserEventPayload160Renew = false
-	UserEventPayload160RenewTrue  UserEventPayload160Renew = true
+	UserEventPayload157InitiatorSystem UserEventPayload157Initiator = "system"
+	UserEventPayload157InitiatorUser   UserEventPayload157Initiator = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload160Renew enum.
-func (e UserEventPayload160Renew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload157Initiator enum.
+func (e UserEventPayload157Initiator) Valid() bool {
 	switch e {
-	case UserEventPayload160RenewFalse:
+	case UserEventPayload157InitiatorSystem:
 		return true
-	case UserEventPayload160RenewTrue:
+	case UserEventPayload157InitiatorUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload175FromAccountType.
+// Defines values for UserEventPayload157PreviousZone.
 const (
-	UserEventPayload175FromAccountTypeTeam UserEventPayload175FromAccountType = "team"
-	UserEventPayload175FromAccountTypeUser UserEventPayload175FromAccountType = "user"
+	UserEventPayload157PreviousZoneFalse UserEventPayload157PreviousZone = false
+	UserEventPayload157PreviousZoneTrue  UserEventPayload157PreviousZone = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload175FromAccountType enum.
-func (e UserEventPayload175FromAccountType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload157PreviousZone enum.
+func (e UserEventPayload157PreviousZone) Valid() bool {
 	switch e {
-	case UserEventPayload175FromAccountTypeTeam:
+	case UserEventPayload157PreviousZoneFalse:
 		return true
-	case UserEventPayload175FromAccountTypeUser:
+	case UserEventPayload157PreviousZoneTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload175ToAccountType.
+// Defines values for UserEventPayload157Zone.
 const (
-	UserEventPayload175ToAccountTypeTeam UserEventPayload175ToAccountType = "team"
-	UserEventPayload175ToAccountTypeUser UserEventPayload175ToAccountType = "user"
+	UserEventPayload157ZoneFalse UserEventPayload157Zone = false
+	UserEventPayload157ZoneTrue  UserEventPayload157Zone = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload175ToAccountType enum.
-func (e UserEventPayload175ToAccountType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload157Zone enum.
+func (e UserEventPayload157Zone) Valid() bool {
 	switch e {
-	case UserEventPayload175ToAccountTypeTeam:
+	case UserEventPayload157ZoneFalse:
 		return true
-	case UserEventPayload175ToAccountTypeUser:
+	case UserEventPayload157ZoneTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload183UpdateDiffChangedComment.
+// Defines values for UserEventPayload161Renew.
 const (
-	UserEventPayload183UpdateDiffChangedCommentFalse UserEventPayload183UpdateDiffChangedComment = false
-	UserEventPayload183UpdateDiffChangedCommentTrue  UserEventPayload183UpdateDiffChangedComment = true
+	UserEventPayload161RenewFalse UserEventPayload161Renew = false
+	UserEventPayload161RenewTrue  UserEventPayload161Renew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload183UpdateDiffChangedComment enum.
-func (e UserEventPayload183UpdateDiffChangedComment) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload161Renew enum.
+func (e UserEventPayload161Renew) Valid() bool {
 	switch e {
-	case UserEventPayload183UpdateDiffChangedCommentFalse:
+	case UserEventPayload161RenewFalse:
 		return true
-	case UserEventPayload183UpdateDiffChangedCommentTrue:
+	case UserEventPayload161RenewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload183UpdateDiffChangedGitBranch.
+// Defines values for UserEventPayload176FromAccountType.
 const (
-	UserEventPayload183UpdateDiffChangedGitBranchFalse UserEventPayload183UpdateDiffChangedGitBranch = false
-	UserEventPayload183UpdateDiffChangedGitBranchTrue  UserEventPayload183UpdateDiffChangedGitBranch = true
+	UserEventPayload176FromAccountTypeTeam UserEventPayload176FromAccountType = "team"
+	UserEventPayload176FromAccountTypeUser UserEventPayload176FromAccountType = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload183UpdateDiffChangedGitBranch enum.
-func (e UserEventPayload183UpdateDiffChangedGitBranch) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload176FromAccountType enum.
+func (e UserEventPayload176FromAccountType) Valid() bool {
 	switch e {
-	case UserEventPayload183UpdateDiffChangedGitBranchFalse:
+	case UserEventPayload176FromAccountTypeTeam:
 		return true
-	case UserEventPayload183UpdateDiffChangedGitBranchTrue:
+	case UserEventPayload176FromAccountTypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload183UpdateDiffChangedValue.
+// Defines values for UserEventPayload176ToAccountType.
 const (
-	UserEventPayload183UpdateDiffChangedValueFalse UserEventPayload183UpdateDiffChangedValue = false
-	UserEventPayload183UpdateDiffChangedValueTrue  UserEventPayload183UpdateDiffChangedValue = true
+	UserEventPayload176ToAccountTypeTeam UserEventPayload176ToAccountType = "team"
+	UserEventPayload176ToAccountTypeUser UserEventPayload176ToAccountType = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload183UpdateDiffChangedValue enum.
-func (e UserEventPayload183UpdateDiffChangedValue) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload176ToAccountType enum.
+func (e UserEventPayload176ToAccountType) Valid() bool {
 	switch e {
-	case UserEventPayload183UpdateDiffChangedValueFalse:
+	case UserEventPayload176ToAccountTypeTeam:
 		return true
-	case UserEventPayload183UpdateDiffChangedValueTrue:
+	case UserEventPayload176ToAccountTypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload183UpdateDiffNewTarget.
+// Defines values for UserEventPayload184UpdateDiffChangedComment.
 const (
-	UserEventPayload183UpdateDiffNewTargetDevelopment UserEventPayload183UpdateDiffNewTarget = "development"
-	UserEventPayload183UpdateDiffNewTargetPreview     UserEventPayload183UpdateDiffNewTarget = "preview"
-	UserEventPayload183UpdateDiffNewTargetProduction  UserEventPayload183UpdateDiffNewTarget = "production"
+	UserEventPayload184UpdateDiffChangedCommentFalse UserEventPayload184UpdateDiffChangedComment = false
+	UserEventPayload184UpdateDiffChangedCommentTrue  UserEventPayload184UpdateDiffChangedComment = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload183UpdateDiffNewTarget enum.
-func (e UserEventPayload183UpdateDiffNewTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload184UpdateDiffChangedComment enum.
+func (e UserEventPayload184UpdateDiffChangedComment) Valid() bool {
 	switch e {
-	case UserEventPayload183UpdateDiffNewTargetDevelopment:
+	case UserEventPayload184UpdateDiffChangedCommentFalse:
 		return true
-	case UserEventPayload183UpdateDiffNewTargetPreview:
-		return true
-	case UserEventPayload183UpdateDiffNewTargetProduction:
+	case UserEventPayload184UpdateDiffChangedCommentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload183UpdateDiffOldTarget.
+// Defines values for UserEventPayload184UpdateDiffChangedGitBranch.
 const (
-	UserEventPayload183UpdateDiffOldTargetDevelopment UserEventPayload183UpdateDiffOldTarget = "development"
-	UserEventPayload183UpdateDiffOldTargetPreview     UserEventPayload183UpdateDiffOldTarget = "preview"
-	UserEventPayload183UpdateDiffOldTargetProduction  UserEventPayload183UpdateDiffOldTarget = "production"
+	UserEventPayload184UpdateDiffChangedGitBranchFalse UserEventPayload184UpdateDiffChangedGitBranch = false
+	UserEventPayload184UpdateDiffChangedGitBranchTrue  UserEventPayload184UpdateDiffChangedGitBranch = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload183UpdateDiffOldTarget enum.
-func (e UserEventPayload183UpdateDiffOldTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload184UpdateDiffChangedGitBranch enum.
+func (e UserEventPayload184UpdateDiffChangedGitBranch) Valid() bool {
 	switch e {
-	case UserEventPayload183UpdateDiffOldTargetDevelopment:
+	case UserEventPayload184UpdateDiffChangedGitBranchFalse:
 		return true
-	case UserEventPayload183UpdateDiffOldTargetPreview:
-		return true
-	case UserEventPayload183UpdateDiffOldTargetProduction:
+	case UserEventPayload184UpdateDiffChangedGitBranchTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload185Visibility.
+// Defines values for UserEventPayload184UpdateDiffChangedValue.
 const (
-	UserEventPayload185VisibilityConfig UserEventPayload185Visibility = "config"
-	UserEventPayload185VisibilitySecret UserEventPayload185Visibility = "secret"
+	UserEventPayload184UpdateDiffChangedValueFalse UserEventPayload184UpdateDiffChangedValue = false
+	UserEventPayload184UpdateDiffChangedValueTrue  UserEventPayload184UpdateDiffChangedValue = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload185Visibility enum.
-func (e UserEventPayload185Visibility) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload184UpdateDiffChangedValue enum.
+func (e UserEventPayload184UpdateDiffChangedValue) Valid() bool {
 	switch e {
-	case UserEventPayload185VisibilityConfig:
+	case UserEventPayload184UpdateDiffChangedValueFalse:
 		return true
-	case UserEventPayload185VisibilitySecret:
+	case UserEventPayload184UpdateDiffChangedValueTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload186ApplyToAllCustomEnvironments.
+// Defines values for UserEventPayload184UpdateDiffNewTarget.
 const (
-	UserEventPayload186ApplyToAllCustomEnvironmentsFalse UserEventPayload186ApplyToAllCustomEnvironments = false
-	UserEventPayload186ApplyToAllCustomEnvironmentsTrue  UserEventPayload186ApplyToAllCustomEnvironments = true
+	UserEventPayload184UpdateDiffNewTargetDevelopment UserEventPayload184UpdateDiffNewTarget = "development"
+	UserEventPayload184UpdateDiffNewTargetPreview     UserEventPayload184UpdateDiffNewTarget = "preview"
+	UserEventPayload184UpdateDiffNewTargetProduction  UserEventPayload184UpdateDiffNewTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload186ApplyToAllCustomEnvironments enum.
-func (e UserEventPayload186ApplyToAllCustomEnvironments) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload184UpdateDiffNewTarget enum.
+func (e UserEventPayload184UpdateDiffNewTarget) Valid() bool {
 	switch e {
-	case UserEventPayload186ApplyToAllCustomEnvironmentsFalse:
+	case UserEventPayload184UpdateDiffNewTargetDevelopment:
 		return true
-	case UserEventPayload186ApplyToAllCustomEnvironmentsTrue:
+	case UserEventPayload184UpdateDiffNewTargetPreview:
+		return true
+	case UserEventPayload184UpdateDiffNewTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload186Decrypted.
+// Defines values for UserEventPayload184UpdateDiffOldTarget.
 const (
-	UserEventPayload186DecryptedFalse UserEventPayload186Decrypted = false
-	UserEventPayload186DecryptedTrue  UserEventPayload186Decrypted = true
+	UserEventPayload184UpdateDiffOldTargetDevelopment UserEventPayload184UpdateDiffOldTarget = "development"
+	UserEventPayload184UpdateDiffOldTargetPreview     UserEventPayload184UpdateDiffOldTarget = "preview"
+	UserEventPayload184UpdateDiffOldTargetProduction  UserEventPayload184UpdateDiffOldTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload186Decrypted enum.
-func (e UserEventPayload186Decrypted) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload184UpdateDiffOldTarget enum.
+func (e UserEventPayload184UpdateDiffOldTarget) Valid() bool {
 	switch e {
-	case UserEventPayload186DecryptedFalse:
+	case UserEventPayload184UpdateDiffOldTargetDevelopment:
 		return true
-	case UserEventPayload186DecryptedTrue:
+	case UserEventPayload184UpdateDiffOldTargetPreview:
+		return true
+	case UserEventPayload184UpdateDiffOldTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload186LastEditedByPrincipal0Type.
+// Defines values for UserEventPayload186Visibility.
 const (
-	UserEventPayload186LastEditedByPrincipal0TypeUser UserEventPayload186LastEditedByPrincipal0Type = "user"
+	UserEventPayload186VisibilityConfig UserEventPayload186Visibility = "config"
+	UserEventPayload186VisibilitySecret UserEventPayload186Visibility = "secret"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload186LastEditedByPrincipal0Type enum.
-func (e UserEventPayload186LastEditedByPrincipal0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload186Visibility enum.
+func (e UserEventPayload186Visibility) Valid() bool {
 	switch e {
-	case UserEventPayload186LastEditedByPrincipal0TypeUser:
+	case UserEventPayload186VisibilityConfig:
+		return true
+	case UserEventPayload186VisibilitySecret:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload186LastEditedByPrincipal1Type.
+// Defines values for UserEventPayload187ApplyToAllCustomEnvironments.
 const (
-	UserEventPayload186LastEditedByPrincipal1TypeApp UserEventPayload186LastEditedByPrincipal1Type = "app"
+	UserEventPayload187ApplyToAllCustomEnvironmentsFalse UserEventPayload187ApplyToAllCustomEnvironments = false
+	UserEventPayload187ApplyToAllCustomEnvironmentsTrue  UserEventPayload187ApplyToAllCustomEnvironments = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload186LastEditedByPrincipal1Type enum.
-func (e UserEventPayload186LastEditedByPrincipal1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload187ApplyToAllCustomEnvironments enum.
+func (e UserEventPayload187ApplyToAllCustomEnvironments) Valid() bool {
 	switch e {
-	case UserEventPayload186LastEditedByPrincipal1TypeApp:
+	case UserEventPayload187ApplyToAllCustomEnvironmentsFalse:
+		return true
+	case UserEventPayload187ApplyToAllCustomEnvironmentsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload186Target.
+// Defines values for UserEventPayload187Decrypted.
 const (
-	UserEventPayload186TargetDevelopment UserEventPayload186Target = "development"
-	UserEventPayload186TargetPreview     UserEventPayload186Target = "preview"
-	UserEventPayload186TargetProduction  UserEventPayload186Target = "production"
+	UserEventPayload187DecryptedFalse UserEventPayload187Decrypted = false
+	UserEventPayload187DecryptedTrue  UserEventPayload187Decrypted = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload186Target enum.
-func (e UserEventPayload186Target) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload187Decrypted enum.
+func (e UserEventPayload187Decrypted) Valid() bool {
 	switch e {
-	case UserEventPayload186TargetDevelopment:
+	case UserEventPayload187DecryptedFalse:
 		return true
-	case UserEventPayload186TargetPreview:
-		return true
-	case UserEventPayload186TargetProduction:
+	case UserEventPayload187DecryptedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload186Type.
+// Defines values for UserEventPayload187LastEditedByPrincipal0Type.
 const (
-	UserEventPayload186TypeEncrypted UserEventPayload186Type = "encrypted"
-	UserEventPayload186TypePlain     UserEventPayload186Type = "plain"
-	UserEventPayload186TypeSensitive UserEventPayload186Type = "sensitive"
-	UserEventPayload186TypeSystem    UserEventPayload186Type = "system"
+	UserEventPayload187LastEditedByPrincipal0TypeUser UserEventPayload187LastEditedByPrincipal0Type = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload186Type enum.
-func (e UserEventPayload186Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload187LastEditedByPrincipal0Type enum.
+func (e UserEventPayload187LastEditedByPrincipal0Type) Valid() bool {
 	switch e {
-	case UserEventPayload186TypeEncrypted:
+	case UserEventPayload187LastEditedByPrincipal0TypeUser:
 		return true
-	case UserEventPayload186TypePlain:
-		return true
-	case UserEventPayload186TypeSensitive:
-		return true
-	case UserEventPayload186TypeSystem:
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload187LastEditedByPrincipal1Type.
+const (
+	UserEventPayload187LastEditedByPrincipal1TypeApp UserEventPayload187LastEditedByPrincipal1Type = "app"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload187LastEditedByPrincipal1Type enum.
+func (e UserEventPayload187LastEditedByPrincipal1Type) Valid() bool {
+	switch e {
+	case UserEventPayload187LastEditedByPrincipal1TypeApp:
 		return true
 	default:
 		return false
@@ -18090,663 +18156,678 @@ func (e UserEventPayload187Target) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload188NewEnvVarApplyToAllCustomEnvironments.
+// Defines values for UserEventPayload187Type.
 const (
-	UserEventPayload188NewEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload188NewEnvVarApplyToAllCustomEnvironments = false
-	UserEventPayload188NewEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload188NewEnvVarApplyToAllCustomEnvironments = true
+	UserEventPayload187TypeEncrypted UserEventPayload187Type = "encrypted"
+	UserEventPayload187TypePlain     UserEventPayload187Type = "plain"
+	UserEventPayload187TypeSensitive UserEventPayload187Type = "sensitive"
+	UserEventPayload187TypeSystem    UserEventPayload187Type = "system"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188NewEnvVarApplyToAllCustomEnvironments enum.
-func (e UserEventPayload188NewEnvVarApplyToAllCustomEnvironments) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload187Type enum.
+func (e UserEventPayload187Type) Valid() bool {
 	switch e {
-	case UserEventPayload188NewEnvVarApplyToAllCustomEnvironmentsFalse:
+	case UserEventPayload187TypeEncrypted:
 		return true
-	case UserEventPayload188NewEnvVarApplyToAllCustomEnvironmentsTrue:
+	case UserEventPayload187TypePlain:
+		return true
+	case UserEventPayload187TypeSensitive:
+		return true
+	case UserEventPayload187TypeSystem:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188NewEnvVarDecrypted.
+// Defines values for UserEventPayload188Target.
 const (
-	UserEventPayload188NewEnvVarDecryptedFalse UserEventPayload188NewEnvVarDecrypted = false
-	UserEventPayload188NewEnvVarDecryptedTrue  UserEventPayload188NewEnvVarDecrypted = true
+	UserEventPayload188TargetDevelopment UserEventPayload188Target = "development"
+	UserEventPayload188TargetPreview     UserEventPayload188Target = "preview"
+	UserEventPayload188TargetProduction  UserEventPayload188Target = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188NewEnvVarDecrypted enum.
-func (e UserEventPayload188NewEnvVarDecrypted) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload188Target enum.
+func (e UserEventPayload188Target) Valid() bool {
 	switch e {
-	case UserEventPayload188NewEnvVarDecryptedFalse:
+	case UserEventPayload188TargetDevelopment:
 		return true
-	case UserEventPayload188NewEnvVarDecryptedTrue:
+	case UserEventPayload188TargetPreview:
+		return true
+	case UserEventPayload188TargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188NewEnvVarLastEditedByPrincipal0Type.
+// Defines values for UserEventPayload189NewEnvVarApplyToAllCustomEnvironments.
 const (
-	UserEventPayload188NewEnvVarLastEditedByPrincipal0TypeUser UserEventPayload188NewEnvVarLastEditedByPrincipal0Type = "user"
+	UserEventPayload189NewEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload189NewEnvVarApplyToAllCustomEnvironments = false
+	UserEventPayload189NewEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload189NewEnvVarApplyToAllCustomEnvironments = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188NewEnvVarLastEditedByPrincipal0Type enum.
-func (e UserEventPayload188NewEnvVarLastEditedByPrincipal0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189NewEnvVarApplyToAllCustomEnvironments enum.
+func (e UserEventPayload189NewEnvVarApplyToAllCustomEnvironments) Valid() bool {
 	switch e {
-	case UserEventPayload188NewEnvVarLastEditedByPrincipal0TypeUser:
+	case UserEventPayload189NewEnvVarApplyToAllCustomEnvironmentsFalse:
+		return true
+	case UserEventPayload189NewEnvVarApplyToAllCustomEnvironmentsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188NewEnvVarLastEditedByPrincipal1Type.
+// Defines values for UserEventPayload189NewEnvVarDecrypted.
 const (
-	UserEventPayload188NewEnvVarLastEditedByPrincipal1TypeApp UserEventPayload188NewEnvVarLastEditedByPrincipal1Type = "app"
+	UserEventPayload189NewEnvVarDecryptedFalse UserEventPayload189NewEnvVarDecrypted = false
+	UserEventPayload189NewEnvVarDecryptedTrue  UserEventPayload189NewEnvVarDecrypted = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188NewEnvVarLastEditedByPrincipal1Type enum.
-func (e UserEventPayload188NewEnvVarLastEditedByPrincipal1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189NewEnvVarDecrypted enum.
+func (e UserEventPayload189NewEnvVarDecrypted) Valid() bool {
 	switch e {
-	case UserEventPayload188NewEnvVarLastEditedByPrincipal1TypeApp:
+	case UserEventPayload189NewEnvVarDecryptedFalse:
+		return true
+	case UserEventPayload189NewEnvVarDecryptedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188NewEnvVarTarget.
+// Defines values for UserEventPayload189NewEnvVarLastEditedByPrincipal0Type.
 const (
-	UserEventPayload188NewEnvVarTargetDevelopment UserEventPayload188NewEnvVarTarget = "development"
-	UserEventPayload188NewEnvVarTargetPreview     UserEventPayload188NewEnvVarTarget = "preview"
-	UserEventPayload188NewEnvVarTargetProduction  UserEventPayload188NewEnvVarTarget = "production"
+	UserEventPayload189NewEnvVarLastEditedByPrincipal0TypeUser UserEventPayload189NewEnvVarLastEditedByPrincipal0Type = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188NewEnvVarTarget enum.
-func (e UserEventPayload188NewEnvVarTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189NewEnvVarLastEditedByPrincipal0Type enum.
+func (e UserEventPayload189NewEnvVarLastEditedByPrincipal0Type) Valid() bool {
 	switch e {
-	case UserEventPayload188NewEnvVarTargetDevelopment:
-		return true
-	case UserEventPayload188NewEnvVarTargetPreview:
-		return true
-	case UserEventPayload188NewEnvVarTargetProduction:
+	case UserEventPayload189NewEnvVarLastEditedByPrincipal0TypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188NewEnvVarType.
+// Defines values for UserEventPayload189NewEnvVarLastEditedByPrincipal1Type.
 const (
-	UserEventPayload188NewEnvVarTypeEncrypted UserEventPayload188NewEnvVarType = "encrypted"
-	UserEventPayload188NewEnvVarTypePlain     UserEventPayload188NewEnvVarType = "plain"
-	UserEventPayload188NewEnvVarTypeSensitive UserEventPayload188NewEnvVarType = "sensitive"
-	UserEventPayload188NewEnvVarTypeSystem    UserEventPayload188NewEnvVarType = "system"
+	UserEventPayload189NewEnvVarLastEditedByPrincipal1TypeApp UserEventPayload189NewEnvVarLastEditedByPrincipal1Type = "app"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188NewEnvVarType enum.
-func (e UserEventPayload188NewEnvVarType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189NewEnvVarLastEditedByPrincipal1Type enum.
+func (e UserEventPayload189NewEnvVarLastEditedByPrincipal1Type) Valid() bool {
 	switch e {
-	case UserEventPayload188NewEnvVarTypeEncrypted:
-		return true
-	case UserEventPayload188NewEnvVarTypePlain:
-		return true
-	case UserEventPayload188NewEnvVarTypeSensitive:
-		return true
-	case UserEventPayload188NewEnvVarTypeSystem:
+	case UserEventPayload189NewEnvVarLastEditedByPrincipal1TypeApp:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188OldEnvVarApplyToAllCustomEnvironments.
+// Defines values for UserEventPayload189NewEnvVarTarget.
 const (
-	UserEventPayload188OldEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload188OldEnvVarApplyToAllCustomEnvironments = false
-	UserEventPayload188OldEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload188OldEnvVarApplyToAllCustomEnvironments = true
+	UserEventPayload189NewEnvVarTargetDevelopment UserEventPayload189NewEnvVarTarget = "development"
+	UserEventPayload189NewEnvVarTargetPreview     UserEventPayload189NewEnvVarTarget = "preview"
+	UserEventPayload189NewEnvVarTargetProduction  UserEventPayload189NewEnvVarTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188OldEnvVarApplyToAllCustomEnvironments enum.
-func (e UserEventPayload188OldEnvVarApplyToAllCustomEnvironments) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189NewEnvVarTarget enum.
+func (e UserEventPayload189NewEnvVarTarget) Valid() bool {
 	switch e {
-	case UserEventPayload188OldEnvVarApplyToAllCustomEnvironmentsFalse:
+	case UserEventPayload189NewEnvVarTargetDevelopment:
 		return true
-	case UserEventPayload188OldEnvVarApplyToAllCustomEnvironmentsTrue:
+	case UserEventPayload189NewEnvVarTargetPreview:
+		return true
+	case UserEventPayload189NewEnvVarTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188OldEnvVarDecrypted.
+// Defines values for UserEventPayload189NewEnvVarType.
 const (
-	UserEventPayload188OldEnvVarDecryptedFalse UserEventPayload188OldEnvVarDecrypted = false
-	UserEventPayload188OldEnvVarDecryptedTrue  UserEventPayload188OldEnvVarDecrypted = true
+	UserEventPayload189NewEnvVarTypeEncrypted UserEventPayload189NewEnvVarType = "encrypted"
+	UserEventPayload189NewEnvVarTypePlain     UserEventPayload189NewEnvVarType = "plain"
+	UserEventPayload189NewEnvVarTypeSensitive UserEventPayload189NewEnvVarType = "sensitive"
+	UserEventPayload189NewEnvVarTypeSystem    UserEventPayload189NewEnvVarType = "system"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188OldEnvVarDecrypted enum.
-func (e UserEventPayload188OldEnvVarDecrypted) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189NewEnvVarType enum.
+func (e UserEventPayload189NewEnvVarType) Valid() bool {
 	switch e {
-	case UserEventPayload188OldEnvVarDecryptedFalse:
+	case UserEventPayload189NewEnvVarTypeEncrypted:
 		return true
-	case UserEventPayload188OldEnvVarDecryptedTrue:
+	case UserEventPayload189NewEnvVarTypePlain:
+		return true
+	case UserEventPayload189NewEnvVarTypeSensitive:
+		return true
+	case UserEventPayload189NewEnvVarTypeSystem:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188OldEnvVarLastEditedByPrincipal0Type.
+// Defines values for UserEventPayload189OldEnvVarApplyToAllCustomEnvironments.
 const (
-	UserEventPayload188OldEnvVarLastEditedByPrincipal0TypeUser UserEventPayload188OldEnvVarLastEditedByPrincipal0Type = "user"
+	UserEventPayload189OldEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload189OldEnvVarApplyToAllCustomEnvironments = false
+	UserEventPayload189OldEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload189OldEnvVarApplyToAllCustomEnvironments = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188OldEnvVarLastEditedByPrincipal0Type enum.
-func (e UserEventPayload188OldEnvVarLastEditedByPrincipal0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189OldEnvVarApplyToAllCustomEnvironments enum.
+func (e UserEventPayload189OldEnvVarApplyToAllCustomEnvironments) Valid() bool {
 	switch e {
-	case UserEventPayload188OldEnvVarLastEditedByPrincipal0TypeUser:
+	case UserEventPayload189OldEnvVarApplyToAllCustomEnvironmentsFalse:
+		return true
+	case UserEventPayload189OldEnvVarApplyToAllCustomEnvironmentsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188OldEnvVarLastEditedByPrincipal1Type.
+// Defines values for UserEventPayload189OldEnvVarDecrypted.
 const (
-	UserEventPayload188OldEnvVarLastEditedByPrincipal1TypeApp UserEventPayload188OldEnvVarLastEditedByPrincipal1Type = "app"
+	UserEventPayload189OldEnvVarDecryptedFalse UserEventPayload189OldEnvVarDecrypted = false
+	UserEventPayload189OldEnvVarDecryptedTrue  UserEventPayload189OldEnvVarDecrypted = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188OldEnvVarLastEditedByPrincipal1Type enum.
-func (e UserEventPayload188OldEnvVarLastEditedByPrincipal1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189OldEnvVarDecrypted enum.
+func (e UserEventPayload189OldEnvVarDecrypted) Valid() bool {
 	switch e {
-	case UserEventPayload188OldEnvVarLastEditedByPrincipal1TypeApp:
+	case UserEventPayload189OldEnvVarDecryptedFalse:
+		return true
+	case UserEventPayload189OldEnvVarDecryptedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188OldEnvVarTarget.
+// Defines values for UserEventPayload189OldEnvVarLastEditedByPrincipal0Type.
 const (
-	UserEventPayload188OldEnvVarTargetDevelopment UserEventPayload188OldEnvVarTarget = "development"
-	UserEventPayload188OldEnvVarTargetPreview     UserEventPayload188OldEnvVarTarget = "preview"
-	UserEventPayload188OldEnvVarTargetProduction  UserEventPayload188OldEnvVarTarget = "production"
+	UserEventPayload189OldEnvVarLastEditedByPrincipal0TypeUser UserEventPayload189OldEnvVarLastEditedByPrincipal0Type = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188OldEnvVarTarget enum.
-func (e UserEventPayload188OldEnvVarTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189OldEnvVarLastEditedByPrincipal0Type enum.
+func (e UserEventPayload189OldEnvVarLastEditedByPrincipal0Type) Valid() bool {
 	switch e {
-	case UserEventPayload188OldEnvVarTargetDevelopment:
-		return true
-	case UserEventPayload188OldEnvVarTargetPreview:
-		return true
-	case UserEventPayload188OldEnvVarTargetProduction:
+	case UserEventPayload189OldEnvVarLastEditedByPrincipal0TypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188OldEnvVarType.
+// Defines values for UserEventPayload189OldEnvVarLastEditedByPrincipal1Type.
 const (
-	UserEventPayload188OldEnvVarTypeEncrypted UserEventPayload188OldEnvVarType = "encrypted"
-	UserEventPayload188OldEnvVarTypePlain     UserEventPayload188OldEnvVarType = "plain"
-	UserEventPayload188OldEnvVarTypeSensitive UserEventPayload188OldEnvVarType = "sensitive"
-	UserEventPayload188OldEnvVarTypeSystem    UserEventPayload188OldEnvVarType = "system"
+	UserEventPayload189OldEnvVarLastEditedByPrincipal1TypeApp UserEventPayload189OldEnvVarLastEditedByPrincipal1Type = "app"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188OldEnvVarType enum.
-func (e UserEventPayload188OldEnvVarType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189OldEnvVarLastEditedByPrincipal1Type enum.
+func (e UserEventPayload189OldEnvVarLastEditedByPrincipal1Type) Valid() bool {
 	switch e {
-	case UserEventPayload188OldEnvVarTypeEncrypted:
-		return true
-	case UserEventPayload188OldEnvVarTypePlain:
-		return true
-	case UserEventPayload188OldEnvVarTypeSensitive:
-		return true
-	case UserEventPayload188OldEnvVarTypeSystem:
+	case UserEventPayload189OldEnvVarLastEditedByPrincipal1TypeApp:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188UpdateDiffChangedComment.
+// Defines values for UserEventPayload189OldEnvVarTarget.
 const (
-	UserEventPayload188UpdateDiffChangedCommentFalse UserEventPayload188UpdateDiffChangedComment = false
-	UserEventPayload188UpdateDiffChangedCommentTrue  UserEventPayload188UpdateDiffChangedComment = true
+	UserEventPayload189OldEnvVarTargetDevelopment UserEventPayload189OldEnvVarTarget = "development"
+	UserEventPayload189OldEnvVarTargetPreview     UserEventPayload189OldEnvVarTarget = "preview"
+	UserEventPayload189OldEnvVarTargetProduction  UserEventPayload189OldEnvVarTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188UpdateDiffChangedComment enum.
-func (e UserEventPayload188UpdateDiffChangedComment) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189OldEnvVarTarget enum.
+func (e UserEventPayload189OldEnvVarTarget) Valid() bool {
 	switch e {
-	case UserEventPayload188UpdateDiffChangedCommentFalse:
+	case UserEventPayload189OldEnvVarTargetDevelopment:
 		return true
-	case UserEventPayload188UpdateDiffChangedCommentTrue:
+	case UserEventPayload189OldEnvVarTargetPreview:
+		return true
+	case UserEventPayload189OldEnvVarTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188UpdateDiffChangedGitBranch.
+// Defines values for UserEventPayload189OldEnvVarType.
 const (
-	UserEventPayload188UpdateDiffChangedGitBranchFalse UserEventPayload188UpdateDiffChangedGitBranch = false
-	UserEventPayload188UpdateDiffChangedGitBranchTrue  UserEventPayload188UpdateDiffChangedGitBranch = true
+	UserEventPayload189OldEnvVarTypeEncrypted UserEventPayload189OldEnvVarType = "encrypted"
+	UserEventPayload189OldEnvVarTypePlain     UserEventPayload189OldEnvVarType = "plain"
+	UserEventPayload189OldEnvVarTypeSensitive UserEventPayload189OldEnvVarType = "sensitive"
+	UserEventPayload189OldEnvVarTypeSystem    UserEventPayload189OldEnvVarType = "system"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188UpdateDiffChangedGitBranch enum.
-func (e UserEventPayload188UpdateDiffChangedGitBranch) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189OldEnvVarType enum.
+func (e UserEventPayload189OldEnvVarType) Valid() bool {
 	switch e {
-	case UserEventPayload188UpdateDiffChangedGitBranchFalse:
+	case UserEventPayload189OldEnvVarTypeEncrypted:
 		return true
-	case UserEventPayload188UpdateDiffChangedGitBranchTrue:
+	case UserEventPayload189OldEnvVarTypePlain:
+		return true
+	case UserEventPayload189OldEnvVarTypeSensitive:
+		return true
+	case UserEventPayload189OldEnvVarTypeSystem:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188UpdateDiffChangedValue.
+// Defines values for UserEventPayload189UpdateDiffChangedComment.
 const (
-	UserEventPayload188UpdateDiffChangedValueFalse UserEventPayload188UpdateDiffChangedValue = false
-	UserEventPayload188UpdateDiffChangedValueTrue  UserEventPayload188UpdateDiffChangedValue = true
+	UserEventPayload189UpdateDiffChangedCommentFalse UserEventPayload189UpdateDiffChangedComment = false
+	UserEventPayload189UpdateDiffChangedCommentTrue  UserEventPayload189UpdateDiffChangedComment = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188UpdateDiffChangedValue enum.
-func (e UserEventPayload188UpdateDiffChangedValue) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189UpdateDiffChangedComment enum.
+func (e UserEventPayload189UpdateDiffChangedComment) Valid() bool {
 	switch e {
-	case UserEventPayload188UpdateDiffChangedValueFalse:
+	case UserEventPayload189UpdateDiffChangedCommentFalse:
 		return true
-	case UserEventPayload188UpdateDiffChangedValueTrue:
+	case UserEventPayload189UpdateDiffChangedCommentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188UpdateDiffNewTarget.
+// Defines values for UserEventPayload189UpdateDiffChangedGitBranch.
 const (
-	UserEventPayload188UpdateDiffNewTargetDevelopment UserEventPayload188UpdateDiffNewTarget = "development"
-	UserEventPayload188UpdateDiffNewTargetPreview     UserEventPayload188UpdateDiffNewTarget = "preview"
-	UserEventPayload188UpdateDiffNewTargetProduction  UserEventPayload188UpdateDiffNewTarget = "production"
+	UserEventPayload189UpdateDiffChangedGitBranchFalse UserEventPayload189UpdateDiffChangedGitBranch = false
+	UserEventPayload189UpdateDiffChangedGitBranchTrue  UserEventPayload189UpdateDiffChangedGitBranch = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188UpdateDiffNewTarget enum.
-func (e UserEventPayload188UpdateDiffNewTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189UpdateDiffChangedGitBranch enum.
+func (e UserEventPayload189UpdateDiffChangedGitBranch) Valid() bool {
 	switch e {
-	case UserEventPayload188UpdateDiffNewTargetDevelopment:
+	case UserEventPayload189UpdateDiffChangedGitBranchFalse:
 		return true
-	case UserEventPayload188UpdateDiffNewTargetPreview:
-		return true
-	case UserEventPayload188UpdateDiffNewTargetProduction:
+	case UserEventPayload189UpdateDiffChangedGitBranchTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188UpdateDiffOldTarget.
+// Defines values for UserEventPayload189UpdateDiffChangedValue.
 const (
-	UserEventPayload188UpdateDiffOldTargetDevelopment UserEventPayload188UpdateDiffOldTarget = "development"
-	UserEventPayload188UpdateDiffOldTargetPreview     UserEventPayload188UpdateDiffOldTarget = "preview"
-	UserEventPayload188UpdateDiffOldTargetProduction  UserEventPayload188UpdateDiffOldTarget = "production"
+	UserEventPayload189UpdateDiffChangedValueFalse UserEventPayload189UpdateDiffChangedValue = false
+	UserEventPayload189UpdateDiffChangedValueTrue  UserEventPayload189UpdateDiffChangedValue = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188UpdateDiffOldTarget enum.
-func (e UserEventPayload188UpdateDiffOldTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189UpdateDiffChangedValue enum.
+func (e UserEventPayload189UpdateDiffChangedValue) Valid() bool {
 	switch e {
-	case UserEventPayload188UpdateDiffOldTargetDevelopment:
+	case UserEventPayload189UpdateDiffChangedValueFalse:
 		return true
-	case UserEventPayload188UpdateDiffOldTargetPreview:
-		return true
-	case UserEventPayload188UpdateDiffOldTargetProduction:
+	case UserEventPayload189UpdateDiffChangedValueTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload194Restore.
+// Defines values for UserEventPayload189UpdateDiffNewTarget.
 const (
-	UserEventPayload194RestoreFalse UserEventPayload194Restore = false
-	UserEventPayload194RestoreTrue  UserEventPayload194Restore = true
+	UserEventPayload189UpdateDiffNewTargetDevelopment UserEventPayload189UpdateDiffNewTarget = "development"
+	UserEventPayload189UpdateDiffNewTargetPreview     UserEventPayload189UpdateDiffNewTarget = "preview"
+	UserEventPayload189UpdateDiffNewTargetProduction  UserEventPayload189UpdateDiffNewTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload194Restore enum.
-func (e UserEventPayload194Restore) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189UpdateDiffNewTarget enum.
+func (e UserEventPayload189UpdateDiffNewTarget) Valid() bool {
 	switch e {
-	case UserEventPayload194RestoreFalse:
+	case UserEventPayload189UpdateDiffNewTargetDevelopment:
 		return true
-	case UserEventPayload194RestoreTrue:
+	case UserEventPayload189UpdateDiffNewTargetPreview:
+		return true
+	case UserEventPayload189UpdateDiffNewTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload195RuleGroupsAction.
+// Defines values for UserEventPayload189UpdateDiffOldTarget.
 const (
-	UserEventPayload195RuleGroupsActionChallenge UserEventPayload195RuleGroupsAction = "challenge"
-	UserEventPayload195RuleGroupsActionDeny      UserEventPayload195RuleGroupsAction = "deny"
-	UserEventPayload195RuleGroupsActionLog       UserEventPayload195RuleGroupsAction = "log"
+	UserEventPayload189UpdateDiffOldTargetDevelopment UserEventPayload189UpdateDiffOldTarget = "development"
+	UserEventPayload189UpdateDiffOldTargetPreview     UserEventPayload189UpdateDiffOldTarget = "preview"
+	UserEventPayload189UpdateDiffOldTargetProduction  UserEventPayload189UpdateDiffOldTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload195RuleGroupsAction enum.
-func (e UserEventPayload195RuleGroupsAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189UpdateDiffOldTarget enum.
+func (e UserEventPayload189UpdateDiffOldTarget) Valid() bool {
 	switch e {
-	case UserEventPayload195RuleGroupsActionChallenge:
+	case UserEventPayload189UpdateDiffOldTargetDevelopment:
 		return true
-	case UserEventPayload195RuleGroupsActionDeny:
+	case UserEventPayload189UpdateDiffOldTargetPreview:
 		return true
-	case UserEventPayload195RuleGroupsActionLog:
+	case UserEventPayload189UpdateDiffOldTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload195RuleGroupsActive.
+// Defines values for UserEventPayload195Restore.
 const (
-	UserEventPayload195RuleGroupsActiveFalse UserEventPayload195RuleGroupsActive = false
-	UserEventPayload195RuleGroupsActiveTrue  UserEventPayload195RuleGroupsActive = true
+	UserEventPayload195RestoreFalse UserEventPayload195Restore = false
+	UserEventPayload195RestoreTrue  UserEventPayload195Restore = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload195RuleGroupsActive enum.
-func (e UserEventPayload195RuleGroupsActive) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload195Restore enum.
+func (e UserEventPayload195Restore) Valid() bool {
 	switch e {
-	case UserEventPayload195RuleGroupsActiveFalse:
+	case UserEventPayload195RestoreFalse:
 		return true
-	case UserEventPayload195RuleGroupsActiveTrue:
+	case UserEventPayload195RestoreTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload196Action.
+// Defines values for UserEventPayload196RuleGroupsAction.
 const (
-	UserEventPayload196ActionChallenge UserEventPayload196Action = "challenge"
-	UserEventPayload196ActionDeny      UserEventPayload196Action = "deny"
-	UserEventPayload196ActionLog       UserEventPayload196Action = "log"
+	UserEventPayload196RuleGroupsActionChallenge UserEventPayload196RuleGroupsAction = "challenge"
+	UserEventPayload196RuleGroupsActionDeny      UserEventPayload196RuleGroupsAction = "deny"
+	UserEventPayload196RuleGroupsActionLog       UserEventPayload196RuleGroupsAction = "log"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload196Action enum.
-func (e UserEventPayload196Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload196RuleGroupsAction enum.
+func (e UserEventPayload196RuleGroupsAction) Valid() bool {
 	switch e {
-	case UserEventPayload196ActionChallenge:
+	case UserEventPayload196RuleGroupsActionChallenge:
 		return true
-	case UserEventPayload196ActionDeny:
+	case UserEventPayload196RuleGroupsActionDeny:
 		return true
-	case UserEventPayload196ActionLog:
+	case UserEventPayload196RuleGroupsActionLog:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload196Active.
+// Defines values for UserEventPayload196RuleGroupsActive.
 const (
-	UserEventPayload196ActiveFalse UserEventPayload196Active = false
-	UserEventPayload196ActiveTrue  UserEventPayload196Active = true
+	UserEventPayload196RuleGroupsActiveFalse UserEventPayload196RuleGroupsActive = false
+	UserEventPayload196RuleGroupsActiveTrue  UserEventPayload196RuleGroupsActive = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload196Active enum.
-func (e UserEventPayload196Active) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload196RuleGroupsActive enum.
+func (e UserEventPayload196RuleGroupsActive) Valid() bool {
 	switch e {
-	case UserEventPayload196ActiveFalse:
+	case UserEventPayload196RuleGroupsActiveFalse:
 		return true
-	case UserEventPayload196ActiveTrue:
+	case UserEventPayload196RuleGroupsActiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload199Action.
+// Defines values for UserEventPayload197Action.
 const (
-	UserEventPayload199ActionDisable UserEventPayload199Action = "disable"
-	UserEventPayload199ActionEnable  UserEventPayload199Action = "enable"
+	UserEventPayload197ActionChallenge UserEventPayload197Action = "challenge"
+	UserEventPayload197ActionDeny      UserEventPayload197Action = "deny"
+	UserEventPayload197ActionLog       UserEventPayload197Action = "log"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload199Action enum.
-func (e UserEventPayload199Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload197Action enum.
+func (e UserEventPayload197Action) Valid() bool {
 	switch e {
-	case UserEventPayload199ActionDisable:
+	case UserEventPayload197ActionChallenge:
 		return true
-	case UserEventPayload199ActionEnable:
+	case UserEventPayload197ActionDeny:
+		return true
+	case UserEventPayload197ActionLog:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload201Source.
+// Defines values for UserEventPayload197Active.
 const (
-	UserEventPayload201SourceCreate  UserEventPayload201Source = "create"
-	UserEventPayload201SourceEnable  UserEventPayload201Source = "enable"
-	UserEventPayload201SourceUpgrade UserEventPayload201Source = "upgrade"
+	UserEventPayload197ActiveFalse UserEventPayload197Active = false
+	UserEventPayload197ActiveTrue  UserEventPayload197Active = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload201Source enum.
-func (e UserEventPayload201Source) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload197Active enum.
+func (e UserEventPayload197Active) Valid() bool {
 	switch e {
-	case UserEventPayload201SourceCreate:
+	case UserEventPayload197ActiveFalse:
 		return true
-	case UserEventPayload201SourceEnable:
-		return true
-	case UserEventPayload201SourceUpgrade:
+	case UserEventPayload197ActiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload202FailureStage.
+// Defines values for UserEventPayload200Action.
 const (
-	UserEventPayload202FailureStageAuthorization UserEventPayload202FailureStage = "authorization"
-	UserEventPayload202FailureStagePush          UserEventPayload202FailureStage = "push"
-	UserEventPayload202FailureStageUnexpected    UserEventPayload202FailureStage = "unexpected"
-	UserEventPayload202FailureStageUnknown       UserEventPayload202FailureStage = "unknown"
-	UserEventPayload202FailureStageValidation    UserEventPayload202FailureStage = "validation"
+	UserEventPayload200ActionDisable UserEventPayload200Action = "disable"
+	UserEventPayload200ActionEnable  UserEventPayload200Action = "enable"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload202FailureStage enum.
-func (e UserEventPayload202FailureStage) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload200Action enum.
+func (e UserEventPayload200Action) Valid() bool {
 	switch e {
-	case UserEventPayload202FailureStageAuthorization:
+	case UserEventPayload200ActionDisable:
 		return true
-	case UserEventPayload202FailureStagePush:
-		return true
-	case UserEventPayload202FailureStageUnexpected:
-		return true
-	case UserEventPayload202FailureStageUnknown:
-		return true
-	case UserEventPayload202FailureStageValidation:
+	case UserEventPayload200ActionEnable:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload202Outcome.
+// Defines values for UserEventPayload202Source.
 const (
-	UserEventPayload202OutcomeFailure UserEventPayload202Outcome = "failure"
-	UserEventPayload202OutcomeSuccess UserEventPayload202Outcome = "success"
+	UserEventPayload202SourceCreate  UserEventPayload202Source = "create"
+	UserEventPayload202SourceEnable  UserEventPayload202Source = "enable"
+	UserEventPayload202SourceUpgrade UserEventPayload202Source = "upgrade"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload202Outcome enum.
-func (e UserEventPayload202Outcome) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload202Source enum.
+func (e UserEventPayload202Source) Valid() bool {
 	switch e {
-	case UserEventPayload202OutcomeFailure:
+	case UserEventPayload202SourceCreate:
 		return true
-	case UserEventPayload202OutcomeSuccess:
+	case UserEventPayload202SourceEnable:
+		return true
+	case UserEventPayload202SourceUpgrade:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload202Provider.
+// Defines values for UserEventPayload204FailureStage.
 const (
-	UserEventPayload202ProviderBitbucket    UserEventPayload202Provider = "bitbucket"
-	UserEventPayload202ProviderCursorOrigin UserEventPayload202Provider = "cursor-origin"
-	UserEventPayload202ProviderGithub       UserEventPayload202Provider = "github"
-	UserEventPayload202ProviderGitlab       UserEventPayload202Provider = "gitlab"
+	UserEventPayload204FailureStageAuthorization UserEventPayload204FailureStage = "authorization"
+	UserEventPayload204FailureStagePush          UserEventPayload204FailureStage = "push"
+	UserEventPayload204FailureStageUnexpected    UserEventPayload204FailureStage = "unexpected"
+	UserEventPayload204FailureStageUnknown       UserEventPayload204FailureStage = "unknown"
+	UserEventPayload204FailureStageValidation    UserEventPayload204FailureStage = "validation"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload202Provider enum.
-func (e UserEventPayload202Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload204FailureStage enum.
+func (e UserEventPayload204FailureStage) Valid() bool {
 	switch e {
-	case UserEventPayload202ProviderBitbucket:
+	case UserEventPayload204FailureStageAuthorization:
 		return true
-	case UserEventPayload202ProviderCursorOrigin:
+	case UserEventPayload204FailureStagePush:
 		return true
-	case UserEventPayload202ProviderGithub:
+	case UserEventPayload204FailureStageUnexpected:
 		return true
-	case UserEventPayload202ProviderGitlab:
+	case UserEventPayload204FailureStageUnknown:
+		return true
+	case UserEventPayload204FailureStageValidation:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload202UsedAppToken.
+// Defines values for UserEventPayload204Outcome.
 const (
-	UserEventPayload202UsedAppTokenFalse UserEventPayload202UsedAppToken = false
-	UserEventPayload202UsedAppTokenTrue  UserEventPayload202UsedAppToken = true
+	UserEventPayload204OutcomeFailure UserEventPayload204Outcome = "failure"
+	UserEventPayload204OutcomeSuccess UserEventPayload204Outcome = "success"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload202UsedAppToken enum.
-func (e UserEventPayload202UsedAppToken) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload204Outcome enum.
+func (e UserEventPayload204Outcome) Valid() bool {
 	switch e {
-	case UserEventPayload202UsedAppTokenFalse:
+	case UserEventPayload204OutcomeFailure:
 		return true
-	case UserEventPayload202UsedAppTokenTrue:
+	case UserEventPayload204OutcomeSuccess:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload211ProjectIds1.
+// Defines values for UserEventPayload204Provider.
 const (
-	UserEventPayload211ProjectIds1All UserEventPayload211ProjectIds1 = "all"
+	UserEventPayload204ProviderBitbucket    UserEventPayload204Provider = "bitbucket"
+	UserEventPayload204ProviderCursorOrigin UserEventPayload204Provider = "cursor-origin"
+	UserEventPayload204ProviderGithub       UserEventPayload204Provider = "github"
+	UserEventPayload204ProviderGitlab       UserEventPayload204Provider = "gitlab"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload211ProjectIds1 enum.
-func (e UserEventPayload211ProjectIds1) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload204Provider enum.
+func (e UserEventPayload204Provider) Valid() bool {
 	switch e {
-	case UserEventPayload211ProjectIds1All:
+	case UserEventPayload204ProviderBitbucket:
+		return true
+	case UserEventPayload204ProviderCursorOrigin:
+		return true
+	case UserEventPayload204ProviderGithub:
+		return true
+	case UserEventPayload204ProviderGitlab:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload213QueryType.
+// Defines values for UserEventPayload204UsedAppToken.
 const (
-	UserEventPayload213QueryTypeDataEdit UserEventPayload213QueryType = "data-edit"
-	UserEventPayload213QueryTypeDataView UserEventPayload213QueryType = "data-view"
-	UserEventPayload213QueryTypeSchema   UserEventPayload213QueryType = "schema"
-	UserEventPayload213QueryTypeUser     UserEventPayload213QueryType = "user"
+	UserEventPayload204UsedAppTokenFalse UserEventPayload204UsedAppToken = false
+	UserEventPayload204UsedAppTokenTrue  UserEventPayload204UsedAppToken = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload213QueryType enum.
-func (e UserEventPayload213QueryType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload204UsedAppToken enum.
+func (e UserEventPayload204UsedAppToken) Valid() bool {
 	switch e {
-	case UserEventPayload213QueryTypeDataEdit:
+	case UserEventPayload204UsedAppTokenFalse:
 		return true
-	case UserEventPayload213QueryTypeDataView:
-		return true
-	case UserEventPayload213QueryTypeSchema:
-		return true
-	case UserEventPayload213QueryTypeUser:
+	case UserEventPayload204UsedAppTokenTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload213Readonly.
+// Defines values for UserEventPayload213ProjectIds1.
 const (
-	UserEventPayload213ReadonlyFalse UserEventPayload213Readonly = false
-	UserEventPayload213ReadonlyTrue  UserEventPayload213Readonly = true
+	UserEventPayload213ProjectIds1All UserEventPayload213ProjectIds1 = "all"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload213Readonly enum.
-func (e UserEventPayload213Readonly) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload213ProjectIds1 enum.
+func (e UserEventPayload213ProjectIds1) Valid() bool {
 	switch e {
-	case UserEventPayload213ReadonlyFalse:
-		return true
-	case UserEventPayload213ReadonlyTrue:
+	case UserEventPayload213ProjectIds1All:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload213RolledBack.
+// Defines values for UserEventPayload215QueryType.
 const (
-	UserEventPayload213RolledBackFalse UserEventPayload213RolledBack = false
-	UserEventPayload213RolledBackTrue  UserEventPayload213RolledBack = true
+	UserEventPayload215QueryTypeDataEdit UserEventPayload215QueryType = "data-edit"
+	UserEventPayload215QueryTypeDataView UserEventPayload215QueryType = "data-view"
+	UserEventPayload215QueryTypeSchema   UserEventPayload215QueryType = "schema"
+	UserEventPayload215QueryTypeUser     UserEventPayload215QueryType = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload213RolledBack enum.
-func (e UserEventPayload213RolledBack) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload215QueryType enum.
+func (e UserEventPayload215QueryType) Valid() bool {
 	switch e {
-	case UserEventPayload213RolledBackFalse:
+	case UserEventPayload215QueryTypeDataEdit:
 		return true
-	case UserEventPayload213RolledBackTrue:
+	case UserEventPayload215QueryTypeDataView:
+		return true
+	case UserEventPayload215QueryTypeSchema:
+		return true
+	case UserEventPayload215QueryTypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload214Readonly.
+// Defines values for UserEventPayload215Readonly.
 const (
-	UserEventPayload214ReadonlyFalse UserEventPayload214Readonly = false
-	UserEventPayload214ReadonlyTrue  UserEventPayload214Readonly = true
+	UserEventPayload215ReadonlyFalse UserEventPayload215Readonly = false
+	UserEventPayload215ReadonlyTrue  UserEventPayload215Readonly = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload214Readonly enum.
-func (e UserEventPayload214Readonly) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload215Readonly enum.
+func (e UserEventPayload215Readonly) Valid() bool {
 	switch e {
-	case UserEventPayload214ReadonlyFalse:
+	case UserEventPayload215ReadonlyFalse:
 		return true
-	case UserEventPayload214ReadonlyTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload214RequestKind.
-const (
-	UserEventPayload214RequestKindRawCommands UserEventPayload214RequestKind = "raw_commands"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload214RequestKind enum.
-func (e UserEventPayload214RequestKind) Valid() bool {
-	switch e {
-	case UserEventPayload214RequestKindRawCommands:
+	case UserEventPayload215ReadonlyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload215RequestKind.
+// Defines values for UserEventPayload215RolledBack.
 const (
-	UserEventPayload215RequestKindListKeys UserEventPayload215RequestKind = "list_keys"
+	UserEventPayload215RolledBackFalse UserEventPayload215RolledBack = false
+	UserEventPayload215RolledBackTrue  UserEventPayload215RolledBack = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload215RequestKind enum.
-func (e UserEventPayload215RequestKind) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload215RolledBack enum.
+func (e UserEventPayload215RolledBack) Valid() bool {
 	switch e {
-	case UserEventPayload215RequestKindListKeys:
+	case UserEventPayload215RolledBackFalse:
+		return true
+	case UserEventPayload215RolledBackTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload216Readonly.
+const (
+	UserEventPayload216ReadonlyFalse UserEventPayload216Readonly = false
+	UserEventPayload216ReadonlyTrue  UserEventPayload216Readonly = true
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload216Readonly enum.
+func (e UserEventPayload216Readonly) Valid() bool {
+	switch e {
+	case UserEventPayload216ReadonlyFalse:
+		return true
+	case UserEventPayload216ReadonlyTrue:
 		return true
 	default:
 		return false
@@ -18755,13 +18836,13 @@ func (e UserEventPayload215RequestKind) Valid() bool {
 
 // Defines values for UserEventPayload216RequestKind.
 const (
-	UserEventPayload216RequestKindGetKeysMetadata UserEventPayload216RequestKind = "get_keys_metadata"
+	UserEventPayload216RequestKindRawCommands UserEventPayload216RequestKind = "raw_commands"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload216RequestKind enum.
 func (e UserEventPayload216RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload216RequestKindGetKeysMetadata:
+	case UserEventPayload216RequestKindRawCommands:
 		return true
 	default:
 		return false
@@ -18770,1245 +18851,1155 @@ func (e UserEventPayload216RequestKind) Valid() bool {
 
 // Defines values for UserEventPayload217RequestKind.
 const (
-	UserEventPayload217RequestKindGetKeyData UserEventPayload217RequestKind = "get_key_data"
+	UserEventPayload217RequestKindListKeys UserEventPayload217RequestKind = "list_keys"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload217RequestKind enum.
 func (e UserEventPayload217RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload217RequestKindGetKeyData:
+	case UserEventPayload217RequestKindListKeys:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload219AccessTokenRotation.
+// Defines values for UserEventPayload218RequestKind.
 const (
-	UserEventPayload219AccessTokenRotationFalse UserEventPayload219AccessTokenRotation = false
-	UserEventPayload219AccessTokenRotationTrue  UserEventPayload219AccessTokenRotation = true
+	UserEventPayload218RequestKindGetKeysMetadata UserEventPayload218RequestKind = "get_keys_metadata"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload219AccessTokenRotation enum.
-func (e UserEventPayload219AccessTokenRotation) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload218RequestKind enum.
+func (e UserEventPayload218RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload219AccessTokenRotationFalse:
-		return true
-	case UserEventPayload219AccessTokenRotationTrue:
+	case UserEventPayload218RequestKindGetKeysMetadata:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload227Provider.
+// Defines values for UserEventPayload219RequestKind.
 const (
-	UserEventPayload227ProviderApple            UserEventPayload227Provider = "apple"
-	UserEventPayload227ProviderBitbucket        UserEventPayload227Provider = "bitbucket"
-	UserEventPayload227ProviderChatgpt          UserEventPayload227Provider = "chatgpt"
-	UserEventPayload227ProviderClaude           UserEventPayload227Provider = "claude"
-	UserEventPayload227ProviderGithub           UserEventPayload227Provider = "github"
-	UserEventPayload227ProviderGithubCustomHost UserEventPayload227Provider = "github-custom-host"
-	UserEventPayload227ProviderGithubLimited    UserEventPayload227Provider = "github-limited"
-	UserEventPayload227ProviderGitlab           UserEventPayload227Provider = "gitlab"
-	UserEventPayload227ProviderGoogle           UserEventPayload227Provider = "google"
-	UserEventPayload227ProviderSaml             UserEventPayload227Provider = "saml"
+	UserEventPayload219RequestKindGetKeyData UserEventPayload219RequestKind = "get_key_data"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload227Provider enum.
-func (e UserEventPayload227Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload219RequestKind enum.
+func (e UserEventPayload219RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload227ProviderApple:
-		return true
-	case UserEventPayload227ProviderBitbucket:
-		return true
-	case UserEventPayload227ProviderChatgpt:
-		return true
-	case UserEventPayload227ProviderClaude:
-		return true
-	case UserEventPayload227ProviderGithub:
-		return true
-	case UserEventPayload227ProviderGithubCustomHost:
-		return true
-	case UserEventPayload227ProviderGithubLimited:
-		return true
-	case UserEventPayload227ProviderGitlab:
-		return true
-	case UserEventPayload227ProviderGoogle:
-		return true
-	case UserEventPayload227ProviderSaml:
+	case UserEventPayload219RequestKindGetKeyData:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload228Provider.
+// Defines values for UserEventPayload221AccessTokenRotation.
 const (
-	UserEventPayload228ProviderApple            UserEventPayload228Provider = "apple"
-	UserEventPayload228ProviderBitbucket        UserEventPayload228Provider = "bitbucket"
-	UserEventPayload228ProviderChatgpt          UserEventPayload228Provider = "chatgpt"
-	UserEventPayload228ProviderClaude           UserEventPayload228Provider = "claude"
-	UserEventPayload228ProviderGithub           UserEventPayload228Provider = "github"
-	UserEventPayload228ProviderGithubCustomHost UserEventPayload228Provider = "github-custom-host"
-	UserEventPayload228ProviderGithubLimited    UserEventPayload228Provider = "github-limited"
-	UserEventPayload228ProviderGitlab           UserEventPayload228Provider = "gitlab"
-	UserEventPayload228ProviderGoogle           UserEventPayload228Provider = "google"
-	UserEventPayload228ProviderSaml             UserEventPayload228Provider = "saml"
+	UserEventPayload221AccessTokenRotationFalse UserEventPayload221AccessTokenRotation = false
+	UserEventPayload221AccessTokenRotationTrue  UserEventPayload221AccessTokenRotation = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload228Provider enum.
-func (e UserEventPayload228Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload221AccessTokenRotation enum.
+func (e UserEventPayload221AccessTokenRotation) Valid() bool {
 	switch e {
-	case UserEventPayload228ProviderApple:
+	case UserEventPayload221AccessTokenRotationFalse:
 		return true
-	case UserEventPayload228ProviderBitbucket:
-		return true
-	case UserEventPayload228ProviderChatgpt:
-		return true
-	case UserEventPayload228ProviderClaude:
-		return true
-	case UserEventPayload228ProviderGithub:
-		return true
-	case UserEventPayload228ProviderGithubCustomHost:
-		return true
-	case UserEventPayload228ProviderGithubLimited:
-		return true
-	case UserEventPayload228ProviderGitlab:
-		return true
-	case UserEventPayload228ProviderGoogle:
-		return true
-	case UserEventPayload228ProviderSaml:
+	case UserEventPayload221AccessTokenRotationTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229Factors0Legacy.
+// Defines values for UserEventPayload229Provider.
 const (
-	UserEventPayload229Factors0LegacyFalse UserEventPayload229Factors0Legacy = false
-	UserEventPayload229Factors0LegacyTrue  UserEventPayload229Factors0Legacy = true
+	UserEventPayload229ProviderApple            UserEventPayload229Provider = "apple"
+	UserEventPayload229ProviderBitbucket        UserEventPayload229Provider = "bitbucket"
+	UserEventPayload229ProviderChatgpt          UserEventPayload229Provider = "chatgpt"
+	UserEventPayload229ProviderClaude           UserEventPayload229Provider = "claude"
+	UserEventPayload229ProviderGithub           UserEventPayload229Provider = "github"
+	UserEventPayload229ProviderGithubCustomHost UserEventPayload229Provider = "github-custom-host"
+	UserEventPayload229ProviderGithubLimited    UserEventPayload229Provider = "github-limited"
+	UserEventPayload229ProviderGitlab           UserEventPayload229Provider = "gitlab"
+	UserEventPayload229ProviderGoogle           UserEventPayload229Provider = "google"
+	UserEventPayload229ProviderSaml             UserEventPayload229Provider = "saml"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229Factors0Legacy enum.
-func (e UserEventPayload229Factors0Legacy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload229Provider enum.
+func (e UserEventPayload229Provider) Valid() bool {
 	switch e {
-	case UserEventPayload229Factors0LegacyFalse:
+	case UserEventPayload229ProviderApple:
 		return true
-	case UserEventPayload229Factors0LegacyTrue:
+	case UserEventPayload229ProviderBitbucket:
+		return true
+	case UserEventPayload229ProviderChatgpt:
+		return true
+	case UserEventPayload229ProviderClaude:
+		return true
+	case UserEventPayload229ProviderGithub:
+		return true
+	case UserEventPayload229ProviderGithubCustomHost:
+		return true
+	case UserEventPayload229ProviderGithubLimited:
+		return true
+	case UserEventPayload229ProviderGitlab:
+		return true
+	case UserEventPayload229ProviderGoogle:
+		return true
+	case UserEventPayload229ProviderSaml:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229Factors0Origin.
+// Defines values for UserEventPayload230Provider.
 const (
-	UserEventPayload229Factors0OriginApple       UserEventPayload229Factors0Origin = "apple"
-	UserEventPayload229Factors0OriginBitbucket   UserEventPayload229Factors0Origin = "bitbucket"
-	UserEventPayload229Factors0OriginChatgpt     UserEventPayload229Factors0Origin = "chatgpt"
-	UserEventPayload229Factors0OriginClaude      UserEventPayload229Factors0Origin = "claude"
-	UserEventPayload229Factors0OriginEmail       UserEventPayload229Factors0Origin = "email"
-	UserEventPayload229Factors0OriginEmuRecovery UserEventPayload229Factors0Origin = "emu-recovery"
-	UserEventPayload229Factors0OriginGithub      UserEventPayload229Factors0Origin = "github"
-	UserEventPayload229Factors0OriginGitlab      UserEventPayload229Factors0Origin = "gitlab"
-	UserEventPayload229Factors0OriginGoogle      UserEventPayload229Factors0Origin = "google"
-	UserEventPayload229Factors0OriginInvite      UserEventPayload229Factors0Origin = "invite"
-	UserEventPayload229Factors0OriginMagicLink   UserEventPayload229Factors0Origin = "magic-link"
-	UserEventPayload229Factors0OriginOtp         UserEventPayload229Factors0Origin = "otp"
-	UserEventPayload229Factors0OriginOtpLink     UserEventPayload229Factors0Origin = "otp-link"
-	UserEventPayload229Factors0OriginSaml        UserEventPayload229Factors0Origin = "saml"
-	UserEventPayload229Factors0OriginWebauthn    UserEventPayload229Factors0Origin = "webauthn"
+	UserEventPayload230ProviderApple            UserEventPayload230Provider = "apple"
+	UserEventPayload230ProviderBitbucket        UserEventPayload230Provider = "bitbucket"
+	UserEventPayload230ProviderChatgpt          UserEventPayload230Provider = "chatgpt"
+	UserEventPayload230ProviderClaude           UserEventPayload230Provider = "claude"
+	UserEventPayload230ProviderGithub           UserEventPayload230Provider = "github"
+	UserEventPayload230ProviderGithubCustomHost UserEventPayload230Provider = "github-custom-host"
+	UserEventPayload230ProviderGithubLimited    UserEventPayload230Provider = "github-limited"
+	UserEventPayload230ProviderGitlab           UserEventPayload230Provider = "gitlab"
+	UserEventPayload230ProviderGoogle           UserEventPayload230Provider = "google"
+	UserEventPayload230ProviderSaml             UserEventPayload230Provider = "saml"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229Factors0Origin enum.
-func (e UserEventPayload229Factors0Origin) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload230Provider enum.
+func (e UserEventPayload230Provider) Valid() bool {
 	switch e {
-	case UserEventPayload229Factors0OriginApple:
+	case UserEventPayload230ProviderApple:
 		return true
-	case UserEventPayload229Factors0OriginBitbucket:
+	case UserEventPayload230ProviderBitbucket:
 		return true
-	case UserEventPayload229Factors0OriginChatgpt:
+	case UserEventPayload230ProviderChatgpt:
 		return true
-	case UserEventPayload229Factors0OriginClaude:
+	case UserEventPayload230ProviderClaude:
 		return true
-	case UserEventPayload229Factors0OriginEmail:
+	case UserEventPayload230ProviderGithub:
 		return true
-	case UserEventPayload229Factors0OriginEmuRecovery:
+	case UserEventPayload230ProviderGithubCustomHost:
 		return true
-	case UserEventPayload229Factors0OriginGithub:
+	case UserEventPayload230ProviderGithubLimited:
 		return true
-	case UserEventPayload229Factors0OriginGitlab:
+	case UserEventPayload230ProviderGitlab:
 		return true
-	case UserEventPayload229Factors0OriginGoogle:
+	case UserEventPayload230ProviderGoogle:
 		return true
-	case UserEventPayload229Factors0OriginInvite:
-		return true
-	case UserEventPayload229Factors0OriginMagicLink:
-		return true
-	case UserEventPayload229Factors0OriginOtp:
-		return true
-	case UserEventPayload229Factors0OriginOtpLink:
-		return true
-	case UserEventPayload229Factors0OriginSaml:
-		return true
-	case UserEventPayload229Factors0OriginWebauthn:
+	case UserEventPayload230ProviderSaml:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229Factors10Legacy.
+// Defines values for UserEventPayload231Factors0Legacy.
 const (
-	UserEventPayload229Factors10LegacyFalse UserEventPayload229Factors10Legacy = false
-	UserEventPayload229Factors10LegacyTrue  UserEventPayload229Factors10Legacy = true
+	UserEventPayload231Factors0LegacyFalse UserEventPayload231Factors0Legacy = false
+	UserEventPayload231Factors0LegacyTrue  UserEventPayload231Factors0Legacy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229Factors10Legacy enum.
-func (e UserEventPayload229Factors10Legacy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231Factors0Legacy enum.
+func (e UserEventPayload231Factors0Legacy) Valid() bool {
 	switch e {
-	case UserEventPayload229Factors10LegacyFalse:
+	case UserEventPayload231Factors0LegacyFalse:
 		return true
-	case UserEventPayload229Factors10LegacyTrue:
+	case UserEventPayload231Factors0LegacyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229Factors10Origin.
+// Defines values for UserEventPayload231Factors0Origin.
 const (
-	UserEventPayload229Factors10OriginApple       UserEventPayload229Factors10Origin = "apple"
-	UserEventPayload229Factors10OriginBitbucket   UserEventPayload229Factors10Origin = "bitbucket"
-	UserEventPayload229Factors10OriginChatgpt     UserEventPayload229Factors10Origin = "chatgpt"
-	UserEventPayload229Factors10OriginClaude      UserEventPayload229Factors10Origin = "claude"
-	UserEventPayload229Factors10OriginEmail       UserEventPayload229Factors10Origin = "email"
-	UserEventPayload229Factors10OriginEmuRecovery UserEventPayload229Factors10Origin = "emu-recovery"
-	UserEventPayload229Factors10OriginGithub      UserEventPayload229Factors10Origin = "github"
-	UserEventPayload229Factors10OriginGitlab      UserEventPayload229Factors10Origin = "gitlab"
-	UserEventPayload229Factors10OriginGoogle      UserEventPayload229Factors10Origin = "google"
-	UserEventPayload229Factors10OriginInvite      UserEventPayload229Factors10Origin = "invite"
-	UserEventPayload229Factors10OriginMagicLink   UserEventPayload229Factors10Origin = "magic-link"
-	UserEventPayload229Factors10OriginOtp         UserEventPayload229Factors10Origin = "otp"
-	UserEventPayload229Factors10OriginOtpLink     UserEventPayload229Factors10Origin = "otp-link"
-	UserEventPayload229Factors10OriginSaml        UserEventPayload229Factors10Origin = "saml"
-	UserEventPayload229Factors10OriginWebauthn    UserEventPayload229Factors10Origin = "webauthn"
+	UserEventPayload231Factors0OriginApple       UserEventPayload231Factors0Origin = "apple"
+	UserEventPayload231Factors0OriginBitbucket   UserEventPayload231Factors0Origin = "bitbucket"
+	UserEventPayload231Factors0OriginChatgpt     UserEventPayload231Factors0Origin = "chatgpt"
+	UserEventPayload231Factors0OriginClaude      UserEventPayload231Factors0Origin = "claude"
+	UserEventPayload231Factors0OriginEmail       UserEventPayload231Factors0Origin = "email"
+	UserEventPayload231Factors0OriginEmuRecovery UserEventPayload231Factors0Origin = "emu-recovery"
+	UserEventPayload231Factors0OriginGithub      UserEventPayload231Factors0Origin = "github"
+	UserEventPayload231Factors0OriginGitlab      UserEventPayload231Factors0Origin = "gitlab"
+	UserEventPayload231Factors0OriginGoogle      UserEventPayload231Factors0Origin = "google"
+	UserEventPayload231Factors0OriginInvite      UserEventPayload231Factors0Origin = "invite"
+	UserEventPayload231Factors0OriginMagicLink   UserEventPayload231Factors0Origin = "magic-link"
+	UserEventPayload231Factors0OriginOtp         UserEventPayload231Factors0Origin = "otp"
+	UserEventPayload231Factors0OriginOtpLink     UserEventPayload231Factors0Origin = "otp-link"
+	UserEventPayload231Factors0OriginSaml        UserEventPayload231Factors0Origin = "saml"
+	UserEventPayload231Factors0OriginWebauthn    UserEventPayload231Factors0Origin = "webauthn"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229Factors10Origin enum.
-func (e UserEventPayload229Factors10Origin) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231Factors0Origin enum.
+func (e UserEventPayload231Factors0Origin) Valid() bool {
 	switch e {
-	case UserEventPayload229Factors10OriginApple:
+	case UserEventPayload231Factors0OriginApple:
 		return true
-	case UserEventPayload229Factors10OriginBitbucket:
+	case UserEventPayload231Factors0OriginBitbucket:
 		return true
-	case UserEventPayload229Factors10OriginChatgpt:
+	case UserEventPayload231Factors0OriginChatgpt:
 		return true
-	case UserEventPayload229Factors10OriginClaude:
+	case UserEventPayload231Factors0OriginClaude:
 		return true
-	case UserEventPayload229Factors10OriginEmail:
+	case UserEventPayload231Factors0OriginEmail:
 		return true
-	case UserEventPayload229Factors10OriginEmuRecovery:
+	case UserEventPayload231Factors0OriginEmuRecovery:
 		return true
-	case UserEventPayload229Factors10OriginGithub:
+	case UserEventPayload231Factors0OriginGithub:
 		return true
-	case UserEventPayload229Factors10OriginGitlab:
+	case UserEventPayload231Factors0OriginGitlab:
 		return true
-	case UserEventPayload229Factors10OriginGoogle:
+	case UserEventPayload231Factors0OriginGoogle:
 		return true
-	case UserEventPayload229Factors10OriginInvite:
+	case UserEventPayload231Factors0OriginInvite:
 		return true
-	case UserEventPayload229Factors10OriginMagicLink:
+	case UserEventPayload231Factors0OriginMagicLink:
 		return true
-	case UserEventPayload229Factors10OriginOtp:
+	case UserEventPayload231Factors0OriginOtp:
 		return true
-	case UserEventPayload229Factors10OriginOtpLink:
+	case UserEventPayload231Factors0OriginOtpLink:
 		return true
-	case UserEventPayload229Factors10OriginSaml:
+	case UserEventPayload231Factors0OriginSaml:
 		return true
-	case UserEventPayload229Factors10OriginWebauthn:
+	case UserEventPayload231Factors0OriginWebauthn:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229Factors11Origin.
+// Defines values for UserEventPayload231Factors10Legacy.
 const (
-	UserEventPayload229Factors11OriginRecoveryCode UserEventPayload229Factors11Origin = "recovery-code"
-	UserEventPayload229Factors11OriginTotp         UserEventPayload229Factors11Origin = "totp"
-	UserEventPayload229Factors11OriginWebauthn     UserEventPayload229Factors11Origin = "webauthn"
+	UserEventPayload231Factors10LegacyFalse UserEventPayload231Factors10Legacy = false
+	UserEventPayload231Factors10LegacyTrue  UserEventPayload231Factors10Legacy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229Factors11Origin enum.
-func (e UserEventPayload229Factors11Origin) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231Factors10Legacy enum.
+func (e UserEventPayload231Factors10Legacy) Valid() bool {
 	switch e {
-	case UserEventPayload229Factors11OriginRecoveryCode:
+	case UserEventPayload231Factors10LegacyFalse:
 		return true
-	case UserEventPayload229Factors11OriginTotp:
-		return true
-	case UserEventPayload229Factors11OriginWebauthn:
+	case UserEventPayload231Factors10LegacyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaApple.
+// Defines values for UserEventPayload231Factors10Origin.
 const (
-	UserEventPayload229ViaAppleFalse UserEventPayload229ViaApple = false
-	UserEventPayload229ViaAppleTrue  UserEventPayload229ViaApple = true
+	UserEventPayload231Factors10OriginApple       UserEventPayload231Factors10Origin = "apple"
+	UserEventPayload231Factors10OriginBitbucket   UserEventPayload231Factors10Origin = "bitbucket"
+	UserEventPayload231Factors10OriginChatgpt     UserEventPayload231Factors10Origin = "chatgpt"
+	UserEventPayload231Factors10OriginClaude      UserEventPayload231Factors10Origin = "claude"
+	UserEventPayload231Factors10OriginEmail       UserEventPayload231Factors10Origin = "email"
+	UserEventPayload231Factors10OriginEmuRecovery UserEventPayload231Factors10Origin = "emu-recovery"
+	UserEventPayload231Factors10OriginGithub      UserEventPayload231Factors10Origin = "github"
+	UserEventPayload231Factors10OriginGitlab      UserEventPayload231Factors10Origin = "gitlab"
+	UserEventPayload231Factors10OriginGoogle      UserEventPayload231Factors10Origin = "google"
+	UserEventPayload231Factors10OriginInvite      UserEventPayload231Factors10Origin = "invite"
+	UserEventPayload231Factors10OriginMagicLink   UserEventPayload231Factors10Origin = "magic-link"
+	UserEventPayload231Factors10OriginOtp         UserEventPayload231Factors10Origin = "otp"
+	UserEventPayload231Factors10OriginOtpLink     UserEventPayload231Factors10Origin = "otp-link"
+	UserEventPayload231Factors10OriginSaml        UserEventPayload231Factors10Origin = "saml"
+	UserEventPayload231Factors10OriginWebauthn    UserEventPayload231Factors10Origin = "webauthn"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaApple enum.
-func (e UserEventPayload229ViaApple) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231Factors10Origin enum.
+func (e UserEventPayload231Factors10Origin) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaAppleFalse:
+	case UserEventPayload231Factors10OriginApple:
 		return true
-	case UserEventPayload229ViaAppleTrue:
+	case UserEventPayload231Factors10OriginBitbucket:
+		return true
+	case UserEventPayload231Factors10OriginChatgpt:
+		return true
+	case UserEventPayload231Factors10OriginClaude:
+		return true
+	case UserEventPayload231Factors10OriginEmail:
+		return true
+	case UserEventPayload231Factors10OriginEmuRecovery:
+		return true
+	case UserEventPayload231Factors10OriginGithub:
+		return true
+	case UserEventPayload231Factors10OriginGitlab:
+		return true
+	case UserEventPayload231Factors10OriginGoogle:
+		return true
+	case UserEventPayload231Factors10OriginInvite:
+		return true
+	case UserEventPayload231Factors10OriginMagicLink:
+		return true
+	case UserEventPayload231Factors10OriginOtp:
+		return true
+	case UserEventPayload231Factors10OriginOtpLink:
+		return true
+	case UserEventPayload231Factors10OriginSaml:
+		return true
+	case UserEventPayload231Factors10OriginWebauthn:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaBitbucket.
+// Defines values for UserEventPayload231Factors11Origin.
 const (
-	UserEventPayload229ViaBitbucketFalse UserEventPayload229ViaBitbucket = false
-	UserEventPayload229ViaBitbucketTrue  UserEventPayload229ViaBitbucket = true
+	UserEventPayload231Factors11OriginRecoveryCode UserEventPayload231Factors11Origin = "recovery-code"
+	UserEventPayload231Factors11OriginTotp         UserEventPayload231Factors11Origin = "totp"
+	UserEventPayload231Factors11OriginWebauthn     UserEventPayload231Factors11Origin = "webauthn"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaBitbucket enum.
-func (e UserEventPayload229ViaBitbucket) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231Factors11Origin enum.
+func (e UserEventPayload231Factors11Origin) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaBitbucketFalse:
+	case UserEventPayload231Factors11OriginRecoveryCode:
 		return true
-	case UserEventPayload229ViaBitbucketTrue:
+	case UserEventPayload231Factors11OriginTotp:
+		return true
+	case UserEventPayload231Factors11OriginWebauthn:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaGithub.
+// Defines values for UserEventPayload231ViaApple.
 const (
-	UserEventPayload229ViaGithubFalse UserEventPayload229ViaGithub = false
-	UserEventPayload229ViaGithubTrue  UserEventPayload229ViaGithub = true
+	UserEventPayload231ViaAppleFalse UserEventPayload231ViaApple = false
+	UserEventPayload231ViaAppleTrue  UserEventPayload231ViaApple = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaGithub enum.
-func (e UserEventPayload229ViaGithub) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaApple enum.
+func (e UserEventPayload231ViaApple) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaGithubFalse:
+	case UserEventPayload231ViaAppleFalse:
 		return true
-	case UserEventPayload229ViaGithubTrue:
+	case UserEventPayload231ViaAppleTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaGitlab.
+// Defines values for UserEventPayload231ViaBitbucket.
 const (
-	UserEventPayload229ViaGitlabFalse UserEventPayload229ViaGitlab = false
-	UserEventPayload229ViaGitlabTrue  UserEventPayload229ViaGitlab = true
+	UserEventPayload231ViaBitbucketFalse UserEventPayload231ViaBitbucket = false
+	UserEventPayload231ViaBitbucketTrue  UserEventPayload231ViaBitbucket = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaGitlab enum.
-func (e UserEventPayload229ViaGitlab) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaBitbucket enum.
+func (e UserEventPayload231ViaBitbucket) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaGitlabFalse:
+	case UserEventPayload231ViaBitbucketFalse:
 		return true
-	case UserEventPayload229ViaGitlabTrue:
+	case UserEventPayload231ViaBitbucketTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaGoogle.
+// Defines values for UserEventPayload231ViaGithub.
 const (
-	UserEventPayload229ViaGoogleFalse UserEventPayload229ViaGoogle = false
-	UserEventPayload229ViaGoogleTrue  UserEventPayload229ViaGoogle = true
+	UserEventPayload231ViaGithubFalse UserEventPayload231ViaGithub = false
+	UserEventPayload231ViaGithubTrue  UserEventPayload231ViaGithub = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaGoogle enum.
-func (e UserEventPayload229ViaGoogle) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaGithub enum.
+func (e UserEventPayload231ViaGithub) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaGoogleFalse:
+	case UserEventPayload231ViaGithubFalse:
 		return true
-	case UserEventPayload229ViaGoogleTrue:
+	case UserEventPayload231ViaGithubTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaOTP.
+// Defines values for UserEventPayload231ViaGitlab.
 const (
-	UserEventPayload229ViaOTPFalse UserEventPayload229ViaOTP = false
-	UserEventPayload229ViaOTPTrue  UserEventPayload229ViaOTP = true
+	UserEventPayload231ViaGitlabFalse UserEventPayload231ViaGitlab = false
+	UserEventPayload231ViaGitlabTrue  UserEventPayload231ViaGitlab = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaOTP enum.
-func (e UserEventPayload229ViaOTP) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaGitlab enum.
+func (e UserEventPayload231ViaGitlab) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaOTPFalse:
+	case UserEventPayload231ViaGitlabFalse:
 		return true
-	case UserEventPayload229ViaOTPTrue:
+	case UserEventPayload231ViaGitlabTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaPasskey.
+// Defines values for UserEventPayload231ViaGoogle.
 const (
-	UserEventPayload229ViaPasskeyFalse UserEventPayload229ViaPasskey = false
-	UserEventPayload229ViaPasskeyTrue  UserEventPayload229ViaPasskey = true
+	UserEventPayload231ViaGoogleFalse UserEventPayload231ViaGoogle = false
+	UserEventPayload231ViaGoogleTrue  UserEventPayload231ViaGoogle = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaPasskey enum.
-func (e UserEventPayload229ViaPasskey) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaGoogle enum.
+func (e UserEventPayload231ViaGoogle) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaPasskeyFalse:
+	case UserEventPayload231ViaGoogleFalse:
 		return true
-	case UserEventPayload229ViaPasskeyTrue:
+	case UserEventPayload231ViaGoogleTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload229ViaSamlSso.
+// Defines values for UserEventPayload231ViaOTP.
 const (
-	UserEventPayload229ViaSamlSsoFalse UserEventPayload229ViaSamlSso = false
-	UserEventPayload229ViaSamlSsoTrue  UserEventPayload229ViaSamlSso = true
+	UserEventPayload231ViaOTPFalse UserEventPayload231ViaOTP = false
+	UserEventPayload231ViaOTPTrue  UserEventPayload231ViaOTP = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload229ViaSamlSso enum.
-func (e UserEventPayload229ViaSamlSso) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaOTP enum.
+func (e UserEventPayload231ViaOTP) Valid() bool {
 	switch e {
-	case UserEventPayload229ViaSamlSsoFalse:
+	case UserEventPayload231ViaOTPFalse:
 		return true
-	case UserEventPayload229ViaSamlSsoTrue:
+	case UserEventPayload231ViaOTPTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload231InvoiceCollection.
+// Defines values for UserEventPayload231ViaPasskey.
 const (
-	UserEventPayload231InvoiceCollectionFalse UserEventPayload231InvoiceCollection = false
-	UserEventPayload231InvoiceCollectionTrue  UserEventPayload231InvoiceCollection = true
+	UserEventPayload231ViaPasskeyFalse UserEventPayload231ViaPasskey = false
+	UserEventPayload231ViaPasskeyTrue  UserEventPayload231ViaPasskey = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload231InvoiceCollection enum.
-func (e UserEventPayload231InvoiceCollection) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaPasskey enum.
+func (e UserEventPayload231ViaPasskey) Valid() bool {
 	switch e {
-	case UserEventPayload231InvoiceCollectionFalse:
+	case UserEventPayload231ViaPasskeyFalse:
 		return true
-	case UserEventPayload231InvoiceCollectionTrue:
+	case UserEventPayload231ViaPasskeyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload233Enabled.
+// Defines values for UserEventPayload231ViaSamlSso.
 const (
-	UserEventPayload233EnabledFalse UserEventPayload233Enabled = false
-	UserEventPayload233EnabledTrue  UserEventPayload233Enabled = true
+	UserEventPayload231ViaSamlSsoFalse UserEventPayload231ViaSamlSso = false
+	UserEventPayload231ViaSamlSsoTrue  UserEventPayload231ViaSamlSso = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload233Enabled enum.
-func (e UserEventPayload233Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload231ViaSamlSso enum.
+func (e UserEventPayload231ViaSamlSso) Valid() bool {
 	switch e {
-	case UserEventPayload233EnabledFalse:
+	case UserEventPayload231ViaSamlSsoFalse:
 		return true
-	case UserEventPayload233EnabledTrue:
+	case UserEventPayload231ViaSamlSsoTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload235EnablePolyrepoBranchRouting.
+// Defines values for UserEventPayload233InvoiceCollection.
 const (
-	UserEventPayload235EnablePolyrepoBranchRoutingFalse UserEventPayload235EnablePolyrepoBranchRouting = false
-	UserEventPayload235EnablePolyrepoBranchRoutingTrue  UserEventPayload235EnablePolyrepoBranchRouting = true
+	UserEventPayload233InvoiceCollectionFalse UserEventPayload233InvoiceCollection = false
+	UserEventPayload233InvoiceCollectionTrue  UserEventPayload233InvoiceCollection = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload235EnablePolyrepoBranchRouting enum.
-func (e UserEventPayload235EnablePolyrepoBranchRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233InvoiceCollection enum.
+func (e UserEventPayload233InvoiceCollection) Valid() bool {
 	switch e {
-	case UserEventPayload235EnablePolyrepoBranchRoutingFalse:
+	case UserEventPayload233InvoiceCollectionFalse:
 		return true
-	case UserEventPayload235EnablePolyrepoBranchRoutingTrue:
+	case UserEventPayload233InvoiceCollectionTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload235PrevEnablePolyrepoBranchRouting.
+// Defines values for UserEventPayload235Enabled.
 const (
-	UserEventPayload235PrevEnablePolyrepoBranchRoutingFalse UserEventPayload235PrevEnablePolyrepoBranchRouting = false
-	UserEventPayload235PrevEnablePolyrepoBranchRoutingTrue  UserEventPayload235PrevEnablePolyrepoBranchRouting = true
+	UserEventPayload235EnabledFalse UserEventPayload235Enabled = false
+	UserEventPayload235EnabledTrue  UserEventPayload235Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload235PrevEnablePolyrepoBranchRouting enum.
-func (e UserEventPayload235PrevEnablePolyrepoBranchRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload235Enabled enum.
+func (e UserEventPayload235Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload235PrevEnablePolyrepoBranchRoutingFalse:
+	case UserEventPayload235EnabledFalse:
 		return true
-	case UserEventPayload235PrevEnablePolyrepoBranchRoutingTrue:
+	case UserEventPayload235EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends0Enabled.
+// Defines values for UserEventPayload237EnablePolyrepoBranchRouting.
 const (
-	UserEventPayload237PrevProjectMicrofrontends0EnabledTrue UserEventPayload237PrevProjectMicrofrontends0Enabled = true
+	UserEventPayload237EnablePolyrepoBranchRoutingFalse UserEventPayload237EnablePolyrepoBranchRouting = false
+	UserEventPayload237EnablePolyrepoBranchRoutingTrue  UserEventPayload237EnablePolyrepoBranchRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends0Enabled enum.
-func (e UserEventPayload237PrevProjectMicrofrontends0Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload237EnablePolyrepoBranchRouting enum.
+func (e UserEventPayload237EnablePolyrepoBranchRouting) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends0EnabledTrue:
+	case UserEventPayload237EnablePolyrepoBranchRoutingFalse:
+		return true
+	case UserEventPayload237EnablePolyrepoBranchRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload237PrevEnablePolyrepoBranchRouting.
 const (
-	UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits = false
-	UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits = true
+	UserEventPayload237PrevEnablePolyrepoBranchRoutingFalse UserEventPayload237PrevEnablePolyrepoBranchRouting = false
+	UserEventPayload237PrevEnablePolyrepoBranchRoutingTrue  UserEventPayload237PrevEnablePolyrepoBranchRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits enum.
-func (e UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload237PrevEnablePolyrepoBranchRouting enum.
+func (e UserEventPayload237PrevEnablePolyrepoBranchRouting) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
+	case UserEventPayload237PrevEnablePolyrepoBranchRoutingFalse:
 		return true
-	case UserEventPayload237PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload237PrevEnablePolyrepoBranchRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends0Enabled.
 const (
-	UserEventPayload237PrevProjectMicrofrontends0IsDefaultAppTrue UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp = true
+	UserEventPayload239PrevProjectMicrofrontends0EnabledTrue UserEventPayload239PrevProjectMicrofrontends0Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp enum.
-func (e UserEventPayload237PrevProjectMicrofrontends0IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends0Enabled enum.
+func (e UserEventPayload239PrevProjectMicrofrontends0Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends0IsDefaultAppTrue:
+	case UserEventPayload239PrevProjectMicrofrontends0EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimits.
 const (
-	UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
-	UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
+	UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimits = false
+	UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
-func (e UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimits enum.
+func (e UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
+	case UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
 		return true
-	case UserEventPayload237PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
+	case UserEventPayload239PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends1Enabled.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends0IsDefaultApp.
 const (
-	UserEventPayload237PrevProjectMicrofrontends1EnabledTrue UserEventPayload237PrevProjectMicrofrontends1Enabled = true
+	UserEventPayload239PrevProjectMicrofrontends0IsDefaultAppTrue UserEventPayload239PrevProjectMicrofrontends0IsDefaultApp = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends1Enabled enum.
-func (e UserEventPayload237PrevProjectMicrofrontends1Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends0IsDefaultApp enum.
+func (e UserEventPayload239PrevProjectMicrofrontends0IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends1EnabledTrue:
+	case UserEventPayload239PrevProjectMicrofrontends0IsDefaultAppTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
-	UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits = false
-	UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits = true
+	UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
+	UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits enum.
-func (e UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
+func (e UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
+	case UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
 		return true
-	case UserEventPayload237PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload239PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends1Enabled.
 const (
-	UserEventPayload237PrevProjectMicrofrontends1IsDefaultAppFalse UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp = false
+	UserEventPayload239PrevProjectMicrofrontends1EnabledTrue UserEventPayload239PrevProjectMicrofrontends1Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp enum.
-func (e UserEventPayload237PrevProjectMicrofrontends1IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends1Enabled enum.
+func (e UserEventPayload239PrevProjectMicrofrontends1Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends1IsDefaultAppFalse:
+	case UserEventPayload239PrevProjectMicrofrontends1EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimits.
 const (
-	UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject = false
-	UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject = true
+	UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimits = false
+	UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject enum.
-func (e UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimits enum.
+func (e UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
+	case UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
 		return true
-	case UserEventPayload237PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
+	case UserEventPayload239PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends2Enabled.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends1IsDefaultApp.
 const (
-	UserEventPayload237PrevProjectMicrofrontends2EnabledFalse UserEventPayload237PrevProjectMicrofrontends2Enabled = false
+	UserEventPayload239PrevProjectMicrofrontends1IsDefaultAppFalse UserEventPayload239PrevProjectMicrofrontends1IsDefaultApp = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends2Enabled enum.
-func (e UserEventPayload237PrevProjectMicrofrontends2Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends1IsDefaultApp enum.
+func (e UserEventPayload239PrevProjectMicrofrontends1IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends2EnabledFalse:
+	case UserEventPayload239PrevProjectMicrofrontends1IsDefaultAppFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProject.
 const (
-	UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits = false
-	UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits = true
+	UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProject = false
+	UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProject = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits enum.
-func (e UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProject enum.
+func (e UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
 	switch e {
-	case UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
+	case UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
 		return true
-	case UserEventPayload237PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload239PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends0Enabled.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends2Enabled.
 const (
-	UserEventPayload237ProjectMicrofrontends0EnabledTrue UserEventPayload237ProjectMicrofrontends0Enabled = true
+	UserEventPayload239PrevProjectMicrofrontends2EnabledFalse UserEventPayload239PrevProjectMicrofrontends2Enabled = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends0Enabled enum.
-func (e UserEventPayload237ProjectMicrofrontends0Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends2Enabled enum.
+func (e UserEventPayload239PrevProjectMicrofrontends2Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends0EnabledTrue:
+	case UserEventPayload239PrevProjectMicrofrontends2EnabledFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimits.
 const (
-	UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits = false
-	UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits = true
+	UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimits = false
+	UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits enum.
-func (e UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimits enum.
+func (e UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
+	case UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
 		return true
-	case UserEventPayload237ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload239PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends0IsDefaultApp.
+// Defines values for UserEventPayload239ProjectMicrofrontends0Enabled.
 const (
-	UserEventPayload237ProjectMicrofrontends0IsDefaultAppTrue UserEventPayload237ProjectMicrofrontends0IsDefaultApp = true
+	UserEventPayload239ProjectMicrofrontends0EnabledTrue UserEventPayload239ProjectMicrofrontends0Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends0IsDefaultApp enum.
-func (e UserEventPayload237ProjectMicrofrontends0IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends0Enabled enum.
+func (e UserEventPayload239ProjectMicrofrontends0Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends0IsDefaultAppTrue:
+	case UserEventPayload239ProjectMicrofrontends0EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
+// Defines values for UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimits.
 const (
-	UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
-	UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
+	UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimits = false
+	UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
-func (e UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimits enum.
+func (e UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
+	case UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
 		return true
-	case UserEventPayload237ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
+	case UserEventPayload239ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends1Enabled.
+// Defines values for UserEventPayload239ProjectMicrofrontends0IsDefaultApp.
 const (
-	UserEventPayload237ProjectMicrofrontends1EnabledTrue UserEventPayload237ProjectMicrofrontends1Enabled = true
+	UserEventPayload239ProjectMicrofrontends0IsDefaultAppTrue UserEventPayload239ProjectMicrofrontends0IsDefaultApp = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends1Enabled enum.
-func (e UserEventPayload237ProjectMicrofrontends1Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends0IsDefaultApp enum.
+func (e UserEventPayload239ProjectMicrofrontends0IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends1EnabledTrue:
+	case UserEventPayload239ProjectMicrofrontends0IsDefaultAppTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
-	UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits = false
-	UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits = true
+	UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
+	UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits enum.
-func (e UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
+func (e UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
+	case UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
 		return true
-	case UserEventPayload237ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload239ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends1IsDefaultApp.
+// Defines values for UserEventPayload239ProjectMicrofrontends1Enabled.
 const (
-	UserEventPayload237ProjectMicrofrontends1IsDefaultAppFalse UserEventPayload237ProjectMicrofrontends1IsDefaultApp = false
+	UserEventPayload239ProjectMicrofrontends1EnabledTrue UserEventPayload239ProjectMicrofrontends1Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends1IsDefaultApp enum.
-func (e UserEventPayload237ProjectMicrofrontends1IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends1Enabled enum.
+func (e UserEventPayload239ProjectMicrofrontends1Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends1IsDefaultAppFalse:
+	case UserEventPayload239ProjectMicrofrontends1EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject.
+// Defines values for UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimits.
 const (
-	UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject = false
-	UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject = true
+	UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimits = false
+	UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject enum.
-func (e UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimits enum.
+func (e UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
+	case UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
 		return true
-	case UserEventPayload237ProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
+	case UserEventPayload239ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends2Enabled.
+// Defines values for UserEventPayload239ProjectMicrofrontends1IsDefaultApp.
 const (
-	UserEventPayload237ProjectMicrofrontends2EnabledFalse UserEventPayload237ProjectMicrofrontends2Enabled = false
+	UserEventPayload239ProjectMicrofrontends1IsDefaultAppFalse UserEventPayload239ProjectMicrofrontends1IsDefaultApp = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends2Enabled enum.
-func (e UserEventPayload237ProjectMicrofrontends2Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends1IsDefaultApp enum.
+func (e UserEventPayload239ProjectMicrofrontends1IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends2EnabledFalse:
+	case UserEventPayload239ProjectMicrofrontends1IsDefaultAppFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProject.
 const (
-	UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits = false
-	UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits = true
+	UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProject = false
+	UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProject = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits enum.
-func (e UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProject enum.
+func (e UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
 	switch e {
-	case UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
+	case UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
 		return true
-	case UserEventPayload237ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload239ProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload239ActorType.
+// Defines values for UserEventPayload239ProjectMicrofrontends2Enabled.
 const (
-	UserEventPayload239ActorTypeAdmin UserEventPayload239ActorType = "admin"
+	UserEventPayload239ProjectMicrofrontends2EnabledFalse UserEventPayload239ProjectMicrofrontends2Enabled = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload239ActorType enum.
-func (e UserEventPayload239ActorType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends2Enabled enum.
+func (e UserEventPayload239ProjectMicrofrontends2Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload239ActorTypeAdmin:
+	case UserEventPayload239ProjectMicrofrontends2EnabledFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload245NextOrganizationPermissions.
+// Defines values for UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimits.
 const (
-	UserEventPayload245NextOrganizationPermissionsOrgAdmin UserEventPayload245NextOrganizationPermissions = "OrgAdmin"
+	UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimits = false
+	UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload245NextOrganizationPermissions enum.
-func (e UserEventPayload245NextOrganizationPermissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimits enum.
+func (e UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload245NextOrganizationPermissionsOrgAdmin:
+	case UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload239ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload245NextTeamRoles.
+// Defines values for UserEventPayload241ActorType.
 const (
-	UserEventPayload245NextTeamRolesBILLING       UserEventPayload245NextTeamRoles = "BILLING"
-	UserEventPayload245NextTeamRolesCONTRIBUTOR   UserEventPayload245NextTeamRoles = "CONTRIBUTOR"
-	UserEventPayload245NextTeamRolesDEVELOPER     UserEventPayload245NextTeamRoles = "DEVELOPER"
-	UserEventPayload245NextTeamRolesMEMBER        UserEventPayload245NextTeamRoles = "MEMBER"
-	UserEventPayload245NextTeamRolesOWNER         UserEventPayload245NextTeamRoles = "OWNER"
-	UserEventPayload245NextTeamRolesSECURITY      UserEventPayload245NextTeamRoles = "SECURITY"
-	UserEventPayload245NextTeamRolesVIEWER        UserEventPayload245NextTeamRoles = "VIEWER"
-	UserEventPayload245NextTeamRolesVIEWERFORPLUS UserEventPayload245NextTeamRoles = "VIEWER_FOR_PLUS"
+	UserEventPayload241ActorTypeAdmin UserEventPayload241ActorType = "admin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload245NextTeamRoles enum.
-func (e UserEventPayload245NextTeamRoles) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ActorType enum.
+func (e UserEventPayload241ActorType) Valid() bool {
 	switch e {
-	case UserEventPayload245NextTeamRolesBILLING:
-		return true
-	case UserEventPayload245NextTeamRolesCONTRIBUTOR:
-		return true
-	case UserEventPayload245NextTeamRolesDEVELOPER:
-		return true
-	case UserEventPayload245NextTeamRolesMEMBER:
-		return true
-	case UserEventPayload245NextTeamRolesOWNER:
-		return true
-	case UserEventPayload245NextTeamRolesSECURITY:
-		return true
-	case UserEventPayload245NextTeamRolesVIEWER:
-		return true
-	case UserEventPayload245NextTeamRolesVIEWERFORPLUS:
+	case UserEventPayload241ActorTypeAdmin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload245NextTeamsTeamRoles.
+// Defines values for UserEventPayload247NextOrganizationPermissions.
 const (
-	UserEventPayload245NextTeamsTeamRolesBILLING       UserEventPayload245NextTeamsTeamRoles = "BILLING"
-	UserEventPayload245NextTeamsTeamRolesCONTRIBUTOR   UserEventPayload245NextTeamsTeamRoles = "CONTRIBUTOR"
-	UserEventPayload245NextTeamsTeamRolesDEVELOPER     UserEventPayload245NextTeamsTeamRoles = "DEVELOPER"
-	UserEventPayload245NextTeamsTeamRolesMEMBER        UserEventPayload245NextTeamsTeamRoles = "MEMBER"
-	UserEventPayload245NextTeamsTeamRolesOWNER         UserEventPayload245NextTeamsTeamRoles = "OWNER"
-	UserEventPayload245NextTeamsTeamRolesSECURITY      UserEventPayload245NextTeamsTeamRoles = "SECURITY"
-	UserEventPayload245NextTeamsTeamRolesVIEWER        UserEventPayload245NextTeamsTeamRoles = "VIEWER"
-	UserEventPayload245NextTeamsTeamRolesVIEWERFORPLUS UserEventPayload245NextTeamsTeamRoles = "VIEWER_FOR_PLUS"
+	UserEventPayload247NextOrganizationPermissionsOrgAdmin UserEventPayload247NextOrganizationPermissions = "OrgAdmin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload245NextTeamsTeamRoles enum.
-func (e UserEventPayload245NextTeamsTeamRoles) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload247NextOrganizationPermissions enum.
+func (e UserEventPayload247NextOrganizationPermissions) Valid() bool {
 	switch e {
-	case UserEventPayload245NextTeamsTeamRolesBILLING:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesCONTRIBUTOR:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesDEVELOPER:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesMEMBER:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesOWNER:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesSECURITY:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesVIEWER:
-		return true
-	case UserEventPayload245NextTeamsTeamRolesVIEWERFORPLUS:
+	case UserEventPayload247NextOrganizationPermissionsOrgAdmin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload247EnabledOrganizationEmu.
+// Defines values for UserEventPayload247NextTeamRoles.
 const (
-	UserEventPayload247EnabledOrganizationEmuFalse UserEventPayload247EnabledOrganizationEmu = false
-	UserEventPayload247EnabledOrganizationEmuTrue  UserEventPayload247EnabledOrganizationEmu = true
+	UserEventPayload247NextTeamRolesBILLING       UserEventPayload247NextTeamRoles = "BILLING"
+	UserEventPayload247NextTeamRolesCONTRIBUTOR   UserEventPayload247NextTeamRoles = "CONTRIBUTOR"
+	UserEventPayload247NextTeamRolesDEVELOPER     UserEventPayload247NextTeamRoles = "DEVELOPER"
+	UserEventPayload247NextTeamRolesMEMBER        UserEventPayload247NextTeamRoles = "MEMBER"
+	UserEventPayload247NextTeamRolesOWNER         UserEventPayload247NextTeamRoles = "OWNER"
+	UserEventPayload247NextTeamRolesSECURITY      UserEventPayload247NextTeamRoles = "SECURITY"
+	UserEventPayload247NextTeamRolesVIEWER        UserEventPayload247NextTeamRoles = "VIEWER"
+	UserEventPayload247NextTeamRolesVIEWERFORPLUS UserEventPayload247NextTeamRoles = "VIEWER_FOR_PLUS"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload247EnabledOrganizationEmu enum.
-func (e UserEventPayload247EnabledOrganizationEmu) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload247NextTeamRoles enum.
+func (e UserEventPayload247NextTeamRoles) Valid() bool {
 	switch e {
-	case UserEventPayload247EnabledOrganizationEmuFalse:
+	case UserEventPayload247NextTeamRolesBILLING:
 		return true
-	case UserEventPayload247EnabledOrganizationEmuTrue:
+	case UserEventPayload247NextTeamRolesCONTRIBUTOR:
+		return true
+	case UserEventPayload247NextTeamRolesDEVELOPER:
+		return true
+	case UserEventPayload247NextTeamRolesMEMBER:
+		return true
+	case UserEventPayload247NextTeamRolesOWNER:
+		return true
+	case UserEventPayload247NextTeamRolesSECURITY:
+		return true
+	case UserEventPayload247NextTeamRolesVIEWER:
+		return true
+	case UserEventPayload247NextTeamRolesVIEWERFORPLUS:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload248Enabled.
+// Defines values for UserEventPayload247NextTeamsTeamRoles.
 const (
-	UserEventPayload248EnabledFalse UserEventPayload248Enabled = false
-	UserEventPayload248EnabledTrue  UserEventPayload248Enabled = true
+	UserEventPayload247NextTeamsTeamRolesBILLING       UserEventPayload247NextTeamsTeamRoles = "BILLING"
+	UserEventPayload247NextTeamsTeamRolesCONTRIBUTOR   UserEventPayload247NextTeamsTeamRoles = "CONTRIBUTOR"
+	UserEventPayload247NextTeamsTeamRolesDEVELOPER     UserEventPayload247NextTeamsTeamRoles = "DEVELOPER"
+	UserEventPayload247NextTeamsTeamRolesMEMBER        UserEventPayload247NextTeamsTeamRoles = "MEMBER"
+	UserEventPayload247NextTeamsTeamRolesOWNER         UserEventPayload247NextTeamsTeamRoles = "OWNER"
+	UserEventPayload247NextTeamsTeamRolesSECURITY      UserEventPayload247NextTeamsTeamRoles = "SECURITY"
+	UserEventPayload247NextTeamsTeamRolesVIEWER        UserEventPayload247NextTeamsTeamRoles = "VIEWER"
+	UserEventPayload247NextTeamsTeamRolesVIEWERFORPLUS UserEventPayload247NextTeamsTeamRoles = "VIEWER_FOR_PLUS"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload248Enabled enum.
-func (e UserEventPayload248Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload247NextTeamsTeamRoles enum.
+func (e UserEventPayload247NextTeamsTeamRoles) Valid() bool {
 	switch e {
-	case UserEventPayload248EnabledFalse:
+	case UserEventPayload247NextTeamsTeamRolesBILLING:
 		return true
-	case UserEventPayload248EnabledTrue:
+	case UserEventPayload247NextTeamsTeamRolesCONTRIBUTOR:
+		return true
+	case UserEventPayload247NextTeamsTeamRolesDEVELOPER:
+		return true
+	case UserEventPayload247NextTeamsTeamRolesMEMBER:
+		return true
+	case UserEventPayload247NextTeamsTeamRolesOWNER:
+		return true
+	case UserEventPayload247NextTeamsTeamRolesSECURITY:
+		return true
+	case UserEventPayload247NextTeamsTeamRolesVIEWER:
+		return true
+	case UserEventPayload247NextTeamsTeamRolesVIEWERFORPLUS:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload248PreviousEnabled.
+// Defines values for UserEventPayload249EnabledOrganizationEmu.
 const (
-	UserEventPayload248PreviousEnabledFalse UserEventPayload248PreviousEnabled = false
-	UserEventPayload248PreviousEnabledTrue  UserEventPayload248PreviousEnabled = true
+	UserEventPayload249EnabledOrganizationEmuFalse UserEventPayload249EnabledOrganizationEmu = false
+	UserEventPayload249EnabledOrganizationEmuTrue  UserEventPayload249EnabledOrganizationEmu = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload248PreviousEnabled enum.
-func (e UserEventPayload248PreviousEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload249EnabledOrganizationEmu enum.
+func (e UserEventPayload249EnabledOrganizationEmu) Valid() bool {
 	switch e {
-	case UserEventPayload248PreviousEnabledFalse:
+	case UserEventPayload249EnabledOrganizationEmuFalse:
 		return true
-	case UserEventPayload248PreviousEnabledTrue:
+	case UserEventPayload249EnabledOrganizationEmuTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload248Trigger.
+// Defines values for UserEventPayload250Enabled.
 const (
-	UserEventPayload248TriggerDirectorySyncUpdated     UserEventPayload248Trigger = "directory_sync_updated"
-	UserEventPayload248TriggerDomainDeleted            UserEventPayload248Trigger = "domain_deleted"
-	UserEventPayload248TriggerDomainVerified           UserEventPayload248Trigger = "domain_verified"
-	UserEventPayload248TriggerOrganizationDeleted      UserEventPayload248Trigger = "organization_deleted"
-	UserEventPayload248TriggerSamlUpdated              UserEventPayload248Trigger = "saml_updated"
-	UserEventPayload248TriggerTeamAttached             UserEventPayload248Trigger = "team_attached"
-	UserEventPayload248TriggerTeamParticipationUpdated UserEventPayload248Trigger = "team_participation_updated"
-	UserEventPayload248TriggerTeamRemoved              UserEventPayload248Trigger = "team_removed"
-	UserEventPayload248TriggerToggle                   UserEventPayload248Trigger = "toggle"
+	UserEventPayload250EnabledFalse UserEventPayload250Enabled = false
+	UserEventPayload250EnabledTrue  UserEventPayload250Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload248Trigger enum.
-func (e UserEventPayload248Trigger) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload250Enabled enum.
+func (e UserEventPayload250Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload248TriggerDirectorySyncUpdated:
+	case UserEventPayload250EnabledFalse:
 		return true
-	case UserEventPayload248TriggerDomainDeleted:
-		return true
-	case UserEventPayload248TriggerDomainVerified:
-		return true
-	case UserEventPayload248TriggerOrganizationDeleted:
-		return true
-	case UserEventPayload248TriggerSamlUpdated:
-		return true
-	case UserEventPayload248TriggerTeamAttached:
-		return true
-	case UserEventPayload248TriggerTeamParticipationUpdated:
-		return true
-	case UserEventPayload248TriggerTeamRemoved:
-		return true
-	case UserEventPayload248TriggerToggle:
+	case UserEventPayload250EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload249Enabled.
+// Defines values for UserEventPayload250PreviousEnabled.
 const (
-	UserEventPayload249EnabledFalse UserEventPayload249Enabled = false
-	UserEventPayload249EnabledTrue  UserEventPayload249Enabled = true
+	UserEventPayload250PreviousEnabledFalse UserEventPayload250PreviousEnabled = false
+	UserEventPayload250PreviousEnabledTrue  UserEventPayload250PreviousEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload249Enabled enum.
-func (e UserEventPayload249Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload250PreviousEnabled enum.
+func (e UserEventPayload250PreviousEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload249EnabledFalse:
+	case UserEventPayload250PreviousEnabledFalse:
 		return true
-	case UserEventPayload249EnabledTrue:
+	case UserEventPayload250PreviousEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload252BillingPlan.
+// Defines values for UserEventPayload250Trigger.
 const (
-	UserEventPayload252BillingPlanEnterprise UserEventPayload252BillingPlan = "enterprise"
-	UserEventPayload252BillingPlanPlatform   UserEventPayload252BillingPlan = "platform"
+	UserEventPayload250TriggerDirectorySyncUpdated     UserEventPayload250Trigger = "directory_sync_updated"
+	UserEventPayload250TriggerDomainDeleted            UserEventPayload250Trigger = "domain_deleted"
+	UserEventPayload250TriggerDomainVerified           UserEventPayload250Trigger = "domain_verified"
+	UserEventPayload250TriggerOrganizationDeleted      UserEventPayload250Trigger = "organization_deleted"
+	UserEventPayload250TriggerSamlUpdated              UserEventPayload250Trigger = "saml_updated"
+	UserEventPayload250TriggerTeamAttached             UserEventPayload250Trigger = "team_attached"
+	UserEventPayload250TriggerTeamParticipationUpdated UserEventPayload250Trigger = "team_participation_updated"
+	UserEventPayload250TriggerTeamRemoved              UserEventPayload250Trigger = "team_removed"
+	UserEventPayload250TriggerToggle                   UserEventPayload250Trigger = "toggle"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload252BillingPlan enum.
-func (e UserEventPayload252BillingPlan) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload250Trigger enum.
+func (e UserEventPayload250Trigger) Valid() bool {
 	switch e {
-	case UserEventPayload252BillingPlanEnterprise:
+	case UserEventPayload250TriggerDirectorySyncUpdated:
 		return true
-	case UserEventPayload252BillingPlanPlatform:
+	case UserEventPayload250TriggerDomainDeleted:
+		return true
+	case UserEventPayload250TriggerDomainVerified:
+		return true
+	case UserEventPayload250TriggerOrganizationDeleted:
+		return true
+	case UserEventPayload250TriggerSamlUpdated:
+		return true
+	case UserEventPayload250TriggerTeamAttached:
+		return true
+	case UserEventPayload250TriggerTeamParticipationUpdated:
+		return true
+	case UserEventPayload250TriggerTeamRemoved:
+		return true
+	case UserEventPayload250TriggerToggle:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload253NextDsyncMode.
+// Defines values for UserEventPayload251Enabled.
 const (
-	UserEventPayload253NextDsyncModeOrganization UserEventPayload253NextDsyncMode = "organization"
-	UserEventPayload253NextDsyncModeTeam         UserEventPayload253NextDsyncMode = "team"
+	UserEventPayload251EnabledFalse UserEventPayload251Enabled = false
+	UserEventPayload251EnabledTrue  UserEventPayload251Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload253NextDsyncMode enum.
-func (e UserEventPayload253NextDsyncMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload251Enabled enum.
+func (e UserEventPayload251Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload253NextDsyncModeOrganization:
+	case UserEventPayload251EnabledFalse:
 		return true
-	case UserEventPayload253NextDsyncModeTeam:
+	case UserEventPayload251EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload253PreviousDsyncMode.
+// Defines values for UserEventPayload254BillingPlan.
 const (
-	UserEventPayload253PreviousDsyncModeOrganization UserEventPayload253PreviousDsyncMode = "organization"
-	UserEventPayload253PreviousDsyncModeTeam         UserEventPayload253PreviousDsyncMode = "team"
+	UserEventPayload254BillingPlanEnterprise UserEventPayload254BillingPlan = "enterprise"
+	UserEventPayload254BillingPlanPlatform   UserEventPayload254BillingPlan = "platform"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload253PreviousDsyncMode enum.
-func (e UserEventPayload253PreviousDsyncMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload254BillingPlan enum.
+func (e UserEventPayload254BillingPlan) Valid() bool {
 	switch e {
-	case UserEventPayload253PreviousDsyncModeOrganization:
+	case UserEventPayload254BillingPlanEnterprise:
 		return true
-	case UserEventPayload253PreviousDsyncModeTeam:
+	case UserEventPayload254BillingPlanPlatform:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload255Enforced.
+// Defines values for UserEventPayload255NextDsyncMode.
 const (
-	UserEventPayload255EnforcedFalse UserEventPayload255Enforced = false
-	UserEventPayload255EnforcedTrue  UserEventPayload255Enforced = true
+	UserEventPayload255NextDsyncModeOrganization UserEventPayload255NextDsyncMode = "organization"
+	UserEventPayload255NextDsyncModeTeam         UserEventPayload255NextDsyncMode = "team"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload255Enforced enum.
-func (e UserEventPayload255Enforced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload255NextDsyncMode enum.
+func (e UserEventPayload255NextDsyncMode) Valid() bool {
 	switch e {
-	case UserEventPayload255EnforcedFalse:
+	case UserEventPayload255NextDsyncModeOrganization:
 		return true
-	case UserEventPayload255EnforcedTrue:
+	case UserEventPayload255NextDsyncModeTeam:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload255PreviousEnforced.
+// Defines values for UserEventPayload255PreviousDsyncMode.
 const (
-	UserEventPayload255PreviousEnforcedFalse UserEventPayload255PreviousEnforced = false
-	UserEventPayload255PreviousEnforcedTrue  UserEventPayload255PreviousEnforced = true
+	UserEventPayload255PreviousDsyncModeOrganization UserEventPayload255PreviousDsyncMode = "organization"
+	UserEventPayload255PreviousDsyncModeTeam         UserEventPayload255PreviousDsyncMode = "team"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload255PreviousEnforced enum.
-func (e UserEventPayload255PreviousEnforced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload255PreviousDsyncMode enum.
+func (e UserEventPayload255PreviousDsyncMode) Valid() bool {
 	switch e {
-	case UserEventPayload255PreviousEnforcedFalse:
+	case UserEventPayload255PreviousDsyncModeOrganization:
 		return true
-	case UserEventPayload255PreviousEnforcedTrue:
+	case UserEventPayload255PreviousDsyncModeTeam:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload256Enabled.
+// Defines values for UserEventPayload257Enforced.
 const (
-	UserEventPayload256EnabledFalse UserEventPayload256Enabled = false
-	UserEventPayload256EnabledTrue  UserEventPayload256Enabled = true
+	UserEventPayload257EnforcedFalse UserEventPayload257Enforced = false
+	UserEventPayload257EnforcedTrue  UserEventPayload257Enforced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload256Enabled enum.
-func (e UserEventPayload256Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload257Enforced enum.
+func (e UserEventPayload257Enforced) Valid() bool {
 	switch e {
-	case UserEventPayload256EnabledFalse:
+	case UserEventPayload257EnforcedFalse:
 		return true
-	case UserEventPayload256EnabledTrue:
+	case UserEventPayload257EnforcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload256PreviousEnabled.
+// Defines values for UserEventPayload257PreviousEnforced.
 const (
-	UserEventPayload256PreviousEnabledFalse UserEventPayload256PreviousEnabled = false
-	UserEventPayload256PreviousEnabledTrue  UserEventPayload256PreviousEnabled = true
+	UserEventPayload257PreviousEnforcedFalse UserEventPayload257PreviousEnforced = false
+	UserEventPayload257PreviousEnforcedTrue  UserEventPayload257PreviousEnforced = true
 )
-
-// Valid indicates whether the value is a known member of the UserEventPayload256PreviousEnabled enum.
-func (e UserEventPayload256PreviousEnabled) Valid() bool {
-	switch e {
-	case UserEventPayload256PreviousEnabledFalse:
-		return true
-	case UserEventPayload256PreviousEnabledTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload257Mode.
-const (
-	UserEventPayload257ModeOrganization UserEventPayload257Mode = "organization"
-	UserEventPayload257ModeTeam         UserEventPayload257Mode = "team"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload257Mode enum.
-func (e UserEventPayload257Mode) Valid() bool {
-	switch e {
-	case UserEventPayload257ModeOrganization:
-		return true
-	case UserEventPayload257ModeTeam:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload257PreviousMode.
-const (
-	UserEventPayload257PreviousModeOrganization UserEventPayload257PreviousMode = "organization"
-	UserEventPayload257PreviousModeTeam         UserEventPayload257PreviousMode = "team"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload257PreviousMode enum.
-func (e UserEventPayload257PreviousMode) Valid() bool {
-	switch e {
-	case UserEventPayload257PreviousModeOrganization:
-		return true
-	case UserEventPayload257PreviousModeTeam:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload262NextAllowUnsafeScriptSrcKeywords.
-const (
-	UserEventPayload262NextAllowUnsafeScriptSrcKeywordsFalse UserEventPayload262NextAllowUnsafeScriptSrcKeywords = false
-	UserEventPayload262NextAllowUnsafeScriptSrcKeywordsTrue  UserEventPayload262NextAllowUnsafeScriptSrcKeywords = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload262NextAllowUnsafeScriptSrcKeywords enum.
-func (e UserEventPayload262NextAllowUnsafeScriptSrcKeywords) Valid() bool {
-	switch e {
-	case UserEventPayload262NextAllowUnsafeScriptSrcKeywordsFalse:
-		return true
-	case UserEventPayload262NextAllowUnsafeScriptSrcKeywordsTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload262NextConnectSrcNotificationsEnabled.
-const (
-	UserEventPayload262NextConnectSrcNotificationsEnabledFalse UserEventPayload262NextConnectSrcNotificationsEnabled = false
-	UserEventPayload262NextConnectSrcNotificationsEnabledTrue  UserEventPayload262NextConnectSrcNotificationsEnabled = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload262NextConnectSrcNotificationsEnabled enum.
-func (e UserEventPayload262NextConnectSrcNotificationsEnabled) Valid() bool {
-	switch e {
-	case UserEventPayload262NextConnectSrcNotificationsEnabledFalse:
-		return true
-	case UserEventPayload262NextConnectSrcNotificationsEnabledTrue:
-		return true
-	default:
-		return false
-	}
-}

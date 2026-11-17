@@ -1563,30 +1563,60 @@ func (c *ClientWithResponses) ListAiGatewayRulesWithResponse(ctx context.Context
 	return ParseListAiGatewayRulesResponse(rsp)
 }
 
-// UpdateAiGatewayRuleWithResponse Update rule
+// UpdateAiGatewayRuleWithBodyWithResponse Update rule
 //
 // Update a routing rule (enabled, action, or description)
 //
-// Returns a wrapper object for the known response body format(s).
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
-func (c *ClientWithResponses) UpdateAiGatewayRuleWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error) {
-	rsp, err := c.UpdateAiGatewayRule(ctx, params, reqEditors...)
+func (c *ClientWithResponses) UpdateAiGatewayRuleWithBodyWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error) {
+	rsp, err := c.UpdateAiGatewayRuleWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseUpdateAiGatewayRuleResponse(rsp)
 }
 
+// UpdateAiGatewayRuleWithResponse Update rule
+//
+// Update a routing rule (enabled, action, or description)
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /ai-gateway/rules (the `UpdateAiGatewayRule` operationId).
+func (c *ClientWithResponses) UpdateAiGatewayRuleWithResponse(ctx context.Context, params *UpdateAiGatewayRuleParams, body UpdateAiGatewayRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAiGatewayRuleResponse, error) {
+	rsp, err := c.UpdateAiGatewayRule(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAiGatewayRuleResponse(rsp)
+}
+
+// CreateAiGatewayRuleWithBodyWithResponse Create rule
+//
+// Create a routing rule.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
+func (c *ClientWithResponses) CreateAiGatewayRuleWithBodyWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error) {
+	rsp, err := c.CreateAiGatewayRuleWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAiGatewayRuleResponse(rsp)
+}
+
 // CreateAiGatewayRuleWithResponse Create rule
 //
 // Create a routing rule.
 //
-// Returns a wrapper object for the known response body format(s).
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /ai-gateway/rules (the `CreateAiGatewayRule` operationId).
-func (c *ClientWithResponses) CreateAiGatewayRuleWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error) {
-	rsp, err := c.CreateAiGatewayRule(ctx, params, reqEditors...)
+func (c *ClientWithResponses) CreateAiGatewayRuleWithResponse(ctx context.Context, params *CreateAiGatewayRuleParams, body CreateAiGatewayRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAiGatewayRuleResponse, error) {
+	rsp, err := c.CreateAiGatewayRule(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -1623,30 +1653,60 @@ func (c *ClientWithResponses) GetAiGatewayVirtualModelConfigWithResponse(ctx con
 	return ParseGetAiGatewayVirtualModelConfigResponse(rsp)
 }
 
-// UpdateAiGatewayVirtualModelConfigWithResponse Update virtual model config
+// UpdateAiGatewayVirtualModelConfigWithBodyWithResponse Update virtual model config
 //
 // Update a virtual model config.
 //
-// Returns a wrapper object for the known response body format(s).
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
-func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error) {
-	rsp, err := c.UpdateAiGatewayVirtualModelConfig(ctx, params, reqEditors...)
+func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigWithBodyWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.UpdateAiGatewayVirtualModelConfigWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseUpdateAiGatewayVirtualModelConfigResponse(rsp)
 }
 
+// UpdateAiGatewayVirtualModelConfigWithResponse Update virtual model config
+//
+// Update a virtual model config.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /ai-gateway/virtual-model-configs (the `UpdateAiGatewayVirtualModelConfig` operationId).
+func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *UpdateAiGatewayVirtualModelConfigParams, body UpdateAiGatewayVirtualModelConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.UpdateAiGatewayVirtualModelConfig(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAiGatewayVirtualModelConfigResponse(rsp)
+}
+
+// CreateAiGatewayVirtualModelConfigWithBodyWithResponse Create virtual model config
+//
+// Create a virtual model config (VMC).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
+func (c *ClientWithResponses) CreateAiGatewayVirtualModelConfigWithBodyWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.CreateAiGatewayVirtualModelConfigWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAiGatewayVirtualModelConfigResponse(rsp)
+}
+
 // CreateAiGatewayVirtualModelConfigWithResponse Create virtual model config
 //
 // Create a virtual model config (VMC).
 //
-// Returns a wrapper object for the known response body format(s).
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /ai-gateway/virtual-model-configs (the `CreateAiGatewayVirtualModelConfig` operationId).
-func (c *ClientWithResponses) CreateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error) {
-	rsp, err := c.CreateAiGatewayVirtualModelConfig(ctx, params, reqEditors...)
+func (c *ClientWithResponses) CreateAiGatewayVirtualModelConfigWithResponse(ctx context.Context, params *CreateAiGatewayVirtualModelConfigParams, body CreateAiGatewayVirtualModelConfigJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAiGatewayVirtualModelConfigResponse, error) {
+	rsp, err := c.CreateAiGatewayVirtualModelConfig(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -1698,15 +1758,30 @@ func (c *ClientWithResponses) GetAiGatewayVirtualModelConfigBySlugWithResponse(c
 	return ParseGetAiGatewayVirtualModelConfigBySlugResponse(rsp)
 }
 
+// UpdateAiGatewayVirtualModelConfigBySlugWithBodyWithResponse Update virtual model config
+//
+// Update a virtual model config by path slug.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
+func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigBySlugWithBodyWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error) {
+	rsp, err := c.UpdateAiGatewayVirtualModelConfigBySlugWithBody(ctx, vmcSlug, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAiGatewayVirtualModelConfigBySlugResponse(rsp)
+}
+
 // UpdateAiGatewayVirtualModelConfigBySlugWithResponse Update virtual model config
 //
 // Update a virtual model config by path slug.
 //
-// Returns a wrapper object for the known response body format(s).
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with PATCH /ai-gateway/virtual-model-configs/{vmcSlug} (the `UpdateAiGatewayVirtualModelConfigBySlug` operationId).
-func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error) {
-	rsp, err := c.UpdateAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, reqEditors...)
+func (c *ClientWithResponses) UpdateAiGatewayVirtualModelConfigBySlugWithResponse(ctx context.Context, vmcSlug string, params *UpdateAiGatewayVirtualModelConfigBySlugParams, body UpdateAiGatewayVirtualModelConfigBySlugJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAiGatewayVirtualModelConfigBySlugResponse, error) {
+	rsp, err := c.UpdateAiGatewayVirtualModelConfigBySlug(ctx, vmcSlug, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9981,7 +10056,7 @@ func (c *ClientWithResponses) CreateSandboxesByNameForkV2WithResponse(ctx contex
 
 // GetTeamsWithResponse List all teams
 //
-// Get a paginated list of all the Teams the authenticated User is a member of.
+// Get a paginated list of all the Teams the authenticated User is a member of. An app-principal token needs `read:team` and lists only the team it is bound to.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -19931,87 +20006,6 @@ func ParseCreateKmsSigningKeyResponse(rsp *http.Response) (*CreateKmsSigningKeyR
 			RevokeAt     *string                                      `json:"revokeAt,omitempty"`
 			Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
 			UpdatedAt    string                                       `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseActivateKmsSigningKeyResponse parses an HTTP response from a ActivateKmsSigningKeyWithResponse call
-func ParseActivateKmsSigningKeyResponse(rsp *http.Response) (*ActivateKmsSigningKeyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ActivateKmsSigningKeyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                        `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                        `json:"revokeAt,omitempty"`
-			Status       ActivateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
-			UpdatedAt    string                                         `json:"updatedAt"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
