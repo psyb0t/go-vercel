@@ -10,6 +10,87 @@ import (
 	"strings"
 )
 
+// ParseCreateKmsSigningKeyResponse parses an HTTP response from a CreateKmsSigningKeyWithResponse call
+func ParseCreateKmsSigningKeyResponse(rsp *http.Response) (*CreateKmsSigningKeyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateKmsSigningKeyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ActivateAt *string `json:"activateAt,omitempty"`
+
+			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
+			ActivatedAt *string `json:"activatedAt,omitempty"`
+			Algorithm   string  `json:"algorithm"`
+
+			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
+			CertificatePem *string `json:"certificatePem,omitempty"`
+			CreatedAt      string  `json:"createdAt"`
+
+			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
+			ImportKeyId *string `json:"importKeyId,omitempty"`
+			IssuerId    string  `json:"issuerId"`
+
+			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
+			KeyId     string `json:"keyId"`
+			PublicKey *struct {
+				Alg    *string   `json:"alg,omitempty"`
+				KeyOps *[]string `json:"key_ops,omitempty"`
+				Kid    *string   `json:"kid,omitempty"`
+				Kty    *string   `json:"kty,omitempty"`
+				Use    *string   `json:"use,omitempty"`
+
+				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
+				X5c *[]string `json:"x5c,omitempty"`
+
+				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
+				X5tS256 *string `json:"x5t#S256,omitempty"`
+			} `json:"publicKey,omitempty"`
+			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
+
+			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
+			PublicKeyPem *string                                      `json:"publicKeyPem,omitempty"`
+			RevokeAt     *string                                      `json:"revokeAt,omitempty"`
+			Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
+			UpdatedAt    string                                       `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseActivateKmsSigningKeyResponse parses an HTTP response from a ActivateKmsSigningKeyWithResponse call
 func ParseActivateKmsSigningKeyResponse(rsp *http.Response) (*ActivateKmsSigningKeyResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -3069,6 +3150,154 @@ func ParseUpdateOrganizationResponse(rsp *http.Response) (*UpdateOrganizationRes
 	return response, nil
 }
 
+// ParseListOrganizationDsyncGroupsResponse parses an HTTP response from a ListOrganizationDsyncGroupsWithResponse call
+func ParseListOrganizationDsyncGroupsResponse(rsp *http.Response) (*ListOrganizationDsyncGroupsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListOrganizationDsyncGroupsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Cursor *string                          `json:"cursor,omitempty"`
+			Groups []OrganizationDirectorySyncGroup `json:"groups"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteOrganizationDsyncGroupResponse parses an HTTP response from a DeleteOrganizationDsyncGroupWithResponse call
+func ParseDeleteOrganizationDsyncGroupResponse(rsp *http.Response) (*DeleteOrganizationDsyncGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteOrganizationDsyncGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetOrganizationDsyncGroupResponse parses an HTTP response from a GetOrganizationDsyncGroupWithResponse call
+func ParseGetOrganizationDsyncGroupResponse(rsp *http.Response) (*GetOrganizationDsyncGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOrganizationDsyncGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OrganizationDirectorySyncGroup
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePutOrganizationDsyncGroupResponse parses an HTTP response from a PutOrganizationDsyncGroupWithResponse call
+func ParsePutOrganizationDsyncGroupResponse(rsp *http.Response) (*PutOrganizationDsyncGroupResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutOrganizationDsyncGroupResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OrganizationDirectorySyncGroup
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 412:
+		break // No content-type
+
+	case rsp.StatusCode == 428:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseListOrganizationTeamsResponse parses an HTTP response from a ListOrganizationTeamsWithResponse call
 func ParseListOrganizationTeamsResponse(rsp *http.Response) (*ListOrganizationTeamsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -3203,6 +3432,51 @@ func ParseRemoveOrganizationTeamResponse(rsp *http.Response) (*RemoveOrganizatio
 		break // No content-type
 
 	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParsePutOrganizationTeamDsyncResponse parses an HTTP response from a PutOrganizationTeamDsyncWithResponse call
+func ParsePutOrganizationTeamDsyncResponse(rsp *http.Response) (*PutOrganizationTeamDsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutOrganizationTeamDsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			DsyncMode      PutOrganizationTeamDsync200JSONResponseBodyDsyncMode `json:"dsyncMode"`
+			OrganizationId string                                               `json:"organizationId"`
+			TeamId         string                                               `json:"teamId"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
 		break // No content-type
 
 	}
@@ -15899,6 +16173,7 @@ func ParseCreateIntegrationStoreDirectResponse(rsp *http.Response) (*CreateInteg
 						Value *string `json:"value,omitempty"`
 					} `json:"details,omitempty"`
 					Disabled           *CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled `json:"disabled,omitempty"`
+					DisabledReason     *string                                                                  `json:"disabledReason,omitempty"`
 					EffectiveDate      *string                                                                  `json:"effectiveDate,omitempty"`
 					HighlightedDetails *[]struct {
 						Label string  `json:"label"`
@@ -19042,7 +19317,16 @@ func ParseSearchVercelCiLogsResponse(rsp *http.Response) (*SearchVercelCiLogsRes
 			Invocations []struct {
 				Attempt      float32 `json:"attempt"`
 				InvocationId string  `json:"invocationId"`
-				Tasks        []struct {
+
+				// Setup Matching lines from the setup logs. Present only when a setup line matches.
+				Setup *struct {
+					Lines []struct {
+						Level     string  `json:"level"`
+						Message   string  `json:"message"`
+						Timestamp float32 `json:"timestamp"`
+					} `json:"lines"`
+				} `json:"setup,omitempty"`
+				Tasks []struct {
 					Conclusion      *SearchVercelCiLogs200JSONResponseBody_Invocations_Tasks_Conclusion `json:"conclusion,omitempty"`
 					JobDefinitionId string                                                              `json:"jobDefinitionId"`
 					JobName         string                                                              `json:"jobName"`
@@ -19722,293 +20006,6 @@ func ParseGetWebhooksResponse(rsp *http.Response) (*GetWebhooksResponse, error) 
 		break // No content-type
 
 	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateWebhookResponse parses an HTTP response from a CreateWebhookWithResponse call
-func ParseCreateWebhookResponse(rsp *http.Response) (*CreateWebhookResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateWebhookResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
-
-			// CreatedAt A number containing the date when the webhook was created in in milliseconds
-			//
-			// Example: 1567024758130
-			CreatedAt float32 `json:"createdAt"`
-
-			// Events The webhooks events
-			//
-			// Example: deployment.created
-			Events []CreateWebhook200JSONResponseBodyEvents `json:"events"`
-
-			// Id The webhook id
-			//
-			// Example: account_hook_GflD6EYyo7F4ViYS
-			Id string `json:"id"`
-
-			// OwnerId The unique ID of the team the webhook belongs to
-			//
-			// Example: ZspSRT4ljIEEmMHgoDwKWDei
-			OwnerId string `json:"ownerId"`
-
-			// ProjectIds The ID of the projects the webhook is associated with
-			//
-			// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
-			ProjectIds *[]string `json:"projectIds,omitempty"`
-
-			// Secret The webhook secret used to sign the payload
-			Secret string `json:"secret"`
-
-			// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
-			//
-			// Example: 1567024758130
-			UpdatedAt float32 `json:"updatedAt"`
-
-			// Url A string with the URL of the webhook
-			//
-			// Example: https://my-webhook.com
-			Url string `json:"url"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteWebhookResponse parses an HTTP response from a DeleteWebhookWithResponse call
-func ParseDeleteWebhookResponse(rsp *http.Response) (*DeleteWebhookResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteWebhookResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseGetWebhookResponse parses an HTTP response from a GetWebhookWithResponse call
-func ParseGetWebhookResponse(rsp *http.Response) (*GetWebhookResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetWebhookResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
-
-			// CreatedAt A number containing the date when the webhook was created in in milliseconds
-			//
-			// Example: 1567024758130
-			CreatedAt float32 `json:"createdAt"`
-
-			// Events The webhooks events
-			//
-			// Example: deployment.created
-			Events []GetWebhook200JSONResponseBodyEvents `json:"events"`
-
-			// Id The webhook id
-			//
-			// Example: account_hook_GflD6EYyo7F4ViYS
-			Id string `json:"id"`
-
-			// OwnerId The unique ID of the team the webhook belongs to
-			//
-			// Example: ZspSRT4ljIEEmMHgoDwKWDei
-			OwnerId string `json:"ownerId"`
-
-			// ProjectIds The ID of the projects the webhook is associated with
-			//
-			// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
-			ProjectIds *[]string `json:"projectIds,omitempty"`
-
-			// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
-			//
-			// Example: 1567024758130
-			UpdatedAt float32 `json:"updatedAt"`
-
-			// Url A string with the URL of the webhook
-			//
-			// Example: https://my-webhook.com
-			Url string `json:"url"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetProjectsResponse parses an HTTP response from a GetProjectsWithResponse call
-func ParseGetProjectsResponse(rsp *http.Response) (*GetProjectsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetProjectsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetProjects200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseAddProjectDomainResponse parses an HTTP response from a AddProjectDomainWithResponse call
-func ParseAddProjectDomainResponse(rsp *http.Response) (*AddProjectDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AddProjectDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ApexName            string                                                 `json:"apexName"`
-			CreatedAt           *float32                                               `json:"createdAt,omitempty"`
-			CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
-			GitBranch           *string                                                `json:"gitBranch,omitempty"`
-			Name                string                                                 `json:"name"`
-			ProjectId           string                                                 `json:"projectId"`
-			Redirect            *string                                                `json:"redirect,omitempty"`
-			RedirectStatusCode  *AddProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
-			UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
-
-			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-			Verification *[]struct {
-				Domain string `json:"domain"`
-				Reason string `json:"reason"`
-				Type   string `json:"type"`
-				Value  string `json:"value"`
-			} `json:"verification,omitempty"`
-
-			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-			Verified AddProjectDomain200JSONResponseBodyVerified `json:"verified"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
 		break // No content-type
 
 	}

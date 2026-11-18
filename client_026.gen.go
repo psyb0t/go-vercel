@@ -10,6 +10,34 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r CreateVercelCiTaskAnalysisResponse) GetJSON202() *struct {
+	AnalysisId string                                               `json:"analysisId"`
+	Status     CreateVercelCiTaskAnalysis202JSONResponseBody_Status `json:"status"`
+} {
+	return r.JSON202
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r CreateVercelCiTaskAnalysisResponse) GetJSON401() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r CreateVercelCiTaskAnalysisResponse) GetJSON403() *struct {
+	Error struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+} {
+	return r.JSON403
+}
+
 // GetJSON429 returns the response for an HTTP 429 `application/json` response
 func (r CreateVercelCiTaskAnalysisResponse) GetJSON429() *struct {
 	Error struct {
@@ -4796,6 +4824,7 @@ type CancelDeploymentResponse struct {
 			MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
 			MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
 			Memory               *float32                                                          `json:"memory,omitempty"`
+			Perimeter            *string                                                           `json:"perimeter,omitempty"`
 			Regions              *[]string                                                         `json:"regions,omitempty"`
 			Runtime              *string                                                           `json:"runtime,omitempty"`
 			SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
@@ -5292,6 +5321,7 @@ func (r CancelDeploymentResponse) GetJSON200() *struct {
 		MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
 		MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
 		Memory               *float32                                                          `json:"memory,omitempty"`
+		Perimeter            *string                                                           `json:"perimeter,omitempty"`
 		Regions              *[]string                                                         `json:"regions,omitempty"`
 		Runtime              *string                                                           `json:"runtime,omitempty"`
 		SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`

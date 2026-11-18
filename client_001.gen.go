@@ -1107,6 +1107,24 @@ func (e AuthUserResourceConfigElasticConcurrencyEnabled) Valid() bool {
 	}
 }
 
+// Defines values for AuthUserResourceConfigEnableMessageboardPrivateBoards.
+const (
+	AuthUserResourceConfigEnableMessageboardPrivateBoardsFalse AuthUserResourceConfigEnableMessageboardPrivateBoards = false
+	AuthUserResourceConfigEnableMessageboardPrivateBoardsTrue  AuthUserResourceConfigEnableMessageboardPrivateBoards = true
+)
+
+// Valid indicates whether the value is a known member of the AuthUserResourceConfigEnableMessageboardPrivateBoards enum.
+func (e AuthUserResourceConfigEnableMessageboardPrivateBoards) Valid() bool {
+	switch e {
+	case AuthUserResourceConfigEnableMessageboardPrivateBoardsFalse:
+		return true
+	case AuthUserResourceConfigEnableMessageboardPrivateBoardsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AuthUserResourceConfigFlagsExplorerUnlimitedOverrides.
 const (
 	AuthUserResourceConfigFlagsExplorerUnlimitedOverridesFalse AuthUserResourceConfigFlagsExplorerUnlimitedOverrides = false
@@ -2652,6 +2670,24 @@ func (e ConnectConnectorUpdateResultReinstallNeeded) Valid() bool {
 	case ConnectConnectorUpdateResultReinstallNeededFalse:
 		return true
 	case ConnectConnectorUpdateResultReinstallNeededTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ConnectConnectorUpdateResultUninstallNeeded.
+const (
+	ConnectConnectorUpdateResultUninstallNeededFalse ConnectConnectorUpdateResultUninstallNeeded = false
+	ConnectConnectorUpdateResultUninstallNeededTrue  ConnectConnectorUpdateResultUninstallNeeded = true
+)
+
+// Valid indicates whether the value is a known member of the ConnectConnectorUpdateResultUninstallNeeded enum.
+func (e ConnectConnectorUpdateResultUninstallNeeded) Valid() bool {
+	switch e {
+	case ConnectConnectorUpdateResultUninstallNeededFalse:
+		return true
+	case ConnectConnectorUpdateResultUninstallNeededTrue:
 		return true
 	default:
 		return false
@@ -4259,7 +4295,11 @@ const (
 	ListEventTypeNameAiGatewayZeroDataRetentionToggled               ListEventTypeName = "ai-gateway-zero-data-retention-toggled"
 	ListEventTypeNameAiOmniagent                                     ListEventTypeName = "ai-omniagent"
 	ListEventTypeNameAiSecurityReview                                ListEventTypeName = "ai-security-review"
+	ListEventTypeNameAlertGroupDetected                              ListEventTypeName = "alert-group-detected"
+	ListEventTypeNameAlertGroupInvestigationCompleted                ListEventTypeName = "alert-group-investigation-completed"
+	ListEventTypeNameAlertGroupPublished                             ListEventTypeName = "alert-group-published"
 	ListEventTypeNameAlertInvestigationProjectAllowlistUpdated       ListEventTypeName = "alert-investigation-project-allowlist-updated"
+	ListEventTypeNameAlertResolved                                   ListEventTypeName = "alert-resolved"
 	ListEventTypeNameAlertRuleCreated                                ListEventTypeName = "alert-rule-created"
 	ListEventTypeNameAlertRuleDeleted                                ListEventTypeName = "alert-rule-deleted"
 	ListEventTypeNameAlertRuleUpdated                                ListEventTypeName = "alert-rule-updated"
@@ -5170,7 +5210,15 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameAiSecurityReview:
 		return true
+	case ListEventTypeNameAlertGroupDetected:
+		return true
+	case ListEventTypeNameAlertGroupInvestigationCompleted:
+		return true
+	case ListEventTypeNameAlertGroupPublished:
+		return true
 	case ListEventTypeNameAlertInvestigationProjectAllowlistUpdated:
+		return true
+	case ListEventTypeNameAlertResolved:
 		return true
 	case ListEventTypeNameAlertRuleCreated:
 		return true
@@ -6728,7 +6776,11 @@ const (
 	ListEventTypeReplacedByAiGatewayZeroDataRetentionToggled               ListEventTypeReplacedBy = "ai-gateway-zero-data-retention-toggled"
 	ListEventTypeReplacedByAiOmniagent                                     ListEventTypeReplacedBy = "ai-omniagent"
 	ListEventTypeReplacedByAiSecurityReview                                ListEventTypeReplacedBy = "ai-security-review"
+	ListEventTypeReplacedByAlertGroupDetected                              ListEventTypeReplacedBy = "alert-group-detected"
+	ListEventTypeReplacedByAlertGroupInvestigationCompleted                ListEventTypeReplacedBy = "alert-group-investigation-completed"
+	ListEventTypeReplacedByAlertGroupPublished                             ListEventTypeReplacedBy = "alert-group-published"
 	ListEventTypeReplacedByAlertInvestigationProjectAllowlistUpdated       ListEventTypeReplacedBy = "alert-investigation-project-allowlist-updated"
+	ListEventTypeReplacedByAlertResolved                                   ListEventTypeReplacedBy = "alert-resolved"
 	ListEventTypeReplacedByAlertRuleCreated                                ListEventTypeReplacedBy = "alert-rule-created"
 	ListEventTypeReplacedByAlertRuleDeleted                                ListEventTypeReplacedBy = "alert-rule-deleted"
 	ListEventTypeReplacedByAlertRuleUpdated                                ListEventTypeReplacedBy = "alert-rule-updated"
@@ -7639,7 +7691,15 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 		return true
 	case ListEventTypeReplacedByAiSecurityReview:
 		return true
+	case ListEventTypeReplacedByAlertGroupDetected:
+		return true
+	case ListEventTypeReplacedByAlertGroupInvestigationCompleted:
+		return true
+	case ListEventTypeReplacedByAlertGroupPublished:
+		return true
 	case ListEventTypeReplacedByAlertInvestigationProjectAllowlistUpdated:
+		return true
+	case ListEventTypeReplacedByAlertResolved:
 		return true
 	case ListEventTypeReplacedByAlertRuleCreated:
 		return true
@@ -9576,6 +9636,93 @@ const (
 func (e OrderTooExpensiveStatus) Valid() bool {
 	switch e {
 	case OrderTooExpensiveStatusN400:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions.
+const (
+	OrganizationDirectorySyncGroupAssignmentsOrganizationPermissionsOrgAdmin OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions = "OrgAdmin"
+)
+
+// Valid indicates whether the value is a known member of the OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions enum.
+func (e OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions) Valid() bool {
+	switch e {
+	case OrganizationDirectorySyncGroupAssignmentsOrganizationPermissionsOrgAdmin:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OrganizationDirectorySyncGroupAssignmentsTeamRoles.
+const (
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesBILLING       OrganizationDirectorySyncGroupAssignmentsTeamRoles = "BILLING"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesCONTRIBUTOR   OrganizationDirectorySyncGroupAssignmentsTeamRoles = "CONTRIBUTOR"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesDEVELOPER     OrganizationDirectorySyncGroupAssignmentsTeamRoles = "DEVELOPER"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesMEMBER        OrganizationDirectorySyncGroupAssignmentsTeamRoles = "MEMBER"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesOWNER         OrganizationDirectorySyncGroupAssignmentsTeamRoles = "OWNER"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesSECURITY      OrganizationDirectorySyncGroupAssignmentsTeamRoles = "SECURITY"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesVIEWER        OrganizationDirectorySyncGroupAssignmentsTeamRoles = "VIEWER"
+	OrganizationDirectorySyncGroupAssignmentsTeamRolesVIEWERFORPLUS OrganizationDirectorySyncGroupAssignmentsTeamRoles = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the OrganizationDirectorySyncGroupAssignmentsTeamRoles enum.
+func (e OrganizationDirectorySyncGroupAssignmentsTeamRoles) Valid() bool {
+	switch e {
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesBILLING:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesCONTRIBUTOR:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesDEVELOPER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesMEMBER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesOWNER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesSECURITY:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesVIEWER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamRolesVIEWERFORPLUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles.
+const (
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesBILLING       OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "BILLING"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesCONTRIBUTOR   OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "CONTRIBUTOR"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesDEVELOPER     OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "DEVELOPER"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesMEMBER        OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "MEMBER"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesOWNER         OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "OWNER"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesSECURITY      OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "SECURITY"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesVIEWER        OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "VIEWER"
+	OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesVIEWERFORPLUS OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles = "VIEWER_FOR_PLUS"
+)
+
+// Valid indicates whether the value is a known member of the OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles enum.
+func (e OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles) Valid() bool {
+	switch e {
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesBILLING:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesCONTRIBUTOR:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesDEVELOPER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesMEMBER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesOWNER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesSECURITY:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesVIEWER:
+		return true
+	case OrganizationDirectorySyncGroupAssignmentsTeamsTeamRolesVIEWERFORPLUS:
 		return true
 	default:
 		return false
@@ -13452,6 +13599,7 @@ const (
 	UserEventPayload75PermissionsReadWriteSchedule                     UserEventPayload75Permissions = "read-write:schedule"
 	UserEventPayload75PermissionsReadWriteTeamMembers                  UserEventPayload75Permissions = "read-write:team-members"
 	UserEventPayload75PermissionsReadWriteVcr                          UserEventPayload75Permissions = "read-write:vcr"
+	UserEventPayload75PermissionsReadWriteVercelCi                     UserEventPayload75Permissions = "read-write:vercel-ci"
 	UserEventPayload75PermissionsReadWriteWebhooks                     UserEventPayload75Permissions = "read-write:webhooks"
 	UserEventPayload75PermissionsUseAiGateway                          UserEventPayload75Permissions = "use:ai-gateway"
 	UserEventPayload75PermissionsUseGithub                             UserEventPayload75Permissions = "use:github"
@@ -13627,6 +13775,8 @@ func (e UserEventPayload75Permissions) Valid() bool {
 		return true
 	case UserEventPayload75PermissionsReadWriteVcr:
 		return true
+	case UserEventPayload75PermissionsReadWriteVercelCi:
+		return true
 	case UserEventPayload75PermissionsReadWriteWebhooks:
 		return true
 	case UserEventPayload75PermissionsUseAiGateway:
@@ -13752,6 +13902,7 @@ const (
 	UserEventPayload77NextPermissionsReadWriteSchedule                     UserEventPayload77NextPermissions = "read-write:schedule"
 	UserEventPayload77NextPermissionsReadWriteTeamMembers                  UserEventPayload77NextPermissions = "read-write:team-members"
 	UserEventPayload77NextPermissionsReadWriteVcr                          UserEventPayload77NextPermissions = "read-write:vcr"
+	UserEventPayload77NextPermissionsReadWriteVercelCi                     UserEventPayload77NextPermissions = "read-write:vercel-ci"
 	UserEventPayload77NextPermissionsReadWriteWebhooks                     UserEventPayload77NextPermissions = "read-write:webhooks"
 	UserEventPayload77NextPermissionsUseAiGateway                          UserEventPayload77NextPermissions = "use:ai-gateway"
 	UserEventPayload77NextPermissionsUseGithub                             UserEventPayload77NextPermissions = "use:github"
@@ -13927,6 +14078,8 @@ func (e UserEventPayload77NextPermissions) Valid() bool {
 		return true
 	case UserEventPayload77NextPermissionsReadWriteVcr:
 		return true
+	case UserEventPayload77NextPermissionsReadWriteVercelCi:
+		return true
 	case UserEventPayload77NextPermissionsReadWriteWebhooks:
 		return true
 	case UserEventPayload77NextPermissionsUseAiGateway:
@@ -14049,6 +14202,7 @@ const (
 	UserEventPayload78AfterPermissionsReadWriteSchedule                     UserEventPayload78AfterPermissions = "read-write:schedule"
 	UserEventPayload78AfterPermissionsReadWriteTeamMembers                  UserEventPayload78AfterPermissions = "read-write:team-members"
 	UserEventPayload78AfterPermissionsReadWriteVcr                          UserEventPayload78AfterPermissions = "read-write:vcr"
+	UserEventPayload78AfterPermissionsReadWriteVercelCi                     UserEventPayload78AfterPermissions = "read-write:vercel-ci"
 	UserEventPayload78AfterPermissionsReadWriteWebhooks                     UserEventPayload78AfterPermissions = "read-write:webhooks"
 	UserEventPayload78AfterPermissionsUseAiGateway                          UserEventPayload78AfterPermissions = "use:ai-gateway"
 	UserEventPayload78AfterPermissionsUsePrivateNpm                         UserEventPayload78AfterPermissions = "use:private-npm"
@@ -14217,6 +14371,8 @@ func (e UserEventPayload78AfterPermissions) Valid() bool {
 		return true
 	case UserEventPayload78AfterPermissionsReadWriteVcr:
 		return true
+	case UserEventPayload78AfterPermissionsReadWriteVercelCi:
+		return true
 	case UserEventPayload78AfterPermissionsReadWriteWebhooks:
 		return true
 	case UserEventPayload78AfterPermissionsUseAiGateway:
@@ -14358,6 +14514,7 @@ const (
 	UserEventPayload78BeforePermissionsReadWriteSchedule                     UserEventPayload78BeforePermissions = "read-write:schedule"
 	UserEventPayload78BeforePermissionsReadWriteTeamMembers                  UserEventPayload78BeforePermissions = "read-write:team-members"
 	UserEventPayload78BeforePermissionsReadWriteVcr                          UserEventPayload78BeforePermissions = "read-write:vcr"
+	UserEventPayload78BeforePermissionsReadWriteVercelCi                     UserEventPayload78BeforePermissions = "read-write:vercel-ci"
 	UserEventPayload78BeforePermissionsReadWriteWebhooks                     UserEventPayload78BeforePermissions = "read-write:webhooks"
 	UserEventPayload78BeforePermissionsUseAiGateway                          UserEventPayload78BeforePermissions = "use:ai-gateway"
 	UserEventPayload78BeforePermissionsUsePrivateNpm                         UserEventPayload78BeforePermissions = "use:private-npm"
@@ -14526,6 +14683,8 @@ func (e UserEventPayload78BeforePermissions) Valid() bool {
 		return true
 	case UserEventPayload78BeforePermissionsReadWriteVcr:
 		return true
+	case UserEventPayload78BeforePermissionsReadWriteVercelCi:
+		return true
 	case UserEventPayload78BeforePermissionsReadWriteWebhooks:
 		return true
 	case UserEventPayload78BeforePermissionsUseAiGateway:
@@ -14667,6 +14826,7 @@ const (
 	UserEventPayload79PermissionsReadWriteSchedule                     UserEventPayload79Permissions = "read-write:schedule"
 	UserEventPayload79PermissionsReadWriteTeamMembers                  UserEventPayload79Permissions = "read-write:team-members"
 	UserEventPayload79PermissionsReadWriteVcr                          UserEventPayload79Permissions = "read-write:vcr"
+	UserEventPayload79PermissionsReadWriteVercelCi                     UserEventPayload79Permissions = "read-write:vercel-ci"
 	UserEventPayload79PermissionsReadWriteWebhooks                     UserEventPayload79Permissions = "read-write:webhooks"
 	UserEventPayload79PermissionsUseAiGateway                          UserEventPayload79Permissions = "use:ai-gateway"
 	UserEventPayload79PermissionsUsePrivateNpm                         UserEventPayload79Permissions = "use:private-npm"
@@ -14834,6 +14994,8 @@ func (e UserEventPayload79Permissions) Valid() bool {
 	case UserEventPayload79PermissionsReadWriteTeamMembers:
 		return true
 	case UserEventPayload79PermissionsReadWriteVcr:
+		return true
+	case UserEventPayload79PermissionsReadWriteVercelCi:
 		return true
 	case UserEventPayload79PermissionsReadWriteWebhooks:
 		return true
@@ -19850,156 +20012,3 @@ func (e UserEventPayload250Enabled) Valid() bool {
 		return false
 	}
 }
-
-// Defines values for UserEventPayload250PreviousEnabled.
-const (
-	UserEventPayload250PreviousEnabledFalse UserEventPayload250PreviousEnabled = false
-	UserEventPayload250PreviousEnabledTrue  UserEventPayload250PreviousEnabled = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload250PreviousEnabled enum.
-func (e UserEventPayload250PreviousEnabled) Valid() bool {
-	switch e {
-	case UserEventPayload250PreviousEnabledFalse:
-		return true
-	case UserEventPayload250PreviousEnabledTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload250Trigger.
-const (
-	UserEventPayload250TriggerDirectorySyncUpdated     UserEventPayload250Trigger = "directory_sync_updated"
-	UserEventPayload250TriggerDomainDeleted            UserEventPayload250Trigger = "domain_deleted"
-	UserEventPayload250TriggerDomainVerified           UserEventPayload250Trigger = "domain_verified"
-	UserEventPayload250TriggerOrganizationDeleted      UserEventPayload250Trigger = "organization_deleted"
-	UserEventPayload250TriggerSamlUpdated              UserEventPayload250Trigger = "saml_updated"
-	UserEventPayload250TriggerTeamAttached             UserEventPayload250Trigger = "team_attached"
-	UserEventPayload250TriggerTeamParticipationUpdated UserEventPayload250Trigger = "team_participation_updated"
-	UserEventPayload250TriggerTeamRemoved              UserEventPayload250Trigger = "team_removed"
-	UserEventPayload250TriggerToggle                   UserEventPayload250Trigger = "toggle"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload250Trigger enum.
-func (e UserEventPayload250Trigger) Valid() bool {
-	switch e {
-	case UserEventPayload250TriggerDirectorySyncUpdated:
-		return true
-	case UserEventPayload250TriggerDomainDeleted:
-		return true
-	case UserEventPayload250TriggerDomainVerified:
-		return true
-	case UserEventPayload250TriggerOrganizationDeleted:
-		return true
-	case UserEventPayload250TriggerSamlUpdated:
-		return true
-	case UserEventPayload250TriggerTeamAttached:
-		return true
-	case UserEventPayload250TriggerTeamParticipationUpdated:
-		return true
-	case UserEventPayload250TriggerTeamRemoved:
-		return true
-	case UserEventPayload250TriggerToggle:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload251Enabled.
-const (
-	UserEventPayload251EnabledFalse UserEventPayload251Enabled = false
-	UserEventPayload251EnabledTrue  UserEventPayload251Enabled = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload251Enabled enum.
-func (e UserEventPayload251Enabled) Valid() bool {
-	switch e {
-	case UserEventPayload251EnabledFalse:
-		return true
-	case UserEventPayload251EnabledTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload254BillingPlan.
-const (
-	UserEventPayload254BillingPlanEnterprise UserEventPayload254BillingPlan = "enterprise"
-	UserEventPayload254BillingPlanPlatform   UserEventPayload254BillingPlan = "platform"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload254BillingPlan enum.
-func (e UserEventPayload254BillingPlan) Valid() bool {
-	switch e {
-	case UserEventPayload254BillingPlanEnterprise:
-		return true
-	case UserEventPayload254BillingPlanPlatform:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload255NextDsyncMode.
-const (
-	UserEventPayload255NextDsyncModeOrganization UserEventPayload255NextDsyncMode = "organization"
-	UserEventPayload255NextDsyncModeTeam         UserEventPayload255NextDsyncMode = "team"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload255NextDsyncMode enum.
-func (e UserEventPayload255NextDsyncMode) Valid() bool {
-	switch e {
-	case UserEventPayload255NextDsyncModeOrganization:
-		return true
-	case UserEventPayload255NextDsyncModeTeam:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload255PreviousDsyncMode.
-const (
-	UserEventPayload255PreviousDsyncModeOrganization UserEventPayload255PreviousDsyncMode = "organization"
-	UserEventPayload255PreviousDsyncModeTeam         UserEventPayload255PreviousDsyncMode = "team"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload255PreviousDsyncMode enum.
-func (e UserEventPayload255PreviousDsyncMode) Valid() bool {
-	switch e {
-	case UserEventPayload255PreviousDsyncModeOrganization:
-		return true
-	case UserEventPayload255PreviousDsyncModeTeam:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload257Enforced.
-const (
-	UserEventPayload257EnforcedFalse UserEventPayload257Enforced = false
-	UserEventPayload257EnforcedTrue  UserEventPayload257Enforced = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload257Enforced enum.
-func (e UserEventPayload257Enforced) Valid() bool {
-	switch e {
-	case UserEventPayload257EnforcedFalse:
-		return true
-	case UserEventPayload257EnforcedTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload257PreviousEnforced.
-const (
-	UserEventPayload257PreviousEnforcedFalse UserEventPayload257PreviousEnforced = false
-	UserEventPayload257PreviousEnforcedTrue  UserEventPayload257PreviousEnforced = true
-)

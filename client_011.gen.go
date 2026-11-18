@@ -6,7 +6,720 @@ package vercel
 import (
 	"encoding/json"
 	"time"
+
+	openapi_types "github.com/oapi-codegen/runtime/types"
 )
+
+// GetProjectEnv200JSONResponseBody2ContentHint6Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint6Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint7 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint7 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint7Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint7Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint7Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint8 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint8 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint8Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint8Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint8Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint9 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint9 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint9Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint9Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint9Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint10 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint10 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint10Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint10Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint10Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint11 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint11 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint11Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint11Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint11Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint12 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint12 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint12Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint12Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint12Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint13 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint13 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint13Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint13Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint13Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint14 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint14 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody2ContentHint14Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint14Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint14Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint15 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint15 struct {
+	IntegrationConfigurationId string                                             `json:"integrationConfigurationId"`
+	IntegrationId              string                                             `json:"integrationId"`
+	IntegrationProductId       string                                             `json:"integrationProductId"`
+	StoreId                    string                                             `json:"storeId"`
+	Type                       GetProjectEnv200JSONResponseBody2ContentHint15Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint15Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint15Type string
+
+// GetProjectEnv200JSONResponseBody2ContentHint16 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint16 struct {
+	ProjectId string                                             `json:"projectId"`
+	Type      GetProjectEnv200JSONResponseBody2ContentHint16Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody2ContentHint16Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2ContentHint16Type string
+
+// GetProjectEnv200JSONResponseBody_2_ContentHint defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody_2_ContentHint struct {
+	union json.RawMessage
+}
+
+// GetProjectEnv200JSONResponseBody2Decrypted defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2Decrypted bool
+
+// GetProjectEnv200JSONResponseBody2InternalContentHintType defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2InternalContentHintType string
+
+// GetProjectEnv200JSONResponseBody2Target0 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2Target0 = []string
+
+// GetProjectEnv200JSONResponseBody2Target1 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2Target1 string
+
+// GetProjectEnv200JSONResponseBody_2_Target defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody_2_Target struct {
+	union json.RawMessage
+}
+
+// GetProjectEnv200JSONResponseBody2Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2Type string
+
+// GetProjectEnv200JSONResponseBody2Visibility defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody2Visibility string
+
+// GetProjectEnv200JSONResponseBody defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GetProjectMembersParams defines parameters for GetProjectMembers.
+type GetProjectMembersParams struct {
+	// Limit Limit how many project members should be returned
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Since Timestamp in milliseconds to only include members added since then.
+	Since *int `form:"since,omitempty" json:"since,omitempty"`
+
+	// Until Timestamp in milliseconds to only include members added until then.
+	Until *int `form:"until,omitempty" json:"until,omitempty"`
+
+	// Search Search project members by their name, username, and email.
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetProjectMembers200JSONResponseBody0 defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody0 = map[string]interface{}
+
+// GetProjectMembers200JSONResponseBody1 defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody1 struct {
+	Members []struct {
+		// Avatar ID of the file for the Avatar of this member.
+		//
+		// Example: 123a6c5209bc3778245d011443644c8d27dc2c50
+		Avatar *string `json:"avatar,omitempty"`
+
+		// ComputedProjectRole Role of this user in the project.
+		//
+		// Example: ADMIN
+		ComputedProjectRole GetProjectMembers200JSONResponseBody1MembersComputedProjectRole `json:"computedProjectRole"`
+
+		// CreatedAt Timestamp in milliseconds when this member was added.
+		//
+		// Example: 1588720733602
+		CreatedAt float32 `json:"createdAt"`
+
+		// Email The email of this member.
+		//
+		// Example: jane.doe@example.com
+		Email string `json:"email"`
+
+		// Name The name of this user.
+		//
+		// Example: Jane Doe
+		Name *string `json:"name,omitempty"`
+
+		// Role Role of this user in the project.
+		//
+		// Example: ADMIN
+		Role GetProjectMembers200JSONResponseBody1MembersRole `json:"role"`
+
+		// TeamRole The role of this user in the team.
+		//
+		// Example: CONTRIBUTOR
+		TeamRole GetProjectMembers200JSONResponseBody1MembersTeamRole `json:"teamRole"`
+
+		// Uid The ID of this user.
+		//
+		// Example: zTuNVUXEAvvnNN3IaqinkyMw
+		Uid string `json:"uid"`
+
+		// Username The unique username of this user.
+		//
+		// Example: jane-doe
+		Username string `json:"username"`
+	} `json:"members"`
+	Pagination struct {
+		// Count Amount of items in the current page.
+		//
+		// Example: 20
+		Count   float32                                                `json:"count"`
+		HasNext GetProjectMembers200JSONResponseBody1PaginationHasNext `json:"hasNext"`
+
+		// Next Timestamp that must be used to request the next page.
+		//
+		// Example: 1540095775951
+		Next *float32 `json:"next"`
+
+		// Prev Timestamp that must be used to request the previous page.
+		//
+		// Example: 1540095775951
+		Prev *float32 `json:"prev"`
+	} `json:"pagination"`
+}
+
+// GetProjectMembers200JSONResponseBody1MembersComputedProjectRole defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody1MembersComputedProjectRole string
+
+// GetProjectMembers200JSONResponseBody1MembersRole defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody1MembersRole string
+
+// GetProjectMembers200JSONResponseBody1MembersTeamRole defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody1MembersTeamRole string
+
+// GetProjectMembers200JSONResponseBody1PaginationHasNext defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody1PaginationHasNext bool
+
+// GetProjectMembers200JSONResponseBody defines parameters for GetProjectMembers.
+type GetProjectMembers200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// AddProjectMemberJSONBody defines parameters for AddProjectMember.
+type AddProjectMemberJSONBody struct {
+	// Email The email of the team member that should be added to this project.
+	//
+	// Example: entity@example.com
+	Email *openapi_types.Email `json:"email,omitempty"`
+
+	// Role The project role of the member that will be added.
+	//
+	// Example: ADMIN
+	Role AddProjectMemberJSONBodyRole `json:"role"`
+
+	// Uid The ID of the team member that should be added to this project.
+	//
+	// Example: ndlgr43fadlPyCtREAqxxdyFK
+	Uid *string `json:"uid,omitempty"`
+
+	// Username The username of the team member that should be added to this project.
+	//
+	// Example: example
+	Username *string `json:"username,omitempty"`
+	union    json.RawMessage
+}
+
+// AddProjectMemberParams defines parameters for AddProjectMember.
+type AddProjectMemberParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// AddProjectMemberJSONBodyRole defines parameters for AddProjectMember.
+type AddProjectMemberJSONBodyRole string
+
+// AddProjectMemberJSONBody0 defines parameters for AddProjectMember.
+type AddProjectMemberJSONBody0 = interface{}
+
+// AddProjectMemberJSONBody1 defines parameters for AddProjectMember.
+type AddProjectMemberJSONBody1 = interface{}
+
+// AddProjectMemberJSONBody2 defines parameters for AddProjectMember.
+type AddProjectMemberJSONBody2 = interface{}
+
+// RemoveProjectMemberParams defines parameters for RemoveProjectMember.
+type RemoveProjectMemberParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateProjectProtectionBypassJSONBody defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypassJSONBody struct {
+	// Generate Generate a new secret. If neither generate or revoke are provided, a new random secret will be generated.
+	Generate *struct {
+		// Note Note to be displayed in the UI for this bypass
+		Note *string `json:"note,omitempty"`
+
+		// Secret Optional value of the secret to generate, don't send it for oauth2 tokens
+		Secret *string `json:"secret,omitempty"`
+	} `json:"generate,omitempty"`
+
+	// Revoke Optional instructions for revoking and regenerating a automation bypass
+	Revoke *struct {
+		// Regenerate Whether or not a new automation bypass should be created after the provided secret is revoked
+		Regenerate bool `json:"regenerate"`
+
+		// Secret Automation bypass to revoked
+		Secret string `json:"secret"`
+	} `json:"revoke,omitempty"`
+
+	// Update Update an existing bypass
+	Update *struct {
+		// IsEnvVar Whether or not this bypass is set as the VERCEL_AUTOMATION_BYPASS_SECRET environment variable on deployments
+		IsEnvVar *bool `json:"isEnvVar,omitempty"`
+
+		// Note Note to be displayed in the UI for this bypass
+		Note *string `json:"note,omitempty"`
+
+		// Secret Automation bypass to updated
+		Secret string `json:"secret"`
+	} `json:"update,omitempty"`
+}
+
+// UpdateProjectProtectionBypassParams defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypassParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass0 defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass0 struct {
+	ConfigurationId string                                                                 `json:"configurationId"`
+	CreatedAt       float32                                                                `json:"createdAt"`
+	CreatedBy       string                                                                 `json:"createdBy"`
+	IntegrationId   string                                                                 `json:"integrationId"`
+	Scope           UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass0Scope `json:"scope"`
+}
+
+// UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass0Scope defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass0Scope string
+
+// UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1 defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1 struct {
+	CreatedAt float32 `json:"createdAt"`
+	CreatedBy string  `json:"createdBy"`
+
+	// IsEnvVar When there was only one bypass, it was automatically set as an env var on deployments. With multiple bypasses, there is always one bypass that is selected as the default, and gets set as an env var on deployments. As this is a new field, undefined means that the bypass is the env var. If there are any automation bypasses, exactly one must be the env var.
+	IsEnvVar *UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1IsEnvVar `json:"isEnvVar,omitempty"`
+
+	// Note Optional note about the bypass to be displayed in the UI
+	Note  *string                                                                `json:"note,omitempty"`
+	Scope UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1Scope `json:"scope"`
+}
+
+// UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1IsEnvVar defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1IsEnvVar bool
+
+// UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1Scope defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypass200JSONResponseBodyProtectionBypass1Scope string
+
+// UpdateProjectProtectionBypass200JSONResponseBody_ProtectionBypass_AdditionalProperties defines parameters for UpdateProjectProtectionBypass.
+type UpdateProjectProtectionBypass200JSONResponseBody_ProtectionBypass_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// GetRollingReleaseParams defines parameters for GetRollingRelease.
+type GetRollingReleaseParams struct {
+	// State Filter by rolling release state
+	State *GetRollingReleaseParamsState `form:"state,omitempty" json:"state,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetRollingReleaseParamsState defines parameters for GetRollingRelease.
+type GetRollingReleaseParamsState string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseAdvancementType defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseAdvancementType string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseState defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseState string
+
+// GetRollingRelease200JSONResponseBodyRollingReleaseSubstate defines parameters for GetRollingRelease.
+type GetRollingRelease200JSONResponseBodyRollingReleaseSubstate string
+
+// ApproveRollingReleaseStageJSONBody defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStageJSONBody struct {
+	// CanaryDeploymentId The id of the canary deployment to approve for the next stage
+	CanaryDeploymentId string `json:"canaryDeploymentId"`
+
+	// NextStageIndex The index of the stage to transition to
+	NextStageIndex float32 `json:"nextStageIndex"`
+}
+
+// ApproveRollingReleaseStageParams defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStageParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageIsFinalStage defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageIsFinalStage bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageLinearShift defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageLinearShift bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageRequireApproval defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseActiveStageRequireApproval bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseAdvancementType defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseAdvancementType string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentSource defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentSource string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentTarget defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCanaryDeploymentTarget string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentSource defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentSource string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentTarget defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseCurrentDeploymentTarget string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageIsFinalStage defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageIsFinalStage bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageLinearShift defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageLinearShift bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageRequireApproval defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseNextStageRequireApproval bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesIsFinalStage defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesIsFinalStage bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseState defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseState string
+
+// ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseSubstate defines parameters for ApproveRollingReleaseStage.
+type ApproveRollingReleaseStage200JSONResponseBodyRollingReleaseSubstate string
+
+// GetRollingReleaseBillingStatusParams defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatusParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetRollingReleaseBillingStatus200JSONResponseBody0 defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody0 struct {
+	AvailableSlots GetRollingReleaseBillingStatus200JSONResponseBody0AvailableSlots `json:"availableSlots"`
+	Message        string                                                           `json:"message"`
+	Reason         GetRollingReleaseBillingStatus200JSONResponseBody0Reason         `json:"reason"`
+}
+
+// GetRollingReleaseBillingStatus200JSONResponseBody0AvailableSlots defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody0AvailableSlots float32
+
+// GetRollingReleaseBillingStatus200JSONResponseBody0Reason defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody0Reason string
+
+// GetRollingReleaseBillingStatus200JSONResponseBody1 defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody1 struct {
+	AvailableSlots GetRollingReleaseBillingStatus200JSONResponseBody1AvailableSlots `json:"availableSlots"`
+	Message        string                                                           `json:"message"`
+	Reason         GetRollingReleaseBillingStatus200JSONResponseBody1Reason         `json:"reason"`
+}
+
+// GetRollingReleaseBillingStatus200JSONResponseBody1AvailableSlots defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody1AvailableSlots string
+
+// GetRollingReleaseBillingStatus200JSONResponseBody1Reason defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody1Reason string
+
+// GetRollingReleaseBillingStatus200JSONResponseBody2 defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody2 struct {
+	AvailableSlots  GetRollingReleaseBillingStatus200JSONResponseBody2AvailableSlots `json:"availableSlots"`
+	EnabledProjects []string                                                         `json:"enabledProjects"`
+	Message         string                                                           `json:"message"`
+	Reason          GetRollingReleaseBillingStatus200JSONResponseBody2Reason         `json:"reason"`
+}
+
+// GetRollingReleaseBillingStatus200JSONResponseBody2AvailableSlots defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody2AvailableSlots float32
+
+// GetRollingReleaseBillingStatus200JSONResponseBody2Reason defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody2Reason string
+
+// GetRollingReleaseBillingStatus200JSONResponseBody3 defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody3 struct {
+	AvailableSlots float32                                                  `json:"availableSlots"`
+	Message        string                                                   `json:"message"`
+	Reason         GetRollingReleaseBillingStatus200JSONResponseBody3Reason `json:"reason"`
+}
+
+// GetRollingReleaseBillingStatus200JSONResponseBody3Reason defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody3Reason string
+
+// GetRollingReleaseBillingStatus200JSONResponseBody defines parameters for GetRollingReleaseBillingStatus.
+type GetRollingReleaseBillingStatus200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// CompleteRollingReleaseJSONBody defines parameters for CompleteRollingRelease.
+type CompleteRollingReleaseJSONBody struct {
+	// CanaryDeploymentId The ID of the canary deployment to complete
+	CanaryDeploymentId string `json:"canaryDeploymentId"`
+}
+
+// CompleteRollingReleaseParams defines parameters for CompleteRollingRelease.
+type CompleteRollingReleaseParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageIsFinalStage bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageLinearShift bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseActiveStageRequireApproval bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseAdvancementType string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentReadyState string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentSource string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseCanaryDeploymentTarget string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentReadyState string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentSource string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseCurrentDeploymentTarget string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageIsFinalStage bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageLinearShift bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseNextStageRequireApproval bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesIsFinalStage bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseState defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseState string
+
+// CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate defines parameters for CompleteRollingRelease.
+type CompleteRollingRelease200JSONResponseBodyRollingReleaseSubstate string
+
+// DeleteRollingReleaseConfigParams defines parameters for DeleteRollingReleaseConfig.
+type DeleteRollingReleaseConfigParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetRollingReleaseConfigParams defines parameters for GetRollingReleaseConfig.
+type GetRollingReleaseConfigParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for GetRollingReleaseConfig.
+type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
+
+// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for GetRollingReleaseConfig.
+type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for GetRollingReleaseConfig.
+type GetRollingReleaseConfig200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// UpdateRollingReleaseConfigParams defines parameters for UpdateRollingReleaseConfig.
+type UpdateRollingReleaseConfigParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateRollingReleaseConfig200JSONResponseBody0 defines parameters for UpdateRollingReleaseConfig.
+type UpdateRollingReleaseConfig200JSONResponseBody0 struct {
+	RollingRelease interface{} `json:"rollingRelease"`
+}
+
+// UpdateRollingReleaseConfig200JSONResponseBody1 defines parameters for UpdateRollingReleaseConfig.
+type UpdateRollingReleaseConfig200JSONResponseBody1 struct {
+	RollingRelease *struct {
+		Stages *[]struct {
+			// Duration Duration in minutes for automatic advancement to the next stage
+			//
+			// Example: 600
+			Duration *float32 `json:"duration,omitempty"`
+
+			// LinearShift Whether to linearly shift traffic over the duration of this stage
+			//
+			// Example: false
+			LinearShift *UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesLinearShift `json:"linearShift,omitempty"`
+
+			// RequireApproval Whether or not this stage requires manual approval to proceed
+			//
+			// Example: false
+			RequireApproval *UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesRequireApproval `json:"requireApproval,omitempty"`
+
+			// TargetPercentage The percentage of traffic to serve to the canary deployment (0-100)
+			//
+			// Example: 25
+			TargetPercentage float32 `json:"targetPercentage"`
+		} `json:"stages,omitempty"`
+	} `json:"rollingRelease"`
+}
 
 // UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesLinearShift defines parameters for UpdateRollingReleaseConfig.
 type UpdateRollingReleaseConfig200JSONResponseBody1RollingReleaseStagesLinearShift bool
@@ -2351,7 +3064,6 @@ type GetFlagSettings200JSONResponseBodyTypeName string
 
 // UpdateFlagSettingsJSONBody defines parameters for UpdateFlagSettings.
 type UpdateFlagSettingsJSONBody struct {
-	Enabled  *bool `json:"enabled,omitempty"`
 	Entities *[]struct {
 		Attributes []struct {
 			Key    string `json:"key"`
@@ -19298,714 +20010,3 @@ type GetProjects200JSONResponseBody1ProjectsInternalRoutes1Has1Type string
 type GetProjects200JSONResponseBody_1_Projects_InternalRoutes_1_Has_Item struct {
 	union json.RawMessage
 }
-
-// GetProjects200JSONResponseBody1ProjectsInternalRoutes1MitigateAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsInternalRoutes1MitigateAction string
-
-// GetProjects200JSONResponseBody_1_Projects_InternalRoutes_Item defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_InternalRoutes_Item struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsIpBucketsDefault defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsIpBucketsDefault bool
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsAliasAssigned0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsAliasAssigned0 = float32
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsAliasAssigned1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsAliasAssigned1 bool
-
-// GetProjects200JSONResponseBody_1_Projects_LatestDeployments_AliasAssigned defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_LatestDeployments_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsBranchMatcherType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsBranchMatcherType string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsChecksConclusion defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsChecksConclusion string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsChecksState defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsChecksState string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsConnectBuildsEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsConnectBuildsEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsForced defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsForced bool
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsPlan defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsPlan string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsPreviewCommentsEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsPreviewCommentsEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsPrivate defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsPrivate bool
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsReadyState defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsReadyState string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsReadySubstate defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsReadySubstate string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsType string
-
-// GetProjects200JSONResponseBody1ProjectsLatestDeploymentsWithCache defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLatestDeploymentsWithCache bool
-
-// GetProjects200JSONResponseBody1ProjectsLink0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink0 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                                `json:"repoOwnerId,omitempty"`
-	Sourceless  *GetProjects200JSONResponseBody1ProjectsLink0Sourceless `json:"sourceless,omitempty"`
-	Type        GetProjects200JSONResponseBody1ProjectsLink0Type        `json:"type"`
-	UpdatedAt   *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink0Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink0Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink0Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink0Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink1 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                                `json:"repoOwnerId,omitempty"`
-	Sourceless  *GetProjects200JSONResponseBody1ProjectsLink1Sourceless `json:"sourceless,omitempty"`
-	Type        GetProjects200JSONResponseBody1ProjectsLink1Type        `json:"type"`
-	UpdatedAt   *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink1Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink1Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink1Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink1Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink2 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink2 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string   `json:"gitCredentialId"`
-	Host             string   `json:"host"`
-	Org              string   `json:"org"`
-	ProductionBranch string   `json:"productionBranch"`
-	Repo             *string  `json:"repo,omitempty"`
-	RepoId           *float32 `json:"repoId,omitempty"`
-
-	// RepoOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
-	RepoOwnerId *float32                                                `json:"repoOwnerId,omitempty"`
-	Sourceless  *GetProjects200JSONResponseBody1ProjectsLink2Sourceless `json:"sourceless,omitempty"`
-	Type        GetProjects200JSONResponseBody1ProjectsLink2Type        `json:"type"`
-	UpdatedAt   *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink2Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink2Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink2Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink2Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink3 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink3 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId          string `json:"gitCredentialId"`
-	ProductionBranch         string `json:"productionBranch"`
-	ProjectId                string `json:"projectId"`
-	ProjectName              string `json:"projectName"`
-	ProjectNameWithNamespace string `json:"projectNameWithNamespace"`
-	ProjectNamespace         string `json:"projectNamespace"`
-
-	// ProjectOwnerId A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
-	ProjectOwnerId *float32                                                `json:"projectOwnerId,omitempty"`
-	ProjectUrl     string                                                  `json:"projectUrl"`
-	Sourceless     *GetProjects200JSONResponseBody1ProjectsLink3Sourceless `json:"sourceless,omitempty"`
-	Type           GetProjects200JSONResponseBody1ProjectsLink3Type        `json:"type"`
-	UpdatedAt      *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink3Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink3Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink3Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink3Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink4 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink4 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                                  `json:"gitCredentialId"`
-	Name             string                                                  `json:"name"`
-	Owner            string                                                  `json:"owner"`
-	ProductionBranch string                                                  `json:"productionBranch"`
-	Slug             string                                                  `json:"slug"`
-	Sourceless       *GetProjects200JSONResponseBody1ProjectsLink4Sourceless `json:"sourceless,omitempty"`
-	Type             GetProjects200JSONResponseBody1ProjectsLink4Type        `json:"type"`
-	UpdatedAt        *float32                                                `json:"updatedAt,omitempty"`
-	Uuid             string                                                  `json:"uuid"`
-	WorkspaceUuid    string                                                  `json:"workspaceUuid"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink4Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink4Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink4Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink4Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink5 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink5 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                                  `json:"gitCredentialId"`
-	Org              string                                                  `json:"org"`
-	ProductionBranch string                                                  `json:"productionBranch"`
-	Repo             string                                                  `json:"repo"`
-	RepoId           string                                                  `json:"repoId"`
-	Sourceless       *GetProjects200JSONResponseBody1ProjectsLink5Sourceless `json:"sourceless,omitempty"`
-	Type             GetProjects200JSONResponseBody1ProjectsLink5Type        `json:"type"`
-	UpdatedAt        *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink5Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink5Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink5Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink5Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink6 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink6 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                                  `json:"gitCredentialId"`
-	Org              string                                                  `json:"org"`
-	ProductionBranch string                                                  `json:"productionBranch"`
-	Repo             string                                                  `json:"repo"`
-	RepoId           string                                                  `json:"repoId"`
-	Sourceless       *GetProjects200JSONResponseBody1ProjectsLink6Sourceless `json:"sourceless,omitempty"`
-	Type             GetProjects200JSONResponseBody1ProjectsLink6Type        `json:"type"`
-	UpdatedAt        *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink6Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink6Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink6Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink6Type string
-
-// GetProjects200JSONResponseBody1ProjectsLink7 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink7 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId string `json:"gitCredentialId"`
-
-	// Owner Owner (namespace) slug, e.g. `acme`.
-	Owner string `json:"owner"`
-
-	// OwnerId Origin namespace id (`ns_…`) of the owner.
-	OwnerId          string `json:"ownerId"`
-	ProductionBranch string `json:"productionBranch"`
-	Repo             string `json:"repo"`
-
-	// RepoId Origin repository id.
-	RepoId     string                                                  `json:"repoId"`
-	Sourceless *GetProjects200JSONResponseBody1ProjectsLink7Sourceless `json:"sourceless,omitempty"`
-	Type       GetProjects200JSONResponseBody1ProjectsLink7Type        `json:"type"`
-	UpdatedAt  *float32                                                `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsLink7Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink7Sourceless bool
-
-// GetProjects200JSONResponseBody1ProjectsLink7Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLink7Type string
-
-// GetProjects200JSONResponseBody_1_Projects_Link defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Link struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsLive defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsLive bool
-
-// GetProjects200JSONResponseBody1ProjectsNodeVersion defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsNodeVersion string
-
-// GetProjects200JSONResponseBody1ProjectsOidcTokenConfigEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsOidcTokenConfigEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsOidcTokenConfigIssuerMode defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsOidcTokenConfigIssuerMode string
-
-// GetProjects200JSONResponseBody1ProjectsPassportDeploymentType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsPassportDeploymentType string
-
-// GetProjects200JSONResponseBody1ProjectsPaused defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsPaused bool
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineElasticReason defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineElasticReason string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineElasticTransitionDirection defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineElasticTransitionDirection string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineSelection defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineSelection string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineType string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigBuildQueueConfiguration defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigBuildQueueConfiguration string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0 struct {
-	Cores  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Cores float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Label string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine0Memory float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1 struct {
-	Cores  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Cores float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Label string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine1Memory float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2 struct {
-	Cores  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Cores float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Label string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine2Memory float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3 struct {
-	Cores  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Cores float32
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Label string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticBuildMachine3Memory float32
-
-// GetProjects200JSONResponseBody_1_Projects_ResourceConfig_ElasticBuildMachine defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_ResourceConfig_ElasticBuildMachine struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigElasticConcurrencyEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigElasticConcurrencyEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigEnableFunctionsBeta defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigEnableFunctionsBeta bool
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigFluid defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigFluid bool
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigFunctionDefaultMemoryType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigFunctionDefaultMemoryType string
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigFunctionZeroConfigFailover defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigFunctionZeroConfigFailover bool
-
-// GetProjects200JSONResponseBody1ProjectsResourceConfigIsNSNBDisabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsResourceConfigIsNSNBDisabled bool
-
-// GetProjects200JSONResponseBody1ProjectsRollingReleaseCanaryResponseHeader defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsRollingReleaseCanaryResponseHeader bool
-
-// GetProjects200JSONResponseBody1ProjectsRollingReleaseStagesLinearShift defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsRollingReleaseStagesLinearShift bool
-
-// GetProjects200JSONResponseBody1ProjectsRollingReleaseStagesRequireApproval defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsRollingReleaseStagesRequireApproval bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityAttackModeEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityAttackModeEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityBotIdEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityBotIdEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHandle defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHandle string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHasType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHasType string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHasValue0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHasValue0 = string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHasValue1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesHasValue1 struct {
-	Eq   *string   `json:"eq,omitempty"`
-	Gt   *float32  `json:"gt,omitempty"`
-	Gte  *float32  `json:"gte,omitempty"`
-	Inc  *[]string `json:"inc,omitempty"`
-	List *string   `json:"list,omitempty"`
-	Lt   *float32  `json:"lt,omitempty"`
-	Lte  *float32  `json:"lte,omitempty"`
-	Neq  *string   `json:"neq,omitempty"`
-	Ninc *[]string `json:"ninc,omitempty"`
-	Pre  *string   `json:"pre,omitempty"`
-	Re   *string   `json:"re,omitempty"`
-	Suf  *string   `json:"suf,omitempty"`
-}
-
-// GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Has_Value defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Has_Value struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMissingType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMissingType string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMissingValue0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMissingValue0 = string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMissingValue1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMissingValue1 struct {
-	Eq   *string   `json:"eq,omitempty"`
-	Gt   *float32  `json:"gt,omitempty"`
-	Gte  *float32  `json:"gte,omitempty"`
-	Inc  *[]string `json:"inc,omitempty"`
-	List *string   `json:"list,omitempty"`
-	Lt   *float32  `json:"lt,omitempty"`
-	Lte  *float32  `json:"lte,omitempty"`
-	Neq  *string   `json:"neq,omitempty"`
-	Ninc *[]string `json:"ninc,omitempty"`
-	Pre  *string   `json:"pre,omitempty"`
-	Re   *string   `json:"re,omitempty"`
-	Suf  *string   `json:"suf,omitempty"`
-}
-
-// GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Missing_Value defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Missing_Value struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateErlAlgo defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateErlAlgo string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateLogHeaders0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateLogHeaders0 = []string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateLogHeaders1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesMitigateLogHeaders1 string
-
-// GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Mitigate_LogHeaders defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Mitigate_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseHasType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseHasType string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseHasValue0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseHasValue0 = string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseHasValue1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseHasValue1 struct {
-	Eq   *string   `json:"eq,omitempty"`
-	Gt   *float32  `json:"gt,omitempty"`
-	Gte  *float32  `json:"gte,omitempty"`
-	Inc  *[]string `json:"inc,omitempty"`
-	List *string   `json:"list,omitempty"`
-	Lt   *float32  `json:"lt,omitempty"`
-	Lte  *float32  `json:"lte,omitempty"`
-	Neq  *string   `json:"neq,omitempty"`
-	Ninc *[]string `json:"ninc,omitempty"`
-	Pre  *string   `json:"pre,omitempty"`
-	Re   *string   `json:"re,omitempty"`
-	Suf  *string   `json:"suf,omitempty"`
-}
-
-// GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_ResponseHas_Value defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_ResponseHas_Value struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseMissingType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseMissingType string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseMissingValue0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseMissingValue0 = string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseMissingValue1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesResponseMissingValue1 struct {
-	Eq   *string   `json:"eq,omitempty"`
-	Gt   *float32  `json:"gt,omitempty"`
-	Gte  *float32  `json:"gte,omitempty"`
-	Inc  *[]string `json:"inc,omitempty"`
-	List *string   `json:"list,omitempty"`
-	Lt   *float32  `json:"lt,omitempty"`
-	Lte  *float32  `json:"lte,omitempty"`
-	Neq  *string   `json:"neq,omitempty"`
-	Ninc *[]string `json:"ninc,omitempty"`
-	Pre  *string   `json:"pre,omitempty"`
-	Re   *string   `json:"re,omitempty"`
-	Suf  *string   `json:"suf,omitempty"`
-}
-
-// GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_ResponseMissing_Value defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_ResponseMissing_Value struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesSrc0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesSrc0 = string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesSrc1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesSrc1 struct {
-	Eq   *string   `json:"eq,omitempty"`
-	Gt   *float32  `json:"gt,omitempty"`
-	Gte  *float32  `json:"gte,omitempty"`
-	Inc  *[]string `json:"inc,omitempty"`
-	List *string   `json:"list,omitempty"`
-	Lt   *float32  `json:"lt,omitempty"`
-	Lte  *float32  `json:"lte,omitempty"`
-	Neq  *string   `json:"neq,omitempty"`
-	Ninc *[]string `json:"ninc,omitempty"`
-	Pre  *string   `json:"pre,omitempty"`
-	Re   *string   `json:"re,omitempty"`
-	Suf  *string   `json:"suf,omitempty"`
-}
-
-// GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Src defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_FirewallRoutes_Src struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesTierRequirement defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesTierRequirement string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesTransformsOp defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesTransformsOp string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesTransformsType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallRoutesTransformsType string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityFirewallSeawallEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityFirewallSeawallEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityJa3Enabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityJa3Enabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityJa4Enabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityJa4Enabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityLogHeaders0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityLogHeaders0 = []string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityLogHeaders1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityLogHeaders1 string
-
-// GetProjects200JSONResponseBody_1_Projects_Security_LogHeaders defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesAiBotsAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesAiBotsAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesAiBotsActive defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesAiBotsActive bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesBotFilterAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesBotFilterAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesBotFilterActive defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesBotFilterActive bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesOwaspAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesOwaspAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesOwaspActive defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesOwaspActive bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesTrafficSourcesAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesTrafficSourcesAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesTrafficSourcesActive defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesTrafficSourcesActive bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesVercelRulesetAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesVercelRulesetAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesVercelRulesetActive defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityManagedRulesVercelRulesetActive bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityPageIntegrityEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityPageIntegrityEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsBypassSystem defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsBypassSystem bool
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsLogHeaders0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsLogHeaders0 = []string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsLogHeaders1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsLogHeaders1 string
-
-// GetProjects200JSONResponseBody_1_Projects_Security_Rulesets_LogHeaders defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Security_Rulesets_LogHeaders struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsRateLimitAction defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsRateLimitAction string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsRateLimitAlgo defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsRateLimitAlgo string
-
-// GetProjects200JSONResponseBody1ProjectsSecurityRulesetsRedirectPermanent defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSecurityRulesetsRedirectPermanent bool
-
-// GetProjects200JSONResponseBody1ProjectsServerlessFunctionZeroConfigFailover defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsServerlessFunctionZeroConfigFailover bool
-
-// GetProjects200JSONResponseBody1ProjectsSkipGitConnectDuringLink defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSkipGitConnectDuringLink bool
-
-// GetProjects200JSONResponseBody1ProjectsSourceFilesOutsideRootDirectory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSourceFilesOutsideRootDirectory bool
-
-// GetProjects200JSONResponseBody1ProjectsSpeedInsightsHasData defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSpeedInsightsHasData bool
-
-// GetProjects200JSONResponseBody1ProjectsSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom string
-
-// GetProjects200JSONResponseBody1ProjectsSsoProtectionCve55182MigrationAppliedFrom defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSsoProtectionCve55182MigrationAppliedFrom string
-
-// GetProjects200JSONResponseBody1ProjectsSsoProtectionDeploymentType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsSsoProtectionDeploymentType string
-
-// GetProjects200JSONResponseBody1ProjectsTargetsAliasAssigned0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsTargetsAliasAssigned0 = float32
-
-// GetProjects200JSONResponseBody1ProjectsTargetsAliasAssigned1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsTargetsAliasAssigned1 bool
-
-// GetProjects200JSONResponseBody_1_Projects_Targets_AliasAssigned defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Targets_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsTargetsBranchMatcherType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsTargetsBranchMatcherType string
-
-// GetProjects200JSONResponseBody1ProjectsTargetsChecksConclusion defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsTargetsChecksConclusion string

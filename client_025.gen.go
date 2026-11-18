@@ -15319,6 +15319,7 @@ type CreateIntegrationStoreDirectResponse struct {
 					Value *string `json:"value,omitempty"`
 				} `json:"details,omitempty"`
 				Disabled           *CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled `json:"disabled,omitempty"`
+				DisabledReason     *string                                                                  `json:"disabledReason,omitempty"`
 				EffectiveDate      *string                                                                  `json:"effectiveDate,omitempty"`
 				HighlightedDetails *[]struct {
 					Label string  `json:"label"`
@@ -15559,6 +15560,7 @@ func (r CreateIntegrationStoreDirectResponse) GetJSON200() *struct {
 				Value *string `json:"value,omitempty"`
 			} `json:"details,omitempty"`
 			Disabled           *CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled `json:"disabled,omitempty"`
+			DisabledReason     *string                                                                  `json:"disabledReason,omitempty"`
 			EffectiveDate      *string                                                                  `json:"effectiveDate,omitempty"`
 			HighlightedDetails *[]struct {
 				Label string  `json:"label"`
@@ -19549,7 +19551,16 @@ type SearchVercelCiLogsResponse struct {
 		Invocations []struct {
 			Attempt      float32 `json:"attempt"`
 			InvocationId string  `json:"invocationId"`
-			Tasks        []struct {
+
+			// Setup Matching lines from the setup logs. Present only when a setup line matches.
+			Setup *struct {
+				Lines []struct {
+					Level     string  `json:"level"`
+					Message   string  `json:"message"`
+					Timestamp float32 `json:"timestamp"`
+				} `json:"lines"`
+			} `json:"setup,omitempty"`
+			Tasks []struct {
 				Conclusion      *SearchVercelCiLogs200JSONResponseBody_Invocations_Tasks_Conclusion `json:"conclusion,omitempty"`
 				JobDefinitionId string                                                              `json:"jobDefinitionId"`
 				JobName         string                                                              `json:"jobName"`
@@ -19604,7 +19615,16 @@ func (r SearchVercelCiLogsResponse) GetJSON200() *struct {
 	Invocations []struct {
 		Attempt      float32 `json:"attempt"`
 		InvocationId string  `json:"invocationId"`
-		Tasks        []struct {
+
+		// Setup Matching lines from the setup logs. Present only when a setup line matches.
+		Setup *struct {
+			Lines []struct {
+				Level     string  `json:"level"`
+				Message   string  `json:"message"`
+				Timestamp float32 `json:"timestamp"`
+			} `json:"lines"`
+		} `json:"setup,omitempty"`
+		Tasks []struct {
 			Conclusion      *SearchVercelCiLogs200JSONResponseBody_Invocations_Tasks_Conclusion `json:"conclusion,omitempty"`
 			JobDefinitionId string                                                              `json:"jobDefinitionId"`
 			JobName         string                                                              `json:"jobName"`
@@ -19986,32 +20006,4 @@ type CreateVercelCiTaskAnalysisResponse struct {
 			Message string `json:"message"`
 		} `json:"error"`
 	}
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r CreateVercelCiTaskAnalysisResponse) GetJSON202() *struct {
-	AnalysisId string                                               `json:"analysisId"`
-	Status     CreateVercelCiTaskAnalysis202JSONResponseBody_Status `json:"status"`
-} {
-	return r.JSON202
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r CreateVercelCiTaskAnalysisResponse) GetJSON401() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r CreateVercelCiTaskAnalysisResponse) GetJSON403() *struct {
-	Error struct {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	} `json:"error"`
-} {
-	return r.JSON403
 }

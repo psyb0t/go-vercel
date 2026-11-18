@@ -5415,6 +5415,81 @@ func (c *ClientWithResponses) UpdateOrganizationWithResponse(ctx context.Context
 	return ParseUpdateOrganizationResponse(rsp)
 }
 
+// ListOrganizationDsyncGroupsWithResponse List Organization Directory Sync Groups
+//
+// List the groups in an organization's Identity Provider directory, along with their Directory Sync group configuration when one exists.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/organizations/{organizationId}/dsync/groups (the `ListOrganizationDsyncGroups` operationId).
+func (c *ClientWithResponses) ListOrganizationDsyncGroupsWithResponse(ctx context.Context, organizationId string, params *ListOrganizationDsyncGroupsParams, reqEditors ...RequestEditorFn) (*ListOrganizationDsyncGroupsResponse, error) {
+	rsp, err := c.ListOrganizationDsyncGroups(ctx, organizationId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListOrganizationDsyncGroupsResponse(rsp)
+}
+
+// DeleteOrganizationDsyncGroupWithResponse Delete Organization Directory Sync Group Configuration
+//
+// Delete one organization's Directory Sync group configuration. The last group granting OrgAdmin cannot be removed.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `DeleteOrganizationDsyncGroup` operationId).
+func (c *ClientWithResponses) DeleteOrganizationDsyncGroupWithResponse(ctx context.Context, organizationId string, groupId string, params *DeleteOrganizationDsyncGroupParams, reqEditors ...RequestEditorFn) (*DeleteOrganizationDsyncGroupResponse, error) {
+	rsp, err := c.DeleteOrganizationDsyncGroup(ctx, organizationId, groupId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteOrganizationDsyncGroupResponse(rsp)
+}
+
+// GetOrganizationDsyncGroupWithResponse Get Organization Directory Sync Group
+//
+// Get one group from the organization's Identity Provider directory, joined with its Directory Sync group configuration when one exists.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `GetOrganizationDsyncGroup` operationId).
+func (c *ClientWithResponses) GetOrganizationDsyncGroupWithResponse(ctx context.Context, organizationId string, groupId string, params *GetOrganizationDsyncGroupParams, reqEditors ...RequestEditorFn) (*GetOrganizationDsyncGroupResponse, error) {
+	rsp, err := c.GetOrganizationDsyncGroup(ctx, organizationId, groupId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOrganizationDsyncGroupResponse(rsp)
+}
+
+// PutOrganizationDsyncGroupWithBodyWithResponse Create or Replace Organization Directory Sync Group Configuration
+//
+// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `PutOrganizationDsyncGroup` operationId).
+func (c *ClientWithResponses) PutOrganizationDsyncGroupWithBodyWithResponse(ctx context.Context, organizationId string, groupId string, params *PutOrganizationDsyncGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutOrganizationDsyncGroupResponse, error) {
+	rsp, err := c.PutOrganizationDsyncGroupWithBody(ctx, organizationId, groupId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutOrganizationDsyncGroupResponse(rsp)
+}
+
+// PutOrganizationDsyncGroupWithResponse Create or Replace Organization Directory Sync Group Configuration
+//
+// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `PutOrganizationDsyncGroup` operationId).
+func (c *ClientWithResponses) PutOrganizationDsyncGroupWithResponse(ctx context.Context, organizationId string, groupId string, params *PutOrganizationDsyncGroupParams, body PutOrganizationDsyncGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*PutOrganizationDsyncGroupResponse, error) {
+	rsp, err := c.PutOrganizationDsyncGroup(ctx, organizationId, groupId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutOrganizationDsyncGroupResponse(rsp)
+}
+
 // ListOrganizationTeamsWithResponse List Organization Teams
 //
 // List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
@@ -5473,6 +5548,36 @@ func (c *ClientWithResponses) RemoveOrganizationTeamWithResponse(ctx context.Con
 		return nil, err
 	}
 	return ParseRemoveOrganizationTeamResponse(rsp)
+}
+
+// PutOrganizationTeamDsyncWithBodyWithResponse Update Organization Team Directory Sync Mode
+//
+// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync (the `PutOrganizationTeamDsync` operationId).
+func (c *ClientWithResponses) PutOrganizationTeamDsyncWithBodyWithResponse(ctx context.Context, organizationId string, targetTeamId string, params *PutOrganizationTeamDsyncParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutOrganizationTeamDsyncResponse, error) {
+	rsp, err := c.PutOrganizationTeamDsyncWithBody(ctx, organizationId, targetTeamId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutOrganizationTeamDsyncResponse(rsp)
+}
+
+// PutOrganizationTeamDsyncWithResponse Update Organization Team Directory Sync Mode
+//
+// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync (the `PutOrganizationTeamDsync` operationId).
+func (c *ClientWithResponses) PutOrganizationTeamDsyncWithResponse(ctx context.Context, organizationId string, targetTeamId string, params *PutOrganizationTeamDsyncParams, body PutOrganizationTeamDsyncJSONRequestBody, reqEditors ...RequestEditorFn) (*PutOrganizationTeamDsyncResponse, error) {
+	rsp, err := c.PutOrganizationTeamDsync(ctx, organizationId, targetTeamId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutOrganizationTeamDsyncResponse(rsp)
 }
 
 // GetProjectTraceWithResponse Get a project trace by request ID
@@ -8452,9 +8557,9 @@ func (c *ClientWithResponses) GetVercelCiInvocationTreeWithResponse(ctx context.
 	return ParseGetVercelCiInvocationTreeResponse(rsp)
 }
 
-// SearchVercelCiLogsWithResponse Search the task logs of several invocation attempts
+// SearchVercelCiLogsWithResponse Search the setup and task logs of several invocation attempts
 //
-// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
+// Searches the setup and task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned, and `setup` is present only when a setup line matches. When more than 1000 lines match across setup and task logs, the newest are kept.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -19418,6 +19523,7 @@ func ParseGetBillingPlansResponse(rsp *http.Response) (*GetBillingPlansResponse,
 					Value *string `json:"value,omitempty"`
 				} `json:"details,omitempty"`
 				Disabled           *GetBillingPlans200JSONResponseBodyPlansDisabled `json:"disabled,omitempty"`
+				DisabledReason     *string                                          `json:"disabledReason,omitempty"`
 				EffectiveDate      *string                                          `json:"effectiveDate,omitempty"`
 				HighlightedDetails *[]struct {
 					Label string  `json:"label"`
@@ -19944,87 +20050,6 @@ func ParseUpdateKmsIssuerResponse(rsp *http.Response) (*UpdateKmsIssuerResponse,
 		break // No content-type
 
 	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateKmsSigningKeyResponse parses an HTTP response from a CreateKmsSigningKeyWithResponse call
-func ParseCreateKmsSigningKeyResponse(rsp *http.Response) (*CreateKmsSigningKeyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateKmsSigningKeyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			ActivateAt *string `json:"activateAt,omitempty"`
-
-			// ActivatedAt When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-			ActivatedAt *string `json:"activatedAt,omitempty"`
-			Algorithm   string  `json:"algorithm"`
-
-			// CertificatePem The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-			CertificatePem *string `json:"certificatePem,omitempty"`
-			CreatedAt      string  `json:"createdAt"`
-
-			// ImportKeyId The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-			ImportKeyId *string `json:"importKeyId,omitempty"`
-			IssuerId    string  `json:"issuerId"`
-
-			// KeyId The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-			KeyId     string `json:"keyId"`
-			PublicKey *struct {
-				Alg    *string   `json:"alg,omitempty"`
-				KeyOps *[]string `json:"key_ops,omitempty"`
-				Kid    *string   `json:"kid,omitempty"`
-				Kty    *string   `json:"kty,omitempty"`
-				Use    *string   `json:"use,omitempty"`
-
-				// X5c The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-				X5c *[]string `json:"x5c,omitempty"`
-
-				// X5tS256 The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-				X5tS256 *string `json:"x5t#S256,omitempty"`
-			} `json:"publicKey,omitempty"`
-			PublicKeyFingerprint string `json:"publicKeyFingerprint"`
-
-			// PublicKeyPem The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-			PublicKeyPem *string                                      `json:"publicKeyPem,omitempty"`
-			RevokeAt     *string                                      `json:"revokeAt,omitempty"`
-			Status       CreateKmsSigningKey200JSONResponseBodyStatus `json:"status"`
-			UpdatedAt    string                                       `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
 		break // No content-type
 
 	case rsp.StatusCode == 410:

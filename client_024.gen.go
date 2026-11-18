@@ -8,6 +8,669 @@ import (
 	"time"
 )
 
+type ArchiveAiGatewayBudgetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayBudget
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ArchiveAiGatewayBudgetResponse) GetJSON200() *AiGatewayBudget {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ArchiveAiGatewayBudgetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ArchiveAiGatewayBudgetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ArchiveAiGatewayBudgetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ArchiveAiGatewayBudgetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpsertAiGatewayBudgetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayBudget
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpsertAiGatewayBudgetResponse) GetJSON200() *AiGatewayBudget {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpsertAiGatewayBudgetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpsertAiGatewayBudgetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpsertAiGatewayBudgetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpsertAiGatewayBudgetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ArchiveAiGatewayBudgetDefaultResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r ArchiveAiGatewayBudgetDefaultResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ArchiveAiGatewayBudgetDefaultResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ArchiveAiGatewayBudgetDefaultResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ArchiveAiGatewayBudgetDefaultResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpsertAiGatewayBudgetDefaultResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayBudgetDefault
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpsertAiGatewayBudgetDefaultResponse) GetJSON200() *AiGatewayBudgetDefault {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpsertAiGatewayBudgetDefaultResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpsertAiGatewayBudgetDefaultResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpsertAiGatewayBudgetDefaultResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpsertAiGatewayBudgetDefaultResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiGatewayBudgetDefaultsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayBudgetDefaultList
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAiGatewayBudgetDefaultsResponse) GetJSON200() *AiGatewayBudgetDefaultList {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAiGatewayBudgetDefaultsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiGatewayBudgetDefaultsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiGatewayBudgetDefaultsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiGatewayBudgetDefaultsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiGatewayBudgetsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayBudgetList
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAiGatewayBudgetsResponse) GetJSON200() *AiGatewayBudgetList {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAiGatewayBudgetsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiGatewayBudgetsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiGatewayBudgetsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiGatewayBudgetsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateAiGatewayByokCredentialResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Active            CreateAiGatewayByokCredential201JSONResponseBodyActive            `json:"active"`
+		CreatedAt         float32                                                           `json:"createdAt"`
+		CredentialId      string                                                            `json:"credentialId"`
+		LastFourChars     string                                                            `json:"lastFourChars"`
+		Name              string                                                            `json:"name"`
+		OwnerId           string                                                            `json:"ownerId"`
+		ProviderSlug      string                                                            `json:"providerSlug"`
+		RotatedAt         *float32                                                          `json:"rotatedAt"`
+		UpdatedAt         float32                                                           `json:"updatedAt"`
+		ZeroDataRetention CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
+	}
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r CreateAiGatewayByokCredentialResponse) GetJSON201() *struct {
+	Active            CreateAiGatewayByokCredential201JSONResponseBodyActive            `json:"active"`
+	CreatedAt         float32                                                           `json:"createdAt"`
+	CredentialId      string                                                            `json:"credentialId"`
+	LastFourChars     string                                                            `json:"lastFourChars"`
+	Name              string                                                            `json:"name"`
+	OwnerId           string                                                            `json:"ownerId"`
+	ProviderSlug      string                                                            `json:"providerSlug"`
+	RotatedAt         *float32                                                          `json:"rotatedAt"`
+	UpdatedAt         float32                                                           `json:"updatedAt"`
+	ZeroDataRetention CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
+} {
+	return r.JSON201
+}
+
+// GetBody returns the raw response body bytes
+func (r CreateAiGatewayByokCredentialResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAiGatewayByokCredentialResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAiGatewayByokCredentialResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CreateAiGatewayByokCredentialResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiGatewayByokCredentialsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Credentials []struct {
+			Active        ListAiGatewayByokCredentials200JSONResponseBodyCredentialsActive  `json:"active"`
+			CreatedAt     float32                                                           `json:"createdAt"`
+			Credential    *string                                                           `json:"credential"`
+			CredentialId  string                                                            `json:"credentialId"`
+			Deleted       ListAiGatewayByokCredentials200JSONResponseBodyCredentialsDeleted `json:"deleted"`
+			LastFourChars string                                                            `json:"lastFourChars"`
+			ModelMappings []struct {
+				CustomModelId    string `json:"customModelId"`
+				GatewayModelSlug string `json:"gatewayModelSlug"`
+			} `json:"modelMappings"`
+			Name              string                                                                      `json:"name"`
+			OwnerId           string                                                                      `json:"ownerId"`
+			ProviderSlug      string                                                                      `json:"providerSlug"`
+			RotatedAt         *float32                                                                    `json:"rotatedAt"`
+			UpdatedAt         float32                                                                     `json:"updatedAt"`
+			ZeroDataRetention ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention `json:"zeroDataRetention"`
+		} `json:"credentials"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAiGatewayByokCredentialsResponse) GetJSON200() *struct {
+	Credentials []struct {
+		Active        ListAiGatewayByokCredentials200JSONResponseBodyCredentialsActive  `json:"active"`
+		CreatedAt     float32                                                           `json:"createdAt"`
+		Credential    *string                                                           `json:"credential"`
+		CredentialId  string                                                            `json:"credentialId"`
+		Deleted       ListAiGatewayByokCredentials200JSONResponseBodyCredentialsDeleted `json:"deleted"`
+		LastFourChars string                                                            `json:"lastFourChars"`
+		ModelMappings []struct {
+			CustomModelId    string `json:"customModelId"`
+			GatewayModelSlug string `json:"gatewayModelSlug"`
+		} `json:"modelMappings"`
+		Name              string                                                                      `json:"name"`
+		OwnerId           string                                                                      `json:"ownerId"`
+		ProviderSlug      string                                                                      `json:"providerSlug"`
+		RotatedAt         *float32                                                                    `json:"rotatedAt"`
+		UpdatedAt         float32                                                                     `json:"updatedAt"`
+		ZeroDataRetention ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention `json:"zeroDataRetention"`
+	} `json:"credentials"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAiGatewayByokCredentialsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiGatewayByokCredentialsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiGatewayByokCredentialsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiGatewayByokCredentialsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAiGatewayByokCredentialResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON204 the response for an HTTP 204 `application/json` response
+	JSON204 *interface{}
+}
+
+// GetJSON204 returns the response for an HTTP 204 `application/json` response
+func (r DeleteAiGatewayByokCredentialResponse) GetJSON204() *interface{} {
+	return r.JSON204
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteAiGatewayByokCredentialResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAiGatewayByokCredentialResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAiGatewayByokCredentialResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAiGatewayByokCredentialResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAiGatewayByokCredentialResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Active            GetAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
+		CreatedAt         float32                                                        `json:"createdAt"`
+		CredentialId      string                                                         `json:"credentialId"`
+		LastFourChars     string                                                         `json:"lastFourChars"`
+		Name              string                                                         `json:"name"`
+		OwnerId           string                                                         `json:"ownerId"`
+		ProviderSlug      string                                                         `json:"providerSlug"`
+		RotatedAt         *float32                                                       `json:"rotatedAt"`
+		UpdatedAt         float32                                                        `json:"updatedAt"`
+		ZeroDataRetention GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetAiGatewayByokCredentialResponse) GetJSON200() *struct {
+	Active            GetAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
+	CreatedAt         float32                                                        `json:"createdAt"`
+	CredentialId      string                                                         `json:"credentialId"`
+	LastFourChars     string                                                         `json:"lastFourChars"`
+	Name              string                                                         `json:"name"`
+	OwnerId           string                                                         `json:"ownerId"`
+	ProviderSlug      string                                                         `json:"providerSlug"`
+	RotatedAt         *float32                                                       `json:"rotatedAt"`
+	UpdatedAt         float32                                                        `json:"updatedAt"`
+	ZeroDataRetention GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetAiGatewayByokCredentialResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAiGatewayByokCredentialResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAiGatewayByokCredentialResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAiGatewayByokCredentialResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAiGatewayByokCredentialResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Active            UpdateAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
+		CreatedAt         float32                                                           `json:"createdAt"`
+		CredentialId      string                                                            `json:"credentialId"`
+		LastFourChars     string                                                            `json:"lastFourChars"`
+		Name              string                                                            `json:"name"`
+		OwnerId           string                                                            `json:"ownerId"`
+		ProviderSlug      string                                                            `json:"providerSlug"`
+		RotatedAt         *float32                                                          `json:"rotatedAt"`
+		UpdatedAt         float32                                                           `json:"updatedAt"`
+		ZeroDataRetention UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateAiGatewayByokCredentialResponse) GetJSON200() *struct {
+	Active            UpdateAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
+	CreatedAt         float32                                                           `json:"createdAt"`
+	CredentialId      string                                                            `json:"credentialId"`
+	LastFourChars     string                                                            `json:"lastFourChars"`
+	Name              string                                                            `json:"name"`
+	OwnerId           string                                                            `json:"ownerId"`
+	ProviderSlug      string                                                            `json:"providerSlug"`
+	RotatedAt         *float32                                                          `json:"rotatedAt"`
+	UpdatedAt         float32                                                           `json:"updatedAt"`
+	ZeroDataRetention UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateAiGatewayByokCredentialResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAiGatewayByokCredentialResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAiGatewayByokCredentialResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateAiGatewayByokCredentialResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteAiGatewayRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON204 the response for an HTTP 204 `application/json` response
+	JSON204 *interface{}
+}
+
+// GetJSON204 returns the response for an HTTP 204 `application/json` response
+func (r DeleteAiGatewayRuleResponse) GetJSON204() *interface{} {
+	return r.JSON204
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteAiGatewayRuleResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAiGatewayRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAiGatewayRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteAiGatewayRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ListAiGatewayRulesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayRuleList
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListAiGatewayRulesResponse) GetJSON200() *AiGatewayRuleList {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListAiGatewayRulesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAiGatewayRulesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAiGatewayRulesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAiGatewayRulesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UpdateAiGatewayRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AiGatewayRule
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r UpdateAiGatewayRuleResponse) GetJSON200() *AiGatewayRule {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r UpdateAiGatewayRuleResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAiGatewayRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAiGatewayRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UpdateAiGatewayRuleResponse) ContentType() string {
 	if r.HTTPResponse != nil {
@@ -9280,6 +9943,7 @@ type GetBillingPlansResponse struct {
 				Value *string `json:"value,omitempty"`
 			} `json:"details,omitempty"`
 			Disabled           *GetBillingPlans200JSONResponseBodyPlansDisabled `json:"disabled,omitempty"`
+			DisabledReason     *string                                          `json:"disabledReason,omitempty"`
 			EffectiveDate      *string                                          `json:"effectiveDate,omitempty"`
 			HighlightedDetails *[]struct {
 				Label string  `json:"label"`
@@ -9313,6 +9977,7 @@ func (r GetBillingPlansResponse) GetJSON200() *struct {
 			Value *string `json:"value,omitempty"`
 		} `json:"details,omitempty"`
 		Disabled           *GetBillingPlans200JSONResponseBodyPlansDisabled `json:"disabled,omitempty"`
+		DisabledReason     *string                                          `json:"disabledReason,omitempty"`
 		EffectiveDate      *string                                          `json:"effectiveDate,omitempty"`
 		HighlightedDetails *[]struct {
 			Label string  `json:"label"`
@@ -15196,6 +15861,169 @@ func (r UpdateOrganizationResponse) ContentType() string {
 	return ""
 }
 
+type ListOrganizationDsyncGroupsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Cursor *string                          `json:"cursor,omitempty"`
+		Groups []OrganizationDirectorySyncGroup `json:"groups"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ListOrganizationDsyncGroupsResponse) GetJSON200() *struct {
+	Cursor *string                          `json:"cursor,omitempty"`
+	Groups []OrganizationDirectorySyncGroup `json:"groups"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ListOrganizationDsyncGroupsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ListOrganizationDsyncGroupsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListOrganizationDsyncGroupsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListOrganizationDsyncGroupsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteOrganizationDsyncGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteOrganizationDsyncGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteOrganizationDsyncGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteOrganizationDsyncGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteOrganizationDsyncGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetOrganizationDsyncGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *OrganizationDirectorySyncGroup
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetOrganizationDsyncGroupResponse) GetJSON200() *OrganizationDirectorySyncGroup {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r GetOrganizationDsyncGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetOrganizationDsyncGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetOrganizationDsyncGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetOrganizationDsyncGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutOrganizationDsyncGroupResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *OrganizationDirectorySyncGroup
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutOrganizationDsyncGroupResponse) GetJSON200() *OrganizationDirectorySyncGroup {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r PutOrganizationDsyncGroupResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutOrganizationDsyncGroupResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutOrganizationDsyncGroupResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutOrganizationDsyncGroupResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type ListOrganizationTeamsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -15325,6 +16153,55 @@ func (r RemoveOrganizationTeamResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r RemoveOrganizationTeamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutOrganizationTeamDsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		DsyncMode      PutOrganizationTeamDsync200JSONResponseBodyDsyncMode `json:"dsyncMode"`
+		OrganizationId string                                               `json:"organizationId"`
+		TeamId         string                                               `json:"teamId"`
+	}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutOrganizationTeamDsyncResponse) GetJSON200() *struct {
+	DsyncMode      PutOrganizationTeamDsync200JSONResponseBodyDsyncMode `json:"dsyncMode"`
+	OrganizationId string                                               `json:"organizationId"`
+	TeamId         string                                               `json:"teamId"`
+} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r PutOrganizationTeamDsyncResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutOrganizationTeamDsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutOrganizationTeamDsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutOrganizationTeamDsyncResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}

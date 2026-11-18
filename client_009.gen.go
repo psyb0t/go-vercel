@@ -8,6 +8,477 @@ import (
 	"time"
 )
 
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLink5Sourceless enum.
+func (e UpdateProject200JSONResponseBodyLink5Sourceless) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLink5SourcelessFalse:
+		return true
+	case UpdateProject200JSONResponseBodyLink5SourcelessTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLink5Type.
+const (
+	UpdateProject200JSONResponseBodyLink5TypeVercel UpdateProject200JSONResponseBodyLink5Type = "vercel"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLink5Type enum.
+func (e UpdateProject200JSONResponseBodyLink5Type) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLink5TypeVercel:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLink6Sourceless.
+const (
+	UpdateProject200JSONResponseBodyLink6SourcelessFalse UpdateProject200JSONResponseBodyLink6Sourceless = false
+	UpdateProject200JSONResponseBodyLink6SourcelessTrue  UpdateProject200JSONResponseBodyLink6Sourceless = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLink6Sourceless enum.
+func (e UpdateProject200JSONResponseBodyLink6Sourceless) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLink6SourcelessFalse:
+		return true
+	case UpdateProject200JSONResponseBodyLink6SourcelessTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLink6Type.
+const (
+	UpdateProject200JSONResponseBodyLink6TypeV0 UpdateProject200JSONResponseBodyLink6Type = "v0"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLink6Type enum.
+func (e UpdateProject200JSONResponseBodyLink6Type) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLink6TypeV0:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLink7Sourceless.
+const (
+	UpdateProject200JSONResponseBodyLink7SourcelessFalse UpdateProject200JSONResponseBodyLink7Sourceless = false
+	UpdateProject200JSONResponseBodyLink7SourcelessTrue  UpdateProject200JSONResponseBodyLink7Sourceless = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLink7Sourceless enum.
+func (e UpdateProject200JSONResponseBodyLink7Sourceless) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLink7SourcelessFalse:
+		return true
+	case UpdateProject200JSONResponseBodyLink7SourcelessTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLink7Type.
+const (
+	UpdateProject200JSONResponseBodyLink7TypeCursorOrigin UpdateProject200JSONResponseBodyLink7Type = "cursor-origin"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLink7Type enum.
+func (e UpdateProject200JSONResponseBodyLink7Type) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLink7TypeCursorOrigin:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLive.
+const (
+	UpdateProject200JSONResponseBodyLiveFalse UpdateProject200JSONResponseBodyLive = false
+	UpdateProject200JSONResponseBodyLiveTrue  UpdateProject200JSONResponseBodyLive = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLive enum.
+func (e UpdateProject200JSONResponseBodyLive) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyLiveFalse:
+		return true
+	case UpdateProject200JSONResponseBodyLiveTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends0Enabled.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends0EnabledTrue UpdateProject200JSONResponseBodyMicrofrontends0Enabled = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends0Enabled enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends0Enabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends0EnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimitsFalse UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits = false
+	UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimitsTrue  UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimitsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyMicrofrontends0FreeProjectForLegacyLimitsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultApp.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultAppTrue UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultApp = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultApp enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultApp) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultAppTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
+	UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
+		return true
+	case UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends1Enabled.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends1EnabledTrue UpdateProject200JSONResponseBodyMicrofrontends1Enabled = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends1Enabled enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends1Enabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends1EnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimitsFalse UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits = false
+	UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimitsTrue  UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimitsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyMicrofrontends1FreeProjectForLegacyLimitsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends1IsDefaultApp.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends1IsDefaultAppFalse UpdateProject200JSONResponseBodyMicrofrontends1IsDefaultApp = false
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends1IsDefaultApp enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends1IsDefaultApp) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends1IsDefaultAppFalse:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProjectFalse UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject = false
+	UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProjectTrue  UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProjectFalse:
+		return true
+	case UpdateProject200JSONResponseBodyMicrofrontends1RouteObservabilityToThisProjectTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends2Enabled.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends2EnabledFalse UpdateProject200JSONResponseBodyMicrofrontends2Enabled = false
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends2Enabled enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends2Enabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends2EnabledFalse:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimitsFalse UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits = false
+	UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimitsTrue  UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimitsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyMicrofrontends2FreeProjectForLegacyLimitsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyNodeVersion.
+const (
+	UpdateProject200JSONResponseBodyNodeVersionN10X  UpdateProject200JSONResponseBodyNodeVersion = "10.x"
+	UpdateProject200JSONResponseBodyNodeVersionN12X  UpdateProject200JSONResponseBodyNodeVersion = "12.x"
+	UpdateProject200JSONResponseBodyNodeVersionN14X  UpdateProject200JSONResponseBodyNodeVersion = "14.x"
+	UpdateProject200JSONResponseBodyNodeVersionN16X  UpdateProject200JSONResponseBodyNodeVersion = "16.x"
+	UpdateProject200JSONResponseBodyNodeVersionN18X  UpdateProject200JSONResponseBodyNodeVersion = "18.x"
+	UpdateProject200JSONResponseBodyNodeVersionN20X  UpdateProject200JSONResponseBodyNodeVersion = "20.x"
+	UpdateProject200JSONResponseBodyNodeVersionN22X  UpdateProject200JSONResponseBodyNodeVersion = "22.x"
+	UpdateProject200JSONResponseBodyNodeVersionN24X  UpdateProject200JSONResponseBodyNodeVersion = "24.x"
+	UpdateProject200JSONResponseBodyNodeVersionN26X  UpdateProject200JSONResponseBodyNodeVersion = "26.x"
+	UpdateProject200JSONResponseBodyNodeVersionN810X UpdateProject200JSONResponseBodyNodeVersion = "8.10.x"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyNodeVersion enum.
+func (e UpdateProject200JSONResponseBodyNodeVersion) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyNodeVersionN10X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN12X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN14X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN16X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN18X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN20X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN22X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN24X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN26X:
+		return true
+	case UpdateProject200JSONResponseBodyNodeVersionN810X:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyOidcTokenConfigEnabled.
+const (
+	UpdateProject200JSONResponseBodyOidcTokenConfigEnabledFalse UpdateProject200JSONResponseBodyOidcTokenConfigEnabled = false
+	UpdateProject200JSONResponseBodyOidcTokenConfigEnabledTrue  UpdateProject200JSONResponseBodyOidcTokenConfigEnabled = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyOidcTokenConfigEnabled enum.
+func (e UpdateProject200JSONResponseBodyOidcTokenConfigEnabled) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyOidcTokenConfigEnabledFalse:
+		return true
+	case UpdateProject200JSONResponseBodyOidcTokenConfigEnabledTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyOidcTokenConfigIssuerMode.
+const (
+	UpdateProject200JSONResponseBodyOidcTokenConfigIssuerModeGlobal UpdateProject200JSONResponseBodyOidcTokenConfigIssuerMode = "global"
+	UpdateProject200JSONResponseBodyOidcTokenConfigIssuerModeTeam   UpdateProject200JSONResponseBodyOidcTokenConfigIssuerMode = "team"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyOidcTokenConfigIssuerMode enum.
+func (e UpdateProject200JSONResponseBodyOidcTokenConfigIssuerMode) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyOidcTokenConfigIssuerModeGlobal:
+		return true
+	case UpdateProject200JSONResponseBodyOidcTokenConfigIssuerModeTeam:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyPassportDeploymentType.
+const (
+	UpdateProject200JSONResponseBodyPassportDeploymentTypeAll                              UpdateProject200JSONResponseBodyPassportDeploymentType = "all"
+	UpdateProject200JSONResponseBodyPassportDeploymentTypeAllExceptCustomDomains           UpdateProject200JSONResponseBodyPassportDeploymentType = "all_except_custom_domains"
+	UpdateProject200JSONResponseBodyPassportDeploymentTypePreview                          UpdateProject200JSONResponseBodyPassportDeploymentType = "preview"
+	UpdateProject200JSONResponseBodyPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews UpdateProject200JSONResponseBodyPassportDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyPassportDeploymentType enum.
+func (e UpdateProject200JSONResponseBodyPassportDeploymentType) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyPassportDeploymentTypeAll:
+		return true
+	case UpdateProject200JSONResponseBodyPassportDeploymentTypeAllExceptCustomDomains:
+		return true
+	case UpdateProject200JSONResponseBodyPassportDeploymentTypePreview:
+		return true
+	case UpdateProject200JSONResponseBodyPassportDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType.
+const (
+	UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypeAll                              UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType = "all"
+	UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypeAllExceptCustomDomains           UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType = "all_except_custom_domains"
+	UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypePreview                          UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType = "preview"
+	UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType enum.
+func (e UpdateProject200JSONResponseBodyPasswordProtectionDeploymentType) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypeAll:
+		return true
+	case UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypePreview:
+		return true
+	case UpdateProject200JSONResponseBodyPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyPaused.
+const (
+	UpdateProject200JSONResponseBodyPausedFalse UpdateProject200JSONResponseBodyPaused = false
+	UpdateProject200JSONResponseBodyPausedTrue  UpdateProject200JSONResponseBodyPaused = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyPaused enum.
+func (e UpdateProject200JSONResponseBodyPaused) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyPausedFalse:
+		return true
+	case UpdateProject200JSONResponseBodyPausedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyProductionDeploymentsFastLane.
+const (
+	UpdateProject200JSONResponseBodyProductionDeploymentsFastLaneFalse UpdateProject200JSONResponseBodyProductionDeploymentsFastLane = false
+	UpdateProject200JSONResponseBodyProductionDeploymentsFastLaneTrue  UpdateProject200JSONResponseBodyProductionDeploymentsFastLane = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyProductionDeploymentsFastLane enum.
+func (e UpdateProject200JSONResponseBodyProductionDeploymentsFastLane) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyProductionDeploymentsFastLaneFalse:
+		return true
+	case UpdateProject200JSONResponseBodyProductionDeploymentsFastLaneTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyProtectedSourcemaps.
+const (
+	UpdateProject200JSONResponseBodyProtectedSourcemapsFalse UpdateProject200JSONResponseBodyProtectedSourcemaps = false
+	UpdateProject200JSONResponseBodyProtectedSourcemapsTrue  UpdateProject200JSONResponseBodyProtectedSourcemaps = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyProtectedSourcemaps enum.
+func (e UpdateProject200JSONResponseBodyProtectedSourcemaps) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyProtectedSourcemapsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyProtectedSourcemapsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyProtectionBypass0Scope.
+const (
+	UpdateProject200JSONResponseBodyProtectionBypass0ScopeIntegrationAutomationBypass UpdateProject200JSONResponseBodyProtectionBypass0Scope = "integration-automation-bypass"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyProtectionBypass0Scope enum.
+func (e UpdateProject200JSONResponseBodyProtectionBypass0Scope) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyProtectionBypass0ScopeIntegrationAutomationBypass:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateProject200JSONResponseBodyProtectionBypass1IsEnvVar.
 const (
 	UpdateProject200JSONResponseBodyProtectionBypass1IsEnvVarFalse UpdateProject200JSONResponseBodyProtectionBypass1IsEnvVar = false
@@ -5252,6 +5723,9 @@ type AuthUser struct {
 		// ElasticConcurrencyEnabled An object containing infomation related to the amount of platform resources may be allocated to the User account.
 		ElasticConcurrencyEnabled *AuthUserResourceConfigElasticConcurrencyEnabled `json:"elasticConcurrencyEnabled,omitempty"`
 
+		// EnableMessageboardPrivateBoards An object containing infomation related to the amount of platform resources may be allocated to the User account.
+		EnableMessageboardPrivateBoards *AuthUserResourceConfigEnableMessageboardPrivateBoards `json:"enableMessageboardPrivateBoards,omitempty"`
+
 		// FlagsExplorerOverridesThreshold An object containing infomation related to the amount of platform resources may be allocated to the User account.
 		FlagsExplorerOverridesThreshold *float32 `json:"flagsExplorerOverridesThreshold,omitempty"`
 
@@ -5266,6 +5740,9 @@ type AuthUser struct {
 
 		// KvDatabases An object containing infomation related to the amount of platform resources may be allocated to the User account.
 		KvDatabases *float32 `json:"kvDatabases,omitempty"`
+
+		// MessageboardBoards An object containing infomation related to the amount of platform resources may be allocated to the User account.
+		MessageboardBoards *float32 `json:"messageboardBoards,omitempty"`
 
 		// MicrofrontendGroupsPerTeam An object containing infomation related to the amount of platform resources may be allocated to the User account.
 		MicrofrontendGroupsPerTeam *float32 `json:"microfrontendGroupsPerTeam,omitempty"`
@@ -5415,6 +5892,9 @@ type AuthUserResourceConfigBuildQueueConfiguration string
 
 // AuthUserResourceConfigElasticConcurrencyEnabled An object containing infomation related to the amount of platform resources may be allocated to the User account.
 type AuthUserResourceConfigElasticConcurrencyEnabled bool
+
+// AuthUserResourceConfigEnableMessageboardPrivateBoards An object containing infomation related to the amount of platform resources may be allocated to the User account.
+type AuthUserResourceConfigEnableMessageboardPrivateBoards bool
 
 // AuthUserResourceConfigFlagsExplorerUnlimitedOverrides An object containing infomation related to the amount of platform resources may be allocated to the User account.
 type AuthUserResourceConfigFlagsExplorerUnlimitedOverrides bool
@@ -7427,10 +7907,16 @@ type ConnectConnectorUpdateResult struct {
 
 	// ServiceSync Provider-side configuration synchronization result.
 	ServiceSync *ConnectServiceSync `json:"serviceSync,omitempty"`
+
+	// UninstallNeeded When true, scopes were removed. The provider keeps scopes it already granted, so remove the app from the provider workspace and install it again before the removal takes effect. Reinstalling alone does not remove scopes.
+	UninstallNeeded *ConnectConnectorUpdateResultUninstallNeeded `json:"uninstallNeeded,omitempty"`
 }
 
 // ConnectConnectorUpdateResultReinstallNeeded When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
 type ConnectConnectorUpdateResultReinstallNeeded bool
+
+// ConnectConnectorUpdateResultUninstallNeeded When true, scopes were removed. The provider keeps scopes it already granted, so remove the app from the provider workspace and install it again before the removal takes effect. Reinstalling alone does not remove scopes.
+type ConnectConnectorUpdateResultUninstallNeeded bool
 
 // ConnectCreateConnectorRequest Create a connector with full provider configuration or with a known service connection method.
 type ConnectCreateConnectorRequest struct {
@@ -9066,6 +9552,44 @@ type Organization struct {
 	// UserRole The authenticated user's role in the organization. Present on read endpoints when the user holds an organization role.
 	UserRole *string `json:"userRole,omitempty"`
 }
+
+// OrganizationDirectorySyncGroup A group from the organization's Identity Provider directory, joined with its Directory Sync group configuration when one exists.
+type OrganizationDirectorySyncGroup struct {
+	// Assignments `null` when the group has no Directory Sync group configuration.
+	Assignments *struct {
+		// OrganizationPermissions Organization-level permissions assigned to the directory group.
+		OrganizationPermissions []OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions `json:"organizationPermissions"`
+
+		// TeamRoles Roles for linked child teams without an explicit team assignment.
+		TeamRoles []OrganizationDirectorySyncGroupAssignmentsTeamRoles `json:"teamRoles"`
+
+		// Teams Replaces the default team roles for each specified child team.
+		Teams map[string]struct {
+			TeamRoles []OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles `json:"teamRoles"`
+		} `json:"teams"`
+	} `json:"assignments"`
+
+	// CreatedAt `null` when the group has no Directory Sync group configuration.
+	CreatedAt        *string `json:"createdAt"`
+	DirectoryGroupId string  `json:"directoryGroupId"`
+	DirectoryId      string  `json:"directoryId"`
+
+	// Name The group's name in the Identity Provider directory.
+	Name           string `json:"name"`
+	OrganizationId string `json:"organizationId"`
+
+	// UpdatedAt `null` when the group has no Directory Sync group configuration.
+	UpdatedAt *string `json:"updatedAt"`
+}
+
+// OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions defines model for OrganizationDirectorySyncGroup.Assignments.OrganizationPermissions.
+type OrganizationDirectorySyncGroupAssignmentsOrganizationPermissions string
+
+// OrganizationDirectorySyncGroupAssignmentsTeamRoles Roles for linked child teams without an explicit team assignment.
+type OrganizationDirectorySyncGroupAssignmentsTeamRoles string
+
+// OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles defines model for OrganizationDirectorySyncGroup.Assignments.Teams.TeamRoles.
+type OrganizationDirectorySyncGroupAssignmentsTeamsTeamRoles string
 
 // OrganizationTeam defines model for OrganizationTeam.
 type OrganizationTeam struct {
@@ -10958,10 +11482,12 @@ type UserEventPayload14 struct {
 
 // UserEventPayload15 The payload of the event, if requested.
 type UserEventPayload15 struct {
-	BoardId     string  `json:"boardId"`
-	ChannelId   string  `json:"channelId"`
-	Environment string  `json:"environment"`
-	Name        string  `json:"name"`
+	BoardId     string `json:"boardId"`
+	ChannelId   string `json:"channelId"`
+	Environment string `json:"environment"`
+
+	// Name Left out when the board no longer lets the team in, though its log still shows the board.
+	Name        *string `json:"name,omitempty"`
 	OperationId string  `json:"operationId"`
 	ProjectId   string  `json:"projectId"`
 	UserId      *string `json:"userId,omitempty"`
@@ -19486,525 +20012,3 @@ type UserEventPayload494 struct {
 	Scope   UserEventPayload494Scope `json:"scope"`
 	ScopeId *string                  `json:"scopeId,omitempty"`
 }
-
-// UserEventPayload494Scope defines model for UserEvent.Payload.494.Scope.
-type UserEventPayload494Scope string
-
-// UserEventPayload495 The payload of the event, if requested.
-type UserEventPayload495 struct {
-	FlowId         *string                   `json:"flowId,omitempty"`
-	LoginSessionId *string                   `json:"loginSessionId,omitempty"`
-	Method         UserEventPayload495Method `json:"method"`
-	Reason         string                    `json:"reason"`
-}
-
-// UserEventPayload495Method defines model for UserEvent.Payload.495.Method.
-type UserEventPayload495Method string
-
-// UserEventPayload496 The payload of the event, if requested.
-type UserEventPayload496 struct {
-	AllowedMethods []UserEventPayload496AllowedMethods `json:"allowedMethods"`
-	FirstFactor    string                              `json:"firstFactor"`
-	FlowId         string                              `json:"flowId"`
-	LoginSessionId *string                             `json:"loginSessionId,omitempty"`
-}
-
-// UserEventPayload496AllowedMethods defines model for UserEvent.Payload.496.AllowedMethods.
-type UserEventPayload496AllowedMethods string
-
-// UserEventPayload497 The payload of the event, if requested.
-type UserEventPayload497 struct {
-	Action UserEventPayload497Action `json:"action"`
-	Reason string                    `json:"reason"`
-}
-
-// UserEventPayload497Action defines model for UserEvent.Payload.497.Action.
-type UserEventPayload497Action string
-
-// UserEventPayload498 The payload of the event, if requested.
-type UserEventPayload498 struct {
-	Method *UserEventPayload498Method `json:"method,omitempty"`
-	Next   struct {
-		Enabled      UserEventPayload498NextEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload498NextTotpVerified `json:"totpVerified"`
-	} `json:"next"`
-	Previous struct {
-		Enabled      UserEventPayload498PreviousEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload498PreviousTotpVerified `json:"totpVerified"`
-	} `json:"previous"`
-}
-
-// UserEventPayload498Method defines model for UserEvent.Payload.498.Method.
-type UserEventPayload498Method string
-
-// UserEventPayload498NextEnabled defines model for UserEvent.Payload.498.Next.Enabled.
-type UserEventPayload498NextEnabled bool
-
-// UserEventPayload498NextTotpVerified defines model for UserEvent.Payload.498.Next.TotpVerified.
-type UserEventPayload498NextTotpVerified bool
-
-// UserEventPayload498PreviousEnabled defines model for UserEvent.Payload.498.Previous.Enabled.
-type UserEventPayload498PreviousEnabled bool
-
-// UserEventPayload498PreviousTotpVerified defines model for UserEvent.Payload.498.Previous.TotpVerified.
-type UserEventPayload498PreviousTotpVerified bool
-
-// UserEventPayload499 The payload of the event, if requested.
-type UserEventPayload499 struct {
-	// Context Absent on events predating the field; those were all logins.
-	Context   *UserEventPayload499Context `json:"context,omitempty"`
-	Remaining float32                     `json:"remaining"`
-}
-
-// UserEventPayload499Context Absent on events predating the field; those were all logins.
-type UserEventPayload499Context string
-
-// UserEventPayload500 The payload of the event, if requested.
-type UserEventPayload500 struct {
-	MfaEnabled UserEventPayload500MfaEnabled `json:"mfaEnabled"`
-}
-
-// UserEventPayload500MfaEnabled defines model for UserEvent.Payload.500.MfaEnabled.
-type UserEventPayload500MfaEnabled bool
-
-// UserEventPayload501 The payload of the event, if requested.
-type UserEventPayload501 struct {
-	Mfa struct {
-		Enabled      UserEventPayload501MfaEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload501MfaTotpVerified `json:"totpVerified"`
-	} `json:"mfa"`
-}
-
-// UserEventPayload501MfaEnabled defines model for UserEvent.Payload.501.Mfa.Enabled.
-type UserEventPayload501MfaEnabled bool
-
-// UserEventPayload501MfaTotpVerified defines model for UserEvent.Payload.501.Mfa.TotpVerified.
-type UserEventPayload501MfaTotpVerified bool
-
-// UserEventPayload502 The payload of the event, if requested.
-type UserEventPayload502 struct {
-	Enabled      UserEventPayload502Enabled      `json:"enabled"`
-	TotpVerified UserEventPayload502TotpVerified `json:"totpVerified"`
-}
-
-// UserEventPayload502Enabled defines model for UserEvent.Payload.502.Enabled.
-type UserEventPayload502Enabled bool
-
-// UserEventPayload502TotpVerified defines model for UserEvent.Payload.502.TotpVerified.
-type UserEventPayload502TotpVerified bool
-
-// UserEventPayload503 The payload of the event, if requested.
-type UserEventPayload503 struct {
-	Next struct {
-		Enabled      UserEventPayload503NextEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload503NextTotpVerified `json:"totpVerified"`
-	} `json:"next"`
-	Previous struct {
-		Enabled      UserEventPayload503PreviousEnabled      `json:"enabled"`
-		TotpVerified UserEventPayload503PreviousTotpVerified `json:"totpVerified"`
-	} `json:"previous"`
-}
-
-// UserEventPayload503NextEnabled defines model for UserEvent.Payload.503.Next.Enabled.
-type UserEventPayload503NextEnabled bool
-
-// UserEventPayload503NextTotpVerified defines model for UserEvent.Payload.503.Next.TotpVerified.
-type UserEventPayload503NextTotpVerified bool
-
-// UserEventPayload503PreviousEnabled defines model for UserEvent.Payload.503.Previous.Enabled.
-type UserEventPayload503PreviousEnabled bool
-
-// UserEventPayload503PreviousTotpVerified defines model for UserEvent.Payload.503.Previous.TotpVerified.
-type UserEventPayload503PreviousTotpVerified bool
-
-// UserEventPayload504 The payload of the event, if requested.
-type UserEventPayload504 struct {
-	Decision struct {
-		Authoritative     UserEventPayload504DecisionAuthoritative     `json:"authoritative"`
-		Basis             UserEventPayload504DecisionBasis             `json:"basis"`
-		EmailDomain       string                                       `json:"emailDomain"`
-		EmailVerified     UserEventPayload504DecisionEmailVerified     `json:"emailVerified"`
-		HostedDomainMatch UserEventPayload504DecisionHostedDomainMatch `json:"hostedDomainMatch"`
-		MxOutcome         UserEventPayload504DecisionMxOutcome         `json:"mxOutcome"`
-	} `json:"decision"`
-	Outcome           UserEventPayload504Outcome  `json:"outcome"`
-	Provider          UserEventPayload504Provider `json:"provider"`
-	ProviderSubjectId string                      `json:"providerSubjectId"`
-}
-
-// UserEventPayload504DecisionAuthoritative defines model for UserEvent.Payload.504.Decision.Authoritative.
-type UserEventPayload504DecisionAuthoritative bool
-
-// UserEventPayload504DecisionBasis defines model for UserEvent.Payload.504.Decision.Basis.
-type UserEventPayload504DecisionBasis string
-
-// UserEventPayload504DecisionEmailVerified defines model for UserEvent.Payload.504.Decision.EmailVerified.
-type UserEventPayload504DecisionEmailVerified bool
-
-// UserEventPayload504DecisionHostedDomainMatch defines model for UserEvent.Payload.504.Decision.HostedDomainMatch.
-type UserEventPayload504DecisionHostedDomainMatch bool
-
-// UserEventPayload504DecisionMxOutcome defines model for UserEvent.Payload.504.Decision.MxOutcome.
-type UserEventPayload504DecisionMxOutcome string
-
-// UserEventPayload504Outcome defines model for UserEvent.Payload.504.Outcome.
-type UserEventPayload504Outcome string
-
-// UserEventPayload504Provider defines model for UserEvent.Payload.504.Provider.
-type UserEventPayload504Provider string
-
-// UserEventPayload505 The payload of the event, if requested.
-type UserEventPayload505 struct {
-	Email     string `json:"email"`
-	PrevEmail string `json:"prevEmail"`
-}
-
-// UserEventPayload506 The payload of the event, if requested.
-type UserEventPayload506 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload506ActorType `json:"actorType"`
-	Email     string                       `json:"email"`
-	PrevEmail string                       `json:"prevEmail"`
-}
-
-// UserEventPayload506ActorType defines model for UserEvent.Payload.506.ActorType.
-type UserEventPayload506ActorType string
-
-// UserEventPayload507 The payload of the event, if requested.
-type UserEventPayload507 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload507ActorType `json:"actorType"`
-	Username  string                       `json:"username"`
-}
-
-// UserEventPayload507ActorType defines model for UserEvent.Payload.507.ActorType.
-type UserEventPayload507ActorType string
-
-// UserEventPayload508 The payload of the event, if requested.
-type UserEventPayload508 struct {
-	ProjectId      string `json:"projectId"`
-	ProjectName    string `json:"projectName"`
-	RepositoryName string `json:"repositoryName"`
-}
-
-// UserEventPayload509 The payload of the event, if requested.
-type UserEventPayload509 struct {
-	Digest         string `json:"digest"`
-	ProjectId      string `json:"projectId"`
-	ProjectName    string `json:"projectName"`
-	Reference      string `json:"reference"`
-	RepositoryName string `json:"repositoryName"`
-}
-
-// UserEventPayload510 The payload of the event, if requested.
-type UserEventPayload510 struct {
-	ProjectId      string `json:"projectId"`
-	ProjectName    string `json:"projectName"`
-	Reference      string `json:"reference"`
-	RepositoryName string `json:"repositoryName"`
-}
-
-// UserEventPayload511 The payload of the event, if requested.
-type UserEventPayload511 struct {
-	ProjectId          string `json:"projectId"`
-	ProjectName        string `json:"projectName"`
-	RepositoryName     string `json:"repositoryName"`
-	SharedWithTeamId   string `json:"sharedWithTeamId"`
-	SharedWithTeamSlug string `json:"sharedWithTeamSlug"`
-}
-
-// UserEventPayload512 The payload of the event, if requested.
-type UserEventPayload512 struct {
-	ProjectId        string `json:"projectId"`
-	ProjectName      string `json:"projectName"`
-	RepositoryName   string `json:"repositoryName"`
-	SharedWithTeamId string `json:"sharedWithTeamId"`
-}
-
-// UserEventPayload513 The payload of the event, if requested.
-type UserEventPayload513 struct {
-	ProjectId      string                    `json:"projectId"`
-	ProjectName    string                    `json:"projectName"`
-	Public         UserEventPayload513Public `json:"public"`
-	RepositoryName string                    `json:"repositoryName"`
-}
-
-// UserEventPayload513Public defines model for UserEvent.Payload.513.Public.
-type UserEventPayload513Public bool
-
-// UserEventPayload514 The payload of the event, if requested.
-type UserEventPayload514 struct {
-	ProjectId      string   `json:"projectId"`
-	ProjectName    string   `json:"projectName"`
-	RemovedTeamIds []string `json:"removedTeamIds"`
-	RepositoryName string   `json:"repositoryName"`
-}
-
-// UserEventPayload515 The payload of the event, if requested.
-type UserEventPayload515 struct {
-	RuleName string `json:"ruleName"`
-}
-
-// UserEventPayload516 The payload of the event, if requested.
-type UserEventPayload516 struct {
-	NextProjectCount     *float32 `json:"nextProjectCount"`
-	PreviousProjectCount *float32 `json:"previousProjectCount"`
-}
-
-// UserEventPayload517 The payload of the event, if requested.
-type UserEventPayload517 struct {
-	CustomAlertTitle string `json:"customAlertTitle"`
-}
-
-// UserEventPayload518 The payload of the event, if requested.
-type UserEventPayload518 struct {
-	Enabled        UserEventPayload518Enabled `json:"enabled"`
-	OrganizationId *string                    `json:"organizationId,omitempty"`
-	Repository     *string                    `json:"repository,omitempty"`
-	RepositoryId   string                     `json:"repositoryId"`
-}
-
-// UserEventPayload518Enabled defines model for UserEvent.Payload.518.Enabled.
-type UserEventPayload518Enabled bool
-
-// UserEventPayload519 The payload of the event, if requested.
-type UserEventPayload519 struct {
-	CiEnabled      UserEventPayload519CiEnabled `json:"ciEnabled"`
-	OrganizationId string                       `json:"organizationId"`
-	Repository     string                       `json:"repository"`
-}
-
-// UserEventPayload519CiEnabled defines model for UserEvent.Payload.519.CiEnabled.
-type UserEventPayload519CiEnabled bool
-
-// UserEventPayload520 The payload of the event, if requested.
-type UserEventPayload520 struct {
-	CommitSha         string  `json:"commitSha"`
-	InvocationId      string  `json:"invocationId"`
-	OrganizationId    string  `json:"organizationId"`
-	PullRequestNumber float32 `json:"pullRequestNumber"`
-	Repository        string  `json:"repository"`
-}
-
-// UserEventPayload521 The payload of the event, if requested.
-type UserEventPayload521 struct {
-	ProtectedProjectCount float32                              `json:"protectedProjectCount"`
-	ProtectionEnabled     UserEventPayload521ProtectionEnabled `json:"protectionEnabled"`
-	Vulnerabilities       []string                             `json:"vulnerabilities"`
-}
-
-// UserEventPayload521ProtectionEnabled defines model for UserEvent.Payload.521.ProtectionEnabled.
-type UserEventPayload521ProtectionEnabled bool
-
-// UserEventPayload522 The payload of the event, if requested.
-type UserEventPayload522 struct {
-	Configuration struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"configuration"`
-	Peering struct {
-		AccountId string `json:"accountId"`
-		Id        string `json:"id"`
-		Region    string `json:"region"`
-		VpcId     string `json:"vpcId"`
-	} `json:"peering"`
-	Team struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"team"`
-}
-
-// UserEventPayload523 The payload of the event, if requested.
-type UserEventPayload523 struct {
-	Configuration struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"configuration"`
-	Peering struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"peering"`
-	Team struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"team"`
-}
-
-// UserEventPayload524 The payload of the event, if requested.
-type UserEventPayload524 struct {
-	Configuration struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"configuration"`
-	NewName *string `json:"newName,omitempty"`
-	Peering struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"peering"`
-	Team struct {
-		Id   string `json:"id"`
-		Name string `json:"name"`
-	} `json:"team"`
-}
-
-// UserEventPayload525 The payload of the event, if requested.
-type UserEventPayload525 struct {
-	Cadence    UserEventPayload525Cadence `json:"cadence"`
-	ProjectIds []string                   `json:"projectIds"`
-	Team       struct {
-		Id   string  `json:"id"`
-		Name *string `json:"name,omitempty"`
-	} `json:"team"`
-}
-
-// UserEventPayload525Cadence defines model for UserEvent.Payload.525.Cadence.
-type UserEventPayload525Cadence string
-
-// UserEventPayload526 The payload of the event, if requested.
-type UserEventPayload526 struct {
-	Tier UserEventPayload526Tier `json:"tier"`
-}
-
-// UserEventPayload526Tier defines model for UserEvent.Payload.526.Tier.
-type UserEventPayload526Tier string
-
-// UserEventPayload527 The payload of the event, if requested.
-type UserEventPayload527 struct {
-	Id  string `json:"id"`
-	Url string `json:"url"`
-}
-
-// UserEventPayload528 The payload of the event, if requested.
-type UserEventPayload528 struct {
-	ChatId    string  `json:"chatId"`
-	ChatTitle *string `json:"chatTitle,omitempty"`
-}
-
-// UserEventPayload529 The payload of the event, if requested.
-type UserEventPayload529 struct {
-	ChatId string `json:"chatId"`
-	Events []struct {
-		CacheCreationInputTokens float32 `json:"cacheCreationInputTokens"`
-		CacheReadInputTokens     float32 `json:"cacheReadInputTokens"`
-		EventId                  string  `json:"eventId"`
-		InputTokens              float32 `json:"inputTokens"`
-		ModelId                  string  `json:"modelId"`
-		OutputTokens             float32 `json:"outputTokens"`
-		Timestamp                string  `json:"timestamp"`
-		TotalTokens              float32 `json:"totalTokens"`
-	} `json:"events"`
-	InputTokens  float32 `json:"inputTokens"`
-	MessageId    string  `json:"messageId"`
-	Model        string  `json:"model"`
-	OutputTokens float32 `json:"outputTokens"`
-	Timestamp    float32 `json:"timestamp"`
-	UseCase      string  `json:"useCase"`
-}
-
-// UserEventPayload530 The payload of the event, if requested.
-type UserEventPayload530 struct {
-	ChatId    string  `json:"chatId"`
-	ChatTitle *string `json:"chatTitle,omitempty"`
-	MessageId string  `json:"messageId"`
-}
-
-// UserEventPayload531 The payload of the event, if requested.
-type UserEventPayload531 struct {
-	Next     UserEvent_Payload_531_Next     `json:"next"`
-	Previous UserEvent_Payload_531_Previous `json:"previous"`
-	UserId   string                         `json:"userId"`
-	UserName *string                        `json:"userName,omitempty"`
-}
-
-// UserEventPayload531Next0 defines model for UserEvent.Payload.531.Next.0.
-type UserEventPayload531Next0 struct {
-	Access UserEventPayload531Next0Access `json:"access"`
-}
-
-// UserEventPayload531Next0Access defines model for UserEvent.Payload.531.Next.0.Access.
-type UserEventPayload531Next0Access string
-
-// UserEventPayload531Next1 defines model for UserEvent.Payload.531.Next.1.
-type UserEventPayload531Next1 struct {
-	Access UserEventPayload531Next1Access `json:"access"`
-	Limit  string                         `json:"limit"`
-}
-
-// UserEventPayload531Next1Access defines model for UserEvent.Payload.531.Next.1.Access.
-type UserEventPayload531Next1Access string
-
-// UserEvent_Payload_531_Next defines model for UserEvent.Payload.531.Next.
-type UserEvent_Payload_531_Next struct {
-	union json.RawMessage
-}
-
-// UserEventPayload531Previous0 defines model for UserEvent.Payload.531.Previous.0.
-type UserEventPayload531Previous0 struct {
-	Access UserEventPayload531Previous0Access `json:"access"`
-}
-
-// UserEventPayload531Previous0Access defines model for UserEvent.Payload.531.Previous.0.Access.
-type UserEventPayload531Previous0Access string
-
-// UserEventPayload531Previous1 defines model for UserEvent.Payload.531.Previous.1.
-type UserEventPayload531Previous1 struct {
-	Access UserEventPayload531Previous1Access `json:"access"`
-	Limit  string                             `json:"limit"`
-}
-
-// UserEventPayload531Previous1Access defines model for UserEvent.Payload.531.Previous.1.Access.
-type UserEventPayload531Previous1Access string
-
-// UserEvent_Payload_531_Previous defines model for UserEvent.Payload.531.Previous.
-type UserEvent_Payload_531_Previous struct {
-	union json.RawMessage
-}
-
-// UserEventPayload532 The payload of the event, if requested.
-type UserEventPayload532 struct {
-	Next     UserEvent_Payload_532_Next     `json:"next"`
-	Previous UserEvent_Payload_532_Previous `json:"previous"`
-}
-
-// UserEventPayload532Next0 defines model for UserEvent.Payload.532.Next.0.
-type UserEventPayload532Next0 struct {
-	Access UserEventPayload532Next0Access `json:"access"`
-}
-
-// UserEventPayload532Next0Access defines model for UserEvent.Payload.532.Next.0.Access.
-type UserEventPayload532Next0Access string
-
-// UserEventPayload532Next1 defines model for UserEvent.Payload.532.Next.1.
-type UserEventPayload532Next1 struct {
-	Access UserEventPayload532Next1Access `json:"access"`
-	Limit  string                         `json:"limit"`
-}
-
-// UserEventPayload532Next1Access defines model for UserEvent.Payload.532.Next.1.Access.
-type UserEventPayload532Next1Access string
-
-// UserEvent_Payload_532_Next defines model for UserEvent.Payload.532.Next.
-type UserEvent_Payload_532_Next struct {
-	union json.RawMessage
-}
-
-// UserEventPayload532Previous0 defines model for UserEvent.Payload.532.Previous.0.
-type UserEventPayload532Previous0 struct {
-	Access UserEventPayload532Previous0Access `json:"access"`
-}
-
-// UserEventPayload532Previous0Access defines model for UserEvent.Payload.532.Previous.0.Access.
-type UserEventPayload532Previous0Access string
-
-// UserEventPayload532Previous1 defines model for UserEvent.Payload.532.Previous.1.
-type UserEventPayload532Previous1 struct {
-	Access UserEventPayload532Previous1Access `json:"access"`
-	Limit  string                             `json:"limit"`
-}
-
-// UserEventPayload532Previous1Access defines model for UserEvent.Payload.532.Previous.1.Access.
-type UserEventPayload532Previous1Access string

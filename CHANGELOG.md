@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.31.0, 2026-11-18
+
+- Added the organization directory sync group calls `ListOrganizationDsyncGroups`, `GetOrganizationDsyncGroup`, `PutOrganizationDsyncGroup`, `PutOrganizationDsyncGroupWithBody`, `DeleteOrganizationDsyncGroup`, `PutOrganizationTeamDsync` and `PutOrganizationTeamDsyncWithBody` on `Client`, with `...WithResponse` variants on `ClientWithResponses` and matching `ClientInterface` and `ClientWithResponsesInterface` methods. New types include `GetOrganizationDsyncGroupParams`, `DeleteOrganizationDsyncGroupParams` and their response types.
+- Added `AuthUserResourceConfigEnableMessageboardPrivateBoards`, `ConnectConnectorUpdateResult.UninstallNeeded`, `CreateKmsIssuer201JSONResponseBodyDiscoveryLayoutIntegrations` and `ListEventTypeNameAlertGroupDetected`, `ListEventTypeNameAlertGroupInvestigationCompleted` and `ListEventTypeNameAlertGroupPublished`. Deployment responses gain `...BuilderConfigSchedulesEntrypoint` enum types.
+- Breaking: `UpdateFlagSettingsJSONBody.Enabled` and `UpdateFlagSettingsJSONRequestBody.Enabled` are removed.
+- Breaking: the fields and enum types of `UserEventPayload518` to `UserEventPayload525` and later payload types are removed, for example `UserEventPayload518.Enabled`, `UserEventPayload519.CiEnabled` and `UserEventPayload525Cadence`. `UserEventPayload15.Name` changes from `string` to `*string`. Several `UserEvent_Payload_531_*` and `UserEvent_Payload_532_*` types are removed.
+- Breaking: the anonymous struct types of `AuthUser.ResourceConfig`, `CancelDeploymentResponse.JSON200`, `CreateIntegrationStoreDirectResponse.JSON200`, `GetBillingPlansResponse.JSON200` and `SearchVercelCiLogsResponse.JSON200` change, as do their `GetJSON200` methods.
+- Breaking: the `Builder` and `Functions` fields of the deployment service types, such as `CancelDeployment200JSONResponseBodyServices1.Builder` and `GetDeployment200JSONResponseBody1Services1.Functions`, change type in the cancel, create and get deployment responses.
+
 ## v0.30.0, 2026-11-17
 
 - Breaking: `CreateAiGatewayRule`, `UpdateAiGatewayRule`, `CreateAiGatewayVirtualModelConfig`, `UpdateAiGatewayVirtualModelConfig` and `UpdateAiGatewayVirtualModelConfigBySlug` on `Client` now take a JSON body argument (for example `CreateAiGatewayRuleJSONRequestBody`) before the editor functions. The matching `...WithResponse` methods on `ClientWithResponses` and the `ClientInterface` methods change the same way.

@@ -5013,6 +5013,95 @@ func (c *Client) UpdateOrganization(ctx context.Context, organizationId string, 
 	return c.Client.Do(req)
 }
 
+// ListOrganizationDsyncGroups List Organization Directory Sync Groups
+//
+// List the groups in an organization's Identity Provider directory, along with their Directory Sync group configuration when one exists.
+//
+// Corresponds with GET /v1/organizations/{organizationId}/dsync/groups (the `ListOrganizationDsyncGroups` operationId).
+func (c *Client) ListOrganizationDsyncGroups(ctx context.Context, organizationId string, params *ListOrganizationDsyncGroupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListOrganizationDsyncGroupsRequest(c.Server, organizationId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteOrganizationDsyncGroup Delete Organization Directory Sync Group Configuration
+//
+// Delete one organization's Directory Sync group configuration. The last group granting OrgAdmin cannot be removed.
+//
+// Corresponds with DELETE /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `DeleteOrganizationDsyncGroup` operationId).
+func (c *Client) DeleteOrganizationDsyncGroup(ctx context.Context, organizationId string, groupId string, params *DeleteOrganizationDsyncGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteOrganizationDsyncGroupRequest(c.Server, organizationId, groupId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetOrganizationDsyncGroup Get Organization Directory Sync Group
+//
+// Get one group from the organization's Identity Provider directory, joined with its Directory Sync group configuration when one exists.
+//
+// Corresponds with GET /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `GetOrganizationDsyncGroup` operationId).
+func (c *Client) GetOrganizationDsyncGroup(ctx context.Context, organizationId string, groupId string, params *GetOrganizationDsyncGroupParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetOrganizationDsyncGroupRequest(c.Server, organizationId, groupId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutOrganizationDsyncGroupWithBody Create or Replace Organization Directory Sync Group Configuration
+//
+// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `PutOrganizationDsyncGroup` operationId).
+func (c *Client) PutOrganizationDsyncGroupWithBody(ctx context.Context, organizationId string, groupId string, params *PutOrganizationDsyncGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutOrganizationDsyncGroupRequestWithBody(c.Server, organizationId, groupId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutOrganizationDsyncGroup Create or Replace Organization Directory Sync Group Configuration
+//
+// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `PutOrganizationDsyncGroup` operationId).
+func (c *Client) PutOrganizationDsyncGroup(ctx context.Context, organizationId string, groupId string, params *PutOrganizationDsyncGroupParams, body PutOrganizationDsyncGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutOrganizationDsyncGroupRequest(c.Server, organizationId, groupId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ListOrganizationTeams List Organization Teams
 //
 // List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
@@ -5075,6 +5164,44 @@ func (c *Client) AddOrganizationTeam(ctx context.Context, organizationId string,
 // Corresponds with DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} (the `RemoveOrganizationTeam` operationId).
 func (c *Client) RemoveOrganizationTeam(ctx context.Context, organizationId string, targetTeamId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRemoveOrganizationTeamRequest(c.Server, organizationId, targetTeamId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutOrganizationTeamDsyncWithBody Update Organization Team Directory Sync Mode
+//
+// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync (the `PutOrganizationTeamDsync` operationId).
+func (c *Client) PutOrganizationTeamDsyncWithBody(ctx context.Context, organizationId string, targetTeamId string, params *PutOrganizationTeamDsyncParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutOrganizationTeamDsyncRequestWithBody(c.Server, organizationId, targetTeamId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutOrganizationTeamDsync Update Organization Team Directory Sync Mode
+//
+// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync (the `PutOrganizationTeamDsync` operationId).
+func (c *Client) PutOrganizationTeamDsync(ctx context.Context, organizationId string, targetTeamId string, params *PutOrganizationTeamDsyncParams, body PutOrganizationTeamDsyncJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutOrganizationTeamDsyncRequest(c.Server, organizationId, targetTeamId, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -8682,9 +8809,9 @@ func (c *Client) GetVercelCiInvocationTree(ctx context.Context, invocationId str
 	return c.Client.Do(req)
 }
 
-// SearchVercelCiLogs Search the task logs of several invocation attempts
+// SearchVercelCiLogs Search the setup and task logs of several invocation attempts
 //
-// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
+// Searches the setup and task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned, and `setup` is present only when a setup line matches. When more than 1000 lines match across setup and task logs, the newest are kept.
 //
 // Corresponds with GET /v1/vercel-ci/log-search (the `SearchVercelCiLogs` operationId).
 func (c *Client) SearchVercelCiLogs(ctx context.Context, params *SearchVercelCiLogsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -19924,100 +20051,4 @@ func NewDeleteDriveV1Request(server string, nameOrId string, params *DeleteDrive
 	}
 
 	return req, nil
-}
-
-// NewGetDriveV1Request constructs an http.Request for the GetDriveV1 method
-func NewGetDriveV1Request(server string, nameOrId string, params *GetDriveV1Params) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "nameOrId", nameOrId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/drives/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ProjectId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetOrCreateDriveV1Request calls the generic GetOrCreateDriveV1 builder with application/json body
-func NewGetOrCreateDriveV1Request(server string, name string, params *GetOrCreateDriveV1Params, body GetOrCreateDriveV1JSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewGetOrCreateDriveV1RequestWithBody(server, name, params, "application/json", bodyReader)
 }

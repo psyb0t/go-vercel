@@ -16,6 +16,614 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// NewRetryVercelCiInvocationRequest constructs an http.Request for the RetryVercelCiInvocation method
+func NewRetryVercelCiInvocationRequest(server string, invocationId string, attempt string, params *RetryVercelCiInvocationParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "invocationId", invocationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "attempt", attempt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/invocations/%s/attempts/%s/retry", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetVercelCiTaskLogsRequest constructs an http.Request for the GetVercelCiTaskLogs method
+func NewGetVercelCiTaskLogsRequest(server string, invocationId string, attempt string, params *GetVercelCiTaskLogsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "invocationId", invocationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "attempt", attempt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/invocations/%s/attempts/%s/task-logs", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Task != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "task", *params.Task, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Conclusion != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "conclusion", *params.Conclusion, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Level != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "level", *params.Level, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", *params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetVercelCiInvocationTreeRequest constructs an http.Request for the GetVercelCiInvocationTree method
+func NewGetVercelCiInvocationTreeRequest(server string, invocationId string, params *GetVercelCiInvocationTreeParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "invocationId", invocationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/invocations/%s/tree", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Attempt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "attempt", *params.Attempt, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Follow != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "follow", *params.Follow, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewSearchVercelCiLogsRequest constructs an http.Request for the SearchVercelCiLogs method
+func NewSearchVercelCiLogsRequest(server string, params *SearchVercelCiLogsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/log-search")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Invocation != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "invocation", params.Invocation, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Level != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "level", *params.Level, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetVercelCiRepositorySettingsRequest constructs an http.Request for the GetVercelCiRepositorySettings method
+func NewGetVercelCiRepositorySettingsRequest(server string, params *GetVercelCiRepositorySettingsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/repository-settings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "provider", params.Provider, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "organizationId", params.OrganizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "repository", params.Repository, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateVercelCiRepositorySettingsRequest calls the generic UpdateVercelCiRepositorySettings builder with application/json body
+func NewUpdateVercelCiRepositorySettingsRequest(server string, params *UpdateVercelCiRepositorySettingsParams, body UpdateVercelCiRepositorySettingsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateVercelCiRepositorySettingsRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewUpdateVercelCiRepositorySettingsRequestWithBody constructs an http.Request for the UpdateVercelCiRepositorySettings method, with any body, and a specified content type
+func NewUpdateVercelCiRepositorySettingsRequestWithBody(server string, params *UpdateVercelCiRepositorySettingsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/vercel-ci/repository-settings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "provider", params.Provider, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "organizationId", params.OrganizationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "repository", params.Repository, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCreateVercelCiTaskAnalysisRequest calls the generic CreateVercelCiTaskAnalysis builder with application/json body
 func NewCreateVercelCiTaskAnalysisRequest(server string, params *CreateVercelCiTaskAnalysisParams, body CreateVercelCiTaskAnalysisJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -15739,6 +16347,51 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PATCH /v1/organizations/{organizationId} (the `UpdateOrganization` operationId).
 	UpdateOrganizationWithResponse(ctx context.Context, organizationId string, body UpdateOrganizationJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateOrganizationResponse, error)
 
+	// ListOrganizationDsyncGroupsWithResponse List Organization Directory Sync Groups
+	//
+	// List the groups in an organization's Identity Provider directory, along with their Directory Sync group configuration when one exists.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/organizations/{organizationId}/dsync/groups (the `ListOrganizationDsyncGroups` operationId).
+	ListOrganizationDsyncGroupsWithResponse(ctx context.Context, organizationId string, params *ListOrganizationDsyncGroupsParams, reqEditors ...RequestEditorFn) (*ListOrganizationDsyncGroupsResponse, error)
+
+	// DeleteOrganizationDsyncGroupWithResponse Delete Organization Directory Sync Group Configuration
+	//
+	// Delete one organization's Directory Sync group configuration. The last group granting OrgAdmin cannot be removed.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `DeleteOrganizationDsyncGroup` operationId).
+	DeleteOrganizationDsyncGroupWithResponse(ctx context.Context, organizationId string, groupId string, params *DeleteOrganizationDsyncGroupParams, reqEditors ...RequestEditorFn) (*DeleteOrganizationDsyncGroupResponse, error)
+
+	// GetOrganizationDsyncGroupWithResponse Get Organization Directory Sync Group
+	//
+	// Get one group from the organization's Identity Provider directory, joined with its Directory Sync group configuration when one exists.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `GetOrganizationDsyncGroup` operationId).
+	GetOrganizationDsyncGroupWithResponse(ctx context.Context, organizationId string, groupId string, params *GetOrganizationDsyncGroupParams, reqEditors ...RequestEditorFn) (*GetOrganizationDsyncGroupResponse, error)
+
+	// PutOrganizationDsyncGroupWithBodyWithResponse Create or Replace Organization Directory Sync Group Configuration
+	//
+	// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `PutOrganizationDsyncGroup` operationId).
+	PutOrganizationDsyncGroupWithBodyWithResponse(ctx context.Context, organizationId string, groupId string, params *PutOrganizationDsyncGroupParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutOrganizationDsyncGroupResponse, error)
+
+	// PutOrganizationDsyncGroupWithResponse Create or Replace Organization Directory Sync Group Configuration
+	//
+	// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/organizations/{organizationId}/dsync/groups/{groupId} (the `PutOrganizationDsyncGroup` operationId).
+	PutOrganizationDsyncGroupWithResponse(ctx context.Context, organizationId string, groupId string, params *PutOrganizationDsyncGroupParams, body PutOrganizationDsyncGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*PutOrganizationDsyncGroupResponse, error)
+
 	// ListOrganizationTeamsWithResponse List Organization Teams
 	//
 	// List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships and organization Directory Sync grants, while excluding suppressed memberships and email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
@@ -15774,6 +16427,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} (the `RemoveOrganizationTeam` operationId).
 	RemoveOrganizationTeamWithResponse(ctx context.Context, organizationId string, targetTeamId string, reqEditors ...RequestEditorFn) (*RemoveOrganizationTeamResponse, error)
+
+	// PutOrganizationTeamDsyncWithBodyWithResponse Update Organization Team Directory Sync Mode
+	//
+	// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync (the `PutOrganizationTeamDsync` operationId).
+	PutOrganizationTeamDsyncWithBodyWithResponse(ctx context.Context, organizationId string, targetTeamId string, params *PutOrganizationTeamDsyncParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutOrganizationTeamDsyncResponse, error)
+
+	// PutOrganizationTeamDsyncWithResponse Update Organization Team Directory Sync Mode
+	//
+	// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync (the `PutOrganizationTeamDsync` operationId).
+	PutOrganizationTeamDsyncWithResponse(ctx context.Context, organizationId string, targetTeamId string, params *PutOrganizationTeamDsyncParams, body PutOrganizationTeamDsyncJSONRequestBody, reqEditors ...RequestEditorFn) (*PutOrganizationTeamDsyncResponse, error)
 
 	// GetProjectTraceWithResponse Get a project trace by request ID
 	//
@@ -17558,9 +18229,9 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/vercel-ci/invocations/{invocationId}/tree (the `GetVercelCiInvocationTree` operationId).
 	GetVercelCiInvocationTreeWithResponse(ctx context.Context, invocationId string, params *GetVercelCiInvocationTreeParams, reqEditors ...RequestEditorFn) (*GetVercelCiInvocationTreeResponse, error)
 
-	// SearchVercelCiLogsWithResponse Search the task logs of several invocation attempts
+	// SearchVercelCiLogsWithResponse Search the setup and task logs of several invocation attempts
 	//
-	// Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
+	// Searches the setup and task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned, and `setup` is present only when a setup line matches. When more than 1000 lines match across setup and task logs, the newest are kept.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -19354,667 +20025,4 @@ type ClientWithResponsesInterface interface {
 	// CreateWebInsightsToggleWithResponse performs a POST /web/insights/toggle (the `CreateWebInsightsToggle` operationId) request.
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	CreateWebInsightsToggleWithResponse(ctx context.Context, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateWebInsightsToggleResponse, error)
-}
-
-type ArchiveAiGatewayBudgetResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayBudget
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ArchiveAiGatewayBudgetResponse) GetJSON200() *AiGatewayBudget {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ArchiveAiGatewayBudgetResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ArchiveAiGatewayBudgetResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ArchiveAiGatewayBudgetResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ArchiveAiGatewayBudgetResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpsertAiGatewayBudgetResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayBudget
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpsertAiGatewayBudgetResponse) GetJSON200() *AiGatewayBudget {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpsertAiGatewayBudgetResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpsertAiGatewayBudgetResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpsertAiGatewayBudgetResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpsertAiGatewayBudgetResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ArchiveAiGatewayBudgetDefaultResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// GetBody returns the raw response body bytes
-func (r ArchiveAiGatewayBudgetDefaultResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ArchiveAiGatewayBudgetDefaultResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ArchiveAiGatewayBudgetDefaultResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ArchiveAiGatewayBudgetDefaultResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpsertAiGatewayBudgetDefaultResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayBudgetDefault
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpsertAiGatewayBudgetDefaultResponse) GetJSON200() *AiGatewayBudgetDefault {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpsertAiGatewayBudgetDefaultResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpsertAiGatewayBudgetDefaultResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpsertAiGatewayBudgetDefaultResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpsertAiGatewayBudgetDefaultResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiGatewayBudgetDefaultsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayBudgetDefaultList
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAiGatewayBudgetDefaultsResponse) GetJSON200() *AiGatewayBudgetDefaultList {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListAiGatewayBudgetDefaultsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiGatewayBudgetDefaultsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiGatewayBudgetDefaultsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiGatewayBudgetDefaultsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiGatewayBudgetsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayBudgetList
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAiGatewayBudgetsResponse) GetJSON200() *AiGatewayBudgetList {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListAiGatewayBudgetsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiGatewayBudgetsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiGatewayBudgetsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiGatewayBudgetsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type CreateAiGatewayByokCredentialResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		Active            CreateAiGatewayByokCredential201JSONResponseBodyActive            `json:"active"`
-		CreatedAt         float32                                                           `json:"createdAt"`
-		CredentialId      string                                                            `json:"credentialId"`
-		LastFourChars     string                                                            `json:"lastFourChars"`
-		Name              string                                                            `json:"name"`
-		OwnerId           string                                                            `json:"ownerId"`
-		ProviderSlug      string                                                            `json:"providerSlug"`
-		RotatedAt         *float32                                                          `json:"rotatedAt"`
-		UpdatedAt         float32                                                           `json:"updatedAt"`
-		ZeroDataRetention CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
-	}
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r CreateAiGatewayByokCredentialResponse) GetJSON201() *struct {
-	Active            CreateAiGatewayByokCredential201JSONResponseBodyActive            `json:"active"`
-	CreatedAt         float32                                                           `json:"createdAt"`
-	CredentialId      string                                                            `json:"credentialId"`
-	LastFourChars     string                                                            `json:"lastFourChars"`
-	Name              string                                                            `json:"name"`
-	OwnerId           string                                                            `json:"ownerId"`
-	ProviderSlug      string                                                            `json:"providerSlug"`
-	RotatedAt         *float32                                                          `json:"rotatedAt"`
-	UpdatedAt         float32                                                           `json:"updatedAt"`
-	ZeroDataRetention CreateAiGatewayByokCredential201JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
-} {
-	return r.JSON201
-}
-
-// GetBody returns the raw response body bytes
-func (r CreateAiGatewayByokCredentialResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r CreateAiGatewayByokCredentialResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CreateAiGatewayByokCredentialResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r CreateAiGatewayByokCredentialResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiGatewayByokCredentialsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Credentials []struct {
-			Active        ListAiGatewayByokCredentials200JSONResponseBodyCredentialsActive  `json:"active"`
-			CreatedAt     float32                                                           `json:"createdAt"`
-			Credential    *string                                                           `json:"credential"`
-			CredentialId  string                                                            `json:"credentialId"`
-			Deleted       ListAiGatewayByokCredentials200JSONResponseBodyCredentialsDeleted `json:"deleted"`
-			LastFourChars string                                                            `json:"lastFourChars"`
-			ModelMappings []struct {
-				CustomModelId    string `json:"customModelId"`
-				GatewayModelSlug string `json:"gatewayModelSlug"`
-			} `json:"modelMappings"`
-			Name              string                                                                      `json:"name"`
-			OwnerId           string                                                                      `json:"ownerId"`
-			ProviderSlug      string                                                                      `json:"providerSlug"`
-			RotatedAt         *float32                                                                    `json:"rotatedAt"`
-			UpdatedAt         float32                                                                     `json:"updatedAt"`
-			ZeroDataRetention ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention `json:"zeroDataRetention"`
-		} `json:"credentials"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAiGatewayByokCredentialsResponse) GetJSON200() *struct {
-	Credentials []struct {
-		Active        ListAiGatewayByokCredentials200JSONResponseBodyCredentialsActive  `json:"active"`
-		CreatedAt     float32                                                           `json:"createdAt"`
-		Credential    *string                                                           `json:"credential"`
-		CredentialId  string                                                            `json:"credentialId"`
-		Deleted       ListAiGatewayByokCredentials200JSONResponseBodyCredentialsDeleted `json:"deleted"`
-		LastFourChars string                                                            `json:"lastFourChars"`
-		ModelMappings []struct {
-			CustomModelId    string `json:"customModelId"`
-			GatewayModelSlug string `json:"gatewayModelSlug"`
-		} `json:"modelMappings"`
-		Name              string                                                                      `json:"name"`
-		OwnerId           string                                                                      `json:"ownerId"`
-		ProviderSlug      string                                                                      `json:"providerSlug"`
-		RotatedAt         *float32                                                                    `json:"rotatedAt"`
-		UpdatedAt         float32                                                                     `json:"updatedAt"`
-		ZeroDataRetention ListAiGatewayByokCredentials200JSONResponseBodyCredentialsZeroDataRetention `json:"zeroDataRetention"`
-	} `json:"credentials"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListAiGatewayByokCredentialsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiGatewayByokCredentialsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiGatewayByokCredentialsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiGatewayByokCredentialsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAiGatewayByokCredentialResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON204 the response for an HTTP 204 `application/json` response
-	JSON204 *interface{}
-}
-
-// GetJSON204 returns the response for an HTTP 204 `application/json` response
-func (r DeleteAiGatewayByokCredentialResponse) GetJSON204() *interface{} {
-	return r.JSON204
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteAiGatewayByokCredentialResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAiGatewayByokCredentialResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAiGatewayByokCredentialResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAiGatewayByokCredentialResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetAiGatewayByokCredentialResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Active            GetAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
-		CreatedAt         float32                                                        `json:"createdAt"`
-		CredentialId      string                                                         `json:"credentialId"`
-		LastFourChars     string                                                         `json:"lastFourChars"`
-		Name              string                                                         `json:"name"`
-		OwnerId           string                                                         `json:"ownerId"`
-		ProviderSlug      string                                                         `json:"providerSlug"`
-		RotatedAt         *float32                                                       `json:"rotatedAt"`
-		UpdatedAt         float32                                                        `json:"updatedAt"`
-		ZeroDataRetention GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetAiGatewayByokCredentialResponse) GetJSON200() *struct {
-	Active            GetAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
-	CreatedAt         float32                                                        `json:"createdAt"`
-	CredentialId      string                                                         `json:"credentialId"`
-	LastFourChars     string                                                         `json:"lastFourChars"`
-	Name              string                                                         `json:"name"`
-	OwnerId           string                                                         `json:"ownerId"`
-	ProviderSlug      string                                                         `json:"providerSlug"`
-	RotatedAt         *float32                                                       `json:"rotatedAt"`
-	UpdatedAt         float32                                                        `json:"updatedAt"`
-	ZeroDataRetention GetAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r GetAiGatewayByokCredentialResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetAiGatewayByokCredentialResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetAiGatewayByokCredentialResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetAiGatewayByokCredentialResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateAiGatewayByokCredentialResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Active            UpdateAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
-		CreatedAt         float32                                                           `json:"createdAt"`
-		CredentialId      string                                                            `json:"credentialId"`
-		LastFourChars     string                                                            `json:"lastFourChars"`
-		Name              string                                                            `json:"name"`
-		OwnerId           string                                                            `json:"ownerId"`
-		ProviderSlug      string                                                            `json:"providerSlug"`
-		RotatedAt         *float32                                                          `json:"rotatedAt"`
-		UpdatedAt         float32                                                           `json:"updatedAt"`
-		ZeroDataRetention UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
-	}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateAiGatewayByokCredentialResponse) GetJSON200() *struct {
-	Active            UpdateAiGatewayByokCredential200JSONResponseBodyActive            `json:"active"`
-	CreatedAt         float32                                                           `json:"createdAt"`
-	CredentialId      string                                                            `json:"credentialId"`
-	LastFourChars     string                                                            `json:"lastFourChars"`
-	Name              string                                                            `json:"name"`
-	OwnerId           string                                                            `json:"ownerId"`
-	ProviderSlug      string                                                            `json:"providerSlug"`
-	RotatedAt         *float32                                                          `json:"rotatedAt"`
-	UpdatedAt         float32                                                           `json:"updatedAt"`
-	ZeroDataRetention UpdateAiGatewayByokCredential200JSONResponseBodyZeroDataRetention `json:"zeroDataRetention"`
-} {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateAiGatewayByokCredentialResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateAiGatewayByokCredentialResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateAiGatewayByokCredentialResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r UpdateAiGatewayByokCredentialResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteAiGatewayRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON204 the response for an HTTP 204 `application/json` response
-	JSON204 *interface{}
-}
-
-// GetJSON204 returns the response for an HTTP 204 `application/json` response
-func (r DeleteAiGatewayRuleResponse) GetJSON204() *interface{} {
-	return r.JSON204
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteAiGatewayRuleResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteAiGatewayRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteAiGatewayRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteAiGatewayRuleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type ListAiGatewayRulesResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayRuleList
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ListAiGatewayRulesResponse) GetJSON200() *AiGatewayRuleList {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r ListAiGatewayRulesResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r ListAiGatewayRulesResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r ListAiGatewayRulesResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r ListAiGatewayRulesResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type UpdateAiGatewayRuleResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *AiGatewayRule
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r UpdateAiGatewayRuleResponse) GetJSON200() *AiGatewayRule {
-	return r.JSON200
-}
-
-// GetBody returns the raw response body bytes
-func (r UpdateAiGatewayRuleResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r UpdateAiGatewayRuleResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UpdateAiGatewayRuleResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
 }

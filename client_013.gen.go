@@ -12,6 +12,693 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// CreateDeploymentCheckRun200JSONResponseBody defines parameters for CreateDeploymentCheckRun.
+type CreateDeploymentCheckRun200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// GetDeploymentCheckRunParams defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRunParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0 struct {
+	Blocks         *GetDeploymentCheckRun200JSONResponseBody0Blocks     `json:"blocks,omitempty"`
+	CheckId        string                                               `json:"checkId"`
+	CompletedAt    *float32                                             `json:"completedAt,omitempty"`
+	Conclusion     *GetDeploymentCheckRun200JSONResponseBody0Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                              `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                              `json:"createdAt"`
+	DeploymentId   string                                               `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                           `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                            `json:"externalId,omitempty"`
+	ExternalUrl         *string                                            `json:"externalUrl,omitempty"`
+	Id                  string                                             `json:"id"`
+	Name                string                                             `json:"name"`
+	Output              *map[string]interface{}                            `json:"output,omitempty"`
+	OwnerId             string                                             `json:"ownerId"`
+	ProjectId           *string                                            `json:"projectId,omitempty"`
+	Requires            *GetDeploymentCheckRun200JSONResponseBody0Requires `json:"requires,omitempty"`
+	Source              GetDeploymentCheckRun200JSONResponseBody_0_Source  `json:"source"`
+	StartedAt           *float32                                           `json:"startedAt,omitempty"`
+	Status              GetDeploymentCheckRun200JSONResponseBody0Status    `json:"status"`
+	Targets             *[]string                                          `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Blocks defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Blocks string
+
+// GetDeploymentCheckRun200JSONResponseBody0Conclusion defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Conclusion string
+
+// GetDeploymentCheckRun200JSONResponseBody0Requires defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Requires string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source0 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source0 struct {
+	ExternalResourceId         *string                                              `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                               `json:"integrationConfigurationId"`
+	IntegrationId              string                                               `json:"integrationId"`
+	Kind                       GetDeploymentCheckRun200JSONResponseBody0Source0Kind `json:"kind"`
+	ResourceId                 *string                                              `json:"resourceId,omitempty"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source0Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source0Kind string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source1 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source1 struct {
+	Kind      GetDeploymentCheckRun200JSONResponseBody0Source1Kind `json:"kind"`
+	WebhookId *string                                              `json:"webhookId,omitempty"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source1Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source1Kind string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source2 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source2 struct {
+	ExternalCheckName string                                                   `json:"externalCheckName"`
+	Kind              GetDeploymentCheckRun200JSONResponseBody0Source2Kind     `json:"kind"`
+	Provider          GetDeploymentCheckRun200JSONResponseBody0Source2Provider `json:"provider"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source2Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source2Kind string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source2Provider defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source2Provider string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source3 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source3 struct {
+	Origin  *GetDeploymentCheckRun200JSONResponseBody0Source3Origin  `json:"origin,omitempty"`
+	SubKind *GetDeploymentCheckRun200JSONResponseBody0Source3SubKind `json:"subKind,omitempty"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source3Origin defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source3Origin string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source3SubKind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source3SubKind string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4 struct {
+	Origin    GetDeploymentCheckRun200JSONResponseBody0Source4Origin        `json:"origin"`
+	Selection GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection `json:"selection"`
+	SubKind   GetDeploymentCheckRun200JSONResponseBody0Source4SubKind       `json:"subKind"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Origin defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Origin string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection0 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection0 struct {
+	Kind GetDeploymentCheckRun200JSONResponseBody0Source4Selection0Kind `json:"kind"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection0Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection0Kind string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection1 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection1 struct {
+	Kind GetDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind `json:"kind"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2 struct {
+	FailIfNoMatch *GetDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	Filters       []string                                                                 `json:"filters"`
+	Job           GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Job            `json:"job"`
+	Kind          GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind           `json:"kind"`
+	Task          string                                                                   `json:"task"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch bool
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Job defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Job string
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
+
+// GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection struct {
+	union json.RawMessage
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Source4SubKind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Source4SubKind string
+
+// GetDeploymentCheckRun200JSONResponseBody_0_Source defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody_0_Source struct {
+	union json.RawMessage
+}
+
+// GetDeploymentCheckRun200JSONResponseBody0Status defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody0Status string
+
+// GetDeploymentCheckRun200JSONResponseBody1 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1 struct {
+	Blocks         *GetDeploymentCheckRun200JSONResponseBody1Blocks     `json:"blocks,omitempty"`
+	CompletedAt    *float32                                             `json:"completedAt,omitempty"`
+	Conclusion     *GetDeploymentCheckRun200JSONResponseBody1Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                              `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                              `json:"createdAt"`
+	DeploymentId   string                                               `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                           `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                            `json:"externalId,omitempty"`
+	ExternalUrl         *string                                            `json:"externalUrl,omitempty"`
+	Id                  string                                             `json:"id"`
+	Name                string                                             `json:"name"`
+	Output              *map[string]interface{}                            `json:"output,omitempty"`
+	OwnerId             string                                             `json:"ownerId"`
+	ProjectId           *string                                            `json:"projectId,omitempty"`
+	Requires            *GetDeploymentCheckRun200JSONResponseBody1Requires `json:"requires,omitempty"`
+	Source              GetDeploymentCheckRun200JSONResponseBody_1_Source  `json:"source"`
+	StartedAt           *float32                                           `json:"startedAt,omitempty"`
+	Status              GetDeploymentCheckRun200JSONResponseBody1Status    `json:"status"`
+	Targets             *[]string                                          `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody1Blocks defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Blocks string
+
+// GetDeploymentCheckRun200JSONResponseBody1Conclusion defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Conclusion string
+
+// GetDeploymentCheckRun200JSONResponseBody1Requires defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Requires string
+
+// GetDeploymentCheckRun200JSONResponseBody1Source0 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Source0 struct {
+	InvocationAttempt *float32                                                `json:"invocationAttempt,omitempty"`
+	InvocationId      string                                                  `json:"invocationId"`
+	JobDefinitionId   string                                                  `json:"jobDefinitionId"`
+	Origin            GetDeploymentCheckRun200JSONResponseBody1Source0Origin  `json:"origin"`
+	SubKind           GetDeploymentCheckRun200JSONResponseBody1Source0SubKind `json:"subKind"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody1Source0Origin defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Source0Origin string
+
+// GetDeploymentCheckRun200JSONResponseBody1Source0SubKind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Source0SubKind string
+
+// GetDeploymentCheckRun200JSONResponseBody1Source1 defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Source1 struct {
+	Origin  GetDeploymentCheckRun200JSONResponseBody1Source1Origin  `json:"origin"`
+	SubKind GetDeploymentCheckRun200JSONResponseBody1Source1SubKind `json:"subKind"`
+}
+
+// GetDeploymentCheckRun200JSONResponseBody1Source1Origin defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Source1Origin string
+
+// GetDeploymentCheckRun200JSONResponseBody1Source1SubKind defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Source1SubKind string
+
+// GetDeploymentCheckRun200JSONResponseBody_1_Source defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody_1_Source struct {
+	union json.RawMessage
+}
+
+// GetDeploymentCheckRun200JSONResponseBody1Status defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody1Status string
+
+// GetDeploymentCheckRun200JSONResponseBody defines parameters for GetDeploymentCheckRun.
+type GetDeploymentCheckRun200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// UpdateDeploymentCheckRunJSONBody defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRunJSONBody struct {
+	CompletedAt    *float32                                    `json:"completedAt,omitempty"`
+	Conclusion     *UpdateDeploymentCheckRunJSONBodyConclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                     `json:"conclusionText,omitempty"`
+	ExternalId     *string                                     `json:"externalId,omitempty"`
+	ExternalUrl    *string                                     `json:"externalUrl,omitempty"`
+	Output         *map[string]interface{}                     `json:"output,omitempty"`
+	Status         *UpdateDeploymentCheckRunJSONBodyStatus     `json:"status,omitempty"`
+}
+
+// UpdateDeploymentCheckRunParams defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRunParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// UpdateDeploymentCheckRunJSONBodyConclusion defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRunJSONBodyConclusion string
+
+// UpdateDeploymentCheckRunJSONBodyStatus defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRunJSONBodyStatus string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0 struct {
+	Blocks         *UpdateDeploymentCheckRun200JSONResponseBody0Blocks     `json:"blocks,omitempty"`
+	CheckId        string                                                  `json:"checkId"`
+	CompletedAt    *float32                                                `json:"completedAt,omitempty"`
+	Conclusion     *UpdateDeploymentCheckRun200JSONResponseBody0Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                                 `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                                 `json:"createdAt"`
+	DeploymentId   string                                                  `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                              `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                               `json:"externalId,omitempty"`
+	ExternalUrl         *string                                               `json:"externalUrl,omitempty"`
+	Id                  string                                                `json:"id"`
+	Name                string                                                `json:"name"`
+	Output              *map[string]interface{}                               `json:"output,omitempty"`
+	OwnerId             string                                                `json:"ownerId"`
+	ProjectId           *string                                               `json:"projectId,omitempty"`
+	Requires            *UpdateDeploymentCheckRun200JSONResponseBody0Requires `json:"requires,omitempty"`
+	Source              UpdateDeploymentCheckRun200JSONResponseBody_0_Source  `json:"source"`
+	StartedAt           *float32                                              `json:"startedAt,omitempty"`
+	Status              UpdateDeploymentCheckRun200JSONResponseBody0Status    `json:"status"`
+	Targets             *[]string                                             `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Blocks defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Blocks string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Conclusion defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Conclusion string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Requires defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Requires string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source0 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source0 struct {
+	ExternalResourceId         *string                                                 `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                                  `json:"integrationConfigurationId"`
+	IntegrationId              string                                                  `json:"integrationId"`
+	Kind                       UpdateDeploymentCheckRun200JSONResponseBody0Source0Kind `json:"kind"`
+	ResourceId                 *string                                                 `json:"resourceId,omitempty"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source0Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source0Kind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source1 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source1 struct {
+	Kind      UpdateDeploymentCheckRun200JSONResponseBody0Source1Kind `json:"kind"`
+	WebhookId *string                                                 `json:"webhookId,omitempty"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source1Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source1Kind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source2 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source2 struct {
+	ExternalCheckName string                                                      `json:"externalCheckName"`
+	Kind              UpdateDeploymentCheckRun200JSONResponseBody0Source2Kind     `json:"kind"`
+	Provider          UpdateDeploymentCheckRun200JSONResponseBody0Source2Provider `json:"provider"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source2Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source2Kind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source2Provider defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source2Provider string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source3 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source3 struct {
+	Origin  *UpdateDeploymentCheckRun200JSONResponseBody0Source3Origin  `json:"origin,omitempty"`
+	SubKind *UpdateDeploymentCheckRun200JSONResponseBody0Source3SubKind `json:"subKind,omitempty"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source3Origin defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source3Origin string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source3SubKind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source3SubKind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4 struct {
+	Origin    UpdateDeploymentCheckRun200JSONResponseBody0Source4Origin        `json:"origin"`
+	Selection UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection `json:"selection"`
+	SubKind   UpdateDeploymentCheckRun200JSONResponseBody0Source4SubKind       `json:"subKind"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Origin defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Origin string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection0 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection0 struct {
+	Kind UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection0Kind `json:"kind"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection0Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection0Kind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection1 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection1 struct {
+	Kind UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind `json:"kind"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection1Kind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2 struct {
+	FailIfNoMatch *UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	Filters       []string                                                                    `json:"filters"`
+	Job           UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job            `json:"job"`
+	Kind          UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind           `json:"kind"`
+	Task          string                                                                      `json:"task"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2FailIfNoMatch bool
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Job string
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4Selection2Kind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody_0_Source_4_Selection struct {
+	union json.RawMessage
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Source4SubKind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Source4SubKind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody_0_Source defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody_0_Source struct {
+	union json.RawMessage
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody0Status defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody0Status string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1 struct {
+	Blocks         *UpdateDeploymentCheckRun200JSONResponseBody1Blocks     `json:"blocks,omitempty"`
+	CompletedAt    *float32                                                `json:"completedAt,omitempty"`
+	Conclusion     *UpdateDeploymentCheckRun200JSONResponseBody1Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                                 `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                                 `json:"createdAt"`
+	DeploymentId   string                                                  `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                              `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                               `json:"externalId,omitempty"`
+	ExternalUrl         *string                                               `json:"externalUrl,omitempty"`
+	Id                  string                                                `json:"id"`
+	Name                string                                                `json:"name"`
+	Output              *map[string]interface{}                               `json:"output,omitempty"`
+	OwnerId             string                                                `json:"ownerId"`
+	ProjectId           *string                                               `json:"projectId,omitempty"`
+	Requires            *UpdateDeploymentCheckRun200JSONResponseBody1Requires `json:"requires,omitempty"`
+	Source              UpdateDeploymentCheckRun200JSONResponseBody_1_Source  `json:"source"`
+	StartedAt           *float32                                              `json:"startedAt,omitempty"`
+	Status              UpdateDeploymentCheckRun200JSONResponseBody1Status    `json:"status"`
+	Targets             *[]string                                             `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Blocks defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Blocks string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Conclusion defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Conclusion string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Requires defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Requires string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Source0 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Source0 struct {
+	InvocationAttempt *float32                                                   `json:"invocationAttempt,omitempty"`
+	InvocationId      string                                                     `json:"invocationId"`
+	JobDefinitionId   string                                                     `json:"jobDefinitionId"`
+	Origin            UpdateDeploymentCheckRun200JSONResponseBody1Source0Origin  `json:"origin"`
+	SubKind           UpdateDeploymentCheckRun200JSONResponseBody1Source0SubKind `json:"subKind"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Source0Origin defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Source0Origin string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Source0SubKind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Source0SubKind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Source1 defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Source1 struct {
+	Origin  UpdateDeploymentCheckRun200JSONResponseBody1Source1Origin  `json:"origin"`
+	SubKind UpdateDeploymentCheckRun200JSONResponseBody1Source1SubKind `json:"subKind"`
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Source1Origin defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Source1Origin string
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Source1SubKind defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Source1SubKind string
+
+// UpdateDeploymentCheckRun200JSONResponseBody_1_Source defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody_1_Source struct {
+	union json.RawMessage
+}
+
+// UpdateDeploymentCheckRun200JSONResponseBody1Status defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody1Status string
+
+// UpdateDeploymentCheckRun200JSONResponseBody defines parameters for UpdateDeploymentCheckRun.
+type UpdateDeploymentCheckRun200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// ListDeploymentAliasesParams defines parameters for ListDeploymentAliases.
+type ListDeploymentAliasesParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass0 defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass0 struct {
+	CreatedAt float32                                                               `json:"createdAt"`
+	CreatedBy string                                                                `json:"createdBy"`
+	Expires   *float32                                                              `json:"expires,omitempty"`
+	Scope     ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass0Scope `json:"scope"`
+}
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass0Scope defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass0Scope string
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1 defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1 struct {
+	Access        ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1Access `json:"access"`
+	CreatedAt     float32                                                                `json:"createdAt"`
+	LastUpdatedAt float32                                                                `json:"lastUpdatedAt"`
+	LastUpdatedBy string                                                                 `json:"lastUpdatedBy"`
+	Scope         ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1Scope  `json:"scope"`
+}
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1Access defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1Access string
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1Scope defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass1Scope string
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass2 defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass2 struct {
+	CreatedAt float32                                                               `json:"createdAt"`
+	CreatedBy string                                                                `json:"createdBy"`
+	Scope     ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass2Scope `json:"scope"`
+}
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass2Scope defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass2Scope string
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass3 defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass3 struct {
+	CreatedAt     float32                                                               `json:"createdAt"`
+	LastUpdatedAt float32                                                               `json:"lastUpdatedAt"`
+	LastUpdatedBy string                                                                `json:"lastUpdatedBy"`
+	Scope         ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass3Scope `json:"scope"`
+}
+
+// ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass3Scope defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBodyAliasesProtectionBypass3Scope string
+
+// ListDeploymentAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties defines parameters for ListDeploymentAliases.
+type ListDeploymentAliases200JSONResponseBody_Aliases_ProtectionBypass_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// AssignAliasJSONBody defines parameters for AssignAlias.
+type AssignAliasJSONBody struct {
+	// Alias The alias we want to assign to the deployment defined in the URL
+	//
+	// Example: my-alias.vercel.app
+	Alias *string `json:"alias,omitempty"`
+
+	// Redirect The redirect property will take precedence over the deployment id from the URL and consists of a hostname (like test.com) to which the alias should redirect using status code 307
+	Redirect *string `json:"redirect,omitempty"`
+}
+
+// AssignAliasParams defines parameters for AssignAlias.
+type AssignAliasParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// AssignAliasParamsId0 defines parameters for AssignAlias.
+type AssignAliasParamsId0 = string
+
+// CreateRecordJSONBody defines parameters for CreateRecord.
+type CreateRecordJSONBody struct {
+	// Type The type of record, it could be one of the valid DNS records.
+	Type  CreateRecordJSONBodyType `json:"type"`
+	union json.RawMessage
+}
+
+// CreateRecordParams defines parameters for CreateRecord.
+type CreateRecordParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// CreateRecordJSONBodyType defines parameters for CreateRecord.
+type CreateRecordJSONBodyType string
+
+// CreateRecordJSONBody0 defines parameters for CreateRecord.
+type CreateRecordJSONBody0 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Name A subdomain name or an empty string for the root domain.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `A`.
+	Type CreateRecordJSONBody0Type `json:"type"`
+
+	// Value The record value must be a valid IPv4 address.
+	//
+	// Example: 192.0.2.42
+	Value string `json:"value"`
+}
+
+// CreateRecordJSONBody0Type defines parameters for CreateRecord.
+type CreateRecordJSONBody0Type string
+
+// CreateRecordJSONBody1 defines parameters for CreateRecord.
+type CreateRecordJSONBody1 struct {
+	// Comment A comment to add context on what this DNS record is for
+	//
+	// Example: used to verify ownership of domain
+	Comment *string `json:"comment,omitempty"`
+
+	// Name A subdomain name or an empty string for the root domain.
+	//
+	// Example: subdomain
+	Name string `json:"name"`
+
+	// Ttl The TTL value. Must be a number between 60 and 2147483647. Default value is 60.
+	//
+	// Example: 60
+	Ttl *float32 `json:"ttl,omitempty"`
+
+	// Type Must be of type `AAAA`.
+	Type CreateRecordJSONBody1Type `json:"type"`
+
+	// Value An AAAA record pointing to an IPv6 address.
+	//
+	// Example: 2001:DB8::42
+	Value string `json:"value"`
+}
+
+// CreateRecordJSONBody1Type defines parameters for CreateRecord.
+type CreateRecordJSONBody1Type string
+
 // CreateRecordJSONBody2 defines parameters for CreateRecord.
 type CreateRecordJSONBody2 struct {
 	// Comment A comment to add context on what this DNS record is for
@@ -12219,8 +12906,14 @@ type CreateOrganizationJSONRequestBody CreateOrganizationJSONBody
 // UpdateOrganizationJSONRequestBody defines body for UpdateOrganization for application/json ContentType.
 type UpdateOrganizationJSONRequestBody UpdateOrganizationJSONBody
 
+// PutOrganizationDsyncGroupJSONRequestBody defines body for PutOrganizationDsyncGroup for application/json ContentType.
+type PutOrganizationDsyncGroupJSONRequestBody PutOrganizationDsyncGroupJSONBody
+
 // AddOrganizationTeamJSONRequestBody defines body for AddOrganizationTeam for application/json ContentType.
 type AddOrganizationTeamJSONRequestBody AddOrganizationTeamJSONBody
+
+// PutOrganizationTeamDsyncJSONRequestBody defines body for PutOrganizationTeamDsync for application/json ContentType.
+type PutOrganizationTeamDsyncJSONRequestBody PutOrganizationTeamDsyncJSONBody
 
 // CreateTraceSessionJSONRequestBody defines body for CreateTraceSession for application/json ContentType.
 type CreateTraceSessionJSONRequestBody CreateTraceSessionJSONBody
@@ -19323,697 +20016,4 @@ func (t ConnectConnectorCreateData) AsConnectConnectorCreateData9() (ConnectConn
 	var body ConnectConnectorCreateData9
 	err := json.Unmarshal(t.union, &body)
 	return body, err
-}
-
-// FromConnectConnectorCreateData9 overwrites any union data inside the ConnectConnectorCreateData as the provided ConnectConnectorCreateData9
-func (t *ConnectConnectorCreateData) FromConnectConnectorCreateData9(v ConnectConnectorCreateData9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateData9 performs a merge with any union data inside the ConnectConnectorCreateData, using the provided ConnectConnectorCreateData9
-func (t *ConnectConnectorCreateData) MergeConnectConnectorCreateData9(v ConnectConnectorCreateData9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateData10 returns the union data inside the ConnectConnectorCreateData as a ConnectConnectorCreateData10
-func (t ConnectConnectorCreateData) AsConnectConnectorCreateData10() (ConnectConnectorCreateData10, error) {
-	var body ConnectConnectorCreateData10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateData10 overwrites any union data inside the ConnectConnectorCreateData as the provided ConnectConnectorCreateData10
-func (t *ConnectConnectorCreateData) FromConnectConnectorCreateData10(v ConnectConnectorCreateData10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateData10 performs a merge with any union data inside the ConnectConnectorCreateData, using the provided ConnectConnectorCreateData10
-func (t *ConnectConnectorCreateData) MergeConnectConnectorCreateData10(v ConnectConnectorCreateData10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateData11 returns the union data inside the ConnectConnectorCreateData as a ConnectConnectorCreateData11
-func (t ConnectConnectorCreateData) AsConnectConnectorCreateData11() (ConnectConnectorCreateData11, error) {
-	var body ConnectConnectorCreateData11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateData11 overwrites any union data inside the ConnectConnectorCreateData as the provided ConnectConnectorCreateData11
-func (t *ConnectConnectorCreateData) FromConnectConnectorCreateData11(v ConnectConnectorCreateData11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateData11 performs a merge with any union data inside the ConnectConnectorCreateData, using the provided ConnectConnectorCreateData11
-func (t *ConnectConnectorCreateData) MergeConnectConnectorCreateData11(v ConnectConnectorCreateData11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorCreateData) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorCreateData) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorCreateResultCreatedBy2Environment0 returns the union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as a ConnectConnectorCreateResultCreatedBy2Environment0
-func (t ConnectConnectorCreateResult_CreatedBy_2_Environment) AsConnectConnectorCreateResultCreatedBy2Environment0() (ConnectConnectorCreateResultCreatedBy2Environment0, error) {
-	var body ConnectConnectorCreateResultCreatedBy2Environment0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultCreatedBy2Environment0 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as the provided ConnectConnectorCreateResultCreatedBy2Environment0
-func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) FromConnectConnectorCreateResultCreatedBy2Environment0(v ConnectConnectorCreateResultCreatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultCreatedBy2Environment0 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment, using the provided ConnectConnectorCreateResultCreatedBy2Environment0
-func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) MergeConnectConnectorCreateResultCreatedBy2Environment0(v ConnectConnectorCreateResultCreatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateResultCreatedBy2Environment1 returns the union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as a ConnectConnectorCreateResultCreatedBy2Environment1
-func (t ConnectConnectorCreateResult_CreatedBy_2_Environment) AsConnectConnectorCreateResultCreatedBy2Environment1() (ConnectConnectorCreateResultCreatedBy2Environment1, error) {
-	var body ConnectConnectorCreateResultCreatedBy2Environment1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultCreatedBy2Environment1 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment as the provided ConnectConnectorCreateResultCreatedBy2Environment1
-func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) FromConnectConnectorCreateResultCreatedBy2Environment1(v ConnectConnectorCreateResultCreatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultCreatedBy2Environment1 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy_2_Environment, using the provided ConnectConnectorCreateResultCreatedBy2Environment1
-func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) MergeConnectConnectorCreateResultCreatedBy2Environment1(v ConnectConnectorCreateResultCreatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorCreateResult_CreatedBy_2_Environment) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorCreateResult_CreatedBy_2_Environment) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorCreateResultCreatedBy0 returns the union data inside the ConnectConnectorCreateResult_CreatedBy as a ConnectConnectorCreateResultCreatedBy0
-func (t ConnectConnectorCreateResult_CreatedBy) AsConnectConnectorCreateResultCreatedBy0() (ConnectConnectorCreateResultCreatedBy0, error) {
-	var body ConnectConnectorCreateResultCreatedBy0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultCreatedBy0 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy as the provided ConnectConnectorCreateResultCreatedBy0
-func (t *ConnectConnectorCreateResult_CreatedBy) FromConnectConnectorCreateResultCreatedBy0(v ConnectConnectorCreateResultCreatedBy0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultCreatedBy0 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy, using the provided ConnectConnectorCreateResultCreatedBy0
-func (t *ConnectConnectorCreateResult_CreatedBy) MergeConnectConnectorCreateResultCreatedBy0(v ConnectConnectorCreateResultCreatedBy0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateResultCreatedBy1 returns the union data inside the ConnectConnectorCreateResult_CreatedBy as a ConnectConnectorCreateResultCreatedBy1
-func (t ConnectConnectorCreateResult_CreatedBy) AsConnectConnectorCreateResultCreatedBy1() (ConnectConnectorCreateResultCreatedBy1, error) {
-	var body ConnectConnectorCreateResultCreatedBy1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultCreatedBy1 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy as the provided ConnectConnectorCreateResultCreatedBy1
-func (t *ConnectConnectorCreateResult_CreatedBy) FromConnectConnectorCreateResultCreatedBy1(v ConnectConnectorCreateResultCreatedBy1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultCreatedBy1 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy, using the provided ConnectConnectorCreateResultCreatedBy1
-func (t *ConnectConnectorCreateResult_CreatedBy) MergeConnectConnectorCreateResultCreatedBy1(v ConnectConnectorCreateResultCreatedBy1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateResultCreatedBy2 returns the union data inside the ConnectConnectorCreateResult_CreatedBy as a ConnectConnectorCreateResultCreatedBy2
-func (t ConnectConnectorCreateResult_CreatedBy) AsConnectConnectorCreateResultCreatedBy2() (ConnectConnectorCreateResultCreatedBy2, error) {
-	var body ConnectConnectorCreateResultCreatedBy2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultCreatedBy2 overwrites any union data inside the ConnectConnectorCreateResult_CreatedBy as the provided ConnectConnectorCreateResultCreatedBy2
-func (t *ConnectConnectorCreateResult_CreatedBy) FromConnectConnectorCreateResultCreatedBy2(v ConnectConnectorCreateResultCreatedBy2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultCreatedBy2 performs a merge with any union data inside the ConnectConnectorCreateResult_CreatedBy, using the provided ConnectConnectorCreateResultCreatedBy2
-func (t *ConnectConnectorCreateResult_CreatedBy) MergeConnectConnectorCreateResultCreatedBy2(v ConnectConnectorCreateResultCreatedBy2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorCreateResult_CreatedBy) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorCreateResult_CreatedBy) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorCreateResultUpdatedBy2Environment0 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as a ConnectConnectorCreateResultUpdatedBy2Environment0
-func (t ConnectConnectorCreateResult_UpdatedBy_2_Environment) AsConnectConnectorCreateResultUpdatedBy2Environment0() (ConnectConnectorCreateResultUpdatedBy2Environment0, error) {
-	var body ConnectConnectorCreateResultUpdatedBy2Environment0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultUpdatedBy2Environment0 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as the provided ConnectConnectorCreateResultUpdatedBy2Environment0
-func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) FromConnectConnectorCreateResultUpdatedBy2Environment0(v ConnectConnectorCreateResultUpdatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultUpdatedBy2Environment0 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment, using the provided ConnectConnectorCreateResultUpdatedBy2Environment0
-func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) MergeConnectConnectorCreateResultUpdatedBy2Environment0(v ConnectConnectorCreateResultUpdatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateResultUpdatedBy2Environment1 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as a ConnectConnectorCreateResultUpdatedBy2Environment1
-func (t ConnectConnectorCreateResult_UpdatedBy_2_Environment) AsConnectConnectorCreateResultUpdatedBy2Environment1() (ConnectConnectorCreateResultUpdatedBy2Environment1, error) {
-	var body ConnectConnectorCreateResultUpdatedBy2Environment1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultUpdatedBy2Environment1 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment as the provided ConnectConnectorCreateResultUpdatedBy2Environment1
-func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) FromConnectConnectorCreateResultUpdatedBy2Environment1(v ConnectConnectorCreateResultUpdatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultUpdatedBy2Environment1 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy_2_Environment, using the provided ConnectConnectorCreateResultUpdatedBy2Environment1
-func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) MergeConnectConnectorCreateResultUpdatedBy2Environment1(v ConnectConnectorCreateResultUpdatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorCreateResult_UpdatedBy_2_Environment) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorCreateResult_UpdatedBy_2_Environment) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorCreateResultUpdatedBy0 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy as a ConnectConnectorCreateResultUpdatedBy0
-func (t ConnectConnectorCreateResult_UpdatedBy) AsConnectConnectorCreateResultUpdatedBy0() (ConnectConnectorCreateResultUpdatedBy0, error) {
-	var body ConnectConnectorCreateResultUpdatedBy0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultUpdatedBy0 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy as the provided ConnectConnectorCreateResultUpdatedBy0
-func (t *ConnectConnectorCreateResult_UpdatedBy) FromConnectConnectorCreateResultUpdatedBy0(v ConnectConnectorCreateResultUpdatedBy0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultUpdatedBy0 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy, using the provided ConnectConnectorCreateResultUpdatedBy0
-func (t *ConnectConnectorCreateResult_UpdatedBy) MergeConnectConnectorCreateResultUpdatedBy0(v ConnectConnectorCreateResultUpdatedBy0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateResultUpdatedBy1 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy as a ConnectConnectorCreateResultUpdatedBy1
-func (t ConnectConnectorCreateResult_UpdatedBy) AsConnectConnectorCreateResultUpdatedBy1() (ConnectConnectorCreateResultUpdatedBy1, error) {
-	var body ConnectConnectorCreateResultUpdatedBy1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultUpdatedBy1 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy as the provided ConnectConnectorCreateResultUpdatedBy1
-func (t *ConnectConnectorCreateResult_UpdatedBy) FromConnectConnectorCreateResultUpdatedBy1(v ConnectConnectorCreateResultUpdatedBy1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultUpdatedBy1 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy, using the provided ConnectConnectorCreateResultUpdatedBy1
-func (t *ConnectConnectorCreateResult_UpdatedBy) MergeConnectConnectorCreateResultUpdatedBy1(v ConnectConnectorCreateResultUpdatedBy1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreateResultUpdatedBy2 returns the union data inside the ConnectConnectorCreateResult_UpdatedBy as a ConnectConnectorCreateResultUpdatedBy2
-func (t ConnectConnectorCreateResult_UpdatedBy) AsConnectConnectorCreateResultUpdatedBy2() (ConnectConnectorCreateResultUpdatedBy2, error) {
-	var body ConnectConnectorCreateResultUpdatedBy2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreateResultUpdatedBy2 overwrites any union data inside the ConnectConnectorCreateResult_UpdatedBy as the provided ConnectConnectorCreateResultUpdatedBy2
-func (t *ConnectConnectorCreateResult_UpdatedBy) FromConnectConnectorCreateResultUpdatedBy2(v ConnectConnectorCreateResultUpdatedBy2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreateResultUpdatedBy2 performs a merge with any union data inside the ConnectConnectorCreateResult_UpdatedBy, using the provided ConnectConnectorCreateResultUpdatedBy2
-func (t *ConnectConnectorCreateResult_UpdatedBy) MergeConnectConnectorCreateResultUpdatedBy2(v ConnectConnectorCreateResultUpdatedBy2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnectorCreateResult_UpdatedBy) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnectorCreateResult_UpdatedBy) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdateData0 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData0
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData0() (ConnectConnectorUpdateData0, error) {
-	var body ConnectConnectorUpdateData0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData0 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData0
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData0(v ConnectConnectorUpdateData0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData0 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData0
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData0(v ConnectConnectorUpdateData0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData1 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData1
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData1() (ConnectConnectorUpdateData1, error) {
-	var body ConnectConnectorUpdateData1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData1 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData1
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData1(v ConnectConnectorUpdateData1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData1 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData1
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData1(v ConnectConnectorUpdateData1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData2 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData2
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData2() (ConnectConnectorUpdateData2, error) {
-	var body ConnectConnectorUpdateData2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData2 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData2
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData2(v ConnectConnectorUpdateData2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData2 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData2
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData2(v ConnectConnectorUpdateData2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData3 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData3
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData3() (ConnectConnectorUpdateData3, error) {
-	var body ConnectConnectorUpdateData3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData3 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData3
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData3(v ConnectConnectorUpdateData3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData3 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData3
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData3(v ConnectConnectorUpdateData3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData4 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData4
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData4() (ConnectConnectorUpdateData4, error) {
-	var body ConnectConnectorUpdateData4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData4 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData4
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData4(v ConnectConnectorUpdateData4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData4 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData4
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData4(v ConnectConnectorUpdateData4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData5 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData5
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData5() (ConnectConnectorUpdateData5, error) {
-	var body ConnectConnectorUpdateData5
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData5 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData5
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData5(v ConnectConnectorUpdateData5) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData5 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData5
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData5(v ConnectConnectorUpdateData5) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData6 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData6
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData6() (ConnectConnectorUpdateData6, error) {
-	var body ConnectConnectorUpdateData6
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData6 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData6
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData6(v ConnectConnectorUpdateData6) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData6 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData6
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData6(v ConnectConnectorUpdateData6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData7 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData7
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData7() (ConnectConnectorUpdateData7, error) {
-	var body ConnectConnectorUpdateData7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData7 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData7
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData7(v ConnectConnectorUpdateData7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData7 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData7
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData7(v ConnectConnectorUpdateData7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData8 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData8
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData8() (ConnectConnectorUpdateData8, error) {
-	var body ConnectConnectorUpdateData8
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData8 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData8
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData8(v ConnectConnectorUpdateData8) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData8 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData8
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData8(v ConnectConnectorUpdateData8) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData9 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData9
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData9() (ConnectConnectorUpdateData9, error) {
-	var body ConnectConnectorUpdateData9
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData9 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData9
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData9(v ConnectConnectorUpdateData9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData9 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData9
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData9(v ConnectConnectorUpdateData9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData10 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData10
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData10() (ConnectConnectorUpdateData10, error) {
-	var body ConnectConnectorUpdateData10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData10 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData10
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData10(v ConnectConnectorUpdateData10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData10 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData10
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData10(v ConnectConnectorUpdateData10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdateData11 returns the union data inside the ConnectConnectorUpdateData as a ConnectConnectorUpdateData11
-func (t ConnectConnectorUpdateData) AsConnectConnectorUpdateData11() (ConnectConnectorUpdateData11, error) {
-	var body ConnectConnectorUpdateData11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdateData11 overwrites any union data inside the ConnectConnectorUpdateData as the provided ConnectConnectorUpdateData11
-func (t *ConnectConnectorUpdateData) FromConnectConnectorUpdateData11(v ConnectConnectorUpdateData11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdateData11 performs a merge with any union data inside the ConnectConnectorUpdateData, using the provided ConnectConnectorUpdateData11
-func (t *ConnectConnectorUpdateData) MergeConnectConnectorUpdateData11(v ConnectConnectorUpdateData11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
 }

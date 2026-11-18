@@ -13,6 +13,293 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseCreateWebhookResponse parses an HTTP response from a CreateWebhookWithResponse call
+func ParseCreateWebhookResponse(rsp *http.Response) (*CreateWebhookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateWebhookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
+
+			// CreatedAt A number containing the date when the webhook was created in in milliseconds
+			//
+			// Example: 1567024758130
+			CreatedAt float32 `json:"createdAt"`
+
+			// Events The webhooks events
+			//
+			// Example: deployment.created
+			Events []CreateWebhook200JSONResponseBodyEvents `json:"events"`
+
+			// Id The webhook id
+			//
+			// Example: account_hook_GflD6EYyo7F4ViYS
+			Id string `json:"id"`
+
+			// OwnerId The unique ID of the team the webhook belongs to
+			//
+			// Example: ZspSRT4ljIEEmMHgoDwKWDei
+			OwnerId string `json:"ownerId"`
+
+			// ProjectIds The ID of the projects the webhook is associated with
+			//
+			// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
+			ProjectIds *[]string `json:"projectIds,omitempty"`
+
+			// Secret The webhook secret used to sign the payload
+			Secret string `json:"secret"`
+
+			// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
+			//
+			// Example: 1567024758130
+			UpdatedAt float32 `json:"updatedAt"`
+
+			// Url A string with the URL of the webhook
+			//
+			// Example: https://my-webhook.com
+			Url string `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteWebhookResponse parses an HTTP response from a DeleteWebhookWithResponse call
+func ParseDeleteWebhookResponse(rsp *http.Response) (*DeleteWebhookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteWebhookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseGetWebhookResponse parses an HTTP response from a GetWebhookWithResponse call
+func ParseGetWebhookResponse(rsp *http.Response) (*GetWebhookResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetWebhookResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			AlertRuleIds *[]string `json:"alertRuleIds,omitempty"`
+
+			// CreatedAt A number containing the date when the webhook was created in in milliseconds
+			//
+			// Example: 1567024758130
+			CreatedAt float32 `json:"createdAt"`
+
+			// Events The webhooks events
+			//
+			// Example: deployment.created
+			Events []GetWebhook200JSONResponseBodyEvents `json:"events"`
+
+			// Id The webhook id
+			//
+			// Example: account_hook_GflD6EYyo7F4ViYS
+			Id string `json:"id"`
+
+			// OwnerId The unique ID of the team the webhook belongs to
+			//
+			// Example: ZspSRT4ljIEEmMHgoDwKWDei
+			OwnerId string `json:"ownerId"`
+
+			// ProjectIds The ID of the projects the webhook is associated with
+			//
+			// Example: ["prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"]
+			ProjectIds *[]string `json:"projectIds,omitempty"`
+
+			// UpdatedAt A number containing the date when the webhook was updated in in milliseconds
+			//
+			// Example: 1567024758130
+			UpdatedAt float32 `json:"updatedAt"`
+
+			// Url A string with the URL of the webhook
+			//
+			// Example: https://my-webhook.com
+			Url string `json:"url"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectsResponse parses an HTTP response from a GetProjectsWithResponse call
+func ParseGetProjectsResponse(rsp *http.Response) (*GetProjectsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetProjects200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseAddProjectDomainResponse parses an HTTP response from a AddProjectDomainWithResponse call
+func ParseAddProjectDomainResponse(rsp *http.Response) (*AddProjectDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AddProjectDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ApexName            string                                                 `json:"apexName"`
+			CreatedAt           *float32                                               `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                `json:"gitBranch,omitempty"`
+			Name                string                                                 `json:"name"`
+			ProjectId           string                                                 `json:"projectId"`
+			Redirect            *string                                                `json:"redirect,omitempty"`
+			RedirectStatusCode  *AddProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified AddProjectDomain200JSONResponseBodyVerified `json:"verified"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseFilterProjectEnvsResponse parses an HTTP response from a FilterProjectEnvsWithResponse call
 func ParseFilterProjectEnvsResponse(rsp *http.Response) (*FilterProjectEnvsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -2182,6 +2469,7 @@ func ParseCancelDeploymentResponse(rsp *http.Response) (*CancelDeploymentRespons
 				MaxConcurrency       *float32                                                          `json:"maxConcurrency,omitempty"`
 				MaxDuration          *CancelDeployment200JSONResponseBody_Functions_MaxDuration        `json:"maxDuration,omitempty"`
 				Memory               *float32                                                          `json:"memory,omitempty"`
+				Perimeter            *string                                                           `json:"perimeter,omitempty"`
 				Regions              *[]string                                                         `json:"regions,omitempty"`
 				Runtime              *string                                                           `json:"runtime,omitempty"`
 				SupportsCancellation *CancelDeployment200JSONResponseBodyFunctionsSupportsCancellation `json:"supportsCancellation,omitempty"`
