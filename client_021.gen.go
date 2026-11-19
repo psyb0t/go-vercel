@@ -5066,7 +5066,7 @@ func (c *Client) GetOrganizationDsyncGroup(ctx context.Context, organizationId s
 
 // PutOrganizationDsyncGroupWithBody Create or Replace Organization Directory Sync Group Configuration
 //
-// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization's root team, as its default role or for that team.
 //
 // Takes any type of body and a specified content type.
 //
@@ -5085,7 +5085,7 @@ func (c *Client) PutOrganizationDsyncGroupWithBody(ctx context.Context, organiza
 
 // PutOrganizationDsyncGroup Create or Replace Organization Directory Sync Group Configuration
 //
-// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization's root team, as its default role or for that team.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -5176,7 +5176,7 @@ func (c *Client) RemoveOrganizationTeam(ctx context.Context, organizationId stri
 
 // PutOrganizationTeamDsyncWithBody Update Organization Team Directory Sync Mode
 //
-// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way. The root team can follow the Organization's Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
 //
 // Takes any type of body and a specified content type.
 //
@@ -5195,7 +5195,7 @@ func (c *Client) PutOrganizationTeamDsyncWithBody(ctx context.Context, organizat
 
 // PutOrganizationTeamDsync Update Organization Team Directory Sync Mode
 //
-// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way. The root team can follow the Organization's Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
 //
 // Takes a body of the `application/json` content type.
 //

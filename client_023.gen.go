@@ -16376,7 +16376,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutOrganizationDsyncGroupWithBodyWithResponse Create or Replace Organization Directory Sync Group Configuration
 	//
-	// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+	// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization's root team, as its default role or for that team.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -16385,7 +16385,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutOrganizationDsyncGroupWithResponse Create or Replace Organization Directory Sync Group Configuration
 	//
-	// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin.
+	// Create or replace one organization's Directory Sync group configuration. The directory starts syncing when at least one group grants OrgAdmin. A group that grants OrgAdmin must also grant the Owner role on the organization's root team, as its default role or for that team.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -16430,7 +16430,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutOrganizationTeamDsyncWithBodyWithResponse Update Organization Team Directory Sync Mode
 	//
-	// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+	// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way. The root team can follow the Organization's Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -16439,7 +16439,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutOrganizationTeamDsyncWithResponse Update Organization Team Directory Sync Mode
 	//
-	// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way.
+	// Select whether one Organization team's memberships are governed by the Organization's Directory Sync or by the team's own directory. The team's own directory connection is kept either way. The root team can follow the Organization's Directory Sync only when no group grants OrgAdmin or at least one OrgAdmin group also grants the Owner role on it.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//

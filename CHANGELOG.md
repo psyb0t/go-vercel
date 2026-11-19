@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.32.0, 2026-11-19
+
+- Breaking: payload types of `UserEvent_Payload` are renumbered. `UserEventPayload100` to `UserEventPayload125` and many later types gain or lose fields. For example `UserEventPayload100.Id` changes from `string` to `*string`, `UserEventPayload101.Cn` is removed and `UserEventPayload106.PrNumber` is removed.
+- Breaking: `UserEventPayload107` loses `Next`, `Previous` and the `UserEventPayload107NextEnabled` and `UserEventPayload107PreviousEnabled` enum types. `UserEventPayload127` loses its password protection fields and enum types.
+- Breaking: `UserEventPayload123` loses `Get`, `Set`, `MarshalJSON`, `UnmarshalJSON` and `AdditionalProperties`. `UserEventPayload273` loses `Set` and `UnmarshalJSON`.
+- Breaking: `UserEvent_Payload.FromUserEventPayload133` and `UserEvent_Payload.MergeUserEventPayload133` are removed.
+- Breaking: several nested types are removed, for example `UserEvent_Payload_134_Job`, `UserEvent_Payload_231_Factors` and `UserEvent_Payload_535_Next`.
+- Breaking: `UserEventTypeProjectRollingReleaseSuggestedActionsGenerated`, `ListEventTypeNameProjectRollingReleaseSuggestedActionsGenerated` and `ListEventTypeReplacedByProjectRollingReleaseSuggestedActionsGenerated` are removed.
+- Added `ListEventTypeNameAiAgentUsageBillingConsent`, `ListEventTypeNameAiGatewayInferenceHooksHeadersCleared`, `ListEventTypeNameAiGatewayInferenceHooksHeadersUpdated` and `ListEventTypeNameAiVerification`, with matching `ListEventTypeReplacedBy...` constants.
+- Added the webhook event constants `...EventsPageIntegrityConnectSrcDetected`, `...HeaderChanged`, `...RuntimeWarningDetected`, `...ScriptChanged` and `...ScriptDetected` for `CreateWebhook`, `GetWebhook` and `GetWebhooks` request and response bodies.
+
 ## v0.31.0, 2026-11-18
 
 - Added the organization directory sync group calls `ListOrganizationDsyncGroups`, `GetOrganizationDsyncGroup`, `PutOrganizationDsyncGroup`, `PutOrganizationDsyncGroupWithBody`, `DeleteOrganizationDsyncGroup`, `PutOrganizationTeamDsync` and `PutOrganizationTeamDsyncWithBody` on `Client`, with `...WithResponse` variants on `ClientWithResponses` and matching `ClientInterface` and `ClientWithResponsesInterface` methods. New types include `GetOrganizationDsyncGroupParams`, `DeleteOrganizationDsyncGroupParams` and their response types.
