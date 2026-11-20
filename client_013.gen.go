@@ -12,6 +12,201 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Conclusion defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Conclusion string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Requires defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Requires string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 struct {
+	ExternalResourceId         *string                                                    `json:"externalResourceId,omitempty"`
+	IntegrationConfigurationId string                                                     `json:"integrationConfigurationId"`
+	IntegrationId              string                                                     `json:"integrationId"`
+	Kind                       ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0Kind `json:"kind"`
+	ResourceId                 *string                                                    `json:"resourceId,omitempty"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0Kind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 struct {
+	Kind      ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1Kind `json:"kind"`
+	WebhookId *string                                                    `json:"webhookId,omitempty"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1Kind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 struct {
+	ExternalCheckName string                                                         `json:"externalCheckName"`
+	Kind              ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Kind     `json:"kind"`
+	Provider          ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Provider `json:"provider"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Kind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Provider defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Provider string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 struct {
+	Origin  *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3Origin  `json:"origin,omitempty"`
+	SubKind *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3SubKind `json:"subKind,omitempty"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3Origin defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3Origin string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3SubKind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3SubKind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 struct {
+	Origin    ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Origin         `json:"origin"`
+	Selection ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection `json:"selection"`
+	SubKind   ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4SubKind        `json:"subKind"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Origin defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Origin string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 struct {
+	Kind ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind `json:"kind"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 struct {
+	Kind ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind `json:"kind"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 struct {
+	FailIfNoMatch *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
+	Filters       []string                                                                       `json:"filters"`
+	Job           ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job            `json:"job"`
+	Kind          ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind           `json:"kind"`
+	Task          string                                                                         `json:"task"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch bool
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
+
+// ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection struct {
+	union json.RawMessage
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4SubKind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4SubKind string
+
+// ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source struct {
+	union json.RawMessage
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0Status defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0Status string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1 struct {
+	Blocks         *ListDeploymentCheckRuns200JSONResponseBodyRuns1Blocks     `json:"blocks,omitempty"`
+	CompletedAt    *float32                                                   `json:"completedAt,omitempty"`
+	Conclusion     *ListDeploymentCheckRuns200JSONResponseBodyRuns1Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                                    `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                                    `json:"createdAt"`
+	DeploymentId   string                                                     `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                                 `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                                  `json:"externalId,omitempty"`
+	ExternalUrl         *string                                                  `json:"externalUrl,omitempty"`
+	Id                  string                                                   `json:"id"`
+	Name                string                                                   `json:"name"`
+	Output              *map[string]interface{}                                  `json:"output,omitempty"`
+	OwnerId             string                                                   `json:"ownerId"`
+	ProjectId           *string                                                  `json:"projectId,omitempty"`
+	Requires            *ListDeploymentCheckRuns200JSONResponseBodyRuns1Requires `json:"requires,omitempty"`
+	Source              ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source `json:"source"`
+	StartedAt           *float32                                                 `json:"startedAt,omitempty"`
+	Status              ListDeploymentCheckRuns200JSONResponseBodyRuns1Status    `json:"status"`
+	Targets             *[]string                                                `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Blocks defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Blocks string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Conclusion defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Conclusion string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Requires defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Requires string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 struct {
+	InvocationAttempt *float32                                                      `json:"invocationAttempt,omitempty"`
+	InvocationId      string                                                        `json:"invocationId"`
+	JobDefinitionId   string                                                        `json:"jobDefinitionId"`
+	Origin            ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0Origin  `json:"origin"`
+	SubKind           ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0SubKind `json:"subKind"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0Origin defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0Origin string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0SubKind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0SubKind string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 struct {
+	Origin  ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1Origin  `json:"origin"`
+	SubKind ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1SubKind `json:"subKind"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1Origin defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1Origin string
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1SubKind defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1SubKind string
+
+// ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source struct {
+	union json.RawMessage
+}
+
 // ListDeploymentCheckRuns200JSONResponseBodyRuns1Status defines parameters for ListDeploymentCheckRuns.
 type ListDeploymentCheckRuns200JSONResponseBodyRuns1Status string
 
@@ -2146,6 +2341,11 @@ type CreateSandboxesV2JSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	//
+	// Example: 300000
+	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
+
 	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
 	//
 	// Example: ["sfo1","cle1"]
@@ -3259,6 +3459,11 @@ type UpdateSandboxJSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	//
+	// Example: 300000
+	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
+
 	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
 	//
 	// Example: ["sfo1","cle1"]
@@ -3636,6 +3841,11 @@ type CreateSandboxesByNameForkV2JSONBody struct {
 	//
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
+
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. Defaults to the source sandbox setting.
+	//
+	// Example: 300000
+	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
 
 	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
 	//
@@ -5256,6 +5466,11 @@ type CreateSandboxesV3JSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	//
+	// Example: 300000
+	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
+
 	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
 	//
 	// Example: ["sfo1","cle1"]
@@ -5668,6 +5883,11 @@ type CreateSandboxesByNameForkV3JSONBody struct {
 	//
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
+
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. Defaults to the source sandbox setting.
+	//
+	// Example: 300000
+	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
 
 	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
 	//
@@ -6381,6 +6601,11 @@ type CreateSandboxesV4JSONBody struct {
 	//
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
+
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	//
+	// Example: 300000
+	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
 
 	// FailoverRegions The regions the sandbox falls back to when it cannot be created in `region`.
 	//
@@ -13214,6 +13439,9 @@ type UpdateFlagJSONRequestBody UpdateFlagJSONBody
 // LookupFlagLabelsJSONRequestBody defines body for LookupFlagLabels for application/json ContentType.
 type LookupFlagLabelsJSONRequestBody LookupFlagLabelsJSONBody
 
+// SignFlagOverridesJSONRequestBody defines body for SignFlagOverrides for application/json ContentType.
+type SignFlagOverridesJSONRequestBody SignFlagOverridesJSONBody
+
 // CreateSdkKeyJSONRequestBody defines body for CreateSdkKey for application/json ContentType.
 type CreateSdkKeyJSONRequestBody CreateSdkKeyJSONBody
 
@@ -15966,25 +16194,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload124. Returns the specified
+// Getter for additional properties for UserEventPayload125. Returns the specified
 // element and whether it was found
-func (a UserEventPayload124) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload125) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload124
-func (a *UserEventPayload124) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload125
+func (a *UserEventPayload125) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload124 to handle AdditionalProperties
-func (a *UserEventPayload124) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload125 to handle AdditionalProperties
+func (a *UserEventPayload125) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -16013,8 +16241,8 @@ func (a *UserEventPayload124) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload124 to handle AdditionalProperties
-func (a UserEventPayload124) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload125 to handle AdditionalProperties
+func (a UserEventPayload125) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -16032,25 +16260,25 @@ func (a UserEventPayload124) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload274. Returns the specified
+// Getter for additional properties for UserEventPayload275. Returns the specified
 // element and whether it was found
-func (a UserEventPayload274) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload275) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload274
-func (a *UserEventPayload274) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload275
+func (a *UserEventPayload275) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload274 to handle AdditionalProperties
-func (a *UserEventPayload274) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload275 to handle AdditionalProperties
+func (a *UserEventPayload275) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -16103,8 +16331,8 @@ func (a *UserEventPayload274) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload274 to handle AdditionalProperties
-func (a UserEventPayload274) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload275 to handle AdditionalProperties
+func (a UserEventPayload275) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -19786,237 +20014,4 @@ func (t *ConnectConnector_CreatedBy_2_Environment) MergeConnectConnectorCreatedB
 func (t ConnectConnector_CreatedBy_2_Environment) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
-}
-
-func (t *ConnectConnector_CreatedBy_2_Environment) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorCreatedBy0 returns the union data inside the ConnectConnector_CreatedBy as a ConnectConnectorCreatedBy0
-func (t ConnectConnector_CreatedBy) AsConnectConnectorCreatedBy0() (ConnectConnectorCreatedBy0, error) {
-	var body ConnectConnectorCreatedBy0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreatedBy0 overwrites any union data inside the ConnectConnector_CreatedBy as the provided ConnectConnectorCreatedBy0
-func (t *ConnectConnector_CreatedBy) FromConnectConnectorCreatedBy0(v ConnectConnectorCreatedBy0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreatedBy0 performs a merge with any union data inside the ConnectConnector_CreatedBy, using the provided ConnectConnectorCreatedBy0
-func (t *ConnectConnector_CreatedBy) MergeConnectConnectorCreatedBy0(v ConnectConnectorCreatedBy0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreatedBy1 returns the union data inside the ConnectConnector_CreatedBy as a ConnectConnectorCreatedBy1
-func (t ConnectConnector_CreatedBy) AsConnectConnectorCreatedBy1() (ConnectConnectorCreatedBy1, error) {
-	var body ConnectConnectorCreatedBy1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreatedBy1 overwrites any union data inside the ConnectConnector_CreatedBy as the provided ConnectConnectorCreatedBy1
-func (t *ConnectConnector_CreatedBy) FromConnectConnectorCreatedBy1(v ConnectConnectorCreatedBy1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreatedBy1 performs a merge with any union data inside the ConnectConnector_CreatedBy, using the provided ConnectConnectorCreatedBy1
-func (t *ConnectConnector_CreatedBy) MergeConnectConnectorCreatedBy1(v ConnectConnectorCreatedBy1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreatedBy2 returns the union data inside the ConnectConnector_CreatedBy as a ConnectConnectorCreatedBy2
-func (t ConnectConnector_CreatedBy) AsConnectConnectorCreatedBy2() (ConnectConnectorCreatedBy2, error) {
-	var body ConnectConnectorCreatedBy2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreatedBy2 overwrites any union data inside the ConnectConnector_CreatedBy as the provided ConnectConnectorCreatedBy2
-func (t *ConnectConnector_CreatedBy) FromConnectConnectorCreatedBy2(v ConnectConnectorCreatedBy2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreatedBy2 performs a merge with any union data inside the ConnectConnector_CreatedBy, using the provided ConnectConnectorCreatedBy2
-func (t *ConnectConnector_CreatedBy) MergeConnectConnectorCreatedBy2(v ConnectConnectorCreatedBy2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnector_CreatedBy) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnector_CreatedBy) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdatedBy2Environment0 returns the union data inside the ConnectConnector_UpdatedBy_2_Environment as a ConnectConnectorUpdatedBy2Environment0
-func (t ConnectConnector_UpdatedBy_2_Environment) AsConnectConnectorUpdatedBy2Environment0() (ConnectConnectorUpdatedBy2Environment0, error) {
-	var body ConnectConnectorUpdatedBy2Environment0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdatedBy2Environment0 overwrites any union data inside the ConnectConnector_UpdatedBy_2_Environment as the provided ConnectConnectorUpdatedBy2Environment0
-func (t *ConnectConnector_UpdatedBy_2_Environment) FromConnectConnectorUpdatedBy2Environment0(v ConnectConnectorUpdatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdatedBy2Environment0 performs a merge with any union data inside the ConnectConnector_UpdatedBy_2_Environment, using the provided ConnectConnectorUpdatedBy2Environment0
-func (t *ConnectConnector_UpdatedBy_2_Environment) MergeConnectConnectorUpdatedBy2Environment0(v ConnectConnectorUpdatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdatedBy2Environment1 returns the union data inside the ConnectConnector_UpdatedBy_2_Environment as a ConnectConnectorUpdatedBy2Environment1
-func (t ConnectConnector_UpdatedBy_2_Environment) AsConnectConnectorUpdatedBy2Environment1() (ConnectConnectorUpdatedBy2Environment1, error) {
-	var body ConnectConnectorUpdatedBy2Environment1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdatedBy2Environment1 overwrites any union data inside the ConnectConnector_UpdatedBy_2_Environment as the provided ConnectConnectorUpdatedBy2Environment1
-func (t *ConnectConnector_UpdatedBy_2_Environment) FromConnectConnectorUpdatedBy2Environment1(v ConnectConnectorUpdatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdatedBy2Environment1 performs a merge with any union data inside the ConnectConnector_UpdatedBy_2_Environment, using the provided ConnectConnectorUpdatedBy2Environment1
-func (t *ConnectConnector_UpdatedBy_2_Environment) MergeConnectConnectorUpdatedBy2Environment1(v ConnectConnectorUpdatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnector_UpdatedBy_2_Environment) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ConnectConnector_UpdatedBy_2_Environment) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorUpdatedBy0 returns the union data inside the ConnectConnector_UpdatedBy as a ConnectConnectorUpdatedBy0
-func (t ConnectConnector_UpdatedBy) AsConnectConnectorUpdatedBy0() (ConnectConnectorUpdatedBy0, error) {
-	var body ConnectConnectorUpdatedBy0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdatedBy0 overwrites any union data inside the ConnectConnector_UpdatedBy as the provided ConnectConnectorUpdatedBy0
-func (t *ConnectConnector_UpdatedBy) FromConnectConnectorUpdatedBy0(v ConnectConnectorUpdatedBy0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdatedBy0 performs a merge with any union data inside the ConnectConnector_UpdatedBy, using the provided ConnectConnectorUpdatedBy0
-func (t *ConnectConnector_UpdatedBy) MergeConnectConnectorUpdatedBy0(v ConnectConnectorUpdatedBy0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdatedBy1 returns the union data inside the ConnectConnector_UpdatedBy as a ConnectConnectorUpdatedBy1
-func (t ConnectConnector_UpdatedBy) AsConnectConnectorUpdatedBy1() (ConnectConnectorUpdatedBy1, error) {
-	var body ConnectConnectorUpdatedBy1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdatedBy1 overwrites any union data inside the ConnectConnector_UpdatedBy as the provided ConnectConnectorUpdatedBy1
-func (t *ConnectConnector_UpdatedBy) FromConnectConnectorUpdatedBy1(v ConnectConnectorUpdatedBy1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdatedBy1 performs a merge with any union data inside the ConnectConnector_UpdatedBy, using the provided ConnectConnectorUpdatedBy1
-func (t *ConnectConnector_UpdatedBy) MergeConnectConnectorUpdatedBy1(v ConnectConnectorUpdatedBy1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorUpdatedBy2 returns the union data inside the ConnectConnector_UpdatedBy as a ConnectConnectorUpdatedBy2
-func (t ConnectConnector_UpdatedBy) AsConnectConnectorUpdatedBy2() (ConnectConnectorUpdatedBy2, error) {
-	var body ConnectConnectorUpdatedBy2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorUpdatedBy2 overwrites any union data inside the ConnectConnector_UpdatedBy as the provided ConnectConnectorUpdatedBy2
-func (t *ConnectConnector_UpdatedBy) FromConnectConnectorUpdatedBy2(v ConnectConnectorUpdatedBy2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorUpdatedBy2 performs a merge with any union data inside the ConnectConnector_UpdatedBy, using the provided ConnectConnectorUpdatedBy2
-func (t *ConnectConnector_UpdatedBy) MergeConnectConnectorUpdatedBy2(v ConnectConnectorUpdatedBy2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
 }

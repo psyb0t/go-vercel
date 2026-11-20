@@ -2307,21 +2307,6 @@ func (c *ClientWithResponses) ListBillingChargesWithResponse(ctx context.Context
 	return ParseListBillingChargesResponse(rsp)
 }
 
-// ListContractCommitmentsWithResponse List FOCUS contract commitments
-//
-// Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for a specified Vercel team. The response is streamed as newline-delimited JSON (JSONL). This endpoint is only applicable to Enterprise Vercel customers. An empty response is returned for non-Enterprise (Pro/Flex) customers.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/billing/contract-commitments (the `ListContractCommitments` operationId).
-func (c *ClientWithResponses) ListContractCommitmentsWithResponse(ctx context.Context, params *ListContractCommitmentsParams, reqEditors ...RequestEditorFn) (*ListContractCommitmentsResponse, error) {
-	rsp, err := c.ListContractCommitments(ctx, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseListContractCommitmentsResponse(rsp)
-}
-
 // DeleteRedirectsWithBodyWithResponse Delete project-level redirects.
 //
 // Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
@@ -5507,7 +5492,7 @@ func (c *ClientWithResponses) ListOrganizationTeamsWithResponse(ctx context.Cont
 
 // AddOrganizationTeamWithBodyWithResponse Create or Add Team to Organization
 //
-// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`. The request must state the child's billing profile in `billingPlan`: `enterprise` or `platform`. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -5522,7 +5507,7 @@ func (c *ClientWithResponses) AddOrganizationTeamWithBodyWithResponse(ctx contex
 
 // AddOrganizationTeamWithResponse Create or Add Team to Organization
 //
-// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`. The request must state the child's billing profile in `billingPlan`: `enterprise` or `platform`. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -6343,6 +6328,36 @@ func (c *ClientWithResponses) LookupFlagLabelsWithResponse(ctx context.Context, 
 		return nil, err
 	}
 	return ParseLookupFlagLabelsResponse(rsp)
+}
+
+// SignFlagOverridesWithBodyWithResponse Sign flag overrides
+//
+// Signs flag overrides for the `vercel-flag-overrides` cookie, which the Flags SDK accepts without a `FLAGS_SECRET`. The overrides apply to one environment of the project and of the projects that share its microfrontends groups. An access token requires permission to read the project and an `environment`. A Vercel OIDC token signs only for its own project and environment.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/overrides/sign (the `SignFlagOverrides` operationId).
+func (c *ClientWithResponses) SignFlagOverridesWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *SignFlagOverridesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SignFlagOverridesResponse, error) {
+	rsp, err := c.SignFlagOverridesWithBody(ctx, projectIdOrName, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSignFlagOverridesResponse(rsp)
+}
+
+// SignFlagOverridesWithResponse Sign flag overrides
+//
+// Signs flag overrides for the `vercel-flag-overrides` cookie, which the Flags SDK accepts without a `FLAGS_SECRET`. The overrides apply to one environment of the project and of the projects that share its microfrontends groups. An access token requires permission to read the project and an `environment`. A Vercel OIDC token signs only for its own project and environment.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/overrides/sign (the `SignFlagOverrides` operationId).
+func (c *ClientWithResponses) SignFlagOverridesWithResponse(ctx context.Context, projectIdOrName string, params *SignFlagOverridesParams, body SignFlagOverridesJSONRequestBody, reqEditors ...RequestEditorFn) (*SignFlagOverridesResponse, error) {
+	rsp, err := c.SignFlagOverrides(ctx, projectIdOrName, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSignFlagOverridesResponse(rsp)
 }
 
 // GetSdkKeysWithResponse Get all SDK keys
@@ -13999,22 +14014,6 @@ func ParseListBillingChargesResponse(rsp *http.Response) (*ListBillingChargesRes
 	}
 
 	response := &ListBillingChargesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseListContractCommitmentsResponse parses an HTTP response from a ListContractCommitmentsWithResponse call
-func ParseListContractCommitmentsResponse(rsp *http.Response) (*ListContractCommitmentsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListContractCommitmentsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}

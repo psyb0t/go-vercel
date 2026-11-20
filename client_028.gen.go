@@ -9762,6 +9762,53 @@ func ParseLookupFlagLabelsResponse(rsp *http.Response) (*LookupFlagLabelsRespons
 	return response, nil
 }
 
+// ParseSignFlagOverridesResponse parses an HTTP response from a SignFlagOverridesWithResponse call
+func ParseSignFlagOverridesResponse(rsp *http.Response) (*SignFlagOverridesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SignFlagOverridesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ExpiresIn float32 `json:"expiresIn"`
+			Token     string  `json:"token"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 413:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGetSdkKeysResponse parses an HTTP response from a GetSdkKeysWithResponse call
 func ParseGetSdkKeysResponse(rsp *http.Response) (*GetSdkKeysResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -17017,7 +17064,10 @@ func ParseRequestAccessToTeamResponse(rsp *http.Response) (*RequestAccessToTeamR
 				RepoId           *string                                                      `json:"repoId,omitempty"`
 				RepoPath         *string                                                      `json:"repoPath,omitempty"`
 				SsoConnectedAt   *float32                                                     `json:"ssoConnectedAt,omitempty"`
-				SsoUserId        *string                                                      `json:"ssoUserId,omitempty"`
+
+				// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
+				SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
+				SsoUserId        *string `json:"ssoUserId,omitempty"`
 			} `json:"joinedFrom,omitempty"`
 			TeamName string `json:"teamName"`
 			TeamSlug string `json:"teamSlug"`
@@ -17106,7 +17156,10 @@ func ParseGetTeamAccessRequestResponse(rsp *http.Response) (*GetTeamAccessReques
 				RepoId           *string                                                       `json:"repoId,omitempty"`
 				RepoPath         *string                                                       `json:"repoPath,omitempty"`
 				SsoConnectedAt   *float32                                                      `json:"ssoConnectedAt,omitempty"`
-				SsoUserId        *string                                                       `json:"ssoUserId,omitempty"`
+
+				// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
+				SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
+				SsoUserId        *string `json:"ssoUserId,omitempty"`
 			} `json:"joinedFrom"`
 
 			// TeamName The name of the team.
@@ -19966,47 +20019,6 @@ func ParseListVercelCiTaskAnalysisTasksResponse(rsp *http.Response) (*ListVercel
 			return nil, err
 		}
 		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetWebhooksResponse parses an HTTP response from a GetWebhooksWithResponse call
-func ParseGetWebhooksResponse(rsp *http.Response) (*GetWebhooksResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetWebhooksResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetWebhooks200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
 
 	}
 

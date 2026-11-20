@@ -14478,15 +14478,6 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/billing/charges (the `ListBillingCharges` operationId).
 	ListBillingChargesWithResponse(ctx context.Context, params *ListBillingChargesParams, reqEditors ...RequestEditorFn) (*ListBillingChargesResponse, error)
 
-	// ListContractCommitmentsWithResponse List FOCUS contract commitments
-	//
-	// Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for a specified Vercel team. The response is streamed as newline-delimited JSON (JSONL). This endpoint is only applicable to Enterprise Vercel customers. An empty response is returned for non-Enterprise (Pro/Flex) customers.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/billing/contract-commitments (the `ListContractCommitments` operationId).
-	ListContractCommitmentsWithResponse(ctx context.Context, params *ListContractCommitmentsParams, reqEditors ...RequestEditorFn) (*ListContractCommitmentsResponse, error)
-
 	// DeleteRedirectsWithBodyWithResponse Delete project-level redirects.
 	//
 	// Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
@@ -16403,7 +16394,7 @@ type ClientWithResponsesInterface interface {
 
 	// AddOrganizationTeamWithBodyWithResponse Create or Add Team to Organization
 	//
-	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`. The request must state the child's billing profile in `billingPlan`: `enterprise` or `platform`. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -16412,7 +16403,7 @@ type ClientWithResponsesInterface interface {
 
 	// AddOrganizationTeamWithResponse Create or Add Team to Organization
 	//
-	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child's billing profile is derived from the target team's plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
+	// Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root's flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`. The request must state the child's billing profile in `billingPlan`: `enterprise` or `platform`. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -16904,6 +16895,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/labels/lookup (the `LookupFlagLabels` operationId).
 	LookupFlagLabelsWithResponse(ctx context.Context, projectIdOrName string, params *LookupFlagLabelsParams, body LookupFlagLabelsJSONRequestBody, reqEditors ...RequestEditorFn) (*LookupFlagLabelsResponse, error)
+
+	// SignFlagOverridesWithBodyWithResponse Sign flag overrides
+	//
+	// Signs flag overrides for the `vercel-flag-overrides` cookie, which the Flags SDK accepts without a `FLAGS_SECRET`. The overrides apply to one environment of the project and of the projects that share its microfrontends groups. An access token requires permission to read the project and an `environment`. A Vercel OIDC token signs only for its own project and environment.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/overrides/sign (the `SignFlagOverrides` operationId).
+	SignFlagOverridesWithBodyWithResponse(ctx context.Context, projectIdOrName string, params *SignFlagOverridesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SignFlagOverridesResponse, error)
+
+	// SignFlagOverridesWithResponse Sign flag overrides
+	//
+	// Signs flag overrides for the `vercel-flag-overrides` cookie, which the Flags SDK accepts without a `FLAGS_SECRET`. The overrides apply to one environment of the project and of the projects that share its microfrontends groups. An access token requires permission to read the project and an `environment`. A Vercel OIDC token signs only for its own project and environment.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/projects/{projectIdOrName}/feature-flags/overrides/sign (the `SignFlagOverrides` operationId).
+	SignFlagOverridesWithResponse(ctx context.Context, projectIdOrName string, params *SignFlagOverridesParams, body SignFlagOverridesJSONRequestBody, reqEditors ...RequestEditorFn) (*SignFlagOverridesResponse, error)
 
 	// GetSdkKeysWithResponse Get all SDK keys
 	//

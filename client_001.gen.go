@@ -4208,832 +4208,834 @@ func (e ListEventTypeDeprecated) Valid() bool {
 
 // Defines values for ListEventTypeName.
 const (
-	ListEventTypeNameAccessGroupCreated                              ListEventTypeName = "access-group-created"
-	ListEventTypeNameAccessGroupDeleted                              ListEventTypeName = "access-group-deleted"
-	ListEventTypeNameAccessGroupProjectUpdated                       ListEventTypeName = "access-group-project-updated"
-	ListEventTypeNameAccessGroupUpdated                              ListEventTypeName = "access-group-updated"
-	ListEventTypeNameAccessGroupUserAdded                            ListEventTypeName = "access-group-user-added"
-	ListEventTypeNameAccessGroupUserRemoved                          ListEventTypeName = "access-group-user-removed"
-	ListEventTypeNameAdminAgenticProvisioningAccountUnlinked         ListEventTypeName = "admin-agentic-provisioning-account-unlinked"
-	ListEventTypeNameAdminObservabilityDisabled                      ListEventTypeName = "admin-observability-disabled"
-	ListEventTypeNameAdminPlanUpdated                                ListEventTypeName = "admin-plan-updated"
-	ListEventTypeNameAdminPreviewDeploymentSuffixClear               ListEventTypeName = "admin-preview-deployment-suffix-clear"
-	ListEventTypeNameAdminSamlIdpMaterialDeleted                     ListEventTypeName = "admin-saml-idp-material-deleted"
-	ListEventTypeNameAdminSamlIdpMaterialSet                         ListEventTypeName = "admin-saml-idp-material-set"
-	ListEventTypeNameAdminSamlSpSigningKeyCreated                    ListEventTypeName = "admin-saml-sp-signing-key-created"
-	ListEventTypeNameAdminSamlSpSigningKeyUpdated                    ListEventTypeName = "admin-saml-sp-signing-key-updated"
-	ListEventTypeNameAdminSecondaryEmailAdded                        ListEventTypeName = "admin-secondary-email-added"
-	ListEventTypeNameAdminSecondaryEmailRemoved                      ListEventTypeName = "admin-secondary-email-removed"
-	ListEventTypeNameAdminTeamNameUpdate                             ListEventTypeName = "admin-team-name-update"
-	ListEventTypeNameAdminTeamSlugUpdate                             ListEventTypeName = "admin-team-slug-update"
-	ListEventTypeNameAdminUserDelete                                 ListEventTypeName = "admin-user-delete"
-	ListEventTypeNameAdminUserPrimaryEmailUpdated                    ListEventTypeName = "admin-user-primary-email-updated"
-	ListEventTypeNameAdminUsernameUpdated                            ListEventTypeName = "admin-username-updated"
-	ListEventTypeNameAgenticProvisioningAccountBlocked               ListEventTypeName = "agentic-provisioning-account-blocked"
-	ListEventTypeNameAgenticProvisioningAccountLinked                ListEventTypeName = "agentic-provisioning-account-linked"
-	ListEventTypeNameAgenticProvisioningAccountRelinked              ListEventTypeName = "agentic-provisioning-account-relinked"
-	ListEventTypeNameAgenticProvisioningAccountUnlinked              ListEventTypeName = "agentic-provisioning-account-unlinked"
-	ListEventTypeNameAgenticProvisioningCredentialsRotated           ListEventTypeName = "agentic-provisioning-credentials-rotated"
-	ListEventTypeNameAgenticProvisioningPlanChanged                  ListEventTypeName = "agentic-provisioning-plan-changed"
-	ListEventTypeNameAgenticProvisioningTeamCreated                  ListEventTypeName = "agentic-provisioning-team-created"
-	ListEventTypeNameAiAgentUsageBilling                             ListEventTypeName = "ai-agent-usage-billing"
-	ListEventTypeNameAiAgentUsageBillingConsent                      ListEventTypeName = "ai-agent-usage-billing-consent"
-	ListEventTypeNameAiAlertInvestigation                            ListEventTypeName = "ai-alert-investigation"
-	ListEventTypeNameAiCodeReview                                    ListEventTypeName = "ai-code-review"
-	ListEventTypeNameAiGatewayAccessPolicyCreated                    ListEventTypeName = "ai-gateway-access-policy-created"
-	ListEventTypeNameAiGatewayAccessPolicyDeleted                    ListEventTypeName = "ai-gateway-access-policy-deleted"
-	ListEventTypeNameAiGatewayAccessPolicyMemberAdded                ListEventTypeName = "ai-gateway-access-policy-member-added"
-	ListEventTypeNameAiGatewayAccessPolicyMemberRemoved              ListEventTypeName = "ai-gateway-access-policy-member-removed"
-	ListEventTypeNameAiGatewayAccessPolicyUpdated                    ListEventTypeName = "ai-gateway-access-policy-updated"
-	ListEventTypeNameAiGatewayApiKeyCreated                          ListEventTypeName = "ai-gateway-api-key-created"
-	ListEventTypeNameAiGatewayApiKeyDeleted                          ListEventTypeName = "ai-gateway-api-key-deleted"
-	ListEventTypeNameAiGatewayApiKeyQuotaUpdated                     ListEventTypeName = "ai-gateway-api-key-quota-updated"
-	ListEventTypeNameAiGatewayAutoReloadUpdated                      ListEventTypeName = "ai-gateway-auto-reload-updated"
-	ListEventTypeNameAiGatewayBudgetDefaultUpdated                   ListEventTypeName = "ai-gateway-budget-default-updated"
-	ListEventTypeNameAiGatewayByokCredentialCreated                  ListEventTypeName = "ai-gateway-byok-credential-created"
-	ListEventTypeNameAiGatewayByokCredentialDeleted                  ListEventTypeName = "ai-gateway-byok-credential-deleted"
-	ListEventTypeNameAiGatewayByokCredentialUpdated                  ListEventTypeName = "ai-gateway-byok-credential-updated"
-	ListEventTypeNameAiGatewayByokModelMappingsUpdated               ListEventTypeName = "ai-gateway-byok-model-mappings-updated"
-	ListEventTypeNameAiGatewayCreditsPurchased                       ListEventTypeName = "ai-gateway-credits-purchased"
-	ListEventTypeNameAiGatewayGuardrailsUpdated                      ListEventTypeName = "ai-gateway-guardrails-updated"
-	ListEventTypeNameAiGatewayHeadquartersUpdated                    ListEventTypeName = "ai-gateway-headquarters-updated"
-	ListEventTypeNameAiGatewayHipaaComplianceToggled                 ListEventTypeName = "ai-gateway-hipaa-compliance-toggled"
-	ListEventTypeNameAiGatewayInferenceHooksEndpointUpdated          ListEventTypeName = "ai-gateway-inference-hooks-endpoint-updated"
-	ListEventTypeNameAiGatewayInferenceHooksHeadersCleared           ListEventTypeName = "ai-gateway-inference-hooks-headers-cleared"
-	ListEventTypeNameAiGatewayInferenceHooksHeadersUpdated           ListEventTypeName = "ai-gateway-inference-hooks-headers-updated"
-	ListEventTypeNameAiGatewayInferenceHooksRemoved                  ListEventTypeName = "ai-gateway-inference-hooks-removed"
-	ListEventTypeNameAiGatewayInferenceHooksSettingsUpdated          ListEventTypeName = "ai-gateway-inference-hooks-settings-updated"
-	ListEventTypeNameAiGatewayInferenceHooksSigningSecretCreated     ListEventTypeName = "ai-gateway-inference-hooks-signing-secret-created"
-	ListEventTypeNameAiGatewayInferenceHooksSigningSecretRotated     ListEventTypeName = "ai-gateway-inference-hooks-signing-secret-rotated"
-	ListEventTypeNameAiGatewayInferenceHooksToggled                  ListEventTypeName = "ai-gateway-inference-hooks-toggled"
-	ListEventTypeNameAiGatewayInferenceRegionsUpdated                ListEventTypeName = "ai-gateway-inference-regions-updated"
-	ListEventTypeNameAiGatewayMemberBudgetChanges                    ListEventTypeName = "ai-gateway-member-budget-changes"
-	ListEventTypeNameAiGatewayModelAllowlistModelsUpdated            ListEventTypeName = "ai-gateway-model-allowlist-models-updated"
-	ListEventTypeNameAiGatewayModelAllowlistToggled                  ListEventTypeName = "ai-gateway-model-allowlist-toggled"
-	ListEventTypeNameAiGatewayModelCatalogAlertSettingsUpdated       ListEventTypeName = "ai-gateway-model-catalog-alert-settings-updated"
-	ListEventTypeNameAiGatewayPrivateModelCreated                    ListEventTypeName = "ai-gateway-private-model-created"
-	ListEventTypeNameAiGatewayPrivateModelDeleted                    ListEventTypeName = "ai-gateway-private-model-deleted"
-	ListEventTypeNameAiGatewayPrivateModelUpdated                    ListEventTypeName = "ai-gateway-private-model-updated"
-	ListEventTypeNameAiGatewayPrivateProviderCreated                 ListEventTypeName = "ai-gateway-private-provider-created"
-	ListEventTypeNameAiGatewayPrivateProviderDeleted                 ListEventTypeName = "ai-gateway-private-provider-deleted"
-	ListEventTypeNameAiGatewayPrivateProviderUpdated                 ListEventTypeName = "ai-gateway-private-provider-updated"
-	ListEventTypeNameAiGatewayPromptTrainingOptOutToggled            ListEventTypeName = "ai-gateway-prompt-training-opt-out-toggled"
-	ListEventTypeNameAiGatewayProviderAllowlistProvidersUpdated      ListEventTypeName = "ai-gateway-provider-allowlist-providers-updated"
-	ListEventTypeNameAiGatewayProviderAllowlistToggled               ListEventTypeName = "ai-gateway-provider-allowlist-toggled"
-	ListEventTypeNameAiGatewayRuleCreated                            ListEventTypeName = "ai-gateway-rule-created"
-	ListEventTypeNameAiGatewayRuleDeleted                            ListEventTypeName = "ai-gateway-rule-deleted"
-	ListEventTypeNameAiGatewayRuleUpdated                            ListEventTypeName = "ai-gateway-rule-updated"
-	ListEventTypeNameAiGatewayScopeBudgetUpdated                     ListEventTypeName = "ai-gateway-scope-budget-updated"
-	ListEventTypeNameAiGatewaySystemCredentialFallbackOptOutToggled  ListEventTypeName = "ai-gateway-system-credential-fallback-opt-out-toggled"
-	ListEventTypeNameAiGatewayTranscriptsDefaultDisabled             ListEventTypeName = "ai-gateway-transcripts-default-disabled"
-	ListEventTypeNameAiGatewayTranscriptsDefaultEnabled              ListEventTypeName = "ai-gateway-transcripts-default-enabled"
-	ListEventTypeNameAiGatewayTranscriptsDisabled                    ListEventTypeName = "ai-gateway-transcripts-disabled"
-	ListEventTypeNameAiGatewayTranscriptsEnabled                     ListEventTypeName = "ai-gateway-transcripts-enabled"
-	ListEventTypeNameAiGatewayTranscriptsRetentionUpdated            ListEventTypeName = "ai-gateway-transcripts-retention-updated"
-	ListEventTypeNameAiGatewayVirtualModelConfigArchived             ListEventTypeName = "ai-gateway-virtual-model-config-archived"
-	ListEventTypeNameAiGatewayVirtualModelConfigCreated              ListEventTypeName = "ai-gateway-virtual-model-config-created"
-	ListEventTypeNameAiGatewayVirtualModelConfigDeleted              ListEventTypeName = "ai-gateway-virtual-model-config-deleted"
-	ListEventTypeNameAiGatewayVirtualModelConfigRestored             ListEventTypeName = "ai-gateway-virtual-model-config-restored"
-	ListEventTypeNameAiGatewayVirtualModelConfigUpdated              ListEventTypeName = "ai-gateway-virtual-model-config-updated"
-	ListEventTypeNameAiGatewayZeroDataRetentionToggled               ListEventTypeName = "ai-gateway-zero-data-retention-toggled"
-	ListEventTypeNameAiOmniagent                                     ListEventTypeName = "ai-omniagent"
-	ListEventTypeNameAiSecurityReview                                ListEventTypeName = "ai-security-review"
-	ListEventTypeNameAiVerification                                  ListEventTypeName = "ai-verification"
-	ListEventTypeNameAlertGroupDetected                              ListEventTypeName = "alert-group-detected"
-	ListEventTypeNameAlertGroupInvestigationCompleted                ListEventTypeName = "alert-group-investigation-completed"
-	ListEventTypeNameAlertGroupPublished                             ListEventTypeName = "alert-group-published"
-	ListEventTypeNameAlertInvestigationProjectAllowlistUpdated       ListEventTypeName = "alert-investigation-project-allowlist-updated"
-	ListEventTypeNameAlertResolved                                   ListEventTypeName = "alert-resolved"
-	ListEventTypeNameAlertRuleCreated                                ListEventTypeName = "alert-rule-created"
-	ListEventTypeNameAlertRuleDeleted                                ListEventTypeName = "alert-rule-deleted"
-	ListEventTypeNameAlertRuleUpdated                                ListEventTypeName = "alert-rule-updated"
-	ListEventTypeNameAlias                                           ListEventTypeName = "alias"
-	ListEventTypeNameAliasChown                                      ListEventTypeName = "alias-chown"
-	ListEventTypeNameAliasDelete                                     ListEventTypeName = "alias-delete"
-	ListEventTypeNameAliasInviteCreated                              ListEventTypeName = "alias-invite-created"
-	ListEventTypeNameAliasInviteJoined                               ListEventTypeName = "alias-invite-joined"
-	ListEventTypeNameAliasInviteRevoked                              ListEventTypeName = "alias-invite-revoked"
-	ListEventTypeNameAliasProtectionBypassCreated                    ListEventTypeName = "alias-protection-bypass-created"
-	ListEventTypeNameAliasProtectionBypassException                  ListEventTypeName = "alias-protection-bypass-exception"
-	ListEventTypeNameAliasProtectionBypassRegenerated                ListEventTypeName = "alias-protection-bypass-regenerated"
-	ListEventTypeNameAliasProtectionBypassRevoked                    ListEventTypeName = "alias-protection-bypass-revoked"
-	ListEventTypeNameAliasSystem                                     ListEventTypeName = "alias-system"
-	ListEventTypeNameAliasUserScopedAccessDenied                     ListEventTypeName = "alias-user-scoped-access-denied"
-	ListEventTypeNameAliasUserScopedAccessGranted                    ListEventTypeName = "alias-user-scoped-access-granted"
-	ListEventTypeNameAliasUserScopedAccessRequested                  ListEventTypeName = "alias-user-scoped-access-requested"
-	ListEventTypeNameAliasUserScopedAccessRevoked                    ListEventTypeName = "alias-user-scoped-access-revoked"
-	ListEventTypeNameAliasesAssigned                                 ListEventTypeName = "aliases-assigned"
-	ListEventTypeNameAttackModeDisabled                              ListEventTypeName = "attack-mode-disabled"
-	ListEventTypeNameAttackModeEnabled                               ListEventTypeName = "attack-mode-enabled"
-	ListEventTypeNameAuditLogExportDownloaded                        ListEventTypeName = "audit-log-export-downloaded"
-	ListEventTypeNameAuditLogExportRequested                         ListEventTypeName = "audit-log-export-requested"
-	ListEventTypeNameAuthorizeGitDeployment                          ListEventTypeName = "authorize-git-deployment"
-	ListEventTypeNameAutoExposeSystemEnvs                            ListEventTypeName = "auto-expose-system-envs"
-	ListEventTypeNameAvatar                                          ListEventTypeName = "avatar"
-	ListEventTypeNameBillingSettingsUpdated                          ListEventTypeName = "billing-settings-updated"
-	ListEventTypeNameBulkRedirectsSettingsUpdated                    ListEventTypeName = "bulk-redirects-settings-updated"
-	ListEventTypeNameBulkRedirectsVersionPromoted                    ListEventTypeName = "bulk-redirects-version-promoted"
-	ListEventTypeNameBulkRedirectsVersionRestored                    ListEventTypeName = "bulk-redirects-version-restored"
-	ListEventTypeNameCert                                            ListEventTypeName = "cert"
-	ListEventTypeNameCertAutorenew                                   ListEventTypeName = "cert-autorenew"
-	ListEventTypeNameCertChown                                       ListEventTypeName = "cert-chown"
-	ListEventTypeNameCertClone                                       ListEventTypeName = "cert-clone"
-	ListEventTypeNameCertDelete                                      ListEventTypeName = "cert-delete"
-	ListEventTypeNameCertRenew                                       ListEventTypeName = "cert-renew"
-	ListEventTypeNameCertReplace                                     ListEventTypeName = "cert-replace"
-	ListEventTypeNameCertSystemCreate                                ListEventTypeName = "cert-system-create"
-	ListEventTypeNameCodeOwnersAssumeOwners                          ListEventTypeName = "code-owners-assume-owners"
-	ListEventTypeNameCodeOwnersConfigUpdated                         ListEventTypeName = "code-owners-config-updated"
-	ListEventTypeNameComplianceDocumentDownloaded                    ListEventTypeName = "compliance-document-downloaded"
-	ListEventTypeNameComplianceDocumentPreviewed                     ListEventTypeName = "compliance-document-previewed"
-	ListEventTypeNameComplianceDocumentsBulkDownloaded               ListEventTypeName = "compliance-documents-bulk-downloaded"
-	ListEventTypeNameConcurrentBuildsUpdate                          ListEventTypeName = "concurrent-builds-update"
-	ListEventTypeNameConnectApproveConnectorRequest                  ListEventTypeName = "connect-approve-connector-request"
-	ListEventTypeNameConnectAttachProject                            ListEventTypeName = "connect-attach-project"
-	ListEventTypeNameConnectBitbucket                                ListEventTypeName = "connect-bitbucket"
-	ListEventTypeNameConnectBitbucketApp                             ListEventTypeName = "connect-bitbucket-app"
-	ListEventTypeNameConnectBrandingUpdated                          ListEventTypeName = "connect-branding-updated"
-	ListEventTypeNameConnectCancelMcpEventSubscription               ListEventTypeName = "connect-cancel-mcp-event-subscription"
-	ListEventTypeNameConnectConfigurationCreated                     ListEventTypeName = "connect-configuration-created"
-	ListEventTypeNameConnectConfigurationDeleted                     ListEventTypeName = "connect-configuration-deleted"
-	ListEventTypeNameConnectConfigurationLinkUpdated                 ListEventTypeName = "connect-configuration-link-updated"
-	ListEventTypeNameConnectConfigurationLinked                      ListEventTypeName = "connect-configuration-linked"
-	ListEventTypeNameConnectConfigurationUnlinked                    ListEventTypeName = "connect-configuration-unlinked"
-	ListEventTypeNameConnectConfigurationUpdated                     ListEventTypeName = "connect-configuration-updated"
-	ListEventTypeNameConnectCreateConnector                          ListEventTypeName = "connect-create-connector"
-	ListEventTypeNameConnectCreateMcpEventSubscription               ListEventTypeName = "connect-create-mcp-event-subscription"
-	ListEventTypeNameConnectDeleteConnector                          ListEventTypeName = "connect-delete-connector"
-	ListEventTypeNameConnectDeleteConnectorRequest                   ListEventTypeName = "connect-delete-connector-request"
-	ListEventTypeNameConnectDeleteInstallation                       ListEventTypeName = "connect-delete-installation"
-	ListEventTypeNameConnectDetachProject                            ListEventTypeName = "connect-detach-project"
-	ListEventTypeNameConnectGithub                                   ListEventTypeName = "connect-github"
-	ListEventTypeNameConnectGithubCustomHost                         ListEventTypeName = "connect-github-custom-host"
-	ListEventTypeNameConnectGithubLimited                            ListEventTypeName = "connect-github-limited"
-	ListEventTypeNameConnectGitlab                                   ListEventTypeName = "connect-gitlab"
-	ListEventTypeNameConnectGitlabApp                                ListEventTypeName = "connect-gitlab-app"
-	ListEventTypeNameConnectImportTokens                             ListEventTypeName = "connect-import-tokens"
-	ListEventTypeNameConnectProvisionConnectorRequest                ListEventTypeName = "connect-provision-connector-request"
-	ListEventTypeNameConnectRejectConnectorRequest                   ListEventTypeName = "connect-reject-connector-request"
-	ListEventTypeNameConnectRevokeAllTokens                          ListEventTypeName = "connect-revoke-all-tokens"
-	ListEventTypeNameConnectSubmitConnectorRequest                   ListEventTypeName = "connect-submit-connector-request"
-	ListEventTypeNameConnectUpdateConnector                          ListEventTypeName = "connect-update-connector"
-	ListEventTypeNameConnectUpdateConnectorRequest                   ListEventTypeName = "connect-update-connector-request"
-	ListEventTypeNameConnectUpdateTriggerDestinations                ListEventTypeName = "connect-update-trigger-destinations"
-	ListEventTypeNameConnectUpsertInstallation                       ListEventTypeName = "connect-upsert-installation"
-	ListEventTypeNameConnectWithdrawConnectorRequest                 ListEventTypeName = "connect-withdraw-connector-request"
-	ListEventTypeNameCustomAlertCreated                              ListEventTypeName = "custom-alert-created"
-	ListEventTypeNameCustomAlertDeleted                              ListEventTypeName = "custom-alert-deleted"
-	ListEventTypeNameCustomAlertUpdated                              ListEventTypeName = "custom-alert-updated"
-	ListEventTypeNameCustomEnvironmentsSettingsUpdated               ListEventTypeName = "custom-environments-settings-updated"
-	ListEventTypeNameCustomMetricMetadataDeleted                     ListEventTypeName = "custom-metric-metadata-deleted"
-	ListEventTypeNameCustomMetricMetadataUpdated                     ListEventTypeName = "custom-metric-metadata-updated"
-	ListEventTypeNameCustomSuffixClear                               ListEventTypeName = "custom-suffix-clear"
-	ListEventTypeNameCustomSuffixDisable                             ListEventTypeName = "custom-suffix-disable"
-	ListEventTypeNameCustomSuffixEnable                              ListEventTypeName = "custom-suffix-enable"
-	ListEventTypeNameCustomSuffixPending                             ListEventTypeName = "custom-suffix-pending"
-	ListEventTypeNameCustomSuffixReady                               ListEventTypeName = "custom-suffix-ready"
-	ListEventTypeNameDefaultPasswordProtection                       ListEventTypeName = "default-password-protection"
-	ListEventTypeNameDefaultSsoProtection                            ListEventTypeName = "default-sso-protection"
-	ListEventTypeNameDeployHookCreated                               ListEventTypeName = "deploy-hook-created"
-	ListEventTypeNameDeployHookDeduped                               ListEventTypeName = "deploy-hook-deduped"
-	ListEventTypeNameDeployHookDeleted                               ListEventTypeName = "deploy-hook-deleted"
-	ListEventTypeNameDeployHookProcessed                             ListEventTypeName = "deploy-hook-processed"
-	ListEventTypeNameDeployment                                      ListEventTypeName = "deployment"
-	ListEventTypeNameDeploymentCheckCreated                          ListEventTypeName = "deployment-check-created"
-	ListEventTypeNameDeploymentCheckDeleted                          ListEventTypeName = "deployment-check-deleted"
-	ListEventTypeNameDeploymentCheckUpdated                          ListEventTypeName = "deployment-check-updated"
-	ListEventTypeNameDeploymentChown                                 ListEventTypeName = "deployment-chown"
-	ListEventTypeNameDeploymentCreationBlocked                       ListEventTypeName = "deployment-creation-blocked"
-	ListEventTypeNameDeploymentDelete                                ListEventTypeName = "deployment-delete"
-	ListEventTypeNameDeploymentPolicyBlocked                         ListEventTypeName = "deployment-policy-blocked"
-	ListEventTypeNameDeploymentProtectionAccessRequests              ListEventTypeName = "deployment-protection-access-requests"
-	ListEventTypeNameDeploymentUndeleted                             ListEventTypeName = "deployment-undeleted"
-	ListEventTypeNameDisabledIntegrationInstallationRemoved          ListEventTypeName = "disabled-integration-installation-removed"
-	ListEventTypeNameDisconnectBitbucketApp                          ListEventTypeName = "disconnect-bitbucket-app"
-	ListEventTypeNameDisconnectGithub                                ListEventTypeName = "disconnect-github"
-	ListEventTypeNameDisconnectGithubCustomHost                      ListEventTypeName = "disconnect-github-custom-host"
-	ListEventTypeNameDisconnectGithubLimited                         ListEventTypeName = "disconnect-github-limited"
-	ListEventTypeNameDisconnectGitlabApp                             ListEventTypeName = "disconnect-gitlab-app"
-	ListEventTypeNameDnsAdd                                          ListEventTypeName = "dns-add"
-	ListEventTypeNameDnsDelete                                       ListEventTypeName = "dns-delete"
-	ListEventTypeNameDnsRecordInternal                               ListEventTypeName = "dns-record-internal"
-	ListEventTypeNameDnsUpdate                                       ListEventTypeName = "dns-update"
-	ListEventTypeNameDnsZonefileImport                               ListEventTypeName = "dns-zonefile-import"
-	ListEventTypeNameDomain                                          ListEventTypeName = "domain"
-	ListEventTypeNameDomainBuy                                       ListEventTypeName = "domain-buy"
-	ListEventTypeNameDomainCdn                                       ListEventTypeName = "domain-cdn"
-	ListEventTypeNameDomainChown                                     ListEventTypeName = "domain-chown"
-	ListEventTypeNameDomainCustomNsChange                            ListEventTypeName = "domain-custom-ns-change"
-	ListEventTypeNameDomainDelegated                                 ListEventTypeName = "domain-delegated"
-	ListEventTypeNameDomainDelete                                    ListEventTypeName = "domain-delete"
-	ListEventTypeNameDomainEchChange                                 ListEventTypeName = "domain-ech-change"
-	ListEventTypeNameDomainMoveIn                                    ListEventTypeName = "domain-move-in"
-	ListEventTypeNameDomainMoveOut                                   ListEventTypeName = "domain-move-out"
-	ListEventTypeNameDomainMoveOutRequestSent                        ListEventTypeName = "domain-move-out-request-sent"
-	ListEventTypeNameDomainRenewChange                               ListEventTypeName = "domain-renew-change"
-	ListEventTypeNameDomainServiceTypeUpdated                        ListEventTypeName = "domain-service-type-updated"
-	ListEventTypeNameDomainTransferIn                                ListEventTypeName = "domain-transfer-in"
-	ListEventTypeNameDomainTransferInCanceled                        ListEventTypeName = "domain-transfer-in-canceled"
-	ListEventTypeNameDomainTransferInCompleted                       ListEventTypeName = "domain-transfer-in-completed"
-	ListEventTypeNameDomainZoneChange                                ListEventTypeName = "domain-zone-change"
-	ListEventTypeNameDomainZoneChangeInternal                        ListEventTypeName = "domain-zone-change-internal"
-	ListEventTypeNameDrainCreated                                    ListEventTypeName = "drain-created"
-	ListEventTypeNameDrainDeleted                                    ListEventTypeName = "drain-deleted"
-	ListEventTypeNameDrainDisabled                                   ListEventTypeName = "drain-disabled"
-	ListEventTypeNameDrainEnabled                                    ListEventTypeName = "drain-enabled"
-	ListEventTypeNameDrainUpdated                                    ListEventTypeName = "drain-updated"
-	ListEventTypeNameDriveCreated                                    ListEventTypeName = "drive-created"
-	ListEventTypeNameDriveDeleted                                    ListEventTypeName = "drive-deleted"
-	ListEventTypeNameDriveSnapshotCreated                            ListEventTypeName = "drive-snapshot-created"
-	ListEventTypeNameDriveSnapshotDeleted                            ListEventTypeName = "drive-snapshot-deleted"
-	ListEventTypeNameEdgeCacheDangerouslyDeleteBySrcImages           ListEventTypeName = "edge-cache-dangerously-delete-by-src-images"
-	ListEventTypeNameEdgeCacheDangerouslyDeleteByTags                ListEventTypeName = "edge-cache-dangerously-delete-by-tags"
-	ListEventTypeNameEdgeCacheDangerouslyDeleteImmutableStatic       ListEventTypeName = "edge-cache-dangerously-delete-immutable-static"
-	ListEventTypeNameEdgeCacheInvalidateBySrcImages                  ListEventTypeName = "edge-cache-invalidate-by-src-images"
-	ListEventTypeNameEdgeCacheInvalidateByTags                       ListEventTypeName = "edge-cache-invalidate-by-tags"
-	ListEventTypeNameEdgeCachePurgeAll                               ListEventTypeName = "edge-cache-purge-all"
-	ListEventTypeNameEdgeCacheRollbackPurge                          ListEventTypeName = "edge-cache-rollback-purge"
-	ListEventTypeNameEdgeConfigBackupRestored                        ListEventTypeName = "edge-config-backup-restored"
-	ListEventTypeNameEdgeConfigCreated                               ListEventTypeName = "edge-config-created"
-	ListEventTypeNameEdgeConfigDeleted                               ListEventTypeName = "edge-config-deleted"
-	ListEventTypeNameEdgeConfigItemsUpdated                          ListEventTypeName = "edge-config-items-updated"
-	ListEventTypeNameEdgeConfigSchemaDeleted                         ListEventTypeName = "edge-config-schema-deleted"
-	ListEventTypeNameEdgeConfigSchemaUpdated                         ListEventTypeName = "edge-config-schema-updated"
-	ListEventTypeNameEdgeConfigTokenCreated                          ListEventTypeName = "edge-config-token-created"
-	ListEventTypeNameEdgeConfigTokenDeleted                          ListEventTypeName = "edge-config-token-deleted"
-	ListEventTypeNameEdgeConfigTransferIn                            ListEventTypeName = "edge-config-transfer-in"
-	ListEventTypeNameEdgeConfigTransferOut                           ListEventTypeName = "edge-config-transfer-out"
-	ListEventTypeNameEdgeConfigUpdated                               ListEventTypeName = "edge-config-updated"
-	ListEventTypeNameEmail                                           ListEventTypeName = "email"
-	ListEventTypeNameEmailNotificationRuleRemoved                    ListEventTypeName = "email-notification-rule-removed"
-	ListEventTypeNameEmailNotificationRuleUpdated                    ListEventTypeName = "email-notification-rule-updated"
-	ListEventTypeNameEmuMemberRemovedUnverifiedDomain                ListEventTypeName = "emu-member-removed-unverified-domain"
-	ListEventTypeNameEnforceDisjunctiveProductionSecrets             ListEventTypeName = "enforce-disjunctive-production-secrets"
-	ListEventTypeNameEnforceSensitiveEnvironmentVariables            ListEventTypeName = "enforce-sensitive-environment-variables"
-	ListEventTypeNameEnvVariableAdd                                  ListEventTypeName = "env-variable-add"
-	ListEventTypeNameEnvVariableDelete                               ListEventTypeName = "env-variable-delete"
-	ListEventTypeNameEnvVariableEdit                                 ListEventTypeName = "env-variable-edit"
-	ListEventTypeNameEnvVariableMasked                               ListEventTypeName = "env-variable-masked"
-	ListEventTypeNameEnvVariableRead                                 ListEventTypeName = "env-variable-read"
-	ListEventTypeNameEnvVariableReadCliDev                           ListEventTypeName = "env-variable-read:cli:dev"
-	ListEventTypeNameEnvVariableReadCliEnvAdd                        ListEventTypeName = "env-variable-read:cli:env:add"
-	ListEventTypeNameEnvVariableReadCliEnvLs                         ListEventTypeName = "env-variable-read:cli:env:ls"
-	ListEventTypeNameEnvVariableReadCliEnvPull                       ListEventTypeName = "env-variable-read:cli:env:pull"
-	ListEventTypeNameEnvVariableReadCliEnvRm                         ListEventTypeName = "env-variable-read:cli:env:rm"
-	ListEventTypeNameEnvVariableReadCliPull                          ListEventTypeName = "env-variable-read:cli:pull"
-	ListEventTypeNameEnvVariableReadUnknownSource                    ListEventTypeName = "env-variable-read:unknown-source"
-	ListEventTypeNameEnvVariableReadV0EnvPull                        ListEventTypeName = "env-variable-read:v0:env:pull"
-	ListEventTypeNameEnvVariableRotated                              ListEventTypeName = "env-variable-rotated"
-	ListEventTypeNameExperimentCreated                               ListEventTypeName = "experiment-created"
-	ListEventTypeNameExperimentDeleted                               ListEventTypeName = "experiment-deleted"
-	ListEventTypeNameExperimentTransitioned                          ListEventTypeName = "experiment-transitioned"
-	ListEventTypeNameExperimentUpdated                               ListEventTypeName = "experiment-updated"
-	ListEventTypeNameFirewallBypassCreated                           ListEventTypeName = "firewall-bypass-created"
-	ListEventTypeNameFirewallBypassDeleted                           ListEventTypeName = "firewall-bypass-deleted"
-	ListEventTypeNameFirewallConditionalBypassCreated                ListEventTypeName = "firewall-conditional-bypass-created"
-	ListEventTypeNameFirewallConditionalBypassDeleted                ListEventTypeName = "firewall-conditional-bypass-deleted"
-	ListEventTypeNameFirewallConditionalBypassUpdated                ListEventTypeName = "firewall-conditional-bypass-updated"
-	ListEventTypeNameFirewallConfigModified                          ListEventTypeName = "firewall-config-modified"
-	ListEventTypeNameFirewallConfigPromoted                          ListEventTypeName = "firewall-config-promoted"
-	ListEventTypeNameFirewallConfigRemoved                           ListEventTypeName = "firewall-config-removed"
-	ListEventTypeNameFirewallManagedRulegroupUpdated                 ListEventTypeName = "firewall-managed-rulegroup-updated"
-	ListEventTypeNameFirewallManagedRulesetUpdated                   ListEventTypeName = "firewall-managed-ruleset-updated"
-	ListEventTypeNameFlag                                            ListEventTypeName = "flag"
-	ListEventTypeNameFlagArchived                                    ListEventTypeName = "flag-archived"
-	ListEventTypeNameFlagCreated                                     ListEventTypeName = "flag-created"
-	ListEventTypeNameFlagDeleted                                     ListEventTypeName = "flag-deleted"
-	ListEventTypeNameFlagUnarchived                                  ListEventTypeName = "flag-unarchived"
-	ListEventTypeNameFlagUpdated                                     ListEventTypeName = "flag-updated"
-	ListEventTypeNameFlagsConnectionCreated                          ListEventTypeName = "flags-connection-created"
-	ListEventTypeNameFlagsConnectionDeleted                          ListEventTypeName = "flags-connection-deleted"
-	ListEventTypeNameFlagsExplorerSubscription                       ListEventTypeName = "flags-explorer-subscription"
-	ListEventTypeNameFlagsOverridesSigned                            ListEventTypeName = "flags-overrides-signed"
-	ListEventTypeNameFlagsSdkKey                                     ListEventTypeName = "flags-sdk-key"
-	ListEventTypeNameFlagsSdkKeyAdded                                ListEventTypeName = "flags-sdk-key-added"
-	ListEventTypeNameFlagsSdkKeyDeleted                              ListEventTypeName = "flags-sdk-key-deleted"
-	ListEventTypeNameFlagsSdkKeyRead                                 ListEventTypeName = "flags-sdk-key-read"
-	ListEventTypeNameFlagsSegment                                    ListEventTypeName = "flags-segment"
-	ListEventTypeNameFlagsSettings                                   ListEventTypeName = "flags-settings"
-	ListEventTypeNameFlagsTransferred                                ListEventTypeName = "flags-transferred"
-	ListEventTypeNameFlatRateCdnAutoUpgradeConsent                   ListEventTypeName = "flat-rate-cdn-auto-upgrade-consent"
-	ListEventTypeNameFlatRateCdnMigrationOptOut                      ListEventTypeName = "flat-rate-cdn-migration-opt-out"
-	ListEventTypeNameGitAccountIntegrationLinkAdded                  ListEventTypeName = "git_account_integration_link_added"
-	ListEventTypeNameGitIntegrationRepoPush                          ListEventTypeName = "git-integration-repo-push"
-	ListEventTypeNameGlobalConfigBackupRestored                      ListEventTypeName = "global-config-backup-restored"
-	ListEventTypeNameGlobalConfigCreated                             ListEventTypeName = "global-config-created"
-	ListEventTypeNameGlobalConfigDeleted                             ListEventTypeName = "global-config-deleted"
-	ListEventTypeNameGlobalConfigItemsUpdated                        ListEventTypeName = "global-config-items-updated"
-	ListEventTypeNameGlobalConfigSchemaDeleted                       ListEventTypeName = "global-config-schema-deleted"
-	ListEventTypeNameGlobalConfigSchemaUpdated                       ListEventTypeName = "global-config-schema-updated"
-	ListEventTypeNameGlobalConfigTokenCreated                        ListEventTypeName = "global-config-token-created"
-	ListEventTypeNameGlobalConfigTokenDeleted                        ListEventTypeName = "global-config-token-deleted"
-	ListEventTypeNameGlobalConfigTransferIn                          ListEventTypeName = "global-config-transfer-in"
-	ListEventTypeNameGlobalConfigTransferOut                         ListEventTypeName = "global-config-transfer-out"
-	ListEventTypeNameGlobalConfigUpdated                             ListEventTypeName = "global-config-updated"
-	ListEventTypeNameInstantRollbackCreated                          ListEventTypeName = "instant-rollback-created"
-	ListEventTypeNameIntegrationAccessTokenSettingsUpdated           ListEventTypeName = "integration-access-token-settings-updated"
-	ListEventTypeNameIntegrationConfigurationCredentialRevoked       ListEventTypeName = "integration-configuration-credential-revoked"
-	ListEventTypeNameIntegrationConfigurationCredentialRotated       ListEventTypeName = "integration-configuration-credential-rotated"
-	ListEventTypeNameIntegrationConfigurationOwnerChanged            ListEventTypeName = "integration-configuration-owner-changed"
-	ListEventTypeNameIntegrationConfigurationScopeChangeConfirmed    ListEventTypeName = "integration-configuration-scope-change-confirmed"
-	ListEventTypeNameIntegrationConfigurationTransferInSuccess       ListEventTypeName = "integration-configuration-transfer-in-success"
-	ListEventTypeNameIntegrationConfigurationTransferOutSuccess      ListEventTypeName = "integration-configuration-transfer-out-success"
-	ListEventTypeNameIntegrationConfigurationsDisabled               ListEventTypeName = "integration-configurations-disabled"
-	ListEventTypeNameIntegrationInstallationBillingPlanUpdated       ListEventTypeName = "integration-installation-billing-plan-updated"
-	ListEventTypeNameIntegrationInstallationCompleted                ListEventTypeName = "integration-installation-completed"
-	ListEventTypeNameIntegrationInstallationPermissionUpdated        ListEventTypeName = "integration-installation-permission-updated"
-	ListEventTypeNameIntegrationInstallationRemoved                  ListEventTypeName = "integration-installation-removed"
-	ListEventTypeNameIntegrationPreviousSecretRevoked                ListEventTypeName = "integration-previous-secret-revoked"
-	ListEventTypeNameIntegrationResourceRedisCommandExecuted         ListEventTypeName = "integration-resource-redis-command-executed"
-	ListEventTypeNameIntegrationResourceSqlQueryExecuted             ListEventTypeName = "integration-resource-sql-query-executed"
-	ListEventTypeNameIntegrationScopeChanged                         ListEventTypeName = "integration-scope-changed"
-	ListEventTypeNameIntegrationSecretRotated                        ListEventTypeName = "integration-secret-rotated"
-	ListEventTypeNameInvoiceModified                                 ListEventTypeName = "invoice-modified"
-	ListEventTypeNameInvoiceRefunded                                 ListEventTypeName = "invoice-refunded"
-	ListEventTypeNameKmsIssuerCreated                                ListEventTypeName = "kms-issuer-created"
-	ListEventTypeNameKmsIssuerDeleted                                ListEventTypeName = "kms-issuer-deleted"
-	ListEventTypeNameKmsIssuerKeyActivated                           ListEventTypeName = "kms-issuer-key-activated"
-	ListEventTypeNameKmsIssuerKeyCreated                             ListEventTypeName = "kms-issuer-key-created"
-	ListEventTypeNameKmsIssuerKeyRevoked                             ListEventTypeName = "kms-issuer-key-revoked"
-	ListEventTypeNameKmsIssuerKeyRotated                             ListEventTypeName = "kms-issuer-key-rotated"
-	ListEventTypeNameKmsIssuerPolicyCreated                          ListEventTypeName = "kms-issuer-policy-created"
-	ListEventTypeNameKmsIssuerPolicyDeleted                          ListEventTypeName = "kms-issuer-policy-deleted"
-	ListEventTypeNameKmsIssuerPolicyUpdated                          ListEventTypeName = "kms-issuer-policy-updated"
-	ListEventTypeNameKmsIssuerUpdated                                ListEventTypeName = "kms-issuer-updated"
-	ListEventTypeNameLogDrainCreated                                 ListEventTypeName = "log-drain-created"
-	ListEventTypeNameLogDrainDeleted                                 ListEventTypeName = "log-drain-deleted"
-	ListEventTypeNameLogDrainDisabled                                ListEventTypeName = "log-drain-disabled"
-	ListEventTypeNameLogDrainEnabled                                 ListEventTypeName = "log-drain-enabled"
-	ListEventTypeNameLogin                                           ListEventTypeName = "login"
-	ListEventTypeNameLoginConnectionLinked                           ListEventTypeName = "login-connection-linked"
-	ListEventTypeNameLoginConnectionUnlinked                         ListEventTypeName = "login-connection-unlinked"
-	ListEventTypeNameManualDeploymentPromotionCreated                ListEventTypeName = "manual-deployment-promotion-created"
-	ListEventTypeNameMarketplaceAutoCardCollectionUpdated            ListEventTypeName = "marketplace-auto-card-collection-updated"
-	ListEventTypeNameMarketplaceBillingCollectionUpdated             ListEventTypeName = "marketplace-billing-collection-updated"
-	ListEventTypeNameMarketplaceFlexCommitOptIn                      ListEventTypeName = "marketplace-flex-commit-opt-in"
-	ListEventTypeNameMarketplaceIntegrationAllowlistUpdated          ListEventTypeName = "marketplace-integration-allowlist-updated"
-	ListEventTypeNameMessageboardChannelCreated                      ListEventTypeName = "messageboard-channel-created"
-	ListEventTypeNameMessageboardChannelUpdated                      ListEventTypeName = "messageboard-channel-updated"
-	ListEventTypeNameMessageboardCreated                             ListEventTypeName = "messageboard-created"
-	ListEventTypeNameMessageboardGrantCreated                        ListEventTypeName = "messageboard-grant-created"
-	ListEventTypeNameMessageboardGrantRevoked                        ListEventTypeName = "messageboard-grant-revoked"
-	ListEventTypeNameMessageboardGrantUpdated                        ListEventTypeName = "messageboard-grant-updated"
-	ListEventTypeNameMessageboardPrivateChannelCreated               ListEventTypeName = "messageboard-private-channel-created"
-	ListEventTypeNameMessageboardPrivateChannelUpdated               ListEventTypeName = "messageboard-private-channel-updated"
-	ListEventTypeNameMessageboardPrivateCreated                      ListEventTypeName = "messageboard-private-created"
-	ListEventTypeNameMessageboardPrivateGrantCreated                 ListEventTypeName = "messageboard-private-grant-created"
-	ListEventTypeNameMessageboardPrivateGrantRevoked                 ListEventTypeName = "messageboard-private-grant-revoked"
-	ListEventTypeNameMessageboardPrivateGrantUpdated                 ListEventTypeName = "messageboard-private-grant-updated"
-	ListEventTypeNameMessageboardPrivateProjectGranted               ListEventTypeName = "messageboard-private-project-granted"
-	ListEventTypeNameMessageboardPrivateProjectRevoked               ListEventTypeName = "messageboard-private-project-revoked"
-	ListEventTypeNameMessageboardProjectChannelCreated               ListEventTypeName = "messageboard-project-channel-created"
-	ListEventTypeNameMessageboardProjectCreated                      ListEventTypeName = "messageboard-project-created"
-	ListEventTypeNameMessageboardProjectGranted                      ListEventTypeName = "messageboard-project-granted"
-	ListEventTypeNameMessageboardProjectPrivateChannelCreated        ListEventTypeName = "messageboard-project-private-channel-created"
-	ListEventTypeNameMessageboardProjectRevoked                      ListEventTypeName = "messageboard-project-revoked"
-	ListEventTypeNameMessageboardSchemaRegistered                    ListEventTypeName = "messageboard-schema-registered"
-	ListEventTypeNameMessageboardVisibilityUpdated                   ListEventTypeName = "messageboard-visibility-updated"
-	ListEventTypeNameMicrofrontendGroupAdded                         ListEventTypeName = "microfrontend-group-added"
-	ListEventTypeNameMicrofrontendGroupDeleted                       ListEventTypeName = "microfrontend-group-deleted"
-	ListEventTypeNameMicrofrontendGroupUpdated                       ListEventTypeName = "microfrontend-group-updated"
-	ListEventTypeNameMicrofrontendProjectAddedToGroup                ListEventTypeName = "microfrontend-project-added-to-group"
-	ListEventTypeNameMicrofrontendProjectRemovedFromGroup            ListEventTypeName = "microfrontend-project-removed-from-group"
-	ListEventTypeNameMicrofrontendProjectUpdated                     ListEventTypeName = "microfrontend-project-updated"
-	ListEventTypeNameMonitoringAlertUpdated                          ListEventTypeName = "monitoring-alert-updated"
-	ListEventTypeNameMonitoringDisabled                              ListEventTypeName = "monitoring-disabled"
-	ListEventTypeNameMonitoringEnabled                               ListEventTypeName = "monitoring-enabled"
-	ListEventTypeNameOauthAppConnectionCreated                       ListEventTypeName = "oauth-app-connection-created"
-	ListEventTypeNameOauthAppConnectionRemoved                       ListEventTypeName = "oauth-app-connection-removed"
-	ListEventTypeNameOauthAppConnectionUpdated                       ListEventTypeName = "oauth-app-connection-updated"
-	ListEventTypeNameOauthAppCreated                                 ListEventTypeName = "oauth-app-created"
-	ListEventTypeNameOauthAppDeleted                                 ListEventTypeName = "oauth-app-deleted"
-	ListEventTypeNameOauthAppSecretDeleted                           ListEventTypeName = "oauth-app-secret-deleted"
-	ListEventTypeNameOauthAppSecretGenerated                         ListEventTypeName = "oauth-app-secret-generated"
-	ListEventTypeNameOauthAppTokenCreated                            ListEventTypeName = "oauth-app-token-created"
-	ListEventTypeNameOauthAppUpdated                                 ListEventTypeName = "oauth-app-updated"
-	ListEventTypeNameObservabilityDisabled                           ListEventTypeName = "observability-disabled"
-	ListEventTypeNameObservabilityEnabled                            ListEventTypeName = "observability-enabled"
-	ListEventTypeNameObservabilityPlusProjectDisabled                ListEventTypeName = "observability-plus-project-disabled"
-	ListEventTypeNameObservabilityPlusProjectEnabled                 ListEventTypeName = "observability-plus-project-enabled"
-	ListEventTypeNameOidcPolicyCreated                               ListEventTypeName = "oidc-policy-created"
-	ListEventTypeNameOidcPolicyDeleted                               ListEventTypeName = "oidc-policy-deleted"
-	ListEventTypeNameOidcPolicyUpdated                               ListEventTypeName = "oidc-policy-updated"
-	ListEventTypeNameOidcPolicyUsedToObtainAppToken                  ListEventTypeName = "oidc-policy-used-to-obtain-app-token"
-	ListEventTypeNameOrganizationAvatarUpdate                        ListEventTypeName = "organization-avatar-update"
-	ListEventTypeNameOrganizationCreate                              ListEventTypeName = "organization-create"
-	ListEventTypeNameOrganizationDelete                              ListEventTypeName = "organization-delete"
-	ListEventTypeNameOrganizationDomainVerificationCreated           ListEventTypeName = "organization-domain-verification-created"
-	ListEventTypeNameOrganizationDomainVerificationDeleted           ListEventTypeName = "organization-domain-verification-deleted"
-	ListEventTypeNameOrganizationDomainVerificationVerified          ListEventTypeName = "organization-domain-verification-verified"
-	ListEventTypeNameOrganizationDsyncDelete                         ListEventTypeName = "organization-dsync-delete"
-	ListEventTypeNameOrganizationDsyncGroupDelete                    ListEventTypeName = "organization-dsync-group-delete"
-	ListEventTypeNameOrganizationDsyncGroupUpsert                    ListEventTypeName = "organization-dsync-group-upsert"
-	ListEventTypeNameOrganizationDsyncSyncStart                      ListEventTypeName = "organization-dsync-sync-start"
-	ListEventTypeNameOrganizationEmuDomainsMerged                    ListEventTypeName = "organization-emu-domains-merged"
-	ListEventTypeNameOrganizationEmuTeamUpdated                      ListEventTypeName = "organization-emu-team-updated"
-	ListEventTypeNameOrganizationEmuUpdated                          ListEventTypeName = "organization-emu-updated"
-	ListEventTypeNameOrganizationNameUpdate                          ListEventTypeName = "organization-name-update"
-	ListEventTypeNameOrganizationSlugUpdate                          ListEventTypeName = "organization-slug-update"
-	ListEventTypeNameOrganizationSsoDeleted                          ListEventTypeName = "organization-sso-deleted"
-	ListEventTypeNameOrganizationSsoEnforced                         ListEventTypeName = "organization-sso-enforced"
-	ListEventTypeNameOrganizationSsoNewTeamsUpdate                   ListEventTypeName = "organization-sso-new-teams-update"
-	ListEventTypeNameOrganizationTeamAdd                             ListEventTypeName = "organization-team-add"
-	ListEventTypeNameOrganizationTeamCreate                          ListEventTypeName = "organization-team-create"
-	ListEventTypeNameOrganizationTeamDelete                          ListEventTypeName = "organization-team-delete"
-	ListEventTypeNameOrganizationTeamDsyncUpdate                     ListEventTypeName = "organization-team-dsync-update"
-	ListEventTypeNameOrganizationTeamSsoUpdate                       ListEventTypeName = "organization-team-sso-update"
-	ListEventTypeNameOrganizationUpdateAccountFlowDismissed          ListEventTypeName = "organization-update-account-flow-dismissed"
-	ListEventTypeNameOrganizationUpdateAccountFlowTriggered          ListEventTypeName = "organization-update-account-flow-triggered"
-	ListEventTypeNameOwnerBlocked                                    ListEventTypeName = "owner-blocked"
-	ListEventTypeNameOwnerSoftBlocked                                ListEventTypeName = "owner-soft-blocked"
-	ListEventTypeNameOwnerSoftUnblocked                              ListEventTypeName = "owner-soft-unblocked"
-	ListEventTypeNameOwnerUnblocked                                  ListEventTypeName = "owner-unblocked"
-	ListEventTypeNamePageIntegrityConfigUpdated                      ListEventTypeName = "page-integrity-config-updated"
-	ListEventTypeNamePageIntegrityHeaderApproved                     ListEventTypeName = "page-integrity-header-approved"
-	ListEventTypeNamePageIntegrityHeaderRejected                     ListEventTypeName = "page-integrity-header-rejected"
-	ListEventTypeNamePageIntegrityInventoryCleared                   ListEventTypeName = "page-integrity-inventory-cleared"
-	ListEventTypeNamePageIntegrityResourceApproved                   ListEventTypeName = "page-integrity-resource-approved"
-	ListEventTypeNamePageIntegrityResourceDeleted                    ListEventTypeName = "page-integrity-resource-deleted"
-	ListEventTypeNamePageIntegrityResourceRejected                   ListEventTypeName = "page-integrity-resource-rejected"
-	ListEventTypeNamePageIntegrityScriptApprovalRuleCreated          ListEventTypeName = "page-integrity-script-approval-rule-created"
-	ListEventTypeNamePageIntegrityScriptApprovalRuleDeleted          ListEventTypeName = "page-integrity-script-approval-rule-deleted"
-	ListEventTypeNamePasskeyCreated                                  ListEventTypeName = "passkey-created"
-	ListEventTypeNamePasskeyDeleted                                  ListEventTypeName = "passkey-deleted"
-	ListEventTypeNamePasskeyUpdated                                  ListEventTypeName = "passkey-updated"
-	ListEventTypeNamePassportAccessGranted                           ListEventTypeName = "passport-access-granted"
-	ListEventTypeNamePasswordProtectionDisabled                      ListEventTypeName = "password-protection-disabled"
-	ListEventTypeNamePasswordProtectionEnabled                       ListEventTypeName = "password-protection-enabled"
-	ListEventTypeNamePaymentMethodAdded                              ListEventTypeName = "payment-method-added"
-	ListEventTypeNamePaymentMethodDefaultUpdated                     ListEventTypeName = "payment-method-default-updated"
-	ListEventTypeNamePaymentMethodRemoved                            ListEventTypeName = "payment-method-removed"
-	ListEventTypeNamePerimeterCreated                                ListEventTypeName = "perimeter-created"
-	ListEventTypeNamePerimeterDeleted                                ListEventTypeName = "perimeter-deleted"
-	ListEventTypeNamePerimeterRenamed                                ListEventTypeName = "perimeter-renamed"
-	ListEventTypeNamePerimeterRolledBack                             ListEventTypeName = "perimeter-rolled-back"
-	ListEventTypeNamePerimeterUpdated                                ListEventTypeName = "perimeter-updated"
-	ListEventTypeNamePlan                                            ListEventTypeName = "plan"
-	ListEventTypeNamePreviewDeploymentSuffixDisabled                 ListEventTypeName = "preview-deployment-suffix-disabled"
-	ListEventTypeNamePreviewDeploymentSuffixEnabled                  ListEventTypeName = "preview-deployment-suffix-enabled"
-	ListEventTypeNamePreviewDeploymentSuffixUpdate                   ListEventTypeName = "preview-deployment-suffix-update"
-	ListEventTypeNamePrivatelinkEndpointCreated                      ListEventTypeName = "privatelink-endpoint-created"
-	ListEventTypeNamePrivatelinkEndpointDeleted                      ListEventTypeName = "privatelink-endpoint-deleted"
-	ListEventTypeNamePrivatelinkEndpointUpdated                      ListEventTypeName = "privatelink-endpoint-updated"
-	ListEventTypeNameProductionBranchUpdated                         ListEventTypeName = "production-branch-updated"
-	ListEventTypeNameProjectAddAlias                                 ListEventTypeName = "project-add-alias"
-	ListEventTypeNameProjectAddRedirect                              ListEventTypeName = "project-add-redirect"
-	ListEventTypeNameProjectAffectedProjectsDeploymentsUpdated       ListEventTypeName = "project-affected-projects-deployments-updated"
-	ListEventTypeNameProjectAliasConfiguredChange                    ListEventTypeName = "project-alias-configured-change"
-	ListEventTypeNameProjectAnalyticsDisabled                        ListEventTypeName = "project-analytics-disabled"
-	ListEventTypeNameProjectAnalyticsEnabled                         ListEventTypeName = "project-analytics-enabled"
-	ListEventTypeNameProjectAutoAssignCustomProductionDomainsUpdated ListEventTypeName = "project-auto-assign-custom-production-domains-updated"
-	ListEventTypeNameProjectAutomationBypass                         ListEventTypeName = "project-automation-bypass"
-	ListEventTypeNameProjectAvatarDarkModeUpdate                     ListEventTypeName = "project-avatar-dark-mode-update"
-	ListEventTypeNameProjectAvatarUpdate                             ListEventTypeName = "project-avatar-update"
-	ListEventTypeNameProjectBuildCommandUpdated                      ListEventTypeName = "project-build-command-updated"
-	ListEventTypeNameProjectBuildLogsAndSourceProtectionUpdated      ListEventTypeName = "project-build-logs-and-source-protection-updated"
-	ListEventTypeNameProjectBuildMachineUpdated                      ListEventTypeName = "project-build-machine-updated"
-	ListEventTypeNameProjectCardWidgetPreferenceUpdated              ListEventTypeName = "project-card-widget-preference-updated"
-	ListEventTypeNameProjectClientCertDelete                         ListEventTypeName = "project-client-cert-delete"
-	ListEventTypeNameProjectClientCertUpload                         ListEventTypeName = "project-client-cert-upload"
-	ListEventTypeNameProjectConnectConfigurations                    ListEventTypeName = "project-connect-configurations"
-	ListEventTypeNameProjectConsolidatedGitCommitStatusUpdated       ListEventTypeName = "project-consolidated-git-commit-status-updated"
-	ListEventTypeNameProjectCreated                                  ListEventTypeName = "project-created"
-	ListEventTypeNameProjectCronJobsToggled                          ListEventTypeName = "project-cron-jobs-toggled"
-	ListEventTypeNameProjectCustomEnvironmentCreated                 ListEventTypeName = "project-custom-environment-created"
-	ListEventTypeNameProjectCustomEnvironmentDeleted                 ListEventTypeName = "project-custom-environment-deleted"
-	ListEventTypeNameProjectCustomEnvironmentSchedulesDefaultUpdated ListEventTypeName = "project-custom-environment-schedules-default-updated"
-	ListEventTypeNameProjectCustomEnvironmentUpdated                 ListEventTypeName = "project-custom-environment-updated"
-	ListEventTypeNameProjectCustomerSuccessCodeVisibilityUpdated     ListEventTypeName = "project-customer-success-code-visibility-updated"
-	ListEventTypeNameProjectDelete                                   ListEventTypeName = "project-delete"
-	ListEventTypeNameProjectDeploymentPolicyUpdated                  ListEventTypeName = "project-deployment-policy-updated"
-	ListEventTypeNameProjectDeploymentRetentionUpdated               ListEventTypeName = "project-deployment-retention-updated"
-	ListEventTypeNameProjectDirectoryListing                         ListEventTypeName = "project-directory-listing"
-	ListEventTypeNameProjectDomainDeleted                            ListEventTypeName = "project-domain-deleted"
-	ListEventTypeNameProjectDomainMoved                              ListEventTypeName = "project-domain-moved"
-	ListEventTypeNameProjectDomainUnverified                         ListEventTypeName = "project-domain-unverified"
-	ListEventTypeNameProjectDomainUpdated                            ListEventTypeName = "project-domain-updated"
-	ListEventTypeNameProjectDomainVerified                           ListEventTypeName = "project-domain-verified"
-	ListEventTypeNameProjectElasticConcurrencyUpdated                ListEventTypeName = "project-elastic-concurrency-updated"
-	ListEventTypeNameProjectExpirationLocked                         ListEventTypeName = "project-expiration-locked"
-	ListEventTypeNameProjectExpirationReached                        ListEventTypeName = "project-expiration-reached"
-	ListEventTypeNameProjectExpirationRemoved                        ListEventTypeName = "project-expiration-removed"
-	ListEventTypeNameProjectExpirationScheduled                      ListEventTypeName = "project-expiration-scheduled"
-	ListEventTypeNameProjectExpirationUnlocked                       ListEventTypeName = "project-expiration-unlocked"
-	ListEventTypeNameProjectExternalRewriteCachingUpdated            ListEventTypeName = "project-external-rewrite-caching-updated"
-	ListEventTypeNameProjectFrameworkUpdated                         ListEventTypeName = "project-framework-updated"
-	ListEventTypeNameProjectFunctionCpuMemory                        ListEventTypeName = "project-function-cpu-memory"
-	ListEventTypeNameProjectFunctionFailover                         ListEventTypeName = "project-function-failover"
-	ListEventTypeNameProjectFunctionMaxDuration                      ListEventTypeName = "project-function-max-duration"
-	ListEventTypeNameProjectFunctionRegions                          ListEventTypeName = "project-function-regions"
-	ListEventTypeNameProjectFunctionsBetaUpdated                     ListEventTypeName = "project-functions-beta-updated"
-	ListEventTypeNameProjectFunctionsFluidDisabled                   ListEventTypeName = "project-functions-fluid-disabled"
-	ListEventTypeNameProjectFunctionsFluidEnabled                    ListEventTypeName = "project-functions-fluid-enabled"
-	ListEventTypeNameProjectGitCommitCommentsToggled                 ListEventTypeName = "project-git-commit-comments-toggled"
-	ListEventTypeNameProjectGitCommitStatusToggled                   ListEventTypeName = "project-git-commit-status-toggled"
-	ListEventTypeNameProjectGitCreateDeploymentsToggled              ListEventTypeName = "project-git-create-deployments-toggled"
-	ListEventTypeNameProjectGitCredentialAttestationCreated          ListEventTypeName = "project-git-credential-attestation-created"
-	ListEventTypeNameProjectGitCredentialAttestationDeleted          ListEventTypeName = "project-git-credential-attestation-deleted"
-	ListEventTypeNameProjectGitCredentialBoundCreated                ListEventTypeName = "project-git-credential-bound-created"
-	ListEventTypeNameProjectGitCredentialBoundDeleted                ListEventTypeName = "project-git-credential-bound-deleted"
-	ListEventTypeNameProjectGitCredentialBoundUpdated                ListEventTypeName = "project-git-credential-bound-updated"
-	ListEventTypeNameProjectGitCredentialGrantAttestationRevoked     ListEventTypeName = "project-git-credential-grant-attestation-revoked"
-	ListEventTypeNameProjectGitCredentialGrantAttested               ListEventTypeName = "project-git-credential-grant-attested"
-	ListEventTypeNameProjectGitCredentialGrantCreated                ListEventTypeName = "project-git-credential-grant-created"
-	ListEventTypeNameProjectGitCredentialGrantDeleted                ListEventTypeName = "project-git-credential-grant-deleted"
-	ListEventTypeNameProjectGitCredentialGrantUpdated                ListEventTypeName = "project-git-credential-grant-updated"
-	ListEventTypeNameProjectGitCredentialTokenMinted                 ListEventTypeName = "project-git-credential-token-minted"
-	ListEventTypeNameProjectGitForkProtectionUpdated                 ListEventTypeName = "project-git-fork-protection-updated"
-	ListEventTypeNameProjectGitLfsToggled                            ListEventTypeName = "project-git-lfs-toggled"
-	ListEventTypeNameProjectGitPrCommentsToggled                     ListEventTypeName = "project-git-pr-comments-toggled"
-	ListEventTypeNameProjectGitRepositoryConnected                   ListEventTypeName = "project-git-repository-connected"
-	ListEventTypeNameProjectGitRepositoryDisconnected                ListEventTypeName = "project-git-repository-disconnected"
-	ListEventTypeNameProjectGitRepositoryDispatchEventsToggled       ListEventTypeName = "project-git-repository-dispatch-events-toggled"
-	ListEventTypeNameProjectGitRequireVerifiedCommitsToggled         ListEventTypeName = "project-git-require-verified-commits-toggled"
-	ListEventTypeNameProjectIgnoredBuildStepUpdated                  ListEventTypeName = "project-ignored-build-step-updated"
-	ListEventTypeNameProjectInstallCommandUpdated                    ListEventTypeName = "project-install-command-updated"
-	ListEventTypeNameProjectMemberAdded                              ListEventTypeName = "project-member-added"
-	ListEventTypeNameProjectMemberInvited                            ListEventTypeName = "project-member-invited"
-	ListEventTypeNameProjectMemberRemoved                            ListEventTypeName = "project-member-removed"
-	ListEventTypeNameProjectMemberRemovedBatch                       ListEventTypeName = "project-member-removed-batch"
-	ListEventTypeNameProjectMemberUpdated                            ListEventTypeName = "project-member-updated"
-	ListEventTypeNameProjectMoveInSuccess                            ListEventTypeName = "project-move-in-success"
-	ListEventTypeNameProjectMoveOutFailed                            ListEventTypeName = "project-move-out-failed"
-	ListEventTypeNameProjectMoveOutStarted                           ListEventTypeName = "project-move-out-started"
-	ListEventTypeNameProjectMoveOutSuccess                           ListEventTypeName = "project-move-out-success"
-	ListEventTypeNameProjectName                                     ListEventTypeName = "project-name"
-	ListEventTypeNameProjectNodeVersionUpdated                       ListEventTypeName = "project-node-version-updated"
-	ListEventTypeNameProjectOidcIssuerModeUpdated                    ListEventTypeName = "project-oidc-issuer-mode-updated"
-	ListEventTypeNameProjectOidcTokenCreated                         ListEventTypeName = "project-oidc-token-created"
-	ListEventTypeNameProjectOptionsAllowlist                         ListEventTypeName = "project-options-allowlist"
-	ListEventTypeNameProjectOutputDirectoryUpdated                   ListEventTypeName = "project-output-directory-updated"
-	ListEventTypeNameProjectPassportUpdated                          ListEventTypeName = "project-passport-updated"
-	ListEventTypeNameProjectPasswordProtection                       ListEventTypeName = "project-password-protection"
-	ListEventTypeNameProjectPaused                                   ListEventTypeName = "project-paused"
-	ListEventTypeNameProjectPerimetersUpdated                        ListEventTypeName = "project-perimeters-updated"
-	ListEventTypeNameProjectPreviewDeploymentSuffix                  ListEventTypeName = "project-preview-deployment-suffix"
-	ListEventTypeNameProjectPreviewEnvironmentBranchTrackingUpdated  ListEventTypeName = "project-preview-environment-branch-tracking-updated"
-	ListEventTypeNameProjectPrioritizeProductionBuildsUpdated        ListEventTypeName = "project-prioritize-production-builds-updated"
-	ListEventTypeNameProjectProgramEnrollmentChanged                 ListEventTypeName = "project-program-enrollment-changed"
-	ListEventTypeNameProjectProtectedSourcemapsUpdated               ListEventTypeName = "project-protected-sourcemaps-updated"
-	ListEventTypeNameProjectRemoveVercelRequestHeadersUpdated        ListEventTypeName = "project-remove-vercel-request-headers-updated"
-	ListEventTypeNameProjectRollbackDescriptionUpdated               ListEventTypeName = "project-rollback-description-updated"
-	ListEventTypeNameProjectRollingReleaseAborted                    ListEventTypeName = "project-rolling-release-aborted"
-	ListEventTypeNameProjectRollingReleaseApproved                   ListEventTypeName = "project-rolling-release-approved"
-	ListEventTypeNameProjectRollingReleaseCompleted                  ListEventTypeName = "project-rolling-release-completed"
-	ListEventTypeNameProjectRollingReleaseConfigured                 ListEventTypeName = "project-rolling-release-configured"
-	ListEventTypeNameProjectRollingReleaseContinued                  ListEventTypeName = "project-rolling-release-continued"
-	ListEventTypeNameProjectRollingReleaseDisabled                   ListEventTypeName = "project-rolling-release-disabled"
-	ListEventTypeNameProjectRollingReleaseEnabled                    ListEventTypeName = "project-rolling-release-enabled"
-	ListEventTypeNameProjectRollingReleasePaused                     ListEventTypeName = "project-rolling-release-paused"
-	ListEventTypeNameProjectRollingReleaseStarted                    ListEventTypeName = "project-rolling-release-started"
-	ListEventTypeNameProjectRollingReleaseTimer                      ListEventTypeName = "project-rolling-release-timer"
-	ListEventTypeNameProjectRootDirectoryUpdated                     ListEventTypeName = "project-root-directory-updated"
-	ListEventTypeNameProjectRoutesVersionPromoted                    ListEventTypeName = "project-routes-version-promoted"
-	ListEventTypeNameProjectRoutesVersionRestored                    ListEventTypeName = "project-routes-version-restored"
-	ListEventTypeNameProjectSandboxConfigUpdated                     ListEventTypeName = "project-sandbox-config-updated"
-	ListEventTypeNameProjectSandboxUrlProtectionUpdated              ListEventTypeName = "project-sandbox-url-protection-updated"
-	ListEventTypeNameProjectSkewProtectionAllowedDomainsUpdated      ListEventTypeName = "project-skew-protection-allowed-domains-updated"
-	ListEventTypeNameProjectSkewProtectionMaxAgeUpdated              ListEventTypeName = "project-skew-protection-max-age-updated"
-	ListEventTypeNameProjectSkewProtectionThresholdUpdated           ListEventTypeName = "project-skew-protection-threshold-updated"
-	ListEventTypeNameProjectSourceFilesOutsideRootDirectoryUpdated   ListEventTypeName = "project-source-files-outside-root-directory-updated"
-	ListEventTypeNameProjectSpeedInsightsDisabled                    ListEventTypeName = "project-speed-insights-disabled"
-	ListEventTypeNameProjectSpeedInsightsEnabled                     ListEventTypeName = "project-speed-insights-enabled"
-	ListEventTypeNameProjectSpeedInsightsFreeDataStarted             ListEventTypeName = "project-speed-insights-free-data-started"
-	ListEventTypeNameProjectSsoProtection                            ListEventTypeName = "project-sso-protection"
-	ListEventTypeNameProjectStaticIpsUpdated                         ListEventTypeName = "project-static-ips-updated"
-	ListEventTypeNameProjectTrustedIps                               ListEventTypeName = "project-trusted-ips"
-	ListEventTypeNameProjectTrustedSources                           ListEventTypeName = "project-trusted-sources"
-	ListEventTypeNameProjectUnpaused                                 ListEventTypeName = "project-unpaused"
-	ListEventTypeNameProjectWebAnalyticsDisabled                     ListEventTypeName = "project-web-analytics-disabled"
-	ListEventTypeNameProjectWebAnalyticsEnabled                      ListEventTypeName = "project-web-analytics-enabled"
-	ListEventTypeNameProtectedGitScopeAdded                          ListEventTypeName = "protected-git-scope-added"
-	ListEventTypeNameProtectedGitScopeRemoved                        ListEventTypeName = "protected-git-scope-removed"
-	ListEventTypeNameRepositoryCiEnvVariableCreate                   ListEventTypeName = "repository-ci-env-variable-create"
-	ListEventTypeNameRepositoryCiEnvVariableDelete                   ListEventTypeName = "repository-ci-env-variable-delete"
-	ListEventTypeNameRepositoryCiEnvVariableUpdate                   ListEventTypeName = "repository-ci-env-variable-update"
-	ListEventTypeNameRuntimeCachePurgeAll                            ListEventTypeName = "runtime-cache-purge-all"
-	ListEventTypeNameSamlConnectionCreated                           ListEventTypeName = "saml-connection-created"
-	ListEventTypeNameSamlConnectionDeleted                           ListEventTypeName = "saml-connection-deleted"
-	ListEventTypeNameSamlIdpMaterialDeleted                          ListEventTypeName = "saml-idp-material-deleted"
-	ListEventTypeNameSamlIdpMaterialSet                              ListEventTypeName = "saml-idp-material-set"
-	ListEventTypeNameSamlIdpMaterialSystemDeleted                    ListEventTypeName = "saml-idp-material-system-deleted"
-	ListEventTypeNameSamlIdpMaterialSystemSet                        ListEventTypeName = "saml-idp-material-system-set"
-	ListEventTypeNameSandboxAliasAssigned                            ListEventTypeName = "sandbox-alias-assigned"
-	ListEventTypeNameSandboxAliasDelete                              ListEventTypeName = "sandbox-alias-delete"
-	ListEventTypeNameSandboxDriveCreated                             ListEventTypeName = "sandbox-drive-created"
-	ListEventTypeNameSandboxDriveDeleted                             ListEventTypeName = "sandbox-drive-deleted"
-	ListEventTypeNameSandboxDriveSnapshotCreated                     ListEventTypeName = "sandbox-drive-snapshot-created"
-	ListEventTypeNameSandboxDriveSnapshotDeleted                     ListEventTypeName = "sandbox-drive-snapshot-deleted"
-	ListEventTypeNameSandboxNpmCredentialsConfigured                 ListEventTypeName = "sandbox-npm-credentials-configured"
-	ListEventTypeNameSandboxSignedCommitIdentityConfigured           ListEventTypeName = "sandbox-signed-commit-identity-configured"
-	ListEventTypeNameSandboxSnapshotRegionsUpdated                   ListEventTypeName = "sandbox-snapshot-regions-updated"
-	ListEventTypeNameScale                                           ListEventTypeName = "scale"
-	ListEventTypeNameScaleAuto                                       ListEventTypeName = "scale-auto"
-	ListEventTypeNameScheduleCreated                                 ListEventTypeName = "schedule-created"
-	ListEventTypeNameScheduleDeleted                                 ListEventTypeName = "schedule-deleted"
-	ListEventTypeNameScheduleDisabled                                ListEventTypeName = "schedule-disabled"
-	ListEventTypeNameScheduleEnabled                                 ListEventTypeName = "schedule-enabled"
-	ListEventTypeNameScheduleInvoked                                 ListEventTypeName = "schedule-invoked"
-	ListEventTypeNameScheduleUpdated                                 ListEventTypeName = "schedule-updated"
-	ListEventTypeNameSecondaryEmailAdded                             ListEventTypeName = "secondary-email-added"
-	ListEventTypeNameSecondaryEmailRemoved                           ListEventTypeName = "secondary-email-removed"
-	ListEventTypeNameSecondaryEmailVerified                          ListEventTypeName = "secondary-email-verified"
-	ListEventTypeNameSecretAdd                                       ListEventTypeName = "secret-add"
-	ListEventTypeNameSecretDelete                                    ListEventTypeName = "secret-delete"
-	ListEventTypeNameSecretRename                                    ListEventTypeName = "secret-rename"
-	ListEventTypeNameSecurityListCreated                             ListEventTypeName = "security-list-created"
-	ListEventTypeNameSecurityListDeleted                             ListEventTypeName = "security-list-deleted"
-	ListEventTypeNameSecurityListUpdated                             ListEventTypeName = "security-list-updated"
-	ListEventTypeNameSecurityPlusUpdated                             ListEventTypeName = "security-plus-updated"
-	ListEventTypeNameSetBio                                          ListEventTypeName = "set-bio"
-	ListEventTypeNameSetName                                         ListEventTypeName = "set-name"
-	ListEventTypeNameSetProfiles                                     ListEventTypeName = "set-profiles"
-	ListEventTypeNameSetScale                                        ListEventTypeName = "set-scale"
-	ListEventTypeNameSharedEnvVariableCreate                         ListEventTypeName = "shared-env-variable-create"
-	ListEventTypeNameSharedEnvVariableDelete                         ListEventTypeName = "shared-env-variable-delete"
-	ListEventTypeNameSharedEnvVariableRead                           ListEventTypeName = "shared-env-variable-read"
-	ListEventTypeNameSharedEnvVariableRepoLink                       ListEventTypeName = "shared-env-variable-repo-link"
-	ListEventTypeNameSharedEnvVariableRepoUnlink                     ListEventTypeName = "shared-env-variable-repo-unlink"
-	ListEventTypeNameSharedEnvVariableUpdate                         ListEventTypeName = "shared-env-variable-update"
-	ListEventTypeNameShowIpAddresses                                 ListEventTypeName = "show-ip-addresses"
-	ListEventTypeNameSignup                                          ListEventTypeName = "signup"
-	ListEventTypeNameSignupViaBitbucket                              ListEventTypeName = "signup-via-bitbucket"
-	ListEventTypeNameSignupViaGithub                                 ListEventTypeName = "signup-via-github"
-	ListEventTypeNameSignupViaGitlab                                 ListEventTypeName = "signup-via-gitlab"
-	ListEventTypeNameSpeedInsightsSettingsUpdated                    ListEventTypeName = "speed-insights-settings-updated"
-	ListEventTypeNameSpendCreated                                    ListEventTypeName = "spend-created"
-	ListEventTypeNameSpendDeleted                                    ListEventTypeName = "spend-deleted"
-	ListEventTypeNameSpendUpdated                                    ListEventTypeName = "spend-updated"
-	ListEventTypeNameSsoLogin                                        ListEventTypeName = "sso-login"
-	ListEventTypeNameStartupTermsAccepted                            ListEventTypeName = "startup-terms-accepted"
-	ListEventTypeNameStorageAcceptTos                                ListEventTypeName = "storage-accept-tos"
-	ListEventTypeNameStorageAccessTokenSet                           ListEventTypeName = "storage-access-token-set"
-	ListEventTypeNameStorageAccessedDataBrowser                      ListEventTypeName = "storage-accessed-data-browser"
-	ListEventTypeNameStorageConnectProject                           ListEventTypeName = "storage-connect-project"
-	ListEventTypeNameStorageCreate                                   ListEventTypeName = "storage-create"
-	ListEventTypeNameStorageDelete                                   ListEventTypeName = "storage-delete"
-	ListEventTypeNameStorageDisconnectProject                        ListEventTypeName = "storage-disconnect-project"
-	ListEventTypeNameStorageDisconnectProjects                       ListEventTypeName = "storage-disconnect-projects"
-	ListEventTypeNameStorageInactiveStoreDeleted                     ListEventTypeName = "storage-inactive-store-deleted"
-	ListEventTypeNameStorageResetCredentials                         ListEventTypeName = "storage-reset-credentials"
-	ListEventTypeNameStorageResourceReplCommand                      ListEventTypeName = "storage-resource-repl-command"
-	ListEventTypeNameStorageSetLocked                                ListEventTypeName = "storage-set-locked"
-	ListEventTypeNameStorageTransferInSuccess                        ListEventTypeName = "storage-transfer-in-success"
-	ListEventTypeNameStorageTransferOutSuccess                       ListEventTypeName = "storage-transfer-out-success"
-	ListEventTypeNameStorageTransferRequestCreated                   ListEventTypeName = "storage-transfer-request-created"
-	ListEventTypeNameStorageUpdate                                   ListEventTypeName = "storage-update"
-	ListEventTypeNameStorageUpdateProjectConnection                  ListEventTypeName = "storage-update-project-connection"
-	ListEventTypeNameStorageUpgradeProjectConnectionToOidc           ListEventTypeName = "storage-upgrade-project-connection-to-oidc"
-	ListEventTypeNameStorageViewSecret                               ListEventTypeName = "storage-view-secret"
-	ListEventTypeNameStrictConnectors                                ListEventTypeName = "strict-connectors"
-	ListEventTypeNameStrictDeploymentProtectionSettings              ListEventTypeName = "strict-deployment-protection-settings"
-	ListEventTypeNameStrictPasswordProtectionSettings                ListEventTypeName = "strict-password-protection-settings"
-	ListEventTypeNameStrictShareableLinks                            ListEventTypeName = "strict-shareable-links"
-	ListEventTypeNameSubscriptionCreated                             ListEventTypeName = "subscription-created"
-	ListEventTypeNameSubscriptionProductAdded                        ListEventTypeName = "subscription-product-added"
-	ListEventTypeNameSubscriptionProductRemoved                      ListEventTypeName = "subscription-product-removed"
-	ListEventTypeNameSubscriptionUpdated                             ListEventTypeName = "subscription-updated"
-	ListEventTypeNameSupportSessionCreated                           ListEventTypeName = "support-session-created"
-	ListEventTypeNameTeam                                            ListEventTypeName = "team"
-	ListEventTypeNameTeamAgentBillingMigrationDecisionChanged        ListEventTypeName = "team-agent-billing-migration-decision-changed"
-	ListEventTypeNameTeamAvatarUpdate                                ListEventTypeName = "team-avatar-update"
-	ListEventTypeNameTeamCollaborationSettingsUpdated                ListEventTypeName = "team-collaboration-settings-updated"
-	ListEventTypeNameTeamDataCacheUserDisabledUpdated                ListEventTypeName = "team-data-cache-user-disabled-updated"
-	ListEventTypeNameTeamDefaultBuildMachineUpdated                  ListEventTypeName = "team-default-build-machine-updated"
-	ListEventTypeNameTeamDefaultPassportUpdated                      ListEventTypeName = "team-default-passport-updated"
-	ListEventTypeNameTeamDelete                                      ListEventTypeName = "team-delete"
-	ListEventTypeNameTeamDeploymentPolicyUpdated                     ListEventTypeName = "team-deployment-policy-updated"
-	ListEventTypeNameTeamDeploymentStorageHighRetentionOptIn         ListEventTypeName = "team-deployment-storage-high-retention-opt-in"
-	ListEventTypeNameTeamDeploymentStorageRetentionOptOut            ListEventTypeName = "team-deployment-storage-retention-opt-out"
-	ListEventTypeNameTeamDomainVerificationCreated                   ListEventTypeName = "team-domain-verification-created"
-	ListEventTypeNameTeamDomainVerificationDeleted                   ListEventTypeName = "team-domain-verification-deleted"
-	ListEventTypeNameTeamDomainVerificationVerified                  ListEventTypeName = "team-domain-verification-verified"
-	ListEventTypeNameTeamEmailDomainUpdate                           ListEventTypeName = "team-email-domain-update"
-	ListEventTypeNameTeamEmuUpdated                                  ListEventTypeName = "team-emu-updated"
-	ListEventTypeNameTeamEndedTrial                                  ListEventTypeName = "team-ended-trial"
-	ListEventTypeNameTeamFirewallConfigModified                      ListEventTypeName = "team-firewall-config-modified"
-	ListEventTypeNameTeamFirewallConfigPromoted                      ListEventTypeName = "team-firewall-config-promoted"
-	ListEventTypeNameTeamGitRepositoryDispatchEventsToggled          ListEventTypeName = "team-git-repository-dispatch-events-toggled"
-	ListEventTypeNameTeamGitRequireVerifiedCommitsToggled            ListEventTypeName = "team-git-require-verified-commits-toggled"
-	ListEventTypeNameTeamInviteBulkDelete                            ListEventTypeName = "team-invite-bulk-delete"
-	ListEventTypeNameTeamInviteCodeReset                             ListEventTypeName = "team-invite-code-reset"
-	ListEventTypeNameTeamInviteLinkCreated                           ListEventTypeName = "team-invite-link-created"
-	ListEventTypeNameTeamInviteLinkDeleted                           ListEventTypeName = "team-invite-link-deleted"
-	ListEventTypeNameTeamIpBlockingRulesCreated                      ListEventTypeName = "team-ip-blocking-rules-created"
-	ListEventTypeNameTeamIpBlockingRulesRemoved                      ListEventTypeName = "team-ip-blocking-rules-removed"
-	ListEventTypeNameTeamMemberAdd                                   ListEventTypeName = "team-member-add"
-	ListEventTypeNameTeamMemberConfirmRequest                        ListEventTypeName = "team-member-confirm-request"
-	ListEventTypeNameTeamMemberDeclineRequest                        ListEventTypeName = "team-member-decline-request"
-	ListEventTypeNameTeamMemberDelete                                ListEventTypeName = "team-member-delete"
-	ListEventTypeNameTeamMemberEntitlementAdded                      ListEventTypeName = "team-member-entitlement-added"
-	ListEventTypeNameTeamMemberEntitlementCanceled                   ListEventTypeName = "team-member-entitlement-canceled"
-	ListEventTypeNameTeamMemberEntitlementReactivated                ListEventTypeName = "team-member-entitlement-reactivated"
-	ListEventTypeNameTeamMemberEntitlementRemoved                    ListEventTypeName = "team-member-entitlement-removed"
-	ListEventTypeNameTeamMemberJoin                                  ListEventTypeName = "team-member-join"
-	ListEventTypeNameTeamMemberLeave                                 ListEventTypeName = "team-member-leave"
-	ListEventTypeNameTeamMemberRequestAccess                         ListEventTypeName = "team-member-request-access"
-	ListEventTypeNameTeamMemberRoleUpdate                            ListEventTypeName = "team-member-role-update"
-	ListEventTypeNameTeamMemberSsoAuthorizationAttempt               ListEventTypeName = "team-member-sso-authorization-attempt"
-	ListEventTypeNameTeamMfaEnforcementUpdated                       ListEventTypeName = "team-mfa-enforcement-updated"
-	ListEventTypeNameTeamNameUpdate                                  ListEventTypeName = "team-name-update"
-	ListEventTypeNameTeamPaidInvoice                                 ListEventTypeName = "team-paid-invoice"
-	ListEventTypeNameTeamProgramEnrollmentChanged                    ListEventTypeName = "team-program-enrollment-changed"
-	ListEventTypeNameTeamRemoteCachingPurge                          ListEventTypeName = "team-remote-caching-purge"
-	ListEventTypeNameTeamRemoteCachingUpdate                         ListEventTypeName = "team-remote-caching-update"
-	ListEventTypeNameTeamRuntimeCacheUpdated                         ListEventTypeName = "team-runtime-cache-updated"
-	ListEventTypeNameTeamSamlEnforced                                ListEventTypeName = "team-saml-enforced"
-	ListEventTypeNameTeamSamlRoles                                   ListEventTypeName = "team-saml-roles"
-	ListEventTypeNameTeamSlugUpdate                                  ListEventTypeName = "team-slug-update"
-	ListEventTypeNameTeamTokensInvalidated                           ListEventTypeName = "team-tokens-invalidated"
-	ListEventTypeNameTracingConfigured                               ListEventTypeName = "tracing-configured"
-	ListEventTypeNameTracingDisabled                                 ListEventTypeName = "tracing-disabled"
-	ListEventTypeNameTracingPaused                                   ListEventTypeName = "tracing-paused"
-	ListEventTypeNameTracingResumed                                  ListEventTypeName = "tracing-resumed"
-	ListEventTypeNameUnlinkLoginConnection                           ListEventTypeName = "unlink-login-connection"
-	ListEventTypeNameUpdateAccountFlowDismissed                      ListEventTypeName = "update-account-flow-dismissed"
-	ListEventTypeNameUpdateAccountFlowTriggered                      ListEventTypeName = "update-account-flow-triggered"
-	ListEventTypeNameUserAutoBlockConfigured                         ListEventTypeName = "user-auto-block-configured"
-	ListEventTypeNameUserBlocked                                     ListEventTypeName = "user-blocked"
-	ListEventTypeNameUserDelete                                      ListEventTypeName = "user-delete"
-	ListEventTypeNameUserDeleteRequested                             ListEventTypeName = "user-delete-requested"
-	ListEventTypeNameUserEmuAccountArchived                          ListEventTypeName = "user-emu-account-archived"
-	ListEventTypeNameUserEmuAccountDeleted                           ListEventTypeName = "user-emu-account-deleted"
-	ListEventTypeNameUserEmuAccountRecovered                         ListEventTypeName = "user-emu-account-recovered"
-	ListEventTypeNameUserEmuAccountUpdateOptedIn                     ListEventTypeName = "user-emu-account-update-opted-in"
-	ListEventTypeNameUserEmuAccountUpdateOptedOut                    ListEventTypeName = "user-emu-account-update-opted-out"
-	ListEventTypeNameUserEmuRecoveryEmailSent                        ListEventTypeName = "user-emu-recovery-email-sent"
-	ListEventTypeNameUserEmuRecoveryInitiated                        ListEventTypeName = "user-emu-recovery-initiated"
-	ListEventTypeNameUserEmuToggled                                  ListEventTypeName = "user-emu-toggled"
-	ListEventTypeNameUserLandingPageUpdated                          ListEventTypeName = "user-landing-page-updated"
-	ListEventTypeNameUserMfaChallengeFailed                          ListEventTypeName = "user-mfa-challenge-failed"
-	ListEventTypeNameUserMfaChallengeInitiated                       ListEventTypeName = "user-mfa-challenge-initiated"
-	ListEventTypeNameUserMfaChallengeVerified                        ListEventTypeName = "user-mfa-challenge-verified"
-	ListEventTypeNameUserMfaChangeFailed                             ListEventTypeName = "user-mfa-change-failed"
-	ListEventTypeNameUserMfaConfigurationUpdated                     ListEventTypeName = "user-mfa-configuration-updated"
-	ListEventTypeNameUserMfaRecoveryCodeUsed                         ListEventTypeName = "user-mfa-recovery-code-used"
-	ListEventTypeNameUserMfaRecoveryCodesRegenerated                 ListEventTypeName = "user-mfa-recovery-codes-regenerated"
-	ListEventTypeNameUserMfaRemoved                                  ListEventTypeName = "user-mfa-removed"
-	ListEventTypeNameUserMfaSetupSkipped                             ListEventTypeName = "user-mfa-setup-skipped"
-	ListEventTypeNameUserMfaTotpVerificationStarted                  ListEventTypeName = "user-mfa-totp-verification-started"
-	ListEventTypeNameUserMfaTotpVerified                             ListEventTypeName = "user-mfa-totp-verified"
-	ListEventTypeNameUserPhoneRemoved                                ListEventTypeName = "user-phone-removed"
-	ListEventTypeNameUserPhoneUpdated                                ListEventTypeName = "user-phone-updated"
-	ListEventTypeNameUserPrimaryEmailUpdated                         ListEventTypeName = "user-primary-email-updated"
-	ListEventTypeNameUserProviderEmailClaimEvaluated                 ListEventTypeName = "user-provider-email-claim-evaluated"
-	ListEventTypeNameUserSudoModeRemoved                             ListEventTypeName = "user-sudo-mode-removed"
-	ListEventTypeNameUserTokenCreated                                ListEventTypeName = "user-token-created"
-	ListEventTypeNameUserTokenDeleted                                ListEventTypeName = "user-token-deleted"
-	ListEventTypeNameUserTokensDeleted                               ListEventTypeName = "user-tokens-deleted"
-	ListEventTypeNameUserUnblocked                                   ListEventTypeName = "user-unblocked"
-	ListEventTypeNameUsername                                        ListEventTypeName = "username"
-	ListEventTypeNameV0ChatAiUsage                                   ListEventTypeName = "v0-chat-ai-usage"
-	ListEventTypeNameV0ChatCreated                                   ListEventTypeName = "v0-chat-created"
-	ListEventTypeNameV0ChatMessageSent                               ListEventTypeName = "v0-chat-message-sent"
-	ListEventTypeNameV0MigrationPaymentConfirmed                     ListEventTypeName = "v0-migration-payment-confirmed"
-	ListEventTypeNameV0MigrationSubscriptionCompleted                ListEventTypeName = "v0-migration-subscription-completed"
-	ListEventTypeNameV0SharedPoolCreditLimitDefaultUpdated           ListEventTypeName = "v0-shared-pool-credit-limit-default-updated"
-	ListEventTypeNameV0SharedPoolCreditLimitUpdated                  ListEventTypeName = "v0-shared-pool-credit-limit-updated"
-	ListEventTypeNameVcrImageDeleted                                 ListEventTypeName = "vcr-image-deleted"
-	ListEventTypeNameVcrImagePushed                                  ListEventTypeName = "vcr-image-pushed"
-	ListEventTypeNameVcrRepositoryCreated                            ListEventTypeName = "vcr-repository-created"
-	ListEventTypeNameVcrRepositoryDeleted                            ListEventTypeName = "vcr-repository-deleted"
-	ListEventTypeNameVcrRepositoryPermissionAdded                    ListEventTypeName = "vcr-repository-permission-added"
-	ListEventTypeNameVcrRepositoryPermissionRemoved                  ListEventTypeName = "vcr-repository-permission-removed"
-	ListEventTypeNameVcrRepositoryPermissionsCleared                 ListEventTypeName = "vcr-repository-permissions-cleared"
-	ListEventTypeNameVcrRepositoryVisibilityChanged                  ListEventTypeName = "vcr-repository-visibility-changed"
-	ListEventTypeNameVercelAgentElevatedPermissionsApproved          ListEventTypeName = "vercel-agent-elevated-permissions-approved"
-	ListEventTypeNameVercelAgentElevatedPermissionsRequested         ListEventTypeName = "vercel-agent-elevated-permissions-requested"
-	ListEventTypeNameVercelAgentSecurityFindingClosed                ListEventTypeName = "vercel-agent-security-finding-closed"
-	ListEventTypeNameVercelAgentSecurityFindingCreated               ListEventTypeName = "vercel-agent-security-finding-created"
-	ListEventTypeNameVercelAgentSecurityFindingDismissed             ListEventTypeName = "vercel-agent-security-finding-dismissed"
-	ListEventTypeNameVercelAgentSecurityFindingReopened              ListEventTypeName = "vercel-agent-security-finding-reopened"
-	ListEventTypeNameVercelAgentSecurityFindingResolved              ListEventTypeName = "vercel-agent-security-finding-resolved"
-	ListEventTypeNameVercelAgentSecurityReviewPolicyDeleted          ListEventTypeName = "vercel-agent-security-review-policy-deleted"
-	ListEventTypeNameVercelAgentSecurityReviewPolicyUpdated          ListEventTypeName = "vercel-agent-security-review-policy-updated"
-	ListEventTypeNameVercelAgentSessionCreated                       ListEventTypeName = "vercel-agent-session-created"
-	ListEventTypeNameVercelAgentTeamTrialCreditsApplied              ListEventTypeName = "vercel-agent-team-trial-credits-applied"
-	ListEventTypeNameVercelAppInstallationRequestDismissed           ListEventTypeName = "vercel-app-installation-request-dismissed"
-	ListEventTypeNameVercelAppInstallationRequested                  ListEventTypeName = "vercel-app-installation-requested"
-	ListEventTypeNameVercelAppInstallationUpdated                    ListEventTypeName = "vercel-app-installation-updated"
-	ListEventTypeNameVercelAppInstalled                              ListEventTypeName = "vercel-app-installed"
-	ListEventTypeNameVercelAppTokensRevoked                          ListEventTypeName = "vercel-app-tokens-revoked"
-	ListEventTypeNameVercelAppUninstalled                            ListEventTypeName = "vercel-app-uninstalled"
-	ListEventTypeNameVercelCiRepositoryGithubRunnersUpdated          ListEventTypeName = "vercel-ci-repository-github-runners-updated"
-	ListEventTypeNameVercelCiRepositorySettingsUpdated               ListEventTypeName = "vercel-ci-repository-settings-updated"
-	ListEventTypeNameVercelCiRunApproved                             ListEventTypeName = "vercel-ci-run-approved"
-	ListEventTypeNameVercelToolbar                                   ListEventTypeName = "vercel-toolbar"
-	ListEventTypeNameVpcPeeringConnectionAccepted                    ListEventTypeName = "vpc-peering-connection-accepted"
-	ListEventTypeNameVpcPeeringConnectionDeleted                     ListEventTypeName = "vpc-peering-connection-deleted"
-	ListEventTypeNameVpcPeeringConnectionRejected                    ListEventTypeName = "vpc-peering-connection-rejected"
-	ListEventTypeNameVpcPeeringConnectionUpdated                     ListEventTypeName = "vpc-peering-connection-updated"
-	ListEventTypeNameVulnerabilityBannerDismissed                    ListEventTypeName = "vulnerability-banner-dismissed"
-	ListEventTypeNameWebAnalyticsSummarySubscriptionUpdated          ListEventTypeName = "web-analytics-summary-subscription-updated"
-	ListEventTypeNameWebAnalyticsTierUpdated                         ListEventTypeName = "web-analytics-tier-updated"
-	ListEventTypeNameWebhookCreated                                  ListEventTypeName = "webhook-created"
-	ListEventTypeNameWebhookDeleted                                  ListEventTypeName = "webhook-deleted"
-	ListEventTypeNameWebhookUpdated                                  ListEventTypeName = "webhook-updated"
-	ListEventTypeNameWorkflowDeploymentKeyAccessed                   ListEventTypeName = "workflow-deployment-key-accessed"
-	ListEventTypeNameXaaUpdated                                      ListEventTypeName = "xaa-updated"
+	ListEventTypeNameAccessGroupCreated                                  ListEventTypeName = "access-group-created"
+	ListEventTypeNameAccessGroupDeleted                                  ListEventTypeName = "access-group-deleted"
+	ListEventTypeNameAccessGroupProjectUpdated                           ListEventTypeName = "access-group-project-updated"
+	ListEventTypeNameAccessGroupUpdated                                  ListEventTypeName = "access-group-updated"
+	ListEventTypeNameAccessGroupUserAdded                                ListEventTypeName = "access-group-user-added"
+	ListEventTypeNameAccessGroupUserRemoved                              ListEventTypeName = "access-group-user-removed"
+	ListEventTypeNameAdminAgenticProvisioningAccountUnlinked             ListEventTypeName = "admin-agentic-provisioning-account-unlinked"
+	ListEventTypeNameAdminObservabilityDisabled                          ListEventTypeName = "admin-observability-disabled"
+	ListEventTypeNameAdminPlanUpdated                                    ListEventTypeName = "admin-plan-updated"
+	ListEventTypeNameAdminPreviewDeploymentSuffixClear                   ListEventTypeName = "admin-preview-deployment-suffix-clear"
+	ListEventTypeNameAdminSamlIdpMaterialDeleted                         ListEventTypeName = "admin-saml-idp-material-deleted"
+	ListEventTypeNameAdminSamlIdpMaterialSet                             ListEventTypeName = "admin-saml-idp-material-set"
+	ListEventTypeNameAdminSamlSpSigningKeyCreated                        ListEventTypeName = "admin-saml-sp-signing-key-created"
+	ListEventTypeNameAdminSamlSpSigningKeyUpdated                        ListEventTypeName = "admin-saml-sp-signing-key-updated"
+	ListEventTypeNameAdminSecondaryEmailAdded                            ListEventTypeName = "admin-secondary-email-added"
+	ListEventTypeNameAdminSecondaryEmailRemoved                          ListEventTypeName = "admin-secondary-email-removed"
+	ListEventTypeNameAdminTeamNameUpdate                                 ListEventTypeName = "admin-team-name-update"
+	ListEventTypeNameAdminTeamSlugUpdate                                 ListEventTypeName = "admin-team-slug-update"
+	ListEventTypeNameAdminUserDelete                                     ListEventTypeName = "admin-user-delete"
+	ListEventTypeNameAdminUserPrimaryEmailUpdated                        ListEventTypeName = "admin-user-primary-email-updated"
+	ListEventTypeNameAdminUsernameUpdated                                ListEventTypeName = "admin-username-updated"
+	ListEventTypeNameAgenticProvisioningAccountBlocked                   ListEventTypeName = "agentic-provisioning-account-blocked"
+	ListEventTypeNameAgenticProvisioningAccountLinked                    ListEventTypeName = "agentic-provisioning-account-linked"
+	ListEventTypeNameAgenticProvisioningAccountRelinked                  ListEventTypeName = "agentic-provisioning-account-relinked"
+	ListEventTypeNameAgenticProvisioningAccountUnlinked                  ListEventTypeName = "agentic-provisioning-account-unlinked"
+	ListEventTypeNameAgenticProvisioningCredentialsRotated               ListEventTypeName = "agentic-provisioning-credentials-rotated"
+	ListEventTypeNameAgenticProvisioningPlanChanged                      ListEventTypeName = "agentic-provisioning-plan-changed"
+	ListEventTypeNameAgenticProvisioningTeamCreated                      ListEventTypeName = "agentic-provisioning-team-created"
+	ListEventTypeNameAiAgentUsageBilling                                 ListEventTypeName = "ai-agent-usage-billing"
+	ListEventTypeNameAiAgentUsageBillingConsent                          ListEventTypeName = "ai-agent-usage-billing-consent"
+	ListEventTypeNameAiAlertInvestigation                                ListEventTypeName = "ai-alert-investigation"
+	ListEventTypeNameAiCodeReview                                        ListEventTypeName = "ai-code-review"
+	ListEventTypeNameAiGatewayAccessPolicyCreated                        ListEventTypeName = "ai-gateway-access-policy-created"
+	ListEventTypeNameAiGatewayAccessPolicyDeleted                        ListEventTypeName = "ai-gateway-access-policy-deleted"
+	ListEventTypeNameAiGatewayAccessPolicyMemberAdded                    ListEventTypeName = "ai-gateway-access-policy-member-added"
+	ListEventTypeNameAiGatewayAccessPolicyMemberRemoved                  ListEventTypeName = "ai-gateway-access-policy-member-removed"
+	ListEventTypeNameAiGatewayAccessPolicyUpdated                        ListEventTypeName = "ai-gateway-access-policy-updated"
+	ListEventTypeNameAiGatewayApiKeyCreated                              ListEventTypeName = "ai-gateway-api-key-created"
+	ListEventTypeNameAiGatewayApiKeyDeleted                              ListEventTypeName = "ai-gateway-api-key-deleted"
+	ListEventTypeNameAiGatewayApiKeyQuotaUpdated                         ListEventTypeName = "ai-gateway-api-key-quota-updated"
+	ListEventTypeNameAiGatewayAutoReloadUpdated                          ListEventTypeName = "ai-gateway-auto-reload-updated"
+	ListEventTypeNameAiGatewayBudgetDefaultUpdated                       ListEventTypeName = "ai-gateway-budget-default-updated"
+	ListEventTypeNameAiGatewayByokCredentialCreated                      ListEventTypeName = "ai-gateway-byok-credential-created"
+	ListEventTypeNameAiGatewayByokCredentialDeleted                      ListEventTypeName = "ai-gateway-byok-credential-deleted"
+	ListEventTypeNameAiGatewayByokCredentialUpdated                      ListEventTypeName = "ai-gateway-byok-credential-updated"
+	ListEventTypeNameAiGatewayByokModelMappingsUpdated                   ListEventTypeName = "ai-gateway-byok-model-mappings-updated"
+	ListEventTypeNameAiGatewayCreditsPurchased                           ListEventTypeName = "ai-gateway-credits-purchased"
+	ListEventTypeNameAiGatewayGuardrailsUpdated                          ListEventTypeName = "ai-gateway-guardrails-updated"
+	ListEventTypeNameAiGatewayHeadquartersUpdated                        ListEventTypeName = "ai-gateway-headquarters-updated"
+	ListEventTypeNameAiGatewayHipaaComplianceToggled                     ListEventTypeName = "ai-gateway-hipaa-compliance-toggled"
+	ListEventTypeNameAiGatewayInferenceHooksEndpointUpdated              ListEventTypeName = "ai-gateway-inference-hooks-endpoint-updated"
+	ListEventTypeNameAiGatewayInferenceHooksHeadersCleared               ListEventTypeName = "ai-gateway-inference-hooks-headers-cleared"
+	ListEventTypeNameAiGatewayInferenceHooksHeadersUpdated               ListEventTypeName = "ai-gateway-inference-hooks-headers-updated"
+	ListEventTypeNameAiGatewayInferenceHooksPreviousSigningSecretRetired ListEventTypeName = "ai-gateway-inference-hooks-previous-signing-secret-retired"
+	ListEventTypeNameAiGatewayInferenceHooksRemoved                      ListEventTypeName = "ai-gateway-inference-hooks-removed"
+	ListEventTypeNameAiGatewayInferenceHooksSettingsUpdated              ListEventTypeName = "ai-gateway-inference-hooks-settings-updated"
+	ListEventTypeNameAiGatewayInferenceHooksSigningSecretCreated         ListEventTypeName = "ai-gateway-inference-hooks-signing-secret-created"
+	ListEventTypeNameAiGatewayInferenceHooksSigningSecretRotated         ListEventTypeName = "ai-gateway-inference-hooks-signing-secret-rotated"
+	ListEventTypeNameAiGatewayInferenceHooksToggled                      ListEventTypeName = "ai-gateway-inference-hooks-toggled"
+	ListEventTypeNameAiGatewayInferenceRegionsUpdated                    ListEventTypeName = "ai-gateway-inference-regions-updated"
+	ListEventTypeNameAiGatewayMemberBudgetChanges                        ListEventTypeName = "ai-gateway-member-budget-changes"
+	ListEventTypeNameAiGatewayModelAllowlistModelsUpdated                ListEventTypeName = "ai-gateway-model-allowlist-models-updated"
+	ListEventTypeNameAiGatewayModelAllowlistToggled                      ListEventTypeName = "ai-gateway-model-allowlist-toggled"
+	ListEventTypeNameAiGatewayModelCatalogAlertSettingsUpdated           ListEventTypeName = "ai-gateway-model-catalog-alert-settings-updated"
+	ListEventTypeNameAiGatewayPrivateModelCreated                        ListEventTypeName = "ai-gateway-private-model-created"
+	ListEventTypeNameAiGatewayPrivateModelDeleted                        ListEventTypeName = "ai-gateway-private-model-deleted"
+	ListEventTypeNameAiGatewayPrivateModelUpdated                        ListEventTypeName = "ai-gateway-private-model-updated"
+	ListEventTypeNameAiGatewayPrivateProviderCreated                     ListEventTypeName = "ai-gateway-private-provider-created"
+	ListEventTypeNameAiGatewayPrivateProviderDeleted                     ListEventTypeName = "ai-gateway-private-provider-deleted"
+	ListEventTypeNameAiGatewayPrivateProviderUpdated                     ListEventTypeName = "ai-gateway-private-provider-updated"
+	ListEventTypeNameAiGatewayPromptTrainingOptOutToggled                ListEventTypeName = "ai-gateway-prompt-training-opt-out-toggled"
+	ListEventTypeNameAiGatewayProviderAllowlistProvidersUpdated          ListEventTypeName = "ai-gateway-provider-allowlist-providers-updated"
+	ListEventTypeNameAiGatewayProviderAllowlistToggled                   ListEventTypeName = "ai-gateway-provider-allowlist-toggled"
+	ListEventTypeNameAiGatewayRuleCreated                                ListEventTypeName = "ai-gateway-rule-created"
+	ListEventTypeNameAiGatewayRuleDeleted                                ListEventTypeName = "ai-gateway-rule-deleted"
+	ListEventTypeNameAiGatewayRuleUpdated                                ListEventTypeName = "ai-gateway-rule-updated"
+	ListEventTypeNameAiGatewayScopeBudgetUpdated                         ListEventTypeName = "ai-gateway-scope-budget-updated"
+	ListEventTypeNameAiGatewaySystemCredentialFallbackOptOutToggled      ListEventTypeName = "ai-gateway-system-credential-fallback-opt-out-toggled"
+	ListEventTypeNameAiGatewayTranscriptsDefaultDisabled                 ListEventTypeName = "ai-gateway-transcripts-default-disabled"
+	ListEventTypeNameAiGatewayTranscriptsDefaultEnabled                  ListEventTypeName = "ai-gateway-transcripts-default-enabled"
+	ListEventTypeNameAiGatewayTranscriptsDisabled                        ListEventTypeName = "ai-gateway-transcripts-disabled"
+	ListEventTypeNameAiGatewayTranscriptsEnabled                         ListEventTypeName = "ai-gateway-transcripts-enabled"
+	ListEventTypeNameAiGatewayTranscriptsRetentionUpdated                ListEventTypeName = "ai-gateway-transcripts-retention-updated"
+	ListEventTypeNameAiGatewayVirtualModelConfigArchived                 ListEventTypeName = "ai-gateway-virtual-model-config-archived"
+	ListEventTypeNameAiGatewayVirtualModelConfigCreated                  ListEventTypeName = "ai-gateway-virtual-model-config-created"
+	ListEventTypeNameAiGatewayVirtualModelConfigDeleted                  ListEventTypeName = "ai-gateway-virtual-model-config-deleted"
+	ListEventTypeNameAiGatewayVirtualModelConfigRestored                 ListEventTypeName = "ai-gateway-virtual-model-config-restored"
+	ListEventTypeNameAiGatewayVirtualModelConfigUpdated                  ListEventTypeName = "ai-gateway-virtual-model-config-updated"
+	ListEventTypeNameAiGatewayZeroDataRetentionToggled                   ListEventTypeName = "ai-gateway-zero-data-retention-toggled"
+	ListEventTypeNameAiOmniagent                                         ListEventTypeName = "ai-omniagent"
+	ListEventTypeNameAiSecurityReview                                    ListEventTypeName = "ai-security-review"
+	ListEventTypeNameAiVerification                                      ListEventTypeName = "ai-verification"
+	ListEventTypeNameAlertGroupDetected                                  ListEventTypeName = "alert-group-detected"
+	ListEventTypeNameAlertGroupInvestigationCompleted                    ListEventTypeName = "alert-group-investigation-completed"
+	ListEventTypeNameAlertGroupPublished                                 ListEventTypeName = "alert-group-published"
+	ListEventTypeNameAlertInvestigationProjectAllowlistUpdated           ListEventTypeName = "alert-investigation-project-allowlist-updated"
+	ListEventTypeNameAlertResolved                                       ListEventTypeName = "alert-resolved"
+	ListEventTypeNameAlertRuleCreated                                    ListEventTypeName = "alert-rule-created"
+	ListEventTypeNameAlertRuleDeleted                                    ListEventTypeName = "alert-rule-deleted"
+	ListEventTypeNameAlertRuleUpdated                                    ListEventTypeName = "alert-rule-updated"
+	ListEventTypeNameAlias                                               ListEventTypeName = "alias"
+	ListEventTypeNameAliasChown                                          ListEventTypeName = "alias-chown"
+	ListEventTypeNameAliasDelete                                         ListEventTypeName = "alias-delete"
+	ListEventTypeNameAliasInviteCreated                                  ListEventTypeName = "alias-invite-created"
+	ListEventTypeNameAliasInviteJoined                                   ListEventTypeName = "alias-invite-joined"
+	ListEventTypeNameAliasInviteRevoked                                  ListEventTypeName = "alias-invite-revoked"
+	ListEventTypeNameAliasProtectionBypassCreated                        ListEventTypeName = "alias-protection-bypass-created"
+	ListEventTypeNameAliasProtectionBypassException                      ListEventTypeName = "alias-protection-bypass-exception"
+	ListEventTypeNameAliasProtectionBypassRegenerated                    ListEventTypeName = "alias-protection-bypass-regenerated"
+	ListEventTypeNameAliasProtectionBypassRevoked                        ListEventTypeName = "alias-protection-bypass-revoked"
+	ListEventTypeNameAliasSystem                                         ListEventTypeName = "alias-system"
+	ListEventTypeNameAliasUserScopedAccessDenied                         ListEventTypeName = "alias-user-scoped-access-denied"
+	ListEventTypeNameAliasUserScopedAccessGranted                        ListEventTypeName = "alias-user-scoped-access-granted"
+	ListEventTypeNameAliasUserScopedAccessRequested                      ListEventTypeName = "alias-user-scoped-access-requested"
+	ListEventTypeNameAliasUserScopedAccessRevoked                        ListEventTypeName = "alias-user-scoped-access-revoked"
+	ListEventTypeNameAliasesAssigned                                     ListEventTypeName = "aliases-assigned"
+	ListEventTypeNameAttackModeDisabled                                  ListEventTypeName = "attack-mode-disabled"
+	ListEventTypeNameAttackModeEnabled                                   ListEventTypeName = "attack-mode-enabled"
+	ListEventTypeNameAuditLogExportDownloaded                            ListEventTypeName = "audit-log-export-downloaded"
+	ListEventTypeNameAuditLogExportRequested                             ListEventTypeName = "audit-log-export-requested"
+	ListEventTypeNameAuthorizeGitDeployment                              ListEventTypeName = "authorize-git-deployment"
+	ListEventTypeNameAutoExposeSystemEnvs                                ListEventTypeName = "auto-expose-system-envs"
+	ListEventTypeNameAvatar                                              ListEventTypeName = "avatar"
+	ListEventTypeNameBillingSettingsUpdated                              ListEventTypeName = "billing-settings-updated"
+	ListEventTypeNameBulkRedirectsSettingsUpdated                        ListEventTypeName = "bulk-redirects-settings-updated"
+	ListEventTypeNameBulkRedirectsVersionPromoted                        ListEventTypeName = "bulk-redirects-version-promoted"
+	ListEventTypeNameBulkRedirectsVersionRestored                        ListEventTypeName = "bulk-redirects-version-restored"
+	ListEventTypeNameCert                                                ListEventTypeName = "cert"
+	ListEventTypeNameCertAutorenew                                       ListEventTypeName = "cert-autorenew"
+	ListEventTypeNameCertChown                                           ListEventTypeName = "cert-chown"
+	ListEventTypeNameCertClone                                           ListEventTypeName = "cert-clone"
+	ListEventTypeNameCertDelete                                          ListEventTypeName = "cert-delete"
+	ListEventTypeNameCertRenew                                           ListEventTypeName = "cert-renew"
+	ListEventTypeNameCertReplace                                         ListEventTypeName = "cert-replace"
+	ListEventTypeNameCertSystemCreate                                    ListEventTypeName = "cert-system-create"
+	ListEventTypeNameCodeOwnersAssumeOwners                              ListEventTypeName = "code-owners-assume-owners"
+	ListEventTypeNameCodeOwnersConfigUpdated                             ListEventTypeName = "code-owners-config-updated"
+	ListEventTypeNameComplianceDocumentDownloaded                        ListEventTypeName = "compliance-document-downloaded"
+	ListEventTypeNameComplianceDocumentPreviewed                         ListEventTypeName = "compliance-document-previewed"
+	ListEventTypeNameComplianceDocumentsBulkDownloaded                   ListEventTypeName = "compliance-documents-bulk-downloaded"
+	ListEventTypeNameConcurrentBuildsUpdate                              ListEventTypeName = "concurrent-builds-update"
+	ListEventTypeNameConnectApproveConnectorRequest                      ListEventTypeName = "connect-approve-connector-request"
+	ListEventTypeNameConnectAttachProject                                ListEventTypeName = "connect-attach-project"
+	ListEventTypeNameConnectBitbucket                                    ListEventTypeName = "connect-bitbucket"
+	ListEventTypeNameConnectBitbucketApp                                 ListEventTypeName = "connect-bitbucket-app"
+	ListEventTypeNameConnectBrandingUpdated                              ListEventTypeName = "connect-branding-updated"
+	ListEventTypeNameConnectCancelMcpEventSubscription                   ListEventTypeName = "connect-cancel-mcp-event-subscription"
+	ListEventTypeNameConnectConfigurationCreated                         ListEventTypeName = "connect-configuration-created"
+	ListEventTypeNameConnectConfigurationDeleted                         ListEventTypeName = "connect-configuration-deleted"
+	ListEventTypeNameConnectConfigurationLinkUpdated                     ListEventTypeName = "connect-configuration-link-updated"
+	ListEventTypeNameConnectConfigurationLinked                          ListEventTypeName = "connect-configuration-linked"
+	ListEventTypeNameConnectConfigurationUnlinked                        ListEventTypeName = "connect-configuration-unlinked"
+	ListEventTypeNameConnectConfigurationUpdated                         ListEventTypeName = "connect-configuration-updated"
+	ListEventTypeNameConnectCreateConnector                              ListEventTypeName = "connect-create-connector"
+	ListEventTypeNameConnectCreateMcpEventSubscription                   ListEventTypeName = "connect-create-mcp-event-subscription"
+	ListEventTypeNameConnectDeleteConnector                              ListEventTypeName = "connect-delete-connector"
+	ListEventTypeNameConnectDeleteConnectorRequest                       ListEventTypeName = "connect-delete-connector-request"
+	ListEventTypeNameConnectDeleteInstallation                           ListEventTypeName = "connect-delete-installation"
+	ListEventTypeNameConnectDetachProject                                ListEventTypeName = "connect-detach-project"
+	ListEventTypeNameConnectGithub                                       ListEventTypeName = "connect-github"
+	ListEventTypeNameConnectGithubCustomHost                             ListEventTypeName = "connect-github-custom-host"
+	ListEventTypeNameConnectGithubLimited                                ListEventTypeName = "connect-github-limited"
+	ListEventTypeNameConnectGitlab                                       ListEventTypeName = "connect-gitlab"
+	ListEventTypeNameConnectGitlabApp                                    ListEventTypeName = "connect-gitlab-app"
+	ListEventTypeNameConnectImportTokens                                 ListEventTypeName = "connect-import-tokens"
+	ListEventTypeNameConnectProvisionConnectorRequest                    ListEventTypeName = "connect-provision-connector-request"
+	ListEventTypeNameConnectRejectConnectorRequest                       ListEventTypeName = "connect-reject-connector-request"
+	ListEventTypeNameConnectRevokeAllTokens                              ListEventTypeName = "connect-revoke-all-tokens"
+	ListEventTypeNameConnectSubmitConnectorRequest                       ListEventTypeName = "connect-submit-connector-request"
+	ListEventTypeNameConnectUpdateConnector                              ListEventTypeName = "connect-update-connector"
+	ListEventTypeNameConnectUpdateConnectorRequest                       ListEventTypeName = "connect-update-connector-request"
+	ListEventTypeNameConnectUpdateTriggerDestinations                    ListEventTypeName = "connect-update-trigger-destinations"
+	ListEventTypeNameConnectUpsertInstallation                           ListEventTypeName = "connect-upsert-installation"
+	ListEventTypeNameConnectWithdrawConnectorRequest                     ListEventTypeName = "connect-withdraw-connector-request"
+	ListEventTypeNameCustomAlertCreated                                  ListEventTypeName = "custom-alert-created"
+	ListEventTypeNameCustomAlertDeleted                                  ListEventTypeName = "custom-alert-deleted"
+	ListEventTypeNameCustomAlertUpdated                                  ListEventTypeName = "custom-alert-updated"
+	ListEventTypeNameCustomEnvironmentsSettingsUpdated                   ListEventTypeName = "custom-environments-settings-updated"
+	ListEventTypeNameCustomMetricMetadataDeleted                         ListEventTypeName = "custom-metric-metadata-deleted"
+	ListEventTypeNameCustomMetricMetadataUpdated                         ListEventTypeName = "custom-metric-metadata-updated"
+	ListEventTypeNameCustomSuffixClear                                   ListEventTypeName = "custom-suffix-clear"
+	ListEventTypeNameCustomSuffixDisable                                 ListEventTypeName = "custom-suffix-disable"
+	ListEventTypeNameCustomSuffixEnable                                  ListEventTypeName = "custom-suffix-enable"
+	ListEventTypeNameCustomSuffixPending                                 ListEventTypeName = "custom-suffix-pending"
+	ListEventTypeNameCustomSuffixReady                                   ListEventTypeName = "custom-suffix-ready"
+	ListEventTypeNameDefaultPasswordProtection                           ListEventTypeName = "default-password-protection"
+	ListEventTypeNameDefaultSsoProtection                                ListEventTypeName = "default-sso-protection"
+	ListEventTypeNameDeployHookCreated                                   ListEventTypeName = "deploy-hook-created"
+	ListEventTypeNameDeployHookDeduped                                   ListEventTypeName = "deploy-hook-deduped"
+	ListEventTypeNameDeployHookDeleted                                   ListEventTypeName = "deploy-hook-deleted"
+	ListEventTypeNameDeployHookProcessed                                 ListEventTypeName = "deploy-hook-processed"
+	ListEventTypeNameDeployment                                          ListEventTypeName = "deployment"
+	ListEventTypeNameDeploymentCheckCreated                              ListEventTypeName = "deployment-check-created"
+	ListEventTypeNameDeploymentCheckDeleted                              ListEventTypeName = "deployment-check-deleted"
+	ListEventTypeNameDeploymentCheckUpdated                              ListEventTypeName = "deployment-check-updated"
+	ListEventTypeNameDeploymentChown                                     ListEventTypeName = "deployment-chown"
+	ListEventTypeNameDeploymentCreationBlocked                           ListEventTypeName = "deployment-creation-blocked"
+	ListEventTypeNameDeploymentDelete                                    ListEventTypeName = "deployment-delete"
+	ListEventTypeNameDeploymentPolicyBlocked                             ListEventTypeName = "deployment-policy-blocked"
+	ListEventTypeNameDeploymentProtectionAccessRequests                  ListEventTypeName = "deployment-protection-access-requests"
+	ListEventTypeNameDeploymentUndeleted                                 ListEventTypeName = "deployment-undeleted"
+	ListEventTypeNameDisabledIntegrationInstallationRemoved              ListEventTypeName = "disabled-integration-installation-removed"
+	ListEventTypeNameDisconnectBitbucketApp                              ListEventTypeName = "disconnect-bitbucket-app"
+	ListEventTypeNameDisconnectGithub                                    ListEventTypeName = "disconnect-github"
+	ListEventTypeNameDisconnectGithubCustomHost                          ListEventTypeName = "disconnect-github-custom-host"
+	ListEventTypeNameDisconnectGithubLimited                             ListEventTypeName = "disconnect-github-limited"
+	ListEventTypeNameDisconnectGitlabApp                                 ListEventTypeName = "disconnect-gitlab-app"
+	ListEventTypeNameDnsAdd                                              ListEventTypeName = "dns-add"
+	ListEventTypeNameDnsDelete                                           ListEventTypeName = "dns-delete"
+	ListEventTypeNameDnsRecordInternal                                   ListEventTypeName = "dns-record-internal"
+	ListEventTypeNameDnsUpdate                                           ListEventTypeName = "dns-update"
+	ListEventTypeNameDnsZonefileImport                                   ListEventTypeName = "dns-zonefile-import"
+	ListEventTypeNameDomain                                              ListEventTypeName = "domain"
+	ListEventTypeNameDomainBuy                                           ListEventTypeName = "domain-buy"
+	ListEventTypeNameDomainCdn                                           ListEventTypeName = "domain-cdn"
+	ListEventTypeNameDomainChown                                         ListEventTypeName = "domain-chown"
+	ListEventTypeNameDomainCustomNsChange                                ListEventTypeName = "domain-custom-ns-change"
+	ListEventTypeNameDomainDelegated                                     ListEventTypeName = "domain-delegated"
+	ListEventTypeNameDomainDelete                                        ListEventTypeName = "domain-delete"
+	ListEventTypeNameDomainEchChange                                     ListEventTypeName = "domain-ech-change"
+	ListEventTypeNameDomainMoveIn                                        ListEventTypeName = "domain-move-in"
+	ListEventTypeNameDomainMoveOut                                       ListEventTypeName = "domain-move-out"
+	ListEventTypeNameDomainMoveOutRequestSent                            ListEventTypeName = "domain-move-out-request-sent"
+	ListEventTypeNameDomainRenewChange                                   ListEventTypeName = "domain-renew-change"
+	ListEventTypeNameDomainServiceTypeUpdated                            ListEventTypeName = "domain-service-type-updated"
+	ListEventTypeNameDomainTransferIn                                    ListEventTypeName = "domain-transfer-in"
+	ListEventTypeNameDomainTransferInCanceled                            ListEventTypeName = "domain-transfer-in-canceled"
+	ListEventTypeNameDomainTransferInCompleted                           ListEventTypeName = "domain-transfer-in-completed"
+	ListEventTypeNameDomainZoneChange                                    ListEventTypeName = "domain-zone-change"
+	ListEventTypeNameDomainZoneChangeInternal                            ListEventTypeName = "domain-zone-change-internal"
+	ListEventTypeNameDrainCreated                                        ListEventTypeName = "drain-created"
+	ListEventTypeNameDrainDeleted                                        ListEventTypeName = "drain-deleted"
+	ListEventTypeNameDrainDisabled                                       ListEventTypeName = "drain-disabled"
+	ListEventTypeNameDrainEnabled                                        ListEventTypeName = "drain-enabled"
+	ListEventTypeNameDrainUpdated                                        ListEventTypeName = "drain-updated"
+	ListEventTypeNameDriveCreated                                        ListEventTypeName = "drive-created"
+	ListEventTypeNameDriveDeleted                                        ListEventTypeName = "drive-deleted"
+	ListEventTypeNameDriveSnapshotCreated                                ListEventTypeName = "drive-snapshot-created"
+	ListEventTypeNameDriveSnapshotDeleted                                ListEventTypeName = "drive-snapshot-deleted"
+	ListEventTypeNameEdgeCacheDangerouslyDeleteBySrcImages               ListEventTypeName = "edge-cache-dangerously-delete-by-src-images"
+	ListEventTypeNameEdgeCacheDangerouslyDeleteByTags                    ListEventTypeName = "edge-cache-dangerously-delete-by-tags"
+	ListEventTypeNameEdgeCacheDangerouslyDeleteImmutableStatic           ListEventTypeName = "edge-cache-dangerously-delete-immutable-static"
+	ListEventTypeNameEdgeCacheInvalidateBySrcImages                      ListEventTypeName = "edge-cache-invalidate-by-src-images"
+	ListEventTypeNameEdgeCacheInvalidateByTags                           ListEventTypeName = "edge-cache-invalidate-by-tags"
+	ListEventTypeNameEdgeCachePurgeAll                                   ListEventTypeName = "edge-cache-purge-all"
+	ListEventTypeNameEdgeCacheRollbackPurge                              ListEventTypeName = "edge-cache-rollback-purge"
+	ListEventTypeNameEdgeConfigBackupRestored                            ListEventTypeName = "edge-config-backup-restored"
+	ListEventTypeNameEdgeConfigCreated                                   ListEventTypeName = "edge-config-created"
+	ListEventTypeNameEdgeConfigDeleted                                   ListEventTypeName = "edge-config-deleted"
+	ListEventTypeNameEdgeConfigItemsUpdated                              ListEventTypeName = "edge-config-items-updated"
+	ListEventTypeNameEdgeConfigSchemaDeleted                             ListEventTypeName = "edge-config-schema-deleted"
+	ListEventTypeNameEdgeConfigSchemaUpdated                             ListEventTypeName = "edge-config-schema-updated"
+	ListEventTypeNameEdgeConfigTokenCreated                              ListEventTypeName = "edge-config-token-created"
+	ListEventTypeNameEdgeConfigTokenDeleted                              ListEventTypeName = "edge-config-token-deleted"
+	ListEventTypeNameEdgeConfigTransferIn                                ListEventTypeName = "edge-config-transfer-in"
+	ListEventTypeNameEdgeConfigTransferOut                               ListEventTypeName = "edge-config-transfer-out"
+	ListEventTypeNameEdgeConfigUpdated                                   ListEventTypeName = "edge-config-updated"
+	ListEventTypeNameEmail                                               ListEventTypeName = "email"
+	ListEventTypeNameEmailNotificationRuleRemoved                        ListEventTypeName = "email-notification-rule-removed"
+	ListEventTypeNameEmailNotificationRuleUpdated                        ListEventTypeName = "email-notification-rule-updated"
+	ListEventTypeNameEmuMemberRemovedUnverifiedDomain                    ListEventTypeName = "emu-member-removed-unverified-domain"
+	ListEventTypeNameEnforceDisjunctiveProductionSecrets                 ListEventTypeName = "enforce-disjunctive-production-secrets"
+	ListEventTypeNameEnforceSensitiveEnvironmentVariables                ListEventTypeName = "enforce-sensitive-environment-variables"
+	ListEventTypeNameEnvVariableAdd                                      ListEventTypeName = "env-variable-add"
+	ListEventTypeNameEnvVariableDelete                                   ListEventTypeName = "env-variable-delete"
+	ListEventTypeNameEnvVariableEdit                                     ListEventTypeName = "env-variable-edit"
+	ListEventTypeNameEnvVariableMasked                                   ListEventTypeName = "env-variable-masked"
+	ListEventTypeNameEnvVariableRead                                     ListEventTypeName = "env-variable-read"
+	ListEventTypeNameEnvVariableReadCliDev                               ListEventTypeName = "env-variable-read:cli:dev"
+	ListEventTypeNameEnvVariableReadCliEnvAdd                            ListEventTypeName = "env-variable-read:cli:env:add"
+	ListEventTypeNameEnvVariableReadCliEnvLs                             ListEventTypeName = "env-variable-read:cli:env:ls"
+	ListEventTypeNameEnvVariableReadCliEnvPull                           ListEventTypeName = "env-variable-read:cli:env:pull"
+	ListEventTypeNameEnvVariableReadCliEnvRm                             ListEventTypeName = "env-variable-read:cli:env:rm"
+	ListEventTypeNameEnvVariableReadCliPull                              ListEventTypeName = "env-variable-read:cli:pull"
+	ListEventTypeNameEnvVariableReadUnknownSource                        ListEventTypeName = "env-variable-read:unknown-source"
+	ListEventTypeNameEnvVariableReadV0EnvPull                            ListEventTypeName = "env-variable-read:v0:env:pull"
+	ListEventTypeNameEnvVariableRotated                                  ListEventTypeName = "env-variable-rotated"
+	ListEventTypeNameExperimentCreated                                   ListEventTypeName = "experiment-created"
+	ListEventTypeNameExperimentDeleted                                   ListEventTypeName = "experiment-deleted"
+	ListEventTypeNameExperimentTransitioned                              ListEventTypeName = "experiment-transitioned"
+	ListEventTypeNameExperimentUpdated                                   ListEventTypeName = "experiment-updated"
+	ListEventTypeNameFirewallBypassCreated                               ListEventTypeName = "firewall-bypass-created"
+	ListEventTypeNameFirewallBypassDeleted                               ListEventTypeName = "firewall-bypass-deleted"
+	ListEventTypeNameFirewallConditionalBypassCreated                    ListEventTypeName = "firewall-conditional-bypass-created"
+	ListEventTypeNameFirewallConditionalBypassDeleted                    ListEventTypeName = "firewall-conditional-bypass-deleted"
+	ListEventTypeNameFirewallConditionalBypassUpdated                    ListEventTypeName = "firewall-conditional-bypass-updated"
+	ListEventTypeNameFirewallConfigModified                              ListEventTypeName = "firewall-config-modified"
+	ListEventTypeNameFirewallConfigPromoted                              ListEventTypeName = "firewall-config-promoted"
+	ListEventTypeNameFirewallConfigRemoved                               ListEventTypeName = "firewall-config-removed"
+	ListEventTypeNameFirewallManagedRulegroupUpdated                     ListEventTypeName = "firewall-managed-rulegroup-updated"
+	ListEventTypeNameFirewallManagedRulesetUpdated                       ListEventTypeName = "firewall-managed-ruleset-updated"
+	ListEventTypeNameFlag                                                ListEventTypeName = "flag"
+	ListEventTypeNameFlagArchived                                        ListEventTypeName = "flag-archived"
+	ListEventTypeNameFlagCreated                                         ListEventTypeName = "flag-created"
+	ListEventTypeNameFlagDeleted                                         ListEventTypeName = "flag-deleted"
+	ListEventTypeNameFlagUnarchived                                      ListEventTypeName = "flag-unarchived"
+	ListEventTypeNameFlagUpdated                                         ListEventTypeName = "flag-updated"
+	ListEventTypeNameFlagsConnectionCreated                              ListEventTypeName = "flags-connection-created"
+	ListEventTypeNameFlagsConnectionDeleted                              ListEventTypeName = "flags-connection-deleted"
+	ListEventTypeNameFlagsExplorerSubscription                           ListEventTypeName = "flags-explorer-subscription"
+	ListEventTypeNameFlagsOverridesSigned                                ListEventTypeName = "flags-overrides-signed"
+	ListEventTypeNameFlagsSdkKey                                         ListEventTypeName = "flags-sdk-key"
+	ListEventTypeNameFlagsSdkKeyAdded                                    ListEventTypeName = "flags-sdk-key-added"
+	ListEventTypeNameFlagsSdkKeyDeleted                                  ListEventTypeName = "flags-sdk-key-deleted"
+	ListEventTypeNameFlagsSdkKeyRead                                     ListEventTypeName = "flags-sdk-key-read"
+	ListEventTypeNameFlagsSegment                                        ListEventTypeName = "flags-segment"
+	ListEventTypeNameFlagsSettings                                       ListEventTypeName = "flags-settings"
+	ListEventTypeNameFlagsTransferred                                    ListEventTypeName = "flags-transferred"
+	ListEventTypeNameFlatRateCdnAutoUpgradeConsent                       ListEventTypeName = "flat-rate-cdn-auto-upgrade-consent"
+	ListEventTypeNameFlatRateCdnMigrationOptOut                          ListEventTypeName = "flat-rate-cdn-migration-opt-out"
+	ListEventTypeNameGitAccountIntegrationLinkAdded                      ListEventTypeName = "git_account_integration_link_added"
+	ListEventTypeNameGitIntegrationRepoPush                              ListEventTypeName = "git-integration-repo-push"
+	ListEventTypeNameGlobalConfigBackupRestored                          ListEventTypeName = "global-config-backup-restored"
+	ListEventTypeNameGlobalConfigCreated                                 ListEventTypeName = "global-config-created"
+	ListEventTypeNameGlobalConfigDeleted                                 ListEventTypeName = "global-config-deleted"
+	ListEventTypeNameGlobalConfigItemsUpdated                            ListEventTypeName = "global-config-items-updated"
+	ListEventTypeNameGlobalConfigSchemaDeleted                           ListEventTypeName = "global-config-schema-deleted"
+	ListEventTypeNameGlobalConfigSchemaUpdated                           ListEventTypeName = "global-config-schema-updated"
+	ListEventTypeNameGlobalConfigTokenCreated                            ListEventTypeName = "global-config-token-created"
+	ListEventTypeNameGlobalConfigTokenDeleted                            ListEventTypeName = "global-config-token-deleted"
+	ListEventTypeNameGlobalConfigTransferIn                              ListEventTypeName = "global-config-transfer-in"
+	ListEventTypeNameGlobalConfigTransferOut                             ListEventTypeName = "global-config-transfer-out"
+	ListEventTypeNameGlobalConfigUpdated                                 ListEventTypeName = "global-config-updated"
+	ListEventTypeNameInstantRollbackCreated                              ListEventTypeName = "instant-rollback-created"
+	ListEventTypeNameIntegrationAccessTokenSettingsUpdated               ListEventTypeName = "integration-access-token-settings-updated"
+	ListEventTypeNameIntegrationConfigurationCredentialRevoked           ListEventTypeName = "integration-configuration-credential-revoked"
+	ListEventTypeNameIntegrationConfigurationCredentialRotated           ListEventTypeName = "integration-configuration-credential-rotated"
+	ListEventTypeNameIntegrationConfigurationOwnerChanged                ListEventTypeName = "integration-configuration-owner-changed"
+	ListEventTypeNameIntegrationConfigurationScopeChangeConfirmed        ListEventTypeName = "integration-configuration-scope-change-confirmed"
+	ListEventTypeNameIntegrationConfigurationTransferInSuccess           ListEventTypeName = "integration-configuration-transfer-in-success"
+	ListEventTypeNameIntegrationConfigurationTransferOutSuccess          ListEventTypeName = "integration-configuration-transfer-out-success"
+	ListEventTypeNameIntegrationConfigurationsDisabled                   ListEventTypeName = "integration-configurations-disabled"
+	ListEventTypeNameIntegrationInstallationBillingPlanUpdated           ListEventTypeName = "integration-installation-billing-plan-updated"
+	ListEventTypeNameIntegrationInstallationCompleted                    ListEventTypeName = "integration-installation-completed"
+	ListEventTypeNameIntegrationInstallationPermissionUpdated            ListEventTypeName = "integration-installation-permission-updated"
+	ListEventTypeNameIntegrationInstallationRemoved                      ListEventTypeName = "integration-installation-removed"
+	ListEventTypeNameIntegrationPreviousSecretRevoked                    ListEventTypeName = "integration-previous-secret-revoked"
+	ListEventTypeNameIntegrationResourceRedisCommandExecuted             ListEventTypeName = "integration-resource-redis-command-executed"
+	ListEventTypeNameIntegrationResourceSqlQueryExecuted                 ListEventTypeName = "integration-resource-sql-query-executed"
+	ListEventTypeNameIntegrationScopeChanged                             ListEventTypeName = "integration-scope-changed"
+	ListEventTypeNameIntegrationSecretRotated                            ListEventTypeName = "integration-secret-rotated"
+	ListEventTypeNameInvoiceModified                                     ListEventTypeName = "invoice-modified"
+	ListEventTypeNameInvoiceRefunded                                     ListEventTypeName = "invoice-refunded"
+	ListEventTypeNameKmsIssuerCreated                                    ListEventTypeName = "kms-issuer-created"
+	ListEventTypeNameKmsIssuerDeleted                                    ListEventTypeName = "kms-issuer-deleted"
+	ListEventTypeNameKmsIssuerKeyActivated                               ListEventTypeName = "kms-issuer-key-activated"
+	ListEventTypeNameKmsIssuerKeyCreated                                 ListEventTypeName = "kms-issuer-key-created"
+	ListEventTypeNameKmsIssuerKeyRevoked                                 ListEventTypeName = "kms-issuer-key-revoked"
+	ListEventTypeNameKmsIssuerKeyRotated                                 ListEventTypeName = "kms-issuer-key-rotated"
+	ListEventTypeNameKmsIssuerPolicyCreated                              ListEventTypeName = "kms-issuer-policy-created"
+	ListEventTypeNameKmsIssuerPolicyDeleted                              ListEventTypeName = "kms-issuer-policy-deleted"
+	ListEventTypeNameKmsIssuerPolicyUpdated                              ListEventTypeName = "kms-issuer-policy-updated"
+	ListEventTypeNameKmsIssuerUpdated                                    ListEventTypeName = "kms-issuer-updated"
+	ListEventTypeNameLogDrainCreated                                     ListEventTypeName = "log-drain-created"
+	ListEventTypeNameLogDrainDeleted                                     ListEventTypeName = "log-drain-deleted"
+	ListEventTypeNameLogDrainDisabled                                    ListEventTypeName = "log-drain-disabled"
+	ListEventTypeNameLogDrainEnabled                                     ListEventTypeName = "log-drain-enabled"
+	ListEventTypeNameLogin                                               ListEventTypeName = "login"
+	ListEventTypeNameLoginConnectionLinked                               ListEventTypeName = "login-connection-linked"
+	ListEventTypeNameLoginConnectionUnlinked                             ListEventTypeName = "login-connection-unlinked"
+	ListEventTypeNameManualDeploymentPromotionCreated                    ListEventTypeName = "manual-deployment-promotion-created"
+	ListEventTypeNameMarketplaceAutoCardCollectionUpdated                ListEventTypeName = "marketplace-auto-card-collection-updated"
+	ListEventTypeNameMarketplaceBillingCollectionUpdated                 ListEventTypeName = "marketplace-billing-collection-updated"
+	ListEventTypeNameMarketplaceFlexCommitOptIn                          ListEventTypeName = "marketplace-flex-commit-opt-in"
+	ListEventTypeNameMarketplaceIntegrationAllowlistUpdated              ListEventTypeName = "marketplace-integration-allowlist-updated"
+	ListEventTypeNameMessageboardChannelCreated                          ListEventTypeName = "messageboard-channel-created"
+	ListEventTypeNameMessageboardChannelUpdated                          ListEventTypeName = "messageboard-channel-updated"
+	ListEventTypeNameMessageboardCreated                                 ListEventTypeName = "messageboard-created"
+	ListEventTypeNameMessageboardGrantCreated                            ListEventTypeName = "messageboard-grant-created"
+	ListEventTypeNameMessageboardGrantRevoked                            ListEventTypeName = "messageboard-grant-revoked"
+	ListEventTypeNameMessageboardGrantUpdated                            ListEventTypeName = "messageboard-grant-updated"
+	ListEventTypeNameMessageboardPrivateChannelCreated                   ListEventTypeName = "messageboard-private-channel-created"
+	ListEventTypeNameMessageboardPrivateChannelUpdated                   ListEventTypeName = "messageboard-private-channel-updated"
+	ListEventTypeNameMessageboardPrivateCreated                          ListEventTypeName = "messageboard-private-created"
+	ListEventTypeNameMessageboardPrivateGrantCreated                     ListEventTypeName = "messageboard-private-grant-created"
+	ListEventTypeNameMessageboardPrivateGrantRevoked                     ListEventTypeName = "messageboard-private-grant-revoked"
+	ListEventTypeNameMessageboardPrivateGrantUpdated                     ListEventTypeName = "messageboard-private-grant-updated"
+	ListEventTypeNameMessageboardPrivateProjectGranted                   ListEventTypeName = "messageboard-private-project-granted"
+	ListEventTypeNameMessageboardPrivateProjectRevoked                   ListEventTypeName = "messageboard-private-project-revoked"
+	ListEventTypeNameMessageboardProjectChannelCreated                   ListEventTypeName = "messageboard-project-channel-created"
+	ListEventTypeNameMessageboardProjectCreated                          ListEventTypeName = "messageboard-project-created"
+	ListEventTypeNameMessageboardProjectGranted                          ListEventTypeName = "messageboard-project-granted"
+	ListEventTypeNameMessageboardProjectPrivateChannelCreated            ListEventTypeName = "messageboard-project-private-channel-created"
+	ListEventTypeNameMessageboardProjectRevoked                          ListEventTypeName = "messageboard-project-revoked"
+	ListEventTypeNameMessageboardSchemaRegistered                        ListEventTypeName = "messageboard-schema-registered"
+	ListEventTypeNameMessageboardVisibilityUpdated                       ListEventTypeName = "messageboard-visibility-updated"
+	ListEventTypeNameMicrofrontendGroupAdded                             ListEventTypeName = "microfrontend-group-added"
+	ListEventTypeNameMicrofrontendGroupDeleted                           ListEventTypeName = "microfrontend-group-deleted"
+	ListEventTypeNameMicrofrontendGroupUpdated                           ListEventTypeName = "microfrontend-group-updated"
+	ListEventTypeNameMicrofrontendProjectAddedToGroup                    ListEventTypeName = "microfrontend-project-added-to-group"
+	ListEventTypeNameMicrofrontendProjectRemovedFromGroup                ListEventTypeName = "microfrontend-project-removed-from-group"
+	ListEventTypeNameMicrofrontendProjectUpdated                         ListEventTypeName = "microfrontend-project-updated"
+	ListEventTypeNameMonitoringAlertUpdated                              ListEventTypeName = "monitoring-alert-updated"
+	ListEventTypeNameMonitoringDisabled                                  ListEventTypeName = "monitoring-disabled"
+	ListEventTypeNameMonitoringEnabled                                   ListEventTypeName = "monitoring-enabled"
+	ListEventTypeNameOauthAppConnectionCreated                           ListEventTypeName = "oauth-app-connection-created"
+	ListEventTypeNameOauthAppConnectionRemoved                           ListEventTypeName = "oauth-app-connection-removed"
+	ListEventTypeNameOauthAppConnectionUpdated                           ListEventTypeName = "oauth-app-connection-updated"
+	ListEventTypeNameOauthAppCreated                                     ListEventTypeName = "oauth-app-created"
+	ListEventTypeNameOauthAppDeleted                                     ListEventTypeName = "oauth-app-deleted"
+	ListEventTypeNameOauthAppSecretDeleted                               ListEventTypeName = "oauth-app-secret-deleted"
+	ListEventTypeNameOauthAppSecretGenerated                             ListEventTypeName = "oauth-app-secret-generated"
+	ListEventTypeNameOauthAppTokenCreated                                ListEventTypeName = "oauth-app-token-created"
+	ListEventTypeNameOauthAppUpdated                                     ListEventTypeName = "oauth-app-updated"
+	ListEventTypeNameObservabilityDisabled                               ListEventTypeName = "observability-disabled"
+	ListEventTypeNameObservabilityEnabled                                ListEventTypeName = "observability-enabled"
+	ListEventTypeNameObservabilityPlusProjectDisabled                    ListEventTypeName = "observability-plus-project-disabled"
+	ListEventTypeNameObservabilityPlusProjectEnabled                     ListEventTypeName = "observability-plus-project-enabled"
+	ListEventTypeNameOidcPolicyCreated                                   ListEventTypeName = "oidc-policy-created"
+	ListEventTypeNameOidcPolicyDeleted                                   ListEventTypeName = "oidc-policy-deleted"
+	ListEventTypeNameOidcPolicyUpdated                                   ListEventTypeName = "oidc-policy-updated"
+	ListEventTypeNameOidcPolicyUsedToObtainAppToken                      ListEventTypeName = "oidc-policy-used-to-obtain-app-token"
+	ListEventTypeNameOrganizationAvatarUpdate                            ListEventTypeName = "organization-avatar-update"
+	ListEventTypeNameOrganizationCreate                                  ListEventTypeName = "organization-create"
+	ListEventTypeNameOrganizationDelete                                  ListEventTypeName = "organization-delete"
+	ListEventTypeNameOrganizationDomainVerificationCreated               ListEventTypeName = "organization-domain-verification-created"
+	ListEventTypeNameOrganizationDomainVerificationDeleted               ListEventTypeName = "organization-domain-verification-deleted"
+	ListEventTypeNameOrganizationDomainVerificationVerified              ListEventTypeName = "organization-domain-verification-verified"
+	ListEventTypeNameOrganizationDsyncDelete                             ListEventTypeName = "organization-dsync-delete"
+	ListEventTypeNameOrganizationDsyncGroupDelete                        ListEventTypeName = "organization-dsync-group-delete"
+	ListEventTypeNameOrganizationDsyncGroupUpsert                        ListEventTypeName = "organization-dsync-group-upsert"
+	ListEventTypeNameOrganizationDsyncSyncStart                          ListEventTypeName = "organization-dsync-sync-start"
+	ListEventTypeNameOrganizationEmuDomainsMerged                        ListEventTypeName = "organization-emu-domains-merged"
+	ListEventTypeNameOrganizationEmuTeamUpdated                          ListEventTypeName = "organization-emu-team-updated"
+	ListEventTypeNameOrganizationEmuUpdated                              ListEventTypeName = "organization-emu-updated"
+	ListEventTypeNameOrganizationNameUpdate                              ListEventTypeName = "organization-name-update"
+	ListEventTypeNameOrganizationSlugUpdate                              ListEventTypeName = "organization-slug-update"
+	ListEventTypeNameOrganizationSsoDeleted                              ListEventTypeName = "organization-sso-deleted"
+	ListEventTypeNameOrganizationSsoEnforced                             ListEventTypeName = "organization-sso-enforced"
+	ListEventTypeNameOrganizationSsoNewTeamsUpdate                       ListEventTypeName = "organization-sso-new-teams-update"
+	ListEventTypeNameOrganizationTeamAdd                                 ListEventTypeName = "organization-team-add"
+	ListEventTypeNameOrganizationTeamCreate                              ListEventTypeName = "organization-team-create"
+	ListEventTypeNameOrganizationTeamDelete                              ListEventTypeName = "organization-team-delete"
+	ListEventTypeNameOrganizationTeamDsyncUpdate                         ListEventTypeName = "organization-team-dsync-update"
+	ListEventTypeNameOrganizationTeamSsoUpdate                           ListEventTypeName = "organization-team-sso-update"
+	ListEventTypeNameOrganizationUpdateAccountFlowDismissed              ListEventTypeName = "organization-update-account-flow-dismissed"
+	ListEventTypeNameOrganizationUpdateAccountFlowTriggered              ListEventTypeName = "organization-update-account-flow-triggered"
+	ListEventTypeNameOwnerBlocked                                        ListEventTypeName = "owner-blocked"
+	ListEventTypeNameOwnerSoftBlocked                                    ListEventTypeName = "owner-soft-blocked"
+	ListEventTypeNameOwnerSoftUnblocked                                  ListEventTypeName = "owner-soft-unblocked"
+	ListEventTypeNameOwnerUnblocked                                      ListEventTypeName = "owner-unblocked"
+	ListEventTypeNamePageIntegrityConfigUpdated                          ListEventTypeName = "page-integrity-config-updated"
+	ListEventTypeNamePageIntegrityHeaderApproved                         ListEventTypeName = "page-integrity-header-approved"
+	ListEventTypeNamePageIntegrityHeaderRejected                         ListEventTypeName = "page-integrity-header-rejected"
+	ListEventTypeNamePageIntegrityInventoryCleared                       ListEventTypeName = "page-integrity-inventory-cleared"
+	ListEventTypeNamePageIntegrityResourceApproved                       ListEventTypeName = "page-integrity-resource-approved"
+	ListEventTypeNamePageIntegrityResourceDeleted                        ListEventTypeName = "page-integrity-resource-deleted"
+	ListEventTypeNamePageIntegrityResourceRejected                       ListEventTypeName = "page-integrity-resource-rejected"
+	ListEventTypeNamePageIntegrityScriptApprovalRuleCreated              ListEventTypeName = "page-integrity-script-approval-rule-created"
+	ListEventTypeNamePageIntegrityScriptApprovalRuleDeleted              ListEventTypeName = "page-integrity-script-approval-rule-deleted"
+	ListEventTypeNamePasskeyCreated                                      ListEventTypeName = "passkey-created"
+	ListEventTypeNamePasskeyDeleted                                      ListEventTypeName = "passkey-deleted"
+	ListEventTypeNamePasskeyUpdated                                      ListEventTypeName = "passkey-updated"
+	ListEventTypeNamePassportAccessGranted                               ListEventTypeName = "passport-access-granted"
+	ListEventTypeNamePasswordProtectionDisabled                          ListEventTypeName = "password-protection-disabled"
+	ListEventTypeNamePasswordProtectionEnabled                           ListEventTypeName = "password-protection-enabled"
+	ListEventTypeNamePaymentMethodAdded                                  ListEventTypeName = "payment-method-added"
+	ListEventTypeNamePaymentMethodDefaultUpdated                         ListEventTypeName = "payment-method-default-updated"
+	ListEventTypeNamePaymentMethodRemoved                                ListEventTypeName = "payment-method-removed"
+	ListEventTypeNamePerimeterCreated                                    ListEventTypeName = "perimeter-created"
+	ListEventTypeNamePerimeterDeleted                                    ListEventTypeName = "perimeter-deleted"
+	ListEventTypeNamePerimeterRenamed                                    ListEventTypeName = "perimeter-renamed"
+	ListEventTypeNamePerimeterRolledBack                                 ListEventTypeName = "perimeter-rolled-back"
+	ListEventTypeNamePerimeterUpdated                                    ListEventTypeName = "perimeter-updated"
+	ListEventTypeNamePlan                                                ListEventTypeName = "plan"
+	ListEventTypeNamePreviewDeploymentSuffixDisabled                     ListEventTypeName = "preview-deployment-suffix-disabled"
+	ListEventTypeNamePreviewDeploymentSuffixEnabled                      ListEventTypeName = "preview-deployment-suffix-enabled"
+	ListEventTypeNamePreviewDeploymentSuffixUpdate                       ListEventTypeName = "preview-deployment-suffix-update"
+	ListEventTypeNamePrivatelinkEndpointCreated                          ListEventTypeName = "privatelink-endpoint-created"
+	ListEventTypeNamePrivatelinkEndpointDeleted                          ListEventTypeName = "privatelink-endpoint-deleted"
+	ListEventTypeNamePrivatelinkEndpointUpdated                          ListEventTypeName = "privatelink-endpoint-updated"
+	ListEventTypeNameProductionBranchUpdated                             ListEventTypeName = "production-branch-updated"
+	ListEventTypeNameProjectAddAlias                                     ListEventTypeName = "project-add-alias"
+	ListEventTypeNameProjectAddRedirect                                  ListEventTypeName = "project-add-redirect"
+	ListEventTypeNameProjectAffectedProjectsDeploymentsUpdated           ListEventTypeName = "project-affected-projects-deployments-updated"
+	ListEventTypeNameProjectAliasConfiguredChange                        ListEventTypeName = "project-alias-configured-change"
+	ListEventTypeNameProjectAnalyticsDisabled                            ListEventTypeName = "project-analytics-disabled"
+	ListEventTypeNameProjectAnalyticsEnabled                             ListEventTypeName = "project-analytics-enabled"
+	ListEventTypeNameProjectAutoAssignCustomProductionDomainsUpdated     ListEventTypeName = "project-auto-assign-custom-production-domains-updated"
+	ListEventTypeNameProjectAutomationBypass                             ListEventTypeName = "project-automation-bypass"
+	ListEventTypeNameProjectAvatarDarkModeUpdate                         ListEventTypeName = "project-avatar-dark-mode-update"
+	ListEventTypeNameProjectAvatarUpdate                                 ListEventTypeName = "project-avatar-update"
+	ListEventTypeNameProjectBuildCommandUpdated                          ListEventTypeName = "project-build-command-updated"
+	ListEventTypeNameProjectBuildLogsAndSourceProtectionUpdated          ListEventTypeName = "project-build-logs-and-source-protection-updated"
+	ListEventTypeNameProjectBuildMachineUpdated                          ListEventTypeName = "project-build-machine-updated"
+	ListEventTypeNameProjectCardWidgetPreferenceUpdated                  ListEventTypeName = "project-card-widget-preference-updated"
+	ListEventTypeNameProjectClientCertDelete                             ListEventTypeName = "project-client-cert-delete"
+	ListEventTypeNameProjectClientCertUpload                             ListEventTypeName = "project-client-cert-upload"
+	ListEventTypeNameProjectConnectConfigurations                        ListEventTypeName = "project-connect-configurations"
+	ListEventTypeNameProjectConsolidatedGitCommitStatusUpdated           ListEventTypeName = "project-consolidated-git-commit-status-updated"
+	ListEventTypeNameProjectCreated                                      ListEventTypeName = "project-created"
+	ListEventTypeNameProjectCronJobsToggled                              ListEventTypeName = "project-cron-jobs-toggled"
+	ListEventTypeNameProjectCustomEnvironmentCreated                     ListEventTypeName = "project-custom-environment-created"
+	ListEventTypeNameProjectCustomEnvironmentDeleted                     ListEventTypeName = "project-custom-environment-deleted"
+	ListEventTypeNameProjectCustomEnvironmentSchedulesDefaultUpdated     ListEventTypeName = "project-custom-environment-schedules-default-updated"
+	ListEventTypeNameProjectCustomEnvironmentUpdated                     ListEventTypeName = "project-custom-environment-updated"
+	ListEventTypeNameProjectCustomerSuccessCodeVisibilityUpdated         ListEventTypeName = "project-customer-success-code-visibility-updated"
+	ListEventTypeNameProjectDelete                                       ListEventTypeName = "project-delete"
+	ListEventTypeNameProjectDeploymentPolicyUpdated                      ListEventTypeName = "project-deployment-policy-updated"
+	ListEventTypeNameProjectDeploymentRetentionUpdated                   ListEventTypeName = "project-deployment-retention-updated"
+	ListEventTypeNameProjectDirectoryListing                             ListEventTypeName = "project-directory-listing"
+	ListEventTypeNameProjectDomainDeleted                                ListEventTypeName = "project-domain-deleted"
+	ListEventTypeNameProjectDomainMoved                                  ListEventTypeName = "project-domain-moved"
+	ListEventTypeNameProjectDomainUnverified                             ListEventTypeName = "project-domain-unverified"
+	ListEventTypeNameProjectDomainUpdated                                ListEventTypeName = "project-domain-updated"
+	ListEventTypeNameProjectDomainVerified                               ListEventTypeName = "project-domain-verified"
+	ListEventTypeNameProjectElasticConcurrencyUpdated                    ListEventTypeName = "project-elastic-concurrency-updated"
+	ListEventTypeNameProjectExpirationLocked                             ListEventTypeName = "project-expiration-locked"
+	ListEventTypeNameProjectExpirationReached                            ListEventTypeName = "project-expiration-reached"
+	ListEventTypeNameProjectExpirationRemoved                            ListEventTypeName = "project-expiration-removed"
+	ListEventTypeNameProjectExpirationScheduled                          ListEventTypeName = "project-expiration-scheduled"
+	ListEventTypeNameProjectExpirationUnlocked                           ListEventTypeName = "project-expiration-unlocked"
+	ListEventTypeNameProjectExternalRewriteCachingUpdated                ListEventTypeName = "project-external-rewrite-caching-updated"
+	ListEventTypeNameProjectFrameworkUpdated                             ListEventTypeName = "project-framework-updated"
+	ListEventTypeNameProjectFunctionCpuMemory                            ListEventTypeName = "project-function-cpu-memory"
+	ListEventTypeNameProjectFunctionFailover                             ListEventTypeName = "project-function-failover"
+	ListEventTypeNameProjectFunctionMaxDuration                          ListEventTypeName = "project-function-max-duration"
+	ListEventTypeNameProjectFunctionRegions                              ListEventTypeName = "project-function-regions"
+	ListEventTypeNameProjectFunctionsBetaUpdated                         ListEventTypeName = "project-functions-beta-updated"
+	ListEventTypeNameProjectFunctionsFluidDisabled                       ListEventTypeName = "project-functions-fluid-disabled"
+	ListEventTypeNameProjectFunctionsFluidEnabled                        ListEventTypeName = "project-functions-fluid-enabled"
+	ListEventTypeNameProjectGitCommitCommentsToggled                     ListEventTypeName = "project-git-commit-comments-toggled"
+	ListEventTypeNameProjectGitCommitStatusToggled                       ListEventTypeName = "project-git-commit-status-toggled"
+	ListEventTypeNameProjectGitCreateDeploymentsToggled                  ListEventTypeName = "project-git-create-deployments-toggled"
+	ListEventTypeNameProjectGitCredentialAttestationCreated              ListEventTypeName = "project-git-credential-attestation-created"
+	ListEventTypeNameProjectGitCredentialAttestationDeleted              ListEventTypeName = "project-git-credential-attestation-deleted"
+	ListEventTypeNameProjectGitCredentialBoundCreated                    ListEventTypeName = "project-git-credential-bound-created"
+	ListEventTypeNameProjectGitCredentialBoundDeleted                    ListEventTypeName = "project-git-credential-bound-deleted"
+	ListEventTypeNameProjectGitCredentialBoundUpdated                    ListEventTypeName = "project-git-credential-bound-updated"
+	ListEventTypeNameProjectGitCredentialGrantAttestationRevoked         ListEventTypeName = "project-git-credential-grant-attestation-revoked"
+	ListEventTypeNameProjectGitCredentialGrantAttested                   ListEventTypeName = "project-git-credential-grant-attested"
+	ListEventTypeNameProjectGitCredentialGrantCreated                    ListEventTypeName = "project-git-credential-grant-created"
+	ListEventTypeNameProjectGitCredentialGrantDeleted                    ListEventTypeName = "project-git-credential-grant-deleted"
+	ListEventTypeNameProjectGitCredentialGrantUpdated                    ListEventTypeName = "project-git-credential-grant-updated"
+	ListEventTypeNameProjectGitCredentialTokenMinted                     ListEventTypeName = "project-git-credential-token-minted"
+	ListEventTypeNameProjectGitForkProtectionUpdated                     ListEventTypeName = "project-git-fork-protection-updated"
+	ListEventTypeNameProjectGitLfsToggled                                ListEventTypeName = "project-git-lfs-toggled"
+	ListEventTypeNameProjectGitPrCommentsToggled                         ListEventTypeName = "project-git-pr-comments-toggled"
+	ListEventTypeNameProjectGitRepositoryConnected                       ListEventTypeName = "project-git-repository-connected"
+	ListEventTypeNameProjectGitRepositoryDisconnected                    ListEventTypeName = "project-git-repository-disconnected"
+	ListEventTypeNameProjectGitRepositoryDispatchEventsToggled           ListEventTypeName = "project-git-repository-dispatch-events-toggled"
+	ListEventTypeNameProjectGitRequireVerifiedCommitsToggled             ListEventTypeName = "project-git-require-verified-commits-toggled"
+	ListEventTypeNameProjectIgnoredBuildStepUpdated                      ListEventTypeName = "project-ignored-build-step-updated"
+	ListEventTypeNameProjectInstallCommandUpdated                        ListEventTypeName = "project-install-command-updated"
+	ListEventTypeNameProjectMemberAdded                                  ListEventTypeName = "project-member-added"
+	ListEventTypeNameProjectMemberInvited                                ListEventTypeName = "project-member-invited"
+	ListEventTypeNameProjectMemberRemoved                                ListEventTypeName = "project-member-removed"
+	ListEventTypeNameProjectMemberRemovedBatch                           ListEventTypeName = "project-member-removed-batch"
+	ListEventTypeNameProjectMemberUpdated                                ListEventTypeName = "project-member-updated"
+	ListEventTypeNameProjectMoveInSuccess                                ListEventTypeName = "project-move-in-success"
+	ListEventTypeNameProjectMoveOutFailed                                ListEventTypeName = "project-move-out-failed"
+	ListEventTypeNameProjectMoveOutStarted                               ListEventTypeName = "project-move-out-started"
+	ListEventTypeNameProjectMoveOutSuccess                               ListEventTypeName = "project-move-out-success"
+	ListEventTypeNameProjectName                                         ListEventTypeName = "project-name"
+	ListEventTypeNameProjectNodeVersionUpdated                           ListEventTypeName = "project-node-version-updated"
+	ListEventTypeNameProjectOidcIssuerModeUpdated                        ListEventTypeName = "project-oidc-issuer-mode-updated"
+	ListEventTypeNameProjectOidcTokenCreated                             ListEventTypeName = "project-oidc-token-created"
+	ListEventTypeNameProjectOptionsAllowlist                             ListEventTypeName = "project-options-allowlist"
+	ListEventTypeNameProjectOutputDirectoryUpdated                       ListEventTypeName = "project-output-directory-updated"
+	ListEventTypeNameProjectPassportUpdated                              ListEventTypeName = "project-passport-updated"
+	ListEventTypeNameProjectPasswordProtection                           ListEventTypeName = "project-password-protection"
+	ListEventTypeNameProjectPaused                                       ListEventTypeName = "project-paused"
+	ListEventTypeNameProjectPerimetersUpdated                            ListEventTypeName = "project-perimeters-updated"
+	ListEventTypeNameProjectPreviewDeploymentSuffix                      ListEventTypeName = "project-preview-deployment-suffix"
+	ListEventTypeNameProjectPreviewEnvironmentBranchTrackingUpdated      ListEventTypeName = "project-preview-environment-branch-tracking-updated"
+	ListEventTypeNameProjectPrioritizeProductionBuildsUpdated            ListEventTypeName = "project-prioritize-production-builds-updated"
+	ListEventTypeNameProjectProgramEnrollmentChanged                     ListEventTypeName = "project-program-enrollment-changed"
+	ListEventTypeNameProjectProtectedSourcemapsUpdated                   ListEventTypeName = "project-protected-sourcemaps-updated"
+	ListEventTypeNameProjectRemoveVercelRequestHeadersUpdated            ListEventTypeName = "project-remove-vercel-request-headers-updated"
+	ListEventTypeNameProjectRollbackDescriptionUpdated                   ListEventTypeName = "project-rollback-description-updated"
+	ListEventTypeNameProjectRollingReleaseAborted                        ListEventTypeName = "project-rolling-release-aborted"
+	ListEventTypeNameProjectRollingReleaseApproved                       ListEventTypeName = "project-rolling-release-approved"
+	ListEventTypeNameProjectRollingReleaseCompleted                      ListEventTypeName = "project-rolling-release-completed"
+	ListEventTypeNameProjectRollingReleaseConfigured                     ListEventTypeName = "project-rolling-release-configured"
+	ListEventTypeNameProjectRollingReleaseContinued                      ListEventTypeName = "project-rolling-release-continued"
+	ListEventTypeNameProjectRollingReleaseDisabled                       ListEventTypeName = "project-rolling-release-disabled"
+	ListEventTypeNameProjectRollingReleaseEnabled                        ListEventTypeName = "project-rolling-release-enabled"
+	ListEventTypeNameProjectRollingReleasePaused                         ListEventTypeName = "project-rolling-release-paused"
+	ListEventTypeNameProjectRollingReleaseStarted                        ListEventTypeName = "project-rolling-release-started"
+	ListEventTypeNameProjectRollingReleaseTimer                          ListEventTypeName = "project-rolling-release-timer"
+	ListEventTypeNameProjectRootDirectoryUpdated                         ListEventTypeName = "project-root-directory-updated"
+	ListEventTypeNameProjectRoutesVersionPromoted                        ListEventTypeName = "project-routes-version-promoted"
+	ListEventTypeNameProjectRoutesVersionRestored                        ListEventTypeName = "project-routes-version-restored"
+	ListEventTypeNameProjectSandboxConfigUpdated                         ListEventTypeName = "project-sandbox-config-updated"
+	ListEventTypeNameProjectSandboxUrlProtectionUpdated                  ListEventTypeName = "project-sandbox-url-protection-updated"
+	ListEventTypeNameProjectSkewProtectionAllowedDomainsUpdated          ListEventTypeName = "project-skew-protection-allowed-domains-updated"
+	ListEventTypeNameProjectSkewProtectionMaxAgeUpdated                  ListEventTypeName = "project-skew-protection-max-age-updated"
+	ListEventTypeNameProjectSkewProtectionThresholdUpdated               ListEventTypeName = "project-skew-protection-threshold-updated"
+	ListEventTypeNameProjectSourceFilesOutsideRootDirectoryUpdated       ListEventTypeName = "project-source-files-outside-root-directory-updated"
+	ListEventTypeNameProjectSpeedInsightsDisabled                        ListEventTypeName = "project-speed-insights-disabled"
+	ListEventTypeNameProjectSpeedInsightsEnabled                         ListEventTypeName = "project-speed-insights-enabled"
+	ListEventTypeNameProjectSpeedInsightsFreeDataStarted                 ListEventTypeName = "project-speed-insights-free-data-started"
+	ListEventTypeNameProjectSsoProtection                                ListEventTypeName = "project-sso-protection"
+	ListEventTypeNameProjectStaticIpsUpdated                             ListEventTypeName = "project-static-ips-updated"
+	ListEventTypeNameProjectTrustedIps                                   ListEventTypeName = "project-trusted-ips"
+	ListEventTypeNameProjectTrustedSources                               ListEventTypeName = "project-trusted-sources"
+	ListEventTypeNameProjectUnpaused                                     ListEventTypeName = "project-unpaused"
+	ListEventTypeNameProjectWebAnalyticsDisabled                         ListEventTypeName = "project-web-analytics-disabled"
+	ListEventTypeNameProjectWebAnalyticsEnabled                          ListEventTypeName = "project-web-analytics-enabled"
+	ListEventTypeNameProtectedGitScopeAdded                              ListEventTypeName = "protected-git-scope-added"
+	ListEventTypeNameProtectedGitScopeRemoved                            ListEventTypeName = "protected-git-scope-removed"
+	ListEventTypeNameRepositoryCiEnvVariableCreate                       ListEventTypeName = "repository-ci-env-variable-create"
+	ListEventTypeNameRepositoryCiEnvVariableDelete                       ListEventTypeName = "repository-ci-env-variable-delete"
+	ListEventTypeNameRepositoryCiEnvVariableUpdate                       ListEventTypeName = "repository-ci-env-variable-update"
+	ListEventTypeNameRuntimeCachePurgeAll                                ListEventTypeName = "runtime-cache-purge-all"
+	ListEventTypeNameSamlConnectionCreated                               ListEventTypeName = "saml-connection-created"
+	ListEventTypeNameSamlConnectionDeleted                               ListEventTypeName = "saml-connection-deleted"
+	ListEventTypeNameSamlIdpMaterialDeleted                              ListEventTypeName = "saml-idp-material-deleted"
+	ListEventTypeNameSamlIdpMaterialSet                                  ListEventTypeName = "saml-idp-material-set"
+	ListEventTypeNameSamlIdpMaterialSystemDeleted                        ListEventTypeName = "saml-idp-material-system-deleted"
+	ListEventTypeNameSamlIdpMaterialSystemSet                            ListEventTypeName = "saml-idp-material-system-set"
+	ListEventTypeNameSandboxAliasAssigned                                ListEventTypeName = "sandbox-alias-assigned"
+	ListEventTypeNameSandboxAliasDelete                                  ListEventTypeName = "sandbox-alias-delete"
+	ListEventTypeNameSandboxDriveCreated                                 ListEventTypeName = "sandbox-drive-created"
+	ListEventTypeNameSandboxDriveDeleted                                 ListEventTypeName = "sandbox-drive-deleted"
+	ListEventTypeNameSandboxDriveSnapshotCreated                         ListEventTypeName = "sandbox-drive-snapshot-created"
+	ListEventTypeNameSandboxDriveSnapshotDeleted                         ListEventTypeName = "sandbox-drive-snapshot-deleted"
+	ListEventTypeNameSandboxExpiryNotificationLeadTimeUpdated            ListEventTypeName = "sandbox-expiry-notification-lead-time-updated"
+	ListEventTypeNameSandboxNpmCredentialsConfigured                     ListEventTypeName = "sandbox-npm-credentials-configured"
+	ListEventTypeNameSandboxSignedCommitIdentityConfigured               ListEventTypeName = "sandbox-signed-commit-identity-configured"
+	ListEventTypeNameSandboxSnapshotRegionsUpdated                       ListEventTypeName = "sandbox-snapshot-regions-updated"
+	ListEventTypeNameScale                                               ListEventTypeName = "scale"
+	ListEventTypeNameScaleAuto                                           ListEventTypeName = "scale-auto"
+	ListEventTypeNameScheduleCreated                                     ListEventTypeName = "schedule-created"
+	ListEventTypeNameScheduleDeleted                                     ListEventTypeName = "schedule-deleted"
+	ListEventTypeNameScheduleDisabled                                    ListEventTypeName = "schedule-disabled"
+	ListEventTypeNameScheduleEnabled                                     ListEventTypeName = "schedule-enabled"
+	ListEventTypeNameScheduleInvoked                                     ListEventTypeName = "schedule-invoked"
+	ListEventTypeNameScheduleUpdated                                     ListEventTypeName = "schedule-updated"
+	ListEventTypeNameSecondaryEmailAdded                                 ListEventTypeName = "secondary-email-added"
+	ListEventTypeNameSecondaryEmailRemoved                               ListEventTypeName = "secondary-email-removed"
+	ListEventTypeNameSecondaryEmailVerified                              ListEventTypeName = "secondary-email-verified"
+	ListEventTypeNameSecretAdd                                           ListEventTypeName = "secret-add"
+	ListEventTypeNameSecretDelete                                        ListEventTypeName = "secret-delete"
+	ListEventTypeNameSecretRename                                        ListEventTypeName = "secret-rename"
+	ListEventTypeNameSecurityListCreated                                 ListEventTypeName = "security-list-created"
+	ListEventTypeNameSecurityListDeleted                                 ListEventTypeName = "security-list-deleted"
+	ListEventTypeNameSecurityListUpdated                                 ListEventTypeName = "security-list-updated"
+	ListEventTypeNameSecurityPlusUpdated                                 ListEventTypeName = "security-plus-updated"
+	ListEventTypeNameSetBio                                              ListEventTypeName = "set-bio"
+	ListEventTypeNameSetName                                             ListEventTypeName = "set-name"
+	ListEventTypeNameSetProfiles                                         ListEventTypeName = "set-profiles"
+	ListEventTypeNameSetScale                                            ListEventTypeName = "set-scale"
+	ListEventTypeNameSharedEnvVariableCreate                             ListEventTypeName = "shared-env-variable-create"
+	ListEventTypeNameSharedEnvVariableDelete                             ListEventTypeName = "shared-env-variable-delete"
+	ListEventTypeNameSharedEnvVariableRead                               ListEventTypeName = "shared-env-variable-read"
+	ListEventTypeNameSharedEnvVariableRepoLink                           ListEventTypeName = "shared-env-variable-repo-link"
+	ListEventTypeNameSharedEnvVariableRepoUnlink                         ListEventTypeName = "shared-env-variable-repo-unlink"
+	ListEventTypeNameSharedEnvVariableUpdate                             ListEventTypeName = "shared-env-variable-update"
+	ListEventTypeNameShowIpAddresses                                     ListEventTypeName = "show-ip-addresses"
+	ListEventTypeNameSignup                                              ListEventTypeName = "signup"
+	ListEventTypeNameSignupViaBitbucket                                  ListEventTypeName = "signup-via-bitbucket"
+	ListEventTypeNameSignupViaGithub                                     ListEventTypeName = "signup-via-github"
+	ListEventTypeNameSignupViaGitlab                                     ListEventTypeName = "signup-via-gitlab"
+	ListEventTypeNameSpeedInsightsSettingsUpdated                        ListEventTypeName = "speed-insights-settings-updated"
+	ListEventTypeNameSpendCreated                                        ListEventTypeName = "spend-created"
+	ListEventTypeNameSpendDeleted                                        ListEventTypeName = "spend-deleted"
+	ListEventTypeNameSpendUpdated                                        ListEventTypeName = "spend-updated"
+	ListEventTypeNameSsoLogin                                            ListEventTypeName = "sso-login"
+	ListEventTypeNameStartupTermsAccepted                                ListEventTypeName = "startup-terms-accepted"
+	ListEventTypeNameStorageAcceptTos                                    ListEventTypeName = "storage-accept-tos"
+	ListEventTypeNameStorageAccessTokenSet                               ListEventTypeName = "storage-access-token-set"
+	ListEventTypeNameStorageAccessedDataBrowser                          ListEventTypeName = "storage-accessed-data-browser"
+	ListEventTypeNameStorageConnectProject                               ListEventTypeName = "storage-connect-project"
+	ListEventTypeNameStorageCreate                                       ListEventTypeName = "storage-create"
+	ListEventTypeNameStorageDelete                                       ListEventTypeName = "storage-delete"
+	ListEventTypeNameStorageDisconnectProject                            ListEventTypeName = "storage-disconnect-project"
+	ListEventTypeNameStorageDisconnectProjects                           ListEventTypeName = "storage-disconnect-projects"
+	ListEventTypeNameStorageInactiveStoreDeleted                         ListEventTypeName = "storage-inactive-store-deleted"
+	ListEventTypeNameStorageResetCredentials                             ListEventTypeName = "storage-reset-credentials"
+	ListEventTypeNameStorageResourceReplCommand                          ListEventTypeName = "storage-resource-repl-command"
+	ListEventTypeNameStorageSetLocked                                    ListEventTypeName = "storage-set-locked"
+	ListEventTypeNameStorageTransferInSuccess                            ListEventTypeName = "storage-transfer-in-success"
+	ListEventTypeNameStorageTransferOutSuccess                           ListEventTypeName = "storage-transfer-out-success"
+	ListEventTypeNameStorageTransferRequestCreated                       ListEventTypeName = "storage-transfer-request-created"
+	ListEventTypeNameStorageUpdate                                       ListEventTypeName = "storage-update"
+	ListEventTypeNameStorageUpdateProjectConnection                      ListEventTypeName = "storage-update-project-connection"
+	ListEventTypeNameStorageUpgradeProjectConnectionToOidc               ListEventTypeName = "storage-upgrade-project-connection-to-oidc"
+	ListEventTypeNameStorageViewSecret                                   ListEventTypeName = "storage-view-secret"
+	ListEventTypeNameStrictConnectors                                    ListEventTypeName = "strict-connectors"
+	ListEventTypeNameStrictDeploymentProtectionSettings                  ListEventTypeName = "strict-deployment-protection-settings"
+	ListEventTypeNameStrictPasswordProtectionSettings                    ListEventTypeName = "strict-password-protection-settings"
+	ListEventTypeNameStrictShareableLinks                                ListEventTypeName = "strict-shareable-links"
+	ListEventTypeNameSubscriptionCreated                                 ListEventTypeName = "subscription-created"
+	ListEventTypeNameSubscriptionProductAdded                            ListEventTypeName = "subscription-product-added"
+	ListEventTypeNameSubscriptionProductRemoved                          ListEventTypeName = "subscription-product-removed"
+	ListEventTypeNameSubscriptionUpdated                                 ListEventTypeName = "subscription-updated"
+	ListEventTypeNameSupportSessionCreated                               ListEventTypeName = "support-session-created"
+	ListEventTypeNameTeam                                                ListEventTypeName = "team"
+	ListEventTypeNameTeamAgentBillingMigrationDecisionChanged            ListEventTypeName = "team-agent-billing-migration-decision-changed"
+	ListEventTypeNameTeamAvatarUpdate                                    ListEventTypeName = "team-avatar-update"
+	ListEventTypeNameTeamCollaborationSettingsUpdated                    ListEventTypeName = "team-collaboration-settings-updated"
+	ListEventTypeNameTeamDataCacheUserDisabledUpdated                    ListEventTypeName = "team-data-cache-user-disabled-updated"
+	ListEventTypeNameTeamDefaultBuildMachineUpdated                      ListEventTypeName = "team-default-build-machine-updated"
+	ListEventTypeNameTeamDefaultPassportUpdated                          ListEventTypeName = "team-default-passport-updated"
+	ListEventTypeNameTeamDelete                                          ListEventTypeName = "team-delete"
+	ListEventTypeNameTeamDeploymentPolicyUpdated                         ListEventTypeName = "team-deployment-policy-updated"
+	ListEventTypeNameTeamDeploymentStorageHighRetentionOptIn             ListEventTypeName = "team-deployment-storage-high-retention-opt-in"
+	ListEventTypeNameTeamDeploymentStorageRetentionOptOut                ListEventTypeName = "team-deployment-storage-retention-opt-out"
+	ListEventTypeNameTeamDomainVerificationCreated                       ListEventTypeName = "team-domain-verification-created"
+	ListEventTypeNameTeamDomainVerificationDeleted                       ListEventTypeName = "team-domain-verification-deleted"
+	ListEventTypeNameTeamDomainVerificationVerified                      ListEventTypeName = "team-domain-verification-verified"
+	ListEventTypeNameTeamEmailDomainUpdate                               ListEventTypeName = "team-email-domain-update"
+	ListEventTypeNameTeamEmuUpdated                                      ListEventTypeName = "team-emu-updated"
+	ListEventTypeNameTeamEndedTrial                                      ListEventTypeName = "team-ended-trial"
+	ListEventTypeNameTeamFirewallConfigModified                          ListEventTypeName = "team-firewall-config-modified"
+	ListEventTypeNameTeamFirewallConfigPromoted                          ListEventTypeName = "team-firewall-config-promoted"
+	ListEventTypeNameTeamGitRepositoryDispatchEventsToggled              ListEventTypeName = "team-git-repository-dispatch-events-toggled"
+	ListEventTypeNameTeamGitRequireVerifiedCommitsToggled                ListEventTypeName = "team-git-require-verified-commits-toggled"
+	ListEventTypeNameTeamInviteBulkDelete                                ListEventTypeName = "team-invite-bulk-delete"
+	ListEventTypeNameTeamInviteCodeReset                                 ListEventTypeName = "team-invite-code-reset"
+	ListEventTypeNameTeamInviteLinkCreated                               ListEventTypeName = "team-invite-link-created"
+	ListEventTypeNameTeamInviteLinkDeleted                               ListEventTypeName = "team-invite-link-deleted"
+	ListEventTypeNameTeamIpBlockingRulesCreated                          ListEventTypeName = "team-ip-blocking-rules-created"
+	ListEventTypeNameTeamIpBlockingRulesRemoved                          ListEventTypeName = "team-ip-blocking-rules-removed"
+	ListEventTypeNameTeamMemberAdd                                       ListEventTypeName = "team-member-add"
+	ListEventTypeNameTeamMemberConfirmRequest                            ListEventTypeName = "team-member-confirm-request"
+	ListEventTypeNameTeamMemberDeclineRequest                            ListEventTypeName = "team-member-decline-request"
+	ListEventTypeNameTeamMemberDelete                                    ListEventTypeName = "team-member-delete"
+	ListEventTypeNameTeamMemberEntitlementAdded                          ListEventTypeName = "team-member-entitlement-added"
+	ListEventTypeNameTeamMemberEntitlementCanceled                       ListEventTypeName = "team-member-entitlement-canceled"
+	ListEventTypeNameTeamMemberEntitlementReactivated                    ListEventTypeName = "team-member-entitlement-reactivated"
+	ListEventTypeNameTeamMemberEntitlementRemoved                        ListEventTypeName = "team-member-entitlement-removed"
+	ListEventTypeNameTeamMemberJoin                                      ListEventTypeName = "team-member-join"
+	ListEventTypeNameTeamMemberLeave                                     ListEventTypeName = "team-member-leave"
+	ListEventTypeNameTeamMemberRequestAccess                             ListEventTypeName = "team-member-request-access"
+	ListEventTypeNameTeamMemberRoleUpdate                                ListEventTypeName = "team-member-role-update"
+	ListEventTypeNameTeamMemberSsoAuthorizationAttempt                   ListEventTypeName = "team-member-sso-authorization-attempt"
+	ListEventTypeNameTeamMfaEnforcementUpdated                           ListEventTypeName = "team-mfa-enforcement-updated"
+	ListEventTypeNameTeamNameUpdate                                      ListEventTypeName = "team-name-update"
+	ListEventTypeNameTeamPaidInvoice                                     ListEventTypeName = "team-paid-invoice"
+	ListEventTypeNameTeamProgramEnrollmentChanged                        ListEventTypeName = "team-program-enrollment-changed"
+	ListEventTypeNameTeamRemoteCachingPurge                              ListEventTypeName = "team-remote-caching-purge"
+	ListEventTypeNameTeamRemoteCachingUpdate                             ListEventTypeName = "team-remote-caching-update"
+	ListEventTypeNameTeamRuntimeCacheUpdated                             ListEventTypeName = "team-runtime-cache-updated"
+	ListEventTypeNameTeamSamlEnforced                                    ListEventTypeName = "team-saml-enforced"
+	ListEventTypeNameTeamSamlRoles                                       ListEventTypeName = "team-saml-roles"
+	ListEventTypeNameTeamSlugUpdate                                      ListEventTypeName = "team-slug-update"
+	ListEventTypeNameTeamTokensInvalidated                               ListEventTypeName = "team-tokens-invalidated"
+	ListEventTypeNameTracingConfigured                                   ListEventTypeName = "tracing-configured"
+	ListEventTypeNameTracingDisabled                                     ListEventTypeName = "tracing-disabled"
+	ListEventTypeNameTracingPaused                                       ListEventTypeName = "tracing-paused"
+	ListEventTypeNameTracingResumed                                      ListEventTypeName = "tracing-resumed"
+	ListEventTypeNameUnlinkLoginConnection                               ListEventTypeName = "unlink-login-connection"
+	ListEventTypeNameUpdateAccountFlowDismissed                          ListEventTypeName = "update-account-flow-dismissed"
+	ListEventTypeNameUpdateAccountFlowTriggered                          ListEventTypeName = "update-account-flow-triggered"
+	ListEventTypeNameUserAutoBlockConfigured                             ListEventTypeName = "user-auto-block-configured"
+	ListEventTypeNameUserBlocked                                         ListEventTypeName = "user-blocked"
+	ListEventTypeNameUserDelete                                          ListEventTypeName = "user-delete"
+	ListEventTypeNameUserDeleteRequested                                 ListEventTypeName = "user-delete-requested"
+	ListEventTypeNameUserEmuAccountArchived                              ListEventTypeName = "user-emu-account-archived"
+	ListEventTypeNameUserEmuAccountDeleted                               ListEventTypeName = "user-emu-account-deleted"
+	ListEventTypeNameUserEmuAccountRecovered                             ListEventTypeName = "user-emu-account-recovered"
+	ListEventTypeNameUserEmuAccountUpdateOptedIn                         ListEventTypeName = "user-emu-account-update-opted-in"
+	ListEventTypeNameUserEmuAccountUpdateOptedOut                        ListEventTypeName = "user-emu-account-update-opted-out"
+	ListEventTypeNameUserEmuRecoveryEmailSent                            ListEventTypeName = "user-emu-recovery-email-sent"
+	ListEventTypeNameUserEmuRecoveryInitiated                            ListEventTypeName = "user-emu-recovery-initiated"
+	ListEventTypeNameUserEmuToggled                                      ListEventTypeName = "user-emu-toggled"
+	ListEventTypeNameUserLandingPageUpdated                              ListEventTypeName = "user-landing-page-updated"
+	ListEventTypeNameUserMfaChallengeFailed                              ListEventTypeName = "user-mfa-challenge-failed"
+	ListEventTypeNameUserMfaChallengeInitiated                           ListEventTypeName = "user-mfa-challenge-initiated"
+	ListEventTypeNameUserMfaChallengeVerified                            ListEventTypeName = "user-mfa-challenge-verified"
+	ListEventTypeNameUserMfaChangeFailed                                 ListEventTypeName = "user-mfa-change-failed"
+	ListEventTypeNameUserMfaConfigurationUpdated                         ListEventTypeName = "user-mfa-configuration-updated"
+	ListEventTypeNameUserMfaRecoveryCodeUsed                             ListEventTypeName = "user-mfa-recovery-code-used"
+	ListEventTypeNameUserMfaRecoveryCodesRegenerated                     ListEventTypeName = "user-mfa-recovery-codes-regenerated"
+	ListEventTypeNameUserMfaRemoved                                      ListEventTypeName = "user-mfa-removed"
+	ListEventTypeNameUserMfaSetupSkipped                                 ListEventTypeName = "user-mfa-setup-skipped"
+	ListEventTypeNameUserMfaTotpVerificationStarted                      ListEventTypeName = "user-mfa-totp-verification-started"
+	ListEventTypeNameUserMfaTotpVerified                                 ListEventTypeName = "user-mfa-totp-verified"
+	ListEventTypeNameUserPhoneRemoved                                    ListEventTypeName = "user-phone-removed"
+	ListEventTypeNameUserPhoneUpdated                                    ListEventTypeName = "user-phone-updated"
+	ListEventTypeNameUserPrimaryEmailUpdated                             ListEventTypeName = "user-primary-email-updated"
+	ListEventTypeNameUserProviderEmailClaimEvaluated                     ListEventTypeName = "user-provider-email-claim-evaluated"
+	ListEventTypeNameUserSudoModeRemoved                                 ListEventTypeName = "user-sudo-mode-removed"
+	ListEventTypeNameUserTokenCreated                                    ListEventTypeName = "user-token-created"
+	ListEventTypeNameUserTokenDeleted                                    ListEventTypeName = "user-token-deleted"
+	ListEventTypeNameUserTokensDeleted                                   ListEventTypeName = "user-tokens-deleted"
+	ListEventTypeNameUserUnblocked                                       ListEventTypeName = "user-unblocked"
+	ListEventTypeNameUsername                                            ListEventTypeName = "username"
+	ListEventTypeNameV0ChatAiUsage                                       ListEventTypeName = "v0-chat-ai-usage"
+	ListEventTypeNameV0ChatCreated                                       ListEventTypeName = "v0-chat-created"
+	ListEventTypeNameV0ChatMessageSent                                   ListEventTypeName = "v0-chat-message-sent"
+	ListEventTypeNameV0MigrationPaymentConfirmed                         ListEventTypeName = "v0-migration-payment-confirmed"
+	ListEventTypeNameV0MigrationSubscriptionCompleted                    ListEventTypeName = "v0-migration-subscription-completed"
+	ListEventTypeNameV0SharedPoolCreditLimitDefaultUpdated               ListEventTypeName = "v0-shared-pool-credit-limit-default-updated"
+	ListEventTypeNameV0SharedPoolCreditLimitUpdated                      ListEventTypeName = "v0-shared-pool-credit-limit-updated"
+	ListEventTypeNameVcrImageDeleted                                     ListEventTypeName = "vcr-image-deleted"
+	ListEventTypeNameVcrImagePushed                                      ListEventTypeName = "vcr-image-pushed"
+	ListEventTypeNameVcrRepositoryCreated                                ListEventTypeName = "vcr-repository-created"
+	ListEventTypeNameVcrRepositoryDeleted                                ListEventTypeName = "vcr-repository-deleted"
+	ListEventTypeNameVcrRepositoryPermissionAdded                        ListEventTypeName = "vcr-repository-permission-added"
+	ListEventTypeNameVcrRepositoryPermissionRemoved                      ListEventTypeName = "vcr-repository-permission-removed"
+	ListEventTypeNameVcrRepositoryPermissionsCleared                     ListEventTypeName = "vcr-repository-permissions-cleared"
+	ListEventTypeNameVcrRepositoryVisibilityChanged                      ListEventTypeName = "vcr-repository-visibility-changed"
+	ListEventTypeNameVercelAgentElevatedPermissionsApproved              ListEventTypeName = "vercel-agent-elevated-permissions-approved"
+	ListEventTypeNameVercelAgentElevatedPermissionsRequested             ListEventTypeName = "vercel-agent-elevated-permissions-requested"
+	ListEventTypeNameVercelAgentSecurityFindingClosed                    ListEventTypeName = "vercel-agent-security-finding-closed"
+	ListEventTypeNameVercelAgentSecurityFindingCreated                   ListEventTypeName = "vercel-agent-security-finding-created"
+	ListEventTypeNameVercelAgentSecurityFindingDismissed                 ListEventTypeName = "vercel-agent-security-finding-dismissed"
+	ListEventTypeNameVercelAgentSecurityFindingReopened                  ListEventTypeName = "vercel-agent-security-finding-reopened"
+	ListEventTypeNameVercelAgentSecurityFindingResolved                  ListEventTypeName = "vercel-agent-security-finding-resolved"
+	ListEventTypeNameVercelAgentSecurityReviewPolicyDeleted              ListEventTypeName = "vercel-agent-security-review-policy-deleted"
+	ListEventTypeNameVercelAgentSecurityReviewPolicyUpdated              ListEventTypeName = "vercel-agent-security-review-policy-updated"
+	ListEventTypeNameVercelAgentSessionCreated                           ListEventTypeName = "vercel-agent-session-created"
+	ListEventTypeNameVercelAgentTeamTrialCreditsApplied                  ListEventTypeName = "vercel-agent-team-trial-credits-applied"
+	ListEventTypeNameVercelAppInstallationRequestDismissed               ListEventTypeName = "vercel-app-installation-request-dismissed"
+	ListEventTypeNameVercelAppInstallationRequested                      ListEventTypeName = "vercel-app-installation-requested"
+	ListEventTypeNameVercelAppInstallationUpdated                        ListEventTypeName = "vercel-app-installation-updated"
+	ListEventTypeNameVercelAppInstalled                                  ListEventTypeName = "vercel-app-installed"
+	ListEventTypeNameVercelAppTokensRevoked                              ListEventTypeName = "vercel-app-tokens-revoked"
+	ListEventTypeNameVercelAppUninstalled                                ListEventTypeName = "vercel-app-uninstalled"
+	ListEventTypeNameVercelCiRepositoryGithubRunnersUpdated              ListEventTypeName = "vercel-ci-repository-github-runners-updated"
+	ListEventTypeNameVercelCiRepositorySettingsUpdated                   ListEventTypeName = "vercel-ci-repository-settings-updated"
+	ListEventTypeNameVercelCiRunApproved                                 ListEventTypeName = "vercel-ci-run-approved"
+	ListEventTypeNameVercelToolbar                                       ListEventTypeName = "vercel-toolbar"
+	ListEventTypeNameVpcPeeringConnectionAccepted                        ListEventTypeName = "vpc-peering-connection-accepted"
+	ListEventTypeNameVpcPeeringConnectionDeleted                         ListEventTypeName = "vpc-peering-connection-deleted"
+	ListEventTypeNameVpcPeeringConnectionRejected                        ListEventTypeName = "vpc-peering-connection-rejected"
+	ListEventTypeNameVpcPeeringConnectionUpdated                         ListEventTypeName = "vpc-peering-connection-updated"
+	ListEventTypeNameVulnerabilityBannerDismissed                        ListEventTypeName = "vulnerability-banner-dismissed"
+	ListEventTypeNameWebAnalyticsSummarySubscriptionUpdated              ListEventTypeName = "web-analytics-summary-subscription-updated"
+	ListEventTypeNameWebAnalyticsTierUpdated                             ListEventTypeName = "web-analytics-tier-updated"
+	ListEventTypeNameWebhookCreated                                      ListEventTypeName = "webhook-created"
+	ListEventTypeNameWebhookDeleted                                      ListEventTypeName = "webhook-deleted"
+	ListEventTypeNameWebhookUpdated                                      ListEventTypeName = "webhook-updated"
+	ListEventTypeNameWorkflowDeploymentKeyAccessed                       ListEventTypeName = "workflow-deployment-key-accessed"
+	ListEventTypeNameXaaUpdated                                          ListEventTypeName = "xaa-updated"
 )
 
 // Valid indicates whether the value is a known member of the ListEventTypeName enum.
@@ -5144,6 +5146,8 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameAiGatewayInferenceHooksHeadersCleared:
 		return true
 	case ListEventTypeNameAiGatewayInferenceHooksHeadersUpdated:
+		return true
+	case ListEventTypeNameAiGatewayInferenceHooksPreviousSigningSecretRetired:
 		return true
 	case ListEventTypeNameAiGatewayInferenceHooksRemoved:
 		return true
@@ -6271,6 +6275,8 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameSandboxDriveSnapshotDeleted:
 		return true
+	case ListEventTypeNameSandboxExpiryNotificationLeadTimeUpdated:
+		return true
 	case ListEventTypeNameSandboxNpmCredentialsConfigured:
 		return true
 	case ListEventTypeNameSandboxSignedCommitIdentityConfigured:
@@ -6698,832 +6704,834 @@ func (e ListEventTypeName) Valid() bool {
 
 // Defines values for ListEventTypeReplacedBy.
 const (
-	ListEventTypeReplacedByAccessGroupCreated                              ListEventTypeReplacedBy = "access-group-created"
-	ListEventTypeReplacedByAccessGroupDeleted                              ListEventTypeReplacedBy = "access-group-deleted"
-	ListEventTypeReplacedByAccessGroupProjectUpdated                       ListEventTypeReplacedBy = "access-group-project-updated"
-	ListEventTypeReplacedByAccessGroupUpdated                              ListEventTypeReplacedBy = "access-group-updated"
-	ListEventTypeReplacedByAccessGroupUserAdded                            ListEventTypeReplacedBy = "access-group-user-added"
-	ListEventTypeReplacedByAccessGroupUserRemoved                          ListEventTypeReplacedBy = "access-group-user-removed"
-	ListEventTypeReplacedByAdminAgenticProvisioningAccountUnlinked         ListEventTypeReplacedBy = "admin-agentic-provisioning-account-unlinked"
-	ListEventTypeReplacedByAdminObservabilityDisabled                      ListEventTypeReplacedBy = "admin-observability-disabled"
-	ListEventTypeReplacedByAdminPlanUpdated                                ListEventTypeReplacedBy = "admin-plan-updated"
-	ListEventTypeReplacedByAdminPreviewDeploymentSuffixClear               ListEventTypeReplacedBy = "admin-preview-deployment-suffix-clear"
-	ListEventTypeReplacedByAdminSamlIdpMaterialDeleted                     ListEventTypeReplacedBy = "admin-saml-idp-material-deleted"
-	ListEventTypeReplacedByAdminSamlIdpMaterialSet                         ListEventTypeReplacedBy = "admin-saml-idp-material-set"
-	ListEventTypeReplacedByAdminSamlSpSigningKeyCreated                    ListEventTypeReplacedBy = "admin-saml-sp-signing-key-created"
-	ListEventTypeReplacedByAdminSamlSpSigningKeyUpdated                    ListEventTypeReplacedBy = "admin-saml-sp-signing-key-updated"
-	ListEventTypeReplacedByAdminSecondaryEmailAdded                        ListEventTypeReplacedBy = "admin-secondary-email-added"
-	ListEventTypeReplacedByAdminSecondaryEmailRemoved                      ListEventTypeReplacedBy = "admin-secondary-email-removed"
-	ListEventTypeReplacedByAdminTeamNameUpdate                             ListEventTypeReplacedBy = "admin-team-name-update"
-	ListEventTypeReplacedByAdminTeamSlugUpdate                             ListEventTypeReplacedBy = "admin-team-slug-update"
-	ListEventTypeReplacedByAdminUserDelete                                 ListEventTypeReplacedBy = "admin-user-delete"
-	ListEventTypeReplacedByAdminUserPrimaryEmailUpdated                    ListEventTypeReplacedBy = "admin-user-primary-email-updated"
-	ListEventTypeReplacedByAdminUsernameUpdated                            ListEventTypeReplacedBy = "admin-username-updated"
-	ListEventTypeReplacedByAgenticProvisioningAccountBlocked               ListEventTypeReplacedBy = "agentic-provisioning-account-blocked"
-	ListEventTypeReplacedByAgenticProvisioningAccountLinked                ListEventTypeReplacedBy = "agentic-provisioning-account-linked"
-	ListEventTypeReplacedByAgenticProvisioningAccountRelinked              ListEventTypeReplacedBy = "agentic-provisioning-account-relinked"
-	ListEventTypeReplacedByAgenticProvisioningAccountUnlinked              ListEventTypeReplacedBy = "agentic-provisioning-account-unlinked"
-	ListEventTypeReplacedByAgenticProvisioningCredentialsRotated           ListEventTypeReplacedBy = "agentic-provisioning-credentials-rotated"
-	ListEventTypeReplacedByAgenticProvisioningPlanChanged                  ListEventTypeReplacedBy = "agentic-provisioning-plan-changed"
-	ListEventTypeReplacedByAgenticProvisioningTeamCreated                  ListEventTypeReplacedBy = "agentic-provisioning-team-created"
-	ListEventTypeReplacedByAiAgentUsageBilling                             ListEventTypeReplacedBy = "ai-agent-usage-billing"
-	ListEventTypeReplacedByAiAgentUsageBillingConsent                      ListEventTypeReplacedBy = "ai-agent-usage-billing-consent"
-	ListEventTypeReplacedByAiAlertInvestigation                            ListEventTypeReplacedBy = "ai-alert-investigation"
-	ListEventTypeReplacedByAiCodeReview                                    ListEventTypeReplacedBy = "ai-code-review"
-	ListEventTypeReplacedByAiGatewayAccessPolicyCreated                    ListEventTypeReplacedBy = "ai-gateway-access-policy-created"
-	ListEventTypeReplacedByAiGatewayAccessPolicyDeleted                    ListEventTypeReplacedBy = "ai-gateway-access-policy-deleted"
-	ListEventTypeReplacedByAiGatewayAccessPolicyMemberAdded                ListEventTypeReplacedBy = "ai-gateway-access-policy-member-added"
-	ListEventTypeReplacedByAiGatewayAccessPolicyMemberRemoved              ListEventTypeReplacedBy = "ai-gateway-access-policy-member-removed"
-	ListEventTypeReplacedByAiGatewayAccessPolicyUpdated                    ListEventTypeReplacedBy = "ai-gateway-access-policy-updated"
-	ListEventTypeReplacedByAiGatewayApiKeyCreated                          ListEventTypeReplacedBy = "ai-gateway-api-key-created"
-	ListEventTypeReplacedByAiGatewayApiKeyDeleted                          ListEventTypeReplacedBy = "ai-gateway-api-key-deleted"
-	ListEventTypeReplacedByAiGatewayApiKeyQuotaUpdated                     ListEventTypeReplacedBy = "ai-gateway-api-key-quota-updated"
-	ListEventTypeReplacedByAiGatewayAutoReloadUpdated                      ListEventTypeReplacedBy = "ai-gateway-auto-reload-updated"
-	ListEventTypeReplacedByAiGatewayBudgetDefaultUpdated                   ListEventTypeReplacedBy = "ai-gateway-budget-default-updated"
-	ListEventTypeReplacedByAiGatewayByokCredentialCreated                  ListEventTypeReplacedBy = "ai-gateway-byok-credential-created"
-	ListEventTypeReplacedByAiGatewayByokCredentialDeleted                  ListEventTypeReplacedBy = "ai-gateway-byok-credential-deleted"
-	ListEventTypeReplacedByAiGatewayByokCredentialUpdated                  ListEventTypeReplacedBy = "ai-gateway-byok-credential-updated"
-	ListEventTypeReplacedByAiGatewayByokModelMappingsUpdated               ListEventTypeReplacedBy = "ai-gateway-byok-model-mappings-updated"
-	ListEventTypeReplacedByAiGatewayCreditsPurchased                       ListEventTypeReplacedBy = "ai-gateway-credits-purchased"
-	ListEventTypeReplacedByAiGatewayGuardrailsUpdated                      ListEventTypeReplacedBy = "ai-gateway-guardrails-updated"
-	ListEventTypeReplacedByAiGatewayHeadquartersUpdated                    ListEventTypeReplacedBy = "ai-gateway-headquarters-updated"
-	ListEventTypeReplacedByAiGatewayHipaaComplianceToggled                 ListEventTypeReplacedBy = "ai-gateway-hipaa-compliance-toggled"
-	ListEventTypeReplacedByAiGatewayInferenceHooksEndpointUpdated          ListEventTypeReplacedBy = "ai-gateway-inference-hooks-endpoint-updated"
-	ListEventTypeReplacedByAiGatewayInferenceHooksHeadersCleared           ListEventTypeReplacedBy = "ai-gateway-inference-hooks-headers-cleared"
-	ListEventTypeReplacedByAiGatewayInferenceHooksHeadersUpdated           ListEventTypeReplacedBy = "ai-gateway-inference-hooks-headers-updated"
-	ListEventTypeReplacedByAiGatewayInferenceHooksRemoved                  ListEventTypeReplacedBy = "ai-gateway-inference-hooks-removed"
-	ListEventTypeReplacedByAiGatewayInferenceHooksSettingsUpdated          ListEventTypeReplacedBy = "ai-gateway-inference-hooks-settings-updated"
-	ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretCreated     ListEventTypeReplacedBy = "ai-gateway-inference-hooks-signing-secret-created"
-	ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretRotated     ListEventTypeReplacedBy = "ai-gateway-inference-hooks-signing-secret-rotated"
-	ListEventTypeReplacedByAiGatewayInferenceHooksToggled                  ListEventTypeReplacedBy = "ai-gateway-inference-hooks-toggled"
-	ListEventTypeReplacedByAiGatewayInferenceRegionsUpdated                ListEventTypeReplacedBy = "ai-gateway-inference-regions-updated"
-	ListEventTypeReplacedByAiGatewayMemberBudgetChanges                    ListEventTypeReplacedBy = "ai-gateway-member-budget-changes"
-	ListEventTypeReplacedByAiGatewayModelAllowlistModelsUpdated            ListEventTypeReplacedBy = "ai-gateway-model-allowlist-models-updated"
-	ListEventTypeReplacedByAiGatewayModelAllowlistToggled                  ListEventTypeReplacedBy = "ai-gateway-model-allowlist-toggled"
-	ListEventTypeReplacedByAiGatewayModelCatalogAlertSettingsUpdated       ListEventTypeReplacedBy = "ai-gateway-model-catalog-alert-settings-updated"
-	ListEventTypeReplacedByAiGatewayPrivateModelCreated                    ListEventTypeReplacedBy = "ai-gateway-private-model-created"
-	ListEventTypeReplacedByAiGatewayPrivateModelDeleted                    ListEventTypeReplacedBy = "ai-gateway-private-model-deleted"
-	ListEventTypeReplacedByAiGatewayPrivateModelUpdated                    ListEventTypeReplacedBy = "ai-gateway-private-model-updated"
-	ListEventTypeReplacedByAiGatewayPrivateProviderCreated                 ListEventTypeReplacedBy = "ai-gateway-private-provider-created"
-	ListEventTypeReplacedByAiGatewayPrivateProviderDeleted                 ListEventTypeReplacedBy = "ai-gateway-private-provider-deleted"
-	ListEventTypeReplacedByAiGatewayPrivateProviderUpdated                 ListEventTypeReplacedBy = "ai-gateway-private-provider-updated"
-	ListEventTypeReplacedByAiGatewayPromptTrainingOptOutToggled            ListEventTypeReplacedBy = "ai-gateway-prompt-training-opt-out-toggled"
-	ListEventTypeReplacedByAiGatewayProviderAllowlistProvidersUpdated      ListEventTypeReplacedBy = "ai-gateway-provider-allowlist-providers-updated"
-	ListEventTypeReplacedByAiGatewayProviderAllowlistToggled               ListEventTypeReplacedBy = "ai-gateway-provider-allowlist-toggled"
-	ListEventTypeReplacedByAiGatewayRuleCreated                            ListEventTypeReplacedBy = "ai-gateway-rule-created"
-	ListEventTypeReplacedByAiGatewayRuleDeleted                            ListEventTypeReplacedBy = "ai-gateway-rule-deleted"
-	ListEventTypeReplacedByAiGatewayRuleUpdated                            ListEventTypeReplacedBy = "ai-gateway-rule-updated"
-	ListEventTypeReplacedByAiGatewayScopeBudgetUpdated                     ListEventTypeReplacedBy = "ai-gateway-scope-budget-updated"
-	ListEventTypeReplacedByAiGatewaySystemCredentialFallbackOptOutToggled  ListEventTypeReplacedBy = "ai-gateway-system-credential-fallback-opt-out-toggled"
-	ListEventTypeReplacedByAiGatewayTranscriptsDefaultDisabled             ListEventTypeReplacedBy = "ai-gateway-transcripts-default-disabled"
-	ListEventTypeReplacedByAiGatewayTranscriptsDefaultEnabled              ListEventTypeReplacedBy = "ai-gateway-transcripts-default-enabled"
-	ListEventTypeReplacedByAiGatewayTranscriptsDisabled                    ListEventTypeReplacedBy = "ai-gateway-transcripts-disabled"
-	ListEventTypeReplacedByAiGatewayTranscriptsEnabled                     ListEventTypeReplacedBy = "ai-gateway-transcripts-enabled"
-	ListEventTypeReplacedByAiGatewayTranscriptsRetentionUpdated            ListEventTypeReplacedBy = "ai-gateway-transcripts-retention-updated"
-	ListEventTypeReplacedByAiGatewayVirtualModelConfigArchived             ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-archived"
-	ListEventTypeReplacedByAiGatewayVirtualModelConfigCreated              ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-created"
-	ListEventTypeReplacedByAiGatewayVirtualModelConfigDeleted              ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-deleted"
-	ListEventTypeReplacedByAiGatewayVirtualModelConfigRestored             ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-restored"
-	ListEventTypeReplacedByAiGatewayVirtualModelConfigUpdated              ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-updated"
-	ListEventTypeReplacedByAiGatewayZeroDataRetentionToggled               ListEventTypeReplacedBy = "ai-gateway-zero-data-retention-toggled"
-	ListEventTypeReplacedByAiOmniagent                                     ListEventTypeReplacedBy = "ai-omniagent"
-	ListEventTypeReplacedByAiSecurityReview                                ListEventTypeReplacedBy = "ai-security-review"
-	ListEventTypeReplacedByAiVerification                                  ListEventTypeReplacedBy = "ai-verification"
-	ListEventTypeReplacedByAlertGroupDetected                              ListEventTypeReplacedBy = "alert-group-detected"
-	ListEventTypeReplacedByAlertGroupInvestigationCompleted                ListEventTypeReplacedBy = "alert-group-investigation-completed"
-	ListEventTypeReplacedByAlertGroupPublished                             ListEventTypeReplacedBy = "alert-group-published"
-	ListEventTypeReplacedByAlertInvestigationProjectAllowlistUpdated       ListEventTypeReplacedBy = "alert-investigation-project-allowlist-updated"
-	ListEventTypeReplacedByAlertResolved                                   ListEventTypeReplacedBy = "alert-resolved"
-	ListEventTypeReplacedByAlertRuleCreated                                ListEventTypeReplacedBy = "alert-rule-created"
-	ListEventTypeReplacedByAlertRuleDeleted                                ListEventTypeReplacedBy = "alert-rule-deleted"
-	ListEventTypeReplacedByAlertRuleUpdated                                ListEventTypeReplacedBy = "alert-rule-updated"
-	ListEventTypeReplacedByAlias                                           ListEventTypeReplacedBy = "alias"
-	ListEventTypeReplacedByAliasChown                                      ListEventTypeReplacedBy = "alias-chown"
-	ListEventTypeReplacedByAliasDelete                                     ListEventTypeReplacedBy = "alias-delete"
-	ListEventTypeReplacedByAliasInviteCreated                              ListEventTypeReplacedBy = "alias-invite-created"
-	ListEventTypeReplacedByAliasInviteJoined                               ListEventTypeReplacedBy = "alias-invite-joined"
-	ListEventTypeReplacedByAliasInviteRevoked                              ListEventTypeReplacedBy = "alias-invite-revoked"
-	ListEventTypeReplacedByAliasProtectionBypassCreated                    ListEventTypeReplacedBy = "alias-protection-bypass-created"
-	ListEventTypeReplacedByAliasProtectionBypassException                  ListEventTypeReplacedBy = "alias-protection-bypass-exception"
-	ListEventTypeReplacedByAliasProtectionBypassRegenerated                ListEventTypeReplacedBy = "alias-protection-bypass-regenerated"
-	ListEventTypeReplacedByAliasProtectionBypassRevoked                    ListEventTypeReplacedBy = "alias-protection-bypass-revoked"
-	ListEventTypeReplacedByAliasSystem                                     ListEventTypeReplacedBy = "alias-system"
-	ListEventTypeReplacedByAliasUserScopedAccessDenied                     ListEventTypeReplacedBy = "alias-user-scoped-access-denied"
-	ListEventTypeReplacedByAliasUserScopedAccessGranted                    ListEventTypeReplacedBy = "alias-user-scoped-access-granted"
-	ListEventTypeReplacedByAliasUserScopedAccessRequested                  ListEventTypeReplacedBy = "alias-user-scoped-access-requested"
-	ListEventTypeReplacedByAliasUserScopedAccessRevoked                    ListEventTypeReplacedBy = "alias-user-scoped-access-revoked"
-	ListEventTypeReplacedByAliasesAssigned                                 ListEventTypeReplacedBy = "aliases-assigned"
-	ListEventTypeReplacedByAttackModeDisabled                              ListEventTypeReplacedBy = "attack-mode-disabled"
-	ListEventTypeReplacedByAttackModeEnabled                               ListEventTypeReplacedBy = "attack-mode-enabled"
-	ListEventTypeReplacedByAuditLogExportDownloaded                        ListEventTypeReplacedBy = "audit-log-export-downloaded"
-	ListEventTypeReplacedByAuditLogExportRequested                         ListEventTypeReplacedBy = "audit-log-export-requested"
-	ListEventTypeReplacedByAuthorizeGitDeployment                          ListEventTypeReplacedBy = "authorize-git-deployment"
-	ListEventTypeReplacedByAutoExposeSystemEnvs                            ListEventTypeReplacedBy = "auto-expose-system-envs"
-	ListEventTypeReplacedByAvatar                                          ListEventTypeReplacedBy = "avatar"
-	ListEventTypeReplacedByBillingSettingsUpdated                          ListEventTypeReplacedBy = "billing-settings-updated"
-	ListEventTypeReplacedByBulkRedirectsSettingsUpdated                    ListEventTypeReplacedBy = "bulk-redirects-settings-updated"
-	ListEventTypeReplacedByBulkRedirectsVersionPromoted                    ListEventTypeReplacedBy = "bulk-redirects-version-promoted"
-	ListEventTypeReplacedByBulkRedirectsVersionRestored                    ListEventTypeReplacedBy = "bulk-redirects-version-restored"
-	ListEventTypeReplacedByCert                                            ListEventTypeReplacedBy = "cert"
-	ListEventTypeReplacedByCertAutorenew                                   ListEventTypeReplacedBy = "cert-autorenew"
-	ListEventTypeReplacedByCertChown                                       ListEventTypeReplacedBy = "cert-chown"
-	ListEventTypeReplacedByCertClone                                       ListEventTypeReplacedBy = "cert-clone"
-	ListEventTypeReplacedByCertDelete                                      ListEventTypeReplacedBy = "cert-delete"
-	ListEventTypeReplacedByCertRenew                                       ListEventTypeReplacedBy = "cert-renew"
-	ListEventTypeReplacedByCertReplace                                     ListEventTypeReplacedBy = "cert-replace"
-	ListEventTypeReplacedByCertSystemCreate                                ListEventTypeReplacedBy = "cert-system-create"
-	ListEventTypeReplacedByCodeOwnersAssumeOwners                          ListEventTypeReplacedBy = "code-owners-assume-owners"
-	ListEventTypeReplacedByCodeOwnersConfigUpdated                         ListEventTypeReplacedBy = "code-owners-config-updated"
-	ListEventTypeReplacedByComplianceDocumentDownloaded                    ListEventTypeReplacedBy = "compliance-document-downloaded"
-	ListEventTypeReplacedByComplianceDocumentPreviewed                     ListEventTypeReplacedBy = "compliance-document-previewed"
-	ListEventTypeReplacedByComplianceDocumentsBulkDownloaded               ListEventTypeReplacedBy = "compliance-documents-bulk-downloaded"
-	ListEventTypeReplacedByConcurrentBuildsUpdate                          ListEventTypeReplacedBy = "concurrent-builds-update"
-	ListEventTypeReplacedByConnectApproveConnectorRequest                  ListEventTypeReplacedBy = "connect-approve-connector-request"
-	ListEventTypeReplacedByConnectAttachProject                            ListEventTypeReplacedBy = "connect-attach-project"
-	ListEventTypeReplacedByConnectBitbucket                                ListEventTypeReplacedBy = "connect-bitbucket"
-	ListEventTypeReplacedByConnectBitbucketApp                             ListEventTypeReplacedBy = "connect-bitbucket-app"
-	ListEventTypeReplacedByConnectBrandingUpdated                          ListEventTypeReplacedBy = "connect-branding-updated"
-	ListEventTypeReplacedByConnectCancelMcpEventSubscription               ListEventTypeReplacedBy = "connect-cancel-mcp-event-subscription"
-	ListEventTypeReplacedByConnectConfigurationCreated                     ListEventTypeReplacedBy = "connect-configuration-created"
-	ListEventTypeReplacedByConnectConfigurationDeleted                     ListEventTypeReplacedBy = "connect-configuration-deleted"
-	ListEventTypeReplacedByConnectConfigurationLinkUpdated                 ListEventTypeReplacedBy = "connect-configuration-link-updated"
-	ListEventTypeReplacedByConnectConfigurationLinked                      ListEventTypeReplacedBy = "connect-configuration-linked"
-	ListEventTypeReplacedByConnectConfigurationUnlinked                    ListEventTypeReplacedBy = "connect-configuration-unlinked"
-	ListEventTypeReplacedByConnectConfigurationUpdated                     ListEventTypeReplacedBy = "connect-configuration-updated"
-	ListEventTypeReplacedByConnectCreateConnector                          ListEventTypeReplacedBy = "connect-create-connector"
-	ListEventTypeReplacedByConnectCreateMcpEventSubscription               ListEventTypeReplacedBy = "connect-create-mcp-event-subscription"
-	ListEventTypeReplacedByConnectDeleteConnector                          ListEventTypeReplacedBy = "connect-delete-connector"
-	ListEventTypeReplacedByConnectDeleteConnectorRequest                   ListEventTypeReplacedBy = "connect-delete-connector-request"
-	ListEventTypeReplacedByConnectDeleteInstallation                       ListEventTypeReplacedBy = "connect-delete-installation"
-	ListEventTypeReplacedByConnectDetachProject                            ListEventTypeReplacedBy = "connect-detach-project"
-	ListEventTypeReplacedByConnectGithub                                   ListEventTypeReplacedBy = "connect-github"
-	ListEventTypeReplacedByConnectGithubCustomHost                         ListEventTypeReplacedBy = "connect-github-custom-host"
-	ListEventTypeReplacedByConnectGithubLimited                            ListEventTypeReplacedBy = "connect-github-limited"
-	ListEventTypeReplacedByConnectGitlab                                   ListEventTypeReplacedBy = "connect-gitlab"
-	ListEventTypeReplacedByConnectGitlabApp                                ListEventTypeReplacedBy = "connect-gitlab-app"
-	ListEventTypeReplacedByConnectImportTokens                             ListEventTypeReplacedBy = "connect-import-tokens"
-	ListEventTypeReplacedByConnectProvisionConnectorRequest                ListEventTypeReplacedBy = "connect-provision-connector-request"
-	ListEventTypeReplacedByConnectRejectConnectorRequest                   ListEventTypeReplacedBy = "connect-reject-connector-request"
-	ListEventTypeReplacedByConnectRevokeAllTokens                          ListEventTypeReplacedBy = "connect-revoke-all-tokens"
-	ListEventTypeReplacedByConnectSubmitConnectorRequest                   ListEventTypeReplacedBy = "connect-submit-connector-request"
-	ListEventTypeReplacedByConnectUpdateConnector                          ListEventTypeReplacedBy = "connect-update-connector"
-	ListEventTypeReplacedByConnectUpdateConnectorRequest                   ListEventTypeReplacedBy = "connect-update-connector-request"
-	ListEventTypeReplacedByConnectUpdateTriggerDestinations                ListEventTypeReplacedBy = "connect-update-trigger-destinations"
-	ListEventTypeReplacedByConnectUpsertInstallation                       ListEventTypeReplacedBy = "connect-upsert-installation"
-	ListEventTypeReplacedByConnectWithdrawConnectorRequest                 ListEventTypeReplacedBy = "connect-withdraw-connector-request"
-	ListEventTypeReplacedByCustomAlertCreated                              ListEventTypeReplacedBy = "custom-alert-created"
-	ListEventTypeReplacedByCustomAlertDeleted                              ListEventTypeReplacedBy = "custom-alert-deleted"
-	ListEventTypeReplacedByCustomAlertUpdated                              ListEventTypeReplacedBy = "custom-alert-updated"
-	ListEventTypeReplacedByCustomEnvironmentsSettingsUpdated               ListEventTypeReplacedBy = "custom-environments-settings-updated"
-	ListEventTypeReplacedByCustomMetricMetadataDeleted                     ListEventTypeReplacedBy = "custom-metric-metadata-deleted"
-	ListEventTypeReplacedByCustomMetricMetadataUpdated                     ListEventTypeReplacedBy = "custom-metric-metadata-updated"
-	ListEventTypeReplacedByCustomSuffixClear                               ListEventTypeReplacedBy = "custom-suffix-clear"
-	ListEventTypeReplacedByCustomSuffixDisable                             ListEventTypeReplacedBy = "custom-suffix-disable"
-	ListEventTypeReplacedByCustomSuffixEnable                              ListEventTypeReplacedBy = "custom-suffix-enable"
-	ListEventTypeReplacedByCustomSuffixPending                             ListEventTypeReplacedBy = "custom-suffix-pending"
-	ListEventTypeReplacedByCustomSuffixReady                               ListEventTypeReplacedBy = "custom-suffix-ready"
-	ListEventTypeReplacedByDefaultPasswordProtection                       ListEventTypeReplacedBy = "default-password-protection"
-	ListEventTypeReplacedByDefaultSsoProtection                            ListEventTypeReplacedBy = "default-sso-protection"
-	ListEventTypeReplacedByDeployHookCreated                               ListEventTypeReplacedBy = "deploy-hook-created"
-	ListEventTypeReplacedByDeployHookDeduped                               ListEventTypeReplacedBy = "deploy-hook-deduped"
-	ListEventTypeReplacedByDeployHookDeleted                               ListEventTypeReplacedBy = "deploy-hook-deleted"
-	ListEventTypeReplacedByDeployHookProcessed                             ListEventTypeReplacedBy = "deploy-hook-processed"
-	ListEventTypeReplacedByDeployment                                      ListEventTypeReplacedBy = "deployment"
-	ListEventTypeReplacedByDeploymentCheckCreated                          ListEventTypeReplacedBy = "deployment-check-created"
-	ListEventTypeReplacedByDeploymentCheckDeleted                          ListEventTypeReplacedBy = "deployment-check-deleted"
-	ListEventTypeReplacedByDeploymentCheckUpdated                          ListEventTypeReplacedBy = "deployment-check-updated"
-	ListEventTypeReplacedByDeploymentChown                                 ListEventTypeReplacedBy = "deployment-chown"
-	ListEventTypeReplacedByDeploymentCreationBlocked                       ListEventTypeReplacedBy = "deployment-creation-blocked"
-	ListEventTypeReplacedByDeploymentDelete                                ListEventTypeReplacedBy = "deployment-delete"
-	ListEventTypeReplacedByDeploymentPolicyBlocked                         ListEventTypeReplacedBy = "deployment-policy-blocked"
-	ListEventTypeReplacedByDeploymentProtectionAccessRequests              ListEventTypeReplacedBy = "deployment-protection-access-requests"
-	ListEventTypeReplacedByDeploymentUndeleted                             ListEventTypeReplacedBy = "deployment-undeleted"
-	ListEventTypeReplacedByDisabledIntegrationInstallationRemoved          ListEventTypeReplacedBy = "disabled-integration-installation-removed"
-	ListEventTypeReplacedByDisconnectBitbucketApp                          ListEventTypeReplacedBy = "disconnect-bitbucket-app"
-	ListEventTypeReplacedByDisconnectGithub                                ListEventTypeReplacedBy = "disconnect-github"
-	ListEventTypeReplacedByDisconnectGithubCustomHost                      ListEventTypeReplacedBy = "disconnect-github-custom-host"
-	ListEventTypeReplacedByDisconnectGithubLimited                         ListEventTypeReplacedBy = "disconnect-github-limited"
-	ListEventTypeReplacedByDisconnectGitlabApp                             ListEventTypeReplacedBy = "disconnect-gitlab-app"
-	ListEventTypeReplacedByDnsAdd                                          ListEventTypeReplacedBy = "dns-add"
-	ListEventTypeReplacedByDnsDelete                                       ListEventTypeReplacedBy = "dns-delete"
-	ListEventTypeReplacedByDnsRecordInternal                               ListEventTypeReplacedBy = "dns-record-internal"
-	ListEventTypeReplacedByDnsUpdate                                       ListEventTypeReplacedBy = "dns-update"
-	ListEventTypeReplacedByDnsZonefileImport                               ListEventTypeReplacedBy = "dns-zonefile-import"
-	ListEventTypeReplacedByDomain                                          ListEventTypeReplacedBy = "domain"
-	ListEventTypeReplacedByDomainBuy                                       ListEventTypeReplacedBy = "domain-buy"
-	ListEventTypeReplacedByDomainCdn                                       ListEventTypeReplacedBy = "domain-cdn"
-	ListEventTypeReplacedByDomainChown                                     ListEventTypeReplacedBy = "domain-chown"
-	ListEventTypeReplacedByDomainCustomNsChange                            ListEventTypeReplacedBy = "domain-custom-ns-change"
-	ListEventTypeReplacedByDomainDelegated                                 ListEventTypeReplacedBy = "domain-delegated"
-	ListEventTypeReplacedByDomainDelete                                    ListEventTypeReplacedBy = "domain-delete"
-	ListEventTypeReplacedByDomainEchChange                                 ListEventTypeReplacedBy = "domain-ech-change"
-	ListEventTypeReplacedByDomainMoveIn                                    ListEventTypeReplacedBy = "domain-move-in"
-	ListEventTypeReplacedByDomainMoveOut                                   ListEventTypeReplacedBy = "domain-move-out"
-	ListEventTypeReplacedByDomainMoveOutRequestSent                        ListEventTypeReplacedBy = "domain-move-out-request-sent"
-	ListEventTypeReplacedByDomainRenewChange                               ListEventTypeReplacedBy = "domain-renew-change"
-	ListEventTypeReplacedByDomainServiceTypeUpdated                        ListEventTypeReplacedBy = "domain-service-type-updated"
-	ListEventTypeReplacedByDomainTransferIn                                ListEventTypeReplacedBy = "domain-transfer-in"
-	ListEventTypeReplacedByDomainTransferInCanceled                        ListEventTypeReplacedBy = "domain-transfer-in-canceled"
-	ListEventTypeReplacedByDomainTransferInCompleted                       ListEventTypeReplacedBy = "domain-transfer-in-completed"
-	ListEventTypeReplacedByDomainZoneChange                                ListEventTypeReplacedBy = "domain-zone-change"
-	ListEventTypeReplacedByDomainZoneChangeInternal                        ListEventTypeReplacedBy = "domain-zone-change-internal"
-	ListEventTypeReplacedByDrainCreated                                    ListEventTypeReplacedBy = "drain-created"
-	ListEventTypeReplacedByDrainDeleted                                    ListEventTypeReplacedBy = "drain-deleted"
-	ListEventTypeReplacedByDrainDisabled                                   ListEventTypeReplacedBy = "drain-disabled"
-	ListEventTypeReplacedByDrainEnabled                                    ListEventTypeReplacedBy = "drain-enabled"
-	ListEventTypeReplacedByDrainUpdated                                    ListEventTypeReplacedBy = "drain-updated"
-	ListEventTypeReplacedByDriveCreated                                    ListEventTypeReplacedBy = "drive-created"
-	ListEventTypeReplacedByDriveDeleted                                    ListEventTypeReplacedBy = "drive-deleted"
-	ListEventTypeReplacedByDriveSnapshotCreated                            ListEventTypeReplacedBy = "drive-snapshot-created"
-	ListEventTypeReplacedByDriveSnapshotDeleted                            ListEventTypeReplacedBy = "drive-snapshot-deleted"
-	ListEventTypeReplacedByEdgeCacheDangerouslyDeleteBySrcImages           ListEventTypeReplacedBy = "edge-cache-dangerously-delete-by-src-images"
-	ListEventTypeReplacedByEdgeCacheDangerouslyDeleteByTags                ListEventTypeReplacedBy = "edge-cache-dangerously-delete-by-tags"
-	ListEventTypeReplacedByEdgeCacheDangerouslyDeleteImmutableStatic       ListEventTypeReplacedBy = "edge-cache-dangerously-delete-immutable-static"
-	ListEventTypeReplacedByEdgeCacheInvalidateBySrcImages                  ListEventTypeReplacedBy = "edge-cache-invalidate-by-src-images"
-	ListEventTypeReplacedByEdgeCacheInvalidateByTags                       ListEventTypeReplacedBy = "edge-cache-invalidate-by-tags"
-	ListEventTypeReplacedByEdgeCachePurgeAll                               ListEventTypeReplacedBy = "edge-cache-purge-all"
-	ListEventTypeReplacedByEdgeCacheRollbackPurge                          ListEventTypeReplacedBy = "edge-cache-rollback-purge"
-	ListEventTypeReplacedByEdgeConfigBackupRestored                        ListEventTypeReplacedBy = "edge-config-backup-restored"
-	ListEventTypeReplacedByEdgeConfigCreated                               ListEventTypeReplacedBy = "edge-config-created"
-	ListEventTypeReplacedByEdgeConfigDeleted                               ListEventTypeReplacedBy = "edge-config-deleted"
-	ListEventTypeReplacedByEdgeConfigItemsUpdated                          ListEventTypeReplacedBy = "edge-config-items-updated"
-	ListEventTypeReplacedByEdgeConfigSchemaDeleted                         ListEventTypeReplacedBy = "edge-config-schema-deleted"
-	ListEventTypeReplacedByEdgeConfigSchemaUpdated                         ListEventTypeReplacedBy = "edge-config-schema-updated"
-	ListEventTypeReplacedByEdgeConfigTokenCreated                          ListEventTypeReplacedBy = "edge-config-token-created"
-	ListEventTypeReplacedByEdgeConfigTokenDeleted                          ListEventTypeReplacedBy = "edge-config-token-deleted"
-	ListEventTypeReplacedByEdgeConfigTransferIn                            ListEventTypeReplacedBy = "edge-config-transfer-in"
-	ListEventTypeReplacedByEdgeConfigTransferOut                           ListEventTypeReplacedBy = "edge-config-transfer-out"
-	ListEventTypeReplacedByEdgeConfigUpdated                               ListEventTypeReplacedBy = "edge-config-updated"
-	ListEventTypeReplacedByEmail                                           ListEventTypeReplacedBy = "email"
-	ListEventTypeReplacedByEmailNotificationRuleRemoved                    ListEventTypeReplacedBy = "email-notification-rule-removed"
-	ListEventTypeReplacedByEmailNotificationRuleUpdated                    ListEventTypeReplacedBy = "email-notification-rule-updated"
-	ListEventTypeReplacedByEmuMemberRemovedUnverifiedDomain                ListEventTypeReplacedBy = "emu-member-removed-unverified-domain"
-	ListEventTypeReplacedByEnforceDisjunctiveProductionSecrets             ListEventTypeReplacedBy = "enforce-disjunctive-production-secrets"
-	ListEventTypeReplacedByEnforceSensitiveEnvironmentVariables            ListEventTypeReplacedBy = "enforce-sensitive-environment-variables"
-	ListEventTypeReplacedByEnvVariableAdd                                  ListEventTypeReplacedBy = "env-variable-add"
-	ListEventTypeReplacedByEnvVariableDelete                               ListEventTypeReplacedBy = "env-variable-delete"
-	ListEventTypeReplacedByEnvVariableEdit                                 ListEventTypeReplacedBy = "env-variable-edit"
-	ListEventTypeReplacedByEnvVariableMasked                               ListEventTypeReplacedBy = "env-variable-masked"
-	ListEventTypeReplacedByEnvVariableRead                                 ListEventTypeReplacedBy = "env-variable-read"
-	ListEventTypeReplacedByEnvVariableReadCliDev                           ListEventTypeReplacedBy = "env-variable-read:cli:dev"
-	ListEventTypeReplacedByEnvVariableReadCliEnvAdd                        ListEventTypeReplacedBy = "env-variable-read:cli:env:add"
-	ListEventTypeReplacedByEnvVariableReadCliEnvLs                         ListEventTypeReplacedBy = "env-variable-read:cli:env:ls"
-	ListEventTypeReplacedByEnvVariableReadCliEnvPull                       ListEventTypeReplacedBy = "env-variable-read:cli:env:pull"
-	ListEventTypeReplacedByEnvVariableReadCliEnvRm                         ListEventTypeReplacedBy = "env-variable-read:cli:env:rm"
-	ListEventTypeReplacedByEnvVariableReadCliPull                          ListEventTypeReplacedBy = "env-variable-read:cli:pull"
-	ListEventTypeReplacedByEnvVariableReadUnknownSource                    ListEventTypeReplacedBy = "env-variable-read:unknown-source"
-	ListEventTypeReplacedByEnvVariableReadV0EnvPull                        ListEventTypeReplacedBy = "env-variable-read:v0:env:pull"
-	ListEventTypeReplacedByEnvVariableRotated                              ListEventTypeReplacedBy = "env-variable-rotated"
-	ListEventTypeReplacedByExperimentCreated                               ListEventTypeReplacedBy = "experiment-created"
-	ListEventTypeReplacedByExperimentDeleted                               ListEventTypeReplacedBy = "experiment-deleted"
-	ListEventTypeReplacedByExperimentTransitioned                          ListEventTypeReplacedBy = "experiment-transitioned"
-	ListEventTypeReplacedByExperimentUpdated                               ListEventTypeReplacedBy = "experiment-updated"
-	ListEventTypeReplacedByFirewallBypassCreated                           ListEventTypeReplacedBy = "firewall-bypass-created"
-	ListEventTypeReplacedByFirewallBypassDeleted                           ListEventTypeReplacedBy = "firewall-bypass-deleted"
-	ListEventTypeReplacedByFirewallConditionalBypassCreated                ListEventTypeReplacedBy = "firewall-conditional-bypass-created"
-	ListEventTypeReplacedByFirewallConditionalBypassDeleted                ListEventTypeReplacedBy = "firewall-conditional-bypass-deleted"
-	ListEventTypeReplacedByFirewallConditionalBypassUpdated                ListEventTypeReplacedBy = "firewall-conditional-bypass-updated"
-	ListEventTypeReplacedByFirewallConfigModified                          ListEventTypeReplacedBy = "firewall-config-modified"
-	ListEventTypeReplacedByFirewallConfigPromoted                          ListEventTypeReplacedBy = "firewall-config-promoted"
-	ListEventTypeReplacedByFirewallConfigRemoved                           ListEventTypeReplacedBy = "firewall-config-removed"
-	ListEventTypeReplacedByFirewallManagedRulegroupUpdated                 ListEventTypeReplacedBy = "firewall-managed-rulegroup-updated"
-	ListEventTypeReplacedByFirewallManagedRulesetUpdated                   ListEventTypeReplacedBy = "firewall-managed-ruleset-updated"
-	ListEventTypeReplacedByFlag                                            ListEventTypeReplacedBy = "flag"
-	ListEventTypeReplacedByFlagArchived                                    ListEventTypeReplacedBy = "flag-archived"
-	ListEventTypeReplacedByFlagCreated                                     ListEventTypeReplacedBy = "flag-created"
-	ListEventTypeReplacedByFlagDeleted                                     ListEventTypeReplacedBy = "flag-deleted"
-	ListEventTypeReplacedByFlagUnarchived                                  ListEventTypeReplacedBy = "flag-unarchived"
-	ListEventTypeReplacedByFlagUpdated                                     ListEventTypeReplacedBy = "flag-updated"
-	ListEventTypeReplacedByFlagsConnectionCreated                          ListEventTypeReplacedBy = "flags-connection-created"
-	ListEventTypeReplacedByFlagsConnectionDeleted                          ListEventTypeReplacedBy = "flags-connection-deleted"
-	ListEventTypeReplacedByFlagsExplorerSubscription                       ListEventTypeReplacedBy = "flags-explorer-subscription"
-	ListEventTypeReplacedByFlagsOverridesSigned                            ListEventTypeReplacedBy = "flags-overrides-signed"
-	ListEventTypeReplacedByFlagsSdkKey                                     ListEventTypeReplacedBy = "flags-sdk-key"
-	ListEventTypeReplacedByFlagsSdkKeyAdded                                ListEventTypeReplacedBy = "flags-sdk-key-added"
-	ListEventTypeReplacedByFlagsSdkKeyDeleted                              ListEventTypeReplacedBy = "flags-sdk-key-deleted"
-	ListEventTypeReplacedByFlagsSdkKeyRead                                 ListEventTypeReplacedBy = "flags-sdk-key-read"
-	ListEventTypeReplacedByFlagsSegment                                    ListEventTypeReplacedBy = "flags-segment"
-	ListEventTypeReplacedByFlagsSettings                                   ListEventTypeReplacedBy = "flags-settings"
-	ListEventTypeReplacedByFlagsTransferred                                ListEventTypeReplacedBy = "flags-transferred"
-	ListEventTypeReplacedByFlatRateCdnAutoUpgradeConsent                   ListEventTypeReplacedBy = "flat-rate-cdn-auto-upgrade-consent"
-	ListEventTypeReplacedByFlatRateCdnMigrationOptOut                      ListEventTypeReplacedBy = "flat-rate-cdn-migration-opt-out"
-	ListEventTypeReplacedByGitAccountIntegrationLinkAdded                  ListEventTypeReplacedBy = "git_account_integration_link_added"
-	ListEventTypeReplacedByGitIntegrationRepoPush                          ListEventTypeReplacedBy = "git-integration-repo-push"
-	ListEventTypeReplacedByGlobalConfigBackupRestored                      ListEventTypeReplacedBy = "global-config-backup-restored"
-	ListEventTypeReplacedByGlobalConfigCreated                             ListEventTypeReplacedBy = "global-config-created"
-	ListEventTypeReplacedByGlobalConfigDeleted                             ListEventTypeReplacedBy = "global-config-deleted"
-	ListEventTypeReplacedByGlobalConfigItemsUpdated                        ListEventTypeReplacedBy = "global-config-items-updated"
-	ListEventTypeReplacedByGlobalConfigSchemaDeleted                       ListEventTypeReplacedBy = "global-config-schema-deleted"
-	ListEventTypeReplacedByGlobalConfigSchemaUpdated                       ListEventTypeReplacedBy = "global-config-schema-updated"
-	ListEventTypeReplacedByGlobalConfigTokenCreated                        ListEventTypeReplacedBy = "global-config-token-created"
-	ListEventTypeReplacedByGlobalConfigTokenDeleted                        ListEventTypeReplacedBy = "global-config-token-deleted"
-	ListEventTypeReplacedByGlobalConfigTransferIn                          ListEventTypeReplacedBy = "global-config-transfer-in"
-	ListEventTypeReplacedByGlobalConfigTransferOut                         ListEventTypeReplacedBy = "global-config-transfer-out"
-	ListEventTypeReplacedByGlobalConfigUpdated                             ListEventTypeReplacedBy = "global-config-updated"
-	ListEventTypeReplacedByInstantRollbackCreated                          ListEventTypeReplacedBy = "instant-rollback-created"
-	ListEventTypeReplacedByIntegrationAccessTokenSettingsUpdated           ListEventTypeReplacedBy = "integration-access-token-settings-updated"
-	ListEventTypeReplacedByIntegrationConfigurationCredentialRevoked       ListEventTypeReplacedBy = "integration-configuration-credential-revoked"
-	ListEventTypeReplacedByIntegrationConfigurationCredentialRotated       ListEventTypeReplacedBy = "integration-configuration-credential-rotated"
-	ListEventTypeReplacedByIntegrationConfigurationOwnerChanged            ListEventTypeReplacedBy = "integration-configuration-owner-changed"
-	ListEventTypeReplacedByIntegrationConfigurationScopeChangeConfirmed    ListEventTypeReplacedBy = "integration-configuration-scope-change-confirmed"
-	ListEventTypeReplacedByIntegrationConfigurationTransferInSuccess       ListEventTypeReplacedBy = "integration-configuration-transfer-in-success"
-	ListEventTypeReplacedByIntegrationConfigurationTransferOutSuccess      ListEventTypeReplacedBy = "integration-configuration-transfer-out-success"
-	ListEventTypeReplacedByIntegrationConfigurationsDisabled               ListEventTypeReplacedBy = "integration-configurations-disabled"
-	ListEventTypeReplacedByIntegrationInstallationBillingPlanUpdated       ListEventTypeReplacedBy = "integration-installation-billing-plan-updated"
-	ListEventTypeReplacedByIntegrationInstallationCompleted                ListEventTypeReplacedBy = "integration-installation-completed"
-	ListEventTypeReplacedByIntegrationInstallationPermissionUpdated        ListEventTypeReplacedBy = "integration-installation-permission-updated"
-	ListEventTypeReplacedByIntegrationInstallationRemoved                  ListEventTypeReplacedBy = "integration-installation-removed"
-	ListEventTypeReplacedByIntegrationPreviousSecretRevoked                ListEventTypeReplacedBy = "integration-previous-secret-revoked"
-	ListEventTypeReplacedByIntegrationResourceRedisCommandExecuted         ListEventTypeReplacedBy = "integration-resource-redis-command-executed"
-	ListEventTypeReplacedByIntegrationResourceSqlQueryExecuted             ListEventTypeReplacedBy = "integration-resource-sql-query-executed"
-	ListEventTypeReplacedByIntegrationScopeChanged                         ListEventTypeReplacedBy = "integration-scope-changed"
-	ListEventTypeReplacedByIntegrationSecretRotated                        ListEventTypeReplacedBy = "integration-secret-rotated"
-	ListEventTypeReplacedByInvoiceModified                                 ListEventTypeReplacedBy = "invoice-modified"
-	ListEventTypeReplacedByInvoiceRefunded                                 ListEventTypeReplacedBy = "invoice-refunded"
-	ListEventTypeReplacedByKmsIssuerCreated                                ListEventTypeReplacedBy = "kms-issuer-created"
-	ListEventTypeReplacedByKmsIssuerDeleted                                ListEventTypeReplacedBy = "kms-issuer-deleted"
-	ListEventTypeReplacedByKmsIssuerKeyActivated                           ListEventTypeReplacedBy = "kms-issuer-key-activated"
-	ListEventTypeReplacedByKmsIssuerKeyCreated                             ListEventTypeReplacedBy = "kms-issuer-key-created"
-	ListEventTypeReplacedByKmsIssuerKeyRevoked                             ListEventTypeReplacedBy = "kms-issuer-key-revoked"
-	ListEventTypeReplacedByKmsIssuerKeyRotated                             ListEventTypeReplacedBy = "kms-issuer-key-rotated"
-	ListEventTypeReplacedByKmsIssuerPolicyCreated                          ListEventTypeReplacedBy = "kms-issuer-policy-created"
-	ListEventTypeReplacedByKmsIssuerPolicyDeleted                          ListEventTypeReplacedBy = "kms-issuer-policy-deleted"
-	ListEventTypeReplacedByKmsIssuerPolicyUpdated                          ListEventTypeReplacedBy = "kms-issuer-policy-updated"
-	ListEventTypeReplacedByKmsIssuerUpdated                                ListEventTypeReplacedBy = "kms-issuer-updated"
-	ListEventTypeReplacedByLogDrainCreated                                 ListEventTypeReplacedBy = "log-drain-created"
-	ListEventTypeReplacedByLogDrainDeleted                                 ListEventTypeReplacedBy = "log-drain-deleted"
-	ListEventTypeReplacedByLogDrainDisabled                                ListEventTypeReplacedBy = "log-drain-disabled"
-	ListEventTypeReplacedByLogDrainEnabled                                 ListEventTypeReplacedBy = "log-drain-enabled"
-	ListEventTypeReplacedByLogin                                           ListEventTypeReplacedBy = "login"
-	ListEventTypeReplacedByLoginConnectionLinked                           ListEventTypeReplacedBy = "login-connection-linked"
-	ListEventTypeReplacedByLoginConnectionUnlinked                         ListEventTypeReplacedBy = "login-connection-unlinked"
-	ListEventTypeReplacedByManualDeploymentPromotionCreated                ListEventTypeReplacedBy = "manual-deployment-promotion-created"
-	ListEventTypeReplacedByMarketplaceAutoCardCollectionUpdated            ListEventTypeReplacedBy = "marketplace-auto-card-collection-updated"
-	ListEventTypeReplacedByMarketplaceBillingCollectionUpdated             ListEventTypeReplacedBy = "marketplace-billing-collection-updated"
-	ListEventTypeReplacedByMarketplaceFlexCommitOptIn                      ListEventTypeReplacedBy = "marketplace-flex-commit-opt-in"
-	ListEventTypeReplacedByMarketplaceIntegrationAllowlistUpdated          ListEventTypeReplacedBy = "marketplace-integration-allowlist-updated"
-	ListEventTypeReplacedByMessageboardChannelCreated                      ListEventTypeReplacedBy = "messageboard-channel-created"
-	ListEventTypeReplacedByMessageboardChannelUpdated                      ListEventTypeReplacedBy = "messageboard-channel-updated"
-	ListEventTypeReplacedByMessageboardCreated                             ListEventTypeReplacedBy = "messageboard-created"
-	ListEventTypeReplacedByMessageboardGrantCreated                        ListEventTypeReplacedBy = "messageboard-grant-created"
-	ListEventTypeReplacedByMessageboardGrantRevoked                        ListEventTypeReplacedBy = "messageboard-grant-revoked"
-	ListEventTypeReplacedByMessageboardGrantUpdated                        ListEventTypeReplacedBy = "messageboard-grant-updated"
-	ListEventTypeReplacedByMessageboardPrivateChannelCreated               ListEventTypeReplacedBy = "messageboard-private-channel-created"
-	ListEventTypeReplacedByMessageboardPrivateChannelUpdated               ListEventTypeReplacedBy = "messageboard-private-channel-updated"
-	ListEventTypeReplacedByMessageboardPrivateCreated                      ListEventTypeReplacedBy = "messageboard-private-created"
-	ListEventTypeReplacedByMessageboardPrivateGrantCreated                 ListEventTypeReplacedBy = "messageboard-private-grant-created"
-	ListEventTypeReplacedByMessageboardPrivateGrantRevoked                 ListEventTypeReplacedBy = "messageboard-private-grant-revoked"
-	ListEventTypeReplacedByMessageboardPrivateGrantUpdated                 ListEventTypeReplacedBy = "messageboard-private-grant-updated"
-	ListEventTypeReplacedByMessageboardPrivateProjectGranted               ListEventTypeReplacedBy = "messageboard-private-project-granted"
-	ListEventTypeReplacedByMessageboardPrivateProjectRevoked               ListEventTypeReplacedBy = "messageboard-private-project-revoked"
-	ListEventTypeReplacedByMessageboardProjectChannelCreated               ListEventTypeReplacedBy = "messageboard-project-channel-created"
-	ListEventTypeReplacedByMessageboardProjectCreated                      ListEventTypeReplacedBy = "messageboard-project-created"
-	ListEventTypeReplacedByMessageboardProjectGranted                      ListEventTypeReplacedBy = "messageboard-project-granted"
-	ListEventTypeReplacedByMessageboardProjectPrivateChannelCreated        ListEventTypeReplacedBy = "messageboard-project-private-channel-created"
-	ListEventTypeReplacedByMessageboardProjectRevoked                      ListEventTypeReplacedBy = "messageboard-project-revoked"
-	ListEventTypeReplacedByMessageboardSchemaRegistered                    ListEventTypeReplacedBy = "messageboard-schema-registered"
-	ListEventTypeReplacedByMessageboardVisibilityUpdated                   ListEventTypeReplacedBy = "messageboard-visibility-updated"
-	ListEventTypeReplacedByMicrofrontendGroupAdded                         ListEventTypeReplacedBy = "microfrontend-group-added"
-	ListEventTypeReplacedByMicrofrontendGroupDeleted                       ListEventTypeReplacedBy = "microfrontend-group-deleted"
-	ListEventTypeReplacedByMicrofrontendGroupUpdated                       ListEventTypeReplacedBy = "microfrontend-group-updated"
-	ListEventTypeReplacedByMicrofrontendProjectAddedToGroup                ListEventTypeReplacedBy = "microfrontend-project-added-to-group"
-	ListEventTypeReplacedByMicrofrontendProjectRemovedFromGroup            ListEventTypeReplacedBy = "microfrontend-project-removed-from-group"
-	ListEventTypeReplacedByMicrofrontendProjectUpdated                     ListEventTypeReplacedBy = "microfrontend-project-updated"
-	ListEventTypeReplacedByMonitoringAlertUpdated                          ListEventTypeReplacedBy = "monitoring-alert-updated"
-	ListEventTypeReplacedByMonitoringDisabled                              ListEventTypeReplacedBy = "monitoring-disabled"
-	ListEventTypeReplacedByMonitoringEnabled                               ListEventTypeReplacedBy = "monitoring-enabled"
-	ListEventTypeReplacedByOauthAppConnectionCreated                       ListEventTypeReplacedBy = "oauth-app-connection-created"
-	ListEventTypeReplacedByOauthAppConnectionRemoved                       ListEventTypeReplacedBy = "oauth-app-connection-removed"
-	ListEventTypeReplacedByOauthAppConnectionUpdated                       ListEventTypeReplacedBy = "oauth-app-connection-updated"
-	ListEventTypeReplacedByOauthAppCreated                                 ListEventTypeReplacedBy = "oauth-app-created"
-	ListEventTypeReplacedByOauthAppDeleted                                 ListEventTypeReplacedBy = "oauth-app-deleted"
-	ListEventTypeReplacedByOauthAppSecretDeleted                           ListEventTypeReplacedBy = "oauth-app-secret-deleted"
-	ListEventTypeReplacedByOauthAppSecretGenerated                         ListEventTypeReplacedBy = "oauth-app-secret-generated"
-	ListEventTypeReplacedByOauthAppTokenCreated                            ListEventTypeReplacedBy = "oauth-app-token-created"
-	ListEventTypeReplacedByOauthAppUpdated                                 ListEventTypeReplacedBy = "oauth-app-updated"
-	ListEventTypeReplacedByObservabilityDisabled                           ListEventTypeReplacedBy = "observability-disabled"
-	ListEventTypeReplacedByObservabilityEnabled                            ListEventTypeReplacedBy = "observability-enabled"
-	ListEventTypeReplacedByObservabilityPlusProjectDisabled                ListEventTypeReplacedBy = "observability-plus-project-disabled"
-	ListEventTypeReplacedByObservabilityPlusProjectEnabled                 ListEventTypeReplacedBy = "observability-plus-project-enabled"
-	ListEventTypeReplacedByOidcPolicyCreated                               ListEventTypeReplacedBy = "oidc-policy-created"
-	ListEventTypeReplacedByOidcPolicyDeleted                               ListEventTypeReplacedBy = "oidc-policy-deleted"
-	ListEventTypeReplacedByOidcPolicyUpdated                               ListEventTypeReplacedBy = "oidc-policy-updated"
-	ListEventTypeReplacedByOidcPolicyUsedToObtainAppToken                  ListEventTypeReplacedBy = "oidc-policy-used-to-obtain-app-token"
-	ListEventTypeReplacedByOrganizationAvatarUpdate                        ListEventTypeReplacedBy = "organization-avatar-update"
-	ListEventTypeReplacedByOrganizationCreate                              ListEventTypeReplacedBy = "organization-create"
-	ListEventTypeReplacedByOrganizationDelete                              ListEventTypeReplacedBy = "organization-delete"
-	ListEventTypeReplacedByOrganizationDomainVerificationCreated           ListEventTypeReplacedBy = "organization-domain-verification-created"
-	ListEventTypeReplacedByOrganizationDomainVerificationDeleted           ListEventTypeReplacedBy = "organization-domain-verification-deleted"
-	ListEventTypeReplacedByOrganizationDomainVerificationVerified          ListEventTypeReplacedBy = "organization-domain-verification-verified"
-	ListEventTypeReplacedByOrganizationDsyncDelete                         ListEventTypeReplacedBy = "organization-dsync-delete"
-	ListEventTypeReplacedByOrganizationDsyncGroupDelete                    ListEventTypeReplacedBy = "organization-dsync-group-delete"
-	ListEventTypeReplacedByOrganizationDsyncGroupUpsert                    ListEventTypeReplacedBy = "organization-dsync-group-upsert"
-	ListEventTypeReplacedByOrganizationDsyncSyncStart                      ListEventTypeReplacedBy = "organization-dsync-sync-start"
-	ListEventTypeReplacedByOrganizationEmuDomainsMerged                    ListEventTypeReplacedBy = "organization-emu-domains-merged"
-	ListEventTypeReplacedByOrganizationEmuTeamUpdated                      ListEventTypeReplacedBy = "organization-emu-team-updated"
-	ListEventTypeReplacedByOrganizationEmuUpdated                          ListEventTypeReplacedBy = "organization-emu-updated"
-	ListEventTypeReplacedByOrganizationNameUpdate                          ListEventTypeReplacedBy = "organization-name-update"
-	ListEventTypeReplacedByOrganizationSlugUpdate                          ListEventTypeReplacedBy = "organization-slug-update"
-	ListEventTypeReplacedByOrganizationSsoDeleted                          ListEventTypeReplacedBy = "organization-sso-deleted"
-	ListEventTypeReplacedByOrganizationSsoEnforced                         ListEventTypeReplacedBy = "organization-sso-enforced"
-	ListEventTypeReplacedByOrganizationSsoNewTeamsUpdate                   ListEventTypeReplacedBy = "organization-sso-new-teams-update"
-	ListEventTypeReplacedByOrganizationTeamAdd                             ListEventTypeReplacedBy = "organization-team-add"
-	ListEventTypeReplacedByOrganizationTeamCreate                          ListEventTypeReplacedBy = "organization-team-create"
-	ListEventTypeReplacedByOrganizationTeamDelete                          ListEventTypeReplacedBy = "organization-team-delete"
-	ListEventTypeReplacedByOrganizationTeamDsyncUpdate                     ListEventTypeReplacedBy = "organization-team-dsync-update"
-	ListEventTypeReplacedByOrganizationTeamSsoUpdate                       ListEventTypeReplacedBy = "organization-team-sso-update"
-	ListEventTypeReplacedByOrganizationUpdateAccountFlowDismissed          ListEventTypeReplacedBy = "organization-update-account-flow-dismissed"
-	ListEventTypeReplacedByOrganizationUpdateAccountFlowTriggered          ListEventTypeReplacedBy = "organization-update-account-flow-triggered"
-	ListEventTypeReplacedByOwnerBlocked                                    ListEventTypeReplacedBy = "owner-blocked"
-	ListEventTypeReplacedByOwnerSoftBlocked                                ListEventTypeReplacedBy = "owner-soft-blocked"
-	ListEventTypeReplacedByOwnerSoftUnblocked                              ListEventTypeReplacedBy = "owner-soft-unblocked"
-	ListEventTypeReplacedByOwnerUnblocked                                  ListEventTypeReplacedBy = "owner-unblocked"
-	ListEventTypeReplacedByPageIntegrityConfigUpdated                      ListEventTypeReplacedBy = "page-integrity-config-updated"
-	ListEventTypeReplacedByPageIntegrityHeaderApproved                     ListEventTypeReplacedBy = "page-integrity-header-approved"
-	ListEventTypeReplacedByPageIntegrityHeaderRejected                     ListEventTypeReplacedBy = "page-integrity-header-rejected"
-	ListEventTypeReplacedByPageIntegrityInventoryCleared                   ListEventTypeReplacedBy = "page-integrity-inventory-cleared"
-	ListEventTypeReplacedByPageIntegrityResourceApproved                   ListEventTypeReplacedBy = "page-integrity-resource-approved"
-	ListEventTypeReplacedByPageIntegrityResourceDeleted                    ListEventTypeReplacedBy = "page-integrity-resource-deleted"
-	ListEventTypeReplacedByPageIntegrityResourceRejected                   ListEventTypeReplacedBy = "page-integrity-resource-rejected"
-	ListEventTypeReplacedByPageIntegrityScriptApprovalRuleCreated          ListEventTypeReplacedBy = "page-integrity-script-approval-rule-created"
-	ListEventTypeReplacedByPageIntegrityScriptApprovalRuleDeleted          ListEventTypeReplacedBy = "page-integrity-script-approval-rule-deleted"
-	ListEventTypeReplacedByPasskeyCreated                                  ListEventTypeReplacedBy = "passkey-created"
-	ListEventTypeReplacedByPasskeyDeleted                                  ListEventTypeReplacedBy = "passkey-deleted"
-	ListEventTypeReplacedByPasskeyUpdated                                  ListEventTypeReplacedBy = "passkey-updated"
-	ListEventTypeReplacedByPassportAccessGranted                           ListEventTypeReplacedBy = "passport-access-granted"
-	ListEventTypeReplacedByPasswordProtectionDisabled                      ListEventTypeReplacedBy = "password-protection-disabled"
-	ListEventTypeReplacedByPasswordProtectionEnabled                       ListEventTypeReplacedBy = "password-protection-enabled"
-	ListEventTypeReplacedByPaymentMethodAdded                              ListEventTypeReplacedBy = "payment-method-added"
-	ListEventTypeReplacedByPaymentMethodDefaultUpdated                     ListEventTypeReplacedBy = "payment-method-default-updated"
-	ListEventTypeReplacedByPaymentMethodRemoved                            ListEventTypeReplacedBy = "payment-method-removed"
-	ListEventTypeReplacedByPerimeterCreated                                ListEventTypeReplacedBy = "perimeter-created"
-	ListEventTypeReplacedByPerimeterDeleted                                ListEventTypeReplacedBy = "perimeter-deleted"
-	ListEventTypeReplacedByPerimeterRenamed                                ListEventTypeReplacedBy = "perimeter-renamed"
-	ListEventTypeReplacedByPerimeterRolledBack                             ListEventTypeReplacedBy = "perimeter-rolled-back"
-	ListEventTypeReplacedByPerimeterUpdated                                ListEventTypeReplacedBy = "perimeter-updated"
-	ListEventTypeReplacedByPlan                                            ListEventTypeReplacedBy = "plan"
-	ListEventTypeReplacedByPreviewDeploymentSuffixDisabled                 ListEventTypeReplacedBy = "preview-deployment-suffix-disabled"
-	ListEventTypeReplacedByPreviewDeploymentSuffixEnabled                  ListEventTypeReplacedBy = "preview-deployment-suffix-enabled"
-	ListEventTypeReplacedByPreviewDeploymentSuffixUpdate                   ListEventTypeReplacedBy = "preview-deployment-suffix-update"
-	ListEventTypeReplacedByPrivatelinkEndpointCreated                      ListEventTypeReplacedBy = "privatelink-endpoint-created"
-	ListEventTypeReplacedByPrivatelinkEndpointDeleted                      ListEventTypeReplacedBy = "privatelink-endpoint-deleted"
-	ListEventTypeReplacedByPrivatelinkEndpointUpdated                      ListEventTypeReplacedBy = "privatelink-endpoint-updated"
-	ListEventTypeReplacedByProductionBranchUpdated                         ListEventTypeReplacedBy = "production-branch-updated"
-	ListEventTypeReplacedByProjectAddAlias                                 ListEventTypeReplacedBy = "project-add-alias"
-	ListEventTypeReplacedByProjectAddRedirect                              ListEventTypeReplacedBy = "project-add-redirect"
-	ListEventTypeReplacedByProjectAffectedProjectsDeploymentsUpdated       ListEventTypeReplacedBy = "project-affected-projects-deployments-updated"
-	ListEventTypeReplacedByProjectAliasConfiguredChange                    ListEventTypeReplacedBy = "project-alias-configured-change"
-	ListEventTypeReplacedByProjectAnalyticsDisabled                        ListEventTypeReplacedBy = "project-analytics-disabled"
-	ListEventTypeReplacedByProjectAnalyticsEnabled                         ListEventTypeReplacedBy = "project-analytics-enabled"
-	ListEventTypeReplacedByProjectAutoAssignCustomProductionDomainsUpdated ListEventTypeReplacedBy = "project-auto-assign-custom-production-domains-updated"
-	ListEventTypeReplacedByProjectAutomationBypass                         ListEventTypeReplacedBy = "project-automation-bypass"
-	ListEventTypeReplacedByProjectAvatarDarkModeUpdate                     ListEventTypeReplacedBy = "project-avatar-dark-mode-update"
-	ListEventTypeReplacedByProjectAvatarUpdate                             ListEventTypeReplacedBy = "project-avatar-update"
-	ListEventTypeReplacedByProjectBuildCommandUpdated                      ListEventTypeReplacedBy = "project-build-command-updated"
-	ListEventTypeReplacedByProjectBuildLogsAndSourceProtectionUpdated      ListEventTypeReplacedBy = "project-build-logs-and-source-protection-updated"
-	ListEventTypeReplacedByProjectBuildMachineUpdated                      ListEventTypeReplacedBy = "project-build-machine-updated"
-	ListEventTypeReplacedByProjectCardWidgetPreferenceUpdated              ListEventTypeReplacedBy = "project-card-widget-preference-updated"
-	ListEventTypeReplacedByProjectClientCertDelete                         ListEventTypeReplacedBy = "project-client-cert-delete"
-	ListEventTypeReplacedByProjectClientCertUpload                         ListEventTypeReplacedBy = "project-client-cert-upload"
-	ListEventTypeReplacedByProjectConnectConfigurations                    ListEventTypeReplacedBy = "project-connect-configurations"
-	ListEventTypeReplacedByProjectConsolidatedGitCommitStatusUpdated       ListEventTypeReplacedBy = "project-consolidated-git-commit-status-updated"
-	ListEventTypeReplacedByProjectCreated                                  ListEventTypeReplacedBy = "project-created"
-	ListEventTypeReplacedByProjectCronJobsToggled                          ListEventTypeReplacedBy = "project-cron-jobs-toggled"
-	ListEventTypeReplacedByProjectCustomEnvironmentCreated                 ListEventTypeReplacedBy = "project-custom-environment-created"
-	ListEventTypeReplacedByProjectCustomEnvironmentDeleted                 ListEventTypeReplacedBy = "project-custom-environment-deleted"
-	ListEventTypeReplacedByProjectCustomEnvironmentSchedulesDefaultUpdated ListEventTypeReplacedBy = "project-custom-environment-schedules-default-updated"
-	ListEventTypeReplacedByProjectCustomEnvironmentUpdated                 ListEventTypeReplacedBy = "project-custom-environment-updated"
-	ListEventTypeReplacedByProjectCustomerSuccessCodeVisibilityUpdated     ListEventTypeReplacedBy = "project-customer-success-code-visibility-updated"
-	ListEventTypeReplacedByProjectDelete                                   ListEventTypeReplacedBy = "project-delete"
-	ListEventTypeReplacedByProjectDeploymentPolicyUpdated                  ListEventTypeReplacedBy = "project-deployment-policy-updated"
-	ListEventTypeReplacedByProjectDeploymentRetentionUpdated               ListEventTypeReplacedBy = "project-deployment-retention-updated"
-	ListEventTypeReplacedByProjectDirectoryListing                         ListEventTypeReplacedBy = "project-directory-listing"
-	ListEventTypeReplacedByProjectDomainDeleted                            ListEventTypeReplacedBy = "project-domain-deleted"
-	ListEventTypeReplacedByProjectDomainMoved                              ListEventTypeReplacedBy = "project-domain-moved"
-	ListEventTypeReplacedByProjectDomainUnverified                         ListEventTypeReplacedBy = "project-domain-unverified"
-	ListEventTypeReplacedByProjectDomainUpdated                            ListEventTypeReplacedBy = "project-domain-updated"
-	ListEventTypeReplacedByProjectDomainVerified                           ListEventTypeReplacedBy = "project-domain-verified"
-	ListEventTypeReplacedByProjectElasticConcurrencyUpdated                ListEventTypeReplacedBy = "project-elastic-concurrency-updated"
-	ListEventTypeReplacedByProjectExpirationLocked                         ListEventTypeReplacedBy = "project-expiration-locked"
-	ListEventTypeReplacedByProjectExpirationReached                        ListEventTypeReplacedBy = "project-expiration-reached"
-	ListEventTypeReplacedByProjectExpirationRemoved                        ListEventTypeReplacedBy = "project-expiration-removed"
-	ListEventTypeReplacedByProjectExpirationScheduled                      ListEventTypeReplacedBy = "project-expiration-scheduled"
-	ListEventTypeReplacedByProjectExpirationUnlocked                       ListEventTypeReplacedBy = "project-expiration-unlocked"
-	ListEventTypeReplacedByProjectExternalRewriteCachingUpdated            ListEventTypeReplacedBy = "project-external-rewrite-caching-updated"
-	ListEventTypeReplacedByProjectFrameworkUpdated                         ListEventTypeReplacedBy = "project-framework-updated"
-	ListEventTypeReplacedByProjectFunctionCpuMemory                        ListEventTypeReplacedBy = "project-function-cpu-memory"
-	ListEventTypeReplacedByProjectFunctionFailover                         ListEventTypeReplacedBy = "project-function-failover"
-	ListEventTypeReplacedByProjectFunctionMaxDuration                      ListEventTypeReplacedBy = "project-function-max-duration"
-	ListEventTypeReplacedByProjectFunctionRegions                          ListEventTypeReplacedBy = "project-function-regions"
-	ListEventTypeReplacedByProjectFunctionsBetaUpdated                     ListEventTypeReplacedBy = "project-functions-beta-updated"
-	ListEventTypeReplacedByProjectFunctionsFluidDisabled                   ListEventTypeReplacedBy = "project-functions-fluid-disabled"
-	ListEventTypeReplacedByProjectFunctionsFluidEnabled                    ListEventTypeReplacedBy = "project-functions-fluid-enabled"
-	ListEventTypeReplacedByProjectGitCommitCommentsToggled                 ListEventTypeReplacedBy = "project-git-commit-comments-toggled"
-	ListEventTypeReplacedByProjectGitCommitStatusToggled                   ListEventTypeReplacedBy = "project-git-commit-status-toggled"
-	ListEventTypeReplacedByProjectGitCreateDeploymentsToggled              ListEventTypeReplacedBy = "project-git-create-deployments-toggled"
-	ListEventTypeReplacedByProjectGitCredentialAttestationCreated          ListEventTypeReplacedBy = "project-git-credential-attestation-created"
-	ListEventTypeReplacedByProjectGitCredentialAttestationDeleted          ListEventTypeReplacedBy = "project-git-credential-attestation-deleted"
-	ListEventTypeReplacedByProjectGitCredentialBoundCreated                ListEventTypeReplacedBy = "project-git-credential-bound-created"
-	ListEventTypeReplacedByProjectGitCredentialBoundDeleted                ListEventTypeReplacedBy = "project-git-credential-bound-deleted"
-	ListEventTypeReplacedByProjectGitCredentialBoundUpdated                ListEventTypeReplacedBy = "project-git-credential-bound-updated"
-	ListEventTypeReplacedByProjectGitCredentialGrantAttestationRevoked     ListEventTypeReplacedBy = "project-git-credential-grant-attestation-revoked"
-	ListEventTypeReplacedByProjectGitCredentialGrantAttested               ListEventTypeReplacedBy = "project-git-credential-grant-attested"
-	ListEventTypeReplacedByProjectGitCredentialGrantCreated                ListEventTypeReplacedBy = "project-git-credential-grant-created"
-	ListEventTypeReplacedByProjectGitCredentialGrantDeleted                ListEventTypeReplacedBy = "project-git-credential-grant-deleted"
-	ListEventTypeReplacedByProjectGitCredentialGrantUpdated                ListEventTypeReplacedBy = "project-git-credential-grant-updated"
-	ListEventTypeReplacedByProjectGitCredentialTokenMinted                 ListEventTypeReplacedBy = "project-git-credential-token-minted"
-	ListEventTypeReplacedByProjectGitForkProtectionUpdated                 ListEventTypeReplacedBy = "project-git-fork-protection-updated"
-	ListEventTypeReplacedByProjectGitLfsToggled                            ListEventTypeReplacedBy = "project-git-lfs-toggled"
-	ListEventTypeReplacedByProjectGitPrCommentsToggled                     ListEventTypeReplacedBy = "project-git-pr-comments-toggled"
-	ListEventTypeReplacedByProjectGitRepositoryConnected                   ListEventTypeReplacedBy = "project-git-repository-connected"
-	ListEventTypeReplacedByProjectGitRepositoryDisconnected                ListEventTypeReplacedBy = "project-git-repository-disconnected"
-	ListEventTypeReplacedByProjectGitRepositoryDispatchEventsToggled       ListEventTypeReplacedBy = "project-git-repository-dispatch-events-toggled"
-	ListEventTypeReplacedByProjectGitRequireVerifiedCommitsToggled         ListEventTypeReplacedBy = "project-git-require-verified-commits-toggled"
-	ListEventTypeReplacedByProjectIgnoredBuildStepUpdated                  ListEventTypeReplacedBy = "project-ignored-build-step-updated"
-	ListEventTypeReplacedByProjectInstallCommandUpdated                    ListEventTypeReplacedBy = "project-install-command-updated"
-	ListEventTypeReplacedByProjectMemberAdded                              ListEventTypeReplacedBy = "project-member-added"
-	ListEventTypeReplacedByProjectMemberInvited                            ListEventTypeReplacedBy = "project-member-invited"
-	ListEventTypeReplacedByProjectMemberRemoved                            ListEventTypeReplacedBy = "project-member-removed"
-	ListEventTypeReplacedByProjectMemberRemovedBatch                       ListEventTypeReplacedBy = "project-member-removed-batch"
-	ListEventTypeReplacedByProjectMemberUpdated                            ListEventTypeReplacedBy = "project-member-updated"
-	ListEventTypeReplacedByProjectMoveInSuccess                            ListEventTypeReplacedBy = "project-move-in-success"
-	ListEventTypeReplacedByProjectMoveOutFailed                            ListEventTypeReplacedBy = "project-move-out-failed"
-	ListEventTypeReplacedByProjectMoveOutStarted                           ListEventTypeReplacedBy = "project-move-out-started"
-	ListEventTypeReplacedByProjectMoveOutSuccess                           ListEventTypeReplacedBy = "project-move-out-success"
-	ListEventTypeReplacedByProjectName                                     ListEventTypeReplacedBy = "project-name"
-	ListEventTypeReplacedByProjectNodeVersionUpdated                       ListEventTypeReplacedBy = "project-node-version-updated"
-	ListEventTypeReplacedByProjectOidcIssuerModeUpdated                    ListEventTypeReplacedBy = "project-oidc-issuer-mode-updated"
-	ListEventTypeReplacedByProjectOidcTokenCreated                         ListEventTypeReplacedBy = "project-oidc-token-created"
-	ListEventTypeReplacedByProjectOptionsAllowlist                         ListEventTypeReplacedBy = "project-options-allowlist"
-	ListEventTypeReplacedByProjectOutputDirectoryUpdated                   ListEventTypeReplacedBy = "project-output-directory-updated"
-	ListEventTypeReplacedByProjectPassportUpdated                          ListEventTypeReplacedBy = "project-passport-updated"
-	ListEventTypeReplacedByProjectPasswordProtection                       ListEventTypeReplacedBy = "project-password-protection"
-	ListEventTypeReplacedByProjectPaused                                   ListEventTypeReplacedBy = "project-paused"
-	ListEventTypeReplacedByProjectPerimetersUpdated                        ListEventTypeReplacedBy = "project-perimeters-updated"
-	ListEventTypeReplacedByProjectPreviewDeploymentSuffix                  ListEventTypeReplacedBy = "project-preview-deployment-suffix"
-	ListEventTypeReplacedByProjectPreviewEnvironmentBranchTrackingUpdated  ListEventTypeReplacedBy = "project-preview-environment-branch-tracking-updated"
-	ListEventTypeReplacedByProjectPrioritizeProductionBuildsUpdated        ListEventTypeReplacedBy = "project-prioritize-production-builds-updated"
-	ListEventTypeReplacedByProjectProgramEnrollmentChanged                 ListEventTypeReplacedBy = "project-program-enrollment-changed"
-	ListEventTypeReplacedByProjectProtectedSourcemapsUpdated               ListEventTypeReplacedBy = "project-protected-sourcemaps-updated"
-	ListEventTypeReplacedByProjectRemoveVercelRequestHeadersUpdated        ListEventTypeReplacedBy = "project-remove-vercel-request-headers-updated"
-	ListEventTypeReplacedByProjectRollbackDescriptionUpdated               ListEventTypeReplacedBy = "project-rollback-description-updated"
-	ListEventTypeReplacedByProjectRollingReleaseAborted                    ListEventTypeReplacedBy = "project-rolling-release-aborted"
-	ListEventTypeReplacedByProjectRollingReleaseApproved                   ListEventTypeReplacedBy = "project-rolling-release-approved"
-	ListEventTypeReplacedByProjectRollingReleaseCompleted                  ListEventTypeReplacedBy = "project-rolling-release-completed"
-	ListEventTypeReplacedByProjectRollingReleaseConfigured                 ListEventTypeReplacedBy = "project-rolling-release-configured"
-	ListEventTypeReplacedByProjectRollingReleaseContinued                  ListEventTypeReplacedBy = "project-rolling-release-continued"
-	ListEventTypeReplacedByProjectRollingReleaseDisabled                   ListEventTypeReplacedBy = "project-rolling-release-disabled"
-	ListEventTypeReplacedByProjectRollingReleaseEnabled                    ListEventTypeReplacedBy = "project-rolling-release-enabled"
-	ListEventTypeReplacedByProjectRollingReleasePaused                     ListEventTypeReplacedBy = "project-rolling-release-paused"
-	ListEventTypeReplacedByProjectRollingReleaseStarted                    ListEventTypeReplacedBy = "project-rolling-release-started"
-	ListEventTypeReplacedByProjectRollingReleaseTimer                      ListEventTypeReplacedBy = "project-rolling-release-timer"
-	ListEventTypeReplacedByProjectRootDirectoryUpdated                     ListEventTypeReplacedBy = "project-root-directory-updated"
-	ListEventTypeReplacedByProjectRoutesVersionPromoted                    ListEventTypeReplacedBy = "project-routes-version-promoted"
-	ListEventTypeReplacedByProjectRoutesVersionRestored                    ListEventTypeReplacedBy = "project-routes-version-restored"
-	ListEventTypeReplacedByProjectSandboxConfigUpdated                     ListEventTypeReplacedBy = "project-sandbox-config-updated"
-	ListEventTypeReplacedByProjectSandboxUrlProtectionUpdated              ListEventTypeReplacedBy = "project-sandbox-url-protection-updated"
-	ListEventTypeReplacedByProjectSkewProtectionAllowedDomainsUpdated      ListEventTypeReplacedBy = "project-skew-protection-allowed-domains-updated"
-	ListEventTypeReplacedByProjectSkewProtectionMaxAgeUpdated              ListEventTypeReplacedBy = "project-skew-protection-max-age-updated"
-	ListEventTypeReplacedByProjectSkewProtectionThresholdUpdated           ListEventTypeReplacedBy = "project-skew-protection-threshold-updated"
-	ListEventTypeReplacedByProjectSourceFilesOutsideRootDirectoryUpdated   ListEventTypeReplacedBy = "project-source-files-outside-root-directory-updated"
-	ListEventTypeReplacedByProjectSpeedInsightsDisabled                    ListEventTypeReplacedBy = "project-speed-insights-disabled"
-	ListEventTypeReplacedByProjectSpeedInsightsEnabled                     ListEventTypeReplacedBy = "project-speed-insights-enabled"
-	ListEventTypeReplacedByProjectSpeedInsightsFreeDataStarted             ListEventTypeReplacedBy = "project-speed-insights-free-data-started"
-	ListEventTypeReplacedByProjectSsoProtection                            ListEventTypeReplacedBy = "project-sso-protection"
-	ListEventTypeReplacedByProjectStaticIpsUpdated                         ListEventTypeReplacedBy = "project-static-ips-updated"
-	ListEventTypeReplacedByProjectTrustedIps                               ListEventTypeReplacedBy = "project-trusted-ips"
-	ListEventTypeReplacedByProjectTrustedSources                           ListEventTypeReplacedBy = "project-trusted-sources"
-	ListEventTypeReplacedByProjectUnpaused                                 ListEventTypeReplacedBy = "project-unpaused"
-	ListEventTypeReplacedByProjectWebAnalyticsDisabled                     ListEventTypeReplacedBy = "project-web-analytics-disabled"
-	ListEventTypeReplacedByProjectWebAnalyticsEnabled                      ListEventTypeReplacedBy = "project-web-analytics-enabled"
-	ListEventTypeReplacedByProtectedGitScopeAdded                          ListEventTypeReplacedBy = "protected-git-scope-added"
-	ListEventTypeReplacedByProtectedGitScopeRemoved                        ListEventTypeReplacedBy = "protected-git-scope-removed"
-	ListEventTypeReplacedByRepositoryCiEnvVariableCreate                   ListEventTypeReplacedBy = "repository-ci-env-variable-create"
-	ListEventTypeReplacedByRepositoryCiEnvVariableDelete                   ListEventTypeReplacedBy = "repository-ci-env-variable-delete"
-	ListEventTypeReplacedByRepositoryCiEnvVariableUpdate                   ListEventTypeReplacedBy = "repository-ci-env-variable-update"
-	ListEventTypeReplacedByRuntimeCachePurgeAll                            ListEventTypeReplacedBy = "runtime-cache-purge-all"
-	ListEventTypeReplacedBySamlConnectionCreated                           ListEventTypeReplacedBy = "saml-connection-created"
-	ListEventTypeReplacedBySamlConnectionDeleted                           ListEventTypeReplacedBy = "saml-connection-deleted"
-	ListEventTypeReplacedBySamlIdpMaterialDeleted                          ListEventTypeReplacedBy = "saml-idp-material-deleted"
-	ListEventTypeReplacedBySamlIdpMaterialSet                              ListEventTypeReplacedBy = "saml-idp-material-set"
-	ListEventTypeReplacedBySamlIdpMaterialSystemDeleted                    ListEventTypeReplacedBy = "saml-idp-material-system-deleted"
-	ListEventTypeReplacedBySamlIdpMaterialSystemSet                        ListEventTypeReplacedBy = "saml-idp-material-system-set"
-	ListEventTypeReplacedBySandboxAliasAssigned                            ListEventTypeReplacedBy = "sandbox-alias-assigned"
-	ListEventTypeReplacedBySandboxAliasDelete                              ListEventTypeReplacedBy = "sandbox-alias-delete"
-	ListEventTypeReplacedBySandboxDriveCreated                             ListEventTypeReplacedBy = "sandbox-drive-created"
-	ListEventTypeReplacedBySandboxDriveDeleted                             ListEventTypeReplacedBy = "sandbox-drive-deleted"
-	ListEventTypeReplacedBySandboxDriveSnapshotCreated                     ListEventTypeReplacedBy = "sandbox-drive-snapshot-created"
-	ListEventTypeReplacedBySandboxDriveSnapshotDeleted                     ListEventTypeReplacedBy = "sandbox-drive-snapshot-deleted"
-	ListEventTypeReplacedBySandboxNpmCredentialsConfigured                 ListEventTypeReplacedBy = "sandbox-npm-credentials-configured"
-	ListEventTypeReplacedBySandboxSignedCommitIdentityConfigured           ListEventTypeReplacedBy = "sandbox-signed-commit-identity-configured"
-	ListEventTypeReplacedBySandboxSnapshotRegionsUpdated                   ListEventTypeReplacedBy = "sandbox-snapshot-regions-updated"
-	ListEventTypeReplacedByScale                                           ListEventTypeReplacedBy = "scale"
-	ListEventTypeReplacedByScaleAuto                                       ListEventTypeReplacedBy = "scale-auto"
-	ListEventTypeReplacedByScheduleCreated                                 ListEventTypeReplacedBy = "schedule-created"
-	ListEventTypeReplacedByScheduleDeleted                                 ListEventTypeReplacedBy = "schedule-deleted"
-	ListEventTypeReplacedByScheduleDisabled                                ListEventTypeReplacedBy = "schedule-disabled"
-	ListEventTypeReplacedByScheduleEnabled                                 ListEventTypeReplacedBy = "schedule-enabled"
-	ListEventTypeReplacedByScheduleInvoked                                 ListEventTypeReplacedBy = "schedule-invoked"
-	ListEventTypeReplacedByScheduleUpdated                                 ListEventTypeReplacedBy = "schedule-updated"
-	ListEventTypeReplacedBySecondaryEmailAdded                             ListEventTypeReplacedBy = "secondary-email-added"
-	ListEventTypeReplacedBySecondaryEmailRemoved                           ListEventTypeReplacedBy = "secondary-email-removed"
-	ListEventTypeReplacedBySecondaryEmailVerified                          ListEventTypeReplacedBy = "secondary-email-verified"
-	ListEventTypeReplacedBySecretAdd                                       ListEventTypeReplacedBy = "secret-add"
-	ListEventTypeReplacedBySecretDelete                                    ListEventTypeReplacedBy = "secret-delete"
-	ListEventTypeReplacedBySecretRename                                    ListEventTypeReplacedBy = "secret-rename"
-	ListEventTypeReplacedBySecurityListCreated                             ListEventTypeReplacedBy = "security-list-created"
-	ListEventTypeReplacedBySecurityListDeleted                             ListEventTypeReplacedBy = "security-list-deleted"
-	ListEventTypeReplacedBySecurityListUpdated                             ListEventTypeReplacedBy = "security-list-updated"
-	ListEventTypeReplacedBySecurityPlusUpdated                             ListEventTypeReplacedBy = "security-plus-updated"
-	ListEventTypeReplacedBySetBio                                          ListEventTypeReplacedBy = "set-bio"
-	ListEventTypeReplacedBySetName                                         ListEventTypeReplacedBy = "set-name"
-	ListEventTypeReplacedBySetProfiles                                     ListEventTypeReplacedBy = "set-profiles"
-	ListEventTypeReplacedBySetScale                                        ListEventTypeReplacedBy = "set-scale"
-	ListEventTypeReplacedBySharedEnvVariableCreate                         ListEventTypeReplacedBy = "shared-env-variable-create"
-	ListEventTypeReplacedBySharedEnvVariableDelete                         ListEventTypeReplacedBy = "shared-env-variable-delete"
-	ListEventTypeReplacedBySharedEnvVariableRead                           ListEventTypeReplacedBy = "shared-env-variable-read"
-	ListEventTypeReplacedBySharedEnvVariableRepoLink                       ListEventTypeReplacedBy = "shared-env-variable-repo-link"
-	ListEventTypeReplacedBySharedEnvVariableRepoUnlink                     ListEventTypeReplacedBy = "shared-env-variable-repo-unlink"
-	ListEventTypeReplacedBySharedEnvVariableUpdate                         ListEventTypeReplacedBy = "shared-env-variable-update"
-	ListEventTypeReplacedByShowIpAddresses                                 ListEventTypeReplacedBy = "show-ip-addresses"
-	ListEventTypeReplacedBySignup                                          ListEventTypeReplacedBy = "signup"
-	ListEventTypeReplacedBySignupViaBitbucket                              ListEventTypeReplacedBy = "signup-via-bitbucket"
-	ListEventTypeReplacedBySignupViaGithub                                 ListEventTypeReplacedBy = "signup-via-github"
-	ListEventTypeReplacedBySignupViaGitlab                                 ListEventTypeReplacedBy = "signup-via-gitlab"
-	ListEventTypeReplacedBySpeedInsightsSettingsUpdated                    ListEventTypeReplacedBy = "speed-insights-settings-updated"
-	ListEventTypeReplacedBySpendCreated                                    ListEventTypeReplacedBy = "spend-created"
-	ListEventTypeReplacedBySpendDeleted                                    ListEventTypeReplacedBy = "spend-deleted"
-	ListEventTypeReplacedBySpendUpdated                                    ListEventTypeReplacedBy = "spend-updated"
-	ListEventTypeReplacedBySsoLogin                                        ListEventTypeReplacedBy = "sso-login"
-	ListEventTypeReplacedByStartupTermsAccepted                            ListEventTypeReplacedBy = "startup-terms-accepted"
-	ListEventTypeReplacedByStorageAcceptTos                                ListEventTypeReplacedBy = "storage-accept-tos"
-	ListEventTypeReplacedByStorageAccessTokenSet                           ListEventTypeReplacedBy = "storage-access-token-set"
-	ListEventTypeReplacedByStorageAccessedDataBrowser                      ListEventTypeReplacedBy = "storage-accessed-data-browser"
-	ListEventTypeReplacedByStorageConnectProject                           ListEventTypeReplacedBy = "storage-connect-project"
-	ListEventTypeReplacedByStorageCreate                                   ListEventTypeReplacedBy = "storage-create"
-	ListEventTypeReplacedByStorageDelete                                   ListEventTypeReplacedBy = "storage-delete"
-	ListEventTypeReplacedByStorageDisconnectProject                        ListEventTypeReplacedBy = "storage-disconnect-project"
-	ListEventTypeReplacedByStorageDisconnectProjects                       ListEventTypeReplacedBy = "storage-disconnect-projects"
-	ListEventTypeReplacedByStorageInactiveStoreDeleted                     ListEventTypeReplacedBy = "storage-inactive-store-deleted"
-	ListEventTypeReplacedByStorageResetCredentials                         ListEventTypeReplacedBy = "storage-reset-credentials"
-	ListEventTypeReplacedByStorageResourceReplCommand                      ListEventTypeReplacedBy = "storage-resource-repl-command"
-	ListEventTypeReplacedByStorageSetLocked                                ListEventTypeReplacedBy = "storage-set-locked"
-	ListEventTypeReplacedByStorageTransferInSuccess                        ListEventTypeReplacedBy = "storage-transfer-in-success"
-	ListEventTypeReplacedByStorageTransferOutSuccess                       ListEventTypeReplacedBy = "storage-transfer-out-success"
-	ListEventTypeReplacedByStorageTransferRequestCreated                   ListEventTypeReplacedBy = "storage-transfer-request-created"
-	ListEventTypeReplacedByStorageUpdate                                   ListEventTypeReplacedBy = "storage-update"
-	ListEventTypeReplacedByStorageUpdateProjectConnection                  ListEventTypeReplacedBy = "storage-update-project-connection"
-	ListEventTypeReplacedByStorageUpgradeProjectConnectionToOidc           ListEventTypeReplacedBy = "storage-upgrade-project-connection-to-oidc"
-	ListEventTypeReplacedByStorageViewSecret                               ListEventTypeReplacedBy = "storage-view-secret"
-	ListEventTypeReplacedByStrictConnectors                                ListEventTypeReplacedBy = "strict-connectors"
-	ListEventTypeReplacedByStrictDeploymentProtectionSettings              ListEventTypeReplacedBy = "strict-deployment-protection-settings"
-	ListEventTypeReplacedByStrictPasswordProtectionSettings                ListEventTypeReplacedBy = "strict-password-protection-settings"
-	ListEventTypeReplacedByStrictShareableLinks                            ListEventTypeReplacedBy = "strict-shareable-links"
-	ListEventTypeReplacedBySubscriptionCreated                             ListEventTypeReplacedBy = "subscription-created"
-	ListEventTypeReplacedBySubscriptionProductAdded                        ListEventTypeReplacedBy = "subscription-product-added"
-	ListEventTypeReplacedBySubscriptionProductRemoved                      ListEventTypeReplacedBy = "subscription-product-removed"
-	ListEventTypeReplacedBySubscriptionUpdated                             ListEventTypeReplacedBy = "subscription-updated"
-	ListEventTypeReplacedBySupportSessionCreated                           ListEventTypeReplacedBy = "support-session-created"
-	ListEventTypeReplacedByTeam                                            ListEventTypeReplacedBy = "team"
-	ListEventTypeReplacedByTeamAgentBillingMigrationDecisionChanged        ListEventTypeReplacedBy = "team-agent-billing-migration-decision-changed"
-	ListEventTypeReplacedByTeamAvatarUpdate                                ListEventTypeReplacedBy = "team-avatar-update"
-	ListEventTypeReplacedByTeamCollaborationSettingsUpdated                ListEventTypeReplacedBy = "team-collaboration-settings-updated"
-	ListEventTypeReplacedByTeamDataCacheUserDisabledUpdated                ListEventTypeReplacedBy = "team-data-cache-user-disabled-updated"
-	ListEventTypeReplacedByTeamDefaultBuildMachineUpdated                  ListEventTypeReplacedBy = "team-default-build-machine-updated"
-	ListEventTypeReplacedByTeamDefaultPassportUpdated                      ListEventTypeReplacedBy = "team-default-passport-updated"
-	ListEventTypeReplacedByTeamDelete                                      ListEventTypeReplacedBy = "team-delete"
-	ListEventTypeReplacedByTeamDeploymentPolicyUpdated                     ListEventTypeReplacedBy = "team-deployment-policy-updated"
-	ListEventTypeReplacedByTeamDeploymentStorageHighRetentionOptIn         ListEventTypeReplacedBy = "team-deployment-storage-high-retention-opt-in"
-	ListEventTypeReplacedByTeamDeploymentStorageRetentionOptOut            ListEventTypeReplacedBy = "team-deployment-storage-retention-opt-out"
-	ListEventTypeReplacedByTeamDomainVerificationCreated                   ListEventTypeReplacedBy = "team-domain-verification-created"
-	ListEventTypeReplacedByTeamDomainVerificationDeleted                   ListEventTypeReplacedBy = "team-domain-verification-deleted"
-	ListEventTypeReplacedByTeamDomainVerificationVerified                  ListEventTypeReplacedBy = "team-domain-verification-verified"
-	ListEventTypeReplacedByTeamEmailDomainUpdate                           ListEventTypeReplacedBy = "team-email-domain-update"
-	ListEventTypeReplacedByTeamEmuUpdated                                  ListEventTypeReplacedBy = "team-emu-updated"
-	ListEventTypeReplacedByTeamEndedTrial                                  ListEventTypeReplacedBy = "team-ended-trial"
-	ListEventTypeReplacedByTeamFirewallConfigModified                      ListEventTypeReplacedBy = "team-firewall-config-modified"
-	ListEventTypeReplacedByTeamFirewallConfigPromoted                      ListEventTypeReplacedBy = "team-firewall-config-promoted"
-	ListEventTypeReplacedByTeamGitRepositoryDispatchEventsToggled          ListEventTypeReplacedBy = "team-git-repository-dispatch-events-toggled"
-	ListEventTypeReplacedByTeamGitRequireVerifiedCommitsToggled            ListEventTypeReplacedBy = "team-git-require-verified-commits-toggled"
-	ListEventTypeReplacedByTeamInviteBulkDelete                            ListEventTypeReplacedBy = "team-invite-bulk-delete"
-	ListEventTypeReplacedByTeamInviteCodeReset                             ListEventTypeReplacedBy = "team-invite-code-reset"
-	ListEventTypeReplacedByTeamInviteLinkCreated                           ListEventTypeReplacedBy = "team-invite-link-created"
-	ListEventTypeReplacedByTeamInviteLinkDeleted                           ListEventTypeReplacedBy = "team-invite-link-deleted"
-	ListEventTypeReplacedByTeamIpBlockingRulesCreated                      ListEventTypeReplacedBy = "team-ip-blocking-rules-created"
-	ListEventTypeReplacedByTeamIpBlockingRulesRemoved                      ListEventTypeReplacedBy = "team-ip-blocking-rules-removed"
-	ListEventTypeReplacedByTeamMemberAdd                                   ListEventTypeReplacedBy = "team-member-add"
-	ListEventTypeReplacedByTeamMemberConfirmRequest                        ListEventTypeReplacedBy = "team-member-confirm-request"
-	ListEventTypeReplacedByTeamMemberDeclineRequest                        ListEventTypeReplacedBy = "team-member-decline-request"
-	ListEventTypeReplacedByTeamMemberDelete                                ListEventTypeReplacedBy = "team-member-delete"
-	ListEventTypeReplacedByTeamMemberEntitlementAdded                      ListEventTypeReplacedBy = "team-member-entitlement-added"
-	ListEventTypeReplacedByTeamMemberEntitlementCanceled                   ListEventTypeReplacedBy = "team-member-entitlement-canceled"
-	ListEventTypeReplacedByTeamMemberEntitlementReactivated                ListEventTypeReplacedBy = "team-member-entitlement-reactivated"
-	ListEventTypeReplacedByTeamMemberEntitlementRemoved                    ListEventTypeReplacedBy = "team-member-entitlement-removed"
-	ListEventTypeReplacedByTeamMemberJoin                                  ListEventTypeReplacedBy = "team-member-join"
-	ListEventTypeReplacedByTeamMemberLeave                                 ListEventTypeReplacedBy = "team-member-leave"
-	ListEventTypeReplacedByTeamMemberRequestAccess                         ListEventTypeReplacedBy = "team-member-request-access"
-	ListEventTypeReplacedByTeamMemberRoleUpdate                            ListEventTypeReplacedBy = "team-member-role-update"
-	ListEventTypeReplacedByTeamMemberSsoAuthorizationAttempt               ListEventTypeReplacedBy = "team-member-sso-authorization-attempt"
-	ListEventTypeReplacedByTeamMfaEnforcementUpdated                       ListEventTypeReplacedBy = "team-mfa-enforcement-updated"
-	ListEventTypeReplacedByTeamNameUpdate                                  ListEventTypeReplacedBy = "team-name-update"
-	ListEventTypeReplacedByTeamPaidInvoice                                 ListEventTypeReplacedBy = "team-paid-invoice"
-	ListEventTypeReplacedByTeamProgramEnrollmentChanged                    ListEventTypeReplacedBy = "team-program-enrollment-changed"
-	ListEventTypeReplacedByTeamRemoteCachingPurge                          ListEventTypeReplacedBy = "team-remote-caching-purge"
-	ListEventTypeReplacedByTeamRemoteCachingUpdate                         ListEventTypeReplacedBy = "team-remote-caching-update"
-	ListEventTypeReplacedByTeamRuntimeCacheUpdated                         ListEventTypeReplacedBy = "team-runtime-cache-updated"
-	ListEventTypeReplacedByTeamSamlEnforced                                ListEventTypeReplacedBy = "team-saml-enforced"
-	ListEventTypeReplacedByTeamSamlRoles                                   ListEventTypeReplacedBy = "team-saml-roles"
-	ListEventTypeReplacedByTeamSlugUpdate                                  ListEventTypeReplacedBy = "team-slug-update"
-	ListEventTypeReplacedByTeamTokensInvalidated                           ListEventTypeReplacedBy = "team-tokens-invalidated"
-	ListEventTypeReplacedByTracingConfigured                               ListEventTypeReplacedBy = "tracing-configured"
-	ListEventTypeReplacedByTracingDisabled                                 ListEventTypeReplacedBy = "tracing-disabled"
-	ListEventTypeReplacedByTracingPaused                                   ListEventTypeReplacedBy = "tracing-paused"
-	ListEventTypeReplacedByTracingResumed                                  ListEventTypeReplacedBy = "tracing-resumed"
-	ListEventTypeReplacedByUnlinkLoginConnection                           ListEventTypeReplacedBy = "unlink-login-connection"
-	ListEventTypeReplacedByUpdateAccountFlowDismissed                      ListEventTypeReplacedBy = "update-account-flow-dismissed"
-	ListEventTypeReplacedByUpdateAccountFlowTriggered                      ListEventTypeReplacedBy = "update-account-flow-triggered"
-	ListEventTypeReplacedByUserAutoBlockConfigured                         ListEventTypeReplacedBy = "user-auto-block-configured"
-	ListEventTypeReplacedByUserBlocked                                     ListEventTypeReplacedBy = "user-blocked"
-	ListEventTypeReplacedByUserDelete                                      ListEventTypeReplacedBy = "user-delete"
-	ListEventTypeReplacedByUserDeleteRequested                             ListEventTypeReplacedBy = "user-delete-requested"
-	ListEventTypeReplacedByUserEmuAccountArchived                          ListEventTypeReplacedBy = "user-emu-account-archived"
-	ListEventTypeReplacedByUserEmuAccountDeleted                           ListEventTypeReplacedBy = "user-emu-account-deleted"
-	ListEventTypeReplacedByUserEmuAccountRecovered                         ListEventTypeReplacedBy = "user-emu-account-recovered"
-	ListEventTypeReplacedByUserEmuAccountUpdateOptedIn                     ListEventTypeReplacedBy = "user-emu-account-update-opted-in"
-	ListEventTypeReplacedByUserEmuAccountUpdateOptedOut                    ListEventTypeReplacedBy = "user-emu-account-update-opted-out"
-	ListEventTypeReplacedByUserEmuRecoveryEmailSent                        ListEventTypeReplacedBy = "user-emu-recovery-email-sent"
-	ListEventTypeReplacedByUserEmuRecoveryInitiated                        ListEventTypeReplacedBy = "user-emu-recovery-initiated"
-	ListEventTypeReplacedByUserEmuToggled                                  ListEventTypeReplacedBy = "user-emu-toggled"
-	ListEventTypeReplacedByUserLandingPageUpdated                          ListEventTypeReplacedBy = "user-landing-page-updated"
-	ListEventTypeReplacedByUserMfaChallengeFailed                          ListEventTypeReplacedBy = "user-mfa-challenge-failed"
-	ListEventTypeReplacedByUserMfaChallengeInitiated                       ListEventTypeReplacedBy = "user-mfa-challenge-initiated"
-	ListEventTypeReplacedByUserMfaChallengeVerified                        ListEventTypeReplacedBy = "user-mfa-challenge-verified"
-	ListEventTypeReplacedByUserMfaChangeFailed                             ListEventTypeReplacedBy = "user-mfa-change-failed"
-	ListEventTypeReplacedByUserMfaConfigurationUpdated                     ListEventTypeReplacedBy = "user-mfa-configuration-updated"
-	ListEventTypeReplacedByUserMfaRecoveryCodeUsed                         ListEventTypeReplacedBy = "user-mfa-recovery-code-used"
-	ListEventTypeReplacedByUserMfaRecoveryCodesRegenerated                 ListEventTypeReplacedBy = "user-mfa-recovery-codes-regenerated"
-	ListEventTypeReplacedByUserMfaRemoved                                  ListEventTypeReplacedBy = "user-mfa-removed"
-	ListEventTypeReplacedByUserMfaSetupSkipped                             ListEventTypeReplacedBy = "user-mfa-setup-skipped"
-	ListEventTypeReplacedByUserMfaTotpVerificationStarted                  ListEventTypeReplacedBy = "user-mfa-totp-verification-started"
-	ListEventTypeReplacedByUserMfaTotpVerified                             ListEventTypeReplacedBy = "user-mfa-totp-verified"
-	ListEventTypeReplacedByUserPhoneRemoved                                ListEventTypeReplacedBy = "user-phone-removed"
-	ListEventTypeReplacedByUserPhoneUpdated                                ListEventTypeReplacedBy = "user-phone-updated"
-	ListEventTypeReplacedByUserPrimaryEmailUpdated                         ListEventTypeReplacedBy = "user-primary-email-updated"
-	ListEventTypeReplacedByUserProviderEmailClaimEvaluated                 ListEventTypeReplacedBy = "user-provider-email-claim-evaluated"
-	ListEventTypeReplacedByUserSudoModeRemoved                             ListEventTypeReplacedBy = "user-sudo-mode-removed"
-	ListEventTypeReplacedByUserTokenCreated                                ListEventTypeReplacedBy = "user-token-created"
-	ListEventTypeReplacedByUserTokenDeleted                                ListEventTypeReplacedBy = "user-token-deleted"
-	ListEventTypeReplacedByUserTokensDeleted                               ListEventTypeReplacedBy = "user-tokens-deleted"
-	ListEventTypeReplacedByUserUnblocked                                   ListEventTypeReplacedBy = "user-unblocked"
-	ListEventTypeReplacedByUsername                                        ListEventTypeReplacedBy = "username"
-	ListEventTypeReplacedByV0ChatAiUsage                                   ListEventTypeReplacedBy = "v0-chat-ai-usage"
-	ListEventTypeReplacedByV0ChatCreated                                   ListEventTypeReplacedBy = "v0-chat-created"
-	ListEventTypeReplacedByV0ChatMessageSent                               ListEventTypeReplacedBy = "v0-chat-message-sent"
-	ListEventTypeReplacedByV0MigrationPaymentConfirmed                     ListEventTypeReplacedBy = "v0-migration-payment-confirmed"
-	ListEventTypeReplacedByV0MigrationSubscriptionCompleted                ListEventTypeReplacedBy = "v0-migration-subscription-completed"
-	ListEventTypeReplacedByV0SharedPoolCreditLimitDefaultUpdated           ListEventTypeReplacedBy = "v0-shared-pool-credit-limit-default-updated"
-	ListEventTypeReplacedByV0SharedPoolCreditLimitUpdated                  ListEventTypeReplacedBy = "v0-shared-pool-credit-limit-updated"
-	ListEventTypeReplacedByVcrImageDeleted                                 ListEventTypeReplacedBy = "vcr-image-deleted"
-	ListEventTypeReplacedByVcrImagePushed                                  ListEventTypeReplacedBy = "vcr-image-pushed"
-	ListEventTypeReplacedByVcrRepositoryCreated                            ListEventTypeReplacedBy = "vcr-repository-created"
-	ListEventTypeReplacedByVcrRepositoryDeleted                            ListEventTypeReplacedBy = "vcr-repository-deleted"
-	ListEventTypeReplacedByVcrRepositoryPermissionAdded                    ListEventTypeReplacedBy = "vcr-repository-permission-added"
-	ListEventTypeReplacedByVcrRepositoryPermissionRemoved                  ListEventTypeReplacedBy = "vcr-repository-permission-removed"
-	ListEventTypeReplacedByVcrRepositoryPermissionsCleared                 ListEventTypeReplacedBy = "vcr-repository-permissions-cleared"
-	ListEventTypeReplacedByVcrRepositoryVisibilityChanged                  ListEventTypeReplacedBy = "vcr-repository-visibility-changed"
-	ListEventTypeReplacedByVercelAgentElevatedPermissionsApproved          ListEventTypeReplacedBy = "vercel-agent-elevated-permissions-approved"
-	ListEventTypeReplacedByVercelAgentElevatedPermissionsRequested         ListEventTypeReplacedBy = "vercel-agent-elevated-permissions-requested"
-	ListEventTypeReplacedByVercelAgentSecurityFindingClosed                ListEventTypeReplacedBy = "vercel-agent-security-finding-closed"
-	ListEventTypeReplacedByVercelAgentSecurityFindingCreated               ListEventTypeReplacedBy = "vercel-agent-security-finding-created"
-	ListEventTypeReplacedByVercelAgentSecurityFindingDismissed             ListEventTypeReplacedBy = "vercel-agent-security-finding-dismissed"
-	ListEventTypeReplacedByVercelAgentSecurityFindingReopened              ListEventTypeReplacedBy = "vercel-agent-security-finding-reopened"
-	ListEventTypeReplacedByVercelAgentSecurityFindingResolved              ListEventTypeReplacedBy = "vercel-agent-security-finding-resolved"
-	ListEventTypeReplacedByVercelAgentSecurityReviewPolicyDeleted          ListEventTypeReplacedBy = "vercel-agent-security-review-policy-deleted"
-	ListEventTypeReplacedByVercelAgentSecurityReviewPolicyUpdated          ListEventTypeReplacedBy = "vercel-agent-security-review-policy-updated"
-	ListEventTypeReplacedByVercelAgentSessionCreated                       ListEventTypeReplacedBy = "vercel-agent-session-created"
-	ListEventTypeReplacedByVercelAgentTeamTrialCreditsApplied              ListEventTypeReplacedBy = "vercel-agent-team-trial-credits-applied"
-	ListEventTypeReplacedByVercelAppInstallationRequestDismissed           ListEventTypeReplacedBy = "vercel-app-installation-request-dismissed"
-	ListEventTypeReplacedByVercelAppInstallationRequested                  ListEventTypeReplacedBy = "vercel-app-installation-requested"
-	ListEventTypeReplacedByVercelAppInstallationUpdated                    ListEventTypeReplacedBy = "vercel-app-installation-updated"
-	ListEventTypeReplacedByVercelAppInstalled                              ListEventTypeReplacedBy = "vercel-app-installed"
-	ListEventTypeReplacedByVercelAppTokensRevoked                          ListEventTypeReplacedBy = "vercel-app-tokens-revoked"
-	ListEventTypeReplacedByVercelAppUninstalled                            ListEventTypeReplacedBy = "vercel-app-uninstalled"
-	ListEventTypeReplacedByVercelCiRepositoryGithubRunnersUpdated          ListEventTypeReplacedBy = "vercel-ci-repository-github-runners-updated"
-	ListEventTypeReplacedByVercelCiRepositorySettingsUpdated               ListEventTypeReplacedBy = "vercel-ci-repository-settings-updated"
-	ListEventTypeReplacedByVercelCiRunApproved                             ListEventTypeReplacedBy = "vercel-ci-run-approved"
-	ListEventTypeReplacedByVercelToolbar                                   ListEventTypeReplacedBy = "vercel-toolbar"
-	ListEventTypeReplacedByVpcPeeringConnectionAccepted                    ListEventTypeReplacedBy = "vpc-peering-connection-accepted"
-	ListEventTypeReplacedByVpcPeeringConnectionDeleted                     ListEventTypeReplacedBy = "vpc-peering-connection-deleted"
-	ListEventTypeReplacedByVpcPeeringConnectionRejected                    ListEventTypeReplacedBy = "vpc-peering-connection-rejected"
-	ListEventTypeReplacedByVpcPeeringConnectionUpdated                     ListEventTypeReplacedBy = "vpc-peering-connection-updated"
-	ListEventTypeReplacedByVulnerabilityBannerDismissed                    ListEventTypeReplacedBy = "vulnerability-banner-dismissed"
-	ListEventTypeReplacedByWebAnalyticsSummarySubscriptionUpdated          ListEventTypeReplacedBy = "web-analytics-summary-subscription-updated"
-	ListEventTypeReplacedByWebAnalyticsTierUpdated                         ListEventTypeReplacedBy = "web-analytics-tier-updated"
-	ListEventTypeReplacedByWebhookCreated                                  ListEventTypeReplacedBy = "webhook-created"
-	ListEventTypeReplacedByWebhookDeleted                                  ListEventTypeReplacedBy = "webhook-deleted"
-	ListEventTypeReplacedByWebhookUpdated                                  ListEventTypeReplacedBy = "webhook-updated"
-	ListEventTypeReplacedByWorkflowDeploymentKeyAccessed                   ListEventTypeReplacedBy = "workflow-deployment-key-accessed"
-	ListEventTypeReplacedByXaaUpdated                                      ListEventTypeReplacedBy = "xaa-updated"
+	ListEventTypeReplacedByAccessGroupCreated                                  ListEventTypeReplacedBy = "access-group-created"
+	ListEventTypeReplacedByAccessGroupDeleted                                  ListEventTypeReplacedBy = "access-group-deleted"
+	ListEventTypeReplacedByAccessGroupProjectUpdated                           ListEventTypeReplacedBy = "access-group-project-updated"
+	ListEventTypeReplacedByAccessGroupUpdated                                  ListEventTypeReplacedBy = "access-group-updated"
+	ListEventTypeReplacedByAccessGroupUserAdded                                ListEventTypeReplacedBy = "access-group-user-added"
+	ListEventTypeReplacedByAccessGroupUserRemoved                              ListEventTypeReplacedBy = "access-group-user-removed"
+	ListEventTypeReplacedByAdminAgenticProvisioningAccountUnlinked             ListEventTypeReplacedBy = "admin-agentic-provisioning-account-unlinked"
+	ListEventTypeReplacedByAdminObservabilityDisabled                          ListEventTypeReplacedBy = "admin-observability-disabled"
+	ListEventTypeReplacedByAdminPlanUpdated                                    ListEventTypeReplacedBy = "admin-plan-updated"
+	ListEventTypeReplacedByAdminPreviewDeploymentSuffixClear                   ListEventTypeReplacedBy = "admin-preview-deployment-suffix-clear"
+	ListEventTypeReplacedByAdminSamlIdpMaterialDeleted                         ListEventTypeReplacedBy = "admin-saml-idp-material-deleted"
+	ListEventTypeReplacedByAdminSamlIdpMaterialSet                             ListEventTypeReplacedBy = "admin-saml-idp-material-set"
+	ListEventTypeReplacedByAdminSamlSpSigningKeyCreated                        ListEventTypeReplacedBy = "admin-saml-sp-signing-key-created"
+	ListEventTypeReplacedByAdminSamlSpSigningKeyUpdated                        ListEventTypeReplacedBy = "admin-saml-sp-signing-key-updated"
+	ListEventTypeReplacedByAdminSecondaryEmailAdded                            ListEventTypeReplacedBy = "admin-secondary-email-added"
+	ListEventTypeReplacedByAdminSecondaryEmailRemoved                          ListEventTypeReplacedBy = "admin-secondary-email-removed"
+	ListEventTypeReplacedByAdminTeamNameUpdate                                 ListEventTypeReplacedBy = "admin-team-name-update"
+	ListEventTypeReplacedByAdminTeamSlugUpdate                                 ListEventTypeReplacedBy = "admin-team-slug-update"
+	ListEventTypeReplacedByAdminUserDelete                                     ListEventTypeReplacedBy = "admin-user-delete"
+	ListEventTypeReplacedByAdminUserPrimaryEmailUpdated                        ListEventTypeReplacedBy = "admin-user-primary-email-updated"
+	ListEventTypeReplacedByAdminUsernameUpdated                                ListEventTypeReplacedBy = "admin-username-updated"
+	ListEventTypeReplacedByAgenticProvisioningAccountBlocked                   ListEventTypeReplacedBy = "agentic-provisioning-account-blocked"
+	ListEventTypeReplacedByAgenticProvisioningAccountLinked                    ListEventTypeReplacedBy = "agentic-provisioning-account-linked"
+	ListEventTypeReplacedByAgenticProvisioningAccountRelinked                  ListEventTypeReplacedBy = "agentic-provisioning-account-relinked"
+	ListEventTypeReplacedByAgenticProvisioningAccountUnlinked                  ListEventTypeReplacedBy = "agentic-provisioning-account-unlinked"
+	ListEventTypeReplacedByAgenticProvisioningCredentialsRotated               ListEventTypeReplacedBy = "agentic-provisioning-credentials-rotated"
+	ListEventTypeReplacedByAgenticProvisioningPlanChanged                      ListEventTypeReplacedBy = "agentic-provisioning-plan-changed"
+	ListEventTypeReplacedByAgenticProvisioningTeamCreated                      ListEventTypeReplacedBy = "agentic-provisioning-team-created"
+	ListEventTypeReplacedByAiAgentUsageBilling                                 ListEventTypeReplacedBy = "ai-agent-usage-billing"
+	ListEventTypeReplacedByAiAgentUsageBillingConsent                          ListEventTypeReplacedBy = "ai-agent-usage-billing-consent"
+	ListEventTypeReplacedByAiAlertInvestigation                                ListEventTypeReplacedBy = "ai-alert-investigation"
+	ListEventTypeReplacedByAiCodeReview                                        ListEventTypeReplacedBy = "ai-code-review"
+	ListEventTypeReplacedByAiGatewayAccessPolicyCreated                        ListEventTypeReplacedBy = "ai-gateway-access-policy-created"
+	ListEventTypeReplacedByAiGatewayAccessPolicyDeleted                        ListEventTypeReplacedBy = "ai-gateway-access-policy-deleted"
+	ListEventTypeReplacedByAiGatewayAccessPolicyMemberAdded                    ListEventTypeReplacedBy = "ai-gateway-access-policy-member-added"
+	ListEventTypeReplacedByAiGatewayAccessPolicyMemberRemoved                  ListEventTypeReplacedBy = "ai-gateway-access-policy-member-removed"
+	ListEventTypeReplacedByAiGatewayAccessPolicyUpdated                        ListEventTypeReplacedBy = "ai-gateway-access-policy-updated"
+	ListEventTypeReplacedByAiGatewayApiKeyCreated                              ListEventTypeReplacedBy = "ai-gateway-api-key-created"
+	ListEventTypeReplacedByAiGatewayApiKeyDeleted                              ListEventTypeReplacedBy = "ai-gateway-api-key-deleted"
+	ListEventTypeReplacedByAiGatewayApiKeyQuotaUpdated                         ListEventTypeReplacedBy = "ai-gateway-api-key-quota-updated"
+	ListEventTypeReplacedByAiGatewayAutoReloadUpdated                          ListEventTypeReplacedBy = "ai-gateway-auto-reload-updated"
+	ListEventTypeReplacedByAiGatewayBudgetDefaultUpdated                       ListEventTypeReplacedBy = "ai-gateway-budget-default-updated"
+	ListEventTypeReplacedByAiGatewayByokCredentialCreated                      ListEventTypeReplacedBy = "ai-gateway-byok-credential-created"
+	ListEventTypeReplacedByAiGatewayByokCredentialDeleted                      ListEventTypeReplacedBy = "ai-gateway-byok-credential-deleted"
+	ListEventTypeReplacedByAiGatewayByokCredentialUpdated                      ListEventTypeReplacedBy = "ai-gateway-byok-credential-updated"
+	ListEventTypeReplacedByAiGatewayByokModelMappingsUpdated                   ListEventTypeReplacedBy = "ai-gateway-byok-model-mappings-updated"
+	ListEventTypeReplacedByAiGatewayCreditsPurchased                           ListEventTypeReplacedBy = "ai-gateway-credits-purchased"
+	ListEventTypeReplacedByAiGatewayGuardrailsUpdated                          ListEventTypeReplacedBy = "ai-gateway-guardrails-updated"
+	ListEventTypeReplacedByAiGatewayHeadquartersUpdated                        ListEventTypeReplacedBy = "ai-gateway-headquarters-updated"
+	ListEventTypeReplacedByAiGatewayHipaaComplianceToggled                     ListEventTypeReplacedBy = "ai-gateway-hipaa-compliance-toggled"
+	ListEventTypeReplacedByAiGatewayInferenceHooksEndpointUpdated              ListEventTypeReplacedBy = "ai-gateway-inference-hooks-endpoint-updated"
+	ListEventTypeReplacedByAiGatewayInferenceHooksHeadersCleared               ListEventTypeReplacedBy = "ai-gateway-inference-hooks-headers-cleared"
+	ListEventTypeReplacedByAiGatewayInferenceHooksHeadersUpdated               ListEventTypeReplacedBy = "ai-gateway-inference-hooks-headers-updated"
+	ListEventTypeReplacedByAiGatewayInferenceHooksPreviousSigningSecretRetired ListEventTypeReplacedBy = "ai-gateway-inference-hooks-previous-signing-secret-retired"
+	ListEventTypeReplacedByAiGatewayInferenceHooksRemoved                      ListEventTypeReplacedBy = "ai-gateway-inference-hooks-removed"
+	ListEventTypeReplacedByAiGatewayInferenceHooksSettingsUpdated              ListEventTypeReplacedBy = "ai-gateway-inference-hooks-settings-updated"
+	ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretCreated         ListEventTypeReplacedBy = "ai-gateway-inference-hooks-signing-secret-created"
+	ListEventTypeReplacedByAiGatewayInferenceHooksSigningSecretRotated         ListEventTypeReplacedBy = "ai-gateway-inference-hooks-signing-secret-rotated"
+	ListEventTypeReplacedByAiGatewayInferenceHooksToggled                      ListEventTypeReplacedBy = "ai-gateway-inference-hooks-toggled"
+	ListEventTypeReplacedByAiGatewayInferenceRegionsUpdated                    ListEventTypeReplacedBy = "ai-gateway-inference-regions-updated"
+	ListEventTypeReplacedByAiGatewayMemberBudgetChanges                        ListEventTypeReplacedBy = "ai-gateway-member-budget-changes"
+	ListEventTypeReplacedByAiGatewayModelAllowlistModelsUpdated                ListEventTypeReplacedBy = "ai-gateway-model-allowlist-models-updated"
+	ListEventTypeReplacedByAiGatewayModelAllowlistToggled                      ListEventTypeReplacedBy = "ai-gateway-model-allowlist-toggled"
+	ListEventTypeReplacedByAiGatewayModelCatalogAlertSettingsUpdated           ListEventTypeReplacedBy = "ai-gateway-model-catalog-alert-settings-updated"
+	ListEventTypeReplacedByAiGatewayPrivateModelCreated                        ListEventTypeReplacedBy = "ai-gateway-private-model-created"
+	ListEventTypeReplacedByAiGatewayPrivateModelDeleted                        ListEventTypeReplacedBy = "ai-gateway-private-model-deleted"
+	ListEventTypeReplacedByAiGatewayPrivateModelUpdated                        ListEventTypeReplacedBy = "ai-gateway-private-model-updated"
+	ListEventTypeReplacedByAiGatewayPrivateProviderCreated                     ListEventTypeReplacedBy = "ai-gateway-private-provider-created"
+	ListEventTypeReplacedByAiGatewayPrivateProviderDeleted                     ListEventTypeReplacedBy = "ai-gateway-private-provider-deleted"
+	ListEventTypeReplacedByAiGatewayPrivateProviderUpdated                     ListEventTypeReplacedBy = "ai-gateway-private-provider-updated"
+	ListEventTypeReplacedByAiGatewayPromptTrainingOptOutToggled                ListEventTypeReplacedBy = "ai-gateway-prompt-training-opt-out-toggled"
+	ListEventTypeReplacedByAiGatewayProviderAllowlistProvidersUpdated          ListEventTypeReplacedBy = "ai-gateway-provider-allowlist-providers-updated"
+	ListEventTypeReplacedByAiGatewayProviderAllowlistToggled                   ListEventTypeReplacedBy = "ai-gateway-provider-allowlist-toggled"
+	ListEventTypeReplacedByAiGatewayRuleCreated                                ListEventTypeReplacedBy = "ai-gateway-rule-created"
+	ListEventTypeReplacedByAiGatewayRuleDeleted                                ListEventTypeReplacedBy = "ai-gateway-rule-deleted"
+	ListEventTypeReplacedByAiGatewayRuleUpdated                                ListEventTypeReplacedBy = "ai-gateway-rule-updated"
+	ListEventTypeReplacedByAiGatewayScopeBudgetUpdated                         ListEventTypeReplacedBy = "ai-gateway-scope-budget-updated"
+	ListEventTypeReplacedByAiGatewaySystemCredentialFallbackOptOutToggled      ListEventTypeReplacedBy = "ai-gateway-system-credential-fallback-opt-out-toggled"
+	ListEventTypeReplacedByAiGatewayTranscriptsDefaultDisabled                 ListEventTypeReplacedBy = "ai-gateway-transcripts-default-disabled"
+	ListEventTypeReplacedByAiGatewayTranscriptsDefaultEnabled                  ListEventTypeReplacedBy = "ai-gateway-transcripts-default-enabled"
+	ListEventTypeReplacedByAiGatewayTranscriptsDisabled                        ListEventTypeReplacedBy = "ai-gateway-transcripts-disabled"
+	ListEventTypeReplacedByAiGatewayTranscriptsEnabled                         ListEventTypeReplacedBy = "ai-gateway-transcripts-enabled"
+	ListEventTypeReplacedByAiGatewayTranscriptsRetentionUpdated                ListEventTypeReplacedBy = "ai-gateway-transcripts-retention-updated"
+	ListEventTypeReplacedByAiGatewayVirtualModelConfigArchived                 ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-archived"
+	ListEventTypeReplacedByAiGatewayVirtualModelConfigCreated                  ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-created"
+	ListEventTypeReplacedByAiGatewayVirtualModelConfigDeleted                  ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-deleted"
+	ListEventTypeReplacedByAiGatewayVirtualModelConfigRestored                 ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-restored"
+	ListEventTypeReplacedByAiGatewayVirtualModelConfigUpdated                  ListEventTypeReplacedBy = "ai-gateway-virtual-model-config-updated"
+	ListEventTypeReplacedByAiGatewayZeroDataRetentionToggled                   ListEventTypeReplacedBy = "ai-gateway-zero-data-retention-toggled"
+	ListEventTypeReplacedByAiOmniagent                                         ListEventTypeReplacedBy = "ai-omniagent"
+	ListEventTypeReplacedByAiSecurityReview                                    ListEventTypeReplacedBy = "ai-security-review"
+	ListEventTypeReplacedByAiVerification                                      ListEventTypeReplacedBy = "ai-verification"
+	ListEventTypeReplacedByAlertGroupDetected                                  ListEventTypeReplacedBy = "alert-group-detected"
+	ListEventTypeReplacedByAlertGroupInvestigationCompleted                    ListEventTypeReplacedBy = "alert-group-investigation-completed"
+	ListEventTypeReplacedByAlertGroupPublished                                 ListEventTypeReplacedBy = "alert-group-published"
+	ListEventTypeReplacedByAlertInvestigationProjectAllowlistUpdated           ListEventTypeReplacedBy = "alert-investigation-project-allowlist-updated"
+	ListEventTypeReplacedByAlertResolved                                       ListEventTypeReplacedBy = "alert-resolved"
+	ListEventTypeReplacedByAlertRuleCreated                                    ListEventTypeReplacedBy = "alert-rule-created"
+	ListEventTypeReplacedByAlertRuleDeleted                                    ListEventTypeReplacedBy = "alert-rule-deleted"
+	ListEventTypeReplacedByAlertRuleUpdated                                    ListEventTypeReplacedBy = "alert-rule-updated"
+	ListEventTypeReplacedByAlias                                               ListEventTypeReplacedBy = "alias"
+	ListEventTypeReplacedByAliasChown                                          ListEventTypeReplacedBy = "alias-chown"
+	ListEventTypeReplacedByAliasDelete                                         ListEventTypeReplacedBy = "alias-delete"
+	ListEventTypeReplacedByAliasInviteCreated                                  ListEventTypeReplacedBy = "alias-invite-created"
+	ListEventTypeReplacedByAliasInviteJoined                                   ListEventTypeReplacedBy = "alias-invite-joined"
+	ListEventTypeReplacedByAliasInviteRevoked                                  ListEventTypeReplacedBy = "alias-invite-revoked"
+	ListEventTypeReplacedByAliasProtectionBypassCreated                        ListEventTypeReplacedBy = "alias-protection-bypass-created"
+	ListEventTypeReplacedByAliasProtectionBypassException                      ListEventTypeReplacedBy = "alias-protection-bypass-exception"
+	ListEventTypeReplacedByAliasProtectionBypassRegenerated                    ListEventTypeReplacedBy = "alias-protection-bypass-regenerated"
+	ListEventTypeReplacedByAliasProtectionBypassRevoked                        ListEventTypeReplacedBy = "alias-protection-bypass-revoked"
+	ListEventTypeReplacedByAliasSystem                                         ListEventTypeReplacedBy = "alias-system"
+	ListEventTypeReplacedByAliasUserScopedAccessDenied                         ListEventTypeReplacedBy = "alias-user-scoped-access-denied"
+	ListEventTypeReplacedByAliasUserScopedAccessGranted                        ListEventTypeReplacedBy = "alias-user-scoped-access-granted"
+	ListEventTypeReplacedByAliasUserScopedAccessRequested                      ListEventTypeReplacedBy = "alias-user-scoped-access-requested"
+	ListEventTypeReplacedByAliasUserScopedAccessRevoked                        ListEventTypeReplacedBy = "alias-user-scoped-access-revoked"
+	ListEventTypeReplacedByAliasesAssigned                                     ListEventTypeReplacedBy = "aliases-assigned"
+	ListEventTypeReplacedByAttackModeDisabled                                  ListEventTypeReplacedBy = "attack-mode-disabled"
+	ListEventTypeReplacedByAttackModeEnabled                                   ListEventTypeReplacedBy = "attack-mode-enabled"
+	ListEventTypeReplacedByAuditLogExportDownloaded                            ListEventTypeReplacedBy = "audit-log-export-downloaded"
+	ListEventTypeReplacedByAuditLogExportRequested                             ListEventTypeReplacedBy = "audit-log-export-requested"
+	ListEventTypeReplacedByAuthorizeGitDeployment                              ListEventTypeReplacedBy = "authorize-git-deployment"
+	ListEventTypeReplacedByAutoExposeSystemEnvs                                ListEventTypeReplacedBy = "auto-expose-system-envs"
+	ListEventTypeReplacedByAvatar                                              ListEventTypeReplacedBy = "avatar"
+	ListEventTypeReplacedByBillingSettingsUpdated                              ListEventTypeReplacedBy = "billing-settings-updated"
+	ListEventTypeReplacedByBulkRedirectsSettingsUpdated                        ListEventTypeReplacedBy = "bulk-redirects-settings-updated"
+	ListEventTypeReplacedByBulkRedirectsVersionPromoted                        ListEventTypeReplacedBy = "bulk-redirects-version-promoted"
+	ListEventTypeReplacedByBulkRedirectsVersionRestored                        ListEventTypeReplacedBy = "bulk-redirects-version-restored"
+	ListEventTypeReplacedByCert                                                ListEventTypeReplacedBy = "cert"
+	ListEventTypeReplacedByCertAutorenew                                       ListEventTypeReplacedBy = "cert-autorenew"
+	ListEventTypeReplacedByCertChown                                           ListEventTypeReplacedBy = "cert-chown"
+	ListEventTypeReplacedByCertClone                                           ListEventTypeReplacedBy = "cert-clone"
+	ListEventTypeReplacedByCertDelete                                          ListEventTypeReplacedBy = "cert-delete"
+	ListEventTypeReplacedByCertRenew                                           ListEventTypeReplacedBy = "cert-renew"
+	ListEventTypeReplacedByCertReplace                                         ListEventTypeReplacedBy = "cert-replace"
+	ListEventTypeReplacedByCertSystemCreate                                    ListEventTypeReplacedBy = "cert-system-create"
+	ListEventTypeReplacedByCodeOwnersAssumeOwners                              ListEventTypeReplacedBy = "code-owners-assume-owners"
+	ListEventTypeReplacedByCodeOwnersConfigUpdated                             ListEventTypeReplacedBy = "code-owners-config-updated"
+	ListEventTypeReplacedByComplianceDocumentDownloaded                        ListEventTypeReplacedBy = "compliance-document-downloaded"
+	ListEventTypeReplacedByComplianceDocumentPreviewed                         ListEventTypeReplacedBy = "compliance-document-previewed"
+	ListEventTypeReplacedByComplianceDocumentsBulkDownloaded                   ListEventTypeReplacedBy = "compliance-documents-bulk-downloaded"
+	ListEventTypeReplacedByConcurrentBuildsUpdate                              ListEventTypeReplacedBy = "concurrent-builds-update"
+	ListEventTypeReplacedByConnectApproveConnectorRequest                      ListEventTypeReplacedBy = "connect-approve-connector-request"
+	ListEventTypeReplacedByConnectAttachProject                                ListEventTypeReplacedBy = "connect-attach-project"
+	ListEventTypeReplacedByConnectBitbucket                                    ListEventTypeReplacedBy = "connect-bitbucket"
+	ListEventTypeReplacedByConnectBitbucketApp                                 ListEventTypeReplacedBy = "connect-bitbucket-app"
+	ListEventTypeReplacedByConnectBrandingUpdated                              ListEventTypeReplacedBy = "connect-branding-updated"
+	ListEventTypeReplacedByConnectCancelMcpEventSubscription                   ListEventTypeReplacedBy = "connect-cancel-mcp-event-subscription"
+	ListEventTypeReplacedByConnectConfigurationCreated                         ListEventTypeReplacedBy = "connect-configuration-created"
+	ListEventTypeReplacedByConnectConfigurationDeleted                         ListEventTypeReplacedBy = "connect-configuration-deleted"
+	ListEventTypeReplacedByConnectConfigurationLinkUpdated                     ListEventTypeReplacedBy = "connect-configuration-link-updated"
+	ListEventTypeReplacedByConnectConfigurationLinked                          ListEventTypeReplacedBy = "connect-configuration-linked"
+	ListEventTypeReplacedByConnectConfigurationUnlinked                        ListEventTypeReplacedBy = "connect-configuration-unlinked"
+	ListEventTypeReplacedByConnectConfigurationUpdated                         ListEventTypeReplacedBy = "connect-configuration-updated"
+	ListEventTypeReplacedByConnectCreateConnector                              ListEventTypeReplacedBy = "connect-create-connector"
+	ListEventTypeReplacedByConnectCreateMcpEventSubscription                   ListEventTypeReplacedBy = "connect-create-mcp-event-subscription"
+	ListEventTypeReplacedByConnectDeleteConnector                              ListEventTypeReplacedBy = "connect-delete-connector"
+	ListEventTypeReplacedByConnectDeleteConnectorRequest                       ListEventTypeReplacedBy = "connect-delete-connector-request"
+	ListEventTypeReplacedByConnectDeleteInstallation                           ListEventTypeReplacedBy = "connect-delete-installation"
+	ListEventTypeReplacedByConnectDetachProject                                ListEventTypeReplacedBy = "connect-detach-project"
+	ListEventTypeReplacedByConnectGithub                                       ListEventTypeReplacedBy = "connect-github"
+	ListEventTypeReplacedByConnectGithubCustomHost                             ListEventTypeReplacedBy = "connect-github-custom-host"
+	ListEventTypeReplacedByConnectGithubLimited                                ListEventTypeReplacedBy = "connect-github-limited"
+	ListEventTypeReplacedByConnectGitlab                                       ListEventTypeReplacedBy = "connect-gitlab"
+	ListEventTypeReplacedByConnectGitlabApp                                    ListEventTypeReplacedBy = "connect-gitlab-app"
+	ListEventTypeReplacedByConnectImportTokens                                 ListEventTypeReplacedBy = "connect-import-tokens"
+	ListEventTypeReplacedByConnectProvisionConnectorRequest                    ListEventTypeReplacedBy = "connect-provision-connector-request"
+	ListEventTypeReplacedByConnectRejectConnectorRequest                       ListEventTypeReplacedBy = "connect-reject-connector-request"
+	ListEventTypeReplacedByConnectRevokeAllTokens                              ListEventTypeReplacedBy = "connect-revoke-all-tokens"
+	ListEventTypeReplacedByConnectSubmitConnectorRequest                       ListEventTypeReplacedBy = "connect-submit-connector-request"
+	ListEventTypeReplacedByConnectUpdateConnector                              ListEventTypeReplacedBy = "connect-update-connector"
+	ListEventTypeReplacedByConnectUpdateConnectorRequest                       ListEventTypeReplacedBy = "connect-update-connector-request"
+	ListEventTypeReplacedByConnectUpdateTriggerDestinations                    ListEventTypeReplacedBy = "connect-update-trigger-destinations"
+	ListEventTypeReplacedByConnectUpsertInstallation                           ListEventTypeReplacedBy = "connect-upsert-installation"
+	ListEventTypeReplacedByConnectWithdrawConnectorRequest                     ListEventTypeReplacedBy = "connect-withdraw-connector-request"
+	ListEventTypeReplacedByCustomAlertCreated                                  ListEventTypeReplacedBy = "custom-alert-created"
+	ListEventTypeReplacedByCustomAlertDeleted                                  ListEventTypeReplacedBy = "custom-alert-deleted"
+	ListEventTypeReplacedByCustomAlertUpdated                                  ListEventTypeReplacedBy = "custom-alert-updated"
+	ListEventTypeReplacedByCustomEnvironmentsSettingsUpdated                   ListEventTypeReplacedBy = "custom-environments-settings-updated"
+	ListEventTypeReplacedByCustomMetricMetadataDeleted                         ListEventTypeReplacedBy = "custom-metric-metadata-deleted"
+	ListEventTypeReplacedByCustomMetricMetadataUpdated                         ListEventTypeReplacedBy = "custom-metric-metadata-updated"
+	ListEventTypeReplacedByCustomSuffixClear                                   ListEventTypeReplacedBy = "custom-suffix-clear"
+	ListEventTypeReplacedByCustomSuffixDisable                                 ListEventTypeReplacedBy = "custom-suffix-disable"
+	ListEventTypeReplacedByCustomSuffixEnable                                  ListEventTypeReplacedBy = "custom-suffix-enable"
+	ListEventTypeReplacedByCustomSuffixPending                                 ListEventTypeReplacedBy = "custom-suffix-pending"
+	ListEventTypeReplacedByCustomSuffixReady                                   ListEventTypeReplacedBy = "custom-suffix-ready"
+	ListEventTypeReplacedByDefaultPasswordProtection                           ListEventTypeReplacedBy = "default-password-protection"
+	ListEventTypeReplacedByDefaultSsoProtection                                ListEventTypeReplacedBy = "default-sso-protection"
+	ListEventTypeReplacedByDeployHookCreated                                   ListEventTypeReplacedBy = "deploy-hook-created"
+	ListEventTypeReplacedByDeployHookDeduped                                   ListEventTypeReplacedBy = "deploy-hook-deduped"
+	ListEventTypeReplacedByDeployHookDeleted                                   ListEventTypeReplacedBy = "deploy-hook-deleted"
+	ListEventTypeReplacedByDeployHookProcessed                                 ListEventTypeReplacedBy = "deploy-hook-processed"
+	ListEventTypeReplacedByDeployment                                          ListEventTypeReplacedBy = "deployment"
+	ListEventTypeReplacedByDeploymentCheckCreated                              ListEventTypeReplacedBy = "deployment-check-created"
+	ListEventTypeReplacedByDeploymentCheckDeleted                              ListEventTypeReplacedBy = "deployment-check-deleted"
+	ListEventTypeReplacedByDeploymentCheckUpdated                              ListEventTypeReplacedBy = "deployment-check-updated"
+	ListEventTypeReplacedByDeploymentChown                                     ListEventTypeReplacedBy = "deployment-chown"
+	ListEventTypeReplacedByDeploymentCreationBlocked                           ListEventTypeReplacedBy = "deployment-creation-blocked"
+	ListEventTypeReplacedByDeploymentDelete                                    ListEventTypeReplacedBy = "deployment-delete"
+	ListEventTypeReplacedByDeploymentPolicyBlocked                             ListEventTypeReplacedBy = "deployment-policy-blocked"
+	ListEventTypeReplacedByDeploymentProtectionAccessRequests                  ListEventTypeReplacedBy = "deployment-protection-access-requests"
+	ListEventTypeReplacedByDeploymentUndeleted                                 ListEventTypeReplacedBy = "deployment-undeleted"
+	ListEventTypeReplacedByDisabledIntegrationInstallationRemoved              ListEventTypeReplacedBy = "disabled-integration-installation-removed"
+	ListEventTypeReplacedByDisconnectBitbucketApp                              ListEventTypeReplacedBy = "disconnect-bitbucket-app"
+	ListEventTypeReplacedByDisconnectGithub                                    ListEventTypeReplacedBy = "disconnect-github"
+	ListEventTypeReplacedByDisconnectGithubCustomHost                          ListEventTypeReplacedBy = "disconnect-github-custom-host"
+	ListEventTypeReplacedByDisconnectGithubLimited                             ListEventTypeReplacedBy = "disconnect-github-limited"
+	ListEventTypeReplacedByDisconnectGitlabApp                                 ListEventTypeReplacedBy = "disconnect-gitlab-app"
+	ListEventTypeReplacedByDnsAdd                                              ListEventTypeReplacedBy = "dns-add"
+	ListEventTypeReplacedByDnsDelete                                           ListEventTypeReplacedBy = "dns-delete"
+	ListEventTypeReplacedByDnsRecordInternal                                   ListEventTypeReplacedBy = "dns-record-internal"
+	ListEventTypeReplacedByDnsUpdate                                           ListEventTypeReplacedBy = "dns-update"
+	ListEventTypeReplacedByDnsZonefileImport                                   ListEventTypeReplacedBy = "dns-zonefile-import"
+	ListEventTypeReplacedByDomain                                              ListEventTypeReplacedBy = "domain"
+	ListEventTypeReplacedByDomainBuy                                           ListEventTypeReplacedBy = "domain-buy"
+	ListEventTypeReplacedByDomainCdn                                           ListEventTypeReplacedBy = "domain-cdn"
+	ListEventTypeReplacedByDomainChown                                         ListEventTypeReplacedBy = "domain-chown"
+	ListEventTypeReplacedByDomainCustomNsChange                                ListEventTypeReplacedBy = "domain-custom-ns-change"
+	ListEventTypeReplacedByDomainDelegated                                     ListEventTypeReplacedBy = "domain-delegated"
+	ListEventTypeReplacedByDomainDelete                                        ListEventTypeReplacedBy = "domain-delete"
+	ListEventTypeReplacedByDomainEchChange                                     ListEventTypeReplacedBy = "domain-ech-change"
+	ListEventTypeReplacedByDomainMoveIn                                        ListEventTypeReplacedBy = "domain-move-in"
+	ListEventTypeReplacedByDomainMoveOut                                       ListEventTypeReplacedBy = "domain-move-out"
+	ListEventTypeReplacedByDomainMoveOutRequestSent                            ListEventTypeReplacedBy = "domain-move-out-request-sent"
+	ListEventTypeReplacedByDomainRenewChange                                   ListEventTypeReplacedBy = "domain-renew-change"
+	ListEventTypeReplacedByDomainServiceTypeUpdated                            ListEventTypeReplacedBy = "domain-service-type-updated"
+	ListEventTypeReplacedByDomainTransferIn                                    ListEventTypeReplacedBy = "domain-transfer-in"
+	ListEventTypeReplacedByDomainTransferInCanceled                            ListEventTypeReplacedBy = "domain-transfer-in-canceled"
+	ListEventTypeReplacedByDomainTransferInCompleted                           ListEventTypeReplacedBy = "domain-transfer-in-completed"
+	ListEventTypeReplacedByDomainZoneChange                                    ListEventTypeReplacedBy = "domain-zone-change"
+	ListEventTypeReplacedByDomainZoneChangeInternal                            ListEventTypeReplacedBy = "domain-zone-change-internal"
+	ListEventTypeReplacedByDrainCreated                                        ListEventTypeReplacedBy = "drain-created"
+	ListEventTypeReplacedByDrainDeleted                                        ListEventTypeReplacedBy = "drain-deleted"
+	ListEventTypeReplacedByDrainDisabled                                       ListEventTypeReplacedBy = "drain-disabled"
+	ListEventTypeReplacedByDrainEnabled                                        ListEventTypeReplacedBy = "drain-enabled"
+	ListEventTypeReplacedByDrainUpdated                                        ListEventTypeReplacedBy = "drain-updated"
+	ListEventTypeReplacedByDriveCreated                                        ListEventTypeReplacedBy = "drive-created"
+	ListEventTypeReplacedByDriveDeleted                                        ListEventTypeReplacedBy = "drive-deleted"
+	ListEventTypeReplacedByDriveSnapshotCreated                                ListEventTypeReplacedBy = "drive-snapshot-created"
+	ListEventTypeReplacedByDriveSnapshotDeleted                                ListEventTypeReplacedBy = "drive-snapshot-deleted"
+	ListEventTypeReplacedByEdgeCacheDangerouslyDeleteBySrcImages               ListEventTypeReplacedBy = "edge-cache-dangerously-delete-by-src-images"
+	ListEventTypeReplacedByEdgeCacheDangerouslyDeleteByTags                    ListEventTypeReplacedBy = "edge-cache-dangerously-delete-by-tags"
+	ListEventTypeReplacedByEdgeCacheDangerouslyDeleteImmutableStatic           ListEventTypeReplacedBy = "edge-cache-dangerously-delete-immutable-static"
+	ListEventTypeReplacedByEdgeCacheInvalidateBySrcImages                      ListEventTypeReplacedBy = "edge-cache-invalidate-by-src-images"
+	ListEventTypeReplacedByEdgeCacheInvalidateByTags                           ListEventTypeReplacedBy = "edge-cache-invalidate-by-tags"
+	ListEventTypeReplacedByEdgeCachePurgeAll                                   ListEventTypeReplacedBy = "edge-cache-purge-all"
+	ListEventTypeReplacedByEdgeCacheRollbackPurge                              ListEventTypeReplacedBy = "edge-cache-rollback-purge"
+	ListEventTypeReplacedByEdgeConfigBackupRestored                            ListEventTypeReplacedBy = "edge-config-backup-restored"
+	ListEventTypeReplacedByEdgeConfigCreated                                   ListEventTypeReplacedBy = "edge-config-created"
+	ListEventTypeReplacedByEdgeConfigDeleted                                   ListEventTypeReplacedBy = "edge-config-deleted"
+	ListEventTypeReplacedByEdgeConfigItemsUpdated                              ListEventTypeReplacedBy = "edge-config-items-updated"
+	ListEventTypeReplacedByEdgeConfigSchemaDeleted                             ListEventTypeReplacedBy = "edge-config-schema-deleted"
+	ListEventTypeReplacedByEdgeConfigSchemaUpdated                             ListEventTypeReplacedBy = "edge-config-schema-updated"
+	ListEventTypeReplacedByEdgeConfigTokenCreated                              ListEventTypeReplacedBy = "edge-config-token-created"
+	ListEventTypeReplacedByEdgeConfigTokenDeleted                              ListEventTypeReplacedBy = "edge-config-token-deleted"
+	ListEventTypeReplacedByEdgeConfigTransferIn                                ListEventTypeReplacedBy = "edge-config-transfer-in"
+	ListEventTypeReplacedByEdgeConfigTransferOut                               ListEventTypeReplacedBy = "edge-config-transfer-out"
+	ListEventTypeReplacedByEdgeConfigUpdated                                   ListEventTypeReplacedBy = "edge-config-updated"
+	ListEventTypeReplacedByEmail                                               ListEventTypeReplacedBy = "email"
+	ListEventTypeReplacedByEmailNotificationRuleRemoved                        ListEventTypeReplacedBy = "email-notification-rule-removed"
+	ListEventTypeReplacedByEmailNotificationRuleUpdated                        ListEventTypeReplacedBy = "email-notification-rule-updated"
+	ListEventTypeReplacedByEmuMemberRemovedUnverifiedDomain                    ListEventTypeReplacedBy = "emu-member-removed-unverified-domain"
+	ListEventTypeReplacedByEnforceDisjunctiveProductionSecrets                 ListEventTypeReplacedBy = "enforce-disjunctive-production-secrets"
+	ListEventTypeReplacedByEnforceSensitiveEnvironmentVariables                ListEventTypeReplacedBy = "enforce-sensitive-environment-variables"
+	ListEventTypeReplacedByEnvVariableAdd                                      ListEventTypeReplacedBy = "env-variable-add"
+	ListEventTypeReplacedByEnvVariableDelete                                   ListEventTypeReplacedBy = "env-variable-delete"
+	ListEventTypeReplacedByEnvVariableEdit                                     ListEventTypeReplacedBy = "env-variable-edit"
+	ListEventTypeReplacedByEnvVariableMasked                                   ListEventTypeReplacedBy = "env-variable-masked"
+	ListEventTypeReplacedByEnvVariableRead                                     ListEventTypeReplacedBy = "env-variable-read"
+	ListEventTypeReplacedByEnvVariableReadCliDev                               ListEventTypeReplacedBy = "env-variable-read:cli:dev"
+	ListEventTypeReplacedByEnvVariableReadCliEnvAdd                            ListEventTypeReplacedBy = "env-variable-read:cli:env:add"
+	ListEventTypeReplacedByEnvVariableReadCliEnvLs                             ListEventTypeReplacedBy = "env-variable-read:cli:env:ls"
+	ListEventTypeReplacedByEnvVariableReadCliEnvPull                           ListEventTypeReplacedBy = "env-variable-read:cli:env:pull"
+	ListEventTypeReplacedByEnvVariableReadCliEnvRm                             ListEventTypeReplacedBy = "env-variable-read:cli:env:rm"
+	ListEventTypeReplacedByEnvVariableReadCliPull                              ListEventTypeReplacedBy = "env-variable-read:cli:pull"
+	ListEventTypeReplacedByEnvVariableReadUnknownSource                        ListEventTypeReplacedBy = "env-variable-read:unknown-source"
+	ListEventTypeReplacedByEnvVariableReadV0EnvPull                            ListEventTypeReplacedBy = "env-variable-read:v0:env:pull"
+	ListEventTypeReplacedByEnvVariableRotated                                  ListEventTypeReplacedBy = "env-variable-rotated"
+	ListEventTypeReplacedByExperimentCreated                                   ListEventTypeReplacedBy = "experiment-created"
+	ListEventTypeReplacedByExperimentDeleted                                   ListEventTypeReplacedBy = "experiment-deleted"
+	ListEventTypeReplacedByExperimentTransitioned                              ListEventTypeReplacedBy = "experiment-transitioned"
+	ListEventTypeReplacedByExperimentUpdated                                   ListEventTypeReplacedBy = "experiment-updated"
+	ListEventTypeReplacedByFirewallBypassCreated                               ListEventTypeReplacedBy = "firewall-bypass-created"
+	ListEventTypeReplacedByFirewallBypassDeleted                               ListEventTypeReplacedBy = "firewall-bypass-deleted"
+	ListEventTypeReplacedByFirewallConditionalBypassCreated                    ListEventTypeReplacedBy = "firewall-conditional-bypass-created"
+	ListEventTypeReplacedByFirewallConditionalBypassDeleted                    ListEventTypeReplacedBy = "firewall-conditional-bypass-deleted"
+	ListEventTypeReplacedByFirewallConditionalBypassUpdated                    ListEventTypeReplacedBy = "firewall-conditional-bypass-updated"
+	ListEventTypeReplacedByFirewallConfigModified                              ListEventTypeReplacedBy = "firewall-config-modified"
+	ListEventTypeReplacedByFirewallConfigPromoted                              ListEventTypeReplacedBy = "firewall-config-promoted"
+	ListEventTypeReplacedByFirewallConfigRemoved                               ListEventTypeReplacedBy = "firewall-config-removed"
+	ListEventTypeReplacedByFirewallManagedRulegroupUpdated                     ListEventTypeReplacedBy = "firewall-managed-rulegroup-updated"
+	ListEventTypeReplacedByFirewallManagedRulesetUpdated                       ListEventTypeReplacedBy = "firewall-managed-ruleset-updated"
+	ListEventTypeReplacedByFlag                                                ListEventTypeReplacedBy = "flag"
+	ListEventTypeReplacedByFlagArchived                                        ListEventTypeReplacedBy = "flag-archived"
+	ListEventTypeReplacedByFlagCreated                                         ListEventTypeReplacedBy = "flag-created"
+	ListEventTypeReplacedByFlagDeleted                                         ListEventTypeReplacedBy = "flag-deleted"
+	ListEventTypeReplacedByFlagUnarchived                                      ListEventTypeReplacedBy = "flag-unarchived"
+	ListEventTypeReplacedByFlagUpdated                                         ListEventTypeReplacedBy = "flag-updated"
+	ListEventTypeReplacedByFlagsConnectionCreated                              ListEventTypeReplacedBy = "flags-connection-created"
+	ListEventTypeReplacedByFlagsConnectionDeleted                              ListEventTypeReplacedBy = "flags-connection-deleted"
+	ListEventTypeReplacedByFlagsExplorerSubscription                           ListEventTypeReplacedBy = "flags-explorer-subscription"
+	ListEventTypeReplacedByFlagsOverridesSigned                                ListEventTypeReplacedBy = "flags-overrides-signed"
+	ListEventTypeReplacedByFlagsSdkKey                                         ListEventTypeReplacedBy = "flags-sdk-key"
+	ListEventTypeReplacedByFlagsSdkKeyAdded                                    ListEventTypeReplacedBy = "flags-sdk-key-added"
+	ListEventTypeReplacedByFlagsSdkKeyDeleted                                  ListEventTypeReplacedBy = "flags-sdk-key-deleted"
+	ListEventTypeReplacedByFlagsSdkKeyRead                                     ListEventTypeReplacedBy = "flags-sdk-key-read"
+	ListEventTypeReplacedByFlagsSegment                                        ListEventTypeReplacedBy = "flags-segment"
+	ListEventTypeReplacedByFlagsSettings                                       ListEventTypeReplacedBy = "flags-settings"
+	ListEventTypeReplacedByFlagsTransferred                                    ListEventTypeReplacedBy = "flags-transferred"
+	ListEventTypeReplacedByFlatRateCdnAutoUpgradeConsent                       ListEventTypeReplacedBy = "flat-rate-cdn-auto-upgrade-consent"
+	ListEventTypeReplacedByFlatRateCdnMigrationOptOut                          ListEventTypeReplacedBy = "flat-rate-cdn-migration-opt-out"
+	ListEventTypeReplacedByGitAccountIntegrationLinkAdded                      ListEventTypeReplacedBy = "git_account_integration_link_added"
+	ListEventTypeReplacedByGitIntegrationRepoPush                              ListEventTypeReplacedBy = "git-integration-repo-push"
+	ListEventTypeReplacedByGlobalConfigBackupRestored                          ListEventTypeReplacedBy = "global-config-backup-restored"
+	ListEventTypeReplacedByGlobalConfigCreated                                 ListEventTypeReplacedBy = "global-config-created"
+	ListEventTypeReplacedByGlobalConfigDeleted                                 ListEventTypeReplacedBy = "global-config-deleted"
+	ListEventTypeReplacedByGlobalConfigItemsUpdated                            ListEventTypeReplacedBy = "global-config-items-updated"
+	ListEventTypeReplacedByGlobalConfigSchemaDeleted                           ListEventTypeReplacedBy = "global-config-schema-deleted"
+	ListEventTypeReplacedByGlobalConfigSchemaUpdated                           ListEventTypeReplacedBy = "global-config-schema-updated"
+	ListEventTypeReplacedByGlobalConfigTokenCreated                            ListEventTypeReplacedBy = "global-config-token-created"
+	ListEventTypeReplacedByGlobalConfigTokenDeleted                            ListEventTypeReplacedBy = "global-config-token-deleted"
+	ListEventTypeReplacedByGlobalConfigTransferIn                              ListEventTypeReplacedBy = "global-config-transfer-in"
+	ListEventTypeReplacedByGlobalConfigTransferOut                             ListEventTypeReplacedBy = "global-config-transfer-out"
+	ListEventTypeReplacedByGlobalConfigUpdated                                 ListEventTypeReplacedBy = "global-config-updated"
+	ListEventTypeReplacedByInstantRollbackCreated                              ListEventTypeReplacedBy = "instant-rollback-created"
+	ListEventTypeReplacedByIntegrationAccessTokenSettingsUpdated               ListEventTypeReplacedBy = "integration-access-token-settings-updated"
+	ListEventTypeReplacedByIntegrationConfigurationCredentialRevoked           ListEventTypeReplacedBy = "integration-configuration-credential-revoked"
+	ListEventTypeReplacedByIntegrationConfigurationCredentialRotated           ListEventTypeReplacedBy = "integration-configuration-credential-rotated"
+	ListEventTypeReplacedByIntegrationConfigurationOwnerChanged                ListEventTypeReplacedBy = "integration-configuration-owner-changed"
+	ListEventTypeReplacedByIntegrationConfigurationScopeChangeConfirmed        ListEventTypeReplacedBy = "integration-configuration-scope-change-confirmed"
+	ListEventTypeReplacedByIntegrationConfigurationTransferInSuccess           ListEventTypeReplacedBy = "integration-configuration-transfer-in-success"
+	ListEventTypeReplacedByIntegrationConfigurationTransferOutSuccess          ListEventTypeReplacedBy = "integration-configuration-transfer-out-success"
+	ListEventTypeReplacedByIntegrationConfigurationsDisabled                   ListEventTypeReplacedBy = "integration-configurations-disabled"
+	ListEventTypeReplacedByIntegrationInstallationBillingPlanUpdated           ListEventTypeReplacedBy = "integration-installation-billing-plan-updated"
+	ListEventTypeReplacedByIntegrationInstallationCompleted                    ListEventTypeReplacedBy = "integration-installation-completed"
+	ListEventTypeReplacedByIntegrationInstallationPermissionUpdated            ListEventTypeReplacedBy = "integration-installation-permission-updated"
+	ListEventTypeReplacedByIntegrationInstallationRemoved                      ListEventTypeReplacedBy = "integration-installation-removed"
+	ListEventTypeReplacedByIntegrationPreviousSecretRevoked                    ListEventTypeReplacedBy = "integration-previous-secret-revoked"
+	ListEventTypeReplacedByIntegrationResourceRedisCommandExecuted             ListEventTypeReplacedBy = "integration-resource-redis-command-executed"
+	ListEventTypeReplacedByIntegrationResourceSqlQueryExecuted                 ListEventTypeReplacedBy = "integration-resource-sql-query-executed"
+	ListEventTypeReplacedByIntegrationScopeChanged                             ListEventTypeReplacedBy = "integration-scope-changed"
+	ListEventTypeReplacedByIntegrationSecretRotated                            ListEventTypeReplacedBy = "integration-secret-rotated"
+	ListEventTypeReplacedByInvoiceModified                                     ListEventTypeReplacedBy = "invoice-modified"
+	ListEventTypeReplacedByInvoiceRefunded                                     ListEventTypeReplacedBy = "invoice-refunded"
+	ListEventTypeReplacedByKmsIssuerCreated                                    ListEventTypeReplacedBy = "kms-issuer-created"
+	ListEventTypeReplacedByKmsIssuerDeleted                                    ListEventTypeReplacedBy = "kms-issuer-deleted"
+	ListEventTypeReplacedByKmsIssuerKeyActivated                               ListEventTypeReplacedBy = "kms-issuer-key-activated"
+	ListEventTypeReplacedByKmsIssuerKeyCreated                                 ListEventTypeReplacedBy = "kms-issuer-key-created"
+	ListEventTypeReplacedByKmsIssuerKeyRevoked                                 ListEventTypeReplacedBy = "kms-issuer-key-revoked"
+	ListEventTypeReplacedByKmsIssuerKeyRotated                                 ListEventTypeReplacedBy = "kms-issuer-key-rotated"
+	ListEventTypeReplacedByKmsIssuerPolicyCreated                              ListEventTypeReplacedBy = "kms-issuer-policy-created"
+	ListEventTypeReplacedByKmsIssuerPolicyDeleted                              ListEventTypeReplacedBy = "kms-issuer-policy-deleted"
+	ListEventTypeReplacedByKmsIssuerPolicyUpdated                              ListEventTypeReplacedBy = "kms-issuer-policy-updated"
+	ListEventTypeReplacedByKmsIssuerUpdated                                    ListEventTypeReplacedBy = "kms-issuer-updated"
+	ListEventTypeReplacedByLogDrainCreated                                     ListEventTypeReplacedBy = "log-drain-created"
+	ListEventTypeReplacedByLogDrainDeleted                                     ListEventTypeReplacedBy = "log-drain-deleted"
+	ListEventTypeReplacedByLogDrainDisabled                                    ListEventTypeReplacedBy = "log-drain-disabled"
+	ListEventTypeReplacedByLogDrainEnabled                                     ListEventTypeReplacedBy = "log-drain-enabled"
+	ListEventTypeReplacedByLogin                                               ListEventTypeReplacedBy = "login"
+	ListEventTypeReplacedByLoginConnectionLinked                               ListEventTypeReplacedBy = "login-connection-linked"
+	ListEventTypeReplacedByLoginConnectionUnlinked                             ListEventTypeReplacedBy = "login-connection-unlinked"
+	ListEventTypeReplacedByManualDeploymentPromotionCreated                    ListEventTypeReplacedBy = "manual-deployment-promotion-created"
+	ListEventTypeReplacedByMarketplaceAutoCardCollectionUpdated                ListEventTypeReplacedBy = "marketplace-auto-card-collection-updated"
+	ListEventTypeReplacedByMarketplaceBillingCollectionUpdated                 ListEventTypeReplacedBy = "marketplace-billing-collection-updated"
+	ListEventTypeReplacedByMarketplaceFlexCommitOptIn                          ListEventTypeReplacedBy = "marketplace-flex-commit-opt-in"
+	ListEventTypeReplacedByMarketplaceIntegrationAllowlistUpdated              ListEventTypeReplacedBy = "marketplace-integration-allowlist-updated"
+	ListEventTypeReplacedByMessageboardChannelCreated                          ListEventTypeReplacedBy = "messageboard-channel-created"
+	ListEventTypeReplacedByMessageboardChannelUpdated                          ListEventTypeReplacedBy = "messageboard-channel-updated"
+	ListEventTypeReplacedByMessageboardCreated                                 ListEventTypeReplacedBy = "messageboard-created"
+	ListEventTypeReplacedByMessageboardGrantCreated                            ListEventTypeReplacedBy = "messageboard-grant-created"
+	ListEventTypeReplacedByMessageboardGrantRevoked                            ListEventTypeReplacedBy = "messageboard-grant-revoked"
+	ListEventTypeReplacedByMessageboardGrantUpdated                            ListEventTypeReplacedBy = "messageboard-grant-updated"
+	ListEventTypeReplacedByMessageboardPrivateChannelCreated                   ListEventTypeReplacedBy = "messageboard-private-channel-created"
+	ListEventTypeReplacedByMessageboardPrivateChannelUpdated                   ListEventTypeReplacedBy = "messageboard-private-channel-updated"
+	ListEventTypeReplacedByMessageboardPrivateCreated                          ListEventTypeReplacedBy = "messageboard-private-created"
+	ListEventTypeReplacedByMessageboardPrivateGrantCreated                     ListEventTypeReplacedBy = "messageboard-private-grant-created"
+	ListEventTypeReplacedByMessageboardPrivateGrantRevoked                     ListEventTypeReplacedBy = "messageboard-private-grant-revoked"
+	ListEventTypeReplacedByMessageboardPrivateGrantUpdated                     ListEventTypeReplacedBy = "messageboard-private-grant-updated"
+	ListEventTypeReplacedByMessageboardPrivateProjectGranted                   ListEventTypeReplacedBy = "messageboard-private-project-granted"
+	ListEventTypeReplacedByMessageboardPrivateProjectRevoked                   ListEventTypeReplacedBy = "messageboard-private-project-revoked"
+	ListEventTypeReplacedByMessageboardProjectChannelCreated                   ListEventTypeReplacedBy = "messageboard-project-channel-created"
+	ListEventTypeReplacedByMessageboardProjectCreated                          ListEventTypeReplacedBy = "messageboard-project-created"
+	ListEventTypeReplacedByMessageboardProjectGranted                          ListEventTypeReplacedBy = "messageboard-project-granted"
+	ListEventTypeReplacedByMessageboardProjectPrivateChannelCreated            ListEventTypeReplacedBy = "messageboard-project-private-channel-created"
+	ListEventTypeReplacedByMessageboardProjectRevoked                          ListEventTypeReplacedBy = "messageboard-project-revoked"
+	ListEventTypeReplacedByMessageboardSchemaRegistered                        ListEventTypeReplacedBy = "messageboard-schema-registered"
+	ListEventTypeReplacedByMessageboardVisibilityUpdated                       ListEventTypeReplacedBy = "messageboard-visibility-updated"
+	ListEventTypeReplacedByMicrofrontendGroupAdded                             ListEventTypeReplacedBy = "microfrontend-group-added"
+	ListEventTypeReplacedByMicrofrontendGroupDeleted                           ListEventTypeReplacedBy = "microfrontend-group-deleted"
+	ListEventTypeReplacedByMicrofrontendGroupUpdated                           ListEventTypeReplacedBy = "microfrontend-group-updated"
+	ListEventTypeReplacedByMicrofrontendProjectAddedToGroup                    ListEventTypeReplacedBy = "microfrontend-project-added-to-group"
+	ListEventTypeReplacedByMicrofrontendProjectRemovedFromGroup                ListEventTypeReplacedBy = "microfrontend-project-removed-from-group"
+	ListEventTypeReplacedByMicrofrontendProjectUpdated                         ListEventTypeReplacedBy = "microfrontend-project-updated"
+	ListEventTypeReplacedByMonitoringAlertUpdated                              ListEventTypeReplacedBy = "monitoring-alert-updated"
+	ListEventTypeReplacedByMonitoringDisabled                                  ListEventTypeReplacedBy = "monitoring-disabled"
+	ListEventTypeReplacedByMonitoringEnabled                                   ListEventTypeReplacedBy = "monitoring-enabled"
+	ListEventTypeReplacedByOauthAppConnectionCreated                           ListEventTypeReplacedBy = "oauth-app-connection-created"
+	ListEventTypeReplacedByOauthAppConnectionRemoved                           ListEventTypeReplacedBy = "oauth-app-connection-removed"
+	ListEventTypeReplacedByOauthAppConnectionUpdated                           ListEventTypeReplacedBy = "oauth-app-connection-updated"
+	ListEventTypeReplacedByOauthAppCreated                                     ListEventTypeReplacedBy = "oauth-app-created"
+	ListEventTypeReplacedByOauthAppDeleted                                     ListEventTypeReplacedBy = "oauth-app-deleted"
+	ListEventTypeReplacedByOauthAppSecretDeleted                               ListEventTypeReplacedBy = "oauth-app-secret-deleted"
+	ListEventTypeReplacedByOauthAppSecretGenerated                             ListEventTypeReplacedBy = "oauth-app-secret-generated"
+	ListEventTypeReplacedByOauthAppTokenCreated                                ListEventTypeReplacedBy = "oauth-app-token-created"
+	ListEventTypeReplacedByOauthAppUpdated                                     ListEventTypeReplacedBy = "oauth-app-updated"
+	ListEventTypeReplacedByObservabilityDisabled                               ListEventTypeReplacedBy = "observability-disabled"
+	ListEventTypeReplacedByObservabilityEnabled                                ListEventTypeReplacedBy = "observability-enabled"
+	ListEventTypeReplacedByObservabilityPlusProjectDisabled                    ListEventTypeReplacedBy = "observability-plus-project-disabled"
+	ListEventTypeReplacedByObservabilityPlusProjectEnabled                     ListEventTypeReplacedBy = "observability-plus-project-enabled"
+	ListEventTypeReplacedByOidcPolicyCreated                                   ListEventTypeReplacedBy = "oidc-policy-created"
+	ListEventTypeReplacedByOidcPolicyDeleted                                   ListEventTypeReplacedBy = "oidc-policy-deleted"
+	ListEventTypeReplacedByOidcPolicyUpdated                                   ListEventTypeReplacedBy = "oidc-policy-updated"
+	ListEventTypeReplacedByOidcPolicyUsedToObtainAppToken                      ListEventTypeReplacedBy = "oidc-policy-used-to-obtain-app-token"
+	ListEventTypeReplacedByOrganizationAvatarUpdate                            ListEventTypeReplacedBy = "organization-avatar-update"
+	ListEventTypeReplacedByOrganizationCreate                                  ListEventTypeReplacedBy = "organization-create"
+	ListEventTypeReplacedByOrganizationDelete                                  ListEventTypeReplacedBy = "organization-delete"
+	ListEventTypeReplacedByOrganizationDomainVerificationCreated               ListEventTypeReplacedBy = "organization-domain-verification-created"
+	ListEventTypeReplacedByOrganizationDomainVerificationDeleted               ListEventTypeReplacedBy = "organization-domain-verification-deleted"
+	ListEventTypeReplacedByOrganizationDomainVerificationVerified              ListEventTypeReplacedBy = "organization-domain-verification-verified"
+	ListEventTypeReplacedByOrganizationDsyncDelete                             ListEventTypeReplacedBy = "organization-dsync-delete"
+	ListEventTypeReplacedByOrganizationDsyncGroupDelete                        ListEventTypeReplacedBy = "organization-dsync-group-delete"
+	ListEventTypeReplacedByOrganizationDsyncGroupUpsert                        ListEventTypeReplacedBy = "organization-dsync-group-upsert"
+	ListEventTypeReplacedByOrganizationDsyncSyncStart                          ListEventTypeReplacedBy = "organization-dsync-sync-start"
+	ListEventTypeReplacedByOrganizationEmuDomainsMerged                        ListEventTypeReplacedBy = "organization-emu-domains-merged"
+	ListEventTypeReplacedByOrganizationEmuTeamUpdated                          ListEventTypeReplacedBy = "organization-emu-team-updated"
+	ListEventTypeReplacedByOrganizationEmuUpdated                              ListEventTypeReplacedBy = "organization-emu-updated"
+	ListEventTypeReplacedByOrganizationNameUpdate                              ListEventTypeReplacedBy = "organization-name-update"
+	ListEventTypeReplacedByOrganizationSlugUpdate                              ListEventTypeReplacedBy = "organization-slug-update"
+	ListEventTypeReplacedByOrganizationSsoDeleted                              ListEventTypeReplacedBy = "organization-sso-deleted"
+	ListEventTypeReplacedByOrganizationSsoEnforced                             ListEventTypeReplacedBy = "organization-sso-enforced"
+	ListEventTypeReplacedByOrganizationSsoNewTeamsUpdate                       ListEventTypeReplacedBy = "organization-sso-new-teams-update"
+	ListEventTypeReplacedByOrganizationTeamAdd                                 ListEventTypeReplacedBy = "organization-team-add"
+	ListEventTypeReplacedByOrganizationTeamCreate                              ListEventTypeReplacedBy = "organization-team-create"
+	ListEventTypeReplacedByOrganizationTeamDelete                              ListEventTypeReplacedBy = "organization-team-delete"
+	ListEventTypeReplacedByOrganizationTeamDsyncUpdate                         ListEventTypeReplacedBy = "organization-team-dsync-update"
+	ListEventTypeReplacedByOrganizationTeamSsoUpdate                           ListEventTypeReplacedBy = "organization-team-sso-update"
+	ListEventTypeReplacedByOrganizationUpdateAccountFlowDismissed              ListEventTypeReplacedBy = "organization-update-account-flow-dismissed"
+	ListEventTypeReplacedByOrganizationUpdateAccountFlowTriggered              ListEventTypeReplacedBy = "organization-update-account-flow-triggered"
+	ListEventTypeReplacedByOwnerBlocked                                        ListEventTypeReplacedBy = "owner-blocked"
+	ListEventTypeReplacedByOwnerSoftBlocked                                    ListEventTypeReplacedBy = "owner-soft-blocked"
+	ListEventTypeReplacedByOwnerSoftUnblocked                                  ListEventTypeReplacedBy = "owner-soft-unblocked"
+	ListEventTypeReplacedByOwnerUnblocked                                      ListEventTypeReplacedBy = "owner-unblocked"
+	ListEventTypeReplacedByPageIntegrityConfigUpdated                          ListEventTypeReplacedBy = "page-integrity-config-updated"
+	ListEventTypeReplacedByPageIntegrityHeaderApproved                         ListEventTypeReplacedBy = "page-integrity-header-approved"
+	ListEventTypeReplacedByPageIntegrityHeaderRejected                         ListEventTypeReplacedBy = "page-integrity-header-rejected"
+	ListEventTypeReplacedByPageIntegrityInventoryCleared                       ListEventTypeReplacedBy = "page-integrity-inventory-cleared"
+	ListEventTypeReplacedByPageIntegrityResourceApproved                       ListEventTypeReplacedBy = "page-integrity-resource-approved"
+	ListEventTypeReplacedByPageIntegrityResourceDeleted                        ListEventTypeReplacedBy = "page-integrity-resource-deleted"
+	ListEventTypeReplacedByPageIntegrityResourceRejected                       ListEventTypeReplacedBy = "page-integrity-resource-rejected"
+	ListEventTypeReplacedByPageIntegrityScriptApprovalRuleCreated              ListEventTypeReplacedBy = "page-integrity-script-approval-rule-created"
+	ListEventTypeReplacedByPageIntegrityScriptApprovalRuleDeleted              ListEventTypeReplacedBy = "page-integrity-script-approval-rule-deleted"
+	ListEventTypeReplacedByPasskeyCreated                                      ListEventTypeReplacedBy = "passkey-created"
+	ListEventTypeReplacedByPasskeyDeleted                                      ListEventTypeReplacedBy = "passkey-deleted"
+	ListEventTypeReplacedByPasskeyUpdated                                      ListEventTypeReplacedBy = "passkey-updated"
+	ListEventTypeReplacedByPassportAccessGranted                               ListEventTypeReplacedBy = "passport-access-granted"
+	ListEventTypeReplacedByPasswordProtectionDisabled                          ListEventTypeReplacedBy = "password-protection-disabled"
+	ListEventTypeReplacedByPasswordProtectionEnabled                           ListEventTypeReplacedBy = "password-protection-enabled"
+	ListEventTypeReplacedByPaymentMethodAdded                                  ListEventTypeReplacedBy = "payment-method-added"
+	ListEventTypeReplacedByPaymentMethodDefaultUpdated                         ListEventTypeReplacedBy = "payment-method-default-updated"
+	ListEventTypeReplacedByPaymentMethodRemoved                                ListEventTypeReplacedBy = "payment-method-removed"
+	ListEventTypeReplacedByPerimeterCreated                                    ListEventTypeReplacedBy = "perimeter-created"
+	ListEventTypeReplacedByPerimeterDeleted                                    ListEventTypeReplacedBy = "perimeter-deleted"
+	ListEventTypeReplacedByPerimeterRenamed                                    ListEventTypeReplacedBy = "perimeter-renamed"
+	ListEventTypeReplacedByPerimeterRolledBack                                 ListEventTypeReplacedBy = "perimeter-rolled-back"
+	ListEventTypeReplacedByPerimeterUpdated                                    ListEventTypeReplacedBy = "perimeter-updated"
+	ListEventTypeReplacedByPlan                                                ListEventTypeReplacedBy = "plan"
+	ListEventTypeReplacedByPreviewDeploymentSuffixDisabled                     ListEventTypeReplacedBy = "preview-deployment-suffix-disabled"
+	ListEventTypeReplacedByPreviewDeploymentSuffixEnabled                      ListEventTypeReplacedBy = "preview-deployment-suffix-enabled"
+	ListEventTypeReplacedByPreviewDeploymentSuffixUpdate                       ListEventTypeReplacedBy = "preview-deployment-suffix-update"
+	ListEventTypeReplacedByPrivatelinkEndpointCreated                          ListEventTypeReplacedBy = "privatelink-endpoint-created"
+	ListEventTypeReplacedByPrivatelinkEndpointDeleted                          ListEventTypeReplacedBy = "privatelink-endpoint-deleted"
+	ListEventTypeReplacedByPrivatelinkEndpointUpdated                          ListEventTypeReplacedBy = "privatelink-endpoint-updated"
+	ListEventTypeReplacedByProductionBranchUpdated                             ListEventTypeReplacedBy = "production-branch-updated"
+	ListEventTypeReplacedByProjectAddAlias                                     ListEventTypeReplacedBy = "project-add-alias"
+	ListEventTypeReplacedByProjectAddRedirect                                  ListEventTypeReplacedBy = "project-add-redirect"
+	ListEventTypeReplacedByProjectAffectedProjectsDeploymentsUpdated           ListEventTypeReplacedBy = "project-affected-projects-deployments-updated"
+	ListEventTypeReplacedByProjectAliasConfiguredChange                        ListEventTypeReplacedBy = "project-alias-configured-change"
+	ListEventTypeReplacedByProjectAnalyticsDisabled                            ListEventTypeReplacedBy = "project-analytics-disabled"
+	ListEventTypeReplacedByProjectAnalyticsEnabled                             ListEventTypeReplacedBy = "project-analytics-enabled"
+	ListEventTypeReplacedByProjectAutoAssignCustomProductionDomainsUpdated     ListEventTypeReplacedBy = "project-auto-assign-custom-production-domains-updated"
+	ListEventTypeReplacedByProjectAutomationBypass                             ListEventTypeReplacedBy = "project-automation-bypass"
+	ListEventTypeReplacedByProjectAvatarDarkModeUpdate                         ListEventTypeReplacedBy = "project-avatar-dark-mode-update"
+	ListEventTypeReplacedByProjectAvatarUpdate                                 ListEventTypeReplacedBy = "project-avatar-update"
+	ListEventTypeReplacedByProjectBuildCommandUpdated                          ListEventTypeReplacedBy = "project-build-command-updated"
+	ListEventTypeReplacedByProjectBuildLogsAndSourceProtectionUpdated          ListEventTypeReplacedBy = "project-build-logs-and-source-protection-updated"
+	ListEventTypeReplacedByProjectBuildMachineUpdated                          ListEventTypeReplacedBy = "project-build-machine-updated"
+	ListEventTypeReplacedByProjectCardWidgetPreferenceUpdated                  ListEventTypeReplacedBy = "project-card-widget-preference-updated"
+	ListEventTypeReplacedByProjectClientCertDelete                             ListEventTypeReplacedBy = "project-client-cert-delete"
+	ListEventTypeReplacedByProjectClientCertUpload                             ListEventTypeReplacedBy = "project-client-cert-upload"
+	ListEventTypeReplacedByProjectConnectConfigurations                        ListEventTypeReplacedBy = "project-connect-configurations"
+	ListEventTypeReplacedByProjectConsolidatedGitCommitStatusUpdated           ListEventTypeReplacedBy = "project-consolidated-git-commit-status-updated"
+	ListEventTypeReplacedByProjectCreated                                      ListEventTypeReplacedBy = "project-created"
+	ListEventTypeReplacedByProjectCronJobsToggled                              ListEventTypeReplacedBy = "project-cron-jobs-toggled"
+	ListEventTypeReplacedByProjectCustomEnvironmentCreated                     ListEventTypeReplacedBy = "project-custom-environment-created"
+	ListEventTypeReplacedByProjectCustomEnvironmentDeleted                     ListEventTypeReplacedBy = "project-custom-environment-deleted"
+	ListEventTypeReplacedByProjectCustomEnvironmentSchedulesDefaultUpdated     ListEventTypeReplacedBy = "project-custom-environment-schedules-default-updated"
+	ListEventTypeReplacedByProjectCustomEnvironmentUpdated                     ListEventTypeReplacedBy = "project-custom-environment-updated"
+	ListEventTypeReplacedByProjectCustomerSuccessCodeVisibilityUpdated         ListEventTypeReplacedBy = "project-customer-success-code-visibility-updated"
+	ListEventTypeReplacedByProjectDelete                                       ListEventTypeReplacedBy = "project-delete"
+	ListEventTypeReplacedByProjectDeploymentPolicyUpdated                      ListEventTypeReplacedBy = "project-deployment-policy-updated"
+	ListEventTypeReplacedByProjectDeploymentRetentionUpdated                   ListEventTypeReplacedBy = "project-deployment-retention-updated"
+	ListEventTypeReplacedByProjectDirectoryListing                             ListEventTypeReplacedBy = "project-directory-listing"
+	ListEventTypeReplacedByProjectDomainDeleted                                ListEventTypeReplacedBy = "project-domain-deleted"
+	ListEventTypeReplacedByProjectDomainMoved                                  ListEventTypeReplacedBy = "project-domain-moved"
+	ListEventTypeReplacedByProjectDomainUnverified                             ListEventTypeReplacedBy = "project-domain-unverified"
+	ListEventTypeReplacedByProjectDomainUpdated                                ListEventTypeReplacedBy = "project-domain-updated"
+	ListEventTypeReplacedByProjectDomainVerified                               ListEventTypeReplacedBy = "project-domain-verified"
+	ListEventTypeReplacedByProjectElasticConcurrencyUpdated                    ListEventTypeReplacedBy = "project-elastic-concurrency-updated"
+	ListEventTypeReplacedByProjectExpirationLocked                             ListEventTypeReplacedBy = "project-expiration-locked"
+	ListEventTypeReplacedByProjectExpirationReached                            ListEventTypeReplacedBy = "project-expiration-reached"
+	ListEventTypeReplacedByProjectExpirationRemoved                            ListEventTypeReplacedBy = "project-expiration-removed"
+	ListEventTypeReplacedByProjectExpirationScheduled                          ListEventTypeReplacedBy = "project-expiration-scheduled"
+	ListEventTypeReplacedByProjectExpirationUnlocked                           ListEventTypeReplacedBy = "project-expiration-unlocked"
+	ListEventTypeReplacedByProjectExternalRewriteCachingUpdated                ListEventTypeReplacedBy = "project-external-rewrite-caching-updated"
+	ListEventTypeReplacedByProjectFrameworkUpdated                             ListEventTypeReplacedBy = "project-framework-updated"
+	ListEventTypeReplacedByProjectFunctionCpuMemory                            ListEventTypeReplacedBy = "project-function-cpu-memory"
+	ListEventTypeReplacedByProjectFunctionFailover                             ListEventTypeReplacedBy = "project-function-failover"
+	ListEventTypeReplacedByProjectFunctionMaxDuration                          ListEventTypeReplacedBy = "project-function-max-duration"
+	ListEventTypeReplacedByProjectFunctionRegions                              ListEventTypeReplacedBy = "project-function-regions"
+	ListEventTypeReplacedByProjectFunctionsBetaUpdated                         ListEventTypeReplacedBy = "project-functions-beta-updated"
+	ListEventTypeReplacedByProjectFunctionsFluidDisabled                       ListEventTypeReplacedBy = "project-functions-fluid-disabled"
+	ListEventTypeReplacedByProjectFunctionsFluidEnabled                        ListEventTypeReplacedBy = "project-functions-fluid-enabled"
+	ListEventTypeReplacedByProjectGitCommitCommentsToggled                     ListEventTypeReplacedBy = "project-git-commit-comments-toggled"
+	ListEventTypeReplacedByProjectGitCommitStatusToggled                       ListEventTypeReplacedBy = "project-git-commit-status-toggled"
+	ListEventTypeReplacedByProjectGitCreateDeploymentsToggled                  ListEventTypeReplacedBy = "project-git-create-deployments-toggled"
+	ListEventTypeReplacedByProjectGitCredentialAttestationCreated              ListEventTypeReplacedBy = "project-git-credential-attestation-created"
+	ListEventTypeReplacedByProjectGitCredentialAttestationDeleted              ListEventTypeReplacedBy = "project-git-credential-attestation-deleted"
+	ListEventTypeReplacedByProjectGitCredentialBoundCreated                    ListEventTypeReplacedBy = "project-git-credential-bound-created"
+	ListEventTypeReplacedByProjectGitCredentialBoundDeleted                    ListEventTypeReplacedBy = "project-git-credential-bound-deleted"
+	ListEventTypeReplacedByProjectGitCredentialBoundUpdated                    ListEventTypeReplacedBy = "project-git-credential-bound-updated"
+	ListEventTypeReplacedByProjectGitCredentialGrantAttestationRevoked         ListEventTypeReplacedBy = "project-git-credential-grant-attestation-revoked"
+	ListEventTypeReplacedByProjectGitCredentialGrantAttested                   ListEventTypeReplacedBy = "project-git-credential-grant-attested"
+	ListEventTypeReplacedByProjectGitCredentialGrantCreated                    ListEventTypeReplacedBy = "project-git-credential-grant-created"
+	ListEventTypeReplacedByProjectGitCredentialGrantDeleted                    ListEventTypeReplacedBy = "project-git-credential-grant-deleted"
+	ListEventTypeReplacedByProjectGitCredentialGrantUpdated                    ListEventTypeReplacedBy = "project-git-credential-grant-updated"
+	ListEventTypeReplacedByProjectGitCredentialTokenMinted                     ListEventTypeReplacedBy = "project-git-credential-token-minted"
+	ListEventTypeReplacedByProjectGitForkProtectionUpdated                     ListEventTypeReplacedBy = "project-git-fork-protection-updated"
+	ListEventTypeReplacedByProjectGitLfsToggled                                ListEventTypeReplacedBy = "project-git-lfs-toggled"
+	ListEventTypeReplacedByProjectGitPrCommentsToggled                         ListEventTypeReplacedBy = "project-git-pr-comments-toggled"
+	ListEventTypeReplacedByProjectGitRepositoryConnected                       ListEventTypeReplacedBy = "project-git-repository-connected"
+	ListEventTypeReplacedByProjectGitRepositoryDisconnected                    ListEventTypeReplacedBy = "project-git-repository-disconnected"
+	ListEventTypeReplacedByProjectGitRepositoryDispatchEventsToggled           ListEventTypeReplacedBy = "project-git-repository-dispatch-events-toggled"
+	ListEventTypeReplacedByProjectGitRequireVerifiedCommitsToggled             ListEventTypeReplacedBy = "project-git-require-verified-commits-toggled"
+	ListEventTypeReplacedByProjectIgnoredBuildStepUpdated                      ListEventTypeReplacedBy = "project-ignored-build-step-updated"
+	ListEventTypeReplacedByProjectInstallCommandUpdated                        ListEventTypeReplacedBy = "project-install-command-updated"
+	ListEventTypeReplacedByProjectMemberAdded                                  ListEventTypeReplacedBy = "project-member-added"
+	ListEventTypeReplacedByProjectMemberInvited                                ListEventTypeReplacedBy = "project-member-invited"
+	ListEventTypeReplacedByProjectMemberRemoved                                ListEventTypeReplacedBy = "project-member-removed"
+	ListEventTypeReplacedByProjectMemberRemovedBatch                           ListEventTypeReplacedBy = "project-member-removed-batch"
+	ListEventTypeReplacedByProjectMemberUpdated                                ListEventTypeReplacedBy = "project-member-updated"
+	ListEventTypeReplacedByProjectMoveInSuccess                                ListEventTypeReplacedBy = "project-move-in-success"
+	ListEventTypeReplacedByProjectMoveOutFailed                                ListEventTypeReplacedBy = "project-move-out-failed"
+	ListEventTypeReplacedByProjectMoveOutStarted                               ListEventTypeReplacedBy = "project-move-out-started"
+	ListEventTypeReplacedByProjectMoveOutSuccess                               ListEventTypeReplacedBy = "project-move-out-success"
+	ListEventTypeReplacedByProjectName                                         ListEventTypeReplacedBy = "project-name"
+	ListEventTypeReplacedByProjectNodeVersionUpdated                           ListEventTypeReplacedBy = "project-node-version-updated"
+	ListEventTypeReplacedByProjectOidcIssuerModeUpdated                        ListEventTypeReplacedBy = "project-oidc-issuer-mode-updated"
+	ListEventTypeReplacedByProjectOidcTokenCreated                             ListEventTypeReplacedBy = "project-oidc-token-created"
+	ListEventTypeReplacedByProjectOptionsAllowlist                             ListEventTypeReplacedBy = "project-options-allowlist"
+	ListEventTypeReplacedByProjectOutputDirectoryUpdated                       ListEventTypeReplacedBy = "project-output-directory-updated"
+	ListEventTypeReplacedByProjectPassportUpdated                              ListEventTypeReplacedBy = "project-passport-updated"
+	ListEventTypeReplacedByProjectPasswordProtection                           ListEventTypeReplacedBy = "project-password-protection"
+	ListEventTypeReplacedByProjectPaused                                       ListEventTypeReplacedBy = "project-paused"
+	ListEventTypeReplacedByProjectPerimetersUpdated                            ListEventTypeReplacedBy = "project-perimeters-updated"
+	ListEventTypeReplacedByProjectPreviewDeploymentSuffix                      ListEventTypeReplacedBy = "project-preview-deployment-suffix"
+	ListEventTypeReplacedByProjectPreviewEnvironmentBranchTrackingUpdated      ListEventTypeReplacedBy = "project-preview-environment-branch-tracking-updated"
+	ListEventTypeReplacedByProjectPrioritizeProductionBuildsUpdated            ListEventTypeReplacedBy = "project-prioritize-production-builds-updated"
+	ListEventTypeReplacedByProjectProgramEnrollmentChanged                     ListEventTypeReplacedBy = "project-program-enrollment-changed"
+	ListEventTypeReplacedByProjectProtectedSourcemapsUpdated                   ListEventTypeReplacedBy = "project-protected-sourcemaps-updated"
+	ListEventTypeReplacedByProjectRemoveVercelRequestHeadersUpdated            ListEventTypeReplacedBy = "project-remove-vercel-request-headers-updated"
+	ListEventTypeReplacedByProjectRollbackDescriptionUpdated                   ListEventTypeReplacedBy = "project-rollback-description-updated"
+	ListEventTypeReplacedByProjectRollingReleaseAborted                        ListEventTypeReplacedBy = "project-rolling-release-aborted"
+	ListEventTypeReplacedByProjectRollingReleaseApproved                       ListEventTypeReplacedBy = "project-rolling-release-approved"
+	ListEventTypeReplacedByProjectRollingReleaseCompleted                      ListEventTypeReplacedBy = "project-rolling-release-completed"
+	ListEventTypeReplacedByProjectRollingReleaseConfigured                     ListEventTypeReplacedBy = "project-rolling-release-configured"
+	ListEventTypeReplacedByProjectRollingReleaseContinued                      ListEventTypeReplacedBy = "project-rolling-release-continued"
+	ListEventTypeReplacedByProjectRollingReleaseDisabled                       ListEventTypeReplacedBy = "project-rolling-release-disabled"
+	ListEventTypeReplacedByProjectRollingReleaseEnabled                        ListEventTypeReplacedBy = "project-rolling-release-enabled"
+	ListEventTypeReplacedByProjectRollingReleasePaused                         ListEventTypeReplacedBy = "project-rolling-release-paused"
+	ListEventTypeReplacedByProjectRollingReleaseStarted                        ListEventTypeReplacedBy = "project-rolling-release-started"
+	ListEventTypeReplacedByProjectRollingReleaseTimer                          ListEventTypeReplacedBy = "project-rolling-release-timer"
+	ListEventTypeReplacedByProjectRootDirectoryUpdated                         ListEventTypeReplacedBy = "project-root-directory-updated"
+	ListEventTypeReplacedByProjectRoutesVersionPromoted                        ListEventTypeReplacedBy = "project-routes-version-promoted"
+	ListEventTypeReplacedByProjectRoutesVersionRestored                        ListEventTypeReplacedBy = "project-routes-version-restored"
+	ListEventTypeReplacedByProjectSandboxConfigUpdated                         ListEventTypeReplacedBy = "project-sandbox-config-updated"
+	ListEventTypeReplacedByProjectSandboxUrlProtectionUpdated                  ListEventTypeReplacedBy = "project-sandbox-url-protection-updated"
+	ListEventTypeReplacedByProjectSkewProtectionAllowedDomainsUpdated          ListEventTypeReplacedBy = "project-skew-protection-allowed-domains-updated"
+	ListEventTypeReplacedByProjectSkewProtectionMaxAgeUpdated                  ListEventTypeReplacedBy = "project-skew-protection-max-age-updated"
+	ListEventTypeReplacedByProjectSkewProtectionThresholdUpdated               ListEventTypeReplacedBy = "project-skew-protection-threshold-updated"
+	ListEventTypeReplacedByProjectSourceFilesOutsideRootDirectoryUpdated       ListEventTypeReplacedBy = "project-source-files-outside-root-directory-updated"
+	ListEventTypeReplacedByProjectSpeedInsightsDisabled                        ListEventTypeReplacedBy = "project-speed-insights-disabled"
+	ListEventTypeReplacedByProjectSpeedInsightsEnabled                         ListEventTypeReplacedBy = "project-speed-insights-enabled"
+	ListEventTypeReplacedByProjectSpeedInsightsFreeDataStarted                 ListEventTypeReplacedBy = "project-speed-insights-free-data-started"
+	ListEventTypeReplacedByProjectSsoProtection                                ListEventTypeReplacedBy = "project-sso-protection"
+	ListEventTypeReplacedByProjectStaticIpsUpdated                             ListEventTypeReplacedBy = "project-static-ips-updated"
+	ListEventTypeReplacedByProjectTrustedIps                                   ListEventTypeReplacedBy = "project-trusted-ips"
+	ListEventTypeReplacedByProjectTrustedSources                               ListEventTypeReplacedBy = "project-trusted-sources"
+	ListEventTypeReplacedByProjectUnpaused                                     ListEventTypeReplacedBy = "project-unpaused"
+	ListEventTypeReplacedByProjectWebAnalyticsDisabled                         ListEventTypeReplacedBy = "project-web-analytics-disabled"
+	ListEventTypeReplacedByProjectWebAnalyticsEnabled                          ListEventTypeReplacedBy = "project-web-analytics-enabled"
+	ListEventTypeReplacedByProtectedGitScopeAdded                              ListEventTypeReplacedBy = "protected-git-scope-added"
+	ListEventTypeReplacedByProtectedGitScopeRemoved                            ListEventTypeReplacedBy = "protected-git-scope-removed"
+	ListEventTypeReplacedByRepositoryCiEnvVariableCreate                       ListEventTypeReplacedBy = "repository-ci-env-variable-create"
+	ListEventTypeReplacedByRepositoryCiEnvVariableDelete                       ListEventTypeReplacedBy = "repository-ci-env-variable-delete"
+	ListEventTypeReplacedByRepositoryCiEnvVariableUpdate                       ListEventTypeReplacedBy = "repository-ci-env-variable-update"
+	ListEventTypeReplacedByRuntimeCachePurgeAll                                ListEventTypeReplacedBy = "runtime-cache-purge-all"
+	ListEventTypeReplacedBySamlConnectionCreated                               ListEventTypeReplacedBy = "saml-connection-created"
+	ListEventTypeReplacedBySamlConnectionDeleted                               ListEventTypeReplacedBy = "saml-connection-deleted"
+	ListEventTypeReplacedBySamlIdpMaterialDeleted                              ListEventTypeReplacedBy = "saml-idp-material-deleted"
+	ListEventTypeReplacedBySamlIdpMaterialSet                                  ListEventTypeReplacedBy = "saml-idp-material-set"
+	ListEventTypeReplacedBySamlIdpMaterialSystemDeleted                        ListEventTypeReplacedBy = "saml-idp-material-system-deleted"
+	ListEventTypeReplacedBySamlIdpMaterialSystemSet                            ListEventTypeReplacedBy = "saml-idp-material-system-set"
+	ListEventTypeReplacedBySandboxAliasAssigned                                ListEventTypeReplacedBy = "sandbox-alias-assigned"
+	ListEventTypeReplacedBySandboxAliasDelete                                  ListEventTypeReplacedBy = "sandbox-alias-delete"
+	ListEventTypeReplacedBySandboxDriveCreated                                 ListEventTypeReplacedBy = "sandbox-drive-created"
+	ListEventTypeReplacedBySandboxDriveDeleted                                 ListEventTypeReplacedBy = "sandbox-drive-deleted"
+	ListEventTypeReplacedBySandboxDriveSnapshotCreated                         ListEventTypeReplacedBy = "sandbox-drive-snapshot-created"
+	ListEventTypeReplacedBySandboxDriveSnapshotDeleted                         ListEventTypeReplacedBy = "sandbox-drive-snapshot-deleted"
+	ListEventTypeReplacedBySandboxExpiryNotificationLeadTimeUpdated            ListEventTypeReplacedBy = "sandbox-expiry-notification-lead-time-updated"
+	ListEventTypeReplacedBySandboxNpmCredentialsConfigured                     ListEventTypeReplacedBy = "sandbox-npm-credentials-configured"
+	ListEventTypeReplacedBySandboxSignedCommitIdentityConfigured               ListEventTypeReplacedBy = "sandbox-signed-commit-identity-configured"
+	ListEventTypeReplacedBySandboxSnapshotRegionsUpdated                       ListEventTypeReplacedBy = "sandbox-snapshot-regions-updated"
+	ListEventTypeReplacedByScale                                               ListEventTypeReplacedBy = "scale"
+	ListEventTypeReplacedByScaleAuto                                           ListEventTypeReplacedBy = "scale-auto"
+	ListEventTypeReplacedByScheduleCreated                                     ListEventTypeReplacedBy = "schedule-created"
+	ListEventTypeReplacedByScheduleDeleted                                     ListEventTypeReplacedBy = "schedule-deleted"
+	ListEventTypeReplacedByScheduleDisabled                                    ListEventTypeReplacedBy = "schedule-disabled"
+	ListEventTypeReplacedByScheduleEnabled                                     ListEventTypeReplacedBy = "schedule-enabled"
+	ListEventTypeReplacedByScheduleInvoked                                     ListEventTypeReplacedBy = "schedule-invoked"
+	ListEventTypeReplacedByScheduleUpdated                                     ListEventTypeReplacedBy = "schedule-updated"
+	ListEventTypeReplacedBySecondaryEmailAdded                                 ListEventTypeReplacedBy = "secondary-email-added"
+	ListEventTypeReplacedBySecondaryEmailRemoved                               ListEventTypeReplacedBy = "secondary-email-removed"
+	ListEventTypeReplacedBySecondaryEmailVerified                              ListEventTypeReplacedBy = "secondary-email-verified"
+	ListEventTypeReplacedBySecretAdd                                           ListEventTypeReplacedBy = "secret-add"
+	ListEventTypeReplacedBySecretDelete                                        ListEventTypeReplacedBy = "secret-delete"
+	ListEventTypeReplacedBySecretRename                                        ListEventTypeReplacedBy = "secret-rename"
+	ListEventTypeReplacedBySecurityListCreated                                 ListEventTypeReplacedBy = "security-list-created"
+	ListEventTypeReplacedBySecurityListDeleted                                 ListEventTypeReplacedBy = "security-list-deleted"
+	ListEventTypeReplacedBySecurityListUpdated                                 ListEventTypeReplacedBy = "security-list-updated"
+	ListEventTypeReplacedBySecurityPlusUpdated                                 ListEventTypeReplacedBy = "security-plus-updated"
+	ListEventTypeReplacedBySetBio                                              ListEventTypeReplacedBy = "set-bio"
+	ListEventTypeReplacedBySetName                                             ListEventTypeReplacedBy = "set-name"
+	ListEventTypeReplacedBySetProfiles                                         ListEventTypeReplacedBy = "set-profiles"
+	ListEventTypeReplacedBySetScale                                            ListEventTypeReplacedBy = "set-scale"
+	ListEventTypeReplacedBySharedEnvVariableCreate                             ListEventTypeReplacedBy = "shared-env-variable-create"
+	ListEventTypeReplacedBySharedEnvVariableDelete                             ListEventTypeReplacedBy = "shared-env-variable-delete"
+	ListEventTypeReplacedBySharedEnvVariableRead                               ListEventTypeReplacedBy = "shared-env-variable-read"
+	ListEventTypeReplacedBySharedEnvVariableRepoLink                           ListEventTypeReplacedBy = "shared-env-variable-repo-link"
+	ListEventTypeReplacedBySharedEnvVariableRepoUnlink                         ListEventTypeReplacedBy = "shared-env-variable-repo-unlink"
+	ListEventTypeReplacedBySharedEnvVariableUpdate                             ListEventTypeReplacedBy = "shared-env-variable-update"
+	ListEventTypeReplacedByShowIpAddresses                                     ListEventTypeReplacedBy = "show-ip-addresses"
+	ListEventTypeReplacedBySignup                                              ListEventTypeReplacedBy = "signup"
+	ListEventTypeReplacedBySignupViaBitbucket                                  ListEventTypeReplacedBy = "signup-via-bitbucket"
+	ListEventTypeReplacedBySignupViaGithub                                     ListEventTypeReplacedBy = "signup-via-github"
+	ListEventTypeReplacedBySignupViaGitlab                                     ListEventTypeReplacedBy = "signup-via-gitlab"
+	ListEventTypeReplacedBySpeedInsightsSettingsUpdated                        ListEventTypeReplacedBy = "speed-insights-settings-updated"
+	ListEventTypeReplacedBySpendCreated                                        ListEventTypeReplacedBy = "spend-created"
+	ListEventTypeReplacedBySpendDeleted                                        ListEventTypeReplacedBy = "spend-deleted"
+	ListEventTypeReplacedBySpendUpdated                                        ListEventTypeReplacedBy = "spend-updated"
+	ListEventTypeReplacedBySsoLogin                                            ListEventTypeReplacedBy = "sso-login"
+	ListEventTypeReplacedByStartupTermsAccepted                                ListEventTypeReplacedBy = "startup-terms-accepted"
+	ListEventTypeReplacedByStorageAcceptTos                                    ListEventTypeReplacedBy = "storage-accept-tos"
+	ListEventTypeReplacedByStorageAccessTokenSet                               ListEventTypeReplacedBy = "storage-access-token-set"
+	ListEventTypeReplacedByStorageAccessedDataBrowser                          ListEventTypeReplacedBy = "storage-accessed-data-browser"
+	ListEventTypeReplacedByStorageConnectProject                               ListEventTypeReplacedBy = "storage-connect-project"
+	ListEventTypeReplacedByStorageCreate                                       ListEventTypeReplacedBy = "storage-create"
+	ListEventTypeReplacedByStorageDelete                                       ListEventTypeReplacedBy = "storage-delete"
+	ListEventTypeReplacedByStorageDisconnectProject                            ListEventTypeReplacedBy = "storage-disconnect-project"
+	ListEventTypeReplacedByStorageDisconnectProjects                           ListEventTypeReplacedBy = "storage-disconnect-projects"
+	ListEventTypeReplacedByStorageInactiveStoreDeleted                         ListEventTypeReplacedBy = "storage-inactive-store-deleted"
+	ListEventTypeReplacedByStorageResetCredentials                             ListEventTypeReplacedBy = "storage-reset-credentials"
+	ListEventTypeReplacedByStorageResourceReplCommand                          ListEventTypeReplacedBy = "storage-resource-repl-command"
+	ListEventTypeReplacedByStorageSetLocked                                    ListEventTypeReplacedBy = "storage-set-locked"
+	ListEventTypeReplacedByStorageTransferInSuccess                            ListEventTypeReplacedBy = "storage-transfer-in-success"
+	ListEventTypeReplacedByStorageTransferOutSuccess                           ListEventTypeReplacedBy = "storage-transfer-out-success"
+	ListEventTypeReplacedByStorageTransferRequestCreated                       ListEventTypeReplacedBy = "storage-transfer-request-created"
+	ListEventTypeReplacedByStorageUpdate                                       ListEventTypeReplacedBy = "storage-update"
+	ListEventTypeReplacedByStorageUpdateProjectConnection                      ListEventTypeReplacedBy = "storage-update-project-connection"
+	ListEventTypeReplacedByStorageUpgradeProjectConnectionToOidc               ListEventTypeReplacedBy = "storage-upgrade-project-connection-to-oidc"
+	ListEventTypeReplacedByStorageViewSecret                                   ListEventTypeReplacedBy = "storage-view-secret"
+	ListEventTypeReplacedByStrictConnectors                                    ListEventTypeReplacedBy = "strict-connectors"
+	ListEventTypeReplacedByStrictDeploymentProtectionSettings                  ListEventTypeReplacedBy = "strict-deployment-protection-settings"
+	ListEventTypeReplacedByStrictPasswordProtectionSettings                    ListEventTypeReplacedBy = "strict-password-protection-settings"
+	ListEventTypeReplacedByStrictShareableLinks                                ListEventTypeReplacedBy = "strict-shareable-links"
+	ListEventTypeReplacedBySubscriptionCreated                                 ListEventTypeReplacedBy = "subscription-created"
+	ListEventTypeReplacedBySubscriptionProductAdded                            ListEventTypeReplacedBy = "subscription-product-added"
+	ListEventTypeReplacedBySubscriptionProductRemoved                          ListEventTypeReplacedBy = "subscription-product-removed"
+	ListEventTypeReplacedBySubscriptionUpdated                                 ListEventTypeReplacedBy = "subscription-updated"
+	ListEventTypeReplacedBySupportSessionCreated                               ListEventTypeReplacedBy = "support-session-created"
+	ListEventTypeReplacedByTeam                                                ListEventTypeReplacedBy = "team"
+	ListEventTypeReplacedByTeamAgentBillingMigrationDecisionChanged            ListEventTypeReplacedBy = "team-agent-billing-migration-decision-changed"
+	ListEventTypeReplacedByTeamAvatarUpdate                                    ListEventTypeReplacedBy = "team-avatar-update"
+	ListEventTypeReplacedByTeamCollaborationSettingsUpdated                    ListEventTypeReplacedBy = "team-collaboration-settings-updated"
+	ListEventTypeReplacedByTeamDataCacheUserDisabledUpdated                    ListEventTypeReplacedBy = "team-data-cache-user-disabled-updated"
+	ListEventTypeReplacedByTeamDefaultBuildMachineUpdated                      ListEventTypeReplacedBy = "team-default-build-machine-updated"
+	ListEventTypeReplacedByTeamDefaultPassportUpdated                          ListEventTypeReplacedBy = "team-default-passport-updated"
+	ListEventTypeReplacedByTeamDelete                                          ListEventTypeReplacedBy = "team-delete"
+	ListEventTypeReplacedByTeamDeploymentPolicyUpdated                         ListEventTypeReplacedBy = "team-deployment-policy-updated"
+	ListEventTypeReplacedByTeamDeploymentStorageHighRetentionOptIn             ListEventTypeReplacedBy = "team-deployment-storage-high-retention-opt-in"
+	ListEventTypeReplacedByTeamDeploymentStorageRetentionOptOut                ListEventTypeReplacedBy = "team-deployment-storage-retention-opt-out"
+	ListEventTypeReplacedByTeamDomainVerificationCreated                       ListEventTypeReplacedBy = "team-domain-verification-created"
+	ListEventTypeReplacedByTeamDomainVerificationDeleted                       ListEventTypeReplacedBy = "team-domain-verification-deleted"
+	ListEventTypeReplacedByTeamDomainVerificationVerified                      ListEventTypeReplacedBy = "team-domain-verification-verified"
+	ListEventTypeReplacedByTeamEmailDomainUpdate                               ListEventTypeReplacedBy = "team-email-domain-update"
+	ListEventTypeReplacedByTeamEmuUpdated                                      ListEventTypeReplacedBy = "team-emu-updated"
+	ListEventTypeReplacedByTeamEndedTrial                                      ListEventTypeReplacedBy = "team-ended-trial"
+	ListEventTypeReplacedByTeamFirewallConfigModified                          ListEventTypeReplacedBy = "team-firewall-config-modified"
+	ListEventTypeReplacedByTeamFirewallConfigPromoted                          ListEventTypeReplacedBy = "team-firewall-config-promoted"
+	ListEventTypeReplacedByTeamGitRepositoryDispatchEventsToggled              ListEventTypeReplacedBy = "team-git-repository-dispatch-events-toggled"
+	ListEventTypeReplacedByTeamGitRequireVerifiedCommitsToggled                ListEventTypeReplacedBy = "team-git-require-verified-commits-toggled"
+	ListEventTypeReplacedByTeamInviteBulkDelete                                ListEventTypeReplacedBy = "team-invite-bulk-delete"
+	ListEventTypeReplacedByTeamInviteCodeReset                                 ListEventTypeReplacedBy = "team-invite-code-reset"
+	ListEventTypeReplacedByTeamInviteLinkCreated                               ListEventTypeReplacedBy = "team-invite-link-created"
+	ListEventTypeReplacedByTeamInviteLinkDeleted                               ListEventTypeReplacedBy = "team-invite-link-deleted"
+	ListEventTypeReplacedByTeamIpBlockingRulesCreated                          ListEventTypeReplacedBy = "team-ip-blocking-rules-created"
+	ListEventTypeReplacedByTeamIpBlockingRulesRemoved                          ListEventTypeReplacedBy = "team-ip-blocking-rules-removed"
+	ListEventTypeReplacedByTeamMemberAdd                                       ListEventTypeReplacedBy = "team-member-add"
+	ListEventTypeReplacedByTeamMemberConfirmRequest                            ListEventTypeReplacedBy = "team-member-confirm-request"
+	ListEventTypeReplacedByTeamMemberDeclineRequest                            ListEventTypeReplacedBy = "team-member-decline-request"
+	ListEventTypeReplacedByTeamMemberDelete                                    ListEventTypeReplacedBy = "team-member-delete"
+	ListEventTypeReplacedByTeamMemberEntitlementAdded                          ListEventTypeReplacedBy = "team-member-entitlement-added"
+	ListEventTypeReplacedByTeamMemberEntitlementCanceled                       ListEventTypeReplacedBy = "team-member-entitlement-canceled"
+	ListEventTypeReplacedByTeamMemberEntitlementReactivated                    ListEventTypeReplacedBy = "team-member-entitlement-reactivated"
+	ListEventTypeReplacedByTeamMemberEntitlementRemoved                        ListEventTypeReplacedBy = "team-member-entitlement-removed"
+	ListEventTypeReplacedByTeamMemberJoin                                      ListEventTypeReplacedBy = "team-member-join"
+	ListEventTypeReplacedByTeamMemberLeave                                     ListEventTypeReplacedBy = "team-member-leave"
+	ListEventTypeReplacedByTeamMemberRequestAccess                             ListEventTypeReplacedBy = "team-member-request-access"
+	ListEventTypeReplacedByTeamMemberRoleUpdate                                ListEventTypeReplacedBy = "team-member-role-update"
+	ListEventTypeReplacedByTeamMemberSsoAuthorizationAttempt                   ListEventTypeReplacedBy = "team-member-sso-authorization-attempt"
+	ListEventTypeReplacedByTeamMfaEnforcementUpdated                           ListEventTypeReplacedBy = "team-mfa-enforcement-updated"
+	ListEventTypeReplacedByTeamNameUpdate                                      ListEventTypeReplacedBy = "team-name-update"
+	ListEventTypeReplacedByTeamPaidInvoice                                     ListEventTypeReplacedBy = "team-paid-invoice"
+	ListEventTypeReplacedByTeamProgramEnrollmentChanged                        ListEventTypeReplacedBy = "team-program-enrollment-changed"
+	ListEventTypeReplacedByTeamRemoteCachingPurge                              ListEventTypeReplacedBy = "team-remote-caching-purge"
+	ListEventTypeReplacedByTeamRemoteCachingUpdate                             ListEventTypeReplacedBy = "team-remote-caching-update"
+	ListEventTypeReplacedByTeamRuntimeCacheUpdated                             ListEventTypeReplacedBy = "team-runtime-cache-updated"
+	ListEventTypeReplacedByTeamSamlEnforced                                    ListEventTypeReplacedBy = "team-saml-enforced"
+	ListEventTypeReplacedByTeamSamlRoles                                       ListEventTypeReplacedBy = "team-saml-roles"
+	ListEventTypeReplacedByTeamSlugUpdate                                      ListEventTypeReplacedBy = "team-slug-update"
+	ListEventTypeReplacedByTeamTokensInvalidated                               ListEventTypeReplacedBy = "team-tokens-invalidated"
+	ListEventTypeReplacedByTracingConfigured                                   ListEventTypeReplacedBy = "tracing-configured"
+	ListEventTypeReplacedByTracingDisabled                                     ListEventTypeReplacedBy = "tracing-disabled"
+	ListEventTypeReplacedByTracingPaused                                       ListEventTypeReplacedBy = "tracing-paused"
+	ListEventTypeReplacedByTracingResumed                                      ListEventTypeReplacedBy = "tracing-resumed"
+	ListEventTypeReplacedByUnlinkLoginConnection                               ListEventTypeReplacedBy = "unlink-login-connection"
+	ListEventTypeReplacedByUpdateAccountFlowDismissed                          ListEventTypeReplacedBy = "update-account-flow-dismissed"
+	ListEventTypeReplacedByUpdateAccountFlowTriggered                          ListEventTypeReplacedBy = "update-account-flow-triggered"
+	ListEventTypeReplacedByUserAutoBlockConfigured                             ListEventTypeReplacedBy = "user-auto-block-configured"
+	ListEventTypeReplacedByUserBlocked                                         ListEventTypeReplacedBy = "user-blocked"
+	ListEventTypeReplacedByUserDelete                                          ListEventTypeReplacedBy = "user-delete"
+	ListEventTypeReplacedByUserDeleteRequested                                 ListEventTypeReplacedBy = "user-delete-requested"
+	ListEventTypeReplacedByUserEmuAccountArchived                              ListEventTypeReplacedBy = "user-emu-account-archived"
+	ListEventTypeReplacedByUserEmuAccountDeleted                               ListEventTypeReplacedBy = "user-emu-account-deleted"
+	ListEventTypeReplacedByUserEmuAccountRecovered                             ListEventTypeReplacedBy = "user-emu-account-recovered"
+	ListEventTypeReplacedByUserEmuAccountUpdateOptedIn                         ListEventTypeReplacedBy = "user-emu-account-update-opted-in"
+	ListEventTypeReplacedByUserEmuAccountUpdateOptedOut                        ListEventTypeReplacedBy = "user-emu-account-update-opted-out"
+	ListEventTypeReplacedByUserEmuRecoveryEmailSent                            ListEventTypeReplacedBy = "user-emu-recovery-email-sent"
+	ListEventTypeReplacedByUserEmuRecoveryInitiated                            ListEventTypeReplacedBy = "user-emu-recovery-initiated"
+	ListEventTypeReplacedByUserEmuToggled                                      ListEventTypeReplacedBy = "user-emu-toggled"
+	ListEventTypeReplacedByUserLandingPageUpdated                              ListEventTypeReplacedBy = "user-landing-page-updated"
+	ListEventTypeReplacedByUserMfaChallengeFailed                              ListEventTypeReplacedBy = "user-mfa-challenge-failed"
+	ListEventTypeReplacedByUserMfaChallengeInitiated                           ListEventTypeReplacedBy = "user-mfa-challenge-initiated"
+	ListEventTypeReplacedByUserMfaChallengeVerified                            ListEventTypeReplacedBy = "user-mfa-challenge-verified"
+	ListEventTypeReplacedByUserMfaChangeFailed                                 ListEventTypeReplacedBy = "user-mfa-change-failed"
+	ListEventTypeReplacedByUserMfaConfigurationUpdated                         ListEventTypeReplacedBy = "user-mfa-configuration-updated"
+	ListEventTypeReplacedByUserMfaRecoveryCodeUsed                             ListEventTypeReplacedBy = "user-mfa-recovery-code-used"
+	ListEventTypeReplacedByUserMfaRecoveryCodesRegenerated                     ListEventTypeReplacedBy = "user-mfa-recovery-codes-regenerated"
+	ListEventTypeReplacedByUserMfaRemoved                                      ListEventTypeReplacedBy = "user-mfa-removed"
+	ListEventTypeReplacedByUserMfaSetupSkipped                                 ListEventTypeReplacedBy = "user-mfa-setup-skipped"
+	ListEventTypeReplacedByUserMfaTotpVerificationStarted                      ListEventTypeReplacedBy = "user-mfa-totp-verification-started"
+	ListEventTypeReplacedByUserMfaTotpVerified                                 ListEventTypeReplacedBy = "user-mfa-totp-verified"
+	ListEventTypeReplacedByUserPhoneRemoved                                    ListEventTypeReplacedBy = "user-phone-removed"
+	ListEventTypeReplacedByUserPhoneUpdated                                    ListEventTypeReplacedBy = "user-phone-updated"
+	ListEventTypeReplacedByUserPrimaryEmailUpdated                             ListEventTypeReplacedBy = "user-primary-email-updated"
+	ListEventTypeReplacedByUserProviderEmailClaimEvaluated                     ListEventTypeReplacedBy = "user-provider-email-claim-evaluated"
+	ListEventTypeReplacedByUserSudoModeRemoved                                 ListEventTypeReplacedBy = "user-sudo-mode-removed"
+	ListEventTypeReplacedByUserTokenCreated                                    ListEventTypeReplacedBy = "user-token-created"
+	ListEventTypeReplacedByUserTokenDeleted                                    ListEventTypeReplacedBy = "user-token-deleted"
+	ListEventTypeReplacedByUserTokensDeleted                                   ListEventTypeReplacedBy = "user-tokens-deleted"
+	ListEventTypeReplacedByUserUnblocked                                       ListEventTypeReplacedBy = "user-unblocked"
+	ListEventTypeReplacedByUsername                                            ListEventTypeReplacedBy = "username"
+	ListEventTypeReplacedByV0ChatAiUsage                                       ListEventTypeReplacedBy = "v0-chat-ai-usage"
+	ListEventTypeReplacedByV0ChatCreated                                       ListEventTypeReplacedBy = "v0-chat-created"
+	ListEventTypeReplacedByV0ChatMessageSent                                   ListEventTypeReplacedBy = "v0-chat-message-sent"
+	ListEventTypeReplacedByV0MigrationPaymentConfirmed                         ListEventTypeReplacedBy = "v0-migration-payment-confirmed"
+	ListEventTypeReplacedByV0MigrationSubscriptionCompleted                    ListEventTypeReplacedBy = "v0-migration-subscription-completed"
+	ListEventTypeReplacedByV0SharedPoolCreditLimitDefaultUpdated               ListEventTypeReplacedBy = "v0-shared-pool-credit-limit-default-updated"
+	ListEventTypeReplacedByV0SharedPoolCreditLimitUpdated                      ListEventTypeReplacedBy = "v0-shared-pool-credit-limit-updated"
+	ListEventTypeReplacedByVcrImageDeleted                                     ListEventTypeReplacedBy = "vcr-image-deleted"
+	ListEventTypeReplacedByVcrImagePushed                                      ListEventTypeReplacedBy = "vcr-image-pushed"
+	ListEventTypeReplacedByVcrRepositoryCreated                                ListEventTypeReplacedBy = "vcr-repository-created"
+	ListEventTypeReplacedByVcrRepositoryDeleted                                ListEventTypeReplacedBy = "vcr-repository-deleted"
+	ListEventTypeReplacedByVcrRepositoryPermissionAdded                        ListEventTypeReplacedBy = "vcr-repository-permission-added"
+	ListEventTypeReplacedByVcrRepositoryPermissionRemoved                      ListEventTypeReplacedBy = "vcr-repository-permission-removed"
+	ListEventTypeReplacedByVcrRepositoryPermissionsCleared                     ListEventTypeReplacedBy = "vcr-repository-permissions-cleared"
+	ListEventTypeReplacedByVcrRepositoryVisibilityChanged                      ListEventTypeReplacedBy = "vcr-repository-visibility-changed"
+	ListEventTypeReplacedByVercelAgentElevatedPermissionsApproved              ListEventTypeReplacedBy = "vercel-agent-elevated-permissions-approved"
+	ListEventTypeReplacedByVercelAgentElevatedPermissionsRequested             ListEventTypeReplacedBy = "vercel-agent-elevated-permissions-requested"
+	ListEventTypeReplacedByVercelAgentSecurityFindingClosed                    ListEventTypeReplacedBy = "vercel-agent-security-finding-closed"
+	ListEventTypeReplacedByVercelAgentSecurityFindingCreated                   ListEventTypeReplacedBy = "vercel-agent-security-finding-created"
+	ListEventTypeReplacedByVercelAgentSecurityFindingDismissed                 ListEventTypeReplacedBy = "vercel-agent-security-finding-dismissed"
+	ListEventTypeReplacedByVercelAgentSecurityFindingReopened                  ListEventTypeReplacedBy = "vercel-agent-security-finding-reopened"
+	ListEventTypeReplacedByVercelAgentSecurityFindingResolved                  ListEventTypeReplacedBy = "vercel-agent-security-finding-resolved"
+	ListEventTypeReplacedByVercelAgentSecurityReviewPolicyDeleted              ListEventTypeReplacedBy = "vercel-agent-security-review-policy-deleted"
+	ListEventTypeReplacedByVercelAgentSecurityReviewPolicyUpdated              ListEventTypeReplacedBy = "vercel-agent-security-review-policy-updated"
+	ListEventTypeReplacedByVercelAgentSessionCreated                           ListEventTypeReplacedBy = "vercel-agent-session-created"
+	ListEventTypeReplacedByVercelAgentTeamTrialCreditsApplied                  ListEventTypeReplacedBy = "vercel-agent-team-trial-credits-applied"
+	ListEventTypeReplacedByVercelAppInstallationRequestDismissed               ListEventTypeReplacedBy = "vercel-app-installation-request-dismissed"
+	ListEventTypeReplacedByVercelAppInstallationRequested                      ListEventTypeReplacedBy = "vercel-app-installation-requested"
+	ListEventTypeReplacedByVercelAppInstallationUpdated                        ListEventTypeReplacedBy = "vercel-app-installation-updated"
+	ListEventTypeReplacedByVercelAppInstalled                                  ListEventTypeReplacedBy = "vercel-app-installed"
+	ListEventTypeReplacedByVercelAppTokensRevoked                              ListEventTypeReplacedBy = "vercel-app-tokens-revoked"
+	ListEventTypeReplacedByVercelAppUninstalled                                ListEventTypeReplacedBy = "vercel-app-uninstalled"
+	ListEventTypeReplacedByVercelCiRepositoryGithubRunnersUpdated              ListEventTypeReplacedBy = "vercel-ci-repository-github-runners-updated"
+	ListEventTypeReplacedByVercelCiRepositorySettingsUpdated                   ListEventTypeReplacedBy = "vercel-ci-repository-settings-updated"
+	ListEventTypeReplacedByVercelCiRunApproved                                 ListEventTypeReplacedBy = "vercel-ci-run-approved"
+	ListEventTypeReplacedByVercelToolbar                                       ListEventTypeReplacedBy = "vercel-toolbar"
+	ListEventTypeReplacedByVpcPeeringConnectionAccepted                        ListEventTypeReplacedBy = "vpc-peering-connection-accepted"
+	ListEventTypeReplacedByVpcPeeringConnectionDeleted                         ListEventTypeReplacedBy = "vpc-peering-connection-deleted"
+	ListEventTypeReplacedByVpcPeeringConnectionRejected                        ListEventTypeReplacedBy = "vpc-peering-connection-rejected"
+	ListEventTypeReplacedByVpcPeeringConnectionUpdated                         ListEventTypeReplacedBy = "vpc-peering-connection-updated"
+	ListEventTypeReplacedByVulnerabilityBannerDismissed                        ListEventTypeReplacedBy = "vulnerability-banner-dismissed"
+	ListEventTypeReplacedByWebAnalyticsSummarySubscriptionUpdated              ListEventTypeReplacedBy = "web-analytics-summary-subscription-updated"
+	ListEventTypeReplacedByWebAnalyticsTierUpdated                             ListEventTypeReplacedBy = "web-analytics-tier-updated"
+	ListEventTypeReplacedByWebhookCreated                                      ListEventTypeReplacedBy = "webhook-created"
+	ListEventTypeReplacedByWebhookDeleted                                      ListEventTypeReplacedBy = "webhook-deleted"
+	ListEventTypeReplacedByWebhookUpdated                                      ListEventTypeReplacedBy = "webhook-updated"
+	ListEventTypeReplacedByWorkflowDeploymentKeyAccessed                       ListEventTypeReplacedBy = "workflow-deployment-key-accessed"
+	ListEventTypeReplacedByXaaUpdated                                          ListEventTypeReplacedBy = "xaa-updated"
 )
 
 // Valid indicates whether the value is a known member of the ListEventTypeReplacedBy enum.
@@ -7634,6 +7642,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByAiGatewayInferenceHooksHeadersCleared:
 		return true
 	case ListEventTypeReplacedByAiGatewayInferenceHooksHeadersUpdated:
+		return true
+	case ListEventTypeReplacedByAiGatewayInferenceHooksPreviousSigningSecretRetired:
 		return true
 	case ListEventTypeReplacedByAiGatewayInferenceHooksRemoved:
 		return true
@@ -8760,6 +8770,8 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedBySandboxDriveSnapshotCreated:
 		return true
 	case ListEventTypeReplacedBySandboxDriveSnapshotDeleted:
+		return true
+	case ListEventTypeReplacedBySandboxExpiryNotificationLeadTimeUpdated:
 		return true
 	case ListEventTypeReplacedBySandboxNpmCredentialsConfigured:
 		return true
@@ -10224,6 +10236,33 @@ func (e SessionStatus) Valid() bool {
 	case SessionStatusStopped:
 		return true
 	case SessionStatusStopping:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SessionStopReason.
+const (
+	SessionStopReasonError     SessionStopReason = "error"
+	SessionStopReasonExited    SessionStopReason = "exited"
+	SessionStopReasonRequested SessionStopReason = "requested"
+	SessionStopReasonSnapshot  SessionStopReason = "snapshot"
+	SessionStopReasonTimeout   SessionStopReason = "timeout"
+)
+
+// Valid indicates whether the value is a known member of the SessionStopReason enum.
+func (e SessionStopReason) Valid() bool {
+	switch e {
+	case SessionStopReasonError:
+		return true
+	case SessionStopReasonExited:
+		return true
+	case SessionStopReasonRequested:
+		return true
+	case SessionStopReasonSnapshot:
+		return true
+	case SessionStopReasonTimeout:
 		return true
 	default:
 		return false
@@ -12936,6 +12975,7 @@ func (e UserEventPayload35PreviousBudgetRefreshPeriod) Valid() bool {
 // Defines values for UserEventPayload35ScopeType.
 const (
 	UserEventPayload35ScopeTypeApiKey  UserEventPayload35ScopeType = "api-key"
+	UserEventPayload35ScopeTypeApp     UserEventPayload35ScopeType = "app"
 	UserEventPayload35ScopeTypeProject UserEventPayload35ScopeType = "project"
 	UserEventPayload35ScopeTypeTeam    UserEventPayload35ScopeType = "team"
 	UserEventPayload35ScopeTypeUser    UserEventPayload35ScopeType = "user"
@@ -12945,6 +12985,8 @@ const (
 func (e UserEventPayload35ScopeType) Valid() bool {
 	switch e {
 	case UserEventPayload35ScopeTypeApiKey:
+		return true
+	case UserEventPayload35ScopeTypeApp:
 		return true
 	case UserEventPayload35ScopeTypeProject:
 		return true
@@ -13031,6 +13073,7 @@ func (e UserEventPayload36PreviousBudgetRefreshPeriod) Valid() bool {
 
 // Defines values for UserEventPayload36ScopeType.
 const (
+	UserEventPayload36ScopeTypeApp     UserEventPayload36ScopeType = "app"
 	UserEventPayload36ScopeTypeProject UserEventPayload36ScopeType = "project"
 	UserEventPayload36ScopeTypeTeam    UserEventPayload36ScopeType = "team"
 	UserEventPayload36ScopeTypeUser    UserEventPayload36ScopeType = "user"
@@ -13039,6 +13082,8 @@ const (
 // Valid indicates whether the value is a known member of the UserEventPayload36ScopeType enum.
 func (e UserEventPayload36ScopeType) Valid() bool {
 	switch e {
+	case UserEventPayload36ScopeTypeApp:
+		return true
 	case UserEventPayload36ScopeTypeProject:
 		return true
 	case UserEventPayload36ScopeTypeTeam:
@@ -13230,258 +13275,213 @@ func (e UserEventPayload51Mode) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload53RetentionCeilingMode.
+// Defines values for UserEventPayload54RetentionCeilingMode.
 const (
-	UserEventPayload53RetentionCeilingModeDays           UserEventPayload53RetentionCeilingMode = "days"
-	UserEventPayload53RetentionCeilingModeUntilRequested UserEventPayload53RetentionCeilingMode = "until-requested"
+	UserEventPayload54RetentionCeilingModeDays           UserEventPayload54RetentionCeilingMode = "days"
+	UserEventPayload54RetentionCeilingModeUntilRequested UserEventPayload54RetentionCeilingMode = "until-requested"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload53RetentionCeilingMode enum.
-func (e UserEventPayload53RetentionCeilingMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload54RetentionCeilingMode enum.
+func (e UserEventPayload54RetentionCeilingMode) Valid() bool {
 	switch e {
-	case UserEventPayload53RetentionCeilingModeDays:
+	case UserEventPayload54RetentionCeilingModeDays:
 		return true
-	case UserEventPayload53RetentionCeilingModeUntilRequested:
+	case UserEventPayload54RetentionCeilingModeUntilRequested:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload53RetentionDefaultMode.
+// Defines values for UserEventPayload54RetentionDefaultMode.
 const (
-	UserEventPayload53RetentionDefaultModeDays           UserEventPayload53RetentionDefaultMode = "days"
-	UserEventPayload53RetentionDefaultModeUntilRequested UserEventPayload53RetentionDefaultMode = "until-requested"
+	UserEventPayload54RetentionDefaultModeDays           UserEventPayload54RetentionDefaultMode = "days"
+	UserEventPayload54RetentionDefaultModeUntilRequested UserEventPayload54RetentionDefaultMode = "until-requested"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload53RetentionDefaultMode enum.
-func (e UserEventPayload53RetentionDefaultMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload54RetentionDefaultMode enum.
+func (e UserEventPayload54RetentionDefaultMode) Valid() bool {
 	switch e {
-	case UserEventPayload53RetentionDefaultModeDays:
+	case UserEventPayload54RetentionDefaultModeDays:
 		return true
-	case UserEventPayload53RetentionDefaultModeUntilRequested:
+	case UserEventPayload54RetentionDefaultModeUntilRequested:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload55ChangedFields.
+// Defines values for UserEventPayload56ChangedFields.
 const (
-	UserEventPayload55ChangedFieldsDescription  UserEventPayload55ChangedFields = "description"
-	UserEventPayload55ChangedFieldsEnabled      UserEventPayload55ChangedFields = "enabled"
-	UserEventPayload55ChangedFieldsReason       UserEventPayload55ChangedFields = "reason"
-	UserEventPayload55ChangedFieldsRewriteModel UserEventPayload55ChangedFields = "rewriteModel"
+	UserEventPayload56ChangedFieldsDescription  UserEventPayload56ChangedFields = "description"
+	UserEventPayload56ChangedFieldsEnabled      UserEventPayload56ChangedFields = "enabled"
+	UserEventPayload56ChangedFieldsReason       UserEventPayload56ChangedFields = "reason"
+	UserEventPayload56ChangedFieldsRewriteModel UserEventPayload56ChangedFields = "rewriteModel"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload55ChangedFields enum.
-func (e UserEventPayload55ChangedFields) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload56ChangedFields enum.
+func (e UserEventPayload56ChangedFields) Valid() bool {
 	switch e {
-	case UserEventPayload55ChangedFieldsDescription:
+	case UserEventPayload56ChangedFieldsDescription:
 		return true
-	case UserEventPayload55ChangedFieldsEnabled:
+	case UserEventPayload56ChangedFieldsEnabled:
 		return true
-	case UserEventPayload55ChangedFieldsReason:
+	case UserEventPayload56ChangedFieldsReason:
 		return true
-	case UserEventPayload55ChangedFieldsRewriteModel:
+	case UserEventPayload56ChangedFieldsRewriteModel:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload55Enabled.
+// Defines values for UserEventPayload56Enabled.
 const (
-	UserEventPayload55EnabledFalse UserEventPayload55Enabled = false
-	UserEventPayload55EnabledTrue  UserEventPayload55Enabled = true
+	UserEventPayload56EnabledFalse UserEventPayload56Enabled = false
+	UserEventPayload56EnabledTrue  UserEventPayload56Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload55Enabled enum.
-func (e UserEventPayload55Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload56Enabled enum.
+func (e UserEventPayload56Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload55EnabledFalse:
+	case UserEventPayload56EnabledFalse:
 		return true
-	case UserEventPayload55EnabledTrue:
+	case UserEventPayload56EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload57ChangedFields.
+// Defines values for UserEventPayload58ChangedFields.
 const (
-	UserEventPayload57ChangedFieldsAllowFallbackFromFast  UserEventPayload57ChangedFields = "allowFallbackFromFast"
-	UserEventPayload57ChangedFieldsBaseUrl                UserEventPayload57ChangedFields = "baseUrl"
-	UserEventPayload57ChangedFieldsByokCredentialIds      UserEventPayload57ChangedFields = "byokCredentialIds"
-	UserEventPayload57ChangedFieldsCaching                UserEventPayload57ChangedFields = "caching"
-	UserEventPayload57ChangedFieldsDescription            UserEventPayload57ChangedFields = "description"
-	UserEventPayload57ChangedFieldsDisallowPromptTraining UserEventPayload57ChangedFields = "disallowPromptTraining"
-	UserEventPayload57ChangedFieldsDisplayName            UserEventPayload57ChangedFields = "displayName"
-	UserEventPayload57ChangedFieldsHas                    UserEventPayload57ChangedFields = "has"
-	UserEventPayload57ChangedFieldsHipaaCompliant         UserEventPayload57ChangedFields = "hipaaCompliant"
-	UserEventPayload57ChangedFieldsInferenceRegion        UserEventPayload57ChangedFields = "inferenceRegion"
-	UserEventPayload57ChangedFieldsModelSlug              UserEventPayload57ChangedFields = "modelSlug"
-	UserEventPayload57ChangedFieldsModels                 UserEventPayload57ChangedFields = "models"
-	UserEventPayload57ChangedFieldsObservabilityTags      UserEventPayload57ChangedFields = "observabilityTags"
-	UserEventPayload57ChangedFieldsProviderOnly           UserEventPayload57ChangedFields = "providerOnly"
-	UserEventPayload57ChangedFieldsProviderOptions        UserEventPayload57ChangedFields = "providerOptions"
-	UserEventPayload57ChangedFieldsProviderOrder          UserEventPayload57ChangedFields = "providerOrder"
-	UserEventPayload57ChangedFieldsProviderTimeouts       UserEventPayload57ChangedFields = "providerTimeouts"
-	UserEventPayload57ChangedFieldsSelector               UserEventPayload57ChangedFields = "selector"
-	UserEventPayload57ChangedFieldsSelectorOptions        UserEventPayload57ChangedFields = "selectorOptions"
-	UserEventPayload57ChangedFieldsServiceTier            UserEventPayload57ChangedFields = "serviceTier"
-	UserEventPayload57ChangedFieldsSort                   UserEventPayload57ChangedFields = "sort"
-	UserEventPayload57ChangedFieldsSpeed                  UserEventPayload57ChangedFields = "speed"
-	UserEventPayload57ChangedFieldsStatus                 UserEventPayload57ChangedFields = "status"
-	UserEventPayload57ChangedFieldsVisibility             UserEventPayload57ChangedFields = "visibility"
-	UserEventPayload57ChangedFieldsZeroDataRetention      UserEventPayload57ChangedFields = "zeroDataRetention"
+	UserEventPayload58ChangedFieldsAllowFallbackFromFast  UserEventPayload58ChangedFields = "allowFallbackFromFast"
+	UserEventPayload58ChangedFieldsBaseUrl                UserEventPayload58ChangedFields = "baseUrl"
+	UserEventPayload58ChangedFieldsByokCredentialIds      UserEventPayload58ChangedFields = "byokCredentialIds"
+	UserEventPayload58ChangedFieldsCaching                UserEventPayload58ChangedFields = "caching"
+	UserEventPayload58ChangedFieldsDescription            UserEventPayload58ChangedFields = "description"
+	UserEventPayload58ChangedFieldsDisallowPromptTraining UserEventPayload58ChangedFields = "disallowPromptTraining"
+	UserEventPayload58ChangedFieldsDisplayName            UserEventPayload58ChangedFields = "displayName"
+	UserEventPayload58ChangedFieldsHas                    UserEventPayload58ChangedFields = "has"
+	UserEventPayload58ChangedFieldsHipaaCompliant         UserEventPayload58ChangedFields = "hipaaCompliant"
+	UserEventPayload58ChangedFieldsInferenceRegion        UserEventPayload58ChangedFields = "inferenceRegion"
+	UserEventPayload58ChangedFieldsModelSlug              UserEventPayload58ChangedFields = "modelSlug"
+	UserEventPayload58ChangedFieldsModels                 UserEventPayload58ChangedFields = "models"
+	UserEventPayload58ChangedFieldsObservabilityTags      UserEventPayload58ChangedFields = "observabilityTags"
+	UserEventPayload58ChangedFieldsProviderOnly           UserEventPayload58ChangedFields = "providerOnly"
+	UserEventPayload58ChangedFieldsProviderOptions        UserEventPayload58ChangedFields = "providerOptions"
+	UserEventPayload58ChangedFieldsProviderOrder          UserEventPayload58ChangedFields = "providerOrder"
+	UserEventPayload58ChangedFieldsProviderTimeouts       UserEventPayload58ChangedFields = "providerTimeouts"
+	UserEventPayload58ChangedFieldsSelector               UserEventPayload58ChangedFields = "selector"
+	UserEventPayload58ChangedFieldsSelectorOptions        UserEventPayload58ChangedFields = "selectorOptions"
+	UserEventPayload58ChangedFieldsServiceTier            UserEventPayload58ChangedFields = "serviceTier"
+	UserEventPayload58ChangedFieldsSort                   UserEventPayload58ChangedFields = "sort"
+	UserEventPayload58ChangedFieldsSpeed                  UserEventPayload58ChangedFields = "speed"
+	UserEventPayload58ChangedFieldsStatus                 UserEventPayload58ChangedFields = "status"
+	UserEventPayload58ChangedFieldsVisibility             UserEventPayload58ChangedFields = "visibility"
+	UserEventPayload58ChangedFieldsZeroDataRetention      UserEventPayload58ChangedFields = "zeroDataRetention"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload57ChangedFields enum.
-func (e UserEventPayload57ChangedFields) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload58ChangedFields enum.
+func (e UserEventPayload58ChangedFields) Valid() bool {
 	switch e {
-	case UserEventPayload57ChangedFieldsAllowFallbackFromFast:
+	case UserEventPayload58ChangedFieldsAllowFallbackFromFast:
 		return true
-	case UserEventPayload57ChangedFieldsBaseUrl:
+	case UserEventPayload58ChangedFieldsBaseUrl:
 		return true
-	case UserEventPayload57ChangedFieldsByokCredentialIds:
+	case UserEventPayload58ChangedFieldsByokCredentialIds:
 		return true
-	case UserEventPayload57ChangedFieldsCaching:
+	case UserEventPayload58ChangedFieldsCaching:
 		return true
-	case UserEventPayload57ChangedFieldsDescription:
+	case UserEventPayload58ChangedFieldsDescription:
 		return true
-	case UserEventPayload57ChangedFieldsDisallowPromptTraining:
+	case UserEventPayload58ChangedFieldsDisallowPromptTraining:
 		return true
-	case UserEventPayload57ChangedFieldsDisplayName:
+	case UserEventPayload58ChangedFieldsDisplayName:
 		return true
-	case UserEventPayload57ChangedFieldsHas:
+	case UserEventPayload58ChangedFieldsHas:
 		return true
-	case UserEventPayload57ChangedFieldsHipaaCompliant:
+	case UserEventPayload58ChangedFieldsHipaaCompliant:
 		return true
-	case UserEventPayload57ChangedFieldsInferenceRegion:
+	case UserEventPayload58ChangedFieldsInferenceRegion:
 		return true
-	case UserEventPayload57ChangedFieldsModelSlug:
+	case UserEventPayload58ChangedFieldsModelSlug:
 		return true
-	case UserEventPayload57ChangedFieldsModels:
+	case UserEventPayload58ChangedFieldsModels:
 		return true
-	case UserEventPayload57ChangedFieldsObservabilityTags:
+	case UserEventPayload58ChangedFieldsObservabilityTags:
 		return true
-	case UserEventPayload57ChangedFieldsProviderOnly:
+	case UserEventPayload58ChangedFieldsProviderOnly:
 		return true
-	case UserEventPayload57ChangedFieldsProviderOptions:
+	case UserEventPayload58ChangedFieldsProviderOptions:
 		return true
-	case UserEventPayload57ChangedFieldsProviderOrder:
+	case UserEventPayload58ChangedFieldsProviderOrder:
 		return true
-	case UserEventPayload57ChangedFieldsProviderTimeouts:
+	case UserEventPayload58ChangedFieldsProviderTimeouts:
 		return true
-	case UserEventPayload57ChangedFieldsSelector:
+	case UserEventPayload58ChangedFieldsSelector:
 		return true
-	case UserEventPayload57ChangedFieldsSelectorOptions:
+	case UserEventPayload58ChangedFieldsSelectorOptions:
 		return true
-	case UserEventPayload57ChangedFieldsServiceTier:
+	case UserEventPayload58ChangedFieldsServiceTier:
 		return true
-	case UserEventPayload57ChangedFieldsSort:
+	case UserEventPayload58ChangedFieldsSort:
 		return true
-	case UserEventPayload57ChangedFieldsSpeed:
+	case UserEventPayload58ChangedFieldsSpeed:
 		return true
-	case UserEventPayload57ChangedFieldsStatus:
+	case UserEventPayload58ChangedFieldsStatus:
 		return true
-	case UserEventPayload57ChangedFieldsVisibility:
+	case UserEventPayload58ChangedFieldsVisibility:
 		return true
-	case UserEventPayload57ChangedFieldsZeroDataRetention:
+	case UserEventPayload58ChangedFieldsZeroDataRetention:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload60NextRole.
+// Defines values for UserEventPayload61NextRole.
 const (
-	UserEventPayload60NextRoleADMIN            UserEventPayload60NextRole = "ADMIN"
-	UserEventPayload60NextRolePROJECTDEVELOPER UserEventPayload60NextRole = "PROJECT_DEVELOPER"
-	UserEventPayload60NextRolePROJECTGUEST     UserEventPayload60NextRole = "PROJECT_GUEST"
-	UserEventPayload60NextRolePROJECTVIEWER    UserEventPayload60NextRole = "PROJECT_VIEWER"
+	UserEventPayload61NextRoleADMIN            UserEventPayload61NextRole = "ADMIN"
+	UserEventPayload61NextRolePROJECTDEVELOPER UserEventPayload61NextRole = "PROJECT_DEVELOPER"
+	UserEventPayload61NextRolePROJECTGUEST     UserEventPayload61NextRole = "PROJECT_GUEST"
+	UserEventPayload61NextRolePROJECTVIEWER    UserEventPayload61NextRole = "PROJECT_VIEWER"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload60NextRole enum.
-func (e UserEventPayload60NextRole) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload61NextRole enum.
+func (e UserEventPayload61NextRole) Valid() bool {
 	switch e {
-	case UserEventPayload60NextRoleADMIN:
+	case UserEventPayload61NextRoleADMIN:
 		return true
-	case UserEventPayload60NextRolePROJECTDEVELOPER:
+	case UserEventPayload61NextRolePROJECTDEVELOPER:
 		return true
-	case UserEventPayload60NextRolePROJECTGUEST:
+	case UserEventPayload61NextRolePROJECTGUEST:
 		return true
-	case UserEventPayload60NextRolePROJECTVIEWER:
+	case UserEventPayload61NextRolePROJECTVIEWER:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload60PreviousRole.
+// Defines values for UserEventPayload61PreviousRole.
 const (
-	UserEventPayload60PreviousRoleADMIN            UserEventPayload60PreviousRole = "ADMIN"
-	UserEventPayload60PreviousRolePROJECTDEVELOPER UserEventPayload60PreviousRole = "PROJECT_DEVELOPER"
-	UserEventPayload60PreviousRolePROJECTGUEST     UserEventPayload60PreviousRole = "PROJECT_GUEST"
-	UserEventPayload60PreviousRolePROJECTVIEWER    UserEventPayload60PreviousRole = "PROJECT_VIEWER"
+	UserEventPayload61PreviousRoleADMIN            UserEventPayload61PreviousRole = "ADMIN"
+	UserEventPayload61PreviousRolePROJECTDEVELOPER UserEventPayload61PreviousRole = "PROJECT_DEVELOPER"
+	UserEventPayload61PreviousRolePROJECTGUEST     UserEventPayload61PreviousRole = "PROJECT_GUEST"
+	UserEventPayload61PreviousRolePROJECTVIEWER    UserEventPayload61PreviousRole = "PROJECT_VIEWER"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload60PreviousRole enum.
-func (e UserEventPayload60PreviousRole) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload61PreviousRole enum.
+func (e UserEventPayload61PreviousRole) Valid() bool {
 	switch e {
-	case UserEventPayload60PreviousRoleADMIN:
+	case UserEventPayload61PreviousRoleADMIN:
 		return true
-	case UserEventPayload60PreviousRolePROJECTDEVELOPER:
+	case UserEventPayload61PreviousRolePROJECTDEVELOPER:
 		return true
-	case UserEventPayload60PreviousRolePROJECTGUEST:
+	case UserEventPayload61PreviousRolePROJECTGUEST:
 		return true
-	case UserEventPayload60PreviousRolePROJECTVIEWER:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload64DeploymentAllowListedReadyStateReasonInternal.
-const (
-	UserEventPayload64DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP   UserEventPayload64DeploymentAllowListedReadyStateReasonInternal = "EARLY_IGNORE_STEP"
-	UserEventPayload64DeploymentAllowListedReadyStateReasonInternalIGNORESTEP        UserEventPayload64DeploymentAllowListedReadyStateReasonInternal = "IGNORE_STEP"
-	UserEventPayload64DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED   UserEventPayload64DeploymentAllowListedReadyStateReasonInternal = "NAMESPACE_PRUNED"
-	UserEventPayload64DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT UserEventPayload64DeploymentAllowListedReadyStateReasonInternal = "UNAFFECTED_PROJECT"
-	UserEventPayload64DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT  UserEventPayload64DeploymentAllowListedReadyStateReasonInternal = "UNVERIFIED_COMMIT"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload64DeploymentAllowListedReadyStateReasonInternal enum.
-func (e UserEventPayload64DeploymentAllowListedReadyStateReasonInternal) Valid() bool {
-	switch e {
-	case UserEventPayload64DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP:
-		return true
-	case UserEventPayload64DeploymentAllowListedReadyStateReasonInternalIGNORESTEP:
-		return true
-	case UserEventPayload64DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED:
-		return true
-	case UserEventPayload64DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT:
-		return true
-	case UserEventPayload64DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload64System.
-const (
-	UserEventPayload64SystemFalse UserEventPayload64System = false
-	UserEventPayload64SystemTrue  UserEventPayload64System = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload64System enum.
-func (e UserEventPayload64System) Valid() bool {
-	switch e {
-	case UserEventPayload64SystemFalse:
-		return true
-	case UserEventPayload64SystemTrue:
+	case UserEventPayload61PreviousRolePROJECTVIEWER:
 		return true
 	default:
 		return false
@@ -13515,1746 +13515,1728 @@ func (e UserEventPayload65DeploymentAllowListedReadyStateReasonInternal) Valid()
 	}
 }
 
-// Defines values for UserEventPayload72Action.
+// Defines values for UserEventPayload65System.
 const (
-	UserEventPayload72ActionCreated UserEventPayload72Action = "created"
-	UserEventPayload72ActionRemoved UserEventPayload72Action = "removed"
+	UserEventPayload65SystemFalse UserEventPayload65System = false
+	UserEventPayload65SystemTrue  UserEventPayload65System = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload72Action enum.
-func (e UserEventPayload72Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload65System enum.
+func (e UserEventPayload65System) Valid() bool {
 	switch e {
-	case UserEventPayload72ActionCreated:
+	case UserEventPayload65SystemFalse:
 		return true
-	case UserEventPayload72ActionRemoved:
+	case UserEventPayload65SystemTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload76Permissions.
+// Defines values for UserEventPayload66DeploymentAllowListedReadyStateReasonInternal.
 const (
-	UserEventPayload76PermissionsAsterisk                              UserEventPayload76Permissions = "*"
-	UserEventPayload76PermissionsManageSpeedInsights                   UserEventPayload76Permissions = "manage:speed-insights"
-	UserEventPayload76PermissionsManageWebAnalytics                    UserEventPayload76Permissions = "manage:web-analytics"
-	UserEventPayload76PermissionsReadAccessGroup                       UserEventPayload76Permissions = "read:access-group"
-	UserEventPayload76PermissionsReadAiGatewayBudgets                  UserEventPayload76Permissions = "read:ai-gateway-budgets"
-	UserEventPayload76PermissionsReadAiGatewayByokCredentials          UserEventPayload76Permissions = "read:ai-gateway-byok-credentials"
-	UserEventPayload76PermissionsReadAiGatewayGuardrails               UserEventPayload76Permissions = "read:ai-gateway-guardrails"
-	UserEventPayload76PermissionsReadAiGatewayPrivateModels            UserEventPayload76Permissions = "read:ai-gateway-private-models"
-	UserEventPayload76PermissionsReadAiGatewayRules                    UserEventPayload76Permissions = "read:ai-gateway-rules"
-	UserEventPayload76PermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload76Permissions = "read:ai-gateway-virtual-model-configs"
-	UserEventPayload76PermissionsReadAlerts                            UserEventPayload76Permissions = "read:alerts"
-	UserEventPayload76PermissionsReadAuditLog                          UserEventPayload76Permissions = "read:audit-log"
-	UserEventPayload76PermissionsReadAutomations                       UserEventPayload76Permissions = "read:automations"
-	UserEventPayload76PermissionsReadBilling                           UserEventPayload76Permissions = "read:billing"
-	UserEventPayload76PermissionsReadConnect                           UserEventPayload76Permissions = "read:connect"
-	UserEventPayload76PermissionsReadDeployment                        UserEventPayload76Permissions = "read:deployment"
-	UserEventPayload76PermissionsReadDeploymentCheck                   UserEventPayload76Permissions = "read:deployment-check"
-	UserEventPayload76PermissionsReadDomain                            UserEventPayload76Permissions = "read:domain"
-	UserEventPayload76PermissionsReadDrive                             UserEventPayload76Permissions = "read:drive"
-	UserEventPayload76PermissionsReadEvent                             UserEventPayload76Permissions = "read:event"
-	UserEventPayload76PermissionsReadFirewall                          UserEventPayload76Permissions = "read:firewall"
-	UserEventPayload76PermissionsReadIntegrationConfiguration          UserEventPayload76Permissions = "read:integration-configuration"
-	UserEventPayload76PermissionsReadIntegrationResource               UserEventPayload76Permissions = "read:integration-resource"
-	UserEventPayload76PermissionsReadKms                               UserEventPayload76Permissions = "read:kms"
-	UserEventPayload76PermissionsReadMessageboard                      UserEventPayload76Permissions = "read:messageboard"
-	UserEventPayload76PermissionsReadMonitoring                        UserEventPayload76Permissions = "read:monitoring"
-	UserEventPayload76PermissionsReadProject                           UserEventPayload76Permissions = "read:project"
-	UserEventPayload76PermissionsReadProjectEnvVarsNonProduction       UserEventPayload76Permissions = "read:project-env-vars-non-production"
-	UserEventPayload76PermissionsReadProjectEnvVarsProduction          UserEventPayload76Permissions = "read:project-env-vars-production"
-	UserEventPayload76PermissionsReadProjectFlags                      UserEventPayload76Permissions = "read:project-flags"
-	UserEventPayload76PermissionsReadProjectMembers                    UserEventPayload76Permissions = "read:project-members"
-	UserEventPayload76PermissionsReadProjectTrustedSources             UserEventPayload76Permissions = "read:project-trusted-sources"
-	UserEventPayload76PermissionsReadRemoteCache                       UserEventPayload76Permissions = "read:remote-cache"
-	UserEventPayload76PermissionsReadSandbox                           UserEventPayload76Permissions = "read:sandbox"
-	UserEventPayload76PermissionsReadSchedule                          UserEventPayload76Permissions = "read:schedule"
-	UserEventPayload76PermissionsReadSpeedInsights                     UserEventPayload76Permissions = "read:speed-insights"
-	UserEventPayload76PermissionsReadTeam                              UserEventPayload76Permissions = "read:team"
-	UserEventPayload76PermissionsReadUser                              UserEventPayload76Permissions = "read:user"
-	UserEventPayload76PermissionsReadVcr                               UserEventPayload76Permissions = "read:vcr"
-	UserEventPayload76PermissionsReadWebAnalytics                      UserEventPayload76Permissions = "read:web-analytics"
-	UserEventPayload76PermissionsReadWebhooks                          UserEventPayload76Permissions = "read:webhooks"
-	UserEventPayload76PermissionsReadWriteAccessGroup                  UserEventPayload76Permissions = "read-write:access-group"
-	UserEventPayload76PermissionsReadWriteAiGatewayApiKey              UserEventPayload76Permissions = "read-write:ai-gateway-api-key"
-	UserEventPayload76PermissionsReadWriteAiGatewayBudgets             UserEventPayload76Permissions = "read-write:ai-gateway-budgets"
-	UserEventPayload76PermissionsReadWriteAiGatewayByokCredentials     UserEventPayload76Permissions = "read-write:ai-gateway-byok-credentials"
-	UserEventPayload76PermissionsReadWriteAiGatewayGuardrails          UserEventPayload76Permissions = "read-write:ai-gateway-guardrails"
-	UserEventPayload76PermissionsReadWriteAiGatewayPrivateModels       UserEventPayload76Permissions = "read-write:ai-gateway-private-models"
-	UserEventPayload76PermissionsReadWriteAiGatewayRules               UserEventPayload76Permissions = "read-write:ai-gateway-rules"
-	UserEventPayload76PermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload76Permissions = "read-write:ai-gateway-virtual-model-configs"
-	UserEventPayload76PermissionsReadWriteAlerts                       UserEventPayload76Permissions = "read-write:alerts"
-	UserEventPayload76PermissionsReadWriteAutomations                  UserEventPayload76Permissions = "read-write:automations"
-	UserEventPayload76PermissionsReadWriteBilling                      UserEventPayload76Permissions = "read-write:billing"
-	UserEventPayload76PermissionsReadWriteBlob                         UserEventPayload76Permissions = "read-write:blob"
-	UserEventPayload76PermissionsReadWriteConnect                      UserEventPayload76Permissions = "read-write:connect"
-	UserEventPayload76PermissionsReadWriteConnectAnyUserToken          UserEventPayload76Permissions = "read-write:connect-any-user-token"
-	UserEventPayload76PermissionsReadWriteConnectAppToken              UserEventPayload76Permissions = "read-write:connect-app-token"
-	UserEventPayload76PermissionsReadWriteDeployment                   UserEventPayload76Permissions = "read-write:deployment"
-	UserEventPayload76PermissionsReadWriteDesktopDevice                UserEventPayload76Permissions = "read-write:desktop-device"
-	UserEventPayload76PermissionsReadWriteDomain                       UserEventPayload76Permissions = "read-write:domain"
-	UserEventPayload76PermissionsReadWriteDomainRegistrar              UserEventPayload76Permissions = "read-write:domain-registrar"
-	UserEventPayload76PermissionsReadWriteDrains                       UserEventPayload76Permissions = "read-write:drains"
-	UserEventPayload76PermissionsReadWriteDrive                        UserEventPayload76Permissions = "read-write:drive"
-	UserEventPayload76PermissionsReadWriteEdgeCache                    UserEventPayload76Permissions = "read-write:edge-cache"
-	UserEventPayload76PermissionsReadWriteEdgeConfig                   UserEventPayload76Permissions = "read-write:edge-config"
-	UserEventPayload76PermissionsReadWriteFirewall                     UserEventPayload76Permissions = "read-write:firewall"
-	UserEventPayload76PermissionsReadWriteIntegrationConfiguration     UserEventPayload76Permissions = "read-write:integration-configuration"
-	UserEventPayload76PermissionsReadWriteIntegrationResource          UserEventPayload76Permissions = "read-write:integration-resource"
-	UserEventPayload76PermissionsReadWriteKms                          UserEventPayload76Permissions = "read-write:kms"
-	UserEventPayload76PermissionsReadWriteMessageboard                 UserEventPayload76Permissions = "read-write:messageboard"
-	UserEventPayload76PermissionsReadWriteProject                      UserEventPayload76Permissions = "read-write:project"
-	UserEventPayload76PermissionsReadWriteProjectEnvVars               UserEventPayload76Permissions = "read-write:project-env-vars"
-	UserEventPayload76PermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload76Permissions = "read-write:project-env-vars-non-production"
-	UserEventPayload76PermissionsReadWriteProjectEnvVarsProduction     UserEventPayload76Permissions = "read-write:project-env-vars-production"
-	UserEventPayload76PermissionsReadWriteProjectFlagsNonProduction    UserEventPayload76Permissions = "read-write:project-flags-non-production"
-	UserEventPayload76PermissionsReadWriteProjectFlagsProduction       UserEventPayload76Permissions = "read-write:project-flags-production"
-	UserEventPayload76PermissionsReadWriteProjectMembers               UserEventPayload76Permissions = "read-write:project-members"
-	UserEventPayload76PermissionsReadWriteProjectProtectionBypass      UserEventPayload76Permissions = "read-write:project-protection-bypass"
-	UserEventPayload76PermissionsReadWriteProjectTrustedSources        UserEventPayload76Permissions = "read-write:project-trusted-sources"
-	UserEventPayload76PermissionsReadWriteRemoteCache                  UserEventPayload76Permissions = "read-write:remote-cache"
-	UserEventPayload76PermissionsReadWriteSandbox                      UserEventPayload76Permissions = "read-write:sandbox"
-	UserEventPayload76PermissionsReadWriteSchedule                     UserEventPayload76Permissions = "read-write:schedule"
-	UserEventPayload76PermissionsReadWriteTeamMembers                  UserEventPayload76Permissions = "read-write:team-members"
-	UserEventPayload76PermissionsReadWriteVcr                          UserEventPayload76Permissions = "read-write:vcr"
-	UserEventPayload76PermissionsReadWriteVercelCi                     UserEventPayload76Permissions = "read-write:vercel-ci"
-	UserEventPayload76PermissionsReadWriteWebhooks                     UserEventPayload76Permissions = "read-write:webhooks"
-	UserEventPayload76PermissionsUseAiGateway                          UserEventPayload76Permissions = "use:ai-gateway"
-	UserEventPayload76PermissionsUseGithub                             UserEventPayload76Permissions = "use:github"
-	UserEventPayload76PermissionsUsePrivateNpm                         UserEventPayload76Permissions = "use:private-npm"
-	UserEventPayload76PermissionsUseProjectFlagsOverridesNonProduction UserEventPayload76Permissions = "use:project-flags-overrides-non-production"
-	UserEventPayload76PermissionsUseProjectFlagsOverridesProduction    UserEventPayload76Permissions = "use:project-flags-overrides-production"
+	UserEventPayload66DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP   UserEventPayload66DeploymentAllowListedReadyStateReasonInternal = "EARLY_IGNORE_STEP"
+	UserEventPayload66DeploymentAllowListedReadyStateReasonInternalIGNORESTEP        UserEventPayload66DeploymentAllowListedReadyStateReasonInternal = "IGNORE_STEP"
+	UserEventPayload66DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED   UserEventPayload66DeploymentAllowListedReadyStateReasonInternal = "NAMESPACE_PRUNED"
+	UserEventPayload66DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT UserEventPayload66DeploymentAllowListedReadyStateReasonInternal = "UNAFFECTED_PROJECT"
+	UserEventPayload66DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT  UserEventPayload66DeploymentAllowListedReadyStateReasonInternal = "UNVERIFIED_COMMIT"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload76Permissions enum.
-func (e UserEventPayload76Permissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload66DeploymentAllowListedReadyStateReasonInternal enum.
+func (e UserEventPayload66DeploymentAllowListedReadyStateReasonInternal) Valid() bool {
 	switch e {
-	case UserEventPayload76PermissionsAsterisk:
+	case UserEventPayload66DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP:
 		return true
-	case UserEventPayload76PermissionsManageSpeedInsights:
+	case UserEventPayload66DeploymentAllowListedReadyStateReasonInternalIGNORESTEP:
 		return true
-	case UserEventPayload76PermissionsManageWebAnalytics:
+	case UserEventPayload66DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED:
 		return true
-	case UserEventPayload76PermissionsReadAccessGroup:
+	case UserEventPayload66DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT:
 		return true
-	case UserEventPayload76PermissionsReadAiGatewayBudgets:
-		return true
-	case UserEventPayload76PermissionsReadAiGatewayByokCredentials:
-		return true
-	case UserEventPayload76PermissionsReadAiGatewayGuardrails:
-		return true
-	case UserEventPayload76PermissionsReadAiGatewayPrivateModels:
-		return true
-	case UserEventPayload76PermissionsReadAiGatewayRules:
-		return true
-	case UserEventPayload76PermissionsReadAiGatewayVirtualModelConfigs:
-		return true
-	case UserEventPayload76PermissionsReadAlerts:
-		return true
-	case UserEventPayload76PermissionsReadAuditLog:
-		return true
-	case UserEventPayload76PermissionsReadAutomations:
-		return true
-	case UserEventPayload76PermissionsReadBilling:
-		return true
-	case UserEventPayload76PermissionsReadConnect:
-		return true
-	case UserEventPayload76PermissionsReadDeployment:
-		return true
-	case UserEventPayload76PermissionsReadDeploymentCheck:
-		return true
-	case UserEventPayload76PermissionsReadDomain:
-		return true
-	case UserEventPayload76PermissionsReadDrive:
-		return true
-	case UserEventPayload76PermissionsReadEvent:
-		return true
-	case UserEventPayload76PermissionsReadFirewall:
-		return true
-	case UserEventPayload76PermissionsReadIntegrationConfiguration:
-		return true
-	case UserEventPayload76PermissionsReadIntegrationResource:
-		return true
-	case UserEventPayload76PermissionsReadKms:
-		return true
-	case UserEventPayload76PermissionsReadMessageboard:
-		return true
-	case UserEventPayload76PermissionsReadMonitoring:
-		return true
-	case UserEventPayload76PermissionsReadProject:
-		return true
-	case UserEventPayload76PermissionsReadProjectEnvVarsNonProduction:
-		return true
-	case UserEventPayload76PermissionsReadProjectEnvVarsProduction:
-		return true
-	case UserEventPayload76PermissionsReadProjectFlags:
-		return true
-	case UserEventPayload76PermissionsReadProjectMembers:
-		return true
-	case UserEventPayload76PermissionsReadProjectTrustedSources:
-		return true
-	case UserEventPayload76PermissionsReadRemoteCache:
-		return true
-	case UserEventPayload76PermissionsReadSandbox:
-		return true
-	case UserEventPayload76PermissionsReadSchedule:
-		return true
-	case UserEventPayload76PermissionsReadSpeedInsights:
-		return true
-	case UserEventPayload76PermissionsReadTeam:
-		return true
-	case UserEventPayload76PermissionsReadUser:
-		return true
-	case UserEventPayload76PermissionsReadVcr:
-		return true
-	case UserEventPayload76PermissionsReadWebAnalytics:
-		return true
-	case UserEventPayload76PermissionsReadWebhooks:
-		return true
-	case UserEventPayload76PermissionsReadWriteAccessGroup:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayApiKey:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayBudgets:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayByokCredentials:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayGuardrails:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayPrivateModels:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayRules:
-		return true
-	case UserEventPayload76PermissionsReadWriteAiGatewayVirtualModelConfigs:
-		return true
-	case UserEventPayload76PermissionsReadWriteAlerts:
-		return true
-	case UserEventPayload76PermissionsReadWriteAutomations:
-		return true
-	case UserEventPayload76PermissionsReadWriteBilling:
-		return true
-	case UserEventPayload76PermissionsReadWriteBlob:
-		return true
-	case UserEventPayload76PermissionsReadWriteConnect:
-		return true
-	case UserEventPayload76PermissionsReadWriteConnectAnyUserToken:
-		return true
-	case UserEventPayload76PermissionsReadWriteConnectAppToken:
-		return true
-	case UserEventPayload76PermissionsReadWriteDeployment:
-		return true
-	case UserEventPayload76PermissionsReadWriteDesktopDevice:
-		return true
-	case UserEventPayload76PermissionsReadWriteDomain:
-		return true
-	case UserEventPayload76PermissionsReadWriteDomainRegistrar:
-		return true
-	case UserEventPayload76PermissionsReadWriteDrains:
-		return true
-	case UserEventPayload76PermissionsReadWriteDrive:
-		return true
-	case UserEventPayload76PermissionsReadWriteEdgeCache:
-		return true
-	case UserEventPayload76PermissionsReadWriteEdgeConfig:
-		return true
-	case UserEventPayload76PermissionsReadWriteFirewall:
-		return true
-	case UserEventPayload76PermissionsReadWriteIntegrationConfiguration:
-		return true
-	case UserEventPayload76PermissionsReadWriteIntegrationResource:
-		return true
-	case UserEventPayload76PermissionsReadWriteKms:
-		return true
-	case UserEventPayload76PermissionsReadWriteMessageboard:
-		return true
-	case UserEventPayload76PermissionsReadWriteProject:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectEnvVars:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectEnvVarsNonProduction:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectEnvVarsProduction:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectFlagsNonProduction:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectFlagsProduction:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectMembers:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectProtectionBypass:
-		return true
-	case UserEventPayload76PermissionsReadWriteProjectTrustedSources:
-		return true
-	case UserEventPayload76PermissionsReadWriteRemoteCache:
-		return true
-	case UserEventPayload76PermissionsReadWriteSandbox:
-		return true
-	case UserEventPayload76PermissionsReadWriteSchedule:
-		return true
-	case UserEventPayload76PermissionsReadWriteTeamMembers:
-		return true
-	case UserEventPayload76PermissionsReadWriteVcr:
-		return true
-	case UserEventPayload76PermissionsReadWriteVercelCi:
-		return true
-	case UserEventPayload76PermissionsReadWriteWebhooks:
-		return true
-	case UserEventPayload76PermissionsUseAiGateway:
-		return true
-	case UserEventPayload76PermissionsUseGithub:
-		return true
-	case UserEventPayload76PermissionsUsePrivateNpm:
-		return true
-	case UserEventPayload76PermissionsUseProjectFlagsOverridesNonProduction:
-		return true
-	case UserEventPayload76PermissionsUseProjectFlagsOverridesProduction:
+	case UserEventPayload66DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload76Scopes.
+// Defines values for UserEventPayload73Action.
 const (
-	UserEventPayload76ScopesEmail         UserEventPayload76Scopes = "email"
-	UserEventPayload76ScopesOfflineAccess UserEventPayload76Scopes = "offline_access"
-	UserEventPayload76ScopesOpenid        UserEventPayload76Scopes = "openid"
-	UserEventPayload76ScopesProfile       UserEventPayload76Scopes = "profile"
+	UserEventPayload73ActionCreated UserEventPayload73Action = "created"
+	UserEventPayload73ActionRemoved UserEventPayload73Action = "removed"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload76Scopes enum.
-func (e UserEventPayload76Scopes) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload73Action enum.
+func (e UserEventPayload73Action) Valid() bool {
 	switch e {
-	case UserEventPayload76ScopesEmail:
+	case UserEventPayload73ActionCreated:
 		return true
-	case UserEventPayload76ScopesOfflineAccess:
-		return true
-	case UserEventPayload76ScopesOpenid:
-		return true
-	case UserEventPayload76ScopesProfile:
+	case UserEventPayload73ActionRemoved:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload78NextPermissions.
+// Defines values for UserEventPayload77Permissions.
 const (
-	UserEventPayload78NextPermissionsAsterisk                              UserEventPayload78NextPermissions = "*"
-	UserEventPayload78NextPermissionsManageSpeedInsights                   UserEventPayload78NextPermissions = "manage:speed-insights"
-	UserEventPayload78NextPermissionsManageWebAnalytics                    UserEventPayload78NextPermissions = "manage:web-analytics"
-	UserEventPayload78NextPermissionsReadAccessGroup                       UserEventPayload78NextPermissions = "read:access-group"
-	UserEventPayload78NextPermissionsReadAiGatewayBudgets                  UserEventPayload78NextPermissions = "read:ai-gateway-budgets"
-	UserEventPayload78NextPermissionsReadAiGatewayByokCredentials          UserEventPayload78NextPermissions = "read:ai-gateway-byok-credentials"
-	UserEventPayload78NextPermissionsReadAiGatewayGuardrails               UserEventPayload78NextPermissions = "read:ai-gateway-guardrails"
-	UserEventPayload78NextPermissionsReadAiGatewayPrivateModels            UserEventPayload78NextPermissions = "read:ai-gateway-private-models"
-	UserEventPayload78NextPermissionsReadAiGatewayRules                    UserEventPayload78NextPermissions = "read:ai-gateway-rules"
-	UserEventPayload78NextPermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload78NextPermissions = "read:ai-gateway-virtual-model-configs"
-	UserEventPayload78NextPermissionsReadAlerts                            UserEventPayload78NextPermissions = "read:alerts"
-	UserEventPayload78NextPermissionsReadAuditLog                          UserEventPayload78NextPermissions = "read:audit-log"
-	UserEventPayload78NextPermissionsReadAutomations                       UserEventPayload78NextPermissions = "read:automations"
-	UserEventPayload78NextPermissionsReadBilling                           UserEventPayload78NextPermissions = "read:billing"
-	UserEventPayload78NextPermissionsReadConnect                           UserEventPayload78NextPermissions = "read:connect"
-	UserEventPayload78NextPermissionsReadDeployment                        UserEventPayload78NextPermissions = "read:deployment"
-	UserEventPayload78NextPermissionsReadDeploymentCheck                   UserEventPayload78NextPermissions = "read:deployment-check"
-	UserEventPayload78NextPermissionsReadDomain                            UserEventPayload78NextPermissions = "read:domain"
-	UserEventPayload78NextPermissionsReadDrive                             UserEventPayload78NextPermissions = "read:drive"
-	UserEventPayload78NextPermissionsReadEvent                             UserEventPayload78NextPermissions = "read:event"
-	UserEventPayload78NextPermissionsReadFirewall                          UserEventPayload78NextPermissions = "read:firewall"
-	UserEventPayload78NextPermissionsReadIntegrationConfiguration          UserEventPayload78NextPermissions = "read:integration-configuration"
-	UserEventPayload78NextPermissionsReadIntegrationResource               UserEventPayload78NextPermissions = "read:integration-resource"
-	UserEventPayload78NextPermissionsReadKms                               UserEventPayload78NextPermissions = "read:kms"
-	UserEventPayload78NextPermissionsReadMessageboard                      UserEventPayload78NextPermissions = "read:messageboard"
-	UserEventPayload78NextPermissionsReadMonitoring                        UserEventPayload78NextPermissions = "read:monitoring"
-	UserEventPayload78NextPermissionsReadProject                           UserEventPayload78NextPermissions = "read:project"
-	UserEventPayload78NextPermissionsReadProjectEnvVarsNonProduction       UserEventPayload78NextPermissions = "read:project-env-vars-non-production"
-	UserEventPayload78NextPermissionsReadProjectEnvVarsProduction          UserEventPayload78NextPermissions = "read:project-env-vars-production"
-	UserEventPayload78NextPermissionsReadProjectFlags                      UserEventPayload78NextPermissions = "read:project-flags"
-	UserEventPayload78NextPermissionsReadProjectMembers                    UserEventPayload78NextPermissions = "read:project-members"
-	UserEventPayload78NextPermissionsReadProjectTrustedSources             UserEventPayload78NextPermissions = "read:project-trusted-sources"
-	UserEventPayload78NextPermissionsReadRemoteCache                       UserEventPayload78NextPermissions = "read:remote-cache"
-	UserEventPayload78NextPermissionsReadSandbox                           UserEventPayload78NextPermissions = "read:sandbox"
-	UserEventPayload78NextPermissionsReadSchedule                          UserEventPayload78NextPermissions = "read:schedule"
-	UserEventPayload78NextPermissionsReadSpeedInsights                     UserEventPayload78NextPermissions = "read:speed-insights"
-	UserEventPayload78NextPermissionsReadTeam                              UserEventPayload78NextPermissions = "read:team"
-	UserEventPayload78NextPermissionsReadUser                              UserEventPayload78NextPermissions = "read:user"
-	UserEventPayload78NextPermissionsReadVcr                               UserEventPayload78NextPermissions = "read:vcr"
-	UserEventPayload78NextPermissionsReadWebAnalytics                      UserEventPayload78NextPermissions = "read:web-analytics"
-	UserEventPayload78NextPermissionsReadWebhooks                          UserEventPayload78NextPermissions = "read:webhooks"
-	UserEventPayload78NextPermissionsReadWriteAccessGroup                  UserEventPayload78NextPermissions = "read-write:access-group"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayApiKey              UserEventPayload78NextPermissions = "read-write:ai-gateway-api-key"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayBudgets             UserEventPayload78NextPermissions = "read-write:ai-gateway-budgets"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayByokCredentials     UserEventPayload78NextPermissions = "read-write:ai-gateway-byok-credentials"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayGuardrails          UserEventPayload78NextPermissions = "read-write:ai-gateway-guardrails"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayPrivateModels       UserEventPayload78NextPermissions = "read-write:ai-gateway-private-models"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayRules               UserEventPayload78NextPermissions = "read-write:ai-gateway-rules"
-	UserEventPayload78NextPermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload78NextPermissions = "read-write:ai-gateway-virtual-model-configs"
-	UserEventPayload78NextPermissionsReadWriteAlerts                       UserEventPayload78NextPermissions = "read-write:alerts"
-	UserEventPayload78NextPermissionsReadWriteAutomations                  UserEventPayload78NextPermissions = "read-write:automations"
-	UserEventPayload78NextPermissionsReadWriteBilling                      UserEventPayload78NextPermissions = "read-write:billing"
-	UserEventPayload78NextPermissionsReadWriteBlob                         UserEventPayload78NextPermissions = "read-write:blob"
-	UserEventPayload78NextPermissionsReadWriteConnect                      UserEventPayload78NextPermissions = "read-write:connect"
-	UserEventPayload78NextPermissionsReadWriteConnectAnyUserToken          UserEventPayload78NextPermissions = "read-write:connect-any-user-token"
-	UserEventPayload78NextPermissionsReadWriteConnectAppToken              UserEventPayload78NextPermissions = "read-write:connect-app-token"
-	UserEventPayload78NextPermissionsReadWriteDeployment                   UserEventPayload78NextPermissions = "read-write:deployment"
-	UserEventPayload78NextPermissionsReadWriteDesktopDevice                UserEventPayload78NextPermissions = "read-write:desktop-device"
-	UserEventPayload78NextPermissionsReadWriteDomain                       UserEventPayload78NextPermissions = "read-write:domain"
-	UserEventPayload78NextPermissionsReadWriteDomainRegistrar              UserEventPayload78NextPermissions = "read-write:domain-registrar"
-	UserEventPayload78NextPermissionsReadWriteDrains                       UserEventPayload78NextPermissions = "read-write:drains"
-	UserEventPayload78NextPermissionsReadWriteDrive                        UserEventPayload78NextPermissions = "read-write:drive"
-	UserEventPayload78NextPermissionsReadWriteEdgeCache                    UserEventPayload78NextPermissions = "read-write:edge-cache"
-	UserEventPayload78NextPermissionsReadWriteEdgeConfig                   UserEventPayload78NextPermissions = "read-write:edge-config"
-	UserEventPayload78NextPermissionsReadWriteFirewall                     UserEventPayload78NextPermissions = "read-write:firewall"
-	UserEventPayload78NextPermissionsReadWriteIntegrationConfiguration     UserEventPayload78NextPermissions = "read-write:integration-configuration"
-	UserEventPayload78NextPermissionsReadWriteIntegrationResource          UserEventPayload78NextPermissions = "read-write:integration-resource"
-	UserEventPayload78NextPermissionsReadWriteKms                          UserEventPayload78NextPermissions = "read-write:kms"
-	UserEventPayload78NextPermissionsReadWriteMessageboard                 UserEventPayload78NextPermissions = "read-write:messageboard"
-	UserEventPayload78NextPermissionsReadWriteProject                      UserEventPayload78NextPermissions = "read-write:project"
-	UserEventPayload78NextPermissionsReadWriteProjectEnvVars               UserEventPayload78NextPermissions = "read-write:project-env-vars"
-	UserEventPayload78NextPermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload78NextPermissions = "read-write:project-env-vars-non-production"
-	UserEventPayload78NextPermissionsReadWriteProjectEnvVarsProduction     UserEventPayload78NextPermissions = "read-write:project-env-vars-production"
-	UserEventPayload78NextPermissionsReadWriteProjectFlagsNonProduction    UserEventPayload78NextPermissions = "read-write:project-flags-non-production"
-	UserEventPayload78NextPermissionsReadWriteProjectFlagsProduction       UserEventPayload78NextPermissions = "read-write:project-flags-production"
-	UserEventPayload78NextPermissionsReadWriteProjectMembers               UserEventPayload78NextPermissions = "read-write:project-members"
-	UserEventPayload78NextPermissionsReadWriteProjectProtectionBypass      UserEventPayload78NextPermissions = "read-write:project-protection-bypass"
-	UserEventPayload78NextPermissionsReadWriteProjectTrustedSources        UserEventPayload78NextPermissions = "read-write:project-trusted-sources"
-	UserEventPayload78NextPermissionsReadWriteRemoteCache                  UserEventPayload78NextPermissions = "read-write:remote-cache"
-	UserEventPayload78NextPermissionsReadWriteSandbox                      UserEventPayload78NextPermissions = "read-write:sandbox"
-	UserEventPayload78NextPermissionsReadWriteSchedule                     UserEventPayload78NextPermissions = "read-write:schedule"
-	UserEventPayload78NextPermissionsReadWriteTeamMembers                  UserEventPayload78NextPermissions = "read-write:team-members"
-	UserEventPayload78NextPermissionsReadWriteVcr                          UserEventPayload78NextPermissions = "read-write:vcr"
-	UserEventPayload78NextPermissionsReadWriteVercelCi                     UserEventPayload78NextPermissions = "read-write:vercel-ci"
-	UserEventPayload78NextPermissionsReadWriteWebhooks                     UserEventPayload78NextPermissions = "read-write:webhooks"
-	UserEventPayload78NextPermissionsUseAiGateway                          UserEventPayload78NextPermissions = "use:ai-gateway"
-	UserEventPayload78NextPermissionsUseGithub                             UserEventPayload78NextPermissions = "use:github"
-	UserEventPayload78NextPermissionsUsePrivateNpm                         UserEventPayload78NextPermissions = "use:private-npm"
-	UserEventPayload78NextPermissionsUseProjectFlagsOverridesNonProduction UserEventPayload78NextPermissions = "use:project-flags-overrides-non-production"
-	UserEventPayload78NextPermissionsUseProjectFlagsOverridesProduction    UserEventPayload78NextPermissions = "use:project-flags-overrides-production"
+	UserEventPayload77PermissionsAsterisk                              UserEventPayload77Permissions = "*"
+	UserEventPayload77PermissionsManageSpeedInsights                   UserEventPayload77Permissions = "manage:speed-insights"
+	UserEventPayload77PermissionsManageWebAnalytics                    UserEventPayload77Permissions = "manage:web-analytics"
+	UserEventPayload77PermissionsReadAccessGroup                       UserEventPayload77Permissions = "read:access-group"
+	UserEventPayload77PermissionsReadAiGatewayBudgets                  UserEventPayload77Permissions = "read:ai-gateway-budgets"
+	UserEventPayload77PermissionsReadAiGatewayByokCredentials          UserEventPayload77Permissions = "read:ai-gateway-byok-credentials"
+	UserEventPayload77PermissionsReadAiGatewayGuardrails               UserEventPayload77Permissions = "read:ai-gateway-guardrails"
+	UserEventPayload77PermissionsReadAiGatewayPrivateModels            UserEventPayload77Permissions = "read:ai-gateway-private-models"
+	UserEventPayload77PermissionsReadAiGatewayRules                    UserEventPayload77Permissions = "read:ai-gateway-rules"
+	UserEventPayload77PermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload77Permissions = "read:ai-gateway-virtual-model-configs"
+	UserEventPayload77PermissionsReadAlerts                            UserEventPayload77Permissions = "read:alerts"
+	UserEventPayload77PermissionsReadAuditLog                          UserEventPayload77Permissions = "read:audit-log"
+	UserEventPayload77PermissionsReadAutomations                       UserEventPayload77Permissions = "read:automations"
+	UserEventPayload77PermissionsReadBilling                           UserEventPayload77Permissions = "read:billing"
+	UserEventPayload77PermissionsReadConnect                           UserEventPayload77Permissions = "read:connect"
+	UserEventPayload77PermissionsReadDeployment                        UserEventPayload77Permissions = "read:deployment"
+	UserEventPayload77PermissionsReadDeploymentCheck                   UserEventPayload77Permissions = "read:deployment-check"
+	UserEventPayload77PermissionsReadDomain                            UserEventPayload77Permissions = "read:domain"
+	UserEventPayload77PermissionsReadDrive                             UserEventPayload77Permissions = "read:drive"
+	UserEventPayload77PermissionsReadEvent                             UserEventPayload77Permissions = "read:event"
+	UserEventPayload77PermissionsReadFirewall                          UserEventPayload77Permissions = "read:firewall"
+	UserEventPayload77PermissionsReadIntegrationConfiguration          UserEventPayload77Permissions = "read:integration-configuration"
+	UserEventPayload77PermissionsReadIntegrationResource               UserEventPayload77Permissions = "read:integration-resource"
+	UserEventPayload77PermissionsReadKms                               UserEventPayload77Permissions = "read:kms"
+	UserEventPayload77PermissionsReadMessageboard                      UserEventPayload77Permissions = "read:messageboard"
+	UserEventPayload77PermissionsReadMonitoring                        UserEventPayload77Permissions = "read:monitoring"
+	UserEventPayload77PermissionsReadProject                           UserEventPayload77Permissions = "read:project"
+	UserEventPayload77PermissionsReadProjectEnvVarsNonProduction       UserEventPayload77Permissions = "read:project-env-vars-non-production"
+	UserEventPayload77PermissionsReadProjectEnvVarsProduction          UserEventPayload77Permissions = "read:project-env-vars-production"
+	UserEventPayload77PermissionsReadProjectFlags                      UserEventPayload77Permissions = "read:project-flags"
+	UserEventPayload77PermissionsReadProjectMembers                    UserEventPayload77Permissions = "read:project-members"
+	UserEventPayload77PermissionsReadProjectTrustedSources             UserEventPayload77Permissions = "read:project-trusted-sources"
+	UserEventPayload77PermissionsReadRemoteCache                       UserEventPayload77Permissions = "read:remote-cache"
+	UserEventPayload77PermissionsReadSandbox                           UserEventPayload77Permissions = "read:sandbox"
+	UserEventPayload77PermissionsReadSchedule                          UserEventPayload77Permissions = "read:schedule"
+	UserEventPayload77PermissionsReadSpeedInsights                     UserEventPayload77Permissions = "read:speed-insights"
+	UserEventPayload77PermissionsReadTeam                              UserEventPayload77Permissions = "read:team"
+	UserEventPayload77PermissionsReadUser                              UserEventPayload77Permissions = "read:user"
+	UserEventPayload77PermissionsReadVcr                               UserEventPayload77Permissions = "read:vcr"
+	UserEventPayload77PermissionsReadWebAnalytics                      UserEventPayload77Permissions = "read:web-analytics"
+	UserEventPayload77PermissionsReadWebhooks                          UserEventPayload77Permissions = "read:webhooks"
+	UserEventPayload77PermissionsReadWriteAccessGroup                  UserEventPayload77Permissions = "read-write:access-group"
+	UserEventPayload77PermissionsReadWriteAiGatewayApiKey              UserEventPayload77Permissions = "read-write:ai-gateway-api-key"
+	UserEventPayload77PermissionsReadWriteAiGatewayBudgets             UserEventPayload77Permissions = "read-write:ai-gateway-budgets"
+	UserEventPayload77PermissionsReadWriteAiGatewayByokCredentials     UserEventPayload77Permissions = "read-write:ai-gateway-byok-credentials"
+	UserEventPayload77PermissionsReadWriteAiGatewayGuardrails          UserEventPayload77Permissions = "read-write:ai-gateway-guardrails"
+	UserEventPayload77PermissionsReadWriteAiGatewayPrivateModels       UserEventPayload77Permissions = "read-write:ai-gateway-private-models"
+	UserEventPayload77PermissionsReadWriteAiGatewayRules               UserEventPayload77Permissions = "read-write:ai-gateway-rules"
+	UserEventPayload77PermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload77Permissions = "read-write:ai-gateway-virtual-model-configs"
+	UserEventPayload77PermissionsReadWriteAlerts                       UserEventPayload77Permissions = "read-write:alerts"
+	UserEventPayload77PermissionsReadWriteAutomations                  UserEventPayload77Permissions = "read-write:automations"
+	UserEventPayload77PermissionsReadWriteBilling                      UserEventPayload77Permissions = "read-write:billing"
+	UserEventPayload77PermissionsReadWriteBlob                         UserEventPayload77Permissions = "read-write:blob"
+	UserEventPayload77PermissionsReadWriteConnect                      UserEventPayload77Permissions = "read-write:connect"
+	UserEventPayload77PermissionsReadWriteConnectAnyUserToken          UserEventPayload77Permissions = "read-write:connect-any-user-token"
+	UserEventPayload77PermissionsReadWriteConnectAppToken              UserEventPayload77Permissions = "read-write:connect-app-token"
+	UserEventPayload77PermissionsReadWriteDeployment                   UserEventPayload77Permissions = "read-write:deployment"
+	UserEventPayload77PermissionsReadWriteDesktopDevice                UserEventPayload77Permissions = "read-write:desktop-device"
+	UserEventPayload77PermissionsReadWriteDomain                       UserEventPayload77Permissions = "read-write:domain"
+	UserEventPayload77PermissionsReadWriteDomainRegistrar              UserEventPayload77Permissions = "read-write:domain-registrar"
+	UserEventPayload77PermissionsReadWriteDrains                       UserEventPayload77Permissions = "read-write:drains"
+	UserEventPayload77PermissionsReadWriteDrive                        UserEventPayload77Permissions = "read-write:drive"
+	UserEventPayload77PermissionsReadWriteEdgeCache                    UserEventPayload77Permissions = "read-write:edge-cache"
+	UserEventPayload77PermissionsReadWriteEdgeConfig                   UserEventPayload77Permissions = "read-write:edge-config"
+	UserEventPayload77PermissionsReadWriteFirewall                     UserEventPayload77Permissions = "read-write:firewall"
+	UserEventPayload77PermissionsReadWriteIntegrationConfiguration     UserEventPayload77Permissions = "read-write:integration-configuration"
+	UserEventPayload77PermissionsReadWriteIntegrationResource          UserEventPayload77Permissions = "read-write:integration-resource"
+	UserEventPayload77PermissionsReadWriteKms                          UserEventPayload77Permissions = "read-write:kms"
+	UserEventPayload77PermissionsReadWriteMessageboard                 UserEventPayload77Permissions = "read-write:messageboard"
+	UserEventPayload77PermissionsReadWriteProject                      UserEventPayload77Permissions = "read-write:project"
+	UserEventPayload77PermissionsReadWriteProjectEnvVars               UserEventPayload77Permissions = "read-write:project-env-vars"
+	UserEventPayload77PermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload77Permissions = "read-write:project-env-vars-non-production"
+	UserEventPayload77PermissionsReadWriteProjectEnvVarsProduction     UserEventPayload77Permissions = "read-write:project-env-vars-production"
+	UserEventPayload77PermissionsReadWriteProjectFlagsNonProduction    UserEventPayload77Permissions = "read-write:project-flags-non-production"
+	UserEventPayload77PermissionsReadWriteProjectFlagsProduction       UserEventPayload77Permissions = "read-write:project-flags-production"
+	UserEventPayload77PermissionsReadWriteProjectMembers               UserEventPayload77Permissions = "read-write:project-members"
+	UserEventPayload77PermissionsReadWriteProjectProtectionBypass      UserEventPayload77Permissions = "read-write:project-protection-bypass"
+	UserEventPayload77PermissionsReadWriteProjectTrustedSources        UserEventPayload77Permissions = "read-write:project-trusted-sources"
+	UserEventPayload77PermissionsReadWriteRemoteCache                  UserEventPayload77Permissions = "read-write:remote-cache"
+	UserEventPayload77PermissionsReadWriteSandbox                      UserEventPayload77Permissions = "read-write:sandbox"
+	UserEventPayload77PermissionsReadWriteSchedule                     UserEventPayload77Permissions = "read-write:schedule"
+	UserEventPayload77PermissionsReadWriteTeamMembers                  UserEventPayload77Permissions = "read-write:team-members"
+	UserEventPayload77PermissionsReadWriteVcr                          UserEventPayload77Permissions = "read-write:vcr"
+	UserEventPayload77PermissionsReadWriteVercelCi                     UserEventPayload77Permissions = "read-write:vercel-ci"
+	UserEventPayload77PermissionsReadWriteWebhooks                     UserEventPayload77Permissions = "read-write:webhooks"
+	UserEventPayload77PermissionsUseAiGateway                          UserEventPayload77Permissions = "use:ai-gateway"
+	UserEventPayload77PermissionsUseGithub                             UserEventPayload77Permissions = "use:github"
+	UserEventPayload77PermissionsUsePrivateNpm                         UserEventPayload77Permissions = "use:private-npm"
+	UserEventPayload77PermissionsUseProjectFlagsOverridesNonProduction UserEventPayload77Permissions = "use:project-flags-overrides-non-production"
+	UserEventPayload77PermissionsUseProjectFlagsOverridesProduction    UserEventPayload77Permissions = "use:project-flags-overrides-production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload78NextPermissions enum.
-func (e UserEventPayload78NextPermissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload77Permissions enum.
+func (e UserEventPayload77Permissions) Valid() bool {
 	switch e {
-	case UserEventPayload78NextPermissionsAsterisk:
+	case UserEventPayload77PermissionsAsterisk:
 		return true
-	case UserEventPayload78NextPermissionsManageSpeedInsights:
+	case UserEventPayload77PermissionsManageSpeedInsights:
 		return true
-	case UserEventPayload78NextPermissionsManageWebAnalytics:
+	case UserEventPayload77PermissionsManageWebAnalytics:
 		return true
-	case UserEventPayload78NextPermissionsReadAccessGroup:
+	case UserEventPayload77PermissionsReadAccessGroup:
 		return true
-	case UserEventPayload78NextPermissionsReadAiGatewayBudgets:
+	case UserEventPayload77PermissionsReadAiGatewayBudgets:
 		return true
-	case UserEventPayload78NextPermissionsReadAiGatewayByokCredentials:
+	case UserEventPayload77PermissionsReadAiGatewayByokCredentials:
 		return true
-	case UserEventPayload78NextPermissionsReadAiGatewayGuardrails:
+	case UserEventPayload77PermissionsReadAiGatewayGuardrails:
 		return true
-	case UserEventPayload78NextPermissionsReadAiGatewayPrivateModels:
+	case UserEventPayload77PermissionsReadAiGatewayPrivateModels:
 		return true
-	case UserEventPayload78NextPermissionsReadAiGatewayRules:
+	case UserEventPayload77PermissionsReadAiGatewayRules:
 		return true
-	case UserEventPayload78NextPermissionsReadAiGatewayVirtualModelConfigs:
+	case UserEventPayload77PermissionsReadAiGatewayVirtualModelConfigs:
 		return true
-	case UserEventPayload78NextPermissionsReadAlerts:
+	case UserEventPayload77PermissionsReadAlerts:
 		return true
-	case UserEventPayload78NextPermissionsReadAuditLog:
+	case UserEventPayload77PermissionsReadAuditLog:
 		return true
-	case UserEventPayload78NextPermissionsReadAutomations:
+	case UserEventPayload77PermissionsReadAutomations:
 		return true
-	case UserEventPayload78NextPermissionsReadBilling:
+	case UserEventPayload77PermissionsReadBilling:
 		return true
-	case UserEventPayload78NextPermissionsReadConnect:
+	case UserEventPayload77PermissionsReadConnect:
 		return true
-	case UserEventPayload78NextPermissionsReadDeployment:
+	case UserEventPayload77PermissionsReadDeployment:
 		return true
-	case UserEventPayload78NextPermissionsReadDeploymentCheck:
+	case UserEventPayload77PermissionsReadDeploymentCheck:
 		return true
-	case UserEventPayload78NextPermissionsReadDomain:
+	case UserEventPayload77PermissionsReadDomain:
 		return true
-	case UserEventPayload78NextPermissionsReadDrive:
+	case UserEventPayload77PermissionsReadDrive:
 		return true
-	case UserEventPayload78NextPermissionsReadEvent:
+	case UserEventPayload77PermissionsReadEvent:
 		return true
-	case UserEventPayload78NextPermissionsReadFirewall:
+	case UserEventPayload77PermissionsReadFirewall:
 		return true
-	case UserEventPayload78NextPermissionsReadIntegrationConfiguration:
+	case UserEventPayload77PermissionsReadIntegrationConfiguration:
 		return true
-	case UserEventPayload78NextPermissionsReadIntegrationResource:
+	case UserEventPayload77PermissionsReadIntegrationResource:
 		return true
-	case UserEventPayload78NextPermissionsReadKms:
+	case UserEventPayload77PermissionsReadKms:
 		return true
-	case UserEventPayload78NextPermissionsReadMessageboard:
+	case UserEventPayload77PermissionsReadMessageboard:
 		return true
-	case UserEventPayload78NextPermissionsReadMonitoring:
+	case UserEventPayload77PermissionsReadMonitoring:
 		return true
-	case UserEventPayload78NextPermissionsReadProject:
+	case UserEventPayload77PermissionsReadProject:
 		return true
-	case UserEventPayload78NextPermissionsReadProjectEnvVarsNonProduction:
+	case UserEventPayload77PermissionsReadProjectEnvVarsNonProduction:
 		return true
-	case UserEventPayload78NextPermissionsReadProjectEnvVarsProduction:
+	case UserEventPayload77PermissionsReadProjectEnvVarsProduction:
 		return true
-	case UserEventPayload78NextPermissionsReadProjectFlags:
+	case UserEventPayload77PermissionsReadProjectFlags:
 		return true
-	case UserEventPayload78NextPermissionsReadProjectMembers:
+	case UserEventPayload77PermissionsReadProjectMembers:
 		return true
-	case UserEventPayload78NextPermissionsReadProjectTrustedSources:
+	case UserEventPayload77PermissionsReadProjectTrustedSources:
 		return true
-	case UserEventPayload78NextPermissionsReadRemoteCache:
+	case UserEventPayload77PermissionsReadRemoteCache:
 		return true
-	case UserEventPayload78NextPermissionsReadSandbox:
+	case UserEventPayload77PermissionsReadSandbox:
 		return true
-	case UserEventPayload78NextPermissionsReadSchedule:
+	case UserEventPayload77PermissionsReadSchedule:
 		return true
-	case UserEventPayload78NextPermissionsReadSpeedInsights:
+	case UserEventPayload77PermissionsReadSpeedInsights:
 		return true
-	case UserEventPayload78NextPermissionsReadTeam:
+	case UserEventPayload77PermissionsReadTeam:
 		return true
-	case UserEventPayload78NextPermissionsReadUser:
+	case UserEventPayload77PermissionsReadUser:
 		return true
-	case UserEventPayload78NextPermissionsReadVcr:
+	case UserEventPayload77PermissionsReadVcr:
 		return true
-	case UserEventPayload78NextPermissionsReadWebAnalytics:
+	case UserEventPayload77PermissionsReadWebAnalytics:
 		return true
-	case UserEventPayload78NextPermissionsReadWebhooks:
+	case UserEventPayload77PermissionsReadWebhooks:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAccessGroup:
+	case UserEventPayload77PermissionsReadWriteAccessGroup:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayApiKey:
+	case UserEventPayload77PermissionsReadWriteAiGatewayApiKey:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayBudgets:
+	case UserEventPayload77PermissionsReadWriteAiGatewayBudgets:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayByokCredentials:
+	case UserEventPayload77PermissionsReadWriteAiGatewayByokCredentials:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayGuardrails:
+	case UserEventPayload77PermissionsReadWriteAiGatewayGuardrails:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayPrivateModels:
+	case UserEventPayload77PermissionsReadWriteAiGatewayPrivateModels:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayRules:
+	case UserEventPayload77PermissionsReadWriteAiGatewayRules:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAiGatewayVirtualModelConfigs:
+	case UserEventPayload77PermissionsReadWriteAiGatewayVirtualModelConfigs:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAlerts:
+	case UserEventPayload77PermissionsReadWriteAlerts:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteAutomations:
+	case UserEventPayload77PermissionsReadWriteAutomations:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteBilling:
+	case UserEventPayload77PermissionsReadWriteBilling:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteBlob:
+	case UserEventPayload77PermissionsReadWriteBlob:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteConnect:
+	case UserEventPayload77PermissionsReadWriteConnect:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteConnectAnyUserToken:
+	case UserEventPayload77PermissionsReadWriteConnectAnyUserToken:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteConnectAppToken:
+	case UserEventPayload77PermissionsReadWriteConnectAppToken:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteDeployment:
+	case UserEventPayload77PermissionsReadWriteDeployment:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteDesktopDevice:
+	case UserEventPayload77PermissionsReadWriteDesktopDevice:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteDomain:
+	case UserEventPayload77PermissionsReadWriteDomain:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteDomainRegistrar:
+	case UserEventPayload77PermissionsReadWriteDomainRegistrar:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteDrains:
+	case UserEventPayload77PermissionsReadWriteDrains:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteDrive:
+	case UserEventPayload77PermissionsReadWriteDrive:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteEdgeCache:
+	case UserEventPayload77PermissionsReadWriteEdgeCache:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteEdgeConfig:
+	case UserEventPayload77PermissionsReadWriteEdgeConfig:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteFirewall:
+	case UserEventPayload77PermissionsReadWriteFirewall:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteIntegrationConfiguration:
+	case UserEventPayload77PermissionsReadWriteIntegrationConfiguration:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteIntegrationResource:
+	case UserEventPayload77PermissionsReadWriteIntegrationResource:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteKms:
+	case UserEventPayload77PermissionsReadWriteKms:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteMessageboard:
+	case UserEventPayload77PermissionsReadWriteMessageboard:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProject:
+	case UserEventPayload77PermissionsReadWriteProject:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectEnvVars:
+	case UserEventPayload77PermissionsReadWriteProjectEnvVars:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectEnvVarsNonProduction:
+	case UserEventPayload77PermissionsReadWriteProjectEnvVarsNonProduction:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectEnvVarsProduction:
+	case UserEventPayload77PermissionsReadWriteProjectEnvVarsProduction:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectFlagsNonProduction:
+	case UserEventPayload77PermissionsReadWriteProjectFlagsNonProduction:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectFlagsProduction:
+	case UserEventPayload77PermissionsReadWriteProjectFlagsProduction:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectMembers:
+	case UserEventPayload77PermissionsReadWriteProjectMembers:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectProtectionBypass:
+	case UserEventPayload77PermissionsReadWriteProjectProtectionBypass:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteProjectTrustedSources:
+	case UserEventPayload77PermissionsReadWriteProjectTrustedSources:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteRemoteCache:
+	case UserEventPayload77PermissionsReadWriteRemoteCache:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteSandbox:
+	case UserEventPayload77PermissionsReadWriteSandbox:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteSchedule:
+	case UserEventPayload77PermissionsReadWriteSchedule:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteTeamMembers:
+	case UserEventPayload77PermissionsReadWriteTeamMembers:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteVcr:
+	case UserEventPayload77PermissionsReadWriteVcr:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteVercelCi:
+	case UserEventPayload77PermissionsReadWriteVercelCi:
 		return true
-	case UserEventPayload78NextPermissionsReadWriteWebhooks:
+	case UserEventPayload77PermissionsReadWriteWebhooks:
 		return true
-	case UserEventPayload78NextPermissionsUseAiGateway:
+	case UserEventPayload77PermissionsUseAiGateway:
 		return true
-	case UserEventPayload78NextPermissionsUseGithub:
+	case UserEventPayload77PermissionsUseGithub:
 		return true
-	case UserEventPayload78NextPermissionsUsePrivateNpm:
+	case UserEventPayload77PermissionsUsePrivateNpm:
 		return true
-	case UserEventPayload78NextPermissionsUseProjectFlagsOverridesNonProduction:
+	case UserEventPayload77PermissionsUseProjectFlagsOverridesNonProduction:
 		return true
-	case UserEventPayload78NextPermissionsUseProjectFlagsOverridesProduction:
+	case UserEventPayload77PermissionsUseProjectFlagsOverridesProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload78NextScopes.
+// Defines values for UserEventPayload77Scopes.
 const (
-	UserEventPayload78NextScopesEmail         UserEventPayload78NextScopes = "email"
-	UserEventPayload78NextScopesOfflineAccess UserEventPayload78NextScopes = "offline_access"
-	UserEventPayload78NextScopesOpenid        UserEventPayload78NextScopes = "openid"
-	UserEventPayload78NextScopesProfile       UserEventPayload78NextScopes = "profile"
+	UserEventPayload77ScopesEmail         UserEventPayload77Scopes = "email"
+	UserEventPayload77ScopesOfflineAccess UserEventPayload77Scopes = "offline_access"
+	UserEventPayload77ScopesOpenid        UserEventPayload77Scopes = "openid"
+	UserEventPayload77ScopesProfile       UserEventPayload77Scopes = "profile"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload78NextScopes enum.
-func (e UserEventPayload78NextScopes) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload77Scopes enum.
+func (e UserEventPayload77Scopes) Valid() bool {
 	switch e {
-	case UserEventPayload78NextScopesEmail:
+	case UserEventPayload77ScopesEmail:
 		return true
-	case UserEventPayload78NextScopesOfflineAccess:
+	case UserEventPayload77ScopesOfflineAccess:
 		return true
-	case UserEventPayload78NextScopesOpenid:
+	case UserEventPayload77ScopesOpenid:
 		return true
-	case UserEventPayload78NextScopesProfile:
+	case UserEventPayload77ScopesProfile:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79AfterPermissions.
+// Defines values for UserEventPayload79NextPermissions.
 const (
-	UserEventPayload79AfterPermissionsManageSpeedInsights                   UserEventPayload79AfterPermissions = "manage:speed-insights"
-	UserEventPayload79AfterPermissionsManageWebAnalytics                    UserEventPayload79AfterPermissions = "manage:web-analytics"
-	UserEventPayload79AfterPermissionsReadAccessGroup                       UserEventPayload79AfterPermissions = "read:access-group"
-	UserEventPayload79AfterPermissionsReadAiGatewayBudgets                  UserEventPayload79AfterPermissions = "read:ai-gateway-budgets"
-	UserEventPayload79AfterPermissionsReadAiGatewayByokCredentials          UserEventPayload79AfterPermissions = "read:ai-gateway-byok-credentials"
-	UserEventPayload79AfterPermissionsReadAiGatewayGuardrails               UserEventPayload79AfterPermissions = "read:ai-gateway-guardrails"
-	UserEventPayload79AfterPermissionsReadAiGatewayPrivateModels            UserEventPayload79AfterPermissions = "read:ai-gateway-private-models"
-	UserEventPayload79AfterPermissionsReadAiGatewayRules                    UserEventPayload79AfterPermissions = "read:ai-gateway-rules"
-	UserEventPayload79AfterPermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload79AfterPermissions = "read:ai-gateway-virtual-model-configs"
-	UserEventPayload79AfterPermissionsReadAlerts                            UserEventPayload79AfterPermissions = "read:alerts"
-	UserEventPayload79AfterPermissionsReadAuditLog                          UserEventPayload79AfterPermissions = "read:audit-log"
-	UserEventPayload79AfterPermissionsReadAutomations                       UserEventPayload79AfterPermissions = "read:automations"
-	UserEventPayload79AfterPermissionsReadBilling                           UserEventPayload79AfterPermissions = "read:billing"
-	UserEventPayload79AfterPermissionsReadConnect                           UserEventPayload79AfterPermissions = "read:connect"
-	UserEventPayload79AfterPermissionsReadDeployment                        UserEventPayload79AfterPermissions = "read:deployment"
-	UserEventPayload79AfterPermissionsReadDeploymentCheck                   UserEventPayload79AfterPermissions = "read:deployment-check"
-	UserEventPayload79AfterPermissionsReadDomain                            UserEventPayload79AfterPermissions = "read:domain"
-	UserEventPayload79AfterPermissionsReadDrive                             UserEventPayload79AfterPermissions = "read:drive"
-	UserEventPayload79AfterPermissionsReadEvent                             UserEventPayload79AfterPermissions = "read:event"
-	UserEventPayload79AfterPermissionsReadFirewall                          UserEventPayload79AfterPermissions = "read:firewall"
-	UserEventPayload79AfterPermissionsReadIntegrationConfiguration          UserEventPayload79AfterPermissions = "read:integration-configuration"
-	UserEventPayload79AfterPermissionsReadIntegrationResource               UserEventPayload79AfterPermissions = "read:integration-resource"
-	UserEventPayload79AfterPermissionsReadKms                               UserEventPayload79AfterPermissions = "read:kms"
-	UserEventPayload79AfterPermissionsReadMessageboard                      UserEventPayload79AfterPermissions = "read:messageboard"
-	UserEventPayload79AfterPermissionsReadMonitoring                        UserEventPayload79AfterPermissions = "read:monitoring"
-	UserEventPayload79AfterPermissionsReadProject                           UserEventPayload79AfterPermissions = "read:project"
-	UserEventPayload79AfterPermissionsReadProjectEnvVarsNonProduction       UserEventPayload79AfterPermissions = "read:project-env-vars-non-production"
-	UserEventPayload79AfterPermissionsReadProjectEnvVarsProduction          UserEventPayload79AfterPermissions = "read:project-env-vars-production"
-	UserEventPayload79AfterPermissionsReadProjectFlags                      UserEventPayload79AfterPermissions = "read:project-flags"
-	UserEventPayload79AfterPermissionsReadProjectMembers                    UserEventPayload79AfterPermissions = "read:project-members"
-	UserEventPayload79AfterPermissionsReadProjectTrustedSources             UserEventPayload79AfterPermissions = "read:project-trusted-sources"
-	UserEventPayload79AfterPermissionsReadRemoteCache                       UserEventPayload79AfterPermissions = "read:remote-cache"
-	UserEventPayload79AfterPermissionsReadSandbox                           UserEventPayload79AfterPermissions = "read:sandbox"
-	UserEventPayload79AfterPermissionsReadSchedule                          UserEventPayload79AfterPermissions = "read:schedule"
-	UserEventPayload79AfterPermissionsReadSpeedInsights                     UserEventPayload79AfterPermissions = "read:speed-insights"
-	UserEventPayload79AfterPermissionsReadTeam                              UserEventPayload79AfterPermissions = "read:team"
-	UserEventPayload79AfterPermissionsReadVcr                               UserEventPayload79AfterPermissions = "read:vcr"
-	UserEventPayload79AfterPermissionsReadWebAnalytics                      UserEventPayload79AfterPermissions = "read:web-analytics"
-	UserEventPayload79AfterPermissionsReadWebhooks                          UserEventPayload79AfterPermissions = "read:webhooks"
-	UserEventPayload79AfterPermissionsReadWriteAccessGroup                  UserEventPayload79AfterPermissions = "read-write:access-group"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayApiKey              UserEventPayload79AfterPermissions = "read-write:ai-gateway-api-key"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayBudgets             UserEventPayload79AfterPermissions = "read-write:ai-gateway-budgets"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayByokCredentials     UserEventPayload79AfterPermissions = "read-write:ai-gateway-byok-credentials"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayGuardrails          UserEventPayload79AfterPermissions = "read-write:ai-gateway-guardrails"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayPrivateModels       UserEventPayload79AfterPermissions = "read-write:ai-gateway-private-models"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayRules               UserEventPayload79AfterPermissions = "read-write:ai-gateway-rules"
-	UserEventPayload79AfterPermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload79AfterPermissions = "read-write:ai-gateway-virtual-model-configs"
-	UserEventPayload79AfterPermissionsReadWriteAlerts                       UserEventPayload79AfterPermissions = "read-write:alerts"
-	UserEventPayload79AfterPermissionsReadWriteAutomations                  UserEventPayload79AfterPermissions = "read-write:automations"
-	UserEventPayload79AfterPermissionsReadWriteBilling                      UserEventPayload79AfterPermissions = "read-write:billing"
-	UserEventPayload79AfterPermissionsReadWriteBlob                         UserEventPayload79AfterPermissions = "read-write:blob"
-	UserEventPayload79AfterPermissionsReadWriteConnect                      UserEventPayload79AfterPermissions = "read-write:connect"
-	UserEventPayload79AfterPermissionsReadWriteConnectAnyUserToken          UserEventPayload79AfterPermissions = "read-write:connect-any-user-token"
-	UserEventPayload79AfterPermissionsReadWriteConnectAppToken              UserEventPayload79AfterPermissions = "read-write:connect-app-token"
-	UserEventPayload79AfterPermissionsReadWriteDeployment                   UserEventPayload79AfterPermissions = "read-write:deployment"
-	UserEventPayload79AfterPermissionsReadWriteDomain                       UserEventPayload79AfterPermissions = "read-write:domain"
-	UserEventPayload79AfterPermissionsReadWriteDomainRegistrar              UserEventPayload79AfterPermissions = "read-write:domain-registrar"
-	UserEventPayload79AfterPermissionsReadWriteDrains                       UserEventPayload79AfterPermissions = "read-write:drains"
-	UserEventPayload79AfterPermissionsReadWriteDrive                        UserEventPayload79AfterPermissions = "read-write:drive"
-	UserEventPayload79AfterPermissionsReadWriteEdgeCache                    UserEventPayload79AfterPermissions = "read-write:edge-cache"
-	UserEventPayload79AfterPermissionsReadWriteEdgeConfig                   UserEventPayload79AfterPermissions = "read-write:edge-config"
-	UserEventPayload79AfterPermissionsReadWriteFirewall                     UserEventPayload79AfterPermissions = "read-write:firewall"
-	UserEventPayload79AfterPermissionsReadWriteIntegrationConfiguration     UserEventPayload79AfterPermissions = "read-write:integration-configuration"
-	UserEventPayload79AfterPermissionsReadWriteIntegrationResource          UserEventPayload79AfterPermissions = "read-write:integration-resource"
-	UserEventPayload79AfterPermissionsReadWriteKms                          UserEventPayload79AfterPermissions = "read-write:kms"
-	UserEventPayload79AfterPermissionsReadWriteMessageboard                 UserEventPayload79AfterPermissions = "read-write:messageboard"
-	UserEventPayload79AfterPermissionsReadWriteProject                      UserEventPayload79AfterPermissions = "read-write:project"
-	UserEventPayload79AfterPermissionsReadWriteProjectEnvVars               UserEventPayload79AfterPermissions = "read-write:project-env-vars"
-	UserEventPayload79AfterPermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload79AfterPermissions = "read-write:project-env-vars-non-production"
-	UserEventPayload79AfterPermissionsReadWriteProjectEnvVarsProduction     UserEventPayload79AfterPermissions = "read-write:project-env-vars-production"
-	UserEventPayload79AfterPermissionsReadWriteProjectFlagsNonProduction    UserEventPayload79AfterPermissions = "read-write:project-flags-non-production"
-	UserEventPayload79AfterPermissionsReadWriteProjectFlagsProduction       UserEventPayload79AfterPermissions = "read-write:project-flags-production"
-	UserEventPayload79AfterPermissionsReadWriteProjectMembers               UserEventPayload79AfterPermissions = "read-write:project-members"
-	UserEventPayload79AfterPermissionsReadWriteProjectProtectionBypass      UserEventPayload79AfterPermissions = "read-write:project-protection-bypass"
-	UserEventPayload79AfterPermissionsReadWriteProjectTrustedSources        UserEventPayload79AfterPermissions = "read-write:project-trusted-sources"
-	UserEventPayload79AfterPermissionsReadWriteRemoteCache                  UserEventPayload79AfterPermissions = "read-write:remote-cache"
-	UserEventPayload79AfterPermissionsReadWriteSandbox                      UserEventPayload79AfterPermissions = "read-write:sandbox"
-	UserEventPayload79AfterPermissionsReadWriteSchedule                     UserEventPayload79AfterPermissions = "read-write:schedule"
-	UserEventPayload79AfterPermissionsReadWriteTeamMembers                  UserEventPayload79AfterPermissions = "read-write:team-members"
-	UserEventPayload79AfterPermissionsReadWriteVcr                          UserEventPayload79AfterPermissions = "read-write:vcr"
-	UserEventPayload79AfterPermissionsReadWriteVercelCi                     UserEventPayload79AfterPermissions = "read-write:vercel-ci"
-	UserEventPayload79AfterPermissionsReadWriteWebhooks                     UserEventPayload79AfterPermissions = "read-write:webhooks"
-	UserEventPayload79AfterPermissionsUseAiGateway                          UserEventPayload79AfterPermissions = "use:ai-gateway"
-	UserEventPayload79AfterPermissionsUsePrivateNpm                         UserEventPayload79AfterPermissions = "use:private-npm"
-	UserEventPayload79AfterPermissionsUseProjectFlagsOverridesNonProduction UserEventPayload79AfterPermissions = "use:project-flags-overrides-non-production"
-	UserEventPayload79AfterPermissionsUseProjectFlagsOverridesProduction    UserEventPayload79AfterPermissions = "use:project-flags-overrides-production"
+	UserEventPayload79NextPermissionsAsterisk                              UserEventPayload79NextPermissions = "*"
+	UserEventPayload79NextPermissionsManageSpeedInsights                   UserEventPayload79NextPermissions = "manage:speed-insights"
+	UserEventPayload79NextPermissionsManageWebAnalytics                    UserEventPayload79NextPermissions = "manage:web-analytics"
+	UserEventPayload79NextPermissionsReadAccessGroup                       UserEventPayload79NextPermissions = "read:access-group"
+	UserEventPayload79NextPermissionsReadAiGatewayBudgets                  UserEventPayload79NextPermissions = "read:ai-gateway-budgets"
+	UserEventPayload79NextPermissionsReadAiGatewayByokCredentials          UserEventPayload79NextPermissions = "read:ai-gateway-byok-credentials"
+	UserEventPayload79NextPermissionsReadAiGatewayGuardrails               UserEventPayload79NextPermissions = "read:ai-gateway-guardrails"
+	UserEventPayload79NextPermissionsReadAiGatewayPrivateModels            UserEventPayload79NextPermissions = "read:ai-gateway-private-models"
+	UserEventPayload79NextPermissionsReadAiGatewayRules                    UserEventPayload79NextPermissions = "read:ai-gateway-rules"
+	UserEventPayload79NextPermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload79NextPermissions = "read:ai-gateway-virtual-model-configs"
+	UserEventPayload79NextPermissionsReadAlerts                            UserEventPayload79NextPermissions = "read:alerts"
+	UserEventPayload79NextPermissionsReadAuditLog                          UserEventPayload79NextPermissions = "read:audit-log"
+	UserEventPayload79NextPermissionsReadAutomations                       UserEventPayload79NextPermissions = "read:automations"
+	UserEventPayload79NextPermissionsReadBilling                           UserEventPayload79NextPermissions = "read:billing"
+	UserEventPayload79NextPermissionsReadConnect                           UserEventPayload79NextPermissions = "read:connect"
+	UserEventPayload79NextPermissionsReadDeployment                        UserEventPayload79NextPermissions = "read:deployment"
+	UserEventPayload79NextPermissionsReadDeploymentCheck                   UserEventPayload79NextPermissions = "read:deployment-check"
+	UserEventPayload79NextPermissionsReadDomain                            UserEventPayload79NextPermissions = "read:domain"
+	UserEventPayload79NextPermissionsReadDrive                             UserEventPayload79NextPermissions = "read:drive"
+	UserEventPayload79NextPermissionsReadEvent                             UserEventPayload79NextPermissions = "read:event"
+	UserEventPayload79NextPermissionsReadFirewall                          UserEventPayload79NextPermissions = "read:firewall"
+	UserEventPayload79NextPermissionsReadIntegrationConfiguration          UserEventPayload79NextPermissions = "read:integration-configuration"
+	UserEventPayload79NextPermissionsReadIntegrationResource               UserEventPayload79NextPermissions = "read:integration-resource"
+	UserEventPayload79NextPermissionsReadKms                               UserEventPayload79NextPermissions = "read:kms"
+	UserEventPayload79NextPermissionsReadMessageboard                      UserEventPayload79NextPermissions = "read:messageboard"
+	UserEventPayload79NextPermissionsReadMonitoring                        UserEventPayload79NextPermissions = "read:monitoring"
+	UserEventPayload79NextPermissionsReadProject                           UserEventPayload79NextPermissions = "read:project"
+	UserEventPayload79NextPermissionsReadProjectEnvVarsNonProduction       UserEventPayload79NextPermissions = "read:project-env-vars-non-production"
+	UserEventPayload79NextPermissionsReadProjectEnvVarsProduction          UserEventPayload79NextPermissions = "read:project-env-vars-production"
+	UserEventPayload79NextPermissionsReadProjectFlags                      UserEventPayload79NextPermissions = "read:project-flags"
+	UserEventPayload79NextPermissionsReadProjectMembers                    UserEventPayload79NextPermissions = "read:project-members"
+	UserEventPayload79NextPermissionsReadProjectTrustedSources             UserEventPayload79NextPermissions = "read:project-trusted-sources"
+	UserEventPayload79NextPermissionsReadRemoteCache                       UserEventPayload79NextPermissions = "read:remote-cache"
+	UserEventPayload79NextPermissionsReadSandbox                           UserEventPayload79NextPermissions = "read:sandbox"
+	UserEventPayload79NextPermissionsReadSchedule                          UserEventPayload79NextPermissions = "read:schedule"
+	UserEventPayload79NextPermissionsReadSpeedInsights                     UserEventPayload79NextPermissions = "read:speed-insights"
+	UserEventPayload79NextPermissionsReadTeam                              UserEventPayload79NextPermissions = "read:team"
+	UserEventPayload79NextPermissionsReadUser                              UserEventPayload79NextPermissions = "read:user"
+	UserEventPayload79NextPermissionsReadVcr                               UserEventPayload79NextPermissions = "read:vcr"
+	UserEventPayload79NextPermissionsReadWebAnalytics                      UserEventPayload79NextPermissions = "read:web-analytics"
+	UserEventPayload79NextPermissionsReadWebhooks                          UserEventPayload79NextPermissions = "read:webhooks"
+	UserEventPayload79NextPermissionsReadWriteAccessGroup                  UserEventPayload79NextPermissions = "read-write:access-group"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayApiKey              UserEventPayload79NextPermissions = "read-write:ai-gateway-api-key"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayBudgets             UserEventPayload79NextPermissions = "read-write:ai-gateway-budgets"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayByokCredentials     UserEventPayload79NextPermissions = "read-write:ai-gateway-byok-credentials"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayGuardrails          UserEventPayload79NextPermissions = "read-write:ai-gateway-guardrails"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayPrivateModels       UserEventPayload79NextPermissions = "read-write:ai-gateway-private-models"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayRules               UserEventPayload79NextPermissions = "read-write:ai-gateway-rules"
+	UserEventPayload79NextPermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload79NextPermissions = "read-write:ai-gateway-virtual-model-configs"
+	UserEventPayload79NextPermissionsReadWriteAlerts                       UserEventPayload79NextPermissions = "read-write:alerts"
+	UserEventPayload79NextPermissionsReadWriteAutomations                  UserEventPayload79NextPermissions = "read-write:automations"
+	UserEventPayload79NextPermissionsReadWriteBilling                      UserEventPayload79NextPermissions = "read-write:billing"
+	UserEventPayload79NextPermissionsReadWriteBlob                         UserEventPayload79NextPermissions = "read-write:blob"
+	UserEventPayload79NextPermissionsReadWriteConnect                      UserEventPayload79NextPermissions = "read-write:connect"
+	UserEventPayload79NextPermissionsReadWriteConnectAnyUserToken          UserEventPayload79NextPermissions = "read-write:connect-any-user-token"
+	UserEventPayload79NextPermissionsReadWriteConnectAppToken              UserEventPayload79NextPermissions = "read-write:connect-app-token"
+	UserEventPayload79NextPermissionsReadWriteDeployment                   UserEventPayload79NextPermissions = "read-write:deployment"
+	UserEventPayload79NextPermissionsReadWriteDesktopDevice                UserEventPayload79NextPermissions = "read-write:desktop-device"
+	UserEventPayload79NextPermissionsReadWriteDomain                       UserEventPayload79NextPermissions = "read-write:domain"
+	UserEventPayload79NextPermissionsReadWriteDomainRegistrar              UserEventPayload79NextPermissions = "read-write:domain-registrar"
+	UserEventPayload79NextPermissionsReadWriteDrains                       UserEventPayload79NextPermissions = "read-write:drains"
+	UserEventPayload79NextPermissionsReadWriteDrive                        UserEventPayload79NextPermissions = "read-write:drive"
+	UserEventPayload79NextPermissionsReadWriteEdgeCache                    UserEventPayload79NextPermissions = "read-write:edge-cache"
+	UserEventPayload79NextPermissionsReadWriteEdgeConfig                   UserEventPayload79NextPermissions = "read-write:edge-config"
+	UserEventPayload79NextPermissionsReadWriteFirewall                     UserEventPayload79NextPermissions = "read-write:firewall"
+	UserEventPayload79NextPermissionsReadWriteIntegrationConfiguration     UserEventPayload79NextPermissions = "read-write:integration-configuration"
+	UserEventPayload79NextPermissionsReadWriteIntegrationResource          UserEventPayload79NextPermissions = "read-write:integration-resource"
+	UserEventPayload79NextPermissionsReadWriteKms                          UserEventPayload79NextPermissions = "read-write:kms"
+	UserEventPayload79NextPermissionsReadWriteMessageboard                 UserEventPayload79NextPermissions = "read-write:messageboard"
+	UserEventPayload79NextPermissionsReadWriteProject                      UserEventPayload79NextPermissions = "read-write:project"
+	UserEventPayload79NextPermissionsReadWriteProjectEnvVars               UserEventPayload79NextPermissions = "read-write:project-env-vars"
+	UserEventPayload79NextPermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload79NextPermissions = "read-write:project-env-vars-non-production"
+	UserEventPayload79NextPermissionsReadWriteProjectEnvVarsProduction     UserEventPayload79NextPermissions = "read-write:project-env-vars-production"
+	UserEventPayload79NextPermissionsReadWriteProjectFlagsNonProduction    UserEventPayload79NextPermissions = "read-write:project-flags-non-production"
+	UserEventPayload79NextPermissionsReadWriteProjectFlagsProduction       UserEventPayload79NextPermissions = "read-write:project-flags-production"
+	UserEventPayload79NextPermissionsReadWriteProjectMembers               UserEventPayload79NextPermissions = "read-write:project-members"
+	UserEventPayload79NextPermissionsReadWriteProjectProtectionBypass      UserEventPayload79NextPermissions = "read-write:project-protection-bypass"
+	UserEventPayload79NextPermissionsReadWriteProjectTrustedSources        UserEventPayload79NextPermissions = "read-write:project-trusted-sources"
+	UserEventPayload79NextPermissionsReadWriteRemoteCache                  UserEventPayload79NextPermissions = "read-write:remote-cache"
+	UserEventPayload79NextPermissionsReadWriteSandbox                      UserEventPayload79NextPermissions = "read-write:sandbox"
+	UserEventPayload79NextPermissionsReadWriteSchedule                     UserEventPayload79NextPermissions = "read-write:schedule"
+	UserEventPayload79NextPermissionsReadWriteTeamMembers                  UserEventPayload79NextPermissions = "read-write:team-members"
+	UserEventPayload79NextPermissionsReadWriteVcr                          UserEventPayload79NextPermissions = "read-write:vcr"
+	UserEventPayload79NextPermissionsReadWriteVercelCi                     UserEventPayload79NextPermissions = "read-write:vercel-ci"
+	UserEventPayload79NextPermissionsReadWriteWebhooks                     UserEventPayload79NextPermissions = "read-write:webhooks"
+	UserEventPayload79NextPermissionsUseAiGateway                          UserEventPayload79NextPermissions = "use:ai-gateway"
+	UserEventPayload79NextPermissionsUseGithub                             UserEventPayload79NextPermissions = "use:github"
+	UserEventPayload79NextPermissionsUsePrivateNpm                         UserEventPayload79NextPermissions = "use:private-npm"
+	UserEventPayload79NextPermissionsUseProjectFlagsOverridesNonProduction UserEventPayload79NextPermissions = "use:project-flags-overrides-non-production"
+	UserEventPayload79NextPermissionsUseProjectFlagsOverridesProduction    UserEventPayload79NextPermissions = "use:project-flags-overrides-production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79AfterPermissions enum.
-func (e UserEventPayload79AfterPermissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload79NextPermissions enum.
+func (e UserEventPayload79NextPermissions) Valid() bool {
 	switch e {
-	case UserEventPayload79AfterPermissionsManageSpeedInsights:
+	case UserEventPayload79NextPermissionsAsterisk:
 		return true
-	case UserEventPayload79AfterPermissionsManageWebAnalytics:
+	case UserEventPayload79NextPermissionsManageSpeedInsights:
 		return true
-	case UserEventPayload79AfterPermissionsReadAccessGroup:
+	case UserEventPayload79NextPermissionsManageWebAnalytics:
 		return true
-	case UserEventPayload79AfterPermissionsReadAiGatewayBudgets:
+	case UserEventPayload79NextPermissionsReadAccessGroup:
 		return true
-	case UserEventPayload79AfterPermissionsReadAiGatewayByokCredentials:
+	case UserEventPayload79NextPermissionsReadAiGatewayBudgets:
 		return true
-	case UserEventPayload79AfterPermissionsReadAiGatewayGuardrails:
+	case UserEventPayload79NextPermissionsReadAiGatewayByokCredentials:
 		return true
-	case UserEventPayload79AfterPermissionsReadAiGatewayPrivateModels:
+	case UserEventPayload79NextPermissionsReadAiGatewayGuardrails:
 		return true
-	case UserEventPayload79AfterPermissionsReadAiGatewayRules:
+	case UserEventPayload79NextPermissionsReadAiGatewayPrivateModels:
 		return true
-	case UserEventPayload79AfterPermissionsReadAiGatewayVirtualModelConfigs:
+	case UserEventPayload79NextPermissionsReadAiGatewayRules:
 		return true
-	case UserEventPayload79AfterPermissionsReadAlerts:
+	case UserEventPayload79NextPermissionsReadAiGatewayVirtualModelConfigs:
 		return true
-	case UserEventPayload79AfterPermissionsReadAuditLog:
+	case UserEventPayload79NextPermissionsReadAlerts:
 		return true
-	case UserEventPayload79AfterPermissionsReadAutomations:
+	case UserEventPayload79NextPermissionsReadAuditLog:
 		return true
-	case UserEventPayload79AfterPermissionsReadBilling:
+	case UserEventPayload79NextPermissionsReadAutomations:
 		return true
-	case UserEventPayload79AfterPermissionsReadConnect:
+	case UserEventPayload79NextPermissionsReadBilling:
 		return true
-	case UserEventPayload79AfterPermissionsReadDeployment:
+	case UserEventPayload79NextPermissionsReadConnect:
 		return true
-	case UserEventPayload79AfterPermissionsReadDeploymentCheck:
+	case UserEventPayload79NextPermissionsReadDeployment:
 		return true
-	case UserEventPayload79AfterPermissionsReadDomain:
+	case UserEventPayload79NextPermissionsReadDeploymentCheck:
 		return true
-	case UserEventPayload79AfterPermissionsReadDrive:
+	case UserEventPayload79NextPermissionsReadDomain:
 		return true
-	case UserEventPayload79AfterPermissionsReadEvent:
+	case UserEventPayload79NextPermissionsReadDrive:
 		return true
-	case UserEventPayload79AfterPermissionsReadFirewall:
+	case UserEventPayload79NextPermissionsReadEvent:
 		return true
-	case UserEventPayload79AfterPermissionsReadIntegrationConfiguration:
+	case UserEventPayload79NextPermissionsReadFirewall:
 		return true
-	case UserEventPayload79AfterPermissionsReadIntegrationResource:
+	case UserEventPayload79NextPermissionsReadIntegrationConfiguration:
 		return true
-	case UserEventPayload79AfterPermissionsReadKms:
+	case UserEventPayload79NextPermissionsReadIntegrationResource:
 		return true
-	case UserEventPayload79AfterPermissionsReadMessageboard:
+	case UserEventPayload79NextPermissionsReadKms:
 		return true
-	case UserEventPayload79AfterPermissionsReadMonitoring:
+	case UserEventPayload79NextPermissionsReadMessageboard:
 		return true
-	case UserEventPayload79AfterPermissionsReadProject:
+	case UserEventPayload79NextPermissionsReadMonitoring:
 		return true
-	case UserEventPayload79AfterPermissionsReadProjectEnvVarsNonProduction:
+	case UserEventPayload79NextPermissionsReadProject:
 		return true
-	case UserEventPayload79AfterPermissionsReadProjectEnvVarsProduction:
+	case UserEventPayload79NextPermissionsReadProjectEnvVarsNonProduction:
 		return true
-	case UserEventPayload79AfterPermissionsReadProjectFlags:
+	case UserEventPayload79NextPermissionsReadProjectEnvVarsProduction:
 		return true
-	case UserEventPayload79AfterPermissionsReadProjectMembers:
+	case UserEventPayload79NextPermissionsReadProjectFlags:
 		return true
-	case UserEventPayload79AfterPermissionsReadProjectTrustedSources:
+	case UserEventPayload79NextPermissionsReadProjectMembers:
 		return true
-	case UserEventPayload79AfterPermissionsReadRemoteCache:
+	case UserEventPayload79NextPermissionsReadProjectTrustedSources:
 		return true
-	case UserEventPayload79AfterPermissionsReadSandbox:
+	case UserEventPayload79NextPermissionsReadRemoteCache:
 		return true
-	case UserEventPayload79AfterPermissionsReadSchedule:
+	case UserEventPayload79NextPermissionsReadSandbox:
 		return true
-	case UserEventPayload79AfterPermissionsReadSpeedInsights:
+	case UserEventPayload79NextPermissionsReadSchedule:
 		return true
-	case UserEventPayload79AfterPermissionsReadTeam:
+	case UserEventPayload79NextPermissionsReadSpeedInsights:
 		return true
-	case UserEventPayload79AfterPermissionsReadVcr:
+	case UserEventPayload79NextPermissionsReadTeam:
 		return true
-	case UserEventPayload79AfterPermissionsReadWebAnalytics:
+	case UserEventPayload79NextPermissionsReadUser:
 		return true
-	case UserEventPayload79AfterPermissionsReadWebhooks:
+	case UserEventPayload79NextPermissionsReadVcr:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAccessGroup:
+	case UserEventPayload79NextPermissionsReadWebAnalytics:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayApiKey:
+	case UserEventPayload79NextPermissionsReadWebhooks:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayBudgets:
+	case UserEventPayload79NextPermissionsReadWriteAccessGroup:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayByokCredentials:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayApiKey:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayGuardrails:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayBudgets:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayPrivateModels:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayByokCredentials:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayRules:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayGuardrails:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAiGatewayVirtualModelConfigs:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayPrivateModels:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAlerts:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayRules:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteAutomations:
+	case UserEventPayload79NextPermissionsReadWriteAiGatewayVirtualModelConfigs:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteBilling:
+	case UserEventPayload79NextPermissionsReadWriteAlerts:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteBlob:
+	case UserEventPayload79NextPermissionsReadWriteAutomations:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteConnect:
+	case UserEventPayload79NextPermissionsReadWriteBilling:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteConnectAnyUserToken:
+	case UserEventPayload79NextPermissionsReadWriteBlob:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteConnectAppToken:
+	case UserEventPayload79NextPermissionsReadWriteConnect:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteDeployment:
+	case UserEventPayload79NextPermissionsReadWriteConnectAnyUserToken:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteDomain:
+	case UserEventPayload79NextPermissionsReadWriteConnectAppToken:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteDomainRegistrar:
+	case UserEventPayload79NextPermissionsReadWriteDeployment:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteDrains:
+	case UserEventPayload79NextPermissionsReadWriteDesktopDevice:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteDrive:
+	case UserEventPayload79NextPermissionsReadWriteDomain:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteEdgeCache:
+	case UserEventPayload79NextPermissionsReadWriteDomainRegistrar:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteEdgeConfig:
+	case UserEventPayload79NextPermissionsReadWriteDrains:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteFirewall:
+	case UserEventPayload79NextPermissionsReadWriteDrive:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteIntegrationConfiguration:
+	case UserEventPayload79NextPermissionsReadWriteEdgeCache:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteIntegrationResource:
+	case UserEventPayload79NextPermissionsReadWriteEdgeConfig:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteKms:
+	case UserEventPayload79NextPermissionsReadWriteFirewall:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteMessageboard:
+	case UserEventPayload79NextPermissionsReadWriteIntegrationConfiguration:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProject:
+	case UserEventPayload79NextPermissionsReadWriteIntegrationResource:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectEnvVars:
+	case UserEventPayload79NextPermissionsReadWriteKms:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectEnvVarsNonProduction:
+	case UserEventPayload79NextPermissionsReadWriteMessageboard:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectEnvVarsProduction:
+	case UserEventPayload79NextPermissionsReadWriteProject:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectFlagsNonProduction:
+	case UserEventPayload79NextPermissionsReadWriteProjectEnvVars:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectFlagsProduction:
+	case UserEventPayload79NextPermissionsReadWriteProjectEnvVarsNonProduction:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectMembers:
+	case UserEventPayload79NextPermissionsReadWriteProjectEnvVarsProduction:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectProtectionBypass:
+	case UserEventPayload79NextPermissionsReadWriteProjectFlagsNonProduction:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteProjectTrustedSources:
+	case UserEventPayload79NextPermissionsReadWriteProjectFlagsProduction:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteRemoteCache:
+	case UserEventPayload79NextPermissionsReadWriteProjectMembers:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteSandbox:
+	case UserEventPayload79NextPermissionsReadWriteProjectProtectionBypass:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteSchedule:
+	case UserEventPayload79NextPermissionsReadWriteProjectTrustedSources:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteTeamMembers:
+	case UserEventPayload79NextPermissionsReadWriteRemoteCache:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteVcr:
+	case UserEventPayload79NextPermissionsReadWriteSandbox:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteVercelCi:
+	case UserEventPayload79NextPermissionsReadWriteSchedule:
 		return true
-	case UserEventPayload79AfterPermissionsReadWriteWebhooks:
+	case UserEventPayload79NextPermissionsReadWriteTeamMembers:
 		return true
-	case UserEventPayload79AfterPermissionsUseAiGateway:
+	case UserEventPayload79NextPermissionsReadWriteVcr:
 		return true
-	case UserEventPayload79AfterPermissionsUsePrivateNpm:
+	case UserEventPayload79NextPermissionsReadWriteVercelCi:
 		return true
-	case UserEventPayload79AfterPermissionsUseProjectFlagsOverridesNonProduction:
+	case UserEventPayload79NextPermissionsReadWriteWebhooks:
 		return true
-	case UserEventPayload79AfterPermissionsUseProjectFlagsOverridesProduction:
+	case UserEventPayload79NextPermissionsUseAiGateway:
+		return true
+	case UserEventPayload79NextPermissionsUseGithub:
+		return true
+	case UserEventPayload79NextPermissionsUsePrivateNpm:
+		return true
+	case UserEventPayload79NextPermissionsUseProjectFlagsOverridesNonProduction:
+		return true
+	case UserEventPayload79NextPermissionsUseProjectFlagsOverridesProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79AfterResourcesProjectIdsItemsType.
+// Defines values for UserEventPayload79NextScopes.
 const (
-	UserEventPayload79AfterResourcesProjectIdsItemsTypeString UserEventPayload79AfterResourcesProjectIdsItemsType = "string"
+	UserEventPayload79NextScopesEmail         UserEventPayload79NextScopes = "email"
+	UserEventPayload79NextScopesOfflineAccess UserEventPayload79NextScopes = "offline_access"
+	UserEventPayload79NextScopesOpenid        UserEventPayload79NextScopes = "openid"
+	UserEventPayload79NextScopesProfile       UserEventPayload79NextScopes = "profile"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79AfterResourcesProjectIdsItemsType enum.
-func (e UserEventPayload79AfterResourcesProjectIdsItemsType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload79NextScopes enum.
+func (e UserEventPayload79NextScopes) Valid() bool {
 	switch e {
-	case UserEventPayload79AfterResourcesProjectIdsItemsTypeString:
+	case UserEventPayload79NextScopesEmail:
+		return true
+	case UserEventPayload79NextScopesOfflineAccess:
+		return true
+	case UserEventPayload79NextScopesOpenid:
+		return true
+	case UserEventPayload79NextScopesProfile:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79AfterResourcesProjectIdsRequired.
+// Defines values for UserEventPayload80AfterPermissions.
 const (
-	UserEventPayload79AfterResourcesProjectIdsRequiredTrue UserEventPayload79AfterResourcesProjectIdsRequired = true
+	UserEventPayload80AfterPermissionsManageSpeedInsights                   UserEventPayload80AfterPermissions = "manage:speed-insights"
+	UserEventPayload80AfterPermissionsManageWebAnalytics                    UserEventPayload80AfterPermissions = "manage:web-analytics"
+	UserEventPayload80AfterPermissionsReadAccessGroup                       UserEventPayload80AfterPermissions = "read:access-group"
+	UserEventPayload80AfterPermissionsReadAiGatewayBudgets                  UserEventPayload80AfterPermissions = "read:ai-gateway-budgets"
+	UserEventPayload80AfterPermissionsReadAiGatewayByokCredentials          UserEventPayload80AfterPermissions = "read:ai-gateway-byok-credentials"
+	UserEventPayload80AfterPermissionsReadAiGatewayGuardrails               UserEventPayload80AfterPermissions = "read:ai-gateway-guardrails"
+	UserEventPayload80AfterPermissionsReadAiGatewayPrivateModels            UserEventPayload80AfterPermissions = "read:ai-gateway-private-models"
+	UserEventPayload80AfterPermissionsReadAiGatewayRules                    UserEventPayload80AfterPermissions = "read:ai-gateway-rules"
+	UserEventPayload80AfterPermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload80AfterPermissions = "read:ai-gateway-virtual-model-configs"
+	UserEventPayload80AfterPermissionsReadAlerts                            UserEventPayload80AfterPermissions = "read:alerts"
+	UserEventPayload80AfterPermissionsReadAuditLog                          UserEventPayload80AfterPermissions = "read:audit-log"
+	UserEventPayload80AfterPermissionsReadAutomations                       UserEventPayload80AfterPermissions = "read:automations"
+	UserEventPayload80AfterPermissionsReadBilling                           UserEventPayload80AfterPermissions = "read:billing"
+	UserEventPayload80AfterPermissionsReadConnect                           UserEventPayload80AfterPermissions = "read:connect"
+	UserEventPayload80AfterPermissionsReadDeployment                        UserEventPayload80AfterPermissions = "read:deployment"
+	UserEventPayload80AfterPermissionsReadDeploymentCheck                   UserEventPayload80AfterPermissions = "read:deployment-check"
+	UserEventPayload80AfterPermissionsReadDomain                            UserEventPayload80AfterPermissions = "read:domain"
+	UserEventPayload80AfterPermissionsReadDrive                             UserEventPayload80AfterPermissions = "read:drive"
+	UserEventPayload80AfterPermissionsReadEvent                             UserEventPayload80AfterPermissions = "read:event"
+	UserEventPayload80AfterPermissionsReadFirewall                          UserEventPayload80AfterPermissions = "read:firewall"
+	UserEventPayload80AfterPermissionsReadIntegrationConfiguration          UserEventPayload80AfterPermissions = "read:integration-configuration"
+	UserEventPayload80AfterPermissionsReadIntegrationResource               UserEventPayload80AfterPermissions = "read:integration-resource"
+	UserEventPayload80AfterPermissionsReadKms                               UserEventPayload80AfterPermissions = "read:kms"
+	UserEventPayload80AfterPermissionsReadMessageboard                      UserEventPayload80AfterPermissions = "read:messageboard"
+	UserEventPayload80AfterPermissionsReadMonitoring                        UserEventPayload80AfterPermissions = "read:monitoring"
+	UserEventPayload80AfterPermissionsReadProject                           UserEventPayload80AfterPermissions = "read:project"
+	UserEventPayload80AfterPermissionsReadProjectEnvVarsNonProduction       UserEventPayload80AfterPermissions = "read:project-env-vars-non-production"
+	UserEventPayload80AfterPermissionsReadProjectEnvVarsProduction          UserEventPayload80AfterPermissions = "read:project-env-vars-production"
+	UserEventPayload80AfterPermissionsReadProjectFlags                      UserEventPayload80AfterPermissions = "read:project-flags"
+	UserEventPayload80AfterPermissionsReadProjectMembers                    UserEventPayload80AfterPermissions = "read:project-members"
+	UserEventPayload80AfterPermissionsReadProjectTrustedSources             UserEventPayload80AfterPermissions = "read:project-trusted-sources"
+	UserEventPayload80AfterPermissionsReadRemoteCache                       UserEventPayload80AfterPermissions = "read:remote-cache"
+	UserEventPayload80AfterPermissionsReadSandbox                           UserEventPayload80AfterPermissions = "read:sandbox"
+	UserEventPayload80AfterPermissionsReadSchedule                          UserEventPayload80AfterPermissions = "read:schedule"
+	UserEventPayload80AfterPermissionsReadSpeedInsights                     UserEventPayload80AfterPermissions = "read:speed-insights"
+	UserEventPayload80AfterPermissionsReadTeam                              UserEventPayload80AfterPermissions = "read:team"
+	UserEventPayload80AfterPermissionsReadVcr                               UserEventPayload80AfterPermissions = "read:vcr"
+	UserEventPayload80AfterPermissionsReadWebAnalytics                      UserEventPayload80AfterPermissions = "read:web-analytics"
+	UserEventPayload80AfterPermissionsReadWebhooks                          UserEventPayload80AfterPermissions = "read:webhooks"
+	UserEventPayload80AfterPermissionsReadWriteAccessGroup                  UserEventPayload80AfterPermissions = "read-write:access-group"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayApiKey              UserEventPayload80AfterPermissions = "read-write:ai-gateway-api-key"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayBudgets             UserEventPayload80AfterPermissions = "read-write:ai-gateway-budgets"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayByokCredentials     UserEventPayload80AfterPermissions = "read-write:ai-gateway-byok-credentials"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayGuardrails          UserEventPayload80AfterPermissions = "read-write:ai-gateway-guardrails"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayPrivateModels       UserEventPayload80AfterPermissions = "read-write:ai-gateway-private-models"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayRules               UserEventPayload80AfterPermissions = "read-write:ai-gateway-rules"
+	UserEventPayload80AfterPermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload80AfterPermissions = "read-write:ai-gateway-virtual-model-configs"
+	UserEventPayload80AfterPermissionsReadWriteAlerts                       UserEventPayload80AfterPermissions = "read-write:alerts"
+	UserEventPayload80AfterPermissionsReadWriteAutomations                  UserEventPayload80AfterPermissions = "read-write:automations"
+	UserEventPayload80AfterPermissionsReadWriteBilling                      UserEventPayload80AfterPermissions = "read-write:billing"
+	UserEventPayload80AfterPermissionsReadWriteBlob                         UserEventPayload80AfterPermissions = "read-write:blob"
+	UserEventPayload80AfterPermissionsReadWriteConnect                      UserEventPayload80AfterPermissions = "read-write:connect"
+	UserEventPayload80AfterPermissionsReadWriteConnectAnyUserToken          UserEventPayload80AfterPermissions = "read-write:connect-any-user-token"
+	UserEventPayload80AfterPermissionsReadWriteConnectAppToken              UserEventPayload80AfterPermissions = "read-write:connect-app-token"
+	UserEventPayload80AfterPermissionsReadWriteDeployment                   UserEventPayload80AfterPermissions = "read-write:deployment"
+	UserEventPayload80AfterPermissionsReadWriteDomain                       UserEventPayload80AfterPermissions = "read-write:domain"
+	UserEventPayload80AfterPermissionsReadWriteDomainRegistrar              UserEventPayload80AfterPermissions = "read-write:domain-registrar"
+	UserEventPayload80AfterPermissionsReadWriteDrains                       UserEventPayload80AfterPermissions = "read-write:drains"
+	UserEventPayload80AfterPermissionsReadWriteDrive                        UserEventPayload80AfterPermissions = "read-write:drive"
+	UserEventPayload80AfterPermissionsReadWriteEdgeCache                    UserEventPayload80AfterPermissions = "read-write:edge-cache"
+	UserEventPayload80AfterPermissionsReadWriteEdgeConfig                   UserEventPayload80AfterPermissions = "read-write:edge-config"
+	UserEventPayload80AfterPermissionsReadWriteFirewall                     UserEventPayload80AfterPermissions = "read-write:firewall"
+	UserEventPayload80AfterPermissionsReadWriteIntegrationConfiguration     UserEventPayload80AfterPermissions = "read-write:integration-configuration"
+	UserEventPayload80AfterPermissionsReadWriteIntegrationResource          UserEventPayload80AfterPermissions = "read-write:integration-resource"
+	UserEventPayload80AfterPermissionsReadWriteKms                          UserEventPayload80AfterPermissions = "read-write:kms"
+	UserEventPayload80AfterPermissionsReadWriteMessageboard                 UserEventPayload80AfterPermissions = "read-write:messageboard"
+	UserEventPayload80AfterPermissionsReadWriteProject                      UserEventPayload80AfterPermissions = "read-write:project"
+	UserEventPayload80AfterPermissionsReadWriteProjectEnvVars               UserEventPayload80AfterPermissions = "read-write:project-env-vars"
+	UserEventPayload80AfterPermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload80AfterPermissions = "read-write:project-env-vars-non-production"
+	UserEventPayload80AfterPermissionsReadWriteProjectEnvVarsProduction     UserEventPayload80AfterPermissions = "read-write:project-env-vars-production"
+	UserEventPayload80AfterPermissionsReadWriteProjectFlagsNonProduction    UserEventPayload80AfterPermissions = "read-write:project-flags-non-production"
+	UserEventPayload80AfterPermissionsReadWriteProjectFlagsProduction       UserEventPayload80AfterPermissions = "read-write:project-flags-production"
+	UserEventPayload80AfterPermissionsReadWriteProjectMembers               UserEventPayload80AfterPermissions = "read-write:project-members"
+	UserEventPayload80AfterPermissionsReadWriteProjectProtectionBypass      UserEventPayload80AfterPermissions = "read-write:project-protection-bypass"
+	UserEventPayload80AfterPermissionsReadWriteProjectTrustedSources        UserEventPayload80AfterPermissions = "read-write:project-trusted-sources"
+	UserEventPayload80AfterPermissionsReadWriteRemoteCache                  UserEventPayload80AfterPermissions = "read-write:remote-cache"
+	UserEventPayload80AfterPermissionsReadWriteSandbox                      UserEventPayload80AfterPermissions = "read-write:sandbox"
+	UserEventPayload80AfterPermissionsReadWriteSchedule                     UserEventPayload80AfterPermissions = "read-write:schedule"
+	UserEventPayload80AfterPermissionsReadWriteTeamMembers                  UserEventPayload80AfterPermissions = "read-write:team-members"
+	UserEventPayload80AfterPermissionsReadWriteVcr                          UserEventPayload80AfterPermissions = "read-write:vcr"
+	UserEventPayload80AfterPermissionsReadWriteVercelCi                     UserEventPayload80AfterPermissions = "read-write:vercel-ci"
+	UserEventPayload80AfterPermissionsReadWriteWebhooks                     UserEventPayload80AfterPermissions = "read-write:webhooks"
+	UserEventPayload80AfterPermissionsUseAiGateway                          UserEventPayload80AfterPermissions = "use:ai-gateway"
+	UserEventPayload80AfterPermissionsUsePrivateNpm                         UserEventPayload80AfterPermissions = "use:private-npm"
+	UserEventPayload80AfterPermissionsUseProjectFlagsOverridesNonProduction UserEventPayload80AfterPermissions = "use:project-flags-overrides-non-production"
+	UserEventPayload80AfterPermissionsUseProjectFlagsOverridesProduction    UserEventPayload80AfterPermissions = "use:project-flags-overrides-production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79AfterResourcesProjectIdsRequired enum.
-func (e UserEventPayload79AfterResourcesProjectIdsRequired) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80AfterPermissions enum.
+func (e UserEventPayload80AfterPermissions) Valid() bool {
 	switch e {
-	case UserEventPayload79AfterResourcesProjectIdsRequiredTrue:
+	case UserEventPayload80AfterPermissionsManageSpeedInsights:
+		return true
+	case UserEventPayload80AfterPermissionsManageWebAnalytics:
+		return true
+	case UserEventPayload80AfterPermissionsReadAccessGroup:
+		return true
+	case UserEventPayload80AfterPermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload80AfterPermissionsReadAiGatewayByokCredentials:
+		return true
+	case UserEventPayload80AfterPermissionsReadAiGatewayGuardrails:
+		return true
+	case UserEventPayload80AfterPermissionsReadAiGatewayPrivateModels:
+		return true
+	case UserEventPayload80AfterPermissionsReadAiGatewayRules:
+		return true
+	case UserEventPayload80AfterPermissionsReadAiGatewayVirtualModelConfigs:
+		return true
+	case UserEventPayload80AfterPermissionsReadAlerts:
+		return true
+	case UserEventPayload80AfterPermissionsReadAuditLog:
+		return true
+	case UserEventPayload80AfterPermissionsReadAutomations:
+		return true
+	case UserEventPayload80AfterPermissionsReadBilling:
+		return true
+	case UserEventPayload80AfterPermissionsReadConnect:
+		return true
+	case UserEventPayload80AfterPermissionsReadDeployment:
+		return true
+	case UserEventPayload80AfterPermissionsReadDeploymentCheck:
+		return true
+	case UserEventPayload80AfterPermissionsReadDomain:
+		return true
+	case UserEventPayload80AfterPermissionsReadDrive:
+		return true
+	case UserEventPayload80AfterPermissionsReadEvent:
+		return true
+	case UserEventPayload80AfterPermissionsReadFirewall:
+		return true
+	case UserEventPayload80AfterPermissionsReadIntegrationConfiguration:
+		return true
+	case UserEventPayload80AfterPermissionsReadIntegrationResource:
+		return true
+	case UserEventPayload80AfterPermissionsReadKms:
+		return true
+	case UserEventPayload80AfterPermissionsReadMessageboard:
+		return true
+	case UserEventPayload80AfterPermissionsReadMonitoring:
+		return true
+	case UserEventPayload80AfterPermissionsReadProject:
+		return true
+	case UserEventPayload80AfterPermissionsReadProjectEnvVarsNonProduction:
+		return true
+	case UserEventPayload80AfterPermissionsReadProjectEnvVarsProduction:
+		return true
+	case UserEventPayload80AfterPermissionsReadProjectFlags:
+		return true
+	case UserEventPayload80AfterPermissionsReadProjectMembers:
+		return true
+	case UserEventPayload80AfterPermissionsReadProjectTrustedSources:
+		return true
+	case UserEventPayload80AfterPermissionsReadRemoteCache:
+		return true
+	case UserEventPayload80AfterPermissionsReadSandbox:
+		return true
+	case UserEventPayload80AfterPermissionsReadSchedule:
+		return true
+	case UserEventPayload80AfterPermissionsReadSpeedInsights:
+		return true
+	case UserEventPayload80AfterPermissionsReadTeam:
+		return true
+	case UserEventPayload80AfterPermissionsReadVcr:
+		return true
+	case UserEventPayload80AfterPermissionsReadWebAnalytics:
+		return true
+	case UserEventPayload80AfterPermissionsReadWebhooks:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAccessGroup:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayApiKey:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayByokCredentials:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayGuardrails:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayPrivateModels:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayRules:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAiGatewayVirtualModelConfigs:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAlerts:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteAutomations:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteBilling:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteBlob:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteConnect:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteConnectAnyUserToken:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteConnectAppToken:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteDeployment:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteDomain:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteDomainRegistrar:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteDrains:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteDrive:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteEdgeCache:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteEdgeConfig:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteFirewall:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteIntegrationConfiguration:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteIntegrationResource:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteKms:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteMessageboard:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProject:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectEnvVars:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectEnvVarsNonProduction:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectEnvVarsProduction:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectFlagsNonProduction:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectFlagsProduction:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectMembers:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectProtectionBypass:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteProjectTrustedSources:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteRemoteCache:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteSandbox:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteSchedule:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteTeamMembers:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteVcr:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteVercelCi:
+		return true
+	case UserEventPayload80AfterPermissionsReadWriteWebhooks:
+		return true
+	case UserEventPayload80AfterPermissionsUseAiGateway:
+		return true
+	case UserEventPayload80AfterPermissionsUsePrivateNpm:
+		return true
+	case UserEventPayload80AfterPermissionsUseProjectFlagsOverridesNonProduction:
+		return true
+	case UserEventPayload80AfterPermissionsUseProjectFlagsOverridesProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79AfterResourcesProjectIdsType.
+// Defines values for UserEventPayload80AfterResourcesProjectIdsItemsType.
 const (
-	UserEventPayload79AfterResourcesProjectIdsTypeList UserEventPayload79AfterResourcesProjectIdsType = "list"
+	UserEventPayload80AfterResourcesProjectIdsItemsTypeString UserEventPayload80AfterResourcesProjectIdsItemsType = "string"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79AfterResourcesProjectIdsType enum.
-func (e UserEventPayload79AfterResourcesProjectIdsType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80AfterResourcesProjectIdsItemsType enum.
+func (e UserEventPayload80AfterResourcesProjectIdsItemsType) Valid() bool {
 	switch e {
-	case UserEventPayload79AfterResourcesProjectIdsTypeList:
+	case UserEventPayload80AfterResourcesProjectIdsItemsTypeString:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79BeforePermissions.
+// Defines values for UserEventPayload80AfterResourcesProjectIdsRequired.
 const (
-	UserEventPayload79BeforePermissionsManageSpeedInsights                   UserEventPayload79BeforePermissions = "manage:speed-insights"
-	UserEventPayload79BeforePermissionsManageWebAnalytics                    UserEventPayload79BeforePermissions = "manage:web-analytics"
-	UserEventPayload79BeforePermissionsReadAccessGroup                       UserEventPayload79BeforePermissions = "read:access-group"
-	UserEventPayload79BeforePermissionsReadAiGatewayBudgets                  UserEventPayload79BeforePermissions = "read:ai-gateway-budgets"
-	UserEventPayload79BeforePermissionsReadAiGatewayByokCredentials          UserEventPayload79BeforePermissions = "read:ai-gateway-byok-credentials"
-	UserEventPayload79BeforePermissionsReadAiGatewayGuardrails               UserEventPayload79BeforePermissions = "read:ai-gateway-guardrails"
-	UserEventPayload79BeforePermissionsReadAiGatewayPrivateModels            UserEventPayload79BeforePermissions = "read:ai-gateway-private-models"
-	UserEventPayload79BeforePermissionsReadAiGatewayRules                    UserEventPayload79BeforePermissions = "read:ai-gateway-rules"
-	UserEventPayload79BeforePermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload79BeforePermissions = "read:ai-gateway-virtual-model-configs"
-	UserEventPayload79BeforePermissionsReadAlerts                            UserEventPayload79BeforePermissions = "read:alerts"
-	UserEventPayload79BeforePermissionsReadAuditLog                          UserEventPayload79BeforePermissions = "read:audit-log"
-	UserEventPayload79BeforePermissionsReadAutomations                       UserEventPayload79BeforePermissions = "read:automations"
-	UserEventPayload79BeforePermissionsReadBilling                           UserEventPayload79BeforePermissions = "read:billing"
-	UserEventPayload79BeforePermissionsReadConnect                           UserEventPayload79BeforePermissions = "read:connect"
-	UserEventPayload79BeforePermissionsReadDeployment                        UserEventPayload79BeforePermissions = "read:deployment"
-	UserEventPayload79BeforePermissionsReadDeploymentCheck                   UserEventPayload79BeforePermissions = "read:deployment-check"
-	UserEventPayload79BeforePermissionsReadDomain                            UserEventPayload79BeforePermissions = "read:domain"
-	UserEventPayload79BeforePermissionsReadDrive                             UserEventPayload79BeforePermissions = "read:drive"
-	UserEventPayload79BeforePermissionsReadEvent                             UserEventPayload79BeforePermissions = "read:event"
-	UserEventPayload79BeforePermissionsReadFirewall                          UserEventPayload79BeforePermissions = "read:firewall"
-	UserEventPayload79BeforePermissionsReadIntegrationConfiguration          UserEventPayload79BeforePermissions = "read:integration-configuration"
-	UserEventPayload79BeforePermissionsReadIntegrationResource               UserEventPayload79BeforePermissions = "read:integration-resource"
-	UserEventPayload79BeforePermissionsReadKms                               UserEventPayload79BeforePermissions = "read:kms"
-	UserEventPayload79BeforePermissionsReadMessageboard                      UserEventPayload79BeforePermissions = "read:messageboard"
-	UserEventPayload79BeforePermissionsReadMonitoring                        UserEventPayload79BeforePermissions = "read:monitoring"
-	UserEventPayload79BeforePermissionsReadProject                           UserEventPayload79BeforePermissions = "read:project"
-	UserEventPayload79BeforePermissionsReadProjectEnvVarsNonProduction       UserEventPayload79BeforePermissions = "read:project-env-vars-non-production"
-	UserEventPayload79BeforePermissionsReadProjectEnvVarsProduction          UserEventPayload79BeforePermissions = "read:project-env-vars-production"
-	UserEventPayload79BeforePermissionsReadProjectFlags                      UserEventPayload79BeforePermissions = "read:project-flags"
-	UserEventPayload79BeforePermissionsReadProjectMembers                    UserEventPayload79BeforePermissions = "read:project-members"
-	UserEventPayload79BeforePermissionsReadProjectTrustedSources             UserEventPayload79BeforePermissions = "read:project-trusted-sources"
-	UserEventPayload79BeforePermissionsReadRemoteCache                       UserEventPayload79BeforePermissions = "read:remote-cache"
-	UserEventPayload79BeforePermissionsReadSandbox                           UserEventPayload79BeforePermissions = "read:sandbox"
-	UserEventPayload79BeforePermissionsReadSchedule                          UserEventPayload79BeforePermissions = "read:schedule"
-	UserEventPayload79BeforePermissionsReadSpeedInsights                     UserEventPayload79BeforePermissions = "read:speed-insights"
-	UserEventPayload79BeforePermissionsReadTeam                              UserEventPayload79BeforePermissions = "read:team"
-	UserEventPayload79BeforePermissionsReadVcr                               UserEventPayload79BeforePermissions = "read:vcr"
-	UserEventPayload79BeforePermissionsReadWebAnalytics                      UserEventPayload79BeforePermissions = "read:web-analytics"
-	UserEventPayload79BeforePermissionsReadWebhooks                          UserEventPayload79BeforePermissions = "read:webhooks"
-	UserEventPayload79BeforePermissionsReadWriteAccessGroup                  UserEventPayload79BeforePermissions = "read-write:access-group"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayApiKey              UserEventPayload79BeforePermissions = "read-write:ai-gateway-api-key"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayBudgets             UserEventPayload79BeforePermissions = "read-write:ai-gateway-budgets"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayByokCredentials     UserEventPayload79BeforePermissions = "read-write:ai-gateway-byok-credentials"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayGuardrails          UserEventPayload79BeforePermissions = "read-write:ai-gateway-guardrails"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayPrivateModels       UserEventPayload79BeforePermissions = "read-write:ai-gateway-private-models"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayRules               UserEventPayload79BeforePermissions = "read-write:ai-gateway-rules"
-	UserEventPayload79BeforePermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload79BeforePermissions = "read-write:ai-gateway-virtual-model-configs"
-	UserEventPayload79BeforePermissionsReadWriteAlerts                       UserEventPayload79BeforePermissions = "read-write:alerts"
-	UserEventPayload79BeforePermissionsReadWriteAutomations                  UserEventPayload79BeforePermissions = "read-write:automations"
-	UserEventPayload79BeforePermissionsReadWriteBilling                      UserEventPayload79BeforePermissions = "read-write:billing"
-	UserEventPayload79BeforePermissionsReadWriteBlob                         UserEventPayload79BeforePermissions = "read-write:blob"
-	UserEventPayload79BeforePermissionsReadWriteConnect                      UserEventPayload79BeforePermissions = "read-write:connect"
-	UserEventPayload79BeforePermissionsReadWriteConnectAnyUserToken          UserEventPayload79BeforePermissions = "read-write:connect-any-user-token"
-	UserEventPayload79BeforePermissionsReadWriteConnectAppToken              UserEventPayload79BeforePermissions = "read-write:connect-app-token"
-	UserEventPayload79BeforePermissionsReadWriteDeployment                   UserEventPayload79BeforePermissions = "read-write:deployment"
-	UserEventPayload79BeforePermissionsReadWriteDomain                       UserEventPayload79BeforePermissions = "read-write:domain"
-	UserEventPayload79BeforePermissionsReadWriteDomainRegistrar              UserEventPayload79BeforePermissions = "read-write:domain-registrar"
-	UserEventPayload79BeforePermissionsReadWriteDrains                       UserEventPayload79BeforePermissions = "read-write:drains"
-	UserEventPayload79BeforePermissionsReadWriteDrive                        UserEventPayload79BeforePermissions = "read-write:drive"
-	UserEventPayload79BeforePermissionsReadWriteEdgeCache                    UserEventPayload79BeforePermissions = "read-write:edge-cache"
-	UserEventPayload79BeforePermissionsReadWriteEdgeConfig                   UserEventPayload79BeforePermissions = "read-write:edge-config"
-	UserEventPayload79BeforePermissionsReadWriteFirewall                     UserEventPayload79BeforePermissions = "read-write:firewall"
-	UserEventPayload79BeforePermissionsReadWriteIntegrationConfiguration     UserEventPayload79BeforePermissions = "read-write:integration-configuration"
-	UserEventPayload79BeforePermissionsReadWriteIntegrationResource          UserEventPayload79BeforePermissions = "read-write:integration-resource"
-	UserEventPayload79BeforePermissionsReadWriteKms                          UserEventPayload79BeforePermissions = "read-write:kms"
-	UserEventPayload79BeforePermissionsReadWriteMessageboard                 UserEventPayload79BeforePermissions = "read-write:messageboard"
-	UserEventPayload79BeforePermissionsReadWriteProject                      UserEventPayload79BeforePermissions = "read-write:project"
-	UserEventPayload79BeforePermissionsReadWriteProjectEnvVars               UserEventPayload79BeforePermissions = "read-write:project-env-vars"
-	UserEventPayload79BeforePermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload79BeforePermissions = "read-write:project-env-vars-non-production"
-	UserEventPayload79BeforePermissionsReadWriteProjectEnvVarsProduction     UserEventPayload79BeforePermissions = "read-write:project-env-vars-production"
-	UserEventPayload79BeforePermissionsReadWriteProjectFlagsNonProduction    UserEventPayload79BeforePermissions = "read-write:project-flags-non-production"
-	UserEventPayload79BeforePermissionsReadWriteProjectFlagsProduction       UserEventPayload79BeforePermissions = "read-write:project-flags-production"
-	UserEventPayload79BeforePermissionsReadWriteProjectMembers               UserEventPayload79BeforePermissions = "read-write:project-members"
-	UserEventPayload79BeforePermissionsReadWriteProjectProtectionBypass      UserEventPayload79BeforePermissions = "read-write:project-protection-bypass"
-	UserEventPayload79BeforePermissionsReadWriteProjectTrustedSources        UserEventPayload79BeforePermissions = "read-write:project-trusted-sources"
-	UserEventPayload79BeforePermissionsReadWriteRemoteCache                  UserEventPayload79BeforePermissions = "read-write:remote-cache"
-	UserEventPayload79BeforePermissionsReadWriteSandbox                      UserEventPayload79BeforePermissions = "read-write:sandbox"
-	UserEventPayload79BeforePermissionsReadWriteSchedule                     UserEventPayload79BeforePermissions = "read-write:schedule"
-	UserEventPayload79BeforePermissionsReadWriteTeamMembers                  UserEventPayload79BeforePermissions = "read-write:team-members"
-	UserEventPayload79BeforePermissionsReadWriteVcr                          UserEventPayload79BeforePermissions = "read-write:vcr"
-	UserEventPayload79BeforePermissionsReadWriteVercelCi                     UserEventPayload79BeforePermissions = "read-write:vercel-ci"
-	UserEventPayload79BeforePermissionsReadWriteWebhooks                     UserEventPayload79BeforePermissions = "read-write:webhooks"
-	UserEventPayload79BeforePermissionsUseAiGateway                          UserEventPayload79BeforePermissions = "use:ai-gateway"
-	UserEventPayload79BeforePermissionsUsePrivateNpm                         UserEventPayload79BeforePermissions = "use:private-npm"
-	UserEventPayload79BeforePermissionsUseProjectFlagsOverridesNonProduction UserEventPayload79BeforePermissions = "use:project-flags-overrides-non-production"
-	UserEventPayload79BeforePermissionsUseProjectFlagsOverridesProduction    UserEventPayload79BeforePermissions = "use:project-flags-overrides-production"
+	UserEventPayload80AfterResourcesProjectIdsRequiredTrue UserEventPayload80AfterResourcesProjectIdsRequired = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79BeforePermissions enum.
-func (e UserEventPayload79BeforePermissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80AfterResourcesProjectIdsRequired enum.
+func (e UserEventPayload80AfterResourcesProjectIdsRequired) Valid() bool {
 	switch e {
-	case UserEventPayload79BeforePermissionsManageSpeedInsights:
-		return true
-	case UserEventPayload79BeforePermissionsManageWebAnalytics:
-		return true
-	case UserEventPayload79BeforePermissionsReadAccessGroup:
-		return true
-	case UserEventPayload79BeforePermissionsReadAiGatewayBudgets:
-		return true
-	case UserEventPayload79BeforePermissionsReadAiGatewayByokCredentials:
-		return true
-	case UserEventPayload79BeforePermissionsReadAiGatewayGuardrails:
-		return true
-	case UserEventPayload79BeforePermissionsReadAiGatewayPrivateModels:
-		return true
-	case UserEventPayload79BeforePermissionsReadAiGatewayRules:
-		return true
-	case UserEventPayload79BeforePermissionsReadAiGatewayVirtualModelConfigs:
-		return true
-	case UserEventPayload79BeforePermissionsReadAlerts:
-		return true
-	case UserEventPayload79BeforePermissionsReadAuditLog:
-		return true
-	case UserEventPayload79BeforePermissionsReadAutomations:
-		return true
-	case UserEventPayload79BeforePermissionsReadBilling:
-		return true
-	case UserEventPayload79BeforePermissionsReadConnect:
-		return true
-	case UserEventPayload79BeforePermissionsReadDeployment:
-		return true
-	case UserEventPayload79BeforePermissionsReadDeploymentCheck:
-		return true
-	case UserEventPayload79BeforePermissionsReadDomain:
-		return true
-	case UserEventPayload79BeforePermissionsReadDrive:
-		return true
-	case UserEventPayload79BeforePermissionsReadEvent:
-		return true
-	case UserEventPayload79BeforePermissionsReadFirewall:
-		return true
-	case UserEventPayload79BeforePermissionsReadIntegrationConfiguration:
-		return true
-	case UserEventPayload79BeforePermissionsReadIntegrationResource:
-		return true
-	case UserEventPayload79BeforePermissionsReadKms:
-		return true
-	case UserEventPayload79BeforePermissionsReadMessageboard:
-		return true
-	case UserEventPayload79BeforePermissionsReadMonitoring:
-		return true
-	case UserEventPayload79BeforePermissionsReadProject:
-		return true
-	case UserEventPayload79BeforePermissionsReadProjectEnvVarsNonProduction:
-		return true
-	case UserEventPayload79BeforePermissionsReadProjectEnvVarsProduction:
-		return true
-	case UserEventPayload79BeforePermissionsReadProjectFlags:
-		return true
-	case UserEventPayload79BeforePermissionsReadProjectMembers:
-		return true
-	case UserEventPayload79BeforePermissionsReadProjectTrustedSources:
-		return true
-	case UserEventPayload79BeforePermissionsReadRemoteCache:
-		return true
-	case UserEventPayload79BeforePermissionsReadSandbox:
-		return true
-	case UserEventPayload79BeforePermissionsReadSchedule:
-		return true
-	case UserEventPayload79BeforePermissionsReadSpeedInsights:
-		return true
-	case UserEventPayload79BeforePermissionsReadTeam:
-		return true
-	case UserEventPayload79BeforePermissionsReadVcr:
-		return true
-	case UserEventPayload79BeforePermissionsReadWebAnalytics:
-		return true
-	case UserEventPayload79BeforePermissionsReadWebhooks:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAccessGroup:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayApiKey:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayBudgets:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayByokCredentials:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayGuardrails:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayPrivateModels:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayRules:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAiGatewayVirtualModelConfigs:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAlerts:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteAutomations:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteBilling:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteBlob:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteConnect:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteConnectAnyUserToken:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteConnectAppToken:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteDeployment:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteDomain:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteDomainRegistrar:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteDrains:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteDrive:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteEdgeCache:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteEdgeConfig:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteFirewall:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteIntegrationConfiguration:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteIntegrationResource:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteKms:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteMessageboard:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProject:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectEnvVars:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectEnvVarsNonProduction:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectEnvVarsProduction:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectFlagsNonProduction:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectFlagsProduction:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectMembers:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectProtectionBypass:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteProjectTrustedSources:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteRemoteCache:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteSandbox:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteSchedule:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteTeamMembers:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteVcr:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteVercelCi:
-		return true
-	case UserEventPayload79BeforePermissionsReadWriteWebhooks:
-		return true
-	case UserEventPayload79BeforePermissionsUseAiGateway:
-		return true
-	case UserEventPayload79BeforePermissionsUsePrivateNpm:
-		return true
-	case UserEventPayload79BeforePermissionsUseProjectFlagsOverridesNonProduction:
-		return true
-	case UserEventPayload79BeforePermissionsUseProjectFlagsOverridesProduction:
+	case UserEventPayload80AfterResourcesProjectIdsRequiredTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79BeforeResourcesProjectIdsItemsType.
+// Defines values for UserEventPayload80AfterResourcesProjectIdsType.
 const (
-	UserEventPayload79BeforeResourcesProjectIdsItemsTypeString UserEventPayload79BeforeResourcesProjectIdsItemsType = "string"
+	UserEventPayload80AfterResourcesProjectIdsTypeList UserEventPayload80AfterResourcesProjectIdsType = "list"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79BeforeResourcesProjectIdsItemsType enum.
-func (e UserEventPayload79BeforeResourcesProjectIdsItemsType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80AfterResourcesProjectIdsType enum.
+func (e UserEventPayload80AfterResourcesProjectIdsType) Valid() bool {
 	switch e {
-	case UserEventPayload79BeforeResourcesProjectIdsItemsTypeString:
+	case UserEventPayload80AfterResourcesProjectIdsTypeList:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79BeforeResourcesProjectIdsRequired.
+// Defines values for UserEventPayload80BeforePermissions.
 const (
-	UserEventPayload79BeforeResourcesProjectIdsRequiredTrue UserEventPayload79BeforeResourcesProjectIdsRequired = true
+	UserEventPayload80BeforePermissionsManageSpeedInsights                   UserEventPayload80BeforePermissions = "manage:speed-insights"
+	UserEventPayload80BeforePermissionsManageWebAnalytics                    UserEventPayload80BeforePermissions = "manage:web-analytics"
+	UserEventPayload80BeforePermissionsReadAccessGroup                       UserEventPayload80BeforePermissions = "read:access-group"
+	UserEventPayload80BeforePermissionsReadAiGatewayBudgets                  UserEventPayload80BeforePermissions = "read:ai-gateway-budgets"
+	UserEventPayload80BeforePermissionsReadAiGatewayByokCredentials          UserEventPayload80BeforePermissions = "read:ai-gateway-byok-credentials"
+	UserEventPayload80BeforePermissionsReadAiGatewayGuardrails               UserEventPayload80BeforePermissions = "read:ai-gateway-guardrails"
+	UserEventPayload80BeforePermissionsReadAiGatewayPrivateModels            UserEventPayload80BeforePermissions = "read:ai-gateway-private-models"
+	UserEventPayload80BeforePermissionsReadAiGatewayRules                    UserEventPayload80BeforePermissions = "read:ai-gateway-rules"
+	UserEventPayload80BeforePermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload80BeforePermissions = "read:ai-gateway-virtual-model-configs"
+	UserEventPayload80BeforePermissionsReadAlerts                            UserEventPayload80BeforePermissions = "read:alerts"
+	UserEventPayload80BeforePermissionsReadAuditLog                          UserEventPayload80BeforePermissions = "read:audit-log"
+	UserEventPayload80BeforePermissionsReadAutomations                       UserEventPayload80BeforePermissions = "read:automations"
+	UserEventPayload80BeforePermissionsReadBilling                           UserEventPayload80BeforePermissions = "read:billing"
+	UserEventPayload80BeforePermissionsReadConnect                           UserEventPayload80BeforePermissions = "read:connect"
+	UserEventPayload80BeforePermissionsReadDeployment                        UserEventPayload80BeforePermissions = "read:deployment"
+	UserEventPayload80BeforePermissionsReadDeploymentCheck                   UserEventPayload80BeforePermissions = "read:deployment-check"
+	UserEventPayload80BeforePermissionsReadDomain                            UserEventPayload80BeforePermissions = "read:domain"
+	UserEventPayload80BeforePermissionsReadDrive                             UserEventPayload80BeforePermissions = "read:drive"
+	UserEventPayload80BeforePermissionsReadEvent                             UserEventPayload80BeforePermissions = "read:event"
+	UserEventPayload80BeforePermissionsReadFirewall                          UserEventPayload80BeforePermissions = "read:firewall"
+	UserEventPayload80BeforePermissionsReadIntegrationConfiguration          UserEventPayload80BeforePermissions = "read:integration-configuration"
+	UserEventPayload80BeforePermissionsReadIntegrationResource               UserEventPayload80BeforePermissions = "read:integration-resource"
+	UserEventPayload80BeforePermissionsReadKms                               UserEventPayload80BeforePermissions = "read:kms"
+	UserEventPayload80BeforePermissionsReadMessageboard                      UserEventPayload80BeforePermissions = "read:messageboard"
+	UserEventPayload80BeforePermissionsReadMonitoring                        UserEventPayload80BeforePermissions = "read:monitoring"
+	UserEventPayload80BeforePermissionsReadProject                           UserEventPayload80BeforePermissions = "read:project"
+	UserEventPayload80BeforePermissionsReadProjectEnvVarsNonProduction       UserEventPayload80BeforePermissions = "read:project-env-vars-non-production"
+	UserEventPayload80BeforePermissionsReadProjectEnvVarsProduction          UserEventPayload80BeforePermissions = "read:project-env-vars-production"
+	UserEventPayload80BeforePermissionsReadProjectFlags                      UserEventPayload80BeforePermissions = "read:project-flags"
+	UserEventPayload80BeforePermissionsReadProjectMembers                    UserEventPayload80BeforePermissions = "read:project-members"
+	UserEventPayload80BeforePermissionsReadProjectTrustedSources             UserEventPayload80BeforePermissions = "read:project-trusted-sources"
+	UserEventPayload80BeforePermissionsReadRemoteCache                       UserEventPayload80BeforePermissions = "read:remote-cache"
+	UserEventPayload80BeforePermissionsReadSandbox                           UserEventPayload80BeforePermissions = "read:sandbox"
+	UserEventPayload80BeforePermissionsReadSchedule                          UserEventPayload80BeforePermissions = "read:schedule"
+	UserEventPayload80BeforePermissionsReadSpeedInsights                     UserEventPayload80BeforePermissions = "read:speed-insights"
+	UserEventPayload80BeforePermissionsReadTeam                              UserEventPayload80BeforePermissions = "read:team"
+	UserEventPayload80BeforePermissionsReadVcr                               UserEventPayload80BeforePermissions = "read:vcr"
+	UserEventPayload80BeforePermissionsReadWebAnalytics                      UserEventPayload80BeforePermissions = "read:web-analytics"
+	UserEventPayload80BeforePermissionsReadWebhooks                          UserEventPayload80BeforePermissions = "read:webhooks"
+	UserEventPayload80BeforePermissionsReadWriteAccessGroup                  UserEventPayload80BeforePermissions = "read-write:access-group"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayApiKey              UserEventPayload80BeforePermissions = "read-write:ai-gateway-api-key"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayBudgets             UserEventPayload80BeforePermissions = "read-write:ai-gateway-budgets"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayByokCredentials     UserEventPayload80BeforePermissions = "read-write:ai-gateway-byok-credentials"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayGuardrails          UserEventPayload80BeforePermissions = "read-write:ai-gateway-guardrails"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayPrivateModels       UserEventPayload80BeforePermissions = "read-write:ai-gateway-private-models"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayRules               UserEventPayload80BeforePermissions = "read-write:ai-gateway-rules"
+	UserEventPayload80BeforePermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload80BeforePermissions = "read-write:ai-gateway-virtual-model-configs"
+	UserEventPayload80BeforePermissionsReadWriteAlerts                       UserEventPayload80BeforePermissions = "read-write:alerts"
+	UserEventPayload80BeforePermissionsReadWriteAutomations                  UserEventPayload80BeforePermissions = "read-write:automations"
+	UserEventPayload80BeforePermissionsReadWriteBilling                      UserEventPayload80BeforePermissions = "read-write:billing"
+	UserEventPayload80BeforePermissionsReadWriteBlob                         UserEventPayload80BeforePermissions = "read-write:blob"
+	UserEventPayload80BeforePermissionsReadWriteConnect                      UserEventPayload80BeforePermissions = "read-write:connect"
+	UserEventPayload80BeforePermissionsReadWriteConnectAnyUserToken          UserEventPayload80BeforePermissions = "read-write:connect-any-user-token"
+	UserEventPayload80BeforePermissionsReadWriteConnectAppToken              UserEventPayload80BeforePermissions = "read-write:connect-app-token"
+	UserEventPayload80BeforePermissionsReadWriteDeployment                   UserEventPayload80BeforePermissions = "read-write:deployment"
+	UserEventPayload80BeforePermissionsReadWriteDomain                       UserEventPayload80BeforePermissions = "read-write:domain"
+	UserEventPayload80BeforePermissionsReadWriteDomainRegistrar              UserEventPayload80BeforePermissions = "read-write:domain-registrar"
+	UserEventPayload80BeforePermissionsReadWriteDrains                       UserEventPayload80BeforePermissions = "read-write:drains"
+	UserEventPayload80BeforePermissionsReadWriteDrive                        UserEventPayload80BeforePermissions = "read-write:drive"
+	UserEventPayload80BeforePermissionsReadWriteEdgeCache                    UserEventPayload80BeforePermissions = "read-write:edge-cache"
+	UserEventPayload80BeforePermissionsReadWriteEdgeConfig                   UserEventPayload80BeforePermissions = "read-write:edge-config"
+	UserEventPayload80BeforePermissionsReadWriteFirewall                     UserEventPayload80BeforePermissions = "read-write:firewall"
+	UserEventPayload80BeforePermissionsReadWriteIntegrationConfiguration     UserEventPayload80BeforePermissions = "read-write:integration-configuration"
+	UserEventPayload80BeforePermissionsReadWriteIntegrationResource          UserEventPayload80BeforePermissions = "read-write:integration-resource"
+	UserEventPayload80BeforePermissionsReadWriteKms                          UserEventPayload80BeforePermissions = "read-write:kms"
+	UserEventPayload80BeforePermissionsReadWriteMessageboard                 UserEventPayload80BeforePermissions = "read-write:messageboard"
+	UserEventPayload80BeforePermissionsReadWriteProject                      UserEventPayload80BeforePermissions = "read-write:project"
+	UserEventPayload80BeforePermissionsReadWriteProjectEnvVars               UserEventPayload80BeforePermissions = "read-write:project-env-vars"
+	UserEventPayload80BeforePermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload80BeforePermissions = "read-write:project-env-vars-non-production"
+	UserEventPayload80BeforePermissionsReadWriteProjectEnvVarsProduction     UserEventPayload80BeforePermissions = "read-write:project-env-vars-production"
+	UserEventPayload80BeforePermissionsReadWriteProjectFlagsNonProduction    UserEventPayload80BeforePermissions = "read-write:project-flags-non-production"
+	UserEventPayload80BeforePermissionsReadWriteProjectFlagsProduction       UserEventPayload80BeforePermissions = "read-write:project-flags-production"
+	UserEventPayload80BeforePermissionsReadWriteProjectMembers               UserEventPayload80BeforePermissions = "read-write:project-members"
+	UserEventPayload80BeforePermissionsReadWriteProjectProtectionBypass      UserEventPayload80BeforePermissions = "read-write:project-protection-bypass"
+	UserEventPayload80BeforePermissionsReadWriteProjectTrustedSources        UserEventPayload80BeforePermissions = "read-write:project-trusted-sources"
+	UserEventPayload80BeforePermissionsReadWriteRemoteCache                  UserEventPayload80BeforePermissions = "read-write:remote-cache"
+	UserEventPayload80BeforePermissionsReadWriteSandbox                      UserEventPayload80BeforePermissions = "read-write:sandbox"
+	UserEventPayload80BeforePermissionsReadWriteSchedule                     UserEventPayload80BeforePermissions = "read-write:schedule"
+	UserEventPayload80BeforePermissionsReadWriteTeamMembers                  UserEventPayload80BeforePermissions = "read-write:team-members"
+	UserEventPayload80BeforePermissionsReadWriteVcr                          UserEventPayload80BeforePermissions = "read-write:vcr"
+	UserEventPayload80BeforePermissionsReadWriteVercelCi                     UserEventPayload80BeforePermissions = "read-write:vercel-ci"
+	UserEventPayload80BeforePermissionsReadWriteWebhooks                     UserEventPayload80BeforePermissions = "read-write:webhooks"
+	UserEventPayload80BeforePermissionsUseAiGateway                          UserEventPayload80BeforePermissions = "use:ai-gateway"
+	UserEventPayload80BeforePermissionsUsePrivateNpm                         UserEventPayload80BeforePermissions = "use:private-npm"
+	UserEventPayload80BeforePermissionsUseProjectFlagsOverridesNonProduction UserEventPayload80BeforePermissions = "use:project-flags-overrides-non-production"
+	UserEventPayload80BeforePermissionsUseProjectFlagsOverridesProduction    UserEventPayload80BeforePermissions = "use:project-flags-overrides-production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79BeforeResourcesProjectIdsRequired enum.
-func (e UserEventPayload79BeforeResourcesProjectIdsRequired) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80BeforePermissions enum.
+func (e UserEventPayload80BeforePermissions) Valid() bool {
 	switch e {
-	case UserEventPayload79BeforeResourcesProjectIdsRequiredTrue:
+	case UserEventPayload80BeforePermissionsManageSpeedInsights:
+		return true
+	case UserEventPayload80BeforePermissionsManageWebAnalytics:
+		return true
+	case UserEventPayload80BeforePermissionsReadAccessGroup:
+		return true
+	case UserEventPayload80BeforePermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload80BeforePermissionsReadAiGatewayByokCredentials:
+		return true
+	case UserEventPayload80BeforePermissionsReadAiGatewayGuardrails:
+		return true
+	case UserEventPayload80BeforePermissionsReadAiGatewayPrivateModels:
+		return true
+	case UserEventPayload80BeforePermissionsReadAiGatewayRules:
+		return true
+	case UserEventPayload80BeforePermissionsReadAiGatewayVirtualModelConfigs:
+		return true
+	case UserEventPayload80BeforePermissionsReadAlerts:
+		return true
+	case UserEventPayload80BeforePermissionsReadAuditLog:
+		return true
+	case UserEventPayload80BeforePermissionsReadAutomations:
+		return true
+	case UserEventPayload80BeforePermissionsReadBilling:
+		return true
+	case UserEventPayload80BeforePermissionsReadConnect:
+		return true
+	case UserEventPayload80BeforePermissionsReadDeployment:
+		return true
+	case UserEventPayload80BeforePermissionsReadDeploymentCheck:
+		return true
+	case UserEventPayload80BeforePermissionsReadDomain:
+		return true
+	case UserEventPayload80BeforePermissionsReadDrive:
+		return true
+	case UserEventPayload80BeforePermissionsReadEvent:
+		return true
+	case UserEventPayload80BeforePermissionsReadFirewall:
+		return true
+	case UserEventPayload80BeforePermissionsReadIntegrationConfiguration:
+		return true
+	case UserEventPayload80BeforePermissionsReadIntegrationResource:
+		return true
+	case UserEventPayload80BeforePermissionsReadKms:
+		return true
+	case UserEventPayload80BeforePermissionsReadMessageboard:
+		return true
+	case UserEventPayload80BeforePermissionsReadMonitoring:
+		return true
+	case UserEventPayload80BeforePermissionsReadProject:
+		return true
+	case UserEventPayload80BeforePermissionsReadProjectEnvVarsNonProduction:
+		return true
+	case UserEventPayload80BeforePermissionsReadProjectEnvVarsProduction:
+		return true
+	case UserEventPayload80BeforePermissionsReadProjectFlags:
+		return true
+	case UserEventPayload80BeforePermissionsReadProjectMembers:
+		return true
+	case UserEventPayload80BeforePermissionsReadProjectTrustedSources:
+		return true
+	case UserEventPayload80BeforePermissionsReadRemoteCache:
+		return true
+	case UserEventPayload80BeforePermissionsReadSandbox:
+		return true
+	case UserEventPayload80BeforePermissionsReadSchedule:
+		return true
+	case UserEventPayload80BeforePermissionsReadSpeedInsights:
+		return true
+	case UserEventPayload80BeforePermissionsReadTeam:
+		return true
+	case UserEventPayload80BeforePermissionsReadVcr:
+		return true
+	case UserEventPayload80BeforePermissionsReadWebAnalytics:
+		return true
+	case UserEventPayload80BeforePermissionsReadWebhooks:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAccessGroup:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayApiKey:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayByokCredentials:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayGuardrails:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayPrivateModels:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayRules:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAiGatewayVirtualModelConfigs:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAlerts:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteAutomations:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteBilling:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteBlob:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteConnect:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteConnectAnyUserToken:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteConnectAppToken:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteDeployment:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteDomain:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteDomainRegistrar:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteDrains:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteDrive:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteEdgeCache:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteEdgeConfig:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteFirewall:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteIntegrationConfiguration:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteIntegrationResource:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteKms:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteMessageboard:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProject:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectEnvVars:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectEnvVarsNonProduction:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectEnvVarsProduction:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectFlagsNonProduction:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectFlagsProduction:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectMembers:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectProtectionBypass:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteProjectTrustedSources:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteRemoteCache:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteSandbox:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteSchedule:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteTeamMembers:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteVcr:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteVercelCi:
+		return true
+	case UserEventPayload80BeforePermissionsReadWriteWebhooks:
+		return true
+	case UserEventPayload80BeforePermissionsUseAiGateway:
+		return true
+	case UserEventPayload80BeforePermissionsUsePrivateNpm:
+		return true
+	case UserEventPayload80BeforePermissionsUseProjectFlagsOverridesNonProduction:
+		return true
+	case UserEventPayload80BeforePermissionsUseProjectFlagsOverridesProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload79BeforeResourcesProjectIdsType.
+// Defines values for UserEventPayload80BeforeResourcesProjectIdsItemsType.
 const (
-	UserEventPayload79BeforeResourcesProjectIdsTypeList UserEventPayload79BeforeResourcesProjectIdsType = "list"
+	UserEventPayload80BeforeResourcesProjectIdsItemsTypeString UserEventPayload80BeforeResourcesProjectIdsItemsType = "string"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload79BeforeResourcesProjectIdsType enum.
-func (e UserEventPayload79BeforeResourcesProjectIdsType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80BeforeResourcesProjectIdsItemsType enum.
+func (e UserEventPayload80BeforeResourcesProjectIdsItemsType) Valid() bool {
 	switch e {
-	case UserEventPayload79BeforeResourcesProjectIdsTypeList:
+	case UserEventPayload80BeforeResourcesProjectIdsItemsTypeString:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload80Permissions.
+// Defines values for UserEventPayload80BeforeResourcesProjectIdsRequired.
 const (
-	UserEventPayload80PermissionsManageSpeedInsights                   UserEventPayload80Permissions = "manage:speed-insights"
-	UserEventPayload80PermissionsManageWebAnalytics                    UserEventPayload80Permissions = "manage:web-analytics"
-	UserEventPayload80PermissionsReadAccessGroup                       UserEventPayload80Permissions = "read:access-group"
-	UserEventPayload80PermissionsReadAiGatewayBudgets                  UserEventPayload80Permissions = "read:ai-gateway-budgets"
-	UserEventPayload80PermissionsReadAiGatewayByokCredentials          UserEventPayload80Permissions = "read:ai-gateway-byok-credentials"
-	UserEventPayload80PermissionsReadAiGatewayGuardrails               UserEventPayload80Permissions = "read:ai-gateway-guardrails"
-	UserEventPayload80PermissionsReadAiGatewayPrivateModels            UserEventPayload80Permissions = "read:ai-gateway-private-models"
-	UserEventPayload80PermissionsReadAiGatewayRules                    UserEventPayload80Permissions = "read:ai-gateway-rules"
-	UserEventPayload80PermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload80Permissions = "read:ai-gateway-virtual-model-configs"
-	UserEventPayload80PermissionsReadAlerts                            UserEventPayload80Permissions = "read:alerts"
-	UserEventPayload80PermissionsReadAuditLog                          UserEventPayload80Permissions = "read:audit-log"
-	UserEventPayload80PermissionsReadAutomations                       UserEventPayload80Permissions = "read:automations"
-	UserEventPayload80PermissionsReadBilling                           UserEventPayload80Permissions = "read:billing"
-	UserEventPayload80PermissionsReadConnect                           UserEventPayload80Permissions = "read:connect"
-	UserEventPayload80PermissionsReadDeployment                        UserEventPayload80Permissions = "read:deployment"
-	UserEventPayload80PermissionsReadDeploymentCheck                   UserEventPayload80Permissions = "read:deployment-check"
-	UserEventPayload80PermissionsReadDomain                            UserEventPayload80Permissions = "read:domain"
-	UserEventPayload80PermissionsReadDrive                             UserEventPayload80Permissions = "read:drive"
-	UserEventPayload80PermissionsReadEvent                             UserEventPayload80Permissions = "read:event"
-	UserEventPayload80PermissionsReadFirewall                          UserEventPayload80Permissions = "read:firewall"
-	UserEventPayload80PermissionsReadIntegrationConfiguration          UserEventPayload80Permissions = "read:integration-configuration"
-	UserEventPayload80PermissionsReadIntegrationResource               UserEventPayload80Permissions = "read:integration-resource"
-	UserEventPayload80PermissionsReadKms                               UserEventPayload80Permissions = "read:kms"
-	UserEventPayload80PermissionsReadMessageboard                      UserEventPayload80Permissions = "read:messageboard"
-	UserEventPayload80PermissionsReadMonitoring                        UserEventPayload80Permissions = "read:monitoring"
-	UserEventPayload80PermissionsReadProject                           UserEventPayload80Permissions = "read:project"
-	UserEventPayload80PermissionsReadProjectEnvVarsNonProduction       UserEventPayload80Permissions = "read:project-env-vars-non-production"
-	UserEventPayload80PermissionsReadProjectEnvVarsProduction          UserEventPayload80Permissions = "read:project-env-vars-production"
-	UserEventPayload80PermissionsReadProjectFlags                      UserEventPayload80Permissions = "read:project-flags"
-	UserEventPayload80PermissionsReadProjectMembers                    UserEventPayload80Permissions = "read:project-members"
-	UserEventPayload80PermissionsReadProjectTrustedSources             UserEventPayload80Permissions = "read:project-trusted-sources"
-	UserEventPayload80PermissionsReadRemoteCache                       UserEventPayload80Permissions = "read:remote-cache"
-	UserEventPayload80PermissionsReadSandbox                           UserEventPayload80Permissions = "read:sandbox"
-	UserEventPayload80PermissionsReadSchedule                          UserEventPayload80Permissions = "read:schedule"
-	UserEventPayload80PermissionsReadSpeedInsights                     UserEventPayload80Permissions = "read:speed-insights"
-	UserEventPayload80PermissionsReadTeam                              UserEventPayload80Permissions = "read:team"
-	UserEventPayload80PermissionsReadVcr                               UserEventPayload80Permissions = "read:vcr"
-	UserEventPayload80PermissionsReadWebAnalytics                      UserEventPayload80Permissions = "read:web-analytics"
-	UserEventPayload80PermissionsReadWebhooks                          UserEventPayload80Permissions = "read:webhooks"
-	UserEventPayload80PermissionsReadWriteAccessGroup                  UserEventPayload80Permissions = "read-write:access-group"
-	UserEventPayload80PermissionsReadWriteAiGatewayApiKey              UserEventPayload80Permissions = "read-write:ai-gateway-api-key"
-	UserEventPayload80PermissionsReadWriteAiGatewayBudgets             UserEventPayload80Permissions = "read-write:ai-gateway-budgets"
-	UserEventPayload80PermissionsReadWriteAiGatewayByokCredentials     UserEventPayload80Permissions = "read-write:ai-gateway-byok-credentials"
-	UserEventPayload80PermissionsReadWriteAiGatewayGuardrails          UserEventPayload80Permissions = "read-write:ai-gateway-guardrails"
-	UserEventPayload80PermissionsReadWriteAiGatewayPrivateModels       UserEventPayload80Permissions = "read-write:ai-gateway-private-models"
-	UserEventPayload80PermissionsReadWriteAiGatewayRules               UserEventPayload80Permissions = "read-write:ai-gateway-rules"
-	UserEventPayload80PermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload80Permissions = "read-write:ai-gateway-virtual-model-configs"
-	UserEventPayload80PermissionsReadWriteAlerts                       UserEventPayload80Permissions = "read-write:alerts"
-	UserEventPayload80PermissionsReadWriteAutomations                  UserEventPayload80Permissions = "read-write:automations"
-	UserEventPayload80PermissionsReadWriteBilling                      UserEventPayload80Permissions = "read-write:billing"
-	UserEventPayload80PermissionsReadWriteBlob                         UserEventPayload80Permissions = "read-write:blob"
-	UserEventPayload80PermissionsReadWriteConnect                      UserEventPayload80Permissions = "read-write:connect"
-	UserEventPayload80PermissionsReadWriteConnectAnyUserToken          UserEventPayload80Permissions = "read-write:connect-any-user-token"
-	UserEventPayload80PermissionsReadWriteConnectAppToken              UserEventPayload80Permissions = "read-write:connect-app-token"
-	UserEventPayload80PermissionsReadWriteDeployment                   UserEventPayload80Permissions = "read-write:deployment"
-	UserEventPayload80PermissionsReadWriteDomain                       UserEventPayload80Permissions = "read-write:domain"
-	UserEventPayload80PermissionsReadWriteDomainRegistrar              UserEventPayload80Permissions = "read-write:domain-registrar"
-	UserEventPayload80PermissionsReadWriteDrains                       UserEventPayload80Permissions = "read-write:drains"
-	UserEventPayload80PermissionsReadWriteDrive                        UserEventPayload80Permissions = "read-write:drive"
-	UserEventPayload80PermissionsReadWriteEdgeCache                    UserEventPayload80Permissions = "read-write:edge-cache"
-	UserEventPayload80PermissionsReadWriteEdgeConfig                   UserEventPayload80Permissions = "read-write:edge-config"
-	UserEventPayload80PermissionsReadWriteFirewall                     UserEventPayload80Permissions = "read-write:firewall"
-	UserEventPayload80PermissionsReadWriteIntegrationConfiguration     UserEventPayload80Permissions = "read-write:integration-configuration"
-	UserEventPayload80PermissionsReadWriteIntegrationResource          UserEventPayload80Permissions = "read-write:integration-resource"
-	UserEventPayload80PermissionsReadWriteKms                          UserEventPayload80Permissions = "read-write:kms"
-	UserEventPayload80PermissionsReadWriteMessageboard                 UserEventPayload80Permissions = "read-write:messageboard"
-	UserEventPayload80PermissionsReadWriteProject                      UserEventPayload80Permissions = "read-write:project"
-	UserEventPayload80PermissionsReadWriteProjectEnvVars               UserEventPayload80Permissions = "read-write:project-env-vars"
-	UserEventPayload80PermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload80Permissions = "read-write:project-env-vars-non-production"
-	UserEventPayload80PermissionsReadWriteProjectEnvVarsProduction     UserEventPayload80Permissions = "read-write:project-env-vars-production"
-	UserEventPayload80PermissionsReadWriteProjectFlagsNonProduction    UserEventPayload80Permissions = "read-write:project-flags-non-production"
-	UserEventPayload80PermissionsReadWriteProjectFlagsProduction       UserEventPayload80Permissions = "read-write:project-flags-production"
-	UserEventPayload80PermissionsReadWriteProjectMembers               UserEventPayload80Permissions = "read-write:project-members"
-	UserEventPayload80PermissionsReadWriteProjectProtectionBypass      UserEventPayload80Permissions = "read-write:project-protection-bypass"
-	UserEventPayload80PermissionsReadWriteProjectTrustedSources        UserEventPayload80Permissions = "read-write:project-trusted-sources"
-	UserEventPayload80PermissionsReadWriteRemoteCache                  UserEventPayload80Permissions = "read-write:remote-cache"
-	UserEventPayload80PermissionsReadWriteSandbox                      UserEventPayload80Permissions = "read-write:sandbox"
-	UserEventPayload80PermissionsReadWriteSchedule                     UserEventPayload80Permissions = "read-write:schedule"
-	UserEventPayload80PermissionsReadWriteTeamMembers                  UserEventPayload80Permissions = "read-write:team-members"
-	UserEventPayload80PermissionsReadWriteVcr                          UserEventPayload80Permissions = "read-write:vcr"
-	UserEventPayload80PermissionsReadWriteVercelCi                     UserEventPayload80Permissions = "read-write:vercel-ci"
-	UserEventPayload80PermissionsReadWriteWebhooks                     UserEventPayload80Permissions = "read-write:webhooks"
-	UserEventPayload80PermissionsUseAiGateway                          UserEventPayload80Permissions = "use:ai-gateway"
-	UserEventPayload80PermissionsUsePrivateNpm                         UserEventPayload80Permissions = "use:private-npm"
-	UserEventPayload80PermissionsUseProjectFlagsOverridesNonProduction UserEventPayload80Permissions = "use:project-flags-overrides-non-production"
-	UserEventPayload80PermissionsUseProjectFlagsOverridesProduction    UserEventPayload80Permissions = "use:project-flags-overrides-production"
+	UserEventPayload80BeforeResourcesProjectIdsRequiredTrue UserEventPayload80BeforeResourcesProjectIdsRequired = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload80Permissions enum.
-func (e UserEventPayload80Permissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80BeforeResourcesProjectIdsRequired enum.
+func (e UserEventPayload80BeforeResourcesProjectIdsRequired) Valid() bool {
 	switch e {
-	case UserEventPayload80PermissionsManageSpeedInsights:
-		return true
-	case UserEventPayload80PermissionsManageWebAnalytics:
-		return true
-	case UserEventPayload80PermissionsReadAccessGroup:
-		return true
-	case UserEventPayload80PermissionsReadAiGatewayBudgets:
-		return true
-	case UserEventPayload80PermissionsReadAiGatewayByokCredentials:
-		return true
-	case UserEventPayload80PermissionsReadAiGatewayGuardrails:
-		return true
-	case UserEventPayload80PermissionsReadAiGatewayPrivateModels:
-		return true
-	case UserEventPayload80PermissionsReadAiGatewayRules:
-		return true
-	case UserEventPayload80PermissionsReadAiGatewayVirtualModelConfigs:
-		return true
-	case UserEventPayload80PermissionsReadAlerts:
-		return true
-	case UserEventPayload80PermissionsReadAuditLog:
-		return true
-	case UserEventPayload80PermissionsReadAutomations:
-		return true
-	case UserEventPayload80PermissionsReadBilling:
-		return true
-	case UserEventPayload80PermissionsReadConnect:
-		return true
-	case UserEventPayload80PermissionsReadDeployment:
-		return true
-	case UserEventPayload80PermissionsReadDeploymentCheck:
-		return true
-	case UserEventPayload80PermissionsReadDomain:
-		return true
-	case UserEventPayload80PermissionsReadDrive:
-		return true
-	case UserEventPayload80PermissionsReadEvent:
-		return true
-	case UserEventPayload80PermissionsReadFirewall:
-		return true
-	case UserEventPayload80PermissionsReadIntegrationConfiguration:
-		return true
-	case UserEventPayload80PermissionsReadIntegrationResource:
-		return true
-	case UserEventPayload80PermissionsReadKms:
-		return true
-	case UserEventPayload80PermissionsReadMessageboard:
-		return true
-	case UserEventPayload80PermissionsReadMonitoring:
-		return true
-	case UserEventPayload80PermissionsReadProject:
-		return true
-	case UserEventPayload80PermissionsReadProjectEnvVarsNonProduction:
-		return true
-	case UserEventPayload80PermissionsReadProjectEnvVarsProduction:
-		return true
-	case UserEventPayload80PermissionsReadProjectFlags:
-		return true
-	case UserEventPayload80PermissionsReadProjectMembers:
-		return true
-	case UserEventPayload80PermissionsReadProjectTrustedSources:
-		return true
-	case UserEventPayload80PermissionsReadRemoteCache:
-		return true
-	case UserEventPayload80PermissionsReadSandbox:
-		return true
-	case UserEventPayload80PermissionsReadSchedule:
-		return true
-	case UserEventPayload80PermissionsReadSpeedInsights:
-		return true
-	case UserEventPayload80PermissionsReadTeam:
-		return true
-	case UserEventPayload80PermissionsReadVcr:
-		return true
-	case UserEventPayload80PermissionsReadWebAnalytics:
-		return true
-	case UserEventPayload80PermissionsReadWebhooks:
-		return true
-	case UserEventPayload80PermissionsReadWriteAccessGroup:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayApiKey:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayBudgets:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayByokCredentials:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayGuardrails:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayPrivateModels:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayRules:
-		return true
-	case UserEventPayload80PermissionsReadWriteAiGatewayVirtualModelConfigs:
-		return true
-	case UserEventPayload80PermissionsReadWriteAlerts:
-		return true
-	case UserEventPayload80PermissionsReadWriteAutomations:
-		return true
-	case UserEventPayload80PermissionsReadWriteBilling:
-		return true
-	case UserEventPayload80PermissionsReadWriteBlob:
-		return true
-	case UserEventPayload80PermissionsReadWriteConnect:
-		return true
-	case UserEventPayload80PermissionsReadWriteConnectAnyUserToken:
-		return true
-	case UserEventPayload80PermissionsReadWriteConnectAppToken:
-		return true
-	case UserEventPayload80PermissionsReadWriteDeployment:
-		return true
-	case UserEventPayload80PermissionsReadWriteDomain:
-		return true
-	case UserEventPayload80PermissionsReadWriteDomainRegistrar:
-		return true
-	case UserEventPayload80PermissionsReadWriteDrains:
-		return true
-	case UserEventPayload80PermissionsReadWriteDrive:
-		return true
-	case UserEventPayload80PermissionsReadWriteEdgeCache:
-		return true
-	case UserEventPayload80PermissionsReadWriteEdgeConfig:
-		return true
-	case UserEventPayload80PermissionsReadWriteFirewall:
-		return true
-	case UserEventPayload80PermissionsReadWriteIntegrationConfiguration:
-		return true
-	case UserEventPayload80PermissionsReadWriteIntegrationResource:
-		return true
-	case UserEventPayload80PermissionsReadWriteKms:
-		return true
-	case UserEventPayload80PermissionsReadWriteMessageboard:
-		return true
-	case UserEventPayload80PermissionsReadWriteProject:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectEnvVars:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectEnvVarsNonProduction:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectEnvVarsProduction:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectFlagsNonProduction:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectFlagsProduction:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectMembers:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectProtectionBypass:
-		return true
-	case UserEventPayload80PermissionsReadWriteProjectTrustedSources:
-		return true
-	case UserEventPayload80PermissionsReadWriteRemoteCache:
-		return true
-	case UserEventPayload80PermissionsReadWriteSandbox:
-		return true
-	case UserEventPayload80PermissionsReadWriteSchedule:
-		return true
-	case UserEventPayload80PermissionsReadWriteTeamMembers:
-		return true
-	case UserEventPayload80PermissionsReadWriteVcr:
-		return true
-	case UserEventPayload80PermissionsReadWriteVercelCi:
-		return true
-	case UserEventPayload80PermissionsReadWriteWebhooks:
-		return true
-	case UserEventPayload80PermissionsUseAiGateway:
-		return true
-	case UserEventPayload80PermissionsUsePrivateNpm:
-		return true
-	case UserEventPayload80PermissionsUseProjectFlagsOverridesNonProduction:
-		return true
-	case UserEventPayload80PermissionsUseProjectFlagsOverridesProduction:
+	case UserEventPayload80BeforeResourcesProjectIdsRequiredTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload80ResourcesProjectIdsItemsType.
+// Defines values for UserEventPayload80BeforeResourcesProjectIdsType.
 const (
-	UserEventPayload80ResourcesProjectIdsItemsTypeString UserEventPayload80ResourcesProjectIdsItemsType = "string"
+	UserEventPayload80BeforeResourcesProjectIdsTypeList UserEventPayload80BeforeResourcesProjectIdsType = "list"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload80ResourcesProjectIdsItemsType enum.
-func (e UserEventPayload80ResourcesProjectIdsItemsType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload80BeforeResourcesProjectIdsType enum.
+func (e UserEventPayload80BeforeResourcesProjectIdsType) Valid() bool {
 	switch e {
-	case UserEventPayload80ResourcesProjectIdsItemsTypeString:
+	case UserEventPayload80BeforeResourcesProjectIdsTypeList:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload80ResourcesProjectIdsRequired.
+// Defines values for UserEventPayload81Permissions.
 const (
-	UserEventPayload80ResourcesProjectIdsRequiredTrue UserEventPayload80ResourcesProjectIdsRequired = true
+	UserEventPayload81PermissionsManageSpeedInsights                   UserEventPayload81Permissions = "manage:speed-insights"
+	UserEventPayload81PermissionsManageWebAnalytics                    UserEventPayload81Permissions = "manage:web-analytics"
+	UserEventPayload81PermissionsReadAccessGroup                       UserEventPayload81Permissions = "read:access-group"
+	UserEventPayload81PermissionsReadAiGatewayBudgets                  UserEventPayload81Permissions = "read:ai-gateway-budgets"
+	UserEventPayload81PermissionsReadAiGatewayByokCredentials          UserEventPayload81Permissions = "read:ai-gateway-byok-credentials"
+	UserEventPayload81PermissionsReadAiGatewayGuardrails               UserEventPayload81Permissions = "read:ai-gateway-guardrails"
+	UserEventPayload81PermissionsReadAiGatewayPrivateModels            UserEventPayload81Permissions = "read:ai-gateway-private-models"
+	UserEventPayload81PermissionsReadAiGatewayRules                    UserEventPayload81Permissions = "read:ai-gateway-rules"
+	UserEventPayload81PermissionsReadAiGatewayVirtualModelConfigs      UserEventPayload81Permissions = "read:ai-gateway-virtual-model-configs"
+	UserEventPayload81PermissionsReadAlerts                            UserEventPayload81Permissions = "read:alerts"
+	UserEventPayload81PermissionsReadAuditLog                          UserEventPayload81Permissions = "read:audit-log"
+	UserEventPayload81PermissionsReadAutomations                       UserEventPayload81Permissions = "read:automations"
+	UserEventPayload81PermissionsReadBilling                           UserEventPayload81Permissions = "read:billing"
+	UserEventPayload81PermissionsReadConnect                           UserEventPayload81Permissions = "read:connect"
+	UserEventPayload81PermissionsReadDeployment                        UserEventPayload81Permissions = "read:deployment"
+	UserEventPayload81PermissionsReadDeploymentCheck                   UserEventPayload81Permissions = "read:deployment-check"
+	UserEventPayload81PermissionsReadDomain                            UserEventPayload81Permissions = "read:domain"
+	UserEventPayload81PermissionsReadDrive                             UserEventPayload81Permissions = "read:drive"
+	UserEventPayload81PermissionsReadEvent                             UserEventPayload81Permissions = "read:event"
+	UserEventPayload81PermissionsReadFirewall                          UserEventPayload81Permissions = "read:firewall"
+	UserEventPayload81PermissionsReadIntegrationConfiguration          UserEventPayload81Permissions = "read:integration-configuration"
+	UserEventPayload81PermissionsReadIntegrationResource               UserEventPayload81Permissions = "read:integration-resource"
+	UserEventPayload81PermissionsReadKms                               UserEventPayload81Permissions = "read:kms"
+	UserEventPayload81PermissionsReadMessageboard                      UserEventPayload81Permissions = "read:messageboard"
+	UserEventPayload81PermissionsReadMonitoring                        UserEventPayload81Permissions = "read:monitoring"
+	UserEventPayload81PermissionsReadProject                           UserEventPayload81Permissions = "read:project"
+	UserEventPayload81PermissionsReadProjectEnvVarsNonProduction       UserEventPayload81Permissions = "read:project-env-vars-non-production"
+	UserEventPayload81PermissionsReadProjectEnvVarsProduction          UserEventPayload81Permissions = "read:project-env-vars-production"
+	UserEventPayload81PermissionsReadProjectFlags                      UserEventPayload81Permissions = "read:project-flags"
+	UserEventPayload81PermissionsReadProjectMembers                    UserEventPayload81Permissions = "read:project-members"
+	UserEventPayload81PermissionsReadProjectTrustedSources             UserEventPayload81Permissions = "read:project-trusted-sources"
+	UserEventPayload81PermissionsReadRemoteCache                       UserEventPayload81Permissions = "read:remote-cache"
+	UserEventPayload81PermissionsReadSandbox                           UserEventPayload81Permissions = "read:sandbox"
+	UserEventPayload81PermissionsReadSchedule                          UserEventPayload81Permissions = "read:schedule"
+	UserEventPayload81PermissionsReadSpeedInsights                     UserEventPayload81Permissions = "read:speed-insights"
+	UserEventPayload81PermissionsReadTeam                              UserEventPayload81Permissions = "read:team"
+	UserEventPayload81PermissionsReadVcr                               UserEventPayload81Permissions = "read:vcr"
+	UserEventPayload81PermissionsReadWebAnalytics                      UserEventPayload81Permissions = "read:web-analytics"
+	UserEventPayload81PermissionsReadWebhooks                          UserEventPayload81Permissions = "read:webhooks"
+	UserEventPayload81PermissionsReadWriteAccessGroup                  UserEventPayload81Permissions = "read-write:access-group"
+	UserEventPayload81PermissionsReadWriteAiGatewayApiKey              UserEventPayload81Permissions = "read-write:ai-gateway-api-key"
+	UserEventPayload81PermissionsReadWriteAiGatewayBudgets             UserEventPayload81Permissions = "read-write:ai-gateway-budgets"
+	UserEventPayload81PermissionsReadWriteAiGatewayByokCredentials     UserEventPayload81Permissions = "read-write:ai-gateway-byok-credentials"
+	UserEventPayload81PermissionsReadWriteAiGatewayGuardrails          UserEventPayload81Permissions = "read-write:ai-gateway-guardrails"
+	UserEventPayload81PermissionsReadWriteAiGatewayPrivateModels       UserEventPayload81Permissions = "read-write:ai-gateway-private-models"
+	UserEventPayload81PermissionsReadWriteAiGatewayRules               UserEventPayload81Permissions = "read-write:ai-gateway-rules"
+	UserEventPayload81PermissionsReadWriteAiGatewayVirtualModelConfigs UserEventPayload81Permissions = "read-write:ai-gateway-virtual-model-configs"
+	UserEventPayload81PermissionsReadWriteAlerts                       UserEventPayload81Permissions = "read-write:alerts"
+	UserEventPayload81PermissionsReadWriteAutomations                  UserEventPayload81Permissions = "read-write:automations"
+	UserEventPayload81PermissionsReadWriteBilling                      UserEventPayload81Permissions = "read-write:billing"
+	UserEventPayload81PermissionsReadWriteBlob                         UserEventPayload81Permissions = "read-write:blob"
+	UserEventPayload81PermissionsReadWriteConnect                      UserEventPayload81Permissions = "read-write:connect"
+	UserEventPayload81PermissionsReadWriteConnectAnyUserToken          UserEventPayload81Permissions = "read-write:connect-any-user-token"
+	UserEventPayload81PermissionsReadWriteConnectAppToken              UserEventPayload81Permissions = "read-write:connect-app-token"
+	UserEventPayload81PermissionsReadWriteDeployment                   UserEventPayload81Permissions = "read-write:deployment"
+	UserEventPayload81PermissionsReadWriteDomain                       UserEventPayload81Permissions = "read-write:domain"
+	UserEventPayload81PermissionsReadWriteDomainRegistrar              UserEventPayload81Permissions = "read-write:domain-registrar"
+	UserEventPayload81PermissionsReadWriteDrains                       UserEventPayload81Permissions = "read-write:drains"
+	UserEventPayload81PermissionsReadWriteDrive                        UserEventPayload81Permissions = "read-write:drive"
+	UserEventPayload81PermissionsReadWriteEdgeCache                    UserEventPayload81Permissions = "read-write:edge-cache"
+	UserEventPayload81PermissionsReadWriteEdgeConfig                   UserEventPayload81Permissions = "read-write:edge-config"
+	UserEventPayload81PermissionsReadWriteFirewall                     UserEventPayload81Permissions = "read-write:firewall"
+	UserEventPayload81PermissionsReadWriteIntegrationConfiguration     UserEventPayload81Permissions = "read-write:integration-configuration"
+	UserEventPayload81PermissionsReadWriteIntegrationResource          UserEventPayload81Permissions = "read-write:integration-resource"
+	UserEventPayload81PermissionsReadWriteKms                          UserEventPayload81Permissions = "read-write:kms"
+	UserEventPayload81PermissionsReadWriteMessageboard                 UserEventPayload81Permissions = "read-write:messageboard"
+	UserEventPayload81PermissionsReadWriteProject                      UserEventPayload81Permissions = "read-write:project"
+	UserEventPayload81PermissionsReadWriteProjectEnvVars               UserEventPayload81Permissions = "read-write:project-env-vars"
+	UserEventPayload81PermissionsReadWriteProjectEnvVarsNonProduction  UserEventPayload81Permissions = "read-write:project-env-vars-non-production"
+	UserEventPayload81PermissionsReadWriteProjectEnvVarsProduction     UserEventPayload81Permissions = "read-write:project-env-vars-production"
+	UserEventPayload81PermissionsReadWriteProjectFlagsNonProduction    UserEventPayload81Permissions = "read-write:project-flags-non-production"
+	UserEventPayload81PermissionsReadWriteProjectFlagsProduction       UserEventPayload81Permissions = "read-write:project-flags-production"
+	UserEventPayload81PermissionsReadWriteProjectMembers               UserEventPayload81Permissions = "read-write:project-members"
+	UserEventPayload81PermissionsReadWriteProjectProtectionBypass      UserEventPayload81Permissions = "read-write:project-protection-bypass"
+	UserEventPayload81PermissionsReadWriteProjectTrustedSources        UserEventPayload81Permissions = "read-write:project-trusted-sources"
+	UserEventPayload81PermissionsReadWriteRemoteCache                  UserEventPayload81Permissions = "read-write:remote-cache"
+	UserEventPayload81PermissionsReadWriteSandbox                      UserEventPayload81Permissions = "read-write:sandbox"
+	UserEventPayload81PermissionsReadWriteSchedule                     UserEventPayload81Permissions = "read-write:schedule"
+	UserEventPayload81PermissionsReadWriteTeamMembers                  UserEventPayload81Permissions = "read-write:team-members"
+	UserEventPayload81PermissionsReadWriteVcr                          UserEventPayload81Permissions = "read-write:vcr"
+	UserEventPayload81PermissionsReadWriteVercelCi                     UserEventPayload81Permissions = "read-write:vercel-ci"
+	UserEventPayload81PermissionsReadWriteWebhooks                     UserEventPayload81Permissions = "read-write:webhooks"
+	UserEventPayload81PermissionsUseAiGateway                          UserEventPayload81Permissions = "use:ai-gateway"
+	UserEventPayload81PermissionsUsePrivateNpm                         UserEventPayload81Permissions = "use:private-npm"
+	UserEventPayload81PermissionsUseProjectFlagsOverridesNonProduction UserEventPayload81Permissions = "use:project-flags-overrides-non-production"
+	UserEventPayload81PermissionsUseProjectFlagsOverridesProduction    UserEventPayload81Permissions = "use:project-flags-overrides-production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload80ResourcesProjectIdsRequired enum.
-func (e UserEventPayload80ResourcesProjectIdsRequired) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload81Permissions enum.
+func (e UserEventPayload81Permissions) Valid() bool {
 	switch e {
-	case UserEventPayload80ResourcesProjectIdsRequiredTrue:
+	case UserEventPayload81PermissionsManageSpeedInsights:
+		return true
+	case UserEventPayload81PermissionsManageWebAnalytics:
+		return true
+	case UserEventPayload81PermissionsReadAccessGroup:
+		return true
+	case UserEventPayload81PermissionsReadAiGatewayBudgets:
+		return true
+	case UserEventPayload81PermissionsReadAiGatewayByokCredentials:
+		return true
+	case UserEventPayload81PermissionsReadAiGatewayGuardrails:
+		return true
+	case UserEventPayload81PermissionsReadAiGatewayPrivateModels:
+		return true
+	case UserEventPayload81PermissionsReadAiGatewayRules:
+		return true
+	case UserEventPayload81PermissionsReadAiGatewayVirtualModelConfigs:
+		return true
+	case UserEventPayload81PermissionsReadAlerts:
+		return true
+	case UserEventPayload81PermissionsReadAuditLog:
+		return true
+	case UserEventPayload81PermissionsReadAutomations:
+		return true
+	case UserEventPayload81PermissionsReadBilling:
+		return true
+	case UserEventPayload81PermissionsReadConnect:
+		return true
+	case UserEventPayload81PermissionsReadDeployment:
+		return true
+	case UserEventPayload81PermissionsReadDeploymentCheck:
+		return true
+	case UserEventPayload81PermissionsReadDomain:
+		return true
+	case UserEventPayload81PermissionsReadDrive:
+		return true
+	case UserEventPayload81PermissionsReadEvent:
+		return true
+	case UserEventPayload81PermissionsReadFirewall:
+		return true
+	case UserEventPayload81PermissionsReadIntegrationConfiguration:
+		return true
+	case UserEventPayload81PermissionsReadIntegrationResource:
+		return true
+	case UserEventPayload81PermissionsReadKms:
+		return true
+	case UserEventPayload81PermissionsReadMessageboard:
+		return true
+	case UserEventPayload81PermissionsReadMonitoring:
+		return true
+	case UserEventPayload81PermissionsReadProject:
+		return true
+	case UserEventPayload81PermissionsReadProjectEnvVarsNonProduction:
+		return true
+	case UserEventPayload81PermissionsReadProjectEnvVarsProduction:
+		return true
+	case UserEventPayload81PermissionsReadProjectFlags:
+		return true
+	case UserEventPayload81PermissionsReadProjectMembers:
+		return true
+	case UserEventPayload81PermissionsReadProjectTrustedSources:
+		return true
+	case UserEventPayload81PermissionsReadRemoteCache:
+		return true
+	case UserEventPayload81PermissionsReadSandbox:
+		return true
+	case UserEventPayload81PermissionsReadSchedule:
+		return true
+	case UserEventPayload81PermissionsReadSpeedInsights:
+		return true
+	case UserEventPayload81PermissionsReadTeam:
+		return true
+	case UserEventPayload81PermissionsReadVcr:
+		return true
+	case UserEventPayload81PermissionsReadWebAnalytics:
+		return true
+	case UserEventPayload81PermissionsReadWebhooks:
+		return true
+	case UserEventPayload81PermissionsReadWriteAccessGroup:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayApiKey:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayBudgets:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayByokCredentials:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayGuardrails:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayPrivateModels:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayRules:
+		return true
+	case UserEventPayload81PermissionsReadWriteAiGatewayVirtualModelConfigs:
+		return true
+	case UserEventPayload81PermissionsReadWriteAlerts:
+		return true
+	case UserEventPayload81PermissionsReadWriteAutomations:
+		return true
+	case UserEventPayload81PermissionsReadWriteBilling:
+		return true
+	case UserEventPayload81PermissionsReadWriteBlob:
+		return true
+	case UserEventPayload81PermissionsReadWriteConnect:
+		return true
+	case UserEventPayload81PermissionsReadWriteConnectAnyUserToken:
+		return true
+	case UserEventPayload81PermissionsReadWriteConnectAppToken:
+		return true
+	case UserEventPayload81PermissionsReadWriteDeployment:
+		return true
+	case UserEventPayload81PermissionsReadWriteDomain:
+		return true
+	case UserEventPayload81PermissionsReadWriteDomainRegistrar:
+		return true
+	case UserEventPayload81PermissionsReadWriteDrains:
+		return true
+	case UserEventPayload81PermissionsReadWriteDrive:
+		return true
+	case UserEventPayload81PermissionsReadWriteEdgeCache:
+		return true
+	case UserEventPayload81PermissionsReadWriteEdgeConfig:
+		return true
+	case UserEventPayload81PermissionsReadWriteFirewall:
+		return true
+	case UserEventPayload81PermissionsReadWriteIntegrationConfiguration:
+		return true
+	case UserEventPayload81PermissionsReadWriteIntegrationResource:
+		return true
+	case UserEventPayload81PermissionsReadWriteKms:
+		return true
+	case UserEventPayload81PermissionsReadWriteMessageboard:
+		return true
+	case UserEventPayload81PermissionsReadWriteProject:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectEnvVars:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectEnvVarsNonProduction:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectEnvVarsProduction:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectFlagsNonProduction:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectFlagsProduction:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectMembers:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectProtectionBypass:
+		return true
+	case UserEventPayload81PermissionsReadWriteProjectTrustedSources:
+		return true
+	case UserEventPayload81PermissionsReadWriteRemoteCache:
+		return true
+	case UserEventPayload81PermissionsReadWriteSandbox:
+		return true
+	case UserEventPayload81PermissionsReadWriteSchedule:
+		return true
+	case UserEventPayload81PermissionsReadWriteTeamMembers:
+		return true
+	case UserEventPayload81PermissionsReadWriteVcr:
+		return true
+	case UserEventPayload81PermissionsReadWriteVercelCi:
+		return true
+	case UserEventPayload81PermissionsReadWriteWebhooks:
+		return true
+	case UserEventPayload81PermissionsUseAiGateway:
+		return true
+	case UserEventPayload81PermissionsUsePrivateNpm:
+		return true
+	case UserEventPayload81PermissionsUseProjectFlagsOverridesNonProduction:
+		return true
+	case UserEventPayload81PermissionsUseProjectFlagsOverridesProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload80ResourcesProjectIdsType.
+// Defines values for UserEventPayload81ResourcesProjectIdsItemsType.
 const (
-	UserEventPayload80ResourcesProjectIdsTypeList UserEventPayload80ResourcesProjectIdsType = "list"
+	UserEventPayload81ResourcesProjectIdsItemsTypeString UserEventPayload81ResourcesProjectIdsItemsType = "string"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload80ResourcesProjectIdsType enum.
-func (e UserEventPayload80ResourcesProjectIdsType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload81ResourcesProjectIdsItemsType enum.
+func (e UserEventPayload81ResourcesProjectIdsItemsType) Valid() bool {
 	switch e {
-	case UserEventPayload80ResourcesProjectIdsTypeList:
+	case UserEventPayload81ResourcesProjectIdsItemsTypeString:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload84AttackModeEnabled.
+// Defines values for UserEventPayload81ResourcesProjectIdsRequired.
 const (
-	UserEventPayload84AttackModeEnabledFalse UserEventPayload84AttackModeEnabled = false
-	UserEventPayload84AttackModeEnabledTrue  UserEventPayload84AttackModeEnabled = true
+	UserEventPayload81ResourcesProjectIdsRequiredTrue UserEventPayload81ResourcesProjectIdsRequired = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload84AttackModeEnabled enum.
-func (e UserEventPayload84AttackModeEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload81ResourcesProjectIdsRequired enum.
+func (e UserEventPayload81ResourcesProjectIdsRequired) Valid() bool {
 	switch e {
-	case UserEventPayload84AttackModeEnabledFalse:
-		return true
-	case UserEventPayload84AttackModeEnabledTrue:
+	case UserEventPayload81ResourcesProjectIdsRequiredTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload84PrevAttackModeEnabled.
+// Defines values for UserEventPayload81ResourcesProjectIdsType.
 const (
-	UserEventPayload84PrevAttackModeEnabledFalse UserEventPayload84PrevAttackModeEnabled = false
-	UserEventPayload84PrevAttackModeEnabledTrue  UserEventPayload84PrevAttackModeEnabled = true
+	UserEventPayload81ResourcesProjectIdsTypeList UserEventPayload81ResourcesProjectIdsType = "list"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload84PrevAttackModeEnabled enum.
-func (e UserEventPayload84PrevAttackModeEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload81ResourcesProjectIdsType enum.
+func (e UserEventPayload81ResourcesProjectIdsType) Valid() bool {
 	switch e {
-	case UserEventPayload84PrevAttackModeEnabledFalse:
-		return true
-	case UserEventPayload84PrevAttackModeEnabledTrue:
+	case UserEventPayload81ResourcesProjectIdsTypeList:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload85AutoExposeSystemEnvs.
+// Defines values for UserEventPayload85AttackModeEnabled.
 const (
-	UserEventPayload85AutoExposeSystemEnvsFalse UserEventPayload85AutoExposeSystemEnvs = false
-	UserEventPayload85AutoExposeSystemEnvsTrue  UserEventPayload85AutoExposeSystemEnvs = true
+	UserEventPayload85AttackModeEnabledFalse UserEventPayload85AttackModeEnabled = false
+	UserEventPayload85AttackModeEnabledTrue  UserEventPayload85AttackModeEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload85AutoExposeSystemEnvs enum.
-func (e UserEventPayload85AutoExposeSystemEnvs) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload85AttackModeEnabled enum.
+func (e UserEventPayload85AttackModeEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload85AutoExposeSystemEnvsFalse:
+	case UserEventPayload85AttackModeEnabledFalse:
 		return true
-	case UserEventPayload85AutoExposeSystemEnvsTrue:
+	case UserEventPayload85AttackModeEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload88SettlementMethod.
+// Defines values for UserEventPayload85PrevAttackModeEnabled.
 const (
-	UserEventPayload88SettlementMethodCreditedPaid           UserEventPayload88SettlementMethod = "credited-paid"
-	UserEventPayload88SettlementMethodCreditedPaymentPending UserEventPayload88SettlementMethod = "credited-payment-pending"
-	UserEventPayload88SettlementMethodRefundedPaid           UserEventPayload88SettlementMethod = "refunded-paid"
-	UserEventPayload88SettlementMethodRefundedPaymentPending UserEventPayload88SettlementMethod = "refunded-payment-pending"
+	UserEventPayload85PrevAttackModeEnabledFalse UserEventPayload85PrevAttackModeEnabled = false
+	UserEventPayload85PrevAttackModeEnabledTrue  UserEventPayload85PrevAttackModeEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload88SettlementMethod enum.
-func (e UserEventPayload88SettlementMethod) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload85PrevAttackModeEnabled enum.
+func (e UserEventPayload85PrevAttackModeEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload88SettlementMethodCreditedPaid:
+	case UserEventPayload85PrevAttackModeEnabledFalse:
 		return true
-	case UserEventPayload88SettlementMethodCreditedPaymentPending:
-		return true
-	case UserEventPayload88SettlementMethodRefundedPaid:
-		return true
-	case UserEventPayload88SettlementMethodRefundedPaymentPending:
+	case UserEventPayload85PrevAttackModeEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload92ChangedFields.
+// Defines values for UserEventPayload86AutoExposeSystemEnvs.
 const (
-	UserEventPayload92ChangedFieldsAddress       UserEventPayload92ChangedFields = "address"
-	UserEventPayload92ChangedFieldsEmail         UserEventPayload92ChangedFields = "email"
-	UserEventPayload92ChangedFieldsLanguage      UserEventPayload92ChangedFields = "language"
-	UserEventPayload92ChangedFieldsName          UserEventPayload92ChangedFields = "name"
-	UserEventPayload92ChangedFieldsPurchaseOrder UserEventPayload92ChangedFields = "purchaseOrder"
-	UserEventPayload92ChangedFieldsTax           UserEventPayload92ChangedFields = "tax"
+	UserEventPayload86AutoExposeSystemEnvsFalse UserEventPayload86AutoExposeSystemEnvs = false
+	UserEventPayload86AutoExposeSystemEnvsTrue  UserEventPayload86AutoExposeSystemEnvs = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload92ChangedFields enum.
-func (e UserEventPayload92ChangedFields) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload86AutoExposeSystemEnvs enum.
+func (e UserEventPayload86AutoExposeSystemEnvs) Valid() bool {
 	switch e {
-	case UserEventPayload92ChangedFieldsAddress:
+	case UserEventPayload86AutoExposeSystemEnvsFalse:
 		return true
-	case UserEventPayload92ChangedFieldsEmail:
-		return true
-	case UserEventPayload92ChangedFieldsLanguage:
-		return true
-	case UserEventPayload92ChangedFieldsName:
-		return true
-	case UserEventPayload92ChangedFieldsPurchaseOrder:
-		return true
-	case UserEventPayload92ChangedFieldsTax:
+	case UserEventPayload86AutoExposeSystemEnvsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload94Action.
+// Defines values for UserEventPayload89SettlementMethod.
 const (
-	UserEventPayload94ActionCancelPlan UserEventPayload94Action = "cancel_plan"
+	UserEventPayload89SettlementMethodCreditedPaid           UserEventPayload89SettlementMethod = "credited-paid"
+	UserEventPayload89SettlementMethodCreditedPaymentPending UserEventPayload89SettlementMethod = "credited-payment-pending"
+	UserEventPayload89SettlementMethodRefundedPaid           UserEventPayload89SettlementMethod = "refunded-paid"
+	UserEventPayload89SettlementMethodRefundedPaymentPending UserEventPayload89SettlementMethod = "refunded-payment-pending"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload94Action enum.
-func (e UserEventPayload94Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload89SettlementMethod enum.
+func (e UserEventPayload89SettlementMethod) Valid() bool {
 	switch e {
-	case UserEventPayload94ActionCancelPlan:
+	case UserEventPayload89SettlementMethodCreditedPaid:
+		return true
+	case UserEventPayload89SettlementMethodCreditedPaymentPending:
+		return true
+	case UserEventPayload89SettlementMethodRefundedPaid:
+		return true
+	case UserEventPayload89SettlementMethodRefundedPaymentPending:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload94Data0PlanSlug.
+// Defines values for UserEventPayload93ChangedFields.
 const (
-	UserEventPayload94Data0PlanSlugV0Business UserEventPayload94Data0PlanSlug = "v0_business"
-	UserEventPayload94Data0PlanSlugV0Teams    UserEventPayload94Data0PlanSlug = "v0_teams"
+	UserEventPayload93ChangedFieldsAddress       UserEventPayload93ChangedFields = "address"
+	UserEventPayload93ChangedFieldsEmail         UserEventPayload93ChangedFields = "email"
+	UserEventPayload93ChangedFieldsLanguage      UserEventPayload93ChangedFields = "language"
+	UserEventPayload93ChangedFieldsName          UserEventPayload93ChangedFields = "name"
+	UserEventPayload93ChangedFieldsPurchaseOrder UserEventPayload93ChangedFields = "purchaseOrder"
+	UserEventPayload93ChangedFieldsTax           UserEventPayload93ChangedFields = "tax"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload94Data0PlanSlug enum.
-func (e UserEventPayload94Data0PlanSlug) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload93ChangedFields enum.
+func (e UserEventPayload93ChangedFields) Valid() bool {
 	switch e {
-	case UserEventPayload94Data0PlanSlugV0Business:
+	case UserEventPayload93ChangedFieldsAddress:
 		return true
-	case UserEventPayload94Data0PlanSlugV0Teams:
+	case UserEventPayload93ChangedFieldsEmail:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload94Data0Reason.
-const (
-	UserEventPayload94Data0ReasonNonPayment UserEventPayload94Data0Reason = "non-payment"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload94Data0Reason enum.
-func (e UserEventPayload94Data0Reason) Valid() bool {
-	switch e {
-	case UserEventPayload94Data0ReasonNonPayment:
+	case UserEventPayload93ChangedFieldsLanguage:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload94Data1PlanSlug.
-const (
-	UserEventPayload94Data1PlanSlugHobby UserEventPayload94Data1PlanSlug = "hobby"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload94Data1PlanSlug enum.
-func (e UserEventPayload94Data1PlanSlug) Valid() bool {
-	switch e {
-	case UserEventPayload94Data1PlanSlugHobby:
+	case UserEventPayload93ChangedFieldsName:
+		return true
+	case UserEventPayload93ChangedFieldsPurchaseOrder:
+		return true
+	case UserEventPayload93ChangedFieldsTax:
 		return true
 	default:
 		return false
@@ -15263,31 +15245,61 @@ func (e UserEventPayload94Data1PlanSlug) Valid() bool {
 
 // Defines values for UserEventPayload95Action.
 const (
-	UserEventPayload95ActionResumePlan UserEventPayload95Action = "resume_plan"
+	UserEventPayload95ActionCancelPlan UserEventPayload95Action = "cancel_plan"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload95Action enum.
 func (e UserEventPayload95Action) Valid() bool {
 	switch e {
-	case UserEventPayload95ActionResumePlan:
+	case UserEventPayload95ActionCancelPlan:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload95DataPlanSlug.
+// Defines values for UserEventPayload95Data0PlanSlug.
 const (
-	UserEventPayload95DataPlanSlugV0Business UserEventPayload95DataPlanSlug = "v0_business"
-	UserEventPayload95DataPlanSlugV0Teams    UserEventPayload95DataPlanSlug = "v0_teams"
+	UserEventPayload95Data0PlanSlugV0Business UserEventPayload95Data0PlanSlug = "v0_business"
+	UserEventPayload95Data0PlanSlugV0Teams    UserEventPayload95Data0PlanSlug = "v0_teams"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload95DataPlanSlug enum.
-func (e UserEventPayload95DataPlanSlug) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload95Data0PlanSlug enum.
+func (e UserEventPayload95Data0PlanSlug) Valid() bool {
 	switch e {
-	case UserEventPayload95DataPlanSlugV0Business:
+	case UserEventPayload95Data0PlanSlugV0Business:
 		return true
-	case UserEventPayload95DataPlanSlugV0Teams:
+	case UserEventPayload95Data0PlanSlugV0Teams:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload95Data0Reason.
+const (
+	UserEventPayload95Data0ReasonNonPayment UserEventPayload95Data0Reason = "non-payment"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload95Data0Reason enum.
+func (e UserEventPayload95Data0Reason) Valid() bool {
+	switch e {
+	case UserEventPayload95Data0ReasonNonPayment:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload95Data1PlanSlug.
+const (
+	UserEventPayload95Data1PlanSlugHobby UserEventPayload95Data1PlanSlug = "hobby"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload95Data1PlanSlug enum.
+func (e UserEventPayload95Data1PlanSlug) Valid() bool {
+	switch e {
+	case UserEventPayload95Data1PlanSlugHobby:
 		return true
 	default:
 		return false
@@ -15296,31 +15308,46 @@ func (e UserEventPayload95DataPlanSlug) Valid() bool {
 
 // Defines values for UserEventPayload96Action.
 const (
-	UserEventPayload96ActionMutate UserEventPayload96Action = "mutate"
+	UserEventPayload96ActionResumePlan UserEventPayload96Action = "resume_plan"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload96Action enum.
 func (e UserEventPayload96Action) Valid() bool {
 	switch e {
-	case UserEventPayload96ActionMutate:
+	case UserEventPayload96ActionResumePlan:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload100Custom.
+// Defines values for UserEventPayload96DataPlanSlug.
 const (
-	UserEventPayload100CustomFalse UserEventPayload100Custom = false
-	UserEventPayload100CustomTrue  UserEventPayload100Custom = true
+	UserEventPayload96DataPlanSlugV0Business UserEventPayload96DataPlanSlug = "v0_business"
+	UserEventPayload96DataPlanSlugV0Teams    UserEventPayload96DataPlanSlug = "v0_teams"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload100Custom enum.
-func (e UserEventPayload100Custom) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload96DataPlanSlug enum.
+func (e UserEventPayload96DataPlanSlug) Valid() bool {
 	switch e {
-	case UserEventPayload100CustomFalse:
+	case UserEventPayload96DataPlanSlugV0Business:
 		return true
-	case UserEventPayload100CustomTrue:
+	case UserEventPayload96DataPlanSlugV0Teams:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload97Action.
+const (
+	UserEventPayload97ActionMutate UserEventPayload97Action = "mutate"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload97Action enum.
+func (e UserEventPayload97Action) Valid() bool {
+	switch e {
+	case UserEventPayload97ActionMutate:
 		return true
 	default:
 		return false
@@ -15345,90 +15372,108 @@ func (e UserEventPayload101Custom) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload108NextAutoAddReviewers.
+// Defines values for UserEventPayload102Custom.
 const (
-	UserEventPayload108NextAutoAddReviewersFalse UserEventPayload108NextAutoAddReviewers = false
-	UserEventPayload108NextAutoAddReviewersTrue  UserEventPayload108NextAutoAddReviewers = true
+	UserEventPayload102CustomFalse UserEventPayload102Custom = false
+	UserEventPayload102CustomTrue  UserEventPayload102Custom = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload108NextAutoAddReviewers enum.
-func (e UserEventPayload108NextAutoAddReviewers) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload102Custom enum.
+func (e UserEventPayload102Custom) Valid() bool {
 	switch e {
-	case UserEventPayload108NextAutoAddReviewersFalse:
+	case UserEventPayload102CustomFalse:
 		return true
-	case UserEventPayload108NextAutoAddReviewersTrue:
+	case UserEventPayload102CustomTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload108NextEnabled.
+// Defines values for UserEventPayload108IsAuthor.
 const (
-	UserEventPayload108NextEnabledFalse UserEventPayload108NextEnabled = false
-	UserEventPayload108NextEnabledTrue  UserEventPayload108NextEnabled = true
+	UserEventPayload108IsAuthorFalse UserEventPayload108IsAuthor = false
+	UserEventPayload108IsAuthorTrue  UserEventPayload108IsAuthor = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload108NextEnabled enum.
-func (e UserEventPayload108NextEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload108IsAuthor enum.
+func (e UserEventPayload108IsAuthor) Valid() bool {
 	switch e {
-	case UserEventPayload108NextEnabledFalse:
+	case UserEventPayload108IsAuthorFalse:
 		return true
-	case UserEventPayload108NextEnabledTrue:
+	case UserEventPayload108IsAuthorTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload108PreviousAutoAddReviewers.
+// Defines values for UserEventPayload109NextAutoAddReviewers.
 const (
-	UserEventPayload108PreviousAutoAddReviewersFalse UserEventPayload108PreviousAutoAddReviewers = false
-	UserEventPayload108PreviousAutoAddReviewersTrue  UserEventPayload108PreviousAutoAddReviewers = true
+	UserEventPayload109NextAutoAddReviewersFalse UserEventPayload109NextAutoAddReviewers = false
+	UserEventPayload109NextAutoAddReviewersTrue  UserEventPayload109NextAutoAddReviewers = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload108PreviousAutoAddReviewers enum.
-func (e UserEventPayload108PreviousAutoAddReviewers) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload109NextAutoAddReviewers enum.
+func (e UserEventPayload109NextAutoAddReviewers) Valid() bool {
 	switch e {
-	case UserEventPayload108PreviousAutoAddReviewersFalse:
+	case UserEventPayload109NextAutoAddReviewersFalse:
 		return true
-	case UserEventPayload108PreviousAutoAddReviewersTrue:
+	case UserEventPayload109NextAutoAddReviewersTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload108PreviousEnabled.
+// Defines values for UserEventPayload109NextEnabled.
 const (
-	UserEventPayload108PreviousEnabledFalse UserEventPayload108PreviousEnabled = false
-	UserEventPayload108PreviousEnabledTrue  UserEventPayload108PreviousEnabled = true
+	UserEventPayload109NextEnabledFalse UserEventPayload109NextEnabled = false
+	UserEventPayload109NextEnabledTrue  UserEventPayload109NextEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload108PreviousEnabled enum.
-func (e UserEventPayload108PreviousEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload109NextEnabled enum.
+func (e UserEventPayload109NextEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload108PreviousEnabledFalse:
+	case UserEventPayload109NextEnabledFalse:
 		return true
-	case UserEventPayload108PreviousEnabledTrue:
+	case UserEventPayload109NextEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload112BuildsEnabled.
+// Defines values for UserEventPayload109PreviousAutoAddReviewers.
 const (
-	UserEventPayload112BuildsEnabledFalse UserEventPayload112BuildsEnabled = false
-	UserEventPayload112BuildsEnabledTrue  UserEventPayload112BuildsEnabled = true
+	UserEventPayload109PreviousAutoAddReviewersFalse UserEventPayload109PreviousAutoAddReviewers = false
+	UserEventPayload109PreviousAutoAddReviewersTrue  UserEventPayload109PreviousAutoAddReviewers = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload112BuildsEnabled enum.
-func (e UserEventPayload112BuildsEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload109PreviousAutoAddReviewers enum.
+func (e UserEventPayload109PreviousAutoAddReviewers) Valid() bool {
 	switch e {
-	case UserEventPayload112BuildsEnabledFalse:
+	case UserEventPayload109PreviousAutoAddReviewersFalse:
 		return true
-	case UserEventPayload112BuildsEnabledTrue:
+	case UserEventPayload109PreviousAutoAddReviewersTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload109PreviousEnabled.
+const (
+	UserEventPayload109PreviousEnabledFalse UserEventPayload109PreviousEnabled = false
+	UserEventPayload109PreviousEnabledTrue  UserEventPayload109PreviousEnabled = true
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload109PreviousEnabled enum.
+func (e UserEventPayload109PreviousEnabled) Valid() bool {
+	switch e {
+	case UserEventPayload109PreviousEnabledFalse:
+		return true
+	case UserEventPayload109PreviousEnabledTrue:
 		return true
 	default:
 		return false
@@ -15453,171 +15498,102 @@ func (e UserEventPayload113BuildsEnabled) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload113Passive.
+// Defines values for UserEventPayload114BuildsEnabled.
 const (
-	UserEventPayload113PassiveFalse UserEventPayload113Passive = false
-	UserEventPayload113PassiveTrue  UserEventPayload113Passive = true
+	UserEventPayload114BuildsEnabledFalse UserEventPayload114BuildsEnabled = false
+	UserEventPayload114BuildsEnabledTrue  UserEventPayload114BuildsEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload113Passive enum.
-func (e UserEventPayload113Passive) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload114BuildsEnabled enum.
+func (e UserEventPayload114BuildsEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload113PassiveFalse:
+	case UserEventPayload114BuildsEnabledFalse:
 		return true
-	case UserEventPayload113PassiveTrue:
+	case UserEventPayload114BuildsEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload128OldPasswordProtectionDeploymentType.
+// Defines values for UserEventPayload114Passive.
 const (
-	UserEventPayload128OldPasswordProtectionDeploymentTypeAll                              UserEventPayload128OldPasswordProtectionDeploymentType = "all"
-	UserEventPayload128OldPasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload128OldPasswordProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload128OldPasswordProtectionDeploymentTypePreview                          UserEventPayload128OldPasswordProtectionDeploymentType = "preview"
-	UserEventPayload128OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload128OldPasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+	UserEventPayload114PassiveFalse UserEventPayload114Passive = false
+	UserEventPayload114PassiveTrue  UserEventPayload114Passive = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload128OldPasswordProtectionDeploymentType enum.
-func (e UserEventPayload128OldPasswordProtectionDeploymentType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload114Passive enum.
+func (e UserEventPayload114Passive) Valid() bool {
 	switch e {
-	case UserEventPayload128OldPasswordProtectionDeploymentTypeAll:
+	case UserEventPayload114PassiveFalse:
 		return true
-	case UserEventPayload128OldPasswordProtectionDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload128OldPasswordProtectionDeploymentTypePreview:
-		return true
-	case UserEventPayload128OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload114PassiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload128PasswordChanged.
+// Defines values for UserEventPayload129OldPasswordProtectionDeploymentType.
 const (
-	UserEventPayload128PasswordChangedFalse UserEventPayload128PasswordChanged = false
-	UserEventPayload128PasswordChangedTrue  UserEventPayload128PasswordChanged = true
+	UserEventPayload129OldPasswordProtectionDeploymentTypeAll                              UserEventPayload129OldPasswordProtectionDeploymentType = "all"
+	UserEventPayload129OldPasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload129OldPasswordProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload129OldPasswordProtectionDeploymentTypePreview                          UserEventPayload129OldPasswordProtectionDeploymentType = "preview"
+	UserEventPayload129OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload129OldPasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload128PasswordChanged enum.
-func (e UserEventPayload128PasswordChanged) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload129OldPasswordProtectionDeploymentType enum.
+func (e UserEventPayload129OldPasswordProtectionDeploymentType) Valid() bool {
 	switch e {
-	case UserEventPayload128PasswordChangedFalse:
+	case UserEventPayload129OldPasswordProtectionDeploymentTypeAll:
 		return true
-	case UserEventPayload128PasswordChangedTrue:
+	case UserEventPayload129OldPasswordProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case UserEventPayload129OldPasswordProtectionDeploymentTypePreview:
+		return true
+	case UserEventPayload129OldPasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload128PasswordProtectionDeploymentType.
+// Defines values for UserEventPayload129PasswordChanged.
 const (
-	UserEventPayload128PasswordProtectionDeploymentTypeAll                              UserEventPayload128PasswordProtectionDeploymentType = "all"
-	UserEventPayload128PasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload128PasswordProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload128PasswordProtectionDeploymentTypePreview                          UserEventPayload128PasswordProtectionDeploymentType = "preview"
-	UserEventPayload128PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload128PasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+	UserEventPayload129PasswordChangedFalse UserEventPayload129PasswordChanged = false
+	UserEventPayload129PasswordChangedTrue  UserEventPayload129PasswordChanged = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload128PasswordProtectionDeploymentType enum.
-func (e UserEventPayload128PasswordProtectionDeploymentType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload129PasswordChanged enum.
+func (e UserEventPayload129PasswordChanged) Valid() bool {
 	switch e {
-	case UserEventPayload128PasswordProtectionDeploymentTypeAll:
+	case UserEventPayload129PasswordChangedFalse:
 		return true
-	case UserEventPayload128PasswordProtectionDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload128PasswordProtectionDeploymentTypePreview:
-		return true
-	case UserEventPayload128PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload129PasswordChangedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload128Scope.
+// Defines values for UserEventPayload129PasswordProtectionDeploymentType.
 const (
-	UserEventPayload128ScopeTeam UserEventPayload128Scope = "team"
+	UserEventPayload129PasswordProtectionDeploymentTypeAll                              UserEventPayload129PasswordProtectionDeploymentType = "all"
+	UserEventPayload129PasswordProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload129PasswordProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload129PasswordProtectionDeploymentTypePreview                          UserEventPayload129PasswordProtectionDeploymentType = "preview"
+	UserEventPayload129PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload129PasswordProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload128Scope enum.
-func (e UserEventPayload128Scope) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload129PasswordProtectionDeploymentType enum.
+func (e UserEventPayload129PasswordProtectionDeploymentType) Valid() bool {
 	switch e {
-	case UserEventPayload128ScopeTeam:
+	case UserEventPayload129PasswordProtectionDeploymentTypeAll:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
-const (
-	UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
-	UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
-	UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
-func (e UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
-	switch e {
-	case UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
+	case UserEventPayload129PasswordProtectionDeploymentTypeAllExceptCustomDomains:
 		return true
-	case UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
+	case UserEventPayload129PasswordProtectionDeploymentTypePreview:
 		return true
-	case UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
-		return true
-	case UserEventPayload129OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom.
-const (
-	UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom = "all"
-	UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom = "preview"
-	UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom enum.
-func (e UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
-	switch e {
-	case UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromAll:
-		return true
-	case UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
-		return true
-	case UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromPreview:
-		return true
-	case UserEventPayload129OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload129OldSsoProtectionDeploymentType.
-const (
-	UserEventPayload129OldSsoProtectionDeploymentTypeAll                              UserEventPayload129OldSsoProtectionDeploymentType = "all"
-	UserEventPayload129OldSsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload129OldSsoProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload129OldSsoProtectionDeploymentTypePreview                          UserEventPayload129OldSsoProtectionDeploymentType = "preview"
-	UserEventPayload129OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload129OldSsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload129OldSsoProtectionDeploymentType enum.
-func (e UserEventPayload129OldSsoProtectionDeploymentType) Valid() bool {
-	switch e {
-	case UserEventPayload129OldSsoProtectionDeploymentTypeAll:
-		return true
-	case UserEventPayload129OldSsoProtectionDeploymentTypeAllExceptCustomDomains:
-		return true
-	case UserEventPayload129OldSsoProtectionDeploymentTypePreview:
-		return true
-	case UserEventPayload129OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload129PasswordProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
@@ -15626,15 +15602,12 @@ func (e UserEventPayload129OldSsoProtectionDeploymentType) Valid() bool {
 
 // Defines values for UserEventPayload129Scope.
 const (
-	UserEventPayload129ScopeOrganization UserEventPayload129Scope = "organization"
-	UserEventPayload129ScopeTeam         UserEventPayload129Scope = "team"
+	UserEventPayload129ScopeTeam UserEventPayload129Scope = "team"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload129Scope enum.
 func (e UserEventPayload129Scope) Valid() bool {
 	switch e {
-	case UserEventPayload129ScopeOrganization:
-		return true
 	case UserEventPayload129ScopeTeam:
 		return true
 	default:
@@ -15642,2223 +15615,2268 @@ func (e UserEventPayload129Scope) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
+// Defines values for UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
 const (
-	UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
-	UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
-	UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+	UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
+	UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
+	UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
-func (e UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
+func (e UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
 	switch e {
-	case UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
+	case UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
 		return true
-	case UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
+	case UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
 		return true
-	case UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
+	case UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
 		return true
-	case UserEventPayload129SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload130OldSsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom.
+// Defines values for UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom.
 const (
-	UserEventPayload129SsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom = "all"
-	UserEventPayload129SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
-	UserEventPayload129SsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom = "preview"
-	UserEventPayload129SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+	UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom = "all"
+	UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom = "preview"
+	UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom enum.
-func (e UserEventPayload129SsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom enum.
+func (e UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
 	switch e {
-	case UserEventPayload129SsoProtectionCve55182MigrationAppliedFromAll:
+	case UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromAll:
 		return true
-	case UserEventPayload129SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
+	case UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
 		return true
-	case UserEventPayload129SsoProtectionCve55182MigrationAppliedFromPreview:
+	case UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromPreview:
 		return true
-	case UserEventPayload129SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload130OldSsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload129SsoProtectionDeploymentType.
+// Defines values for UserEventPayload130OldSsoProtectionDeploymentType.
 const (
-	UserEventPayload129SsoProtectionDeploymentTypeAll                              UserEventPayload129SsoProtectionDeploymentType = "all"
-	UserEventPayload129SsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload129SsoProtectionDeploymentType = "all_except_custom_domains"
-	UserEventPayload129SsoProtectionDeploymentTypePreview                          UserEventPayload129SsoProtectionDeploymentType = "preview"
-	UserEventPayload129SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload129SsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+	UserEventPayload130OldSsoProtectionDeploymentTypeAll                              UserEventPayload130OldSsoProtectionDeploymentType = "all"
+	UserEventPayload130OldSsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload130OldSsoProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload130OldSsoProtectionDeploymentTypePreview                          UserEventPayload130OldSsoProtectionDeploymentType = "preview"
+	UserEventPayload130OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload130OldSsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload129SsoProtectionDeploymentType enum.
-func (e UserEventPayload129SsoProtectionDeploymentType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload130OldSsoProtectionDeploymentType enum.
+func (e UserEventPayload130OldSsoProtectionDeploymentType) Valid() bool {
 	switch e {
-	case UserEventPayload129SsoProtectionDeploymentTypeAll:
+	case UserEventPayload130OldSsoProtectionDeploymentTypeAll:
 		return true
-	case UserEventPayload129SsoProtectionDeploymentTypeAllExceptCustomDomains:
+	case UserEventPayload130OldSsoProtectionDeploymentTypeAllExceptCustomDomains:
 		return true
-	case UserEventPayload129SsoProtectionDeploymentTypePreview:
+	case UserEventPayload130OldSsoProtectionDeploymentTypePreview:
 		return true
-	case UserEventPayload129SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+	case UserEventPayload130OldSsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload134DeploymentAllowListedReadyStateReasonInternal.
+// Defines values for UserEventPayload130Scope.
 const (
-	UserEventPayload134DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP   UserEventPayload134DeploymentAllowListedReadyStateReasonInternal = "EARLY_IGNORE_STEP"
-	UserEventPayload134DeploymentAllowListedReadyStateReasonInternalIGNORESTEP        UserEventPayload134DeploymentAllowListedReadyStateReasonInternal = "IGNORE_STEP"
-	UserEventPayload134DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED   UserEventPayload134DeploymentAllowListedReadyStateReasonInternal = "NAMESPACE_PRUNED"
-	UserEventPayload134DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT UserEventPayload134DeploymentAllowListedReadyStateReasonInternal = "UNAFFECTED_PROJECT"
-	UserEventPayload134DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT  UserEventPayload134DeploymentAllowListedReadyStateReasonInternal = "UNVERIFIED_COMMIT"
+	UserEventPayload130ScopeOrganization UserEventPayload130Scope = "organization"
+	UserEventPayload130ScopeTeam         UserEventPayload130Scope = "team"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload134DeploymentAllowListedReadyStateReasonInternal enum.
-func (e UserEventPayload134DeploymentAllowListedReadyStateReasonInternal) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload130Scope enum.
+func (e UserEventPayload130Scope) Valid() bool {
 	switch e {
-	case UserEventPayload134DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP:
+	case UserEventPayload130ScopeOrganization:
 		return true
-	case UserEventPayload134DeploymentAllowListedReadyStateReasonInternalIGNORESTEP:
+	case UserEventPayload130ScopeTeam:
 		return true
-	case UserEventPayload134DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED:
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom.
+const (
+	UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll                              UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all"
+	UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains           UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview                          UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "preview"
+	UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom enum.
+func (e UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFrom) Valid() bool {
+	switch e {
+	case UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAll:
+		return true
+	case UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromAllExceptCustomDomains:
+		return true
+	case UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromPreview:
+		return true
+	case UserEventPayload130SsoProtectionApril2026SecurityIncidentMigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom.
+const (
+	UserEventPayload130SsoProtectionCve55182MigrationAppliedFromAll                              UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom = "all"
+	UserEventPayload130SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains           UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom = "all_except_custom_domains"
+	UserEventPayload130SsoProtectionCve55182MigrationAppliedFromPreview                          UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom = "preview"
+	UserEventPayload130SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom enum.
+func (e UserEventPayload130SsoProtectionCve55182MigrationAppliedFrom) Valid() bool {
+	switch e {
+	case UserEventPayload130SsoProtectionCve55182MigrationAppliedFromAll:
+		return true
+	case UserEventPayload130SsoProtectionCve55182MigrationAppliedFromAllExceptCustomDomains:
+		return true
+	case UserEventPayload130SsoProtectionCve55182MigrationAppliedFromPreview:
+		return true
+	case UserEventPayload130SsoProtectionCve55182MigrationAppliedFromProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload130SsoProtectionDeploymentType.
+const (
+	UserEventPayload130SsoProtectionDeploymentTypeAll                              UserEventPayload130SsoProtectionDeploymentType = "all"
+	UserEventPayload130SsoProtectionDeploymentTypeAllExceptCustomDomains           UserEventPayload130SsoProtectionDeploymentType = "all_except_custom_domains"
+	UserEventPayload130SsoProtectionDeploymentTypePreview                          UserEventPayload130SsoProtectionDeploymentType = "preview"
+	UserEventPayload130SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews UserEventPayload130SsoProtectionDeploymentType = "prod_deployment_urls_and_all_previews"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload130SsoProtectionDeploymentType enum.
+func (e UserEventPayload130SsoProtectionDeploymentType) Valid() bool {
+	switch e {
+	case UserEventPayload130SsoProtectionDeploymentTypeAll:
+		return true
+	case UserEventPayload130SsoProtectionDeploymentTypeAllExceptCustomDomains:
+		return true
+	case UserEventPayload130SsoProtectionDeploymentTypePreview:
+		return true
+	case UserEventPayload130SsoProtectionDeploymentTypeProdDeploymentUrlsAndAllPreviews:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload135DeploymentAllowListedReadyStateReasonInternal.
+const (
+	UserEventPayload135DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP   UserEventPayload135DeploymentAllowListedReadyStateReasonInternal = "EARLY_IGNORE_STEP"
+	UserEventPayload135DeploymentAllowListedReadyStateReasonInternalIGNORESTEP        UserEventPayload135DeploymentAllowListedReadyStateReasonInternal = "IGNORE_STEP"
+	UserEventPayload135DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED   UserEventPayload135DeploymentAllowListedReadyStateReasonInternal = "NAMESPACE_PRUNED"
+	UserEventPayload135DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT UserEventPayload135DeploymentAllowListedReadyStateReasonInternal = "UNAFFECTED_PROJECT"
+	UserEventPayload135DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT  UserEventPayload135DeploymentAllowListedReadyStateReasonInternal = "UNVERIFIED_COMMIT"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload135DeploymentAllowListedReadyStateReasonInternal enum.
+func (e UserEventPayload135DeploymentAllowListedReadyStateReasonInternal) Valid() bool {
+	switch e {
+	case UserEventPayload135DeploymentAllowListedReadyStateReasonInternalEARLYIGNORESTEP:
+		return true
+	case UserEventPayload135DeploymentAllowListedReadyStateReasonInternalIGNORESTEP:
+		return true
+	case UserEventPayload135DeploymentAllowListedReadyStateReasonInternalNAMESPACEPRUNED:
 		return true
-	case UserEventPayload134DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT:
+	case UserEventPayload135DeploymentAllowListedReadyStateReasonInternalUNAFFECTEDPROJECT:
 		return true
-	case UserEventPayload134DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT:
+	case UserEventPayload135DeploymentAllowListedReadyStateReasonInternalUNVERIFIEDCOMMIT:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload134Forced.
+// Defines values for UserEventPayload135Forced.
 const (
-	UserEventPayload134ForcedFalse UserEventPayload134Forced = false
-	UserEventPayload134ForcedTrue  UserEventPayload134Forced = true
+	UserEventPayload135ForcedFalse UserEventPayload135Forced = false
+	UserEventPayload135ForcedTrue  UserEventPayload135Forced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload134Forced enum.
-func (e UserEventPayload134Forced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload135Forced enum.
+func (e UserEventPayload135Forced) Valid() bool {
 	switch e {
-	case UserEventPayload134ForcedFalse:
+	case UserEventPayload135ForcedFalse:
 		return true
-	case UserEventPayload134ForcedTrue:
+	case UserEventPayload135ForcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload134GitCredentialSource.
+// Defines values for UserEventPayload135GitCredentialSource.
 const (
-	UserEventPayload134GitCredentialSourceExternalToken UserEventPayload134GitCredentialSource = "external-token"
+	UserEventPayload135GitCredentialSourceExternalToken UserEventPayload135GitCredentialSource = "external-token"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload134GitCredentialSource enum.
-func (e UserEventPayload134GitCredentialSource) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload135GitCredentialSource enum.
+func (e UserEventPayload135GitCredentialSource) Valid() bool {
 	switch e {
-	case UserEventPayload134GitCredentialSourceExternalToken:
+	case UserEventPayload135GitCredentialSourceExternalToken:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0Authorized.
+// Defines values for UserEventPayload136Job0Authorized.
 const (
-	UserEventPayload135Job0AuthorizedFalse UserEventPayload135Job0Authorized = false
-	UserEventPayload135Job0AuthorizedTrue  UserEventPayload135Job0Authorized = true
+	UserEventPayload136Job0AuthorizedFalse UserEventPayload136Job0Authorized = false
+	UserEventPayload136Job0AuthorizedTrue  UserEventPayload136Job0Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0Authorized enum.
-func (e UserEventPayload135Job0Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0Authorized enum.
+func (e UserEventPayload136Job0Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0AuthorizedFalse:
+	case UserEventPayload136Job0AuthorizedFalse:
 		return true
-	case UserEventPayload135Job0AuthorizedTrue:
+	case UserEventPayload136Job0AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0CommitVerification.
+// Defines values for UserEventPayload136Job0CommitVerification.
 const (
-	UserEventPayload135Job0CommitVerificationUnknown    UserEventPayload135Job0CommitVerification = "unknown"
-	UserEventPayload135Job0CommitVerificationUnverified UserEventPayload135Job0CommitVerification = "unverified"
-	UserEventPayload135Job0CommitVerificationVerified   UserEventPayload135Job0CommitVerification = "verified"
+	UserEventPayload136Job0CommitVerificationUnknown    UserEventPayload136Job0CommitVerification = "unknown"
+	UserEventPayload136Job0CommitVerificationUnverified UserEventPayload136Job0CommitVerification = "unverified"
+	UserEventPayload136Job0CommitVerificationVerified   UserEventPayload136Job0CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0CommitVerification enum.
-func (e UserEventPayload135Job0CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0CommitVerification enum.
+func (e UserEventPayload136Job0CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0CommitVerificationUnknown:
+	case UserEventPayload136Job0CommitVerificationUnknown:
 		return true
-	case UserEventPayload135Job0CommitVerificationUnverified:
+	case UserEventPayload136Job0CommitVerificationUnverified:
 		return true
-	case UserEventPayload135Job0CommitVerificationVerified:
+	case UserEventPayload136Job0CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0Eventful.
+// Defines values for UserEventPayload136Job0Eventful.
 const (
-	UserEventPayload135Job0EventfulFalse UserEventPayload135Job0Eventful = false
-	UserEventPayload135Job0EventfulTrue  UserEventPayload135Job0Eventful = true
+	UserEventPayload136Job0EventfulFalse UserEventPayload136Job0Eventful = false
+	UserEventPayload136Job0EventfulTrue  UserEventPayload136Job0Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0Eventful enum.
-func (e UserEventPayload135Job0Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0Eventful enum.
+func (e UserEventPayload136Job0Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0EventfulFalse:
+	case UserEventPayload136Job0EventfulFalse:
 		return true
-	case UserEventPayload135Job0EventfulTrue:
+	case UserEventPayload136Job0EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0ForceNew.
+// Defines values for UserEventPayload136Job0ForceNew.
 const (
-	UserEventPayload135Job0ForceNewFalse UserEventPayload135Job0ForceNew = false
-	UserEventPayload135Job0ForceNewTrue  UserEventPayload135Job0ForceNew = true
+	UserEventPayload136Job0ForceNewFalse UserEventPayload136Job0ForceNew = false
+	UserEventPayload136Job0ForceNewTrue  UserEventPayload136Job0ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0ForceNew enum.
-func (e UserEventPayload135Job0ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0ForceNew enum.
+func (e UserEventPayload136Job0ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0ForceNewFalse:
+	case UserEventPayload136Job0ForceNewFalse:
 		return true
-	case UserEventPayload135Job0ForceNewTrue:
+	case UserEventPayload136Job0ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job0GitCommentsOnCommit.
 const (
-	UserEventPayload135Job0GitCommentsOnCommitFalse UserEventPayload135Job0GitCommentsOnCommit = false
-	UserEventPayload135Job0GitCommentsOnCommitTrue  UserEventPayload135Job0GitCommentsOnCommit = true
+	UserEventPayload136Job0GitCommentsOnCommitFalse UserEventPayload136Job0GitCommentsOnCommit = false
+	UserEventPayload136Job0GitCommentsOnCommitTrue  UserEventPayload136Job0GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0GitCommentsOnCommit enum.
-func (e UserEventPayload135Job0GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0GitCommentsOnCommit enum.
+func (e UserEventPayload136Job0GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0GitCommentsOnCommitFalse:
+	case UserEventPayload136Job0GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job0GitCommentsOnCommitTrue:
+	case UserEventPayload136Job0GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job0GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job0GitCommentsOnPullRequestFalse UserEventPayload135Job0GitCommentsOnPullRequest = false
-	UserEventPayload135Job0GitCommentsOnPullRequestTrue  UserEventPayload135Job0GitCommentsOnPullRequest = true
+	UserEventPayload136Job0GitCommentsOnPullRequestFalse UserEventPayload136Job0GitCommentsOnPullRequest = false
+	UserEventPayload136Job0GitCommentsOnPullRequestTrue  UserEventPayload136Job0GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job0GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job0GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job0GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job0GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job0GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0GitHashtagVercel.
+// Defines values for UserEventPayload136Job0GitHashtagVercel.
 const (
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELSKIP                          UserEventPayload135Job0GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload135Job0GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload135Job0GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELSKIP                          UserEventPayload136Job0GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload136Job0GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload136Job0GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0GitHashtagVercel enum.
-func (e UserEventPayload135Job0GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0GitHashtagVercel enum.
+func (e UserEventPayload136Job0GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload135Job0GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload136Job0GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0IsManualGitDeploy.
+// Defines values for UserEventPayload136Job0IsManualGitDeploy.
 const (
-	UserEventPayload135Job0IsManualGitDeployFalse UserEventPayload135Job0IsManualGitDeploy = false
-	UserEventPayload135Job0IsManualGitDeployTrue  UserEventPayload135Job0IsManualGitDeploy = true
+	UserEventPayload136Job0IsManualGitDeployFalse UserEventPayload136Job0IsManualGitDeploy = false
+	UserEventPayload136Job0IsManualGitDeployTrue  UserEventPayload136Job0IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0IsManualGitDeploy enum.
-func (e UserEventPayload135Job0IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0IsManualGitDeploy enum.
+func (e UserEventPayload136Job0IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0IsManualGitDeployFalse:
+	case UserEventPayload136Job0IsManualGitDeployFalse:
 		return true
-	case UserEventPayload135Job0IsManualGitDeployTrue:
+	case UserEventPayload136Job0IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0NsnbSideEffectAction.
+// Defines values for UserEventPayload136Job0NsnbSideEffectAction.
 const (
-	UserEventPayload135Job0NsnbSideEffectActionAutoApprovedMember        UserEventPayload135Job0NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload135Job0NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload135Job0NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload136Job0NsnbSideEffectActionAutoApprovedMember        UserEventPayload136Job0NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload136Job0NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload136Job0NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0NsnbSideEffectAction enum.
-func (e UserEventPayload135Job0NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0NsnbSideEffectAction enum.
+func (e UserEventPayload136Job0NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload136Job0NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload135Job0NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload136Job0NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0Provider.
+// Defines values for UserEventPayload136Job0Provider.
 const (
-	UserEventPayload135Job0ProviderBitbucket UserEventPayload135Job0Provider = "bitbucket"
+	UserEventPayload136Job0ProviderBitbucket UserEventPayload136Job0Provider = "bitbucket"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0Provider enum.
-func (e UserEventPayload135Job0Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0Provider enum.
+func (e UserEventPayload136Job0Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0ProviderBitbucket:
+	case UserEventPayload136Job0ProviderBitbucket:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0Silent.
+// Defines values for UserEventPayload136Job0Silent.
 const (
-	UserEventPayload135Job0SilentFalse UserEventPayload135Job0Silent = false
-	UserEventPayload135Job0SilentTrue  UserEventPayload135Job0Silent = true
+	UserEventPayload136Job0SilentFalse UserEventPayload136Job0Silent = false
+	UserEventPayload136Job0SilentTrue  UserEventPayload136Job0Silent = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0Silent enum.
-func (e UserEventPayload135Job0Silent) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0Silent enum.
+func (e UserEventPayload136Job0Silent) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0SilentFalse:
+	case UserEventPayload136Job0SilentFalse:
 		return true
-	case UserEventPayload135Job0SilentTrue:
+	case UserEventPayload136Job0SilentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0Type.
+// Defines values for UserEventPayload136Job0Type.
 const (
-	UserEventPayload135Job0TypeBitbucketPush UserEventPayload135Job0Type = "bitbucket-push"
+	UserEventPayload136Job0TypeBitbucketPush UserEventPayload136Job0Type = "bitbucket-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0Type enum.
-func (e UserEventPayload135Job0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0Type enum.
+func (e UserEventPayload136Job0Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0TypeBitbucketPush:
+	case UserEventPayload136Job0TypeBitbucketPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job0WithCache.
+// Defines values for UserEventPayload136Job0WithCache.
 const (
-	UserEventPayload135Job0WithCacheFalse UserEventPayload135Job0WithCache = false
-	UserEventPayload135Job0WithCacheTrue  UserEventPayload135Job0WithCache = true
+	UserEventPayload136Job0WithCacheFalse UserEventPayload136Job0WithCache = false
+	UserEventPayload136Job0WithCacheTrue  UserEventPayload136Job0WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job0WithCache enum.
-func (e UserEventPayload135Job0WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job0WithCache enum.
+func (e UserEventPayload136Job0WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload135Job0WithCacheFalse:
+	case UserEventPayload136Job0WithCacheFalse:
 		return true
-	case UserEventPayload135Job0WithCacheTrue:
+	case UserEventPayload136Job0WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job1Eventful.
+// Defines values for UserEventPayload136Job1Eventful.
 const (
-	UserEventPayload135Job1EventfulFalse UserEventPayload135Job1Eventful = false
-	UserEventPayload135Job1EventfulTrue  UserEventPayload135Job1Eventful = true
+	UserEventPayload136Job1EventfulFalse UserEventPayload136Job1Eventful = false
+	UserEventPayload136Job1EventfulTrue  UserEventPayload136Job1Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job1Eventful enum.
-func (e UserEventPayload135Job1Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job1Eventful enum.
+func (e UserEventPayload136Job1Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job1EventfulFalse:
+	case UserEventPayload136Job1EventfulFalse:
 		return true
-	case UserEventPayload135Job1EventfulTrue:
+	case UserEventPayload136Job1EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job1GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job1GitCommentsOnCommit.
 const (
-	UserEventPayload135Job1GitCommentsOnCommitFalse UserEventPayload135Job1GitCommentsOnCommit = false
-	UserEventPayload135Job1GitCommentsOnCommitTrue  UserEventPayload135Job1GitCommentsOnCommit = true
+	UserEventPayload136Job1GitCommentsOnCommitFalse UserEventPayload136Job1GitCommentsOnCommit = false
+	UserEventPayload136Job1GitCommentsOnCommitTrue  UserEventPayload136Job1GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job1GitCommentsOnCommit enum.
-func (e UserEventPayload135Job1GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job1GitCommentsOnCommit enum.
+func (e UserEventPayload136Job1GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job1GitCommentsOnCommitFalse:
+	case UserEventPayload136Job1GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job1GitCommentsOnCommitTrue:
+	case UserEventPayload136Job1GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job1GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job1GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job1GitCommentsOnPullRequestFalse UserEventPayload135Job1GitCommentsOnPullRequest = false
-	UserEventPayload135Job1GitCommentsOnPullRequestTrue  UserEventPayload135Job1GitCommentsOnPullRequest = true
+	UserEventPayload136Job1GitCommentsOnPullRequestFalse UserEventPayload136Job1GitCommentsOnPullRequest = false
+	UserEventPayload136Job1GitCommentsOnPullRequestTrue  UserEventPayload136Job1GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job1GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job1GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job1GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job1GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job1GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job1GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job1GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job1GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job1Provider.
+// Defines values for UserEventPayload136Job1Provider.
 const (
-	UserEventPayload135Job1ProviderBitbucket UserEventPayload135Job1Provider = "bitbucket"
+	UserEventPayload136Job1ProviderBitbucket UserEventPayload136Job1Provider = "bitbucket"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job1Provider enum.
-func (e UserEventPayload135Job1Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job1Provider enum.
+func (e UserEventPayload136Job1Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job1ProviderBitbucket:
+	case UserEventPayload136Job1ProviderBitbucket:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job1Type.
+// Defines values for UserEventPayload136Job1Type.
 const (
-	UserEventPayload135Job1TypeBitbucketNowComment UserEventPayload135Job1Type = "bitbucket-now-comment"
+	UserEventPayload136Job1TypeBitbucketNowComment UserEventPayload136Job1Type = "bitbucket-now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job1Type enum.
-func (e UserEventPayload135Job1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job1Type enum.
+func (e UserEventPayload136Job1Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job1TypeBitbucketNowComment:
+	case UserEventPayload136Job1TypeBitbucketNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2Authorized.
+// Defines values for UserEventPayload136Job2Authorized.
 const (
-	UserEventPayload135Job2AuthorizedFalse UserEventPayload135Job2Authorized = false
-	UserEventPayload135Job2AuthorizedTrue  UserEventPayload135Job2Authorized = true
+	UserEventPayload136Job2AuthorizedFalse UserEventPayload136Job2Authorized = false
+	UserEventPayload136Job2AuthorizedTrue  UserEventPayload136Job2Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2Authorized enum.
-func (e UserEventPayload135Job2Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2Authorized enum.
+func (e UserEventPayload136Job2Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2AuthorizedFalse:
+	case UserEventPayload136Job2AuthorizedFalse:
 		return true
-	case UserEventPayload135Job2AuthorizedTrue:
+	case UserEventPayload136Job2AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2CommitVerification.
+// Defines values for UserEventPayload136Job2CommitVerification.
 const (
-	UserEventPayload135Job2CommitVerificationUnknown    UserEventPayload135Job2CommitVerification = "unknown"
-	UserEventPayload135Job2CommitVerificationUnverified UserEventPayload135Job2CommitVerification = "unverified"
-	UserEventPayload135Job2CommitVerificationVerified   UserEventPayload135Job2CommitVerification = "verified"
+	UserEventPayload136Job2CommitVerificationUnknown    UserEventPayload136Job2CommitVerification = "unknown"
+	UserEventPayload136Job2CommitVerificationUnverified UserEventPayload136Job2CommitVerification = "unverified"
+	UserEventPayload136Job2CommitVerificationVerified   UserEventPayload136Job2CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2CommitVerification enum.
-func (e UserEventPayload135Job2CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2CommitVerification enum.
+func (e UserEventPayload136Job2CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2CommitVerificationUnknown:
+	case UserEventPayload136Job2CommitVerificationUnknown:
 		return true
-	case UserEventPayload135Job2CommitVerificationUnverified:
+	case UserEventPayload136Job2CommitVerificationUnverified:
 		return true
-	case UserEventPayload135Job2CommitVerificationVerified:
+	case UserEventPayload136Job2CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2Eventful.
+// Defines values for UserEventPayload136Job2Eventful.
 const (
-	UserEventPayload135Job2EventfulFalse UserEventPayload135Job2Eventful = false
-	UserEventPayload135Job2EventfulTrue  UserEventPayload135Job2Eventful = true
+	UserEventPayload136Job2EventfulFalse UserEventPayload136Job2Eventful = false
+	UserEventPayload136Job2EventfulTrue  UserEventPayload136Job2Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2Eventful enum.
-func (e UserEventPayload135Job2Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2Eventful enum.
+func (e UserEventPayload136Job2Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2EventfulFalse:
+	case UserEventPayload136Job2EventfulFalse:
 		return true
-	case UserEventPayload135Job2EventfulTrue:
+	case UserEventPayload136Job2EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2ForceNew.
+// Defines values for UserEventPayload136Job2ForceNew.
 const (
-	UserEventPayload135Job2ForceNewFalse UserEventPayload135Job2ForceNew = false
-	UserEventPayload135Job2ForceNewTrue  UserEventPayload135Job2ForceNew = true
+	UserEventPayload136Job2ForceNewFalse UserEventPayload136Job2ForceNew = false
+	UserEventPayload136Job2ForceNewTrue  UserEventPayload136Job2ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2ForceNew enum.
-func (e UserEventPayload135Job2ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2ForceNew enum.
+func (e UserEventPayload136Job2ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2ForceNewFalse:
+	case UserEventPayload136Job2ForceNewFalse:
 		return true
-	case UserEventPayload135Job2ForceNewTrue:
+	case UserEventPayload136Job2ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job2GitCommentsOnCommit.
 const (
-	UserEventPayload135Job2GitCommentsOnCommitFalse UserEventPayload135Job2GitCommentsOnCommit = false
-	UserEventPayload135Job2GitCommentsOnCommitTrue  UserEventPayload135Job2GitCommentsOnCommit = true
+	UserEventPayload136Job2GitCommentsOnCommitFalse UserEventPayload136Job2GitCommentsOnCommit = false
+	UserEventPayload136Job2GitCommentsOnCommitTrue  UserEventPayload136Job2GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2GitCommentsOnCommit enum.
-func (e UserEventPayload135Job2GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2GitCommentsOnCommit enum.
+func (e UserEventPayload136Job2GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2GitCommentsOnCommitFalse:
+	case UserEventPayload136Job2GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job2GitCommentsOnCommitTrue:
+	case UserEventPayload136Job2GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job2GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job2GitCommentsOnPullRequestFalse UserEventPayload135Job2GitCommentsOnPullRequest = false
-	UserEventPayload135Job2GitCommentsOnPullRequestTrue  UserEventPayload135Job2GitCommentsOnPullRequest = true
+	UserEventPayload136Job2GitCommentsOnPullRequestFalse UserEventPayload136Job2GitCommentsOnPullRequest = false
+	UserEventPayload136Job2GitCommentsOnPullRequestTrue  UserEventPayload136Job2GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job2GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job2GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job2GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job2GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job2GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2GitHashtagVercel.
+// Defines values for UserEventPayload136Job2GitHashtagVercel.
 const (
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELSKIP                          UserEventPayload135Job2GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload135Job2GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload135Job2GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELSKIP                          UserEventPayload136Job2GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload136Job2GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload136Job2GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2GitHashtagVercel enum.
-func (e UserEventPayload135Job2GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2GitHashtagVercel enum.
+func (e UserEventPayload136Job2GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload135Job2GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload136Job2GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2IsManualGitDeploy.
+// Defines values for UserEventPayload136Job2IsManualGitDeploy.
 const (
-	UserEventPayload135Job2IsManualGitDeployFalse UserEventPayload135Job2IsManualGitDeploy = false
-	UserEventPayload135Job2IsManualGitDeployTrue  UserEventPayload135Job2IsManualGitDeploy = true
+	UserEventPayload136Job2IsManualGitDeployFalse UserEventPayload136Job2IsManualGitDeploy = false
+	UserEventPayload136Job2IsManualGitDeployTrue  UserEventPayload136Job2IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2IsManualGitDeploy enum.
-func (e UserEventPayload135Job2IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2IsManualGitDeploy enum.
+func (e UserEventPayload136Job2IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2IsManualGitDeployFalse:
+	case UserEventPayload136Job2IsManualGitDeployFalse:
 		return true
-	case UserEventPayload135Job2IsManualGitDeployTrue:
+	case UserEventPayload136Job2IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2IsPrivate.
+// Defines values for UserEventPayload136Job2IsPrivate.
 const (
-	UserEventPayload135Job2IsPrivateFalse UserEventPayload135Job2IsPrivate = false
-	UserEventPayload135Job2IsPrivateTrue  UserEventPayload135Job2IsPrivate = true
+	UserEventPayload136Job2IsPrivateFalse UserEventPayload136Job2IsPrivate = false
+	UserEventPayload136Job2IsPrivateTrue  UserEventPayload136Job2IsPrivate = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2IsPrivate enum.
-func (e UserEventPayload135Job2IsPrivate) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2IsPrivate enum.
+func (e UserEventPayload136Job2IsPrivate) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2IsPrivateFalse:
+	case UserEventPayload136Job2IsPrivateFalse:
 		return true
-	case UserEventPayload135Job2IsPrivateTrue:
+	case UserEventPayload136Job2IsPrivateTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2NsnbSideEffectAction.
+// Defines values for UserEventPayload136Job2NsnbSideEffectAction.
 const (
-	UserEventPayload135Job2NsnbSideEffectActionAutoApprovedMember        UserEventPayload135Job2NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload135Job2NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload135Job2NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload136Job2NsnbSideEffectActionAutoApprovedMember        UserEventPayload136Job2NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload136Job2NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload136Job2NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2NsnbSideEffectAction enum.
-func (e UserEventPayload135Job2NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2NsnbSideEffectAction enum.
+func (e UserEventPayload136Job2NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload136Job2NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload135Job2NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload136Job2NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2Provider.
+// Defines values for UserEventPayload136Job2Provider.
 const (
-	UserEventPayload135Job2ProviderGithub           UserEventPayload135Job2Provider = "github"
-	UserEventPayload135Job2ProviderGithubCustomHost UserEventPayload135Job2Provider = "github-custom-host"
-	UserEventPayload135Job2ProviderGithubLimited    UserEventPayload135Job2Provider = "github-limited"
+	UserEventPayload136Job2ProviderGithub           UserEventPayload136Job2Provider = "github"
+	UserEventPayload136Job2ProviderGithubCustomHost UserEventPayload136Job2Provider = "github-custom-host"
+	UserEventPayload136Job2ProviderGithubLimited    UserEventPayload136Job2Provider = "github-limited"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2Provider enum.
-func (e UserEventPayload135Job2Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2Provider enum.
+func (e UserEventPayload136Job2Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2ProviderGithub:
+	case UserEventPayload136Job2ProviderGithub:
 		return true
-	case UserEventPayload135Job2ProviderGithubCustomHost:
+	case UserEventPayload136Job2ProviderGithubCustomHost:
 		return true
-	case UserEventPayload135Job2ProviderGithubLimited:
+	case UserEventPayload136Job2ProviderGithubLimited:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2Type.
+// Defines values for UserEventPayload136Job2Type.
 const (
-	UserEventPayload135Job2TypePr UserEventPayload135Job2Type = "pr"
+	UserEventPayload136Job2TypePr UserEventPayload136Job2Type = "pr"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2Type enum.
-func (e UserEventPayload135Job2Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2Type enum.
+func (e UserEventPayload136Job2Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2TypePr:
+	case UserEventPayload136Job2TypePr:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job2WithCache.
+// Defines values for UserEventPayload136Job2WithCache.
 const (
-	UserEventPayload135Job2WithCacheFalse UserEventPayload135Job2WithCache = false
-	UserEventPayload135Job2WithCacheTrue  UserEventPayload135Job2WithCache = true
+	UserEventPayload136Job2WithCacheFalse UserEventPayload136Job2WithCache = false
+	UserEventPayload136Job2WithCacheTrue  UserEventPayload136Job2WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job2WithCache enum.
-func (e UserEventPayload135Job2WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job2WithCache enum.
+func (e UserEventPayload136Job2WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload135Job2WithCacheFalse:
+	case UserEventPayload136Job2WithCacheFalse:
 		return true
-	case UserEventPayload135Job2WithCacheTrue:
+	case UserEventPayload136Job2WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3Authorized.
+// Defines values for UserEventPayload136Job3Authorized.
 const (
-	UserEventPayload135Job3AuthorizedFalse UserEventPayload135Job3Authorized = false
-	UserEventPayload135Job3AuthorizedTrue  UserEventPayload135Job3Authorized = true
+	UserEventPayload136Job3AuthorizedFalse UserEventPayload136Job3Authorized = false
+	UserEventPayload136Job3AuthorizedTrue  UserEventPayload136Job3Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3Authorized enum.
-func (e UserEventPayload135Job3Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3Authorized enum.
+func (e UserEventPayload136Job3Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3AuthorizedFalse:
+	case UserEventPayload136Job3AuthorizedFalse:
 		return true
-	case UserEventPayload135Job3AuthorizedTrue:
+	case UserEventPayload136Job3AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3CommitVerification.
+// Defines values for UserEventPayload136Job3CommitVerification.
 const (
-	UserEventPayload135Job3CommitVerificationUnknown    UserEventPayload135Job3CommitVerification = "unknown"
-	UserEventPayload135Job3CommitVerificationUnverified UserEventPayload135Job3CommitVerification = "unverified"
-	UserEventPayload135Job3CommitVerificationVerified   UserEventPayload135Job3CommitVerification = "verified"
+	UserEventPayload136Job3CommitVerificationUnknown    UserEventPayload136Job3CommitVerification = "unknown"
+	UserEventPayload136Job3CommitVerificationUnverified UserEventPayload136Job3CommitVerification = "unverified"
+	UserEventPayload136Job3CommitVerificationVerified   UserEventPayload136Job3CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3CommitVerification enum.
-func (e UserEventPayload135Job3CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3CommitVerification enum.
+func (e UserEventPayload136Job3CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3CommitVerificationUnknown:
+	case UserEventPayload136Job3CommitVerificationUnknown:
 		return true
-	case UserEventPayload135Job3CommitVerificationUnverified:
+	case UserEventPayload136Job3CommitVerificationUnverified:
 		return true
-	case UserEventPayload135Job3CommitVerificationVerified:
+	case UserEventPayload136Job3CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3Eventful.
+// Defines values for UserEventPayload136Job3Eventful.
 const (
-	UserEventPayload135Job3EventfulFalse UserEventPayload135Job3Eventful = false
-	UserEventPayload135Job3EventfulTrue  UserEventPayload135Job3Eventful = true
+	UserEventPayload136Job3EventfulFalse UserEventPayload136Job3Eventful = false
+	UserEventPayload136Job3EventfulTrue  UserEventPayload136Job3Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3Eventful enum.
-func (e UserEventPayload135Job3Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3Eventful enum.
+func (e UserEventPayload136Job3Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3EventfulFalse:
+	case UserEventPayload136Job3EventfulFalse:
 		return true
-	case UserEventPayload135Job3EventfulTrue:
+	case UserEventPayload136Job3EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3ForceNew.
+// Defines values for UserEventPayload136Job3ForceNew.
 const (
-	UserEventPayload135Job3ForceNewFalse UserEventPayload135Job3ForceNew = false
-	UserEventPayload135Job3ForceNewTrue  UserEventPayload135Job3ForceNew = true
+	UserEventPayload136Job3ForceNewFalse UserEventPayload136Job3ForceNew = false
+	UserEventPayload136Job3ForceNewTrue  UserEventPayload136Job3ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3ForceNew enum.
-func (e UserEventPayload135Job3ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3ForceNew enum.
+func (e UserEventPayload136Job3ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3ForceNewFalse:
+	case UserEventPayload136Job3ForceNewFalse:
 		return true
-	case UserEventPayload135Job3ForceNewTrue:
+	case UserEventPayload136Job3ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3Forced.
+// Defines values for UserEventPayload136Job3Forced.
 const (
-	UserEventPayload135Job3ForcedFalse UserEventPayload135Job3Forced = false
-	UserEventPayload135Job3ForcedTrue  UserEventPayload135Job3Forced = true
+	UserEventPayload136Job3ForcedFalse UserEventPayload136Job3Forced = false
+	UserEventPayload136Job3ForcedTrue  UserEventPayload136Job3Forced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3Forced enum.
-func (e UserEventPayload135Job3Forced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3Forced enum.
+func (e UserEventPayload136Job3Forced) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3ForcedFalse:
+	case UserEventPayload136Job3ForcedFalse:
 		return true
-	case UserEventPayload135Job3ForcedTrue:
+	case UserEventPayload136Job3ForcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job3GitCommentsOnCommit.
 const (
-	UserEventPayload135Job3GitCommentsOnCommitFalse UserEventPayload135Job3GitCommentsOnCommit = false
-	UserEventPayload135Job3GitCommentsOnCommitTrue  UserEventPayload135Job3GitCommentsOnCommit = true
+	UserEventPayload136Job3GitCommentsOnCommitFalse UserEventPayload136Job3GitCommentsOnCommit = false
+	UserEventPayload136Job3GitCommentsOnCommitTrue  UserEventPayload136Job3GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3GitCommentsOnCommit enum.
-func (e UserEventPayload135Job3GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3GitCommentsOnCommit enum.
+func (e UserEventPayload136Job3GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3GitCommentsOnCommitFalse:
+	case UserEventPayload136Job3GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job3GitCommentsOnCommitTrue:
+	case UserEventPayload136Job3GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job3GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job3GitCommentsOnPullRequestFalse UserEventPayload135Job3GitCommentsOnPullRequest = false
-	UserEventPayload135Job3GitCommentsOnPullRequestTrue  UserEventPayload135Job3GitCommentsOnPullRequest = true
+	UserEventPayload136Job3GitCommentsOnPullRequestFalse UserEventPayload136Job3GitCommentsOnPullRequest = false
+	UserEventPayload136Job3GitCommentsOnPullRequestTrue  UserEventPayload136Job3GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job3GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job3GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job3GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job3GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job3GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3GitHashtagVercel.
+// Defines values for UserEventPayload136Job3GitHashtagVercel.
 const (
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELSKIP                          UserEventPayload135Job3GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload135Job3GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload135Job3GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELSKIP                          UserEventPayload136Job3GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload136Job3GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload136Job3GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3GitHashtagVercel enum.
-func (e UserEventPayload135Job3GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3GitHashtagVercel enum.
+func (e UserEventPayload136Job3GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload135Job3GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload136Job3GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3IsManualGitDeploy.
+// Defines values for UserEventPayload136Job3IsManualGitDeploy.
 const (
-	UserEventPayload135Job3IsManualGitDeployFalse UserEventPayload135Job3IsManualGitDeploy = false
-	UserEventPayload135Job3IsManualGitDeployTrue  UserEventPayload135Job3IsManualGitDeploy = true
+	UserEventPayload136Job3IsManualGitDeployFalse UserEventPayload136Job3IsManualGitDeploy = false
+	UserEventPayload136Job3IsManualGitDeployTrue  UserEventPayload136Job3IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3IsManualGitDeploy enum.
-func (e UserEventPayload135Job3IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3IsManualGitDeploy enum.
+func (e UserEventPayload136Job3IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3IsManualGitDeployFalse:
+	case UserEventPayload136Job3IsManualGitDeployFalse:
 		return true
-	case UserEventPayload135Job3IsManualGitDeployTrue:
+	case UserEventPayload136Job3IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3IsPrivate.
+// Defines values for UserEventPayload136Job3IsPrivate.
 const (
-	UserEventPayload135Job3IsPrivateFalse UserEventPayload135Job3IsPrivate = false
-	UserEventPayload135Job3IsPrivateTrue  UserEventPayload135Job3IsPrivate = true
+	UserEventPayload136Job3IsPrivateFalse UserEventPayload136Job3IsPrivate = false
+	UserEventPayload136Job3IsPrivateTrue  UserEventPayload136Job3IsPrivate = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3IsPrivate enum.
-func (e UserEventPayload135Job3IsPrivate) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3IsPrivate enum.
+func (e UserEventPayload136Job3IsPrivate) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3IsPrivateFalse:
+	case UserEventPayload136Job3IsPrivateFalse:
 		return true
-	case UserEventPayload135Job3IsPrivateTrue:
+	case UserEventPayload136Job3IsPrivateTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3NsnbSideEffectAction.
+// Defines values for UserEventPayload136Job3NsnbSideEffectAction.
 const (
-	UserEventPayload135Job3NsnbSideEffectActionAutoApprovedMember        UserEventPayload135Job3NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload135Job3NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload135Job3NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload136Job3NsnbSideEffectActionAutoApprovedMember        UserEventPayload136Job3NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload136Job3NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload136Job3NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3NsnbSideEffectAction enum.
-func (e UserEventPayload135Job3NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3NsnbSideEffectAction enum.
+func (e UserEventPayload136Job3NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload136Job3NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload135Job3NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload136Job3NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3Provider.
+// Defines values for UserEventPayload136Job3Provider.
 const (
-	UserEventPayload135Job3ProviderGithub           UserEventPayload135Job3Provider = "github"
-	UserEventPayload135Job3ProviderGithubCustomHost UserEventPayload135Job3Provider = "github-custom-host"
-	UserEventPayload135Job3ProviderGithubLimited    UserEventPayload135Job3Provider = "github-limited"
+	UserEventPayload136Job3ProviderGithub           UserEventPayload136Job3Provider = "github"
+	UserEventPayload136Job3ProviderGithubCustomHost UserEventPayload136Job3Provider = "github-custom-host"
+	UserEventPayload136Job3ProviderGithubLimited    UserEventPayload136Job3Provider = "github-limited"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3Provider enum.
-func (e UserEventPayload135Job3Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3Provider enum.
+func (e UserEventPayload136Job3Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3ProviderGithub:
+	case UserEventPayload136Job3ProviderGithub:
 		return true
-	case UserEventPayload135Job3ProviderGithubCustomHost:
+	case UserEventPayload136Job3ProviderGithubCustomHost:
 		return true
-	case UserEventPayload135Job3ProviderGithubLimited:
+	case UserEventPayload136Job3ProviderGithubLimited:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3Type.
+// Defines values for UserEventPayload136Job3Type.
 const (
-	UserEventPayload135Job3TypePush UserEventPayload135Job3Type = "push"
+	UserEventPayload136Job3TypePush UserEventPayload136Job3Type = "push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3Type enum.
-func (e UserEventPayload135Job3Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3Type enum.
+func (e UserEventPayload136Job3Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3TypePush:
+	case UserEventPayload136Job3TypePush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job3WithCache.
+// Defines values for UserEventPayload136Job3WithCache.
 const (
-	UserEventPayload135Job3WithCacheFalse UserEventPayload135Job3WithCache = false
-	UserEventPayload135Job3WithCacheTrue  UserEventPayload135Job3WithCache = true
+	UserEventPayload136Job3WithCacheFalse UserEventPayload136Job3WithCache = false
+	UserEventPayload136Job3WithCacheTrue  UserEventPayload136Job3WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job3WithCache enum.
-func (e UserEventPayload135Job3WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job3WithCache enum.
+func (e UserEventPayload136Job3WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload135Job3WithCacheFalse:
+	case UserEventPayload136Job3WithCacheFalse:
 		return true
-	case UserEventPayload135Job3WithCacheTrue:
+	case UserEventPayload136Job3WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job4Eventful.
+// Defines values for UserEventPayload136Job4Eventful.
 const (
-	UserEventPayload135Job4EventfulFalse UserEventPayload135Job4Eventful = false
-	UserEventPayload135Job4EventfulTrue  UserEventPayload135Job4Eventful = true
+	UserEventPayload136Job4EventfulFalse UserEventPayload136Job4Eventful = false
+	UserEventPayload136Job4EventfulTrue  UserEventPayload136Job4Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job4Eventful enum.
-func (e UserEventPayload135Job4Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job4Eventful enum.
+func (e UserEventPayload136Job4Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job4EventfulFalse:
+	case UserEventPayload136Job4EventfulFalse:
 		return true
-	case UserEventPayload135Job4EventfulTrue:
+	case UserEventPayload136Job4EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job4GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job4GitCommentsOnCommit.
 const (
-	UserEventPayload135Job4GitCommentsOnCommitFalse UserEventPayload135Job4GitCommentsOnCommit = false
-	UserEventPayload135Job4GitCommentsOnCommitTrue  UserEventPayload135Job4GitCommentsOnCommit = true
+	UserEventPayload136Job4GitCommentsOnCommitFalse UserEventPayload136Job4GitCommentsOnCommit = false
+	UserEventPayload136Job4GitCommentsOnCommitTrue  UserEventPayload136Job4GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job4GitCommentsOnCommit enum.
-func (e UserEventPayload135Job4GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job4GitCommentsOnCommit enum.
+func (e UserEventPayload136Job4GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job4GitCommentsOnCommitFalse:
+	case UserEventPayload136Job4GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job4GitCommentsOnCommitTrue:
+	case UserEventPayload136Job4GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job4GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job4GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job4GitCommentsOnPullRequestFalse UserEventPayload135Job4GitCommentsOnPullRequest = false
-	UserEventPayload135Job4GitCommentsOnPullRequestTrue  UserEventPayload135Job4GitCommentsOnPullRequest = true
+	UserEventPayload136Job4GitCommentsOnPullRequestFalse UserEventPayload136Job4GitCommentsOnPullRequest = false
+	UserEventPayload136Job4GitCommentsOnPullRequestTrue  UserEventPayload136Job4GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job4GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job4GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job4GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job4GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job4GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job4GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job4GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job4GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job4IsPrivate.
+// Defines values for UserEventPayload136Job4IsPrivate.
 const (
-	UserEventPayload135Job4IsPrivateFalse UserEventPayload135Job4IsPrivate = false
-	UserEventPayload135Job4IsPrivateTrue  UserEventPayload135Job4IsPrivate = true
+	UserEventPayload136Job4IsPrivateFalse UserEventPayload136Job4IsPrivate = false
+	UserEventPayload136Job4IsPrivateTrue  UserEventPayload136Job4IsPrivate = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job4IsPrivate enum.
-func (e UserEventPayload135Job4IsPrivate) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job4IsPrivate enum.
+func (e UserEventPayload136Job4IsPrivate) Valid() bool {
 	switch e {
-	case UserEventPayload135Job4IsPrivateFalse:
+	case UserEventPayload136Job4IsPrivateFalse:
 		return true
-	case UserEventPayload135Job4IsPrivateTrue:
+	case UserEventPayload136Job4IsPrivateTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job4Provider.
+// Defines values for UserEventPayload136Job4Provider.
 const (
-	UserEventPayload135Job4ProviderGithub           UserEventPayload135Job4Provider = "github"
-	UserEventPayload135Job4ProviderGithubCustomHost UserEventPayload135Job4Provider = "github-custom-host"
-	UserEventPayload135Job4ProviderGithubLimited    UserEventPayload135Job4Provider = "github-limited"
+	UserEventPayload136Job4ProviderGithub           UserEventPayload136Job4Provider = "github"
+	UserEventPayload136Job4ProviderGithubCustomHost UserEventPayload136Job4Provider = "github-custom-host"
+	UserEventPayload136Job4ProviderGithubLimited    UserEventPayload136Job4Provider = "github-limited"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job4Provider enum.
-func (e UserEventPayload135Job4Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job4Provider enum.
+func (e UserEventPayload136Job4Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job4ProviderGithub:
+	case UserEventPayload136Job4ProviderGithub:
 		return true
-	case UserEventPayload135Job4ProviderGithubCustomHost:
+	case UserEventPayload136Job4ProviderGithubCustomHost:
 		return true
-	case UserEventPayload135Job4ProviderGithubLimited:
+	case UserEventPayload136Job4ProviderGithubLimited:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job4Type.
+// Defines values for UserEventPayload136Job4Type.
 const (
-	UserEventPayload135Job4TypeNowComment UserEventPayload135Job4Type = "now-comment"
+	UserEventPayload136Job4TypeNowComment UserEventPayload136Job4Type = "now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job4Type enum.
-func (e UserEventPayload135Job4Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job4Type enum.
+func (e UserEventPayload136Job4Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job4TypeNowComment:
+	case UserEventPayload136Job4TypeNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5Authorized.
+// Defines values for UserEventPayload136Job5Authorized.
 const (
-	UserEventPayload135Job5AuthorizedFalse UserEventPayload135Job5Authorized = false
-	UserEventPayload135Job5AuthorizedTrue  UserEventPayload135Job5Authorized = true
+	UserEventPayload136Job5AuthorizedFalse UserEventPayload136Job5Authorized = false
+	UserEventPayload136Job5AuthorizedTrue  UserEventPayload136Job5Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5Authorized enum.
-func (e UserEventPayload135Job5Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5Authorized enum.
+func (e UserEventPayload136Job5Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5AuthorizedFalse:
+	case UserEventPayload136Job5AuthorizedFalse:
 		return true
-	case UserEventPayload135Job5AuthorizedTrue:
+	case UserEventPayload136Job5AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5CommitVerification.
+// Defines values for UserEventPayload136Job5CommitVerification.
 const (
-	UserEventPayload135Job5CommitVerificationUnknown    UserEventPayload135Job5CommitVerification = "unknown"
-	UserEventPayload135Job5CommitVerificationUnverified UserEventPayload135Job5CommitVerification = "unverified"
-	UserEventPayload135Job5CommitVerificationVerified   UserEventPayload135Job5CommitVerification = "verified"
+	UserEventPayload136Job5CommitVerificationUnknown    UserEventPayload136Job5CommitVerification = "unknown"
+	UserEventPayload136Job5CommitVerificationUnverified UserEventPayload136Job5CommitVerification = "unverified"
+	UserEventPayload136Job5CommitVerificationVerified   UserEventPayload136Job5CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5CommitVerification enum.
-func (e UserEventPayload135Job5CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5CommitVerification enum.
+func (e UserEventPayload136Job5CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5CommitVerificationUnknown:
+	case UserEventPayload136Job5CommitVerificationUnknown:
 		return true
-	case UserEventPayload135Job5CommitVerificationUnverified:
+	case UserEventPayload136Job5CommitVerificationUnverified:
 		return true
-	case UserEventPayload135Job5CommitVerificationVerified:
+	case UserEventPayload136Job5CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5Eventful.
+// Defines values for UserEventPayload136Job5Eventful.
 const (
-	UserEventPayload135Job5EventfulFalse UserEventPayload135Job5Eventful = false
-	UserEventPayload135Job5EventfulTrue  UserEventPayload135Job5Eventful = true
+	UserEventPayload136Job5EventfulFalse UserEventPayload136Job5Eventful = false
+	UserEventPayload136Job5EventfulTrue  UserEventPayload136Job5Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5Eventful enum.
-func (e UserEventPayload135Job5Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5Eventful enum.
+func (e UserEventPayload136Job5Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5EventfulFalse:
+	case UserEventPayload136Job5EventfulFalse:
 		return true
-	case UserEventPayload135Job5EventfulTrue:
+	case UserEventPayload136Job5EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5ForceNew.
+// Defines values for UserEventPayload136Job5ForceNew.
 const (
-	UserEventPayload135Job5ForceNewFalse UserEventPayload135Job5ForceNew = false
-	UserEventPayload135Job5ForceNewTrue  UserEventPayload135Job5ForceNew = true
+	UserEventPayload136Job5ForceNewFalse UserEventPayload136Job5ForceNew = false
+	UserEventPayload136Job5ForceNewTrue  UserEventPayload136Job5ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5ForceNew enum.
-func (e UserEventPayload135Job5ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5ForceNew enum.
+func (e UserEventPayload136Job5ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5ForceNewFalse:
+	case UserEventPayload136Job5ForceNewFalse:
 		return true
-	case UserEventPayload135Job5ForceNewTrue:
+	case UserEventPayload136Job5ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job5GitCommentsOnCommit.
 const (
-	UserEventPayload135Job5GitCommentsOnCommitFalse UserEventPayload135Job5GitCommentsOnCommit = false
-	UserEventPayload135Job5GitCommentsOnCommitTrue  UserEventPayload135Job5GitCommentsOnCommit = true
+	UserEventPayload136Job5GitCommentsOnCommitFalse UserEventPayload136Job5GitCommentsOnCommit = false
+	UserEventPayload136Job5GitCommentsOnCommitTrue  UserEventPayload136Job5GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5GitCommentsOnCommit enum.
-func (e UserEventPayload135Job5GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5GitCommentsOnCommit enum.
+func (e UserEventPayload136Job5GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5GitCommentsOnCommitFalse:
+	case UserEventPayload136Job5GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job5GitCommentsOnCommitTrue:
+	case UserEventPayload136Job5GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job5GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job5GitCommentsOnPullRequestFalse UserEventPayload135Job5GitCommentsOnPullRequest = false
-	UserEventPayload135Job5GitCommentsOnPullRequestTrue  UserEventPayload135Job5GitCommentsOnPullRequest = true
+	UserEventPayload136Job5GitCommentsOnPullRequestFalse UserEventPayload136Job5GitCommentsOnPullRequest = false
+	UserEventPayload136Job5GitCommentsOnPullRequestTrue  UserEventPayload136Job5GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job5GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job5GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job5GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job5GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job5GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5GitHashtagVercel.
+// Defines values for UserEventPayload136Job5GitHashtagVercel.
 const (
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELSKIP                          UserEventPayload135Job5GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload135Job5GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload135Job5GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELSKIP                          UserEventPayload136Job5GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload136Job5GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload136Job5GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5GitHashtagVercel enum.
-func (e UserEventPayload135Job5GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5GitHashtagVercel enum.
+func (e UserEventPayload136Job5GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload135Job5GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload136Job5GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5IsManualGitDeploy.
+// Defines values for UserEventPayload136Job5IsManualGitDeploy.
 const (
-	UserEventPayload135Job5IsManualGitDeployFalse UserEventPayload135Job5IsManualGitDeploy = false
-	UserEventPayload135Job5IsManualGitDeployTrue  UserEventPayload135Job5IsManualGitDeploy = true
+	UserEventPayload136Job5IsManualGitDeployFalse UserEventPayload136Job5IsManualGitDeploy = false
+	UserEventPayload136Job5IsManualGitDeployTrue  UserEventPayload136Job5IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5IsManualGitDeploy enum.
-func (e UserEventPayload135Job5IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5IsManualGitDeploy enum.
+func (e UserEventPayload136Job5IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5IsManualGitDeployFalse:
+	case UserEventPayload136Job5IsManualGitDeployFalse:
 		return true
-	case UserEventPayload135Job5IsManualGitDeployTrue:
+	case UserEventPayload136Job5IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5NsnbSideEffectAction.
+// Defines values for UserEventPayload136Job5NsnbSideEffectAction.
 const (
-	UserEventPayload135Job5NsnbSideEffectActionAutoApprovedMember        UserEventPayload135Job5NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload135Job5NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload135Job5NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload136Job5NsnbSideEffectActionAutoApprovedMember        UserEventPayload136Job5NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload136Job5NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload136Job5NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5NsnbSideEffectAction enum.
-func (e UserEventPayload135Job5NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5NsnbSideEffectAction enum.
+func (e UserEventPayload136Job5NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload136Job5NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload135Job5NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload136Job5NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5Provider.
+// Defines values for UserEventPayload136Job5Provider.
 const (
-	UserEventPayload135Job5ProviderGitlab UserEventPayload135Job5Provider = "gitlab"
+	UserEventPayload136Job5ProviderGitlab UserEventPayload136Job5Provider = "gitlab"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5Provider enum.
-func (e UserEventPayload135Job5Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5Provider enum.
+func (e UserEventPayload136Job5Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5ProviderGitlab:
+	case UserEventPayload136Job5ProviderGitlab:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5Silent.
+// Defines values for UserEventPayload136Job5Silent.
 const (
-	UserEventPayload135Job5SilentFalse UserEventPayload135Job5Silent = false
-	UserEventPayload135Job5SilentTrue  UserEventPayload135Job5Silent = true
+	UserEventPayload136Job5SilentFalse UserEventPayload136Job5Silent = false
+	UserEventPayload136Job5SilentTrue  UserEventPayload136Job5Silent = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5Silent enum.
-func (e UserEventPayload135Job5Silent) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5Silent enum.
+func (e UserEventPayload136Job5Silent) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5SilentFalse:
+	case UserEventPayload136Job5SilentFalse:
 		return true
-	case UserEventPayload135Job5SilentTrue:
+	case UserEventPayload136Job5SilentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5Type.
+// Defines values for UserEventPayload136Job5Type.
 const (
-	UserEventPayload135Job5TypeGitlabPush UserEventPayload135Job5Type = "gitlab-push"
+	UserEventPayload136Job5TypeGitlabPush UserEventPayload136Job5Type = "gitlab-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5Type enum.
-func (e UserEventPayload135Job5Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5Type enum.
+func (e UserEventPayload136Job5Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5TypeGitlabPush:
+	case UserEventPayload136Job5TypeGitlabPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job5WithCache.
+// Defines values for UserEventPayload136Job5WithCache.
 const (
-	UserEventPayload135Job5WithCacheFalse UserEventPayload135Job5WithCache = false
-	UserEventPayload135Job5WithCacheTrue  UserEventPayload135Job5WithCache = true
+	UserEventPayload136Job5WithCacheFalse UserEventPayload136Job5WithCache = false
+	UserEventPayload136Job5WithCacheTrue  UserEventPayload136Job5WithCache = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job5WithCache enum.
-func (e UserEventPayload135Job5WithCache) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job5WithCache enum.
+func (e UserEventPayload136Job5WithCache) Valid() bool {
 	switch e {
-	case UserEventPayload135Job5WithCacheFalse:
+	case UserEventPayload136Job5WithCacheFalse:
 		return true
-	case UserEventPayload135Job5WithCacheTrue:
+	case UserEventPayload136Job5WithCacheTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job6Eventful.
+// Defines values for UserEventPayload136Job6Eventful.
 const (
-	UserEventPayload135Job6EventfulFalse UserEventPayload135Job6Eventful = false
-	UserEventPayload135Job6EventfulTrue  UserEventPayload135Job6Eventful = true
+	UserEventPayload136Job6EventfulFalse UserEventPayload136Job6Eventful = false
+	UserEventPayload136Job6EventfulTrue  UserEventPayload136Job6Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job6Eventful enum.
-func (e UserEventPayload135Job6Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job6Eventful enum.
+func (e UserEventPayload136Job6Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job6EventfulFalse:
+	case UserEventPayload136Job6EventfulFalse:
 		return true
-	case UserEventPayload135Job6EventfulTrue:
+	case UserEventPayload136Job6EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job6GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job6GitCommentsOnCommit.
 const (
-	UserEventPayload135Job6GitCommentsOnCommitFalse UserEventPayload135Job6GitCommentsOnCommit = false
-	UserEventPayload135Job6GitCommentsOnCommitTrue  UserEventPayload135Job6GitCommentsOnCommit = true
+	UserEventPayload136Job6GitCommentsOnCommitFalse UserEventPayload136Job6GitCommentsOnCommit = false
+	UserEventPayload136Job6GitCommentsOnCommitTrue  UserEventPayload136Job6GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job6GitCommentsOnCommit enum.
-func (e UserEventPayload135Job6GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job6GitCommentsOnCommit enum.
+func (e UserEventPayload136Job6GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job6GitCommentsOnCommitFalse:
+	case UserEventPayload136Job6GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job6GitCommentsOnCommitTrue:
+	case UserEventPayload136Job6GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job6GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job6GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job6GitCommentsOnPullRequestFalse UserEventPayload135Job6GitCommentsOnPullRequest = false
-	UserEventPayload135Job6GitCommentsOnPullRequestTrue  UserEventPayload135Job6GitCommentsOnPullRequest = true
+	UserEventPayload136Job6GitCommentsOnPullRequestFalse UserEventPayload136Job6GitCommentsOnPullRequest = false
+	UserEventPayload136Job6GitCommentsOnPullRequestTrue  UserEventPayload136Job6GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job6GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job6GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job6GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job6GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job6GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job6GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job6GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job6GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job6Provider.
+// Defines values for UserEventPayload136Job6Provider.
 const (
-	UserEventPayload135Job6ProviderGitlab UserEventPayload135Job6Provider = "gitlab"
+	UserEventPayload136Job6ProviderGitlab UserEventPayload136Job6Provider = "gitlab"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job6Provider enum.
-func (e UserEventPayload135Job6Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job6Provider enum.
+func (e UserEventPayload136Job6Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job6ProviderGitlab:
+	case UserEventPayload136Job6ProviderGitlab:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job6Type.
+// Defines values for UserEventPayload136Job6Type.
 const (
-	UserEventPayload135Job6TypeGitlabNowComment UserEventPayload135Job6Type = "gitlab-now-comment"
+	UserEventPayload136Job6TypeGitlabNowComment UserEventPayload136Job6Type = "gitlab-now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job6Type enum.
-func (e UserEventPayload135Job6Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job6Type enum.
+func (e UserEventPayload136Job6Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job6TypeGitlabNowComment:
+	case UserEventPayload136Job6TypeGitlabNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7Authorized.
+// Defines values for UserEventPayload136Job7Authorized.
 const (
-	UserEventPayload135Job7AuthorizedFalse UserEventPayload135Job7Authorized = false
-	UserEventPayload135Job7AuthorizedTrue  UserEventPayload135Job7Authorized = true
+	UserEventPayload136Job7AuthorizedFalse UserEventPayload136Job7Authorized = false
+	UserEventPayload136Job7AuthorizedTrue  UserEventPayload136Job7Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7Authorized enum.
-func (e UserEventPayload135Job7Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7Authorized enum.
+func (e UserEventPayload136Job7Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7AuthorizedFalse:
+	case UserEventPayload136Job7AuthorizedFalse:
 		return true
-	case UserEventPayload135Job7AuthorizedTrue:
+	case UserEventPayload136Job7AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7CommitVerification.
+// Defines values for UserEventPayload136Job7CommitVerification.
 const (
-	UserEventPayload135Job7CommitVerificationUnknown    UserEventPayload135Job7CommitVerification = "unknown"
-	UserEventPayload135Job7CommitVerificationUnverified UserEventPayload135Job7CommitVerification = "unverified"
-	UserEventPayload135Job7CommitVerificationVerified   UserEventPayload135Job7CommitVerification = "verified"
+	UserEventPayload136Job7CommitVerificationUnknown    UserEventPayload136Job7CommitVerification = "unknown"
+	UserEventPayload136Job7CommitVerificationUnverified UserEventPayload136Job7CommitVerification = "unverified"
+	UserEventPayload136Job7CommitVerificationVerified   UserEventPayload136Job7CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7CommitVerification enum.
-func (e UserEventPayload135Job7CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7CommitVerification enum.
+func (e UserEventPayload136Job7CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7CommitVerificationUnknown:
+	case UserEventPayload136Job7CommitVerificationUnknown:
 		return true
-	case UserEventPayload135Job7CommitVerificationUnverified:
+	case UserEventPayload136Job7CommitVerificationUnverified:
 		return true
-	case UserEventPayload135Job7CommitVerificationVerified:
+	case UserEventPayload136Job7CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job7GitCommentsOnCommit.
 const (
-	UserEventPayload135Job7GitCommentsOnCommitFalse UserEventPayload135Job7GitCommentsOnCommit = false
-	UserEventPayload135Job7GitCommentsOnCommitTrue  UserEventPayload135Job7GitCommentsOnCommit = true
+	UserEventPayload136Job7GitCommentsOnCommitFalse UserEventPayload136Job7GitCommentsOnCommit = false
+	UserEventPayload136Job7GitCommentsOnCommitTrue  UserEventPayload136Job7GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7GitCommentsOnCommit enum.
-func (e UserEventPayload135Job7GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7GitCommentsOnCommit enum.
+func (e UserEventPayload136Job7GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7GitCommentsOnCommitFalse:
+	case UserEventPayload136Job7GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job7GitCommentsOnCommitTrue:
+	case UserEventPayload136Job7GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job7GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job7GitCommentsOnPullRequestFalse UserEventPayload135Job7GitCommentsOnPullRequest = false
-	UserEventPayload135Job7GitCommentsOnPullRequestTrue  UserEventPayload135Job7GitCommentsOnPullRequest = true
+	UserEventPayload136Job7GitCommentsOnPullRequestFalse UserEventPayload136Job7GitCommentsOnPullRequest = false
+	UserEventPayload136Job7GitCommentsOnPullRequestTrue  UserEventPayload136Job7GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job7GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job7GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job7GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job7GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job7GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7GitHashtagVercel.
+// Defines values for UserEventPayload136Job7GitHashtagVercel.
 const (
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELSKIP                          UserEventPayload135Job7GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload135Job7GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload135Job7GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELSKIP                          UserEventPayload136Job7GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload136Job7GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload136Job7GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7GitHashtagVercel enum.
-func (e UserEventPayload135Job7GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7GitHashtagVercel enum.
+func (e UserEventPayload136Job7GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload135Job7GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload136Job7GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7IsManualGitDeploy.
+// Defines values for UserEventPayload136Job7IsManualGitDeploy.
 const (
-	UserEventPayload135Job7IsManualGitDeployFalse UserEventPayload135Job7IsManualGitDeploy = false
-	UserEventPayload135Job7IsManualGitDeployTrue  UserEventPayload135Job7IsManualGitDeploy = true
+	UserEventPayload136Job7IsManualGitDeployFalse UserEventPayload136Job7IsManualGitDeploy = false
+	UserEventPayload136Job7IsManualGitDeployTrue  UserEventPayload136Job7IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7IsManualGitDeploy enum.
-func (e UserEventPayload135Job7IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7IsManualGitDeploy enum.
+func (e UserEventPayload136Job7IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7IsManualGitDeployFalse:
+	case UserEventPayload136Job7IsManualGitDeployFalse:
 		return true
-	case UserEventPayload135Job7IsManualGitDeployTrue:
+	case UserEventPayload136Job7IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7NsnbSideEffectAction.
+// Defines values for UserEventPayload136Job7NsnbSideEffectAction.
 const (
-	UserEventPayload135Job7NsnbSideEffectActionAutoApprovedMember        UserEventPayload135Job7NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload135Job7NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload135Job7NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload136Job7NsnbSideEffectActionAutoApprovedMember        UserEventPayload136Job7NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload136Job7NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload136Job7NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7NsnbSideEffectAction enum.
-func (e UserEventPayload135Job7NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7NsnbSideEffectAction enum.
+func (e UserEventPayload136Job7NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload136Job7NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload135Job7NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload136Job7NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7Provider.
+// Defines values for UserEventPayload136Job7Provider.
 const (
-	UserEventPayload135Job7ProviderVercel UserEventPayload135Job7Provider = "vercel"
+	UserEventPayload136Job7ProviderVercel UserEventPayload136Job7Provider = "vercel"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7Provider enum.
-func (e UserEventPayload135Job7Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7Provider enum.
+func (e UserEventPayload136Job7Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7ProviderVercel:
+	case UserEventPayload136Job7ProviderVercel:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job7Type.
+// Defines values for UserEventPayload136Job7Type.
 const (
-	UserEventPayload135Job7TypeVercelPush UserEventPayload135Job7Type = "vercel-push"
+	UserEventPayload136Job7TypeVercelPush UserEventPayload136Job7Type = "vercel-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job7Type enum.
-func (e UserEventPayload135Job7Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job7Type enum.
+func (e UserEventPayload136Job7Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job7TypeVercelPush:
+	case UserEventPayload136Job7TypeVercelPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8Authorized.
+// Defines values for UserEventPayload136Job8Authorized.
 const (
-	UserEventPayload135Job8AuthorizedFalse UserEventPayload135Job8Authorized = false
-	UserEventPayload135Job8AuthorizedTrue  UserEventPayload135Job8Authorized = true
+	UserEventPayload136Job8AuthorizedFalse UserEventPayload136Job8Authorized = false
+	UserEventPayload136Job8AuthorizedTrue  UserEventPayload136Job8Authorized = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8Authorized enum.
-func (e UserEventPayload135Job8Authorized) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8Authorized enum.
+func (e UserEventPayload136Job8Authorized) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8AuthorizedFalse:
+	case UserEventPayload136Job8AuthorizedFalse:
 		return true
-	case UserEventPayload135Job8AuthorizedTrue:
+	case UserEventPayload136Job8AuthorizedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8CommitVerification.
+// Defines values for UserEventPayload136Job8CommitVerification.
 const (
-	UserEventPayload135Job8CommitVerificationUnknown    UserEventPayload135Job8CommitVerification = "unknown"
-	UserEventPayload135Job8CommitVerificationUnverified UserEventPayload135Job8CommitVerification = "unverified"
-	UserEventPayload135Job8CommitVerificationVerified   UserEventPayload135Job8CommitVerification = "verified"
+	UserEventPayload136Job8CommitVerificationUnknown    UserEventPayload136Job8CommitVerification = "unknown"
+	UserEventPayload136Job8CommitVerificationUnverified UserEventPayload136Job8CommitVerification = "unverified"
+	UserEventPayload136Job8CommitVerificationVerified   UserEventPayload136Job8CommitVerification = "verified"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8CommitVerification enum.
-func (e UserEventPayload135Job8CommitVerification) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8CommitVerification enum.
+func (e UserEventPayload136Job8CommitVerification) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8CommitVerificationUnknown:
+	case UserEventPayload136Job8CommitVerificationUnknown:
 		return true
-	case UserEventPayload135Job8CommitVerificationUnverified:
+	case UserEventPayload136Job8CommitVerificationUnverified:
 		return true
-	case UserEventPayload135Job8CommitVerificationVerified:
+	case UserEventPayload136Job8CommitVerificationVerified:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8Eventful.
+// Defines values for UserEventPayload136Job8Eventful.
 const (
-	UserEventPayload135Job8EventfulFalse UserEventPayload135Job8Eventful = false
-	UserEventPayload135Job8EventfulTrue  UserEventPayload135Job8Eventful = true
+	UserEventPayload136Job8EventfulFalse UserEventPayload136Job8Eventful = false
+	UserEventPayload136Job8EventfulTrue  UserEventPayload136Job8Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8Eventful enum.
-func (e UserEventPayload135Job8Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8Eventful enum.
+func (e UserEventPayload136Job8Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8EventfulFalse:
+	case UserEventPayload136Job8EventfulFalse:
 		return true
-	case UserEventPayload135Job8EventfulTrue:
+	case UserEventPayload136Job8EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8ForceNew.
+// Defines values for UserEventPayload136Job8ForceNew.
 const (
-	UserEventPayload135Job8ForceNewFalse UserEventPayload135Job8ForceNew = false
-	UserEventPayload135Job8ForceNewTrue  UserEventPayload135Job8ForceNew = true
+	UserEventPayload136Job8ForceNewFalse UserEventPayload136Job8ForceNew = false
+	UserEventPayload136Job8ForceNewTrue  UserEventPayload136Job8ForceNew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8ForceNew enum.
-func (e UserEventPayload135Job8ForceNew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8ForceNew enum.
+func (e UserEventPayload136Job8ForceNew) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8ForceNewFalse:
+	case UserEventPayload136Job8ForceNewFalse:
 		return true
-	case UserEventPayload135Job8ForceNewTrue:
+	case UserEventPayload136Job8ForceNewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8Forced.
+// Defines values for UserEventPayload136Job8Forced.
 const (
-	UserEventPayload135Job8ForcedFalse UserEventPayload135Job8Forced = false
-	UserEventPayload135Job8ForcedTrue  UserEventPayload135Job8Forced = true
+	UserEventPayload136Job8ForcedFalse UserEventPayload136Job8Forced = false
+	UserEventPayload136Job8ForcedTrue  UserEventPayload136Job8Forced = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8Forced enum.
-func (e UserEventPayload135Job8Forced) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8Forced enum.
+func (e UserEventPayload136Job8Forced) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8ForcedFalse:
+	case UserEventPayload136Job8ForcedFalse:
 		return true
-	case UserEventPayload135Job8ForcedTrue:
+	case UserEventPayload136Job8ForcedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job8GitCommentsOnCommit.
 const (
-	UserEventPayload135Job8GitCommentsOnCommitFalse UserEventPayload135Job8GitCommentsOnCommit = false
-	UserEventPayload135Job8GitCommentsOnCommitTrue  UserEventPayload135Job8GitCommentsOnCommit = true
+	UserEventPayload136Job8GitCommentsOnCommitFalse UserEventPayload136Job8GitCommentsOnCommit = false
+	UserEventPayload136Job8GitCommentsOnCommitTrue  UserEventPayload136Job8GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8GitCommentsOnCommit enum.
-func (e UserEventPayload135Job8GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8GitCommentsOnCommit enum.
+func (e UserEventPayload136Job8GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8GitCommentsOnCommitFalse:
+	case UserEventPayload136Job8GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job8GitCommentsOnCommitTrue:
+	case UserEventPayload136Job8GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job8GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job8GitCommentsOnPullRequestFalse UserEventPayload135Job8GitCommentsOnPullRequest = false
-	UserEventPayload135Job8GitCommentsOnPullRequestTrue  UserEventPayload135Job8GitCommentsOnPullRequest = true
+	UserEventPayload136Job8GitCommentsOnPullRequestFalse UserEventPayload136Job8GitCommentsOnPullRequest = false
+	UserEventPayload136Job8GitCommentsOnPullRequestTrue  UserEventPayload136Job8GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job8GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job8GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job8GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job8GitCommentsOnPullRequestTrue:
+	case UserEventPayload136Job8GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8GitHashtagVercel.
+// Defines values for UserEventPayload136Job8GitHashtagVercel.
 const (
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELSKIP                          UserEventPayload135Job8GitHashtagVercel = "#VERCEL_SKIP"
-	UserEventPayload135Job8GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload135Job8GitHashtagVercel = "#VERCEL_V0_MESSAGE"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO             UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_MACHINE=TURBO"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO1                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_1"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO10                   UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_10"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO2                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_2"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO3                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_3"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO4                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_4"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO5                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_5"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO6                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_6"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO7                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_7"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO8                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_8"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO9                    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_BUILD_PRIO_9"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL   UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL    UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR     UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR         UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELSKIP                          UserEventPayload136Job8GitHashtagVercel = "#VERCEL_SKIP"
+	UserEventPayload136Job8GitHashtagVercelHashVERCELV0MESSAGE                     UserEventPayload136Job8GitHashtagVercel = "#VERCEL_V0_MESSAGE"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8GitHashtagVercel enum.
-func (e UserEventPayload135Job8GitHashtagVercel) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8GitHashtagVercel enum.
+func (e UserEventPayload136Job8GitHashtagVercel) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDMACHINETURBO:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO1:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO1:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO10:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO10:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO2:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO2:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO3:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO3:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO4:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO4:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO5:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO5:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO6:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO6:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO7:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO7:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO8:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO8:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELBUILDPRIO9:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELBUILDPRIO9:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCECANCEL:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERGETREPOFORCEERROR:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCECANCEL:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJAFTERVERIFYFORCEERROR:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJBEFOREBUILDJOBQUEUEDERROR:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSDDJFORCEGITFORKERROR:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELSKIP:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELSKIP:
 		return true
-	case UserEventPayload135Job8GitHashtagVercelHashVERCELV0MESSAGE:
+	case UserEventPayload136Job8GitHashtagVercelHashVERCELV0MESSAGE:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8IsManualGitDeploy.
+// Defines values for UserEventPayload136Job8IsManualGitDeploy.
 const (
-	UserEventPayload135Job8IsManualGitDeployFalse UserEventPayload135Job8IsManualGitDeploy = false
-	UserEventPayload135Job8IsManualGitDeployTrue  UserEventPayload135Job8IsManualGitDeploy = true
+	UserEventPayload136Job8IsManualGitDeployFalse UserEventPayload136Job8IsManualGitDeploy = false
+	UserEventPayload136Job8IsManualGitDeployTrue  UserEventPayload136Job8IsManualGitDeploy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8IsManualGitDeploy enum.
-func (e UserEventPayload135Job8IsManualGitDeploy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8IsManualGitDeploy enum.
+func (e UserEventPayload136Job8IsManualGitDeploy) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8IsManualGitDeployFalse:
+	case UserEventPayload136Job8IsManualGitDeployFalse:
 		return true
-	case UserEventPayload135Job8IsManualGitDeployTrue:
+	case UserEventPayload136Job8IsManualGitDeployTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8NsnbSideEffectAction.
+// Defines values for UserEventPayload136Job8NsnbSideEffectAction.
 const (
-	UserEventPayload135Job8NsnbSideEffectActionAutoApprovedMember        UserEventPayload135Job8NsnbSideEffectAction = "auto-approved-member"
-	UserEventPayload135Job8NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload135Job8NsnbSideEffectAction = "auto-approved-pending-invite"
+	UserEventPayload136Job8NsnbSideEffectActionAutoApprovedMember        UserEventPayload136Job8NsnbSideEffectAction = "auto-approved-member"
+	UserEventPayload136Job8NsnbSideEffectActionAutoApprovedPendingInvite UserEventPayload136Job8NsnbSideEffectAction = "auto-approved-pending-invite"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8NsnbSideEffectAction enum.
-func (e UserEventPayload135Job8NsnbSideEffectAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8NsnbSideEffectAction enum.
+func (e UserEventPayload136Job8NsnbSideEffectAction) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8NsnbSideEffectActionAutoApprovedMember:
+	case UserEventPayload136Job8NsnbSideEffectActionAutoApprovedMember:
 		return true
-	case UserEventPayload135Job8NsnbSideEffectActionAutoApprovedPendingInvite:
+	case UserEventPayload136Job8NsnbSideEffectActionAutoApprovedPendingInvite:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8Provider.
+// Defines values for UserEventPayload136Job8Provider.
 const (
-	UserEventPayload135Job8ProviderCursorOrigin UserEventPayload135Job8Provider = "cursor-origin"
+	UserEventPayload136Job8ProviderCursorOrigin UserEventPayload136Job8Provider = "cursor-origin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8Provider enum.
-func (e UserEventPayload135Job8Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8Provider enum.
+func (e UserEventPayload136Job8Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8ProviderCursorOrigin:
+	case UserEventPayload136Job8ProviderCursorOrigin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job8Type.
+// Defines values for UserEventPayload136Job8Type.
 const (
-	UserEventPayload135Job8TypeCursorOriginPush UserEventPayload135Job8Type = "cursor-origin-push"
+	UserEventPayload136Job8TypeCursorOriginPush UserEventPayload136Job8Type = "cursor-origin-push"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job8Type enum.
-func (e UserEventPayload135Job8Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job8Type enum.
+func (e UserEventPayload136Job8Type) Valid() bool {
 	switch e {
-	case UserEventPayload135Job8TypeCursorOriginPush:
+	case UserEventPayload136Job8TypeCursorOriginPush:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job9Eventful.
+// Defines values for UserEventPayload136Job9Eventful.
 const (
-	UserEventPayload135Job9EventfulFalse UserEventPayload135Job9Eventful = false
-	UserEventPayload135Job9EventfulTrue  UserEventPayload135Job9Eventful = true
+	UserEventPayload136Job9EventfulFalse UserEventPayload136Job9Eventful = false
+	UserEventPayload136Job9EventfulTrue  UserEventPayload136Job9Eventful = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job9Eventful enum.
-func (e UserEventPayload135Job9Eventful) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job9Eventful enum.
+func (e UserEventPayload136Job9Eventful) Valid() bool {
 	switch e {
-	case UserEventPayload135Job9EventfulFalse:
+	case UserEventPayload136Job9EventfulFalse:
 		return true
-	case UserEventPayload135Job9EventfulTrue:
+	case UserEventPayload136Job9EventfulTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job9GitCommentsOnCommit.
+// Defines values for UserEventPayload136Job9GitCommentsOnCommit.
 const (
-	UserEventPayload135Job9GitCommentsOnCommitFalse UserEventPayload135Job9GitCommentsOnCommit = false
-	UserEventPayload135Job9GitCommentsOnCommitTrue  UserEventPayload135Job9GitCommentsOnCommit = true
+	UserEventPayload136Job9GitCommentsOnCommitFalse UserEventPayload136Job9GitCommentsOnCommit = false
+	UserEventPayload136Job9GitCommentsOnCommitTrue  UserEventPayload136Job9GitCommentsOnCommit = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job9GitCommentsOnCommit enum.
-func (e UserEventPayload135Job9GitCommentsOnCommit) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job9GitCommentsOnCommit enum.
+func (e UserEventPayload136Job9GitCommentsOnCommit) Valid() bool {
 	switch e {
-	case UserEventPayload135Job9GitCommentsOnCommitFalse:
+	case UserEventPayload136Job9GitCommentsOnCommitFalse:
 		return true
-	case UserEventPayload135Job9GitCommentsOnCommitTrue:
+	case UserEventPayload136Job9GitCommentsOnCommitTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job9GitCommentsOnPullRequest.
+// Defines values for UserEventPayload136Job9GitCommentsOnPullRequest.
 const (
-	UserEventPayload135Job9GitCommentsOnPullRequestFalse UserEventPayload135Job9GitCommentsOnPullRequest = false
-	UserEventPayload135Job9GitCommentsOnPullRequestTrue  UserEventPayload135Job9GitCommentsOnPullRequest = true
+	UserEventPayload136Job9GitCommentsOnPullRequestFalse UserEventPayload136Job9GitCommentsOnPullRequest = false
+	UserEventPayload136Job9GitCommentsOnPullRequestTrue  UserEventPayload136Job9GitCommentsOnPullRequest = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job9GitCommentsOnPullRequest enum.
-func (e UserEventPayload135Job9GitCommentsOnPullRequest) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job9GitCommentsOnPullRequest enum.
+func (e UserEventPayload136Job9GitCommentsOnPullRequest) Valid() bool {
 	switch e {
-	case UserEventPayload135Job9GitCommentsOnPullRequestFalse:
+	case UserEventPayload136Job9GitCommentsOnPullRequestFalse:
 		return true
-	case UserEventPayload135Job9GitCommentsOnPullRequestTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload135Job9Provider.
-const (
-	UserEventPayload135Job9ProviderCursorOrigin UserEventPayload135Job9Provider = "cursor-origin"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload135Job9Provider enum.
-func (e UserEventPayload135Job9Provider) Valid() bool {
-	switch e {
-	case UserEventPayload135Job9ProviderCursorOrigin:
+	case UserEventPayload136Job9GitCommentsOnPullRequestTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload135Job9Type.
+// Defines values for UserEventPayload136Job9Provider.
 const (
-	UserEventPayload135Job9TypeCursorOriginNowComment UserEventPayload135Job9Type = "cursor-origin-now-comment"
+	UserEventPayload136Job9ProviderCursorOrigin UserEventPayload136Job9Provider = "cursor-origin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload135Job9Type enum.
-func (e UserEventPayload135Job9Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job9Provider enum.
+func (e UserEventPayload136Job9Provider) Valid() bool {
 	switch e {
-	case UserEventPayload135Job9TypeCursorOriginNowComment:
+	case UserEventPayload136Job9ProviderCursorOrigin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload137Reason.
+// Defines values for UserEventPayload136Job9Type.
 const (
-	UserEventPayload137ReasonIpAllowList UserEventPayload137Reason = "ip_allow_list"
+	UserEventPayload136Job9TypeCursorOriginNowComment UserEventPayload136Job9Type = "cursor-origin-now-comment"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload137Reason enum.
-func (e UserEventPayload137Reason) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload136Job9Type enum.
+func (e UserEventPayload136Job9Type) Valid() bool {
 	switch e {
-	case UserEventPayload137ReasonIpAllowList:
+	case UserEventPayload136Job9TypeCursorOriginNowComment:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload139RuleName.
+// Defines values for UserEventPayload138Reason.
 const (
-	UserEventPayload139RuleNameDeploymentSources UserEventPayload139RuleName = "deploymentSources"
-	UserEventPayload139RuleNameGitSources        UserEventPayload139RuleName = "gitSources"
+	UserEventPayload138ReasonIpAllowList UserEventPayload138Reason = "ip_allow_list"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload139RuleName enum.
-func (e UserEventPayload139RuleName) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload138Reason enum.
+func (e UserEventPayload138Reason) Valid() bool {
 	switch e {
-	case UserEventPayload139RuleNameDeploymentSources:
+	case UserEventPayload138ReasonIpAllowList:
 		return true
-	case UserEventPayload139RuleNameGitSources:
-		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload139RuleProvenance.
+// Defines values for UserEventPayload140RuleName.
 const (
-	UserEventPayload139RuleProvenanceDefault UserEventPayload139RuleProvenance = "default"
-	UserEventPayload139RuleProvenanceProject UserEventPayload139RuleProvenance = "project"
-	UserEventPayload139RuleProvenanceTeam    UserEventPayload139RuleProvenance = "team"
+	UserEventPayload140RuleNameDeploymentSources UserEventPayload140RuleName = "deploymentSources"
+	UserEventPayload140RuleNameGitSources        UserEventPayload140RuleName = "gitSources"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload139RuleProvenance enum.
-func (e UserEventPayload139RuleProvenance) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload140RuleName enum.
+func (e UserEventPayload140RuleName) Valid() bool {
 	switch e {
-	case UserEventPayload139RuleProvenanceDefault:
-		return true
-	case UserEventPayload139RuleProvenanceProject:
+	case UserEventPayload140RuleNameDeploymentSources:
 		return true
-	case UserEventPayload139RuleProvenanceTeam:
+	case UserEventPayload140RuleNameGitSources:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload140Mode.
+// Defines values for UserEventPayload140RuleProvenance.
 const (
-	UserEventPayload140ModeNone UserEventPayload140Mode = "none"
+	UserEventPayload140RuleProvenanceDefault UserEventPayload140RuleProvenance = "default"
+	UserEventPayload140RuleProvenanceProject UserEventPayload140RuleProvenance = "project"
+	UserEventPayload140RuleProvenanceTeam    UserEventPayload140RuleProvenance = "team"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload140Mode enum.
-func (e UserEventPayload140Mode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload140RuleProvenance enum.
+func (e UserEventPayload140RuleProvenance) Valid() bool {
 	switch e {
-	case UserEventPayload140ModeNone:
+	case UserEventPayload140RuleProvenanceDefault:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload140PreviousMode.
-const (
-	UserEventPayload140PreviousModeNone UserEventPayload140PreviousMode = "none"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload140PreviousMode enum.
-func (e UserEventPayload140PreviousMode) Valid() bool {
-	switch e {
-	case UserEventPayload140PreviousModeNone:
+	case UserEventPayload140RuleProvenanceProject:
 		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload140Scope.
-const (
-	UserEventPayload140ScopeOrganization UserEventPayload140Scope = "organization"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload140Scope enum.
-func (e UserEventPayload140Scope) Valid() bool {
-	switch e {
-	case UserEventPayload140ScopeOrganization:
+	case UserEventPayload140RuleProvenanceTeam:
 		return true
 	default:
 		return false
@@ -17867,18 +17885,12 @@ func (e UserEventPayload140Scope) Valid() bool {
 
 // Defines values for UserEventPayload141Mode.
 const (
-	UserEventPayload141ModeAll         UserEventPayload141Mode = "all"
-	UserEventPayload141ModeEmailDomain UserEventPayload141Mode = "email-domain"
-	UserEventPayload141ModeNone        UserEventPayload141Mode = "none"
+	UserEventPayload141ModeNone UserEventPayload141Mode = "none"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload141Mode enum.
 func (e UserEventPayload141Mode) Valid() bool {
 	switch e {
-	case UserEventPayload141ModeAll:
-		return true
-	case UserEventPayload141ModeEmailDomain:
-		return true
 	case UserEventPayload141ModeNone:
 		return true
 	default:
@@ -17888,18 +17900,12 @@ func (e UserEventPayload141Mode) Valid() bool {
 
 // Defines values for UserEventPayload141PreviousMode.
 const (
-	UserEventPayload141PreviousModeAll         UserEventPayload141PreviousMode = "all"
-	UserEventPayload141PreviousModeEmailDomain UserEventPayload141PreviousMode = "email-domain"
-	UserEventPayload141PreviousModeNone        UserEventPayload141PreviousMode = "none"
+	UserEventPayload141PreviousModeNone UserEventPayload141PreviousMode = "none"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload141PreviousMode enum.
 func (e UserEventPayload141PreviousMode) Valid() bool {
 	switch e {
-	case UserEventPayload141PreviousModeAll:
-		return true
-	case UserEventPayload141PreviousModeEmailDomain:
-		return true
 	case UserEventPayload141PreviousModeNone:
 		return true
 	default:
@@ -17907,171 +17913,174 @@ func (e UserEventPayload141PreviousMode) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload145Action.
+// Defines values for UserEventPayload141Scope.
 const (
-	UserEventPayload145ActionAdd    UserEventPayload145Action = "add"
-	UserEventPayload145ActionDelete UserEventPayload145Action = "delete"
-	UserEventPayload145ActionUpdate UserEventPayload145Action = "update"
+	UserEventPayload141ScopeOrganization UserEventPayload141Scope = "organization"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload145Action enum.
-func (e UserEventPayload145Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload141Scope enum.
+func (e UserEventPayload141Scope) Valid() bool {
 	switch e {
-	case UserEventPayload145ActionAdd:
-		return true
-	case UserEventPayload145ActionDelete:
-		return true
-	case UserEventPayload145ActionUpdate:
+	case UserEventPayload141ScopeOrganization:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload145Initiator.
+// Defines values for UserEventPayload142Mode.
 const (
-	UserEventPayload145InitiatorSystem UserEventPayload145Initiator = "system"
-	UserEventPayload145InitiatorUser   UserEventPayload145Initiator = "user"
+	UserEventPayload142ModeAll         UserEventPayload142Mode = "all"
+	UserEventPayload142ModeEmailDomain UserEventPayload142Mode = "email-domain"
+	UserEventPayload142ModeNone        UserEventPayload142Mode = "none"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload145Initiator enum.
-func (e UserEventPayload145Initiator) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload142Mode enum.
+func (e UserEventPayload142Mode) Valid() bool {
 	switch e {
-	case UserEventPayload145InitiatorSystem:
+	case UserEventPayload142ModeAll:
 		return true
-	case UserEventPayload145InitiatorUser:
+	case UserEventPayload142ModeEmailDomain:
+		return true
+	case UserEventPayload142ModeNone:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload147Zone.
+// Defines values for UserEventPayload142PreviousMode.
 const (
-	UserEventPayload147ZoneFalse UserEventPayload147Zone = false
-	UserEventPayload147ZoneTrue  UserEventPayload147Zone = true
+	UserEventPayload142PreviousModeAll         UserEventPayload142PreviousMode = "all"
+	UserEventPayload142PreviousModeEmailDomain UserEventPayload142PreviousMode = "email-domain"
+	UserEventPayload142PreviousModeNone        UserEventPayload142PreviousMode = "none"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload147Zone enum.
-func (e UserEventPayload147Zone) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload142PreviousMode enum.
+func (e UserEventPayload142PreviousMode) Valid() bool {
 	switch e {
-	case UserEventPayload147ZoneFalse:
+	case UserEventPayload142PreviousModeAll:
 		return true
-	case UserEventPayload147ZoneTrue:
+	case UserEventPayload142PreviousModeEmailDomain:
+		return true
+	case UserEventPayload142PreviousModeNone:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload149CdnEnabled.
+// Defines values for UserEventPayload146Action.
 const (
-	UserEventPayload149CdnEnabledFalse UserEventPayload149CdnEnabled = false
-	UserEventPayload149CdnEnabledTrue  UserEventPayload149CdnEnabled = true
+	UserEventPayload146ActionAdd    UserEventPayload146Action = "add"
+	UserEventPayload146ActionDelete UserEventPayload146Action = "delete"
+	UserEventPayload146ActionUpdate UserEventPayload146Action = "update"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload149CdnEnabled enum.
-func (e UserEventPayload149CdnEnabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload146Action enum.
+func (e UserEventPayload146Action) Valid() bool {
 	switch e {
-	case UserEventPayload149CdnEnabledFalse:
+	case UserEventPayload146ActionAdd:
 		return true
-	case UserEventPayload149CdnEnabledTrue:
+	case UserEventPayload146ActionDelete:
+		return true
+	case UserEventPayload146ActionUpdate:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload156EchMode.
+// Defines values for UserEventPayload146Initiator.
 const (
-	UserEventPayload156EchModeAuto     UserEventPayload156EchMode = "auto"
-	UserEventPayload156EchModeDisabled UserEventPayload156EchMode = "disabled"
-	UserEventPayload156EchModeEnabled  UserEventPayload156EchMode = "enabled"
+	UserEventPayload146InitiatorSystem UserEventPayload146Initiator = "system"
+	UserEventPayload146InitiatorUser   UserEventPayload146Initiator = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload156EchMode enum.
-func (e UserEventPayload156EchMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload146Initiator enum.
+func (e UserEventPayload146Initiator) Valid() bool {
 	switch e {
-	case UserEventPayload156EchModeAuto:
+	case UserEventPayload146InitiatorSystem:
 		return true
-	case UserEventPayload156EchModeDisabled:
-		return true
-	case UserEventPayload156EchModeEnabled:
+	case UserEventPayload146InitiatorUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload156PreviousEchMode.
+// Defines values for UserEventPayload148Zone.
 const (
-	UserEventPayload156PreviousEchModeAuto     UserEventPayload156PreviousEchMode = "auto"
-	UserEventPayload156PreviousEchModeDisabled UserEventPayload156PreviousEchMode = "disabled"
-	UserEventPayload156PreviousEchModeEnabled  UserEventPayload156PreviousEchMode = "enabled"
+	UserEventPayload148ZoneFalse UserEventPayload148Zone = false
+	UserEventPayload148ZoneTrue  UserEventPayload148Zone = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload156PreviousEchMode enum.
-func (e UserEventPayload156PreviousEchMode) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload148Zone enum.
+func (e UserEventPayload148Zone) Valid() bool {
 	switch e {
-	case UserEventPayload156PreviousEchModeAuto:
+	case UserEventPayload148ZoneFalse:
 		return true
-	case UserEventPayload156PreviousEchModeDisabled:
-		return true
-	case UserEventPayload156PreviousEchModeEnabled:
+	case UserEventPayload148ZoneTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload157Zone.
+// Defines values for UserEventPayload150CdnEnabled.
 const (
-	UserEventPayload157ZoneFalse UserEventPayload157Zone = false
-	UserEventPayload157ZoneTrue  UserEventPayload157Zone = true
+	UserEventPayload150CdnEnabledFalse UserEventPayload150CdnEnabled = false
+	UserEventPayload150CdnEnabledTrue  UserEventPayload150CdnEnabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload157Zone enum.
-func (e UserEventPayload157Zone) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload150CdnEnabled enum.
+func (e UserEventPayload150CdnEnabled) Valid() bool {
 	switch e {
-	case UserEventPayload157ZoneFalse:
+	case UserEventPayload150CdnEnabledFalse:
 		return true
-	case UserEventPayload157ZoneTrue:
+	case UserEventPayload150CdnEnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload158Initiator.
+// Defines values for UserEventPayload157EchMode.
 const (
-	UserEventPayload158InitiatorSystem UserEventPayload158Initiator = "system"
-	UserEventPayload158InitiatorUser   UserEventPayload158Initiator = "user"
+	UserEventPayload157EchModeAuto     UserEventPayload157EchMode = "auto"
+	UserEventPayload157EchModeDisabled UserEventPayload157EchMode = "disabled"
+	UserEventPayload157EchModeEnabled  UserEventPayload157EchMode = "enabled"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload158Initiator enum.
-func (e UserEventPayload158Initiator) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload157EchMode enum.
+func (e UserEventPayload157EchMode) Valid() bool {
 	switch e {
-	case UserEventPayload158InitiatorSystem:
+	case UserEventPayload157EchModeAuto:
 		return true
-	case UserEventPayload158InitiatorUser:
+	case UserEventPayload157EchModeDisabled:
+		return true
+	case UserEventPayload157EchModeEnabled:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload158PreviousZone.
+// Defines values for UserEventPayload157PreviousEchMode.
 const (
-	UserEventPayload158PreviousZoneFalse UserEventPayload158PreviousZone = false
-	UserEventPayload158PreviousZoneTrue  UserEventPayload158PreviousZone = true
+	UserEventPayload157PreviousEchModeAuto     UserEventPayload157PreviousEchMode = "auto"
+	UserEventPayload157PreviousEchModeDisabled UserEventPayload157PreviousEchMode = "disabled"
+	UserEventPayload157PreviousEchModeEnabled  UserEventPayload157PreviousEchMode = "enabled"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload158PreviousZone enum.
-func (e UserEventPayload158PreviousZone) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload157PreviousEchMode enum.
+func (e UserEventPayload157PreviousEchMode) Valid() bool {
 	switch e {
-	case UserEventPayload158PreviousZoneFalse:
+	case UserEventPayload157PreviousEchModeAuto:
 		return true
-	case UserEventPayload158PreviousZoneTrue:
+	case UserEventPayload157PreviousEchModeDisabled:
+		return true
+	case UserEventPayload157PreviousEchModeEnabled:
 		return true
 	default:
 		return false
@@ -18096,279 +18105,288 @@ func (e UserEventPayload158Zone) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload162Renew.
+// Defines values for UserEventPayload159Initiator.
 const (
-	UserEventPayload162RenewFalse UserEventPayload162Renew = false
-	UserEventPayload162RenewTrue  UserEventPayload162Renew = true
+	UserEventPayload159InitiatorSystem UserEventPayload159Initiator = "system"
+	UserEventPayload159InitiatorUser   UserEventPayload159Initiator = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload162Renew enum.
-func (e UserEventPayload162Renew) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload159Initiator enum.
+func (e UserEventPayload159Initiator) Valid() bool {
 	switch e {
-	case UserEventPayload162RenewFalse:
+	case UserEventPayload159InitiatorSystem:
 		return true
-	case UserEventPayload162RenewTrue:
+	case UserEventPayload159InitiatorUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload177FromAccountType.
+// Defines values for UserEventPayload159PreviousZone.
 const (
-	UserEventPayload177FromAccountTypeTeam UserEventPayload177FromAccountType = "team"
-	UserEventPayload177FromAccountTypeUser UserEventPayload177FromAccountType = "user"
+	UserEventPayload159PreviousZoneFalse UserEventPayload159PreviousZone = false
+	UserEventPayload159PreviousZoneTrue  UserEventPayload159PreviousZone = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload177FromAccountType enum.
-func (e UserEventPayload177FromAccountType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload159PreviousZone enum.
+func (e UserEventPayload159PreviousZone) Valid() bool {
 	switch e {
-	case UserEventPayload177FromAccountTypeTeam:
+	case UserEventPayload159PreviousZoneFalse:
 		return true
-	case UserEventPayload177FromAccountTypeUser:
+	case UserEventPayload159PreviousZoneTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload177ToAccountType.
+// Defines values for UserEventPayload159Zone.
 const (
-	UserEventPayload177ToAccountTypeTeam UserEventPayload177ToAccountType = "team"
-	UserEventPayload177ToAccountTypeUser UserEventPayload177ToAccountType = "user"
+	UserEventPayload159ZoneFalse UserEventPayload159Zone = false
+	UserEventPayload159ZoneTrue  UserEventPayload159Zone = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload177ToAccountType enum.
-func (e UserEventPayload177ToAccountType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload159Zone enum.
+func (e UserEventPayload159Zone) Valid() bool {
 	switch e {
-	case UserEventPayload177ToAccountTypeTeam:
+	case UserEventPayload159ZoneFalse:
 		return true
-	case UserEventPayload177ToAccountTypeUser:
+	case UserEventPayload159ZoneTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload185UpdateDiffChangedComment.
+// Defines values for UserEventPayload163Renew.
 const (
-	UserEventPayload185UpdateDiffChangedCommentFalse UserEventPayload185UpdateDiffChangedComment = false
-	UserEventPayload185UpdateDiffChangedCommentTrue  UserEventPayload185UpdateDiffChangedComment = true
+	UserEventPayload163RenewFalse UserEventPayload163Renew = false
+	UserEventPayload163RenewTrue  UserEventPayload163Renew = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload185UpdateDiffChangedComment enum.
-func (e UserEventPayload185UpdateDiffChangedComment) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload163Renew enum.
+func (e UserEventPayload163Renew) Valid() bool {
 	switch e {
-	case UserEventPayload185UpdateDiffChangedCommentFalse:
+	case UserEventPayload163RenewFalse:
 		return true
-	case UserEventPayload185UpdateDiffChangedCommentTrue:
+	case UserEventPayload163RenewTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload185UpdateDiffChangedGitBranch.
+// Defines values for UserEventPayload178FromAccountType.
 const (
-	UserEventPayload185UpdateDiffChangedGitBranchFalse UserEventPayload185UpdateDiffChangedGitBranch = false
-	UserEventPayload185UpdateDiffChangedGitBranchTrue  UserEventPayload185UpdateDiffChangedGitBranch = true
+	UserEventPayload178FromAccountTypeTeam UserEventPayload178FromAccountType = "team"
+	UserEventPayload178FromAccountTypeUser UserEventPayload178FromAccountType = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload185UpdateDiffChangedGitBranch enum.
-func (e UserEventPayload185UpdateDiffChangedGitBranch) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload178FromAccountType enum.
+func (e UserEventPayload178FromAccountType) Valid() bool {
 	switch e {
-	case UserEventPayload185UpdateDiffChangedGitBranchFalse:
+	case UserEventPayload178FromAccountTypeTeam:
 		return true
-	case UserEventPayload185UpdateDiffChangedGitBranchTrue:
+	case UserEventPayload178FromAccountTypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload185UpdateDiffChangedValue.
+// Defines values for UserEventPayload178ToAccountType.
 const (
-	UserEventPayload185UpdateDiffChangedValueFalse UserEventPayload185UpdateDiffChangedValue = false
-	UserEventPayload185UpdateDiffChangedValueTrue  UserEventPayload185UpdateDiffChangedValue = true
+	UserEventPayload178ToAccountTypeTeam UserEventPayload178ToAccountType = "team"
+	UserEventPayload178ToAccountTypeUser UserEventPayload178ToAccountType = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload185UpdateDiffChangedValue enum.
-func (e UserEventPayload185UpdateDiffChangedValue) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload178ToAccountType enum.
+func (e UserEventPayload178ToAccountType) Valid() bool {
 	switch e {
-	case UserEventPayload185UpdateDiffChangedValueFalse:
+	case UserEventPayload178ToAccountTypeTeam:
 		return true
-	case UserEventPayload185UpdateDiffChangedValueTrue:
+	case UserEventPayload178ToAccountTypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload185UpdateDiffNewTarget.
+// Defines values for UserEventPayload186UpdateDiffChangedComment.
 const (
-	UserEventPayload185UpdateDiffNewTargetDevelopment UserEventPayload185UpdateDiffNewTarget = "development"
-	UserEventPayload185UpdateDiffNewTargetPreview     UserEventPayload185UpdateDiffNewTarget = "preview"
-	UserEventPayload185UpdateDiffNewTargetProduction  UserEventPayload185UpdateDiffNewTarget = "production"
+	UserEventPayload186UpdateDiffChangedCommentFalse UserEventPayload186UpdateDiffChangedComment = false
+	UserEventPayload186UpdateDiffChangedCommentTrue  UserEventPayload186UpdateDiffChangedComment = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload185UpdateDiffNewTarget enum.
-func (e UserEventPayload185UpdateDiffNewTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload186UpdateDiffChangedComment enum.
+func (e UserEventPayload186UpdateDiffChangedComment) Valid() bool {
 	switch e {
-	case UserEventPayload185UpdateDiffNewTargetDevelopment:
+	case UserEventPayload186UpdateDiffChangedCommentFalse:
 		return true
-	case UserEventPayload185UpdateDiffNewTargetPreview:
-		return true
-	case UserEventPayload185UpdateDiffNewTargetProduction:
+	case UserEventPayload186UpdateDiffChangedCommentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload185UpdateDiffOldTarget.
+// Defines values for UserEventPayload186UpdateDiffChangedGitBranch.
 const (
-	UserEventPayload185UpdateDiffOldTargetDevelopment UserEventPayload185UpdateDiffOldTarget = "development"
-	UserEventPayload185UpdateDiffOldTargetPreview     UserEventPayload185UpdateDiffOldTarget = "preview"
-	UserEventPayload185UpdateDiffOldTargetProduction  UserEventPayload185UpdateDiffOldTarget = "production"
+	UserEventPayload186UpdateDiffChangedGitBranchFalse UserEventPayload186UpdateDiffChangedGitBranch = false
+	UserEventPayload186UpdateDiffChangedGitBranchTrue  UserEventPayload186UpdateDiffChangedGitBranch = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload185UpdateDiffOldTarget enum.
-func (e UserEventPayload185UpdateDiffOldTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload186UpdateDiffChangedGitBranch enum.
+func (e UserEventPayload186UpdateDiffChangedGitBranch) Valid() bool {
 	switch e {
-	case UserEventPayload185UpdateDiffOldTargetDevelopment:
+	case UserEventPayload186UpdateDiffChangedGitBranchFalse:
 		return true
-	case UserEventPayload185UpdateDiffOldTargetPreview:
-		return true
-	case UserEventPayload185UpdateDiffOldTargetProduction:
+	case UserEventPayload186UpdateDiffChangedGitBranchTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload187Visibility.
+// Defines values for UserEventPayload186UpdateDiffChangedValue.
 const (
-	UserEventPayload187VisibilityConfig UserEventPayload187Visibility = "config"
-	UserEventPayload187VisibilitySecret UserEventPayload187Visibility = "secret"
+	UserEventPayload186UpdateDiffChangedValueFalse UserEventPayload186UpdateDiffChangedValue = false
+	UserEventPayload186UpdateDiffChangedValueTrue  UserEventPayload186UpdateDiffChangedValue = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload187Visibility enum.
-func (e UserEventPayload187Visibility) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload186UpdateDiffChangedValue enum.
+func (e UserEventPayload186UpdateDiffChangedValue) Valid() bool {
 	switch e {
-	case UserEventPayload187VisibilityConfig:
+	case UserEventPayload186UpdateDiffChangedValueFalse:
 		return true
-	case UserEventPayload187VisibilitySecret:
+	case UserEventPayload186UpdateDiffChangedValueTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188ApplyToAllCustomEnvironments.
+// Defines values for UserEventPayload186UpdateDiffNewTarget.
 const (
-	UserEventPayload188ApplyToAllCustomEnvironmentsFalse UserEventPayload188ApplyToAllCustomEnvironments = false
-	UserEventPayload188ApplyToAllCustomEnvironmentsTrue  UserEventPayload188ApplyToAllCustomEnvironments = true
+	UserEventPayload186UpdateDiffNewTargetDevelopment UserEventPayload186UpdateDiffNewTarget = "development"
+	UserEventPayload186UpdateDiffNewTargetPreview     UserEventPayload186UpdateDiffNewTarget = "preview"
+	UserEventPayload186UpdateDiffNewTargetProduction  UserEventPayload186UpdateDiffNewTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188ApplyToAllCustomEnvironments enum.
-func (e UserEventPayload188ApplyToAllCustomEnvironments) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload186UpdateDiffNewTarget enum.
+func (e UserEventPayload186UpdateDiffNewTarget) Valid() bool {
 	switch e {
-	case UserEventPayload188ApplyToAllCustomEnvironmentsFalse:
+	case UserEventPayload186UpdateDiffNewTargetDevelopment:
 		return true
-	case UserEventPayload188ApplyToAllCustomEnvironmentsTrue:
+	case UserEventPayload186UpdateDiffNewTargetPreview:
+		return true
+	case UserEventPayload186UpdateDiffNewTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188Decrypted.
+// Defines values for UserEventPayload186UpdateDiffOldTarget.
 const (
-	UserEventPayload188DecryptedFalse UserEventPayload188Decrypted = false
-	UserEventPayload188DecryptedTrue  UserEventPayload188Decrypted = true
+	UserEventPayload186UpdateDiffOldTargetDevelopment UserEventPayload186UpdateDiffOldTarget = "development"
+	UserEventPayload186UpdateDiffOldTargetPreview     UserEventPayload186UpdateDiffOldTarget = "preview"
+	UserEventPayload186UpdateDiffOldTargetProduction  UserEventPayload186UpdateDiffOldTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188Decrypted enum.
-func (e UserEventPayload188Decrypted) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload186UpdateDiffOldTarget enum.
+func (e UserEventPayload186UpdateDiffOldTarget) Valid() bool {
 	switch e {
-	case UserEventPayload188DecryptedFalse:
+	case UserEventPayload186UpdateDiffOldTargetDevelopment:
 		return true
-	case UserEventPayload188DecryptedTrue:
+	case UserEventPayload186UpdateDiffOldTargetPreview:
+		return true
+	case UserEventPayload186UpdateDiffOldTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188LastEditedByPrincipal0Type.
+// Defines values for UserEventPayload188Visibility.
 const (
-	UserEventPayload188LastEditedByPrincipal0TypeUser UserEventPayload188LastEditedByPrincipal0Type = "user"
+	UserEventPayload188VisibilityConfig UserEventPayload188Visibility = "config"
+	UserEventPayload188VisibilitySecret UserEventPayload188Visibility = "secret"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188LastEditedByPrincipal0Type enum.
-func (e UserEventPayload188LastEditedByPrincipal0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload188Visibility enum.
+func (e UserEventPayload188Visibility) Valid() bool {
 	switch e {
-	case UserEventPayload188LastEditedByPrincipal0TypeUser:
+	case UserEventPayload188VisibilityConfig:
+		return true
+	case UserEventPayload188VisibilitySecret:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188LastEditedByPrincipal1Type.
+// Defines values for UserEventPayload189ApplyToAllCustomEnvironments.
 const (
-	UserEventPayload188LastEditedByPrincipal1TypeApp UserEventPayload188LastEditedByPrincipal1Type = "app"
+	UserEventPayload189ApplyToAllCustomEnvironmentsFalse UserEventPayload189ApplyToAllCustomEnvironments = false
+	UserEventPayload189ApplyToAllCustomEnvironmentsTrue  UserEventPayload189ApplyToAllCustomEnvironments = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188LastEditedByPrincipal1Type enum.
-func (e UserEventPayload188LastEditedByPrincipal1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189ApplyToAllCustomEnvironments enum.
+func (e UserEventPayload189ApplyToAllCustomEnvironments) Valid() bool {
 	switch e {
-	case UserEventPayload188LastEditedByPrincipal1TypeApp:
+	case UserEventPayload189ApplyToAllCustomEnvironmentsFalse:
+		return true
+	case UserEventPayload189ApplyToAllCustomEnvironmentsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188Target.
+// Defines values for UserEventPayload189Decrypted.
 const (
-	UserEventPayload188TargetDevelopment UserEventPayload188Target = "development"
-	UserEventPayload188TargetPreview     UserEventPayload188Target = "preview"
-	UserEventPayload188TargetProduction  UserEventPayload188Target = "production"
+	UserEventPayload189DecryptedFalse UserEventPayload189Decrypted = false
+	UserEventPayload189DecryptedTrue  UserEventPayload189Decrypted = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188Target enum.
-func (e UserEventPayload188Target) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189Decrypted enum.
+func (e UserEventPayload189Decrypted) Valid() bool {
 	switch e {
-	case UserEventPayload188TargetDevelopment:
+	case UserEventPayload189DecryptedFalse:
 		return true
-	case UserEventPayload188TargetPreview:
-		return true
-	case UserEventPayload188TargetProduction:
+	case UserEventPayload189DecryptedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload188Type.
+// Defines values for UserEventPayload189LastEditedByPrincipal0Type.
 const (
-	UserEventPayload188TypeEncrypted UserEventPayload188Type = "encrypted"
-	UserEventPayload188TypePlain     UserEventPayload188Type = "plain"
-	UserEventPayload188TypeSensitive UserEventPayload188Type = "sensitive"
-	UserEventPayload188TypeSystem    UserEventPayload188Type = "system"
+	UserEventPayload189LastEditedByPrincipal0TypeUser UserEventPayload189LastEditedByPrincipal0Type = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload188Type enum.
-func (e UserEventPayload188Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189LastEditedByPrincipal0Type enum.
+func (e UserEventPayload189LastEditedByPrincipal0Type) Valid() bool {
 	switch e {
-	case UserEventPayload188TypeEncrypted:
+	case UserEventPayload189LastEditedByPrincipal0TypeUser:
 		return true
-	case UserEventPayload188TypePlain:
-		return true
-	case UserEventPayload188TypeSensitive:
-		return true
-	case UserEventPayload188TypeSystem:
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload189LastEditedByPrincipal1Type.
+const (
+	UserEventPayload189LastEditedByPrincipal1TypeApp UserEventPayload189LastEditedByPrincipal1Type = "app"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload189LastEditedByPrincipal1Type enum.
+func (e UserEventPayload189LastEditedByPrincipal1Type) Valid() bool {
+	switch e {
+	case UserEventPayload189LastEditedByPrincipal1TypeApp:
 		return true
 	default:
 		return false
@@ -18396,615 +18414,624 @@ func (e UserEventPayload189Target) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload190NewEnvVarApplyToAllCustomEnvironments.
+// Defines values for UserEventPayload189Type.
 const (
-	UserEventPayload190NewEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload190NewEnvVarApplyToAllCustomEnvironments = false
-	UserEventPayload190NewEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload190NewEnvVarApplyToAllCustomEnvironments = true
+	UserEventPayload189TypeEncrypted UserEventPayload189Type = "encrypted"
+	UserEventPayload189TypePlain     UserEventPayload189Type = "plain"
+	UserEventPayload189TypeSensitive UserEventPayload189Type = "sensitive"
+	UserEventPayload189TypeSystem    UserEventPayload189Type = "system"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190NewEnvVarApplyToAllCustomEnvironments enum.
-func (e UserEventPayload190NewEnvVarApplyToAllCustomEnvironments) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload189Type enum.
+func (e UserEventPayload189Type) Valid() bool {
 	switch e {
-	case UserEventPayload190NewEnvVarApplyToAllCustomEnvironmentsFalse:
+	case UserEventPayload189TypeEncrypted:
 		return true
-	case UserEventPayload190NewEnvVarApplyToAllCustomEnvironmentsTrue:
+	case UserEventPayload189TypePlain:
+		return true
+	case UserEventPayload189TypeSensitive:
+		return true
+	case UserEventPayload189TypeSystem:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190NewEnvVarDecrypted.
+// Defines values for UserEventPayload190Target.
 const (
-	UserEventPayload190NewEnvVarDecryptedFalse UserEventPayload190NewEnvVarDecrypted = false
-	UserEventPayload190NewEnvVarDecryptedTrue  UserEventPayload190NewEnvVarDecrypted = true
+	UserEventPayload190TargetDevelopment UserEventPayload190Target = "development"
+	UserEventPayload190TargetPreview     UserEventPayload190Target = "preview"
+	UserEventPayload190TargetProduction  UserEventPayload190Target = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190NewEnvVarDecrypted enum.
-func (e UserEventPayload190NewEnvVarDecrypted) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload190Target enum.
+func (e UserEventPayload190Target) Valid() bool {
 	switch e {
-	case UserEventPayload190NewEnvVarDecryptedFalse:
+	case UserEventPayload190TargetDevelopment:
 		return true
-	case UserEventPayload190NewEnvVarDecryptedTrue:
+	case UserEventPayload190TargetPreview:
+		return true
+	case UserEventPayload190TargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190NewEnvVarLastEditedByPrincipal0Type.
+// Defines values for UserEventPayload191NewEnvVarApplyToAllCustomEnvironments.
 const (
-	UserEventPayload190NewEnvVarLastEditedByPrincipal0TypeUser UserEventPayload190NewEnvVarLastEditedByPrincipal0Type = "user"
+	UserEventPayload191NewEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload191NewEnvVarApplyToAllCustomEnvironments = false
+	UserEventPayload191NewEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload191NewEnvVarApplyToAllCustomEnvironments = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190NewEnvVarLastEditedByPrincipal0Type enum.
-func (e UserEventPayload190NewEnvVarLastEditedByPrincipal0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191NewEnvVarApplyToAllCustomEnvironments enum.
+func (e UserEventPayload191NewEnvVarApplyToAllCustomEnvironments) Valid() bool {
 	switch e {
-	case UserEventPayload190NewEnvVarLastEditedByPrincipal0TypeUser:
+	case UserEventPayload191NewEnvVarApplyToAllCustomEnvironmentsFalse:
+		return true
+	case UserEventPayload191NewEnvVarApplyToAllCustomEnvironmentsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190NewEnvVarLastEditedByPrincipal1Type.
+// Defines values for UserEventPayload191NewEnvVarDecrypted.
 const (
-	UserEventPayload190NewEnvVarLastEditedByPrincipal1TypeApp UserEventPayload190NewEnvVarLastEditedByPrincipal1Type = "app"
+	UserEventPayload191NewEnvVarDecryptedFalse UserEventPayload191NewEnvVarDecrypted = false
+	UserEventPayload191NewEnvVarDecryptedTrue  UserEventPayload191NewEnvVarDecrypted = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190NewEnvVarLastEditedByPrincipal1Type enum.
-func (e UserEventPayload190NewEnvVarLastEditedByPrincipal1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191NewEnvVarDecrypted enum.
+func (e UserEventPayload191NewEnvVarDecrypted) Valid() bool {
 	switch e {
-	case UserEventPayload190NewEnvVarLastEditedByPrincipal1TypeApp:
+	case UserEventPayload191NewEnvVarDecryptedFalse:
+		return true
+	case UserEventPayload191NewEnvVarDecryptedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190NewEnvVarTarget.
+// Defines values for UserEventPayload191NewEnvVarLastEditedByPrincipal0Type.
 const (
-	UserEventPayload190NewEnvVarTargetDevelopment UserEventPayload190NewEnvVarTarget = "development"
-	UserEventPayload190NewEnvVarTargetPreview     UserEventPayload190NewEnvVarTarget = "preview"
-	UserEventPayload190NewEnvVarTargetProduction  UserEventPayload190NewEnvVarTarget = "production"
+	UserEventPayload191NewEnvVarLastEditedByPrincipal0TypeUser UserEventPayload191NewEnvVarLastEditedByPrincipal0Type = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190NewEnvVarTarget enum.
-func (e UserEventPayload190NewEnvVarTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191NewEnvVarLastEditedByPrincipal0Type enum.
+func (e UserEventPayload191NewEnvVarLastEditedByPrincipal0Type) Valid() bool {
 	switch e {
-	case UserEventPayload190NewEnvVarTargetDevelopment:
-		return true
-	case UserEventPayload190NewEnvVarTargetPreview:
-		return true
-	case UserEventPayload190NewEnvVarTargetProduction:
+	case UserEventPayload191NewEnvVarLastEditedByPrincipal0TypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190NewEnvVarType.
+// Defines values for UserEventPayload191NewEnvVarLastEditedByPrincipal1Type.
 const (
-	UserEventPayload190NewEnvVarTypeEncrypted UserEventPayload190NewEnvVarType = "encrypted"
-	UserEventPayload190NewEnvVarTypePlain     UserEventPayload190NewEnvVarType = "plain"
-	UserEventPayload190NewEnvVarTypeSensitive UserEventPayload190NewEnvVarType = "sensitive"
-	UserEventPayload190NewEnvVarTypeSystem    UserEventPayload190NewEnvVarType = "system"
+	UserEventPayload191NewEnvVarLastEditedByPrincipal1TypeApp UserEventPayload191NewEnvVarLastEditedByPrincipal1Type = "app"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190NewEnvVarType enum.
-func (e UserEventPayload190NewEnvVarType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191NewEnvVarLastEditedByPrincipal1Type enum.
+func (e UserEventPayload191NewEnvVarLastEditedByPrincipal1Type) Valid() bool {
 	switch e {
-	case UserEventPayload190NewEnvVarTypeEncrypted:
-		return true
-	case UserEventPayload190NewEnvVarTypePlain:
-		return true
-	case UserEventPayload190NewEnvVarTypeSensitive:
-		return true
-	case UserEventPayload190NewEnvVarTypeSystem:
+	case UserEventPayload191NewEnvVarLastEditedByPrincipal1TypeApp:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190OldEnvVarApplyToAllCustomEnvironments.
+// Defines values for UserEventPayload191NewEnvVarTarget.
 const (
-	UserEventPayload190OldEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload190OldEnvVarApplyToAllCustomEnvironments = false
-	UserEventPayload190OldEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload190OldEnvVarApplyToAllCustomEnvironments = true
+	UserEventPayload191NewEnvVarTargetDevelopment UserEventPayload191NewEnvVarTarget = "development"
+	UserEventPayload191NewEnvVarTargetPreview     UserEventPayload191NewEnvVarTarget = "preview"
+	UserEventPayload191NewEnvVarTargetProduction  UserEventPayload191NewEnvVarTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190OldEnvVarApplyToAllCustomEnvironments enum.
-func (e UserEventPayload190OldEnvVarApplyToAllCustomEnvironments) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191NewEnvVarTarget enum.
+func (e UserEventPayload191NewEnvVarTarget) Valid() bool {
 	switch e {
-	case UserEventPayload190OldEnvVarApplyToAllCustomEnvironmentsFalse:
+	case UserEventPayload191NewEnvVarTargetDevelopment:
 		return true
-	case UserEventPayload190OldEnvVarApplyToAllCustomEnvironmentsTrue:
+	case UserEventPayload191NewEnvVarTargetPreview:
+		return true
+	case UserEventPayload191NewEnvVarTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190OldEnvVarDecrypted.
+// Defines values for UserEventPayload191NewEnvVarType.
 const (
-	UserEventPayload190OldEnvVarDecryptedFalse UserEventPayload190OldEnvVarDecrypted = false
-	UserEventPayload190OldEnvVarDecryptedTrue  UserEventPayload190OldEnvVarDecrypted = true
+	UserEventPayload191NewEnvVarTypeEncrypted UserEventPayload191NewEnvVarType = "encrypted"
+	UserEventPayload191NewEnvVarTypePlain     UserEventPayload191NewEnvVarType = "plain"
+	UserEventPayload191NewEnvVarTypeSensitive UserEventPayload191NewEnvVarType = "sensitive"
+	UserEventPayload191NewEnvVarTypeSystem    UserEventPayload191NewEnvVarType = "system"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190OldEnvVarDecrypted enum.
-func (e UserEventPayload190OldEnvVarDecrypted) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191NewEnvVarType enum.
+func (e UserEventPayload191NewEnvVarType) Valid() bool {
 	switch e {
-	case UserEventPayload190OldEnvVarDecryptedFalse:
+	case UserEventPayload191NewEnvVarTypeEncrypted:
 		return true
-	case UserEventPayload190OldEnvVarDecryptedTrue:
+	case UserEventPayload191NewEnvVarTypePlain:
+		return true
+	case UserEventPayload191NewEnvVarTypeSensitive:
+		return true
+	case UserEventPayload191NewEnvVarTypeSystem:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190OldEnvVarLastEditedByPrincipal0Type.
+// Defines values for UserEventPayload191OldEnvVarApplyToAllCustomEnvironments.
 const (
-	UserEventPayload190OldEnvVarLastEditedByPrincipal0TypeUser UserEventPayload190OldEnvVarLastEditedByPrincipal0Type = "user"
+	UserEventPayload191OldEnvVarApplyToAllCustomEnvironmentsFalse UserEventPayload191OldEnvVarApplyToAllCustomEnvironments = false
+	UserEventPayload191OldEnvVarApplyToAllCustomEnvironmentsTrue  UserEventPayload191OldEnvVarApplyToAllCustomEnvironments = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190OldEnvVarLastEditedByPrincipal0Type enum.
-func (e UserEventPayload190OldEnvVarLastEditedByPrincipal0Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191OldEnvVarApplyToAllCustomEnvironments enum.
+func (e UserEventPayload191OldEnvVarApplyToAllCustomEnvironments) Valid() bool {
 	switch e {
-	case UserEventPayload190OldEnvVarLastEditedByPrincipal0TypeUser:
+	case UserEventPayload191OldEnvVarApplyToAllCustomEnvironmentsFalse:
+		return true
+	case UserEventPayload191OldEnvVarApplyToAllCustomEnvironmentsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190OldEnvVarLastEditedByPrincipal1Type.
+// Defines values for UserEventPayload191OldEnvVarDecrypted.
 const (
-	UserEventPayload190OldEnvVarLastEditedByPrincipal1TypeApp UserEventPayload190OldEnvVarLastEditedByPrincipal1Type = "app"
+	UserEventPayload191OldEnvVarDecryptedFalse UserEventPayload191OldEnvVarDecrypted = false
+	UserEventPayload191OldEnvVarDecryptedTrue  UserEventPayload191OldEnvVarDecrypted = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190OldEnvVarLastEditedByPrincipal1Type enum.
-func (e UserEventPayload190OldEnvVarLastEditedByPrincipal1Type) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191OldEnvVarDecrypted enum.
+func (e UserEventPayload191OldEnvVarDecrypted) Valid() bool {
 	switch e {
-	case UserEventPayload190OldEnvVarLastEditedByPrincipal1TypeApp:
+	case UserEventPayload191OldEnvVarDecryptedFalse:
+		return true
+	case UserEventPayload191OldEnvVarDecryptedTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190OldEnvVarTarget.
+// Defines values for UserEventPayload191OldEnvVarLastEditedByPrincipal0Type.
 const (
-	UserEventPayload190OldEnvVarTargetDevelopment UserEventPayload190OldEnvVarTarget = "development"
-	UserEventPayload190OldEnvVarTargetPreview     UserEventPayload190OldEnvVarTarget = "preview"
-	UserEventPayload190OldEnvVarTargetProduction  UserEventPayload190OldEnvVarTarget = "production"
+	UserEventPayload191OldEnvVarLastEditedByPrincipal0TypeUser UserEventPayload191OldEnvVarLastEditedByPrincipal0Type = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190OldEnvVarTarget enum.
-func (e UserEventPayload190OldEnvVarTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191OldEnvVarLastEditedByPrincipal0Type enum.
+func (e UserEventPayload191OldEnvVarLastEditedByPrincipal0Type) Valid() bool {
 	switch e {
-	case UserEventPayload190OldEnvVarTargetDevelopment:
-		return true
-	case UserEventPayload190OldEnvVarTargetPreview:
-		return true
-	case UserEventPayload190OldEnvVarTargetProduction:
+	case UserEventPayload191OldEnvVarLastEditedByPrincipal0TypeUser:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190OldEnvVarType.
+// Defines values for UserEventPayload191OldEnvVarLastEditedByPrincipal1Type.
 const (
-	UserEventPayload190OldEnvVarTypeEncrypted UserEventPayload190OldEnvVarType = "encrypted"
-	UserEventPayload190OldEnvVarTypePlain     UserEventPayload190OldEnvVarType = "plain"
-	UserEventPayload190OldEnvVarTypeSensitive UserEventPayload190OldEnvVarType = "sensitive"
-	UserEventPayload190OldEnvVarTypeSystem    UserEventPayload190OldEnvVarType = "system"
+	UserEventPayload191OldEnvVarLastEditedByPrincipal1TypeApp UserEventPayload191OldEnvVarLastEditedByPrincipal1Type = "app"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190OldEnvVarType enum.
-func (e UserEventPayload190OldEnvVarType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191OldEnvVarLastEditedByPrincipal1Type enum.
+func (e UserEventPayload191OldEnvVarLastEditedByPrincipal1Type) Valid() bool {
 	switch e {
-	case UserEventPayload190OldEnvVarTypeEncrypted:
-		return true
-	case UserEventPayload190OldEnvVarTypePlain:
-		return true
-	case UserEventPayload190OldEnvVarTypeSensitive:
-		return true
-	case UserEventPayload190OldEnvVarTypeSystem:
+	case UserEventPayload191OldEnvVarLastEditedByPrincipal1TypeApp:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190UpdateDiffChangedComment.
+// Defines values for UserEventPayload191OldEnvVarTarget.
 const (
-	UserEventPayload190UpdateDiffChangedCommentFalse UserEventPayload190UpdateDiffChangedComment = false
-	UserEventPayload190UpdateDiffChangedCommentTrue  UserEventPayload190UpdateDiffChangedComment = true
+	UserEventPayload191OldEnvVarTargetDevelopment UserEventPayload191OldEnvVarTarget = "development"
+	UserEventPayload191OldEnvVarTargetPreview     UserEventPayload191OldEnvVarTarget = "preview"
+	UserEventPayload191OldEnvVarTargetProduction  UserEventPayload191OldEnvVarTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190UpdateDiffChangedComment enum.
-func (e UserEventPayload190UpdateDiffChangedComment) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191OldEnvVarTarget enum.
+func (e UserEventPayload191OldEnvVarTarget) Valid() bool {
 	switch e {
-	case UserEventPayload190UpdateDiffChangedCommentFalse:
+	case UserEventPayload191OldEnvVarTargetDevelopment:
 		return true
-	case UserEventPayload190UpdateDiffChangedCommentTrue:
+	case UserEventPayload191OldEnvVarTargetPreview:
+		return true
+	case UserEventPayload191OldEnvVarTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190UpdateDiffChangedGitBranch.
+// Defines values for UserEventPayload191OldEnvVarType.
 const (
-	UserEventPayload190UpdateDiffChangedGitBranchFalse UserEventPayload190UpdateDiffChangedGitBranch = false
-	UserEventPayload190UpdateDiffChangedGitBranchTrue  UserEventPayload190UpdateDiffChangedGitBranch = true
+	UserEventPayload191OldEnvVarTypeEncrypted UserEventPayload191OldEnvVarType = "encrypted"
+	UserEventPayload191OldEnvVarTypePlain     UserEventPayload191OldEnvVarType = "plain"
+	UserEventPayload191OldEnvVarTypeSensitive UserEventPayload191OldEnvVarType = "sensitive"
+	UserEventPayload191OldEnvVarTypeSystem    UserEventPayload191OldEnvVarType = "system"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190UpdateDiffChangedGitBranch enum.
-func (e UserEventPayload190UpdateDiffChangedGitBranch) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191OldEnvVarType enum.
+func (e UserEventPayload191OldEnvVarType) Valid() bool {
 	switch e {
-	case UserEventPayload190UpdateDiffChangedGitBranchFalse:
+	case UserEventPayload191OldEnvVarTypeEncrypted:
 		return true
-	case UserEventPayload190UpdateDiffChangedGitBranchTrue:
+	case UserEventPayload191OldEnvVarTypePlain:
+		return true
+	case UserEventPayload191OldEnvVarTypeSensitive:
+		return true
+	case UserEventPayload191OldEnvVarTypeSystem:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190UpdateDiffChangedValue.
+// Defines values for UserEventPayload191UpdateDiffChangedComment.
 const (
-	UserEventPayload190UpdateDiffChangedValueFalse UserEventPayload190UpdateDiffChangedValue = false
-	UserEventPayload190UpdateDiffChangedValueTrue  UserEventPayload190UpdateDiffChangedValue = true
+	UserEventPayload191UpdateDiffChangedCommentFalse UserEventPayload191UpdateDiffChangedComment = false
+	UserEventPayload191UpdateDiffChangedCommentTrue  UserEventPayload191UpdateDiffChangedComment = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190UpdateDiffChangedValue enum.
-func (e UserEventPayload190UpdateDiffChangedValue) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191UpdateDiffChangedComment enum.
+func (e UserEventPayload191UpdateDiffChangedComment) Valid() bool {
 	switch e {
-	case UserEventPayload190UpdateDiffChangedValueFalse:
+	case UserEventPayload191UpdateDiffChangedCommentFalse:
 		return true
-	case UserEventPayload190UpdateDiffChangedValueTrue:
+	case UserEventPayload191UpdateDiffChangedCommentTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190UpdateDiffNewTarget.
+// Defines values for UserEventPayload191UpdateDiffChangedGitBranch.
 const (
-	UserEventPayload190UpdateDiffNewTargetDevelopment UserEventPayload190UpdateDiffNewTarget = "development"
-	UserEventPayload190UpdateDiffNewTargetPreview     UserEventPayload190UpdateDiffNewTarget = "preview"
-	UserEventPayload190UpdateDiffNewTargetProduction  UserEventPayload190UpdateDiffNewTarget = "production"
+	UserEventPayload191UpdateDiffChangedGitBranchFalse UserEventPayload191UpdateDiffChangedGitBranch = false
+	UserEventPayload191UpdateDiffChangedGitBranchTrue  UserEventPayload191UpdateDiffChangedGitBranch = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190UpdateDiffNewTarget enum.
-func (e UserEventPayload190UpdateDiffNewTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191UpdateDiffChangedGitBranch enum.
+func (e UserEventPayload191UpdateDiffChangedGitBranch) Valid() bool {
 	switch e {
-	case UserEventPayload190UpdateDiffNewTargetDevelopment:
+	case UserEventPayload191UpdateDiffChangedGitBranchFalse:
 		return true
-	case UserEventPayload190UpdateDiffNewTargetPreview:
-		return true
-	case UserEventPayload190UpdateDiffNewTargetProduction:
+	case UserEventPayload191UpdateDiffChangedGitBranchTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload190UpdateDiffOldTarget.
+// Defines values for UserEventPayload191UpdateDiffChangedValue.
 const (
-	UserEventPayload190UpdateDiffOldTargetDevelopment UserEventPayload190UpdateDiffOldTarget = "development"
-	UserEventPayload190UpdateDiffOldTargetPreview     UserEventPayload190UpdateDiffOldTarget = "preview"
-	UserEventPayload190UpdateDiffOldTargetProduction  UserEventPayload190UpdateDiffOldTarget = "production"
+	UserEventPayload191UpdateDiffChangedValueFalse UserEventPayload191UpdateDiffChangedValue = false
+	UserEventPayload191UpdateDiffChangedValueTrue  UserEventPayload191UpdateDiffChangedValue = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload190UpdateDiffOldTarget enum.
-func (e UserEventPayload190UpdateDiffOldTarget) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191UpdateDiffChangedValue enum.
+func (e UserEventPayload191UpdateDiffChangedValue) Valid() bool {
 	switch e {
-	case UserEventPayload190UpdateDiffOldTargetDevelopment:
+	case UserEventPayload191UpdateDiffChangedValueFalse:
 		return true
-	case UserEventPayload190UpdateDiffOldTargetPreview:
-		return true
-	case UserEventPayload190UpdateDiffOldTargetProduction:
+	case UserEventPayload191UpdateDiffChangedValueTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload196Restore.
+// Defines values for UserEventPayload191UpdateDiffNewTarget.
 const (
-	UserEventPayload196RestoreFalse UserEventPayload196Restore = false
-	UserEventPayload196RestoreTrue  UserEventPayload196Restore = true
+	UserEventPayload191UpdateDiffNewTargetDevelopment UserEventPayload191UpdateDiffNewTarget = "development"
+	UserEventPayload191UpdateDiffNewTargetPreview     UserEventPayload191UpdateDiffNewTarget = "preview"
+	UserEventPayload191UpdateDiffNewTargetProduction  UserEventPayload191UpdateDiffNewTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload196Restore enum.
-func (e UserEventPayload196Restore) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191UpdateDiffNewTarget enum.
+func (e UserEventPayload191UpdateDiffNewTarget) Valid() bool {
 	switch e {
-	case UserEventPayload196RestoreFalse:
+	case UserEventPayload191UpdateDiffNewTargetDevelopment:
 		return true
-	case UserEventPayload196RestoreTrue:
+	case UserEventPayload191UpdateDiffNewTargetPreview:
+		return true
+	case UserEventPayload191UpdateDiffNewTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload197RuleGroupsAction.
+// Defines values for UserEventPayload191UpdateDiffOldTarget.
 const (
-	UserEventPayload197RuleGroupsActionChallenge UserEventPayload197RuleGroupsAction = "challenge"
-	UserEventPayload197RuleGroupsActionDeny      UserEventPayload197RuleGroupsAction = "deny"
-	UserEventPayload197RuleGroupsActionLog       UserEventPayload197RuleGroupsAction = "log"
+	UserEventPayload191UpdateDiffOldTargetDevelopment UserEventPayload191UpdateDiffOldTarget = "development"
+	UserEventPayload191UpdateDiffOldTargetPreview     UserEventPayload191UpdateDiffOldTarget = "preview"
+	UserEventPayload191UpdateDiffOldTargetProduction  UserEventPayload191UpdateDiffOldTarget = "production"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload197RuleGroupsAction enum.
-func (e UserEventPayload197RuleGroupsAction) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload191UpdateDiffOldTarget enum.
+func (e UserEventPayload191UpdateDiffOldTarget) Valid() bool {
 	switch e {
-	case UserEventPayload197RuleGroupsActionChallenge:
+	case UserEventPayload191UpdateDiffOldTargetDevelopment:
 		return true
-	case UserEventPayload197RuleGroupsActionDeny:
+	case UserEventPayload191UpdateDiffOldTargetPreview:
 		return true
-	case UserEventPayload197RuleGroupsActionLog:
+	case UserEventPayload191UpdateDiffOldTargetProduction:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload197RuleGroupsActive.
+// Defines values for UserEventPayload197Restore.
 const (
-	UserEventPayload197RuleGroupsActiveFalse UserEventPayload197RuleGroupsActive = false
-	UserEventPayload197RuleGroupsActiveTrue  UserEventPayload197RuleGroupsActive = true
+	UserEventPayload197RestoreFalse UserEventPayload197Restore = false
+	UserEventPayload197RestoreTrue  UserEventPayload197Restore = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload197RuleGroupsActive enum.
-func (e UserEventPayload197RuleGroupsActive) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload197Restore enum.
+func (e UserEventPayload197Restore) Valid() bool {
 	switch e {
-	case UserEventPayload197RuleGroupsActiveFalse:
+	case UserEventPayload197RestoreFalse:
 		return true
-	case UserEventPayload197RuleGroupsActiveTrue:
+	case UserEventPayload197RestoreTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload198Action.
+// Defines values for UserEventPayload198RuleGroupsAction.
 const (
-	UserEventPayload198ActionChallenge UserEventPayload198Action = "challenge"
-	UserEventPayload198ActionDeny      UserEventPayload198Action = "deny"
-	UserEventPayload198ActionLog       UserEventPayload198Action = "log"
+	UserEventPayload198RuleGroupsActionChallenge UserEventPayload198RuleGroupsAction = "challenge"
+	UserEventPayload198RuleGroupsActionDeny      UserEventPayload198RuleGroupsAction = "deny"
+	UserEventPayload198RuleGroupsActionLog       UserEventPayload198RuleGroupsAction = "log"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload198Action enum.
-func (e UserEventPayload198Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload198RuleGroupsAction enum.
+func (e UserEventPayload198RuleGroupsAction) Valid() bool {
 	switch e {
-	case UserEventPayload198ActionChallenge:
+	case UserEventPayload198RuleGroupsActionChallenge:
 		return true
-	case UserEventPayload198ActionDeny:
+	case UserEventPayload198RuleGroupsActionDeny:
 		return true
-	case UserEventPayload198ActionLog:
+	case UserEventPayload198RuleGroupsActionLog:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload198Active.
+// Defines values for UserEventPayload198RuleGroupsActive.
 const (
-	UserEventPayload198ActiveFalse UserEventPayload198Active = false
-	UserEventPayload198ActiveTrue  UserEventPayload198Active = true
+	UserEventPayload198RuleGroupsActiveFalse UserEventPayload198RuleGroupsActive = false
+	UserEventPayload198RuleGroupsActiveTrue  UserEventPayload198RuleGroupsActive = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload198Active enum.
-func (e UserEventPayload198Active) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload198RuleGroupsActive enum.
+func (e UserEventPayload198RuleGroupsActive) Valid() bool {
 	switch e {
-	case UserEventPayload198ActiveFalse:
+	case UserEventPayload198RuleGroupsActiveFalse:
 		return true
-	case UserEventPayload198ActiveTrue:
+	case UserEventPayload198RuleGroupsActiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload201Action.
+// Defines values for UserEventPayload199Action.
 const (
-	UserEventPayload201ActionDisable UserEventPayload201Action = "disable"
-	UserEventPayload201ActionEnable  UserEventPayload201Action = "enable"
+	UserEventPayload199ActionChallenge UserEventPayload199Action = "challenge"
+	UserEventPayload199ActionDeny      UserEventPayload199Action = "deny"
+	UserEventPayload199ActionLog       UserEventPayload199Action = "log"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload201Action enum.
-func (e UserEventPayload201Action) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload199Action enum.
+func (e UserEventPayload199Action) Valid() bool {
 	switch e {
-	case UserEventPayload201ActionDisable:
+	case UserEventPayload199ActionChallenge:
 		return true
-	case UserEventPayload201ActionEnable:
+	case UserEventPayload199ActionDeny:
+		return true
+	case UserEventPayload199ActionLog:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload203Source.
+// Defines values for UserEventPayload199Active.
 const (
-	UserEventPayload203SourceCreate  UserEventPayload203Source = "create"
-	UserEventPayload203SourceEnable  UserEventPayload203Source = "enable"
-	UserEventPayload203SourceUpgrade UserEventPayload203Source = "upgrade"
+	UserEventPayload199ActiveFalse UserEventPayload199Active = false
+	UserEventPayload199ActiveTrue  UserEventPayload199Active = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload203Source enum.
-func (e UserEventPayload203Source) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload199Active enum.
+func (e UserEventPayload199Active) Valid() bool {
 	switch e {
-	case UserEventPayload203SourceCreate:
+	case UserEventPayload199ActiveFalse:
 		return true
-	case UserEventPayload203SourceEnable:
-		return true
-	case UserEventPayload203SourceUpgrade:
+	case UserEventPayload199ActiveTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload205FailureStage.
+// Defines values for UserEventPayload202Action.
 const (
-	UserEventPayload205FailureStageAuthorization UserEventPayload205FailureStage = "authorization"
-	UserEventPayload205FailureStagePush          UserEventPayload205FailureStage = "push"
-	UserEventPayload205FailureStageUnexpected    UserEventPayload205FailureStage = "unexpected"
-	UserEventPayload205FailureStageUnknown       UserEventPayload205FailureStage = "unknown"
-	UserEventPayload205FailureStageValidation    UserEventPayload205FailureStage = "validation"
+	UserEventPayload202ActionDisable UserEventPayload202Action = "disable"
+	UserEventPayload202ActionEnable  UserEventPayload202Action = "enable"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload205FailureStage enum.
-func (e UserEventPayload205FailureStage) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload202Action enum.
+func (e UserEventPayload202Action) Valid() bool {
 	switch e {
-	case UserEventPayload205FailureStageAuthorization:
+	case UserEventPayload202ActionDisable:
 		return true
-	case UserEventPayload205FailureStagePush:
-		return true
-	case UserEventPayload205FailureStageUnexpected:
-		return true
-	case UserEventPayload205FailureStageUnknown:
-		return true
-	case UserEventPayload205FailureStageValidation:
+	case UserEventPayload202ActionEnable:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload205Outcome.
+// Defines values for UserEventPayload204Source.
 const (
-	UserEventPayload205OutcomeFailure UserEventPayload205Outcome = "failure"
-	UserEventPayload205OutcomeSuccess UserEventPayload205Outcome = "success"
+	UserEventPayload204SourceCreate  UserEventPayload204Source = "create"
+	UserEventPayload204SourceEnable  UserEventPayload204Source = "enable"
+	UserEventPayload204SourceUpgrade UserEventPayload204Source = "upgrade"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload205Outcome enum.
-func (e UserEventPayload205Outcome) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload204Source enum.
+func (e UserEventPayload204Source) Valid() bool {
 	switch e {
-	case UserEventPayload205OutcomeFailure:
+	case UserEventPayload204SourceCreate:
 		return true
-	case UserEventPayload205OutcomeSuccess:
+	case UserEventPayload204SourceEnable:
+		return true
+	case UserEventPayload204SourceUpgrade:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload205Provider.
+// Defines values for UserEventPayload206FailureStage.
 const (
-	UserEventPayload205ProviderBitbucket    UserEventPayload205Provider = "bitbucket"
-	UserEventPayload205ProviderCursorOrigin UserEventPayload205Provider = "cursor-origin"
-	UserEventPayload205ProviderGithub       UserEventPayload205Provider = "github"
-	UserEventPayload205ProviderGitlab       UserEventPayload205Provider = "gitlab"
+	UserEventPayload206FailureStageAuthorization UserEventPayload206FailureStage = "authorization"
+	UserEventPayload206FailureStagePush          UserEventPayload206FailureStage = "push"
+	UserEventPayload206FailureStageUnexpected    UserEventPayload206FailureStage = "unexpected"
+	UserEventPayload206FailureStageUnknown       UserEventPayload206FailureStage = "unknown"
+	UserEventPayload206FailureStageValidation    UserEventPayload206FailureStage = "validation"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload205Provider enum.
-func (e UserEventPayload205Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload206FailureStage enum.
+func (e UserEventPayload206FailureStage) Valid() bool {
 	switch e {
-	case UserEventPayload205ProviderBitbucket:
+	case UserEventPayload206FailureStageAuthorization:
 		return true
-	case UserEventPayload205ProviderCursorOrigin:
+	case UserEventPayload206FailureStagePush:
 		return true
-	case UserEventPayload205ProviderGithub:
+	case UserEventPayload206FailureStageUnexpected:
 		return true
-	case UserEventPayload205ProviderGitlab:
+	case UserEventPayload206FailureStageUnknown:
+		return true
+	case UserEventPayload206FailureStageValidation:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload205UsedAppToken.
+// Defines values for UserEventPayload206Outcome.
 const (
-	UserEventPayload205UsedAppTokenFalse UserEventPayload205UsedAppToken = false
-	UserEventPayload205UsedAppTokenTrue  UserEventPayload205UsedAppToken = true
+	UserEventPayload206OutcomeFailure UserEventPayload206Outcome = "failure"
+	UserEventPayload206OutcomeSuccess UserEventPayload206Outcome = "success"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload205UsedAppToken enum.
-func (e UserEventPayload205UsedAppToken) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload206Outcome enum.
+func (e UserEventPayload206Outcome) Valid() bool {
 	switch e {
-	case UserEventPayload205UsedAppTokenFalse:
+	case UserEventPayload206OutcomeFailure:
 		return true
-	case UserEventPayload205UsedAppTokenTrue:
+	case UserEventPayload206OutcomeSuccess:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload214ProjectIds1.
+// Defines values for UserEventPayload206Provider.
 const (
-	UserEventPayload214ProjectIds1All UserEventPayload214ProjectIds1 = "all"
+	UserEventPayload206ProviderBitbucket    UserEventPayload206Provider = "bitbucket"
+	UserEventPayload206ProviderCursorOrigin UserEventPayload206Provider = "cursor-origin"
+	UserEventPayload206ProviderGithub       UserEventPayload206Provider = "github"
+	UserEventPayload206ProviderGitlab       UserEventPayload206Provider = "gitlab"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload214ProjectIds1 enum.
-func (e UserEventPayload214ProjectIds1) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload206Provider enum.
+func (e UserEventPayload206Provider) Valid() bool {
 	switch e {
-	case UserEventPayload214ProjectIds1All:
+	case UserEventPayload206ProviderBitbucket:
+		return true
+	case UserEventPayload206ProviderCursorOrigin:
+		return true
+	case UserEventPayload206ProviderGithub:
+		return true
+	case UserEventPayload206ProviderGitlab:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload216QueryType.
+// Defines values for UserEventPayload206UsedAppToken.
 const (
-	UserEventPayload216QueryTypeDataEdit UserEventPayload216QueryType = "data-edit"
-	UserEventPayload216QueryTypeDataView UserEventPayload216QueryType = "data-view"
-	UserEventPayload216QueryTypeSchema   UserEventPayload216QueryType = "schema"
-	UserEventPayload216QueryTypeUser     UserEventPayload216QueryType = "user"
+	UserEventPayload206UsedAppTokenFalse UserEventPayload206UsedAppToken = false
+	UserEventPayload206UsedAppTokenTrue  UserEventPayload206UsedAppToken = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload216QueryType enum.
-func (e UserEventPayload216QueryType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload206UsedAppToken enum.
+func (e UserEventPayload206UsedAppToken) Valid() bool {
 	switch e {
-	case UserEventPayload216QueryTypeDataEdit:
+	case UserEventPayload206UsedAppTokenFalse:
 		return true
-	case UserEventPayload216QueryTypeDataView:
-		return true
-	case UserEventPayload216QueryTypeSchema:
-		return true
-	case UserEventPayload216QueryTypeUser:
+	case UserEventPayload206UsedAppTokenTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload216Readonly.
+// Defines values for UserEventPayload215ProjectIds1.
 const (
-	UserEventPayload216ReadonlyFalse UserEventPayload216Readonly = false
-	UserEventPayload216ReadonlyTrue  UserEventPayload216Readonly = true
+	UserEventPayload215ProjectIds1All UserEventPayload215ProjectIds1 = "all"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload216Readonly enum.
-func (e UserEventPayload216Readonly) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload215ProjectIds1 enum.
+func (e UserEventPayload215ProjectIds1) Valid() bool {
 	switch e {
-	case UserEventPayload216ReadonlyFalse:
-		return true
-	case UserEventPayload216ReadonlyTrue:
+	case UserEventPayload215ProjectIds1All:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload216RolledBack.
+// Defines values for UserEventPayload217QueryType.
 const (
-	UserEventPayload216RolledBackFalse UserEventPayload216RolledBack = false
-	UserEventPayload216RolledBackTrue  UserEventPayload216RolledBack = true
+	UserEventPayload217QueryTypeDataEdit UserEventPayload217QueryType = "data-edit"
+	UserEventPayload217QueryTypeDataView UserEventPayload217QueryType = "data-view"
+	UserEventPayload217QueryTypeSchema   UserEventPayload217QueryType = "schema"
+	UserEventPayload217QueryTypeUser     UserEventPayload217QueryType = "user"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload216RolledBack enum.
-func (e UserEventPayload216RolledBack) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload217QueryType enum.
+func (e UserEventPayload217QueryType) Valid() bool {
 	switch e {
-	case UserEventPayload216RolledBackFalse:
+	case UserEventPayload217QueryTypeDataEdit:
 		return true
-	case UserEventPayload216RolledBackTrue:
+	case UserEventPayload217QueryTypeDataView:
+		return true
+	case UserEventPayload217QueryTypeSchema:
+		return true
+	case UserEventPayload217QueryTypeUser:
 		return true
 	default:
 		return false
@@ -19029,15 +19056,36 @@ func (e UserEventPayload217Readonly) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload217RequestKind.
+// Defines values for UserEventPayload217RolledBack.
 const (
-	UserEventPayload217RequestKindRawCommands UserEventPayload217RequestKind = "raw_commands"
+	UserEventPayload217RolledBackFalse UserEventPayload217RolledBack = false
+	UserEventPayload217RolledBackTrue  UserEventPayload217RolledBack = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload217RequestKind enum.
-func (e UserEventPayload217RequestKind) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload217RolledBack enum.
+func (e UserEventPayload217RolledBack) Valid() bool {
 	switch e {
-	case UserEventPayload217RequestKindRawCommands:
+	case UserEventPayload217RolledBackFalse:
+		return true
+	case UserEventPayload217RolledBackTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload218Readonly.
+const (
+	UserEventPayload218ReadonlyFalse UserEventPayload218Readonly = false
+	UserEventPayload218ReadonlyTrue  UserEventPayload218Readonly = true
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload218Readonly enum.
+func (e UserEventPayload218Readonly) Valid() bool {
+	switch e {
+	case UserEventPayload218ReadonlyFalse:
+		return true
+	case UserEventPayload218ReadonlyTrue:
 		return true
 	default:
 		return false
@@ -19046,13 +19094,13 @@ func (e UserEventPayload217RequestKind) Valid() bool {
 
 // Defines values for UserEventPayload218RequestKind.
 const (
-	UserEventPayload218RequestKindListKeys UserEventPayload218RequestKind = "list_keys"
+	UserEventPayload218RequestKindRawCommands UserEventPayload218RequestKind = "raw_commands"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload218RequestKind enum.
 func (e UserEventPayload218RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload218RequestKindListKeys:
+	case UserEventPayload218RequestKindRawCommands:
 		return true
 	default:
 		return false
@@ -19061,13 +19109,13 @@ func (e UserEventPayload218RequestKind) Valid() bool {
 
 // Defines values for UserEventPayload219RequestKind.
 const (
-	UserEventPayload219RequestKindGetKeysMetadata UserEventPayload219RequestKind = "get_keys_metadata"
+	UserEventPayload219RequestKindListKeys UserEventPayload219RequestKind = "list_keys"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload219RequestKind enum.
 func (e UserEventPayload219RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload219RequestKindGetKeysMetadata:
+	case UserEventPayload219RequestKindListKeys:
 		return true
 	default:
 		return false
@@ -19076,73 +19124,46 @@ func (e UserEventPayload219RequestKind) Valid() bool {
 
 // Defines values for UserEventPayload220RequestKind.
 const (
-	UserEventPayload220RequestKindGetKeyData UserEventPayload220RequestKind = "get_key_data"
+	UserEventPayload220RequestKindGetKeysMetadata UserEventPayload220RequestKind = "get_keys_metadata"
 )
 
 // Valid indicates whether the value is a known member of the UserEventPayload220RequestKind enum.
 func (e UserEventPayload220RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload220RequestKindGetKeyData:
+	case UserEventPayload220RequestKindGetKeysMetadata:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload222AccessTokenRotation.
+// Defines values for UserEventPayload221RequestKind.
 const (
-	UserEventPayload222AccessTokenRotationFalse UserEventPayload222AccessTokenRotation = false
-	UserEventPayload222AccessTokenRotationTrue  UserEventPayload222AccessTokenRotation = true
+	UserEventPayload221RequestKindGetKeyData UserEventPayload221RequestKind = "get_key_data"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload222AccessTokenRotation enum.
-func (e UserEventPayload222AccessTokenRotation) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload221RequestKind enum.
+func (e UserEventPayload221RequestKind) Valid() bool {
 	switch e {
-	case UserEventPayload222AccessTokenRotationFalse:
-		return true
-	case UserEventPayload222AccessTokenRotationTrue:
+	case UserEventPayload221RequestKindGetKeyData:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload230Provider.
+// Defines values for UserEventPayload223AccessTokenRotation.
 const (
-	UserEventPayload230ProviderApple            UserEventPayload230Provider = "apple"
-	UserEventPayload230ProviderBitbucket        UserEventPayload230Provider = "bitbucket"
-	UserEventPayload230ProviderChatgpt          UserEventPayload230Provider = "chatgpt"
-	UserEventPayload230ProviderClaude           UserEventPayload230Provider = "claude"
-	UserEventPayload230ProviderGithub           UserEventPayload230Provider = "github"
-	UserEventPayload230ProviderGithubCustomHost UserEventPayload230Provider = "github-custom-host"
-	UserEventPayload230ProviderGithubLimited    UserEventPayload230Provider = "github-limited"
-	UserEventPayload230ProviderGitlab           UserEventPayload230Provider = "gitlab"
-	UserEventPayload230ProviderGoogle           UserEventPayload230Provider = "google"
-	UserEventPayload230ProviderSaml             UserEventPayload230Provider = "saml"
+	UserEventPayload223AccessTokenRotationFalse UserEventPayload223AccessTokenRotation = false
+	UserEventPayload223AccessTokenRotationTrue  UserEventPayload223AccessTokenRotation = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload230Provider enum.
-func (e UserEventPayload230Provider) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload223AccessTokenRotation enum.
+func (e UserEventPayload223AccessTokenRotation) Valid() bool {
 	switch e {
-	case UserEventPayload230ProviderApple:
+	case UserEventPayload223AccessTokenRotationFalse:
 		return true
-	case UserEventPayload230ProviderBitbucket:
-		return true
-	case UserEventPayload230ProviderChatgpt:
-		return true
-	case UserEventPayload230ProviderClaude:
-		return true
-	case UserEventPayload230ProviderGithub:
-		return true
-	case UserEventPayload230ProviderGithubCustomHost:
-		return true
-	case UserEventPayload230ProviderGithubLimited:
-		return true
-	case UserEventPayload230ProviderGitlab:
-		return true
-	case UserEventPayload230ProviderGoogle:
-		return true
-	case UserEventPayload230ProviderSaml:
+	case UserEventPayload223AccessTokenRotationTrue:
 		return true
 	default:
 		return false
@@ -19191,821 +19212,803 @@ func (e UserEventPayload231Provider) Valid() bool {
 	}
 }
 
-// Defines values for UserEventPayload232Factors0Legacy.
+// Defines values for UserEventPayload232Provider.
 const (
-	UserEventPayload232Factors0LegacyFalse UserEventPayload232Factors0Legacy = false
-	UserEventPayload232Factors0LegacyTrue  UserEventPayload232Factors0Legacy = true
+	UserEventPayload232ProviderApple            UserEventPayload232Provider = "apple"
+	UserEventPayload232ProviderBitbucket        UserEventPayload232Provider = "bitbucket"
+	UserEventPayload232ProviderChatgpt          UserEventPayload232Provider = "chatgpt"
+	UserEventPayload232ProviderClaude           UserEventPayload232Provider = "claude"
+	UserEventPayload232ProviderGithub           UserEventPayload232Provider = "github"
+	UserEventPayload232ProviderGithubCustomHost UserEventPayload232Provider = "github-custom-host"
+	UserEventPayload232ProviderGithubLimited    UserEventPayload232Provider = "github-limited"
+	UserEventPayload232ProviderGitlab           UserEventPayload232Provider = "gitlab"
+	UserEventPayload232ProviderGoogle           UserEventPayload232Provider = "google"
+	UserEventPayload232ProviderSaml             UserEventPayload232Provider = "saml"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232Factors0Legacy enum.
-func (e UserEventPayload232Factors0Legacy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload232Provider enum.
+func (e UserEventPayload232Provider) Valid() bool {
 	switch e {
-	case UserEventPayload232Factors0LegacyFalse:
+	case UserEventPayload232ProviderApple:
 		return true
-	case UserEventPayload232Factors0LegacyTrue:
+	case UserEventPayload232ProviderBitbucket:
+		return true
+	case UserEventPayload232ProviderChatgpt:
+		return true
+	case UserEventPayload232ProviderClaude:
+		return true
+	case UserEventPayload232ProviderGithub:
+		return true
+	case UserEventPayload232ProviderGithubCustomHost:
+		return true
+	case UserEventPayload232ProviderGithubLimited:
+		return true
+	case UserEventPayload232ProviderGitlab:
+		return true
+	case UserEventPayload232ProviderGoogle:
+		return true
+	case UserEventPayload232ProviderSaml:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232Factors0Origin.
+// Defines values for UserEventPayload233Factors0Legacy.
 const (
-	UserEventPayload232Factors0OriginApple       UserEventPayload232Factors0Origin = "apple"
-	UserEventPayload232Factors0OriginBitbucket   UserEventPayload232Factors0Origin = "bitbucket"
-	UserEventPayload232Factors0OriginChatgpt     UserEventPayload232Factors0Origin = "chatgpt"
-	UserEventPayload232Factors0OriginClaude      UserEventPayload232Factors0Origin = "claude"
-	UserEventPayload232Factors0OriginEmail       UserEventPayload232Factors0Origin = "email"
-	UserEventPayload232Factors0OriginEmuRecovery UserEventPayload232Factors0Origin = "emu-recovery"
-	UserEventPayload232Factors0OriginGithub      UserEventPayload232Factors0Origin = "github"
-	UserEventPayload232Factors0OriginGitlab      UserEventPayload232Factors0Origin = "gitlab"
-	UserEventPayload232Factors0OriginGoogle      UserEventPayload232Factors0Origin = "google"
-	UserEventPayload232Factors0OriginInvite      UserEventPayload232Factors0Origin = "invite"
-	UserEventPayload232Factors0OriginMagicLink   UserEventPayload232Factors0Origin = "magic-link"
-	UserEventPayload232Factors0OriginOtp         UserEventPayload232Factors0Origin = "otp"
-	UserEventPayload232Factors0OriginOtpLink     UserEventPayload232Factors0Origin = "otp-link"
-	UserEventPayload232Factors0OriginSaml        UserEventPayload232Factors0Origin = "saml"
-	UserEventPayload232Factors0OriginWebauthn    UserEventPayload232Factors0Origin = "webauthn"
+	UserEventPayload233Factors0LegacyFalse UserEventPayload233Factors0Legacy = false
+	UserEventPayload233Factors0LegacyTrue  UserEventPayload233Factors0Legacy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232Factors0Origin enum.
-func (e UserEventPayload232Factors0Origin) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233Factors0Legacy enum.
+func (e UserEventPayload233Factors0Legacy) Valid() bool {
 	switch e {
-	case UserEventPayload232Factors0OriginApple:
+	case UserEventPayload233Factors0LegacyFalse:
 		return true
-	case UserEventPayload232Factors0OriginBitbucket:
-		return true
-	case UserEventPayload232Factors0OriginChatgpt:
-		return true
-	case UserEventPayload232Factors0OriginClaude:
-		return true
-	case UserEventPayload232Factors0OriginEmail:
-		return true
-	case UserEventPayload232Factors0OriginEmuRecovery:
-		return true
-	case UserEventPayload232Factors0OriginGithub:
-		return true
-	case UserEventPayload232Factors0OriginGitlab:
-		return true
-	case UserEventPayload232Factors0OriginGoogle:
-		return true
-	case UserEventPayload232Factors0OriginInvite:
-		return true
-	case UserEventPayload232Factors0OriginMagicLink:
-		return true
-	case UserEventPayload232Factors0OriginOtp:
-		return true
-	case UserEventPayload232Factors0OriginOtpLink:
-		return true
-	case UserEventPayload232Factors0OriginSaml:
-		return true
-	case UserEventPayload232Factors0OriginWebauthn:
+	case UserEventPayload233Factors0LegacyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232Factors10Legacy.
+// Defines values for UserEventPayload233Factors0Origin.
 const (
-	UserEventPayload232Factors10LegacyFalse UserEventPayload232Factors10Legacy = false
-	UserEventPayload232Factors10LegacyTrue  UserEventPayload232Factors10Legacy = true
+	UserEventPayload233Factors0OriginApple       UserEventPayload233Factors0Origin = "apple"
+	UserEventPayload233Factors0OriginBitbucket   UserEventPayload233Factors0Origin = "bitbucket"
+	UserEventPayload233Factors0OriginChatgpt     UserEventPayload233Factors0Origin = "chatgpt"
+	UserEventPayload233Factors0OriginClaude      UserEventPayload233Factors0Origin = "claude"
+	UserEventPayload233Factors0OriginEmail       UserEventPayload233Factors0Origin = "email"
+	UserEventPayload233Factors0OriginEmuRecovery UserEventPayload233Factors0Origin = "emu-recovery"
+	UserEventPayload233Factors0OriginGithub      UserEventPayload233Factors0Origin = "github"
+	UserEventPayload233Factors0OriginGitlab      UserEventPayload233Factors0Origin = "gitlab"
+	UserEventPayload233Factors0OriginGoogle      UserEventPayload233Factors0Origin = "google"
+	UserEventPayload233Factors0OriginInvite      UserEventPayload233Factors0Origin = "invite"
+	UserEventPayload233Factors0OriginMagicLink   UserEventPayload233Factors0Origin = "magic-link"
+	UserEventPayload233Factors0OriginOtp         UserEventPayload233Factors0Origin = "otp"
+	UserEventPayload233Factors0OriginOtpLink     UserEventPayload233Factors0Origin = "otp-link"
+	UserEventPayload233Factors0OriginSaml        UserEventPayload233Factors0Origin = "saml"
+	UserEventPayload233Factors0OriginWebauthn    UserEventPayload233Factors0Origin = "webauthn"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232Factors10Legacy enum.
-func (e UserEventPayload232Factors10Legacy) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233Factors0Origin enum.
+func (e UserEventPayload233Factors0Origin) Valid() bool {
 	switch e {
-	case UserEventPayload232Factors10LegacyFalse:
+	case UserEventPayload233Factors0OriginApple:
 		return true
-	case UserEventPayload232Factors10LegacyTrue:
+	case UserEventPayload233Factors0OriginBitbucket:
+		return true
+	case UserEventPayload233Factors0OriginChatgpt:
+		return true
+	case UserEventPayload233Factors0OriginClaude:
+		return true
+	case UserEventPayload233Factors0OriginEmail:
+		return true
+	case UserEventPayload233Factors0OriginEmuRecovery:
+		return true
+	case UserEventPayload233Factors0OriginGithub:
+		return true
+	case UserEventPayload233Factors0OriginGitlab:
+		return true
+	case UserEventPayload233Factors0OriginGoogle:
+		return true
+	case UserEventPayload233Factors0OriginInvite:
+		return true
+	case UserEventPayload233Factors0OriginMagicLink:
+		return true
+	case UserEventPayload233Factors0OriginOtp:
+		return true
+	case UserEventPayload233Factors0OriginOtpLink:
+		return true
+	case UserEventPayload233Factors0OriginSaml:
+		return true
+	case UserEventPayload233Factors0OriginWebauthn:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232Factors10Origin.
+// Defines values for UserEventPayload233Factors10Legacy.
 const (
-	UserEventPayload232Factors10OriginApple       UserEventPayload232Factors10Origin = "apple"
-	UserEventPayload232Factors10OriginBitbucket   UserEventPayload232Factors10Origin = "bitbucket"
-	UserEventPayload232Factors10OriginChatgpt     UserEventPayload232Factors10Origin = "chatgpt"
-	UserEventPayload232Factors10OriginClaude      UserEventPayload232Factors10Origin = "claude"
-	UserEventPayload232Factors10OriginEmail       UserEventPayload232Factors10Origin = "email"
-	UserEventPayload232Factors10OriginEmuRecovery UserEventPayload232Factors10Origin = "emu-recovery"
-	UserEventPayload232Factors10OriginGithub      UserEventPayload232Factors10Origin = "github"
-	UserEventPayload232Factors10OriginGitlab      UserEventPayload232Factors10Origin = "gitlab"
-	UserEventPayload232Factors10OriginGoogle      UserEventPayload232Factors10Origin = "google"
-	UserEventPayload232Factors10OriginInvite      UserEventPayload232Factors10Origin = "invite"
-	UserEventPayload232Factors10OriginMagicLink   UserEventPayload232Factors10Origin = "magic-link"
-	UserEventPayload232Factors10OriginOtp         UserEventPayload232Factors10Origin = "otp"
-	UserEventPayload232Factors10OriginOtpLink     UserEventPayload232Factors10Origin = "otp-link"
-	UserEventPayload232Factors10OriginSaml        UserEventPayload232Factors10Origin = "saml"
-	UserEventPayload232Factors10OriginWebauthn    UserEventPayload232Factors10Origin = "webauthn"
+	UserEventPayload233Factors10LegacyFalse UserEventPayload233Factors10Legacy = false
+	UserEventPayload233Factors10LegacyTrue  UserEventPayload233Factors10Legacy = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232Factors10Origin enum.
-func (e UserEventPayload232Factors10Origin) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233Factors10Legacy enum.
+func (e UserEventPayload233Factors10Legacy) Valid() bool {
 	switch e {
-	case UserEventPayload232Factors10OriginApple:
+	case UserEventPayload233Factors10LegacyFalse:
 		return true
-	case UserEventPayload232Factors10OriginBitbucket:
-		return true
-	case UserEventPayload232Factors10OriginChatgpt:
-		return true
-	case UserEventPayload232Factors10OriginClaude:
-		return true
-	case UserEventPayload232Factors10OriginEmail:
-		return true
-	case UserEventPayload232Factors10OriginEmuRecovery:
-		return true
-	case UserEventPayload232Factors10OriginGithub:
-		return true
-	case UserEventPayload232Factors10OriginGitlab:
-		return true
-	case UserEventPayload232Factors10OriginGoogle:
-		return true
-	case UserEventPayload232Factors10OriginInvite:
-		return true
-	case UserEventPayload232Factors10OriginMagicLink:
-		return true
-	case UserEventPayload232Factors10OriginOtp:
-		return true
-	case UserEventPayload232Factors10OriginOtpLink:
-		return true
-	case UserEventPayload232Factors10OriginSaml:
-		return true
-	case UserEventPayload232Factors10OriginWebauthn:
+	case UserEventPayload233Factors10LegacyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232Factors11Origin.
+// Defines values for UserEventPayload233Factors10Origin.
 const (
-	UserEventPayload232Factors11OriginRecoveryCode UserEventPayload232Factors11Origin = "recovery-code"
-	UserEventPayload232Factors11OriginTotp         UserEventPayload232Factors11Origin = "totp"
-	UserEventPayload232Factors11OriginWebauthn     UserEventPayload232Factors11Origin = "webauthn"
+	UserEventPayload233Factors10OriginApple       UserEventPayload233Factors10Origin = "apple"
+	UserEventPayload233Factors10OriginBitbucket   UserEventPayload233Factors10Origin = "bitbucket"
+	UserEventPayload233Factors10OriginChatgpt     UserEventPayload233Factors10Origin = "chatgpt"
+	UserEventPayload233Factors10OriginClaude      UserEventPayload233Factors10Origin = "claude"
+	UserEventPayload233Factors10OriginEmail       UserEventPayload233Factors10Origin = "email"
+	UserEventPayload233Factors10OriginEmuRecovery UserEventPayload233Factors10Origin = "emu-recovery"
+	UserEventPayload233Factors10OriginGithub      UserEventPayload233Factors10Origin = "github"
+	UserEventPayload233Factors10OriginGitlab      UserEventPayload233Factors10Origin = "gitlab"
+	UserEventPayload233Factors10OriginGoogle      UserEventPayload233Factors10Origin = "google"
+	UserEventPayload233Factors10OriginInvite      UserEventPayload233Factors10Origin = "invite"
+	UserEventPayload233Factors10OriginMagicLink   UserEventPayload233Factors10Origin = "magic-link"
+	UserEventPayload233Factors10OriginOtp         UserEventPayload233Factors10Origin = "otp"
+	UserEventPayload233Factors10OriginOtpLink     UserEventPayload233Factors10Origin = "otp-link"
+	UserEventPayload233Factors10OriginSaml        UserEventPayload233Factors10Origin = "saml"
+	UserEventPayload233Factors10OriginWebauthn    UserEventPayload233Factors10Origin = "webauthn"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232Factors11Origin enum.
-func (e UserEventPayload232Factors11Origin) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233Factors10Origin enum.
+func (e UserEventPayload233Factors10Origin) Valid() bool {
 	switch e {
-	case UserEventPayload232Factors11OriginRecoveryCode:
+	case UserEventPayload233Factors10OriginApple:
 		return true
-	case UserEventPayload232Factors11OriginTotp:
+	case UserEventPayload233Factors10OriginBitbucket:
 		return true
-	case UserEventPayload232Factors11OriginWebauthn:
+	case UserEventPayload233Factors10OriginChatgpt:
+		return true
+	case UserEventPayload233Factors10OriginClaude:
+		return true
+	case UserEventPayload233Factors10OriginEmail:
+		return true
+	case UserEventPayload233Factors10OriginEmuRecovery:
+		return true
+	case UserEventPayload233Factors10OriginGithub:
+		return true
+	case UserEventPayload233Factors10OriginGitlab:
+		return true
+	case UserEventPayload233Factors10OriginGoogle:
+		return true
+	case UserEventPayload233Factors10OriginInvite:
+		return true
+	case UserEventPayload233Factors10OriginMagicLink:
+		return true
+	case UserEventPayload233Factors10OriginOtp:
+		return true
+	case UserEventPayload233Factors10OriginOtpLink:
+		return true
+	case UserEventPayload233Factors10OriginSaml:
+		return true
+	case UserEventPayload233Factors10OriginWebauthn:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaApple.
+// Defines values for UserEventPayload233Factors11Origin.
 const (
-	UserEventPayload232ViaAppleFalse UserEventPayload232ViaApple = false
-	UserEventPayload232ViaAppleTrue  UserEventPayload232ViaApple = true
+	UserEventPayload233Factors11OriginRecoveryCode UserEventPayload233Factors11Origin = "recovery-code"
+	UserEventPayload233Factors11OriginTotp         UserEventPayload233Factors11Origin = "totp"
+	UserEventPayload233Factors11OriginWebauthn     UserEventPayload233Factors11Origin = "webauthn"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaApple enum.
-func (e UserEventPayload232ViaApple) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233Factors11Origin enum.
+func (e UserEventPayload233Factors11Origin) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaAppleFalse:
+	case UserEventPayload233Factors11OriginRecoveryCode:
 		return true
-	case UserEventPayload232ViaAppleTrue:
+	case UserEventPayload233Factors11OriginTotp:
+		return true
+	case UserEventPayload233Factors11OriginWebauthn:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaBitbucket.
+// Defines values for UserEventPayload233ViaApple.
 const (
-	UserEventPayload232ViaBitbucketFalse UserEventPayload232ViaBitbucket = false
-	UserEventPayload232ViaBitbucketTrue  UserEventPayload232ViaBitbucket = true
+	UserEventPayload233ViaAppleFalse UserEventPayload233ViaApple = false
+	UserEventPayload233ViaAppleTrue  UserEventPayload233ViaApple = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaBitbucket enum.
-func (e UserEventPayload232ViaBitbucket) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaApple enum.
+func (e UserEventPayload233ViaApple) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaBitbucketFalse:
+	case UserEventPayload233ViaAppleFalse:
 		return true
-	case UserEventPayload232ViaBitbucketTrue:
+	case UserEventPayload233ViaAppleTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaGithub.
+// Defines values for UserEventPayload233ViaBitbucket.
 const (
-	UserEventPayload232ViaGithubFalse UserEventPayload232ViaGithub = false
-	UserEventPayload232ViaGithubTrue  UserEventPayload232ViaGithub = true
+	UserEventPayload233ViaBitbucketFalse UserEventPayload233ViaBitbucket = false
+	UserEventPayload233ViaBitbucketTrue  UserEventPayload233ViaBitbucket = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaGithub enum.
-func (e UserEventPayload232ViaGithub) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaBitbucket enum.
+func (e UserEventPayload233ViaBitbucket) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaGithubFalse:
+	case UserEventPayload233ViaBitbucketFalse:
 		return true
-	case UserEventPayload232ViaGithubTrue:
+	case UserEventPayload233ViaBitbucketTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaGitlab.
+// Defines values for UserEventPayload233ViaGithub.
 const (
-	UserEventPayload232ViaGitlabFalse UserEventPayload232ViaGitlab = false
-	UserEventPayload232ViaGitlabTrue  UserEventPayload232ViaGitlab = true
+	UserEventPayload233ViaGithubFalse UserEventPayload233ViaGithub = false
+	UserEventPayload233ViaGithubTrue  UserEventPayload233ViaGithub = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaGitlab enum.
-func (e UserEventPayload232ViaGitlab) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaGithub enum.
+func (e UserEventPayload233ViaGithub) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaGitlabFalse:
+	case UserEventPayload233ViaGithubFalse:
 		return true
-	case UserEventPayload232ViaGitlabTrue:
+	case UserEventPayload233ViaGithubTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaGoogle.
+// Defines values for UserEventPayload233ViaGitlab.
 const (
-	UserEventPayload232ViaGoogleFalse UserEventPayload232ViaGoogle = false
-	UserEventPayload232ViaGoogleTrue  UserEventPayload232ViaGoogle = true
+	UserEventPayload233ViaGitlabFalse UserEventPayload233ViaGitlab = false
+	UserEventPayload233ViaGitlabTrue  UserEventPayload233ViaGitlab = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaGoogle enum.
-func (e UserEventPayload232ViaGoogle) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaGitlab enum.
+func (e UserEventPayload233ViaGitlab) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaGoogleFalse:
+	case UserEventPayload233ViaGitlabFalse:
 		return true
-	case UserEventPayload232ViaGoogleTrue:
+	case UserEventPayload233ViaGitlabTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaOTP.
+// Defines values for UserEventPayload233ViaGoogle.
 const (
-	UserEventPayload232ViaOTPFalse UserEventPayload232ViaOTP = false
-	UserEventPayload232ViaOTPTrue  UserEventPayload232ViaOTP = true
+	UserEventPayload233ViaGoogleFalse UserEventPayload233ViaGoogle = false
+	UserEventPayload233ViaGoogleTrue  UserEventPayload233ViaGoogle = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaOTP enum.
-func (e UserEventPayload232ViaOTP) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaGoogle enum.
+func (e UserEventPayload233ViaGoogle) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaOTPFalse:
+	case UserEventPayload233ViaGoogleFalse:
 		return true
-	case UserEventPayload232ViaOTPTrue:
+	case UserEventPayload233ViaGoogleTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaPasskey.
+// Defines values for UserEventPayload233ViaOTP.
 const (
-	UserEventPayload232ViaPasskeyFalse UserEventPayload232ViaPasskey = false
-	UserEventPayload232ViaPasskeyTrue  UserEventPayload232ViaPasskey = true
+	UserEventPayload233ViaOTPFalse UserEventPayload233ViaOTP = false
+	UserEventPayload233ViaOTPTrue  UserEventPayload233ViaOTP = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaPasskey enum.
-func (e UserEventPayload232ViaPasskey) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaOTP enum.
+func (e UserEventPayload233ViaOTP) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaPasskeyFalse:
+	case UserEventPayload233ViaOTPFalse:
 		return true
-	case UserEventPayload232ViaPasskeyTrue:
+	case UserEventPayload233ViaOTPTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload232ViaSamlSso.
+// Defines values for UserEventPayload233ViaPasskey.
 const (
-	UserEventPayload232ViaSamlSsoFalse UserEventPayload232ViaSamlSso = false
-	UserEventPayload232ViaSamlSsoTrue  UserEventPayload232ViaSamlSso = true
+	UserEventPayload233ViaPasskeyFalse UserEventPayload233ViaPasskey = false
+	UserEventPayload233ViaPasskeyTrue  UserEventPayload233ViaPasskey = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload232ViaSamlSso enum.
-func (e UserEventPayload232ViaSamlSso) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaPasskey enum.
+func (e UserEventPayload233ViaPasskey) Valid() bool {
 	switch e {
-	case UserEventPayload232ViaSamlSsoFalse:
+	case UserEventPayload233ViaPasskeyFalse:
 		return true
-	case UserEventPayload232ViaSamlSsoTrue:
+	case UserEventPayload233ViaPasskeyTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload234InvoiceCollection.
+// Defines values for UserEventPayload233ViaSamlSso.
 const (
-	UserEventPayload234InvoiceCollectionFalse UserEventPayload234InvoiceCollection = false
-	UserEventPayload234InvoiceCollectionTrue  UserEventPayload234InvoiceCollection = true
+	UserEventPayload233ViaSamlSsoFalse UserEventPayload233ViaSamlSso = false
+	UserEventPayload233ViaSamlSsoTrue  UserEventPayload233ViaSamlSso = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload234InvoiceCollection enum.
-func (e UserEventPayload234InvoiceCollection) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload233ViaSamlSso enum.
+func (e UserEventPayload233ViaSamlSso) Valid() bool {
 	switch e {
-	case UserEventPayload234InvoiceCollectionFalse:
+	case UserEventPayload233ViaSamlSsoFalse:
 		return true
-	case UserEventPayload234InvoiceCollectionTrue:
+	case UserEventPayload233ViaSamlSsoTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload236Enabled.
+// Defines values for UserEventPayload235InvoiceCollection.
 const (
-	UserEventPayload236EnabledFalse UserEventPayload236Enabled = false
-	UserEventPayload236EnabledTrue  UserEventPayload236Enabled = true
+	UserEventPayload235InvoiceCollectionFalse UserEventPayload235InvoiceCollection = false
+	UserEventPayload235InvoiceCollectionTrue  UserEventPayload235InvoiceCollection = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload236Enabled enum.
-func (e UserEventPayload236Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload235InvoiceCollection enum.
+func (e UserEventPayload235InvoiceCollection) Valid() bool {
 	switch e {
-	case UserEventPayload236EnabledFalse:
+	case UserEventPayload235InvoiceCollectionFalse:
 		return true
-	case UserEventPayload236EnabledTrue:
+	case UserEventPayload235InvoiceCollectionTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload238EnablePolyrepoBranchRouting.
+// Defines values for UserEventPayload237Enabled.
 const (
-	UserEventPayload238EnablePolyrepoBranchRoutingFalse UserEventPayload238EnablePolyrepoBranchRouting = false
-	UserEventPayload238EnablePolyrepoBranchRoutingTrue  UserEventPayload238EnablePolyrepoBranchRouting = true
+	UserEventPayload237EnabledFalse UserEventPayload237Enabled = false
+	UserEventPayload237EnabledTrue  UserEventPayload237Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload238EnablePolyrepoBranchRouting enum.
-func (e UserEventPayload238EnablePolyrepoBranchRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload237Enabled enum.
+func (e UserEventPayload237Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload238EnablePolyrepoBranchRoutingFalse:
+	case UserEventPayload237EnabledFalse:
 		return true
-	case UserEventPayload238EnablePolyrepoBranchRoutingTrue:
+	case UserEventPayload237EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload238PrevEnablePolyrepoBranchRouting.
+// Defines values for UserEventPayload239EnablePolyrepoBranchRouting.
 const (
-	UserEventPayload238PrevEnablePolyrepoBranchRoutingFalse UserEventPayload238PrevEnablePolyrepoBranchRouting = false
-	UserEventPayload238PrevEnablePolyrepoBranchRoutingTrue  UserEventPayload238PrevEnablePolyrepoBranchRouting = true
+	UserEventPayload239EnablePolyrepoBranchRoutingFalse UserEventPayload239EnablePolyrepoBranchRouting = false
+	UserEventPayload239EnablePolyrepoBranchRoutingTrue  UserEventPayload239EnablePolyrepoBranchRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload238PrevEnablePolyrepoBranchRouting enum.
-func (e UserEventPayload238PrevEnablePolyrepoBranchRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239EnablePolyrepoBranchRouting enum.
+func (e UserEventPayload239EnablePolyrepoBranchRouting) Valid() bool {
 	switch e {
-	case UserEventPayload238PrevEnablePolyrepoBranchRoutingFalse:
+	case UserEventPayload239EnablePolyrepoBranchRoutingFalse:
 		return true
-	case UserEventPayload238PrevEnablePolyrepoBranchRoutingTrue:
+	case UserEventPayload239EnablePolyrepoBranchRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends0Enabled.
+// Defines values for UserEventPayload239PrevEnablePolyrepoBranchRouting.
 const (
-	UserEventPayload240PrevProjectMicrofrontends0EnabledTrue UserEventPayload240PrevProjectMicrofrontends0Enabled = true
+	UserEventPayload239PrevEnablePolyrepoBranchRoutingFalse UserEventPayload239PrevEnablePolyrepoBranchRouting = false
+	UserEventPayload239PrevEnablePolyrepoBranchRoutingTrue  UserEventPayload239PrevEnablePolyrepoBranchRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends0Enabled enum.
-func (e UserEventPayload240PrevProjectMicrofrontends0Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload239PrevEnablePolyrepoBranchRouting enum.
+func (e UserEventPayload239PrevEnablePolyrepoBranchRouting) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends0EnabledTrue:
+	case UserEventPayload239PrevEnablePolyrepoBranchRoutingFalse:
+		return true
+	case UserEventPayload239PrevEnablePolyrepoBranchRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends0Enabled.
 const (
-	UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimits = false
-	UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimits = true
+	UserEventPayload241PrevProjectMicrofrontends0EnabledTrue UserEventPayload241PrevProjectMicrofrontends0Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimits enum.
-func (e UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends0Enabled enum.
+func (e UserEventPayload241PrevProjectMicrofrontends0Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload240PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload241PrevProjectMicrofrontends0EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends0IsDefaultApp.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimits.
 const (
-	UserEventPayload240PrevProjectMicrofrontends0IsDefaultAppTrue UserEventPayload240PrevProjectMicrofrontends0IsDefaultApp = true
+	UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimits = false
+	UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends0IsDefaultApp enum.
-func (e UserEventPayload240PrevProjectMicrofrontends0IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimits enum.
+func (e UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends0IsDefaultAppTrue:
+	case UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload241PrevProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends0IsDefaultApp.
 const (
-	UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
-	UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
+	UserEventPayload241PrevProjectMicrofrontends0IsDefaultAppTrue UserEventPayload241PrevProjectMicrofrontends0IsDefaultApp = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
-func (e UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends0IsDefaultApp enum.
+func (e UserEventPayload241PrevProjectMicrofrontends0IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
-		return true
-	case UserEventPayload240PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
+	case UserEventPayload241PrevProjectMicrofrontends0IsDefaultAppTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends1Enabled.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
-	UserEventPayload240PrevProjectMicrofrontends1EnabledTrue UserEventPayload240PrevProjectMicrofrontends1Enabled = true
+	UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
+	UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends1Enabled enum.
-func (e UserEventPayload240PrevProjectMicrofrontends1Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
+func (e UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends1EnabledTrue:
+	case UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
+		return true
+	case UserEventPayload241PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends1Enabled.
 const (
-	UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimits = false
-	UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimits = true
+	UserEventPayload241PrevProjectMicrofrontends1EnabledTrue UserEventPayload241PrevProjectMicrofrontends1Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimits enum.
-func (e UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends1Enabled enum.
+func (e UserEventPayload241PrevProjectMicrofrontends1Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload240PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload241PrevProjectMicrofrontends1EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends1IsDefaultApp.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimits.
 const (
-	UserEventPayload240PrevProjectMicrofrontends1IsDefaultAppFalse UserEventPayload240PrevProjectMicrofrontends1IsDefaultApp = false
+	UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimits = false
+	UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends1IsDefaultApp enum.
-func (e UserEventPayload240PrevProjectMicrofrontends1IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimits enum.
+func (e UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends1IsDefaultAppFalse:
+	case UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload241PrevProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProject.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends1IsDefaultApp.
 const (
-	UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProject = false
-	UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProject = true
+	UserEventPayload241PrevProjectMicrofrontends1IsDefaultAppFalse UserEventPayload241PrevProjectMicrofrontends1IsDefaultApp = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProject enum.
-func (e UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends1IsDefaultApp enum.
+func (e UserEventPayload241PrevProjectMicrofrontends1IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
-		return true
-	case UserEventPayload240PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
+	case UserEventPayload241PrevProjectMicrofrontends1IsDefaultAppFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends2Enabled.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProject.
 const (
-	UserEventPayload240PrevProjectMicrofrontends2EnabledFalse UserEventPayload240PrevProjectMicrofrontends2Enabled = false
+	UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProject = false
+	UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProject = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends2Enabled enum.
-func (e UserEventPayload240PrevProjectMicrofrontends2Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProject enum.
+func (e UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends2EnabledFalse:
+	case UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
+		return true
+	case UserEventPayload241PrevProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends2Enabled.
 const (
-	UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimits = false
-	UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimits = true
+	UserEventPayload241PrevProjectMicrofrontends2EnabledFalse UserEventPayload241PrevProjectMicrofrontends2Enabled = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimits enum.
-func (e UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends2Enabled enum.
+func (e UserEventPayload241PrevProjectMicrofrontends2Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload240PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload241PrevProjectMicrofrontends2EnabledFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends0Enabled.
+// Defines values for UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimits.
 const (
-	UserEventPayload240ProjectMicrofrontends0EnabledTrue UserEventPayload240ProjectMicrofrontends0Enabled = true
+	UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimits = false
+	UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends0Enabled enum.
-func (e UserEventPayload240ProjectMicrofrontends0Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimits enum.
+func (e UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends0EnabledTrue:
+	case UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload241PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload241ProjectMicrofrontends0Enabled.
 const (
-	UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimits = false
-	UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimits = true
+	UserEventPayload241ProjectMicrofrontends0EnabledTrue UserEventPayload241ProjectMicrofrontends0Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimits enum.
-func (e UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends0Enabled enum.
+func (e UserEventPayload241ProjectMicrofrontends0Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload240ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload241ProjectMicrofrontends0EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends0IsDefaultApp.
+// Defines values for UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimits.
 const (
-	UserEventPayload240ProjectMicrofrontends0IsDefaultAppTrue UserEventPayload240ProjectMicrofrontends0IsDefaultApp = true
+	UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimits = false
+	UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue  UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends0IsDefaultApp enum.
-func (e UserEventPayload240ProjectMicrofrontends0IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimits enum.
+func (e UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends0IsDefaultAppTrue:
+	case UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload241ProjectMicrofrontends0FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
+// Defines values for UserEventPayload241ProjectMicrofrontends0IsDefaultApp.
 const (
-	UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
-	UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
+	UserEventPayload241ProjectMicrofrontends0IsDefaultAppTrue UserEventPayload241ProjectMicrofrontends0IsDefaultApp = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
-func (e UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends0IsDefaultApp enum.
+func (e UserEventPayload241ProjectMicrofrontends0IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
-		return true
-	case UserEventPayload240ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
+	case UserEventPayload241ProjectMicrofrontends0IsDefaultAppTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends1Enabled.
+// Defines values for UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
-	UserEventPayload240ProjectMicrofrontends1EnabledTrue UserEventPayload240ProjectMicrofrontends1Enabled = true
+	UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
+	UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue  UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends1Enabled enum.
-func (e UserEventPayload240ProjectMicrofrontends1Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting enum.
+func (e UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends1EnabledTrue:
+	case UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse:
+		return true
+	case UserEventPayload241ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload241ProjectMicrofrontends1Enabled.
 const (
-	UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimits = false
-	UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimits = true
+	UserEventPayload241ProjectMicrofrontends1EnabledTrue UserEventPayload241ProjectMicrofrontends1Enabled = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimits enum.
-func (e UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1Enabled enum.
+func (e UserEventPayload241ProjectMicrofrontends1Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload240ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload241ProjectMicrofrontends1EnabledTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends1IsDefaultApp.
+// Defines values for UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimits.
 const (
-	UserEventPayload240ProjectMicrofrontends1IsDefaultAppFalse UserEventPayload240ProjectMicrofrontends1IsDefaultApp = false
+	UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimits = false
+	UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue  UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends1IsDefaultApp enum.
-func (e UserEventPayload240ProjectMicrofrontends1IsDefaultApp) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimits enum.
+func (e UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends1IsDefaultAppFalse:
+	case UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProject.
+// Defines values for UserEventPayload241ProjectMicrofrontends1IsDefaultApp.
 const (
-	UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProject = false
-	UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProject = true
+	UserEventPayload241ProjectMicrofrontends1IsDefaultAppFalse UserEventPayload241ProjectMicrofrontends1IsDefaultApp = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProject enum.
-func (e UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1IsDefaultApp enum.
+func (e UserEventPayload241ProjectMicrofrontends1IsDefaultApp) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
-		return true
-	case UserEventPayload240ProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
+	case UserEventPayload241ProjectMicrofrontends1IsDefaultAppFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends2Enabled.
+// Defines values for UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject.
 const (
-	UserEventPayload240ProjectMicrofrontends2EnabledFalse UserEventPayload240ProjectMicrofrontends2Enabled = false
+	UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject = false
+	UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends2Enabled enum.
-func (e UserEventPayload240ProjectMicrofrontends2Enabled) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject enum.
+func (e UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends2EnabledFalse:
+	case UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
+		return true
+	case UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimits.
+// Defines values for UserEventPayload241ProjectMicrofrontends2Enabled.
 const (
-	UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimits = false
-	UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimits = true
+	UserEventPayload241ProjectMicrofrontends2EnabledFalse UserEventPayload241ProjectMicrofrontends2Enabled = false
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimits enum.
-func (e UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends2Enabled enum.
+func (e UserEventPayload241ProjectMicrofrontends2Enabled) Valid() bool {
 	switch e {
-	case UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload240ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
+	case UserEventPayload241ProjectMicrofrontends2EnabledFalse:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload242ActorType.
+// Defines values for UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits.
 const (
-	UserEventPayload242ActorTypeAdmin UserEventPayload242ActorType = "admin"
+	UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits = false
+	UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits = true
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload242ActorType enum.
-func (e UserEventPayload242ActorType) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits enum.
+func (e UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
 	switch e {
-	case UserEventPayload242ActorTypeAdmin:
+	case UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
+		return true
+	case UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload248NextOrganizationPermissions.
+// Defines values for UserEventPayload243ActorType.
 const (
-	UserEventPayload248NextOrganizationPermissionsOrgAdmin UserEventPayload248NextOrganizationPermissions = "OrgAdmin"
+	UserEventPayload243ActorTypeAdmin UserEventPayload243ActorType = "admin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload248NextOrganizationPermissions enum.
-func (e UserEventPayload248NextOrganizationPermissions) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload243ActorType enum.
+func (e UserEventPayload243ActorType) Valid() bool {
 	switch e {
-	case UserEventPayload248NextOrganizationPermissionsOrgAdmin:
+	case UserEventPayload243ActorTypeAdmin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload248NextTeamRoles.
+// Defines values for UserEventPayload249NextOrganizationPermissions.
 const (
-	UserEventPayload248NextTeamRolesBILLING       UserEventPayload248NextTeamRoles = "BILLING"
-	UserEventPayload248NextTeamRolesCONTRIBUTOR   UserEventPayload248NextTeamRoles = "CONTRIBUTOR"
-	UserEventPayload248NextTeamRolesDEVELOPER     UserEventPayload248NextTeamRoles = "DEVELOPER"
-	UserEventPayload248NextTeamRolesMEMBER        UserEventPayload248NextTeamRoles = "MEMBER"
-	UserEventPayload248NextTeamRolesOWNER         UserEventPayload248NextTeamRoles = "OWNER"
-	UserEventPayload248NextTeamRolesSECURITY      UserEventPayload248NextTeamRoles = "SECURITY"
-	UserEventPayload248NextTeamRolesVIEWER        UserEventPayload248NextTeamRoles = "VIEWER"
-	UserEventPayload248NextTeamRolesVIEWERFORPLUS UserEventPayload248NextTeamRoles = "VIEWER_FOR_PLUS"
+	UserEventPayload249NextOrganizationPermissionsOrgAdmin UserEventPayload249NextOrganizationPermissions = "OrgAdmin"
 )
 
-// Valid indicates whether the value is a known member of the UserEventPayload248NextTeamRoles enum.
-func (e UserEventPayload248NextTeamRoles) Valid() bool {
+// Valid indicates whether the value is a known member of the UserEventPayload249NextOrganizationPermissions enum.
+func (e UserEventPayload249NextOrganizationPermissions) Valid() bool {
 	switch e {
-	case UserEventPayload248NextTeamRolesBILLING:
-		return true
-	case UserEventPayload248NextTeamRolesCONTRIBUTOR:
-		return true
-	case UserEventPayload248NextTeamRolesDEVELOPER:
-		return true
-	case UserEventPayload248NextTeamRolesMEMBER:
-		return true
-	case UserEventPayload248NextTeamRolesOWNER:
-		return true
-	case UserEventPayload248NextTeamRolesSECURITY:
-		return true
-	case UserEventPayload248NextTeamRolesVIEWER:
-		return true
-	case UserEventPayload248NextTeamRolesVIEWERFORPLUS:
+	case UserEventPayload249NextOrganizationPermissionsOrgAdmin:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for UserEventPayload248NextTeamsTeamRoles.
+// Defines values for UserEventPayload249NextTeamRoles.
 const (
-	UserEventPayload248NextTeamsTeamRolesBILLING       UserEventPayload248NextTeamsTeamRoles = "BILLING"
-	UserEventPayload248NextTeamsTeamRolesCONTRIBUTOR   UserEventPayload248NextTeamsTeamRoles = "CONTRIBUTOR"
-	UserEventPayload248NextTeamsTeamRolesDEVELOPER     UserEventPayload248NextTeamsTeamRoles = "DEVELOPER"
-	UserEventPayload248NextTeamsTeamRolesMEMBER        UserEventPayload248NextTeamsTeamRoles = "MEMBER"
-	UserEventPayload248NextTeamsTeamRolesOWNER         UserEventPayload248NextTeamsTeamRoles = "OWNER"
-	UserEventPayload248NextTeamsTeamRolesSECURITY      UserEventPayload248NextTeamsTeamRoles = "SECURITY"
-	UserEventPayload248NextTeamsTeamRolesVIEWER        UserEventPayload248NextTeamsTeamRoles = "VIEWER"
-	UserEventPayload248NextTeamsTeamRolesVIEWERFORPLUS UserEventPayload248NextTeamsTeamRoles = "VIEWER_FOR_PLUS"
+	UserEventPayload249NextTeamRolesBILLING       UserEventPayload249NextTeamRoles = "BILLING"
+	UserEventPayload249NextTeamRolesCONTRIBUTOR   UserEventPayload249NextTeamRoles = "CONTRIBUTOR"
+	UserEventPayload249NextTeamRolesDEVELOPER     UserEventPayload249NextTeamRoles = "DEVELOPER"
+	UserEventPayload249NextTeamRolesMEMBER        UserEventPayload249NextTeamRoles = "MEMBER"
+	UserEventPayload249NextTeamRolesOWNER         UserEventPayload249NextTeamRoles = "OWNER"
+	UserEventPayload249NextTeamRolesSECURITY      UserEventPayload249NextTeamRoles = "SECURITY"
+	UserEventPayload249NextTeamRolesVIEWER        UserEventPayload249NextTeamRoles = "VIEWER"
+	UserEventPayload249NextTeamRolesVIEWERFORPLUS UserEventPayload249NextTeamRoles = "VIEWER_FOR_PLUS"
 )
-
-// Valid indicates whether the value is a known member of the UserEventPayload248NextTeamsTeamRoles enum.
-func (e UserEventPayload248NextTeamsTeamRoles) Valid() bool {
-	switch e {
-	case UserEventPayload248NextTeamsTeamRolesBILLING:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesCONTRIBUTOR:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesDEVELOPER:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesMEMBER:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesOWNER:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesSECURITY:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesVIEWER:
-		return true
-	case UserEventPayload248NextTeamsTeamRolesVIEWERFORPLUS:
-		return true
-	default:
-		return false
-	}
-}

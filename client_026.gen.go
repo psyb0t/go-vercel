@@ -10,6 +10,62 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateVercelCiRepositorySettingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UpdateVercelCiRepositorySettingsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CreateVercelCiTaskAnalysisResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		AnalysisId string                                               `json:"analysisId"`
+		Status     CreateVercelCiTaskAnalysis202JSONResponseBody_Status `json:"status"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *struct {
+		Error struct {
+			Code    string  `json:"code"`
+			Limit   float32 `json:"limit"`
+			Message string  `json:"message"`
+			Name    string  `json:"name"`
+		} `json:"error"`
+	}
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *struct {
+		Error struct {
+			Code    string `json:"code"`
+			Message string `json:"message"`
+		} `json:"error"`
+	}
+}
+
 // GetJSON202 returns the response for an HTTP 202 `application/json` response
 func (r CreateVercelCiTaskAnalysisResponse) GetJSON202() *struct {
 	AnalysisId string                                               `json:"analysisId"`
@@ -10553,7 +10609,10 @@ type GetTeamMembersResponse struct {
 				RepoId           *string                                                         `json:"repoId,omitempty"`
 				RepoPath         *string                                                         `json:"repoPath,omitempty"`
 				SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
-				SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
+
+				// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
+				SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
+				SsoUserId        *string `json:"ssoUserId,omitempty"`
 			} `json:"joinedFrom,omitempty"`
 
 			// MembershipSource The source controlling this member's team access and roles. Individual permissions may have a different source. This does not replace authorization checks.
@@ -10677,7 +10736,10 @@ func (r GetTeamMembersResponse) GetJSON200() *struct {
 			RepoId           *string                                                         `json:"repoId,omitempty"`
 			RepoPath         *string                                                         `json:"repoPath,omitempty"`
 			SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
-			SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
+
+			// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
+			SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
+			SsoUserId        *string `json:"ssoUserId,omitempty"`
 		} `json:"joinedFrom,omitempty"`
 
 		// MembershipSource The source controlling this member's team access and roles. Individual permissions may have a different source. This does not replace authorization checks.

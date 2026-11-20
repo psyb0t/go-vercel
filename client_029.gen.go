@@ -13,6 +13,47 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseGetWebhooksResponse parses an HTTP response from a GetWebhooksWithResponse call
+func ParseGetWebhooksResponse(rsp *http.Response) (*GetWebhooksResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetWebhooksResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetWebhooks200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseCreateWebhookResponse parses an HTTP response from a CreateWebhookWithResponse call
 func ParseCreateWebhookResponse(rsp *http.Response) (*CreateWebhookResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -7527,7 +7568,10 @@ func ParseGetTeamMembersResponse(rsp *http.Response) (*GetTeamMembersResponse, e
 					RepoId           *string                                                         `json:"repoId,omitempty"`
 					RepoPath         *string                                                         `json:"repoPath,omitempty"`
 					SsoConnectedAt   *float32                                                        `json:"ssoConnectedAt,omitempty"`
-					SsoUserId        *string                                                         `json:"ssoUserId,omitempty"`
+
+					// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
+					SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
+					SsoUserId        *string `json:"ssoUserId,omitempty"`
 				} `json:"joinedFrom,omitempty"`
 
 				// MembershipSource The source controlling this member's team access and roles. Individual permissions may have a different source. This does not replace authorization checks.

@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.33.0, 2026-11-20
+
+- Breaking: `Client.ListContractCommitments`, `ClientWithResponses.ListContractCommitmentsWithResponse`, `NewListContractCommitmentsRequest`, `ParseListContractCommitmentsResponse`, `ListContractCommitmentsParams` and `ListContractCommitmentsResponse` are removed, along with the matching `ClientInterface` and `ClientWithResponsesInterface` methods.
+- Added `Client.SignFlagOverrides`, `Client.SignFlagOverridesWithBody`, `ClientWithResponses.SignFlagOverridesWithResponse`, `ClientWithResponses.SignFlagOverridesWithBodyWithResponse`, `NewSignFlagOverridesRequest`, `NewSignFlagOverridesRequestWithBody` and `ParseSignFlagOverridesResponse`. Custom implementations of the two interfaces must add the new methods.
+- Breaking: many `UserEventPayload` types lose fields and enum types. For example `UserEventPayload100.Id`, `UserEventPayload107.PrNumber`, `UserEventPayload108.Next` and the `UserEventPayload128` password protection fields are removed.
+- Breaking: `UserEventPayload124` and `UserEventPayload274` lose `Set` and `UnmarshalJSON`. `UserEvent_Payload.FromUserEventPayload134` and `UserEvent_Payload.MergeUserEventPayload134` are removed.
+- Breaking: the `JSON200` field and `GetJSON200` method of `GetTeamAccessRequestResponse` and `GetTeamMembersResponse` change type. The access request `joinedFrom` object gains `SsoIdFingerprint`.
+- Added `ExpiryNotificationLeadTime` to the sandbox create and fork request bodies and to `NamedSandbox`. Added `Session.StopReason` with `SessionStopReason`.
+- Added webhook event types `SandboxSessionStarted`, `SandboxSessionStopped` and `SandboxSessionExpiring`, plus many new `ListEventTypeName` constants.
+
 ## v0.32.0, 2026-11-19
 
 - Breaking: payload types of `UserEvent_Payload` are renumbered. `UserEventPayload100` to `UserEventPayload125` and many later types gain or lose fields. For example `UserEventPayload100.Id` changes from `string` to `*string`, `UserEventPayload101.Cn` is removed and `UserEventPayload106.PrNumber` is removed.

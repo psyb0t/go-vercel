@@ -10,6 +10,264 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetProjectEnvParams defines parameters for GetProjectEnv.
+type GetProjectEnvParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetProjectEnv200JSONResponseBody0 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0 struct {
+	Comment              *string                                         `json:"comment,omitempty"`
+	ConfigurationId      *string                                         `json:"configurationId,omitempty"`
+	ContentHint          *GetProjectEnv200JSONResponseBody_0_ContentHint `json:"contentHint,omitempty"`
+	CreatedAt            *float32                                        `json:"createdAt,omitempty"`
+	CreatedBy            *string                                         `json:"createdBy,omitempty"`
+	CustomEnvironmentIds *[]string                                       `json:"customEnvironmentIds,omitempty"`
+	Decrypted            GetProjectEnv200JSONResponseBody0Decrypted      `json:"decrypted"`
+	EdgeConfigId         *string                                         `json:"edgeConfigId,omitempty"`
+	EdgeConfigTokenId    *string                                         `json:"edgeConfigTokenId,omitempty"`
+	GitBranch            *string                                         `json:"gitBranch,omitempty"`
+	Id                   *string                                         `json:"id,omitempty"`
+	Key                  string                                          `json:"key"`
+
+	// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+	SunsetSecretId *string                                    `json:"sunsetSecretId,omitempty"`
+	Target         *GetProjectEnv200JSONResponseBody_0_Target `json:"target,omitempty"`
+	Type           GetProjectEnv200JSONResponseBody0Type      `json:"type"`
+	UpdatedAt      *float32                                   `json:"updatedAt,omitempty"`
+	UpdatedBy      *string                                    `json:"updatedBy,omitempty"`
+
+	// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+	Visibility *GetProjectEnv200JSONResponseBody0Visibility `json:"visibility,omitempty"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint0 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint0 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint0Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint0Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint0Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint1 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint1 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint1Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint1Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint1Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint2 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint2 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint2Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint2Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint2Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint3 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint3 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint3Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint3Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint3Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint4 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint4 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint4Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint4Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint4Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint5 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint5 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint5Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint5Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint5Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint6 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint6 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint6Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint6Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint6Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint7 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint7 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint7Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint7Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint7Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint8 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint8 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint8Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint8Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint8Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint9 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint9 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint9Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint9Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint9Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint10 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint10 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint10Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint10Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint10Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint11 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint11 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint11Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint11Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint11Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint12 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint12 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint12Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint12Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint12Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint13 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint13 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint13Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint13Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint13Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint14 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint14 struct {
+	StoreId string                                             `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody0ContentHint14Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint14Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint14Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint15 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint15 struct {
+	IntegrationConfigurationId string                                             `json:"integrationConfigurationId"`
+	IntegrationId              string                                             `json:"integrationId"`
+	IntegrationProductId       string                                             `json:"integrationProductId"`
+	StoreId                    string                                             `json:"storeId"`
+	Type                       GetProjectEnv200JSONResponseBody0ContentHint15Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint15Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint15Type string
+
+// GetProjectEnv200JSONResponseBody0ContentHint16 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint16 struct {
+	ProjectId string                                             `json:"projectId"`
+	Type      GetProjectEnv200JSONResponseBody0ContentHint16Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody0ContentHint16Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0ContentHint16Type string
+
+// GetProjectEnv200JSONResponseBody_0_ContentHint defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody_0_ContentHint struct {
+	union json.RawMessage
+}
+
+// GetProjectEnv200JSONResponseBody0Decrypted defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0Decrypted bool
+
+// GetProjectEnv200JSONResponseBody0Target0 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0Target0 = []string
+
+// GetProjectEnv200JSONResponseBody0Target1 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0Target1 string
+
+// GetProjectEnv200JSONResponseBody_0_Target defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody_0_Target struct {
+	union json.RawMessage
+}
+
+// GetProjectEnv200JSONResponseBody0Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0Type string
+
+// GetProjectEnv200JSONResponseBody0Visibility defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody0Visibility string
+
+// GetProjectEnv200JSONResponseBody1 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody1 struct {
+	Comment              *string                                         `json:"comment,omitempty"`
+	ConfigurationId      *string                                         `json:"configurationId,omitempty"`
+	ContentHint          *GetProjectEnv200JSONResponseBody_1_ContentHint `json:"contentHint,omitempty"`
+	CreatedAt            *float32                                        `json:"createdAt,omitempty"`
+	CreatedBy            *string                                         `json:"createdBy,omitempty"`
+	CustomEnvironmentIds *[]string                                       `json:"customEnvironmentIds,omitempty"`
+	Decrypted            GetProjectEnv200JSONResponseBody1Decrypted      `json:"decrypted"`
+	EdgeConfigId         *string                                         `json:"edgeConfigId,omitempty"`
+	EdgeConfigTokenId    *string                                         `json:"edgeConfigTokenId,omitempty"`
+	GitBranch            *string                                         `json:"gitBranch,omitempty"`
+	Id                   *string                                         `json:"id,omitempty"`
+	Key                  string                                          `json:"key"`
+
+	// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+	SunsetSecretId *string                                    `json:"sunsetSecretId,omitempty"`
+	Target         *GetProjectEnv200JSONResponseBody_1_Target `json:"target,omitempty"`
+	Type           GetProjectEnv200JSONResponseBody1Type      `json:"type"`
+	UpdatedAt      *float32                                   `json:"updatedAt,omitempty"`
+	UpdatedBy      *string                                    `json:"updatedBy,omitempty"`
+	Value          string                                     `json:"value"`
+
+	// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+	Visibility *GetProjectEnv200JSONResponseBody1Visibility `json:"visibility,omitempty"`
+}
+
+// GetProjectEnv200JSONResponseBody1ContentHint0 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody1ContentHint0 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody1ContentHint0Type `json:"type"`
+}
+
+// GetProjectEnv200JSONResponseBody1ContentHint0Type defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody1ContentHint0Type string
+
+// GetProjectEnv200JSONResponseBody1ContentHint1 defines parameters for GetProjectEnv.
+type GetProjectEnv200JSONResponseBody1ContentHint1 struct {
+	StoreId string                                            `json:"storeId"`
+	Type    GetProjectEnv200JSONResponseBody1ContentHint1Type `json:"type"`
+}
+
 // GetProjectEnv200JSONResponseBody1ContentHint1Type defines parameters for GetProjectEnv.
 type GetProjectEnv200JSONResponseBody1ContentHint1Type string
 
@@ -2675,6 +2933,27 @@ type LookupFlagLabelsJSONBody struct {
 
 // LookupFlagLabelsParams defines parameters for LookupFlagLabels.
 type LookupFlagLabelsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// SignFlagOverridesJSONBody defines parameters for SignFlagOverrides.
+type SignFlagOverridesJSONBody struct {
+	// Environment production, preview, development or the slug of a custom environment. Defaults to the environment of a Vercel OIDC token.
+	Environment *string `json:"environment,omitempty"`
+
+	// Overrides The value of each overridden flag, by flag key
+	Overrides map[string]interface{} `json:"overrides"`
+
+	// Ttl Seconds until the overrides expire. Defaults to one hour, at most one day.
+	Ttl *int `json:"ttl,omitempty"`
+}
+
+// SignFlagOverridesParams defines parameters for SignFlagOverrides.
+type SignFlagOverridesParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.
 	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
 
@@ -19801,215 +20080,4 @@ type GetProjects200JSONResponseBody1 struct {
 			Id         string                                                      `json:"id"`
 		} `json:"webAnalytics,omitempty"`
 	} `json:"projects"`
-}
-
-// GetProjects200JSONResponseBody1Pagination0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1Pagination0 struct {
-	// Count Amount of items in the current page.
-	//
-	// Example: 20
-	Count float32 `json:"count"`
-
-	// Next Continuation token that must be used to request the next page. Base32 encoded for safe URL transmission.
-	//
-	// Example: JBSWY3DPEHPK3PXP
-	Next *string `json:"next"`
-}
-
-// GetProjects200JSONResponseBody_1_Pagination defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Pagination struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsAliasConfiguredBy defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasConfiguredBy string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned0 = float32
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned1 bool
-
-// GetProjects200JSONResponseBody_1_Projects_Alias_Deployment_AliasAssigned defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Alias_Deployment_AliasAssigned struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentBranchMatcherType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentBranchMatcherType string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksConclusion defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksConclusion string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksState defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksState string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentConnectBuildsEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentConnectBuildsEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentForced defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentForced bool
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentPlan defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentPlan string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentPreviewCommentsEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentPreviewCommentsEnabled bool
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentPrivate defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentPrivate bool
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadyState defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadyState string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadySubstate defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadySubstate string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentType string
-
-// GetProjects200JSONResponseBody1ProjectsAliasDeploymentWithCache defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasDeploymentWithCache bool
-
-// GetProjects200JSONResponseBody1ProjectsAliasEnvironment defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasEnvironment string
-
-// GetProjects200JSONResponseBody1ProjectsAliasRedirectStatusCode defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasRedirectStatusCode float32
-
-// GetProjects200JSONResponseBody1ProjectsAliasTarget defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAliasTarget string
-
-// GetProjects200JSONResponseBody1ProjectsAppliedCve55182Migration defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAppliedCve55182Migration bool
-
-// GetProjects200JSONResponseBody1ProjectsAutoAssignCustomDomains defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAutoAssignCustomDomains bool
-
-// GetProjects200JSONResponseBody1ProjectsAutoExposeSystemEnvs defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsAutoExposeSystemEnvs bool
-
-// GetProjects200JSONResponseBody1ProjectsCreator0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator0 struct {
-	Type GetProjects200JSONResponseBody1ProjectsCreator0Type `json:"type"`
-	User struct {
-		Id string `json:"id"`
-	} `json:"user"`
-	Via *GetProjects200JSONResponseBody_1_Projects_Creator_0_Via `json:"via"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator0Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator0Type string
-
-// GetProjects200JSONResponseBody1ProjectsCreator0Via0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator0Via0 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type GetProjects200JSONResponseBody1ProjectsCreator0Via0Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator0Via0Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator0Via0Type string
-
-// GetProjects200JSONResponseBody1ProjectsCreator0Via1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator0Via1 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type GetProjects200JSONResponseBody1ProjectsCreator0Via1Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator0Via1Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator0Via1Type string
-
-// GetProjects200JSONResponseBody_1_Projects_Creator_0_Via defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Creator_0_Via struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator1 struct {
-	Project struct {
-		Id string `json:"id"`
-	} `json:"project"`
-	Type GetProjects200JSONResponseBody1ProjectsCreator1Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator1Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator1Type string
-
-// GetProjects200JSONResponseBody1ProjectsCreator2 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator2 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type GetProjects200JSONResponseBody1ProjectsCreator2Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator2Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator2Type string
-
-// GetProjects200JSONResponseBody1ProjectsCreator3 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator3 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type GetProjects200JSONResponseBody1ProjectsCreator3Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator3Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator3Type string
-
-// GetProjects200JSONResponseBody1ProjectsCreator4 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator4 struct {
-	Type GetProjects200JSONResponseBody1ProjectsCreator4Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsCreator4Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCreator4Type string
-
-// GetProjects200JSONResponseBody_1_Projects_Creator defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_1_Projects_Creator struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody1ProjectsCustomerSupportCodeVisibility defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsCustomerSupportCodeVisibility bool
-
-// GetProjects200JSONResponseBody1ProjectsDirectoryListing defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsDirectoryListing bool
-
-// GetProjects200JSONResponseBody1ProjectsEnvContentHint0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsEnvContentHint0 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    GetProjects200JSONResponseBody1ProjectsEnvContentHint0Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsEnvContentHint0Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsEnvContentHint0Type string
-
-// GetProjects200JSONResponseBody1ProjectsEnvContentHint1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsEnvContentHint1 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    GetProjects200JSONResponseBody1ProjectsEnvContentHint1Type `json:"type"`
-}
-
-// GetProjects200JSONResponseBody1ProjectsEnvContentHint1Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsEnvContentHint1Type string
-
-// GetProjects200JSONResponseBody1ProjectsEnvContentHint2 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody1ProjectsEnvContentHint2 struct {
-	StoreId string                                                     `json:"storeId"`
-	Type    GetProjects200JSONResponseBody1ProjectsEnvContentHint2Type `json:"type"`
 }

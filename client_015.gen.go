@@ -10,6 +10,233 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// FromUserEventPayload522 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload522
+func (t *UserEvent_Payload) FromUserEventPayload522(v UserEventPayload522) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload522 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload522
+func (t *UserEvent_Payload) MergeUserEventPayload522(v UserEventPayload522) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload523 returns the union data inside the UserEvent_Payload as a UserEventPayload523
+func (t UserEvent_Payload) AsUserEventPayload523() (UserEventPayload523, error) {
+	var body UserEventPayload523
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload523 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload523
+func (t *UserEvent_Payload) FromUserEventPayload523(v UserEventPayload523) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload523 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload523
+func (t *UserEvent_Payload) MergeUserEventPayload523(v UserEventPayload523) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload524 returns the union data inside the UserEvent_Payload as a UserEventPayload524
+func (t UserEvent_Payload) AsUserEventPayload524() (UserEventPayload524, error) {
+	var body UserEventPayload524
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload524 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload524
+func (t *UserEvent_Payload) FromUserEventPayload524(v UserEventPayload524) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload524 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload524
+func (t *UserEvent_Payload) MergeUserEventPayload524(v UserEventPayload524) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload525 returns the union data inside the UserEvent_Payload as a UserEventPayload525
+func (t UserEvent_Payload) AsUserEventPayload525() (UserEventPayload525, error) {
+	var body UserEventPayload525
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload525 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload525
+func (t *UserEvent_Payload) FromUserEventPayload525(v UserEventPayload525) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload525 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload525
+func (t *UserEvent_Payload) MergeUserEventPayload525(v UserEventPayload525) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload526 returns the union data inside the UserEvent_Payload as a UserEventPayload526
+func (t UserEvent_Payload) AsUserEventPayload526() (UserEventPayload526, error) {
+	var body UserEventPayload526
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload526 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload526
+func (t *UserEvent_Payload) FromUserEventPayload526(v UserEventPayload526) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload526 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload526
+func (t *UserEvent_Payload) MergeUserEventPayload526(v UserEventPayload526) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload527 returns the union data inside the UserEvent_Payload as a UserEventPayload527
+func (t UserEvent_Payload) AsUserEventPayload527() (UserEventPayload527, error) {
+	var body UserEventPayload527
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload527 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload527
+func (t *UserEvent_Payload) FromUserEventPayload527(v UserEventPayload527) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload527 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload527
+func (t *UserEvent_Payload) MergeUserEventPayload527(v UserEventPayload527) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload528 returns the union data inside the UserEvent_Payload as a UserEventPayload528
+func (t UserEvent_Payload) AsUserEventPayload528() (UserEventPayload528, error) {
+	var body UserEventPayload528
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload528 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload528
+func (t *UserEvent_Payload) FromUserEventPayload528(v UserEventPayload528) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload528 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload528
+func (t *UserEvent_Payload) MergeUserEventPayload528(v UserEventPayload528) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload529 returns the union data inside the UserEvent_Payload as a UserEventPayload529
+func (t UserEvent_Payload) AsUserEventPayload529() (UserEventPayload529, error) {
+	var body UserEventPayload529
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload529 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload529
+func (t *UserEvent_Payload) FromUserEventPayload529(v UserEventPayload529) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload529 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload529
+func (t *UserEvent_Payload) MergeUserEventPayload529(v UserEventPayload529) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload530 returns the union data inside the UserEvent_Payload as a UserEventPayload530
+func (t UserEvent_Payload) AsUserEventPayload530() (UserEventPayload530, error) {
+	var body UserEventPayload530
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload530 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload530
+func (t *UserEvent_Payload) FromUserEventPayload530(v UserEventPayload530) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload530 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload530
+func (t *UserEvent_Payload) MergeUserEventPayload530(v UserEventPayload530) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsUserEventPayload531 returns the union data inside the UserEvent_Payload as a UserEventPayload531
 func (t UserEvent_Payload) AsUserEventPayload531() (UserEventPayload531, error) {
 	var body UserEventPayload531
@@ -442,6 +669,58 @@ func (t *UserEvent_Payload) FromUserEventPayload547(v UserEventPayload547) error
 
 // MergeUserEventPayload547 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload547
 func (t *UserEvent_Payload) MergeUserEventPayload547(v UserEventPayload547) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload548 returns the union data inside the UserEvent_Payload as a UserEventPayload548
+func (t UserEvent_Payload) AsUserEventPayload548() (UserEventPayload548, error) {
+	var body UserEventPayload548
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload548 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload548
+func (t *UserEvent_Payload) FromUserEventPayload548(v UserEventPayload548) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload548 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload548
+func (t *UserEvent_Payload) MergeUserEventPayload548(v UserEventPayload548) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload549 returns the union data inside the UserEvent_Payload as a UserEventPayload549
+func (t UserEvent_Payload) AsUserEventPayload549() (UserEventPayload549, error) {
+	var body UserEventPayload549
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload549 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload549
+func (t *UserEvent_Payload) FromUserEventPayload549(v UserEventPayload549) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload549 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload549
+func (t *UserEvent_Payload) MergeUserEventPayload549(v UserEventPayload549) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -19730,287 +20009,4 @@ func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) AsGetMicrofro
 	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4
 	err := json.Unmarshal(t.union, &body)
 	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink5) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsLink7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Link) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_Microfrontends) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionBypass1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ProtectionBypass_AdditionalProperties) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0
-func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0, error) {
-	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0
-func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_ResourceConfig_ElasticBuildMachine) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigElasticBuildMachine0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
 }

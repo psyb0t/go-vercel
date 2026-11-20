@@ -7,6 +7,217 @@ import (
 	"encoding/json"
 )
 
+// GetProjects200JSONResponseBody1Pagination0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1Pagination0 struct {
+	// Count Amount of items in the current page.
+	//
+	// Example: 20
+	Count float32 `json:"count"`
+
+	// Next Continuation token that must be used to request the next page. Base32 encoded for safe URL transmission.
+	//
+	// Example: JBSWY3DPEHPK3PXP
+	Next *string `json:"next"`
+}
+
+// GetProjects200JSONResponseBody_1_Pagination defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_1_Pagination struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody1ProjectsAliasConfiguredBy defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasConfiguredBy string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned0 = float32
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentAliasAssigned1 bool
+
+// GetProjects200JSONResponseBody_1_Projects_Alias_Deployment_AliasAssigned defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_1_Projects_Alias_Deployment_AliasAssigned struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentBranchMatcherType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentBranchMatcherType string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksConclusion defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksConclusion string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksState defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentChecksState string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentConnectBuildsEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentConnectBuildsEnabled bool
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentForced defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentForced bool
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentPlan defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentPlan string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentPreviewCommentsEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentPreviewCommentsEnabled bool
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentPrivate defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentPrivate bool
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadyState defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadyState string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadySubstate defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentReadySubstate string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentType string
+
+// GetProjects200JSONResponseBody1ProjectsAliasDeploymentWithCache defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasDeploymentWithCache bool
+
+// GetProjects200JSONResponseBody1ProjectsAliasEnvironment defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasEnvironment string
+
+// GetProjects200JSONResponseBody1ProjectsAliasRedirectStatusCode defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasRedirectStatusCode float32
+
+// GetProjects200JSONResponseBody1ProjectsAliasTarget defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAliasTarget string
+
+// GetProjects200JSONResponseBody1ProjectsAppliedCve55182Migration defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAppliedCve55182Migration bool
+
+// GetProjects200JSONResponseBody1ProjectsAutoAssignCustomDomains defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAutoAssignCustomDomains bool
+
+// GetProjects200JSONResponseBody1ProjectsAutoExposeSystemEnvs defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsAutoExposeSystemEnvs bool
+
+// GetProjects200JSONResponseBody1ProjectsCreator0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator0 struct {
+	Type GetProjects200JSONResponseBody1ProjectsCreator0Type `json:"type"`
+	User struct {
+		Id string `json:"id"`
+	} `json:"user"`
+	Via *GetProjects200JSONResponseBody_1_Projects_Creator_0_Via `json:"via"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator0Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator0Type string
+
+// GetProjects200JSONResponseBody1ProjectsCreator0Via0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator0Via0 struct {
+	App struct {
+		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+		ClientId *string `json:"clientId,omitempty"`
+
+		// Id The internal ID of the Vercel App backing this principal.
+		Id string `json:"id"`
+	} `json:"app"`
+	Type GetProjects200JSONResponseBody1ProjectsCreator0Via0Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator0Via0Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator0Via0Type string
+
+// GetProjects200JSONResponseBody1ProjectsCreator0Via1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator0Via1 struct {
+	Integration struct {
+		ConfigurationId string `json:"configurationId"`
+		IntegrationId   string `json:"integrationId"`
+	} `json:"integration"`
+	Type GetProjects200JSONResponseBody1ProjectsCreator0Via1Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator0Via1Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator0Via1Type string
+
+// GetProjects200JSONResponseBody_1_Projects_Creator_0_Via defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_1_Projects_Creator_0_Via struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator1 struct {
+	Project struct {
+		Id string `json:"id"`
+	} `json:"project"`
+	Type GetProjects200JSONResponseBody1ProjectsCreator1Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator1Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator1Type string
+
+// GetProjects200JSONResponseBody1ProjectsCreator2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator2 struct {
+	App struct {
+		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+		ClientId *string `json:"clientId,omitempty"`
+
+		// Id The internal ID of the Vercel App backing this principal.
+		Id string `json:"id"`
+	} `json:"app"`
+	Type GetProjects200JSONResponseBody1ProjectsCreator2Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator2Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator2Type string
+
+// GetProjects200JSONResponseBody1ProjectsCreator3 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator3 struct {
+	Integration struct {
+		ConfigurationId string `json:"configurationId"`
+		IntegrationId   string `json:"integrationId"`
+	} `json:"integration"`
+	Type GetProjects200JSONResponseBody1ProjectsCreator3Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator3Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator3Type string
+
+// GetProjects200JSONResponseBody1ProjectsCreator4 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator4 struct {
+	Type GetProjects200JSONResponseBody1ProjectsCreator4Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsCreator4Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCreator4Type string
+
+// GetProjects200JSONResponseBody_1_Projects_Creator defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_1_Projects_Creator struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody1ProjectsCustomerSupportCodeVisibility defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsCustomerSupportCodeVisibility bool
+
+// GetProjects200JSONResponseBody1ProjectsDirectoryListing defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsDirectoryListing bool
+
+// GetProjects200JSONResponseBody1ProjectsEnvContentHint0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsEnvContentHint0 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody1ProjectsEnvContentHint0Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsEnvContentHint0Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsEnvContentHint0Type string
+
+// GetProjects200JSONResponseBody1ProjectsEnvContentHint1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsEnvContentHint1 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody1ProjectsEnvContentHint1Type `json:"type"`
+}
+
+// GetProjects200JSONResponseBody1ProjectsEnvContentHint1Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsEnvContentHint1Type string
+
+// GetProjects200JSONResponseBody1ProjectsEnvContentHint2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody1ProjectsEnvContentHint2 struct {
+	StoreId string                                                     `json:"storeId"`
+	Type    GetProjects200JSONResponseBody1ProjectsEnvContentHint2Type `json:"type"`
+}
+
 // GetProjects200JSONResponseBody1ProjectsEnvContentHint2Type defines parameters for GetProjects.
 type GetProjects200JSONResponseBody1ProjectsEnvContentHint2Type string
 
@@ -19811,199 +20022,4 @@ type ListDeploymentCheckRuns200JSONResponseBodyRuns0 struct {
 	} `json:"taskSummary,omitempty"`
 	Timeout   float32 `json:"timeout"`
 	UpdatedAt float32 `json:"updatedAt"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Conclusion defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Conclusion string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Requires defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Requires string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0 struct {
-	ExternalResourceId         *string                                                    `json:"externalResourceId,omitempty"`
-	IntegrationConfigurationId string                                                     `json:"integrationConfigurationId"`
-	IntegrationId              string                                                     `json:"integrationId"`
-	Kind                       ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0Kind `json:"kind"`
-	ResourceId                 *string                                                    `json:"resourceId,omitempty"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source0Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1 struct {
-	Kind      ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1Kind `json:"kind"`
-	WebhookId *string                                                    `json:"webhookId,omitempty"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source1Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2 struct {
-	ExternalCheckName string                                                         `json:"externalCheckName"`
-	Kind              ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Kind     `json:"kind"`
-	Provider          ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Provider `json:"provider"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Provider defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source2Provider string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3 struct {
-	Origin  *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3Origin  `json:"origin,omitempty"`
-	SubKind *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3SubKind `json:"subKind,omitempty"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3Origin defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3Origin string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3SubKind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source3SubKind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4 struct {
-	Origin    ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Origin         `json:"origin"`
-	Selection ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection `json:"selection"`
-	SubKind   ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4SubKind        `json:"subKind"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Origin defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Origin string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0 struct {
-	Kind ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind `json:"kind"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection0Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1 struct {
-	Kind ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind `json:"kind"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection1Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2 struct {
-	FailIfNoMatch *ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch `json:"failIfNoMatch,omitempty"`
-	Filters       []string                                                                       `json:"filters"`
-	Job           ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job            `json:"job"`
-	Kind          ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind           `json:"kind"`
-	Task          string                                                                         `json:"task"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2FailIfNoMatch bool
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Job string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4Selection2Kind string
-
-// ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source_4_Selection struct {
-	union json.RawMessage
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4SubKind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Source4SubKind string
-
-// ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source struct {
-	union json.RawMessage
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns0Status defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns0Status string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1 struct {
-	Blocks         *ListDeploymentCheckRuns200JSONResponseBodyRuns1Blocks     `json:"blocks,omitempty"`
-	CompletedAt    *float32                                                   `json:"completedAt,omitempty"`
-	Conclusion     *ListDeploymentCheckRuns200JSONResponseBodyRuns1Conclusion `json:"conclusion,omitempty"`
-	ConclusionText *string                                                    `json:"conclusionText,omitempty"`
-	CreatedAt      float32                                                    `json:"createdAt"`
-	DeploymentId   string                                                     `json:"deploymentId"`
-	ExpectationRef *struct {
-		InvocationAttempt float32 `json:"invocationAttempt"`
-		InvocationId      string  `json:"invocationId"`
-		JobDefinitionId   string  `json:"jobDefinitionId"`
-		JobRunAttempt     float32 `json:"jobRunAttempt"`
-	} `json:"expectationRef,omitempty"`
-
-	// ExpectationRevision Latest aggregate revision applied to this check run.
-	ExpectationRevision *float32                                                 `json:"expectationRevision,omitempty"`
-	ExternalId          *string                                                  `json:"externalId,omitempty"`
-	ExternalUrl         *string                                                  `json:"externalUrl,omitempty"`
-	Id                  string                                                   `json:"id"`
-	Name                string                                                   `json:"name"`
-	Output              *map[string]interface{}                                  `json:"output,omitempty"`
-	OwnerId             string                                                   `json:"ownerId"`
-	ProjectId           *string                                                  `json:"projectId,omitempty"`
-	Requires            *ListDeploymentCheckRuns200JSONResponseBodyRuns1Requires `json:"requires,omitempty"`
-	Source              ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source `json:"source"`
-	StartedAt           *float32                                                 `json:"startedAt,omitempty"`
-	Status              ListDeploymentCheckRuns200JSONResponseBodyRuns1Status    `json:"status"`
-	Targets             *[]string                                                `json:"targets,omitempty"`
-	TaskSummary         *struct {
-		Failed    float32 `json:"failed"`
-		Pending   float32 `json:"pending"`
-		Succeeded float32 `json:"succeeded"`
-		Total     float32 `json:"total"`
-	} `json:"taskSummary,omitempty"`
-	Timeout   float32 `json:"timeout"`
-	UpdatedAt float32 `json:"updatedAt"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Blocks defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Blocks string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Conclusion defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Conclusion string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Requires defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Requires string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0 struct {
-	InvocationAttempt *float32                                                      `json:"invocationAttempt,omitempty"`
-	InvocationId      string                                                        `json:"invocationId"`
-	JobDefinitionId   string                                                        `json:"jobDefinitionId"`
-	Origin            ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0Origin  `json:"origin"`
-	SubKind           ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0SubKind `json:"subKind"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0Origin defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0Origin string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0SubKind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source0SubKind string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1 struct {
-	Origin  ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1Origin  `json:"origin"`
-	SubKind ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1SubKind `json:"subKind"`
-}
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1Origin defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1Origin string
-
-// ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1SubKind defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBodyRuns1Source1SubKind string
-
-// ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source defines parameters for ListDeploymentCheckRuns.
-type ListDeploymentCheckRuns200JSONResponseBody_Runs_1_Source struct {
-	union json.RawMessage
 }
