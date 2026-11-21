@@ -14,6 +14,65 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// AsGetDeployment200JSONResponseBody2GitSource2 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource as a GetDeployment200JSONResponseBody2GitSource2
+func (t GetDeployment200JSONResponseBody_2_GitSource) AsGetDeployment200JSONResponseBody2GitSource2() (GetDeployment200JSONResponseBody2GitSource2, error) {
+	var body GetDeployment200JSONResponseBody2GitSource2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource2 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource as the provided GetDeployment200JSONResponseBody2GitSource2
+func (t *GetDeployment200JSONResponseBody_2_GitSource) FromGetDeployment200JSONResponseBody2GitSource2(v GetDeployment200JSONResponseBody2GitSource2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource2 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource, using the provided GetDeployment200JSONResponseBody2GitSource2
+func (t *GetDeployment200JSONResponseBody_2_GitSource) MergeGetDeployment200JSONResponseBody2GitSource2(v GetDeployment200JSONResponseBody2GitSource2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource3 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource as a GetDeployment200JSONResponseBody2GitSource3
+func (t GetDeployment200JSONResponseBody_2_GitSource) AsGetDeployment200JSONResponseBody2GitSource3() (GetDeployment200JSONResponseBody2GitSource3, error) {
+	var body GetDeployment200JSONResponseBody2GitSource3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource3 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource as the provided GetDeployment200JSONResponseBody2GitSource3
+func (t *GetDeployment200JSONResponseBody_2_GitSource) FromGetDeployment200JSONResponseBody2GitSource3(v GetDeployment200JSONResponseBody2GitSource3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource3 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource, using the provided GetDeployment200JSONResponseBody2GitSource3
+func (t *GetDeployment200JSONResponseBody_2_GitSource) MergeGetDeployment200JSONResponseBody2GitSource3(v GetDeployment200JSONResponseBody2GitSource3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource4 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource as a GetDeployment200JSONResponseBody2GitSource4
+func (t GetDeployment200JSONResponseBody_2_GitSource) AsGetDeployment200JSONResponseBody2GitSource4() (GetDeployment200JSONResponseBody2GitSource4, error) {
+	var body GetDeployment200JSONResponseBody2GitSource4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
 // FromGetDeployment200JSONResponseBody2GitSource4 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource as the provided GetDeployment200JSONResponseBody2GitSource4
 func (t *GetDeployment200JSONResponseBody_2_GitSource) FromGetDeployment200JSONResponseBody2GitSource4(v GetDeployment200JSONResponseBody2GitSource4) error {
 	b, err := json.Marshal(v)
@@ -18275,14 +18334,14 @@ type ClientInterface interface {
 
 	// ArchiveAiGatewayBudget Archive AI Gateway budget
 	//
-	// Archive a team-, project-, or user-scope AI Gateway budget.
+	// Archive a team-, project-, user-, or app-scope AI Gateway budget.
 	//
 	// Corresponds with DELETE /ai-gateway/budgets (the `ArchiveAiGatewayBudget` operationId).
 	ArchiveAiGatewayBudget(ctx context.Context, params *ArchiveAiGatewayBudgetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UpsertAiGatewayBudgetWithBody Upsert AI Gateway budget
 	//
-	// Create or update a team-, project-, or user-scope AI Gateway budget.
+	// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -18291,7 +18350,7 @@ type ClientInterface interface {
 
 	// UpsertAiGatewayBudget Upsert AI Gateway budget
 	//
-	// Create or update a team-, project-, or user-scope AI Gateway budget.
+	// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -18325,14 +18384,14 @@ type ClientInterface interface {
 
 	// ListAiGatewayBudgetDefaults List AI Gateway budget defaults
 	//
-	// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+	// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user/app scope with a default set). An empty list is a normal state for the dashboard.
 	//
 	// Corresponds with GET /ai-gateway/budgets/defaults/list (the `ListAiGatewayBudgetDefaults` operationId).
 	ListAiGatewayBudgetDefaults(ctx context.Context, params *ListAiGatewayBudgetDefaultsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAiGatewayBudgets List AI Gateway budgets
 	//
-	// List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
+	// List the team's AI Gateway budgets (team/project/user/app scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
 	//
 	// Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
 	ListAiGatewayBudgets(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*http.Response, error)

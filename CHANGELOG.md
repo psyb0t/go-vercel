@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.34.0, 2026-11-21
+
+- Breaking: `UpsertAiGatewayBudgetJSONBody.LimitAmount` and `UpsertAiGatewayBudgetJSONRequestBody.LimitAmount` change from `float32` to `*float32`.
+- Breaking: `AiGatewayBudgetList.DefaultCoveredCounts` gains an optional `App` field of type `*float32`, so code that builds or compares the anonymous struct must change.
+- Added the `app` scope type for AI gateway budgets: `AiGatewayBudgetScopeTypeApp`, `AiGatewayBudgetDefaultScopeTypeApp`, `ListAiGatewayBudgetsParamsScopeTypeApp`, `ArchiveAiGatewayBudgetParamsScopeTypeApp`, `UpsertAiGatewayBudgetJSONBodyScopeTypeApp` and related default scope constants.
+- Added `AppId` to `ArchiveAiGatewayBudgetParams`, `UpsertAiGatewayBudgetJSONBody` and `UpsertAiGatewayBudgetJSONRequestBody`, and `IncreaseBy` to the two upsert bodies.
+- Breaking: many `UserEventPayload` types are renumbered and lose fields and enum types. For example `UserEventPayload245.Avatar`, `UserEventPayload246.Name`, `UserEventPayload246.Slug`, `UserEventPayload247.Domain` and the `UserEventPayload249` directory sync and `Next` role fields are removed.
+- Breaking: `UserEventPayload275` loses `Set` and `UnmarshalJSON`. `UserEventPayload253` and `UserEventPayload254` are no longer comparable.
+- Added `UserEventPayload277.Set`, `UserEventPayload277.UnmarshalJSON`, `UserEvent_Payload.FromUserEventPayload550`, `FromUserEventPayload551`, `MergeUserEventPayload550` and `MergeUserEventPayload551`.
+- Added webhook event type constants `ListEventTypeNameOrganizationAdminInviteRevoked` and `ListEventTypeNameOrganizationAdminRemoved`, with matching `ListEventTypeReplacedBy` constants.
+
 ## v0.33.0, 2026-11-20
 
 - Breaking: `Client.ListContractCommitments`, `ClientWithResponses.ListContractCommitmentsWithResponse`, `NewListContractCommitmentsRequest`, `ParseListContractCommitmentsResponse`, `ListContractCommitmentsParams` and `ListContractCommitmentsResponse` are removed, along with the matching `ClientInterface` and `ClientWithResponsesInterface` methods.

@@ -10,6 +10,71 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// RestartProjectDaemonInstance202JSONResponseBodyOk defines parameters for RestartProjectDaemonInstance.
+type RestartProjectDaemonInstance202JSONResponseBodyOk bool
+
+// MoveProjectDomainJSONBody defines parameters for MoveProjectDomain.
+type MoveProjectDomainJSONBody struct {
+	// GitBranch Git branch to link the project domain
+	GitBranch *string `json:"gitBranch,omitempty"`
+
+	// ProjectId The unique target project identifier
+	//
+	// Example: prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA
+	ProjectId MoveProjectDomainJSONBody_ProjectId `json:"projectId"`
+
+	// Redirect Target destination domain for redirect
+	//
+	// Example: foobar.com
+	Redirect *string `json:"redirect,omitempty"`
+
+	// RedirectStatusCode Status code for domain redirect
+	//
+	// Example: 307
+	RedirectStatusCode *MoveProjectDomainJSONBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+}
+
+// MoveProjectDomainParams defines parameters for MoveProjectDomain.
+type MoveProjectDomainParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// MoveProjectDomainJSONBodyProjectId0 defines parameters for MoveProjectDomain.
+type MoveProjectDomainJSONBodyProjectId0 = string
+
+// MoveProjectDomainJSONBody_ProjectId defines parameters for MoveProjectDomain.
+type MoveProjectDomainJSONBody_ProjectId struct {
+	union json.RawMessage
+}
+
+// MoveProjectDomainJSONBodyRedirectStatusCode defines parameters for MoveProjectDomain.
+type MoveProjectDomainJSONBodyRedirectStatusCode int
+
+// MoveProjectDomain200JSONResponseBodyRedirectStatusCode defines parameters for MoveProjectDomain.
+type MoveProjectDomain200JSONResponseBodyRedirectStatusCode float32
+
+// MoveProjectDomain200JSONResponseBodyVerified defines parameters for MoveProjectDomain.
+type MoveProjectDomain200JSONResponseBodyVerified bool
+
+// BatchRemoveProjectEnvJSONBody defines parameters for BatchRemoveProjectEnv.
+type BatchRemoveProjectEnvJSONBody struct {
+	// Ids Array of environment variable IDs to delete
+	Ids []string `json:"ids"`
+}
+
+// BatchRemoveProjectEnvParams defines parameters for BatchRemoveProjectEnv.
+type BatchRemoveProjectEnvParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // GetProjectEnvParams defines parameters for GetProjectEnv.
 type GetProjectEnvParams struct {
 	// TeamId The Team identifier to perform the request on behalf of.

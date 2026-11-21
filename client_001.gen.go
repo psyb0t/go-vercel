@@ -141,6 +141,7 @@ func (e AiGatewayBudgetRefreshPeriod) Valid() bool {
 // Defines values for AiGatewayBudgetScopeType.
 const (
 	AiGatewayBudgetScopeTypeApiKey  AiGatewayBudgetScopeType = "api-key"
+	AiGatewayBudgetScopeTypeApp     AiGatewayBudgetScopeType = "app"
 	AiGatewayBudgetScopeTypeProject AiGatewayBudgetScopeType = "project"
 	AiGatewayBudgetScopeTypeTeam    AiGatewayBudgetScopeType = "team"
 	AiGatewayBudgetScopeTypeUser    AiGatewayBudgetScopeType = "user"
@@ -150,6 +151,8 @@ const (
 func (e AiGatewayBudgetScopeType) Valid() bool {
 	switch e {
 	case AiGatewayBudgetScopeTypeApiKey:
+		return true
+	case AiGatewayBudgetScopeTypeApp:
 		return true
 	case AiGatewayBudgetScopeTypeProject:
 		return true
@@ -222,6 +225,7 @@ func (e AiGatewayBudgetDefaultRefreshPeriod) Valid() bool {
 // Defines values for AiGatewayBudgetDefaultScopeType.
 const (
 	AiGatewayBudgetDefaultScopeTypeApiKey  AiGatewayBudgetDefaultScopeType = "api-key"
+	AiGatewayBudgetDefaultScopeTypeApp     AiGatewayBudgetDefaultScopeType = "app"
 	AiGatewayBudgetDefaultScopeTypeProject AiGatewayBudgetDefaultScopeType = "project"
 	AiGatewayBudgetDefaultScopeTypeTeam    AiGatewayBudgetDefaultScopeType = "team"
 	AiGatewayBudgetDefaultScopeTypeUser    AiGatewayBudgetDefaultScopeType = "user"
@@ -231,6 +235,8 @@ const (
 func (e AiGatewayBudgetDefaultScopeType) Valid() bool {
 	switch e {
 	case AiGatewayBudgetDefaultScopeTypeApiKey:
+		return true
+	case AiGatewayBudgetDefaultScopeTypeApp:
 		return true
 	case AiGatewayBudgetDefaultScopeTypeProject:
 		return true
@@ -4620,6 +4626,8 @@ const (
 	ListEventTypeNameOidcPolicyDeleted                                   ListEventTypeName = "oidc-policy-deleted"
 	ListEventTypeNameOidcPolicyUpdated                                   ListEventTypeName = "oidc-policy-updated"
 	ListEventTypeNameOidcPolicyUsedToObtainAppToken                      ListEventTypeName = "oidc-policy-used-to-obtain-app-token"
+	ListEventTypeNameOrganizationAdminInviteRevoked                      ListEventTypeName = "organization-admin-invite-revoked"
+	ListEventTypeNameOrganizationAdminRemoved                            ListEventTypeName = "organization-admin-removed"
 	ListEventTypeNameOrganizationAvatarUpdate                            ListEventTypeName = "organization-avatar-update"
 	ListEventTypeNameOrganizationCreate                                  ListEventTypeName = "organization-create"
 	ListEventTypeNameOrganizationDelete                                  ListEventTypeName = "organization-delete"
@@ -5864,6 +5872,10 @@ func (e ListEventTypeName) Valid() bool {
 	case ListEventTypeNameOidcPolicyUpdated:
 		return true
 	case ListEventTypeNameOidcPolicyUsedToObtainAppToken:
+		return true
+	case ListEventTypeNameOrganizationAdminInviteRevoked:
+		return true
+	case ListEventTypeNameOrganizationAdminRemoved:
 		return true
 	case ListEventTypeNameOrganizationAvatarUpdate:
 		return true
@@ -7116,6 +7128,8 @@ const (
 	ListEventTypeReplacedByOidcPolicyDeleted                                   ListEventTypeReplacedBy = "oidc-policy-deleted"
 	ListEventTypeReplacedByOidcPolicyUpdated                                   ListEventTypeReplacedBy = "oidc-policy-updated"
 	ListEventTypeReplacedByOidcPolicyUsedToObtainAppToken                      ListEventTypeReplacedBy = "oidc-policy-used-to-obtain-app-token"
+	ListEventTypeReplacedByOrganizationAdminInviteRevoked                      ListEventTypeReplacedBy = "organization-admin-invite-revoked"
+	ListEventTypeReplacedByOrganizationAdminRemoved                            ListEventTypeReplacedBy = "organization-admin-removed"
 	ListEventTypeReplacedByOrganizationAvatarUpdate                            ListEventTypeReplacedBy = "organization-avatar-update"
 	ListEventTypeReplacedByOrganizationCreate                                  ListEventTypeReplacedBy = "organization-create"
 	ListEventTypeReplacedByOrganizationDelete                                  ListEventTypeReplacedBy = "organization-delete"
@@ -8360,6 +8374,10 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedByOidcPolicyUpdated:
 		return true
 	case ListEventTypeReplacedByOidcPolicyUsedToObtainAppToken:
+		return true
+	case ListEventTypeReplacedByOrganizationAdminInviteRevoked:
+		return true
+	case ListEventTypeReplacedByOrganizationAdminRemoved:
 		return true
 	case ListEventTypeReplacedByOrganizationAvatarUpdate:
 		return true
@@ -19985,30 +20003,3 @@ func (e UserEventPayload243ActorType) Valid() bool {
 		return false
 	}
 }
-
-// Defines values for UserEventPayload249NextOrganizationPermissions.
-const (
-	UserEventPayload249NextOrganizationPermissionsOrgAdmin UserEventPayload249NextOrganizationPermissions = "OrgAdmin"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload249NextOrganizationPermissions enum.
-func (e UserEventPayload249NextOrganizationPermissions) Valid() bool {
-	switch e {
-	case UserEventPayload249NextOrganizationPermissionsOrgAdmin:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload249NextTeamRoles.
-const (
-	UserEventPayload249NextTeamRolesBILLING       UserEventPayload249NextTeamRoles = "BILLING"
-	UserEventPayload249NextTeamRolesCONTRIBUTOR   UserEventPayload249NextTeamRoles = "CONTRIBUTOR"
-	UserEventPayload249NextTeamRolesDEVELOPER     UserEventPayload249NextTeamRoles = "DEVELOPER"
-	UserEventPayload249NextTeamRolesMEMBER        UserEventPayload249NextTeamRoles = "MEMBER"
-	UserEventPayload249NextTeamRolesOWNER         UserEventPayload249NextTeamRoles = "OWNER"
-	UserEventPayload249NextTeamRolesSECURITY      UserEventPayload249NextTeamRoles = "SECURITY"
-	UserEventPayload249NextTeamRolesVIEWER        UserEventPayload249NextTeamRoles = "VIEWER"
-	UserEventPayload249NextTeamRolesVIEWERFORPLUS UserEventPayload249NextTeamRoles = "VIEWER_FOR_PLUS"
-)

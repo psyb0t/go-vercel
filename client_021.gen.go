@@ -18,7 +18,7 @@ import (
 
 // ArchiveAiGatewayBudget Archive AI Gateway budget
 //
-// Archive a team-, project-, or user-scope AI Gateway budget.
+// Archive a team-, project-, user-, or app-scope AI Gateway budget.
 //
 // Corresponds with DELETE /ai-gateway/budgets (the `ArchiveAiGatewayBudget` operationId).
 func (c *Client) ArchiveAiGatewayBudget(ctx context.Context, params *ArchiveAiGatewayBudgetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -35,7 +35,7 @@ func (c *Client) ArchiveAiGatewayBudget(ctx context.Context, params *ArchiveAiGa
 
 // UpsertAiGatewayBudgetWithBody Upsert AI Gateway budget
 //
-// Create or update a team-, project-, or user-scope AI Gateway budget.
+// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
 //
 // Takes any type of body and a specified content type.
 //
@@ -54,7 +54,7 @@ func (c *Client) UpsertAiGatewayBudgetWithBody(ctx context.Context, params *Upse
 
 // UpsertAiGatewayBudget Upsert AI Gateway budget
 //
-// Create or update a team-, project-, or user-scope AI Gateway budget.
+// Create or update a team-, project-, user-, or app-scope AI Gateway budget. Set a total with `limitAmount`, or raise the current budget with `increaseBy`.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -128,7 +128,7 @@ func (c *Client) UpsertAiGatewayBudgetDefault(ctx context.Context, params *Upser
 
 // ListAiGatewayBudgetDefaults List AI Gateway budget defaults
 //
-// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
+// List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user/app scope with a default set). An empty list is a normal state for the dashboard.
 //
 // Corresponds with GET /ai-gateway/budgets/defaults/list (the `ListAiGatewayBudgetDefaults` operationId).
 func (c *Client) ListAiGatewayBudgetDefaults(ctx context.Context, params *ListAiGatewayBudgetDefaultsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -145,7 +145,7 @@ func (c *Client) ListAiGatewayBudgetDefaults(ctx context.Context, params *ListAi
 
 // ListAiGatewayBudgets List AI Gateway budgets
 //
-// List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
+// List the team's AI Gateway budgets (team/project/user/app scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
 //
 // Corresponds with GET /ai-gateway/budgets/list (the `ListAiGatewayBudgets` operationId).
 func (c *Client) ListAiGatewayBudgets(ctx context.Context, params *ListAiGatewayBudgetsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -12500,6 +12500,18 @@ func NewArchiveAiGatewayBudgetRequest(server string, params *ArchiveAiGatewayBud
 
 		}
 
+		if params.AppId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "appId", *params.AppId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.Justification != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "justification", *params.Justification, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -20001,91 +20013,6 @@ func NewDeleteDriveV1Request(server string, nameOrId string, params *DeleteDrive
 	}
 
 	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetDriveV1Request constructs an http.Request for the GetDriveV1 method
-func NewGetDriveV1Request(server string, nameOrId string, params *GetDriveV1Params) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "nameOrId", nameOrId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/drives/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.ProjectId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", *params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if params.Slug != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
