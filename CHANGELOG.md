@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.36.0, 2026-11-24
+
+- Breaking: `CreateFlagJSONBody.Environments` and `CreateFlagJSONRequestBody.Environments` change from a map to a struct with fixed `Development`, `Preview` and `Production` fields. The shared `CreateFlagJSONBodyEnvironments*` and `CreateFlagJSONBody_Environments_*` helper types are replaced by per-environment ones such as `CreateFlagJSONBody_Environments_Development_Fallthrough`.
+- Breaking: `CreateSdkKeyJSONBodySdkKeyTypeClient` and `CreateSdkKeyJSONBodySdkKeyTypeMobile` are removed.
+- Breaking: `UserEventPayload` types are renumbered again and many lose methods such as `UserEventPayload125.Set`, `UserEventPayload125.UnmarshalJSON`, `UserEventPayload277.Set` and `UserEventPayload277.UnmarshalJSON`. `UserEvent_Payload_136_Job` and `UserEvent_Payload_185_Target` are removed.
+- Breaking: `ClientInterface` and `ClientWithResponsesInterface` gain `LookupEdgeConfigToken` and `LookupEdgeConfigTokenWithResponse`, so custom implementations must add them.
+- Breaking: `GetAccountInfoResponse.JSON200` gains a `Contacts` list of email and optional name entries.
+- Added `Client.LookupEdgeConfigToken`, `ClientWithResponses.LookupEdgeConfigTokenWithResponse`, `NewLookupEdgeConfigTokenRequest`, `ParseLookupEdgeConfigTokenResponse`, `LookupEdgeConfigTokenParams` and `LookupEdgeConfigTokenResponse`.
+- Added the `AutoPausedDeliveryErrors` disabled reason constants for log drain responses, for example `CreateDrain200JSONResponseBody0DisabledReasonAutoPausedDeliveryErrors`.
+
 ## v0.35.0, 2026-11-24
 
 - Breaking: `ListAuthTokens`, `ListAuthTokensWithResponse` and `NewListAuthTokensRequest` take a new `*ListAuthTokensParams` argument, with `Kind` and `Status` filters. The matching `ClientInterface` and `ClientWithResponsesInterface` methods change the same way.

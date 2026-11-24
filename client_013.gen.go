@@ -8,9 +8,1228 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/oapi-codegen/runtime"
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
+
+// GetDeployment200JSONResponseBody1Services1Routes0Destination0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Destination0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Destination1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Destination1 struct {
+	// Path Routing-only path used to select a route inside the target service.
+	Path    *string `json:"path,omitempty"`
+	Service string  `json:"service"`
+
+	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+	Type *GetDeployment200JSONResponseBody1Services1Routes0Destination1Type `json:"type,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Destination1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Destination1Type string
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0 struct {
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Has0Type          `json:"type"`
+	Value GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value `json:"value"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                 `json:"gt,omitempty"`
+	Gte  *float32                                                                 `json:"gte,omitempty"`
+	Inc  *[]string                                                                `json:"inc,omitempty"`
+	Lt   *float32                                                                 `json:"lt,omitempty"`
+	Lte  *float32                                                                 `json:"lte,omitempty"`
+	Neq  *string                                                                  `json:"neq,omitempty"`
+	Ninc *[]string                                                                `json:"ninc,omitempty"`
+	Pre  *string                                                                  `json:"pre,omitempty"`
+	Re   *string                                                                  `json:"re,omitempty"`
+	Suf  *string                                                                  `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1 struct {
+	Key   string                                                              `json:"key"`
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Has1Type           `json:"type"`
+	Value *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value `json:"value,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                 `json:"gt,omitempty"`
+	Gte  *float32                                                                 `json:"gte,omitempty"`
+	Inc  *[]string                                                                `json:"inc,omitempty"`
+	Lt   *float32                                                                 `json:"lt,omitempty"`
+	Lte  *float32                                                                 `json:"lte,omitempty"`
+	Neq  *string                                                                  `json:"neq,omitempty"`
+	Ninc *[]string                                                                `json:"ninc,omitempty"`
+	Pre  *string                                                                  `json:"pre,omitempty"`
+	Re   *string                                                                  `json:"re,omitempty"`
+	Suf  *string                                                                  `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Important defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Important bool
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0 struct {
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Missing0Type          `json:"type"`
+	Value GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value `json:"value"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1 struct {
+	Key   string                                                                  `json:"key"`
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Missing1Type           `json:"type"`
+	Value *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value `json:"value,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_Item struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0MitigateAction defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0MitigateAction string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Override defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Override bool
+
+// GetDeployment200JSONResponseBody1Services1Routes0RespectOriginCacheControl defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0RespectOriginCacheControl bool
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0 struct {
+	Args   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args `json:"args,omitempty"`
+	Env    *[]string                                                                 `json:"env,omitempty"`
+	Op     GetDeployment200JSONResponseBody1Services1Routes0Transforms0Op            `json:"op"`
+	Target struct {
+		Key GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key `json:"key"`
+	} `json:"target"`
+	Type GetDeployment200JSONResponseBody1Services1Routes0Transforms0Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0Args1 = []string
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Args struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0Op defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0Op string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                             `json:"gt,omitempty"`
+	Gte  *float32                                                                             `json:"gte,omitempty"`
+	Inc  *[]string                                                                            `json:"inc,omitempty"`
+	Lt   *float32                                                                             `json:"lt,omitempty"`
+	Lte  *float32                                                                             `json:"lte,omitempty"`
+	Neq  *string                                                                              `json:"neq,omitempty"`
+	Ninc *[]string                                                                            `json:"ninc,omitempty"`
+	Pre  *string                                                                              `json:"pre,omitempty"`
+	Suf  *string                                                                              `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0TargetKey1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_0_Target_Key struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms0Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms1 struct {
+	Args string    `json:"args"`
+	Env  *[]string `json:"env,omitempty"`
+
+	// Fallback Keep an earlier request.path value. Builders use this for fallback routes.
+	Fallback *GetDeployment200JSONResponseBody1Services1Routes0Transforms1Fallback `json:"fallback,omitempty"`
+	Op       GetDeployment200JSONResponseBody1Services1Routes0Transforms1Op        `json:"op"`
+	Type     GetDeployment200JSONResponseBody1Services1Routes0Transforms1Type      `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms1Fallback defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms1Fallback bool
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms1Op defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms1Op string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Transforms1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Transforms1Type string
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Transforms_Item struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes1 struct {
+	Dest   *string                                                 `json:"dest,omitempty"`
+	Handle GetDeployment200JSONResponseBody1Services1Routes1Handle `json:"handle"`
+	Src    *string                                                 `json:"src,omitempty"`
+	Status *float32                                                `json:"status,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes1Handle defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes1Handle string
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_Item defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_Item struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Schema defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Schema string
+
+// GetDeployment200JSONResponseBody1Services1TrailingSlash defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1TrailingSlash bool
+
+// GetDeployment200JSONResponseBody_1_Services_Item defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_Item struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1SoftDeletedByRetention defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1SoftDeletedByRetention bool
+
+// GetDeployment200JSONResponseBody1Source defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Source string
+
+// GetDeployment200JSONResponseBody1Status defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Status string
+
+// GetDeployment200JSONResponseBody1Target defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Target string
+
+// GetDeployment200JSONResponseBody1TtyBuildLogs defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1TtyBuildLogs bool
+
+// GetDeployment200JSONResponseBody1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Type string
+
+// GetDeployment200JSONResponseBody1Version defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Version float32
+
+// GetDeployment200JSONResponseBody2 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2 struct {
+	// Alias A list of all the aliases (default aliases, staging aliases and production aliases) that were assigned upon deployment creation
+	//
+	// Example: []
+	Alias *[]string `json:"alias,omitempty"`
+
+	// AliasAssigned A boolean that will be true when the aliases from the alias property were assigned successfully
+	//
+	// Example: true
+	AliasAssigned GetDeployment200JSONResponseBody2AliasAssigned `json:"aliasAssigned"`
+
+	// AliasError An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+	AliasError *struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"aliasError,omitempty"`
+	AliasFinal   *string `json:"aliasFinal,omitempty"`
+	AliasWarning *struct {
+		Action  *string `json:"action,omitempty"`
+		Code    string  `json:"code"`
+		Link    *string `json:"link,omitempty"`
+		Message string  `json:"message"`
+	} `json:"aliasWarning,omitempty"`
+
+	// AutoAssignCustomDomains applies to custom domains only, defaults to `true`
+	AutoAssignCustomDomains *GetDeployment200JSONResponseBody2AutoAssignCustomDomains `json:"autoAssignCustomDomains,omitempty"`
+	AutomaticAliases        *[]string                                                 `json:"automaticAliases,omitempty"`
+	BootedAt                float32                                                   `json:"bootedAt"`
+
+	// BuildContainerFinishedAt Since April 2025 it necessary for On-Demand Concurrency Minutes calculation
+	BuildContainerFinishedAt *float32                                           `json:"buildContainerFinishedAt,omitempty"`
+	BuildErrorAt             *float32                                           `json:"buildErrorAt,omitempty"`
+	BuildSkipped             GetDeployment200JSONResponseBody2BuildSkipped      `json:"buildSkipped"`
+	BuildingAt               float32                                            `json:"buildingAt"`
+	CanceledAt               *float32                                           `json:"canceledAt,omitempty"`
+	ChecksConclusion         *GetDeployment200JSONResponseBody2ChecksConclusion `json:"checksConclusion,omitempty"`
+	ChecksState              *GetDeployment200JSONResponseBody2ChecksState      `json:"checksState,omitempty"`
+
+	// CreatedAt A number containing the date when the deployment was created in milliseconds
+	//
+	// Example: 1540257589405
+	CreatedAt float32 `json:"createdAt"`
+
+	// Creator Information about the deployment creator
+	Creator struct {
+		// Avatar The avatar of the user that created the deployment
+		Avatar *string `json:"avatar,omitempty"`
+
+		// Type Principal type of the deployment creator.
+		Type *GetDeployment200JSONResponseBody2CreatorType `json:"type,omitempty"`
+
+		// Uid Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
+		//
+		// Example: 96SnxkFiMyVKsK3pnoHfx3Hz
+		Uid string `json:"uid"`
+
+		// Username The username of the user that created the deployment
+		//
+		// Example: john-doe
+		Username *string `json:"username,omitempty"`
+	} `json:"creator"`
+	CustomEnvironment *GetDeployment200JSONResponseBody_2_CustomEnvironment `json:"customEnvironment,omitempty"`
+
+	// DefaultRoute Computed field that is only available for deployments with a microfrontend configuration.
+	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// DeletedAt A number containing the date when the deployment was deleted at milliseconds
+	//
+	// Example: 1540257589405
+	DeletedAt *float32 `json:"deletedAt,omitempty"`
+
+	// Duration Build timestamps, elapsed durations, and billing measurements. The object is always present, but fields are omitted when their source timestamps are unavailable, such as for running or legacy deployments.
+	Duration struct {
+		// EndTime Unix timestamp in milliseconds when the build container exited.
+		EndTime *float32 `json:"endTime,omitempty"`
+
+		// EndTimeCapped Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
+		EndTimeCapped *float32 `json:"endTimeCapped,omitempty"`
+
+		// StartTime Unix timestamp in milliseconds when the deployment entered BUILDING.
+		StartTime *float32 `json:"startTime,omitempty"`
+
+		// TimeForBilling Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
+		TimeForBilling *float32 `json:"timeForBilling,omitempty"`
+
+		// TimeToContainerExit Milliseconds from entering BUILDING until the build container exited, without the billing cap.
+		TimeToContainerExit *float32 `json:"timeToContainerExit,omitempty"`
+
+		// TimeToContainerExitCapped Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
+		TimeToContainerExitCapped *float32 `json:"timeToContainerExitCapped,omitempty"`
+
+		// TimeToReady Milliseconds from entering BUILDING until the deployment reached its current ready state.
+		TimeToReady *float32 `json:"timeToReady,omitempty"`
+	} `json:"duration"`
+	ErrorCode    *string                                       `json:"errorCode,omitempty"`
+	ErrorLink    *string                                       `json:"errorLink,omitempty"`
+	ErrorMessage *string                                       `json:"errorMessage,omitempty"`
+	ErrorStep    *string                                       `json:"errorStep,omitempty"`
+	GitSource    *GetDeployment200JSONResponseBody_2_GitSource `json:"gitSource,omitempty"`
+
+	// Id A string holding the unique ID of the deployment
+	//
+	// Example: dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ
+	Id                      string                                                    `json:"id"`
+	InitReadyAt             *float32                                                  `json:"initReadyAt,omitempty"`
+	IsFirstBranchDeployment *GetDeployment200JSONResponseBody2IsFirstBranchDeployment `json:"isFirstBranchDeployment,omitempty"`
+	Lambdas                 *[]struct {
+		CreatedAt  *float32 `json:"createdAt,omitempty"`
+		Entrypoint *string  `json:"entrypoint,omitempty"`
+		Id         string   `json:"id"`
+		Output     []struct {
+			FunctionName string `json:"functionName"`
+			Path         string `json:"path"`
+		} `json:"output"`
+		ReadyState   *GetDeployment200JSONResponseBody2LambdasReadyState `json:"readyState,omitempty"`
+		ReadyStateAt *float32                                            `json:"readyStateAt,omitempty"`
+	} `json:"lambdas,omitempty"`
+
+	// ManualProvisioning Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+	ManualProvisioning *struct {
+		// CompletedAt Timestamp when manual provisioning completed
+		CompletedAt *float32 `json:"completedAt,omitempty"`
+
+		// State Current provisioning state
+		State GetDeployment200JSONResponseBody2ManualProvisioningState `json:"state"`
+	} `json:"manualProvisioning,omitempty"`
+	Meta map[string]string `json:"meta"`
+
+	// Name The name of the project associated with the deployment at the time that the deployment was created
+	//
+	// Example: my-project
+	Name string `json:"name"`
+
+	// NodeVersion If set it overrides the `projectSettings.nodeVersion` for this deployment.
+	NodeVersion     *GetDeployment200JSONResponseBody2NodeVersion `json:"nodeVersion,omitempty"`
+	OidcTokenClaims *struct {
+		Aud                 string    `json:"aud"`
+		CustomEnvironmentId *string   `json:"custom_environment_id,omitempty"`
+		DeploymentId        *string   `json:"deployment_id,omitempty"`
+		Environment         string    `json:"environment"`
+		Iss                 string    `json:"iss"`
+		MfeGroupIds         *[]string `json:"mfe_group_ids,omitempty"`
+		Owner               string    `json:"owner"`
+		OwnerId             string    `json:"owner_id"`
+		Plan                *string   `json:"plan,omitempty"`
+		Project             string    `json:"project"`
+		ProjectId           string    `json:"project_id"`
+		Scope               string    `json:"scope"`
+		Sub                 string    `json:"sub"`
+	} `json:"oidcTokenClaims,omitempty"`
+	OomReport         *GetDeployment200JSONResponseBody2OomReport `json:"oomReport,omitempty"`
+	OriginCacheRegion *string                                     `json:"originCacheRegion,omitempty"`
+
+	// PassiveRegions Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service
+	PassiveRegions *[]string                                  `json:"passiveRegions,omitempty"`
+	Prebuilt       *GetDeployment200JSONResponseBody2Prebuilt `json:"prebuilt,omitempty"`
+
+	// PreviewCommentsEnabled Whether or not preview comments are enabled for the deployment
+	//
+	// Example: false
+	PreviewCommentsEnabled *GetDeployment200JSONResponseBody2PreviewCommentsEnabled `json:"previewCommentsEnabled,omitempty"`
+
+	// Project The public project information associated with the deployment.
+	Project *struct {
+		Framework *string `json:"framework,omitempty"`
+		Id        string  `json:"id"`
+		Name      string  `json:"name"`
+	} `json:"project,omitempty"`
+
+	// Public A boolean representing if the deployment is public or not. By default this is `false`
+	//
+	// Example: false
+	Public GetDeployment200JSONResponseBody2Public `json:"public"`
+	Ready  *float32                                `json:"ready,omitempty"`
+
+	// ReadyState The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+	//
+	// Example: READY
+	ReadyState       GetDeployment200JSONResponseBody2ReadyState `json:"readyState"`
+	ReadyStateReason *string                                     `json:"readyStateReason,omitempty"`
+
+	// ReadySubstate Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic
+	ReadySubstate *GetDeployment200JSONResponseBody2ReadySubstate `json:"readySubstate,omitempty"`
+
+	// Regions The regions the deployment exists in
+	//
+	// Example: ["sfo1"]
+	Regions []string `json:"regions"`
+
+	// SoftDeletedByRetention flag to indicate if the deployment was deleted by retention policy
+	//
+	// Example: true
+	SoftDeletedByRetention *GetDeployment200JSONResponseBody2SoftDeletedByRetention `json:"softDeletedByRetention,omitempty"`
+
+	// Source Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+	//
+	// Example: cli
+	Source *GetDeployment200JSONResponseBody2Source `json:"source,omitempty"`
+	Status GetDeployment200JSONResponseBody2Status  `json:"status"`
+
+	// Target If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+	Target *GetDeployment200JSONResponseBody2Target `json:"target,omitempty"`
+
+	// Team The team that owns the deployment if any
+	Team *struct {
+		Avatar *string `json:"avatar,omitempty"`
+		Id     string  `json:"id"`
+		Name   string  `json:"name"`
+		Slug   string  `json:"slug"`
+	} `json:"team,omitempty"`
+	TtyBuildLogs *GetDeployment200JSONResponseBody2TtyBuildLogs `json:"ttyBuildLogs,omitempty"`
+	Type         GetDeployment200JSONResponseBody2Type          `json:"type"`
+
+	// UndeletedAt A number containing the date when the deployment was undeleted at milliseconds
+	//
+	// Example: 1540257589405
+	UndeletedAt *float32 `json:"undeletedAt,omitempty"`
+
+	// Url A string with the unique URL of the deployment
+	//
+	// Example: my-instant-deployment-3ij3cxz9qr.now.sh
+	Url string `json:"url"`
+
+	// UserAliases An array of domains that were provided by the user when creating the Deployment.
+	//
+	// Example: ["sub1.example.com","sub2.example.com"]
+	UserAliases *[]string `json:"userAliases,omitempty"`
+
+	// UserConfiguredDeploymentId Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel's build system.
+	//
+	// Example: abc123
+	UserConfiguredDeploymentId *string `json:"userConfiguredDeploymentId,omitempty"`
+
+	// Version The platform version that was used to create the deployment.
+	//
+	// Example: 2
+	Version GetDeployment200JSONResponseBody2Version `json:"version"`
+}
+
+// GetDeployment200JSONResponseBody2AliasAssigned defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2AliasAssigned bool
+
+// GetDeployment200JSONResponseBody2AutoAssignCustomDomains defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2AutoAssignCustomDomains bool
+
+// GetDeployment200JSONResponseBody2BuildSkipped defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2BuildSkipped bool
+
+// GetDeployment200JSONResponseBody2ChecksConclusion defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2ChecksConclusion string
+
+// GetDeployment200JSONResponseBody2ChecksState defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2ChecksState string
+
+// GetDeployment200JSONResponseBody2CreatorType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CreatorType string
+
+// GetDeployment200JSONResponseBody2CustomEnvironment0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CustomEnvironment0 struct {
+	// BranchMatcher Configuration for matching git branches to this environment
+	BranchMatcher *struct {
+		// Pattern The pattern to match against branch names
+		Pattern string `json:"pattern"`
+
+		// Type The type of matching to perform
+		Type GetDeployment200JSONResponseBody2CustomEnvironment0BranchMatcherType `json:"type"`
+	} `json:"branchMatcher,omitempty"`
+
+	// CreatedAt Timestamp when the environment was created
+	CreatedAt float32 `json:"createdAt"`
+
+	// CurrentDeploymentAliases List of aliases for the current deployment
+	CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+	// Description Optional description of the environment's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Domains List of domains associated with this environment
+	Domains *[]struct {
+		ApexName            string                                                                        `json:"apexName"`
+		CreatedAt           *float32                                                                      `json:"createdAt,omitempty"`
+		CustomEnvironmentId *string                                                                       `json:"customEnvironmentId,omitempty"`
+		GitBranch           *string                                                                       `json:"gitBranch,omitempty"`
+		Name                string                                                                        `json:"name"`
+		ProjectId           string                                                                        `json:"projectId"`
+		Redirect            *string                                                                       `json:"redirect,omitempty"`
+		RedirectStatusCode  *GetDeployment200JSONResponseBody2CustomEnvironment0DomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+		UpdatedAt           *float32                                                                      `json:"updatedAt,omitempty"`
+
+		// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+		Verification *[]struct {
+			Domain string `json:"domain"`
+			Reason string `json:"reason"`
+			Type   string `json:"type"`
+			Value  string `json:"value"`
+		} `json:"verification,omitempty"`
+
+		// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+		Verified GetDeployment200JSONResponseBody2CustomEnvironment0DomainsVerified `json:"verified"`
+	} `json:"domains,omitempty"`
+
+	// Id Unique identifier for the custom environment (format: env_*)
+	Id string `json:"id"`
+
+	// Slug URL-friendly name of the environment
+	Slug string `json:"slug"`
+
+	// Type The type of environment (production, preview, or development)
+	Type GetDeployment200JSONResponseBody2CustomEnvironment0Type `json:"type"`
+
+	// UpdatedAt Timestamp when the environment was last updated
+	UpdatedAt float32 `json:"updatedAt"`
+}
+
+// GetDeployment200JSONResponseBody2CustomEnvironment0BranchMatcherType defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CustomEnvironment0BranchMatcherType string
+
+// GetDeployment200JSONResponseBody2CustomEnvironment0DomainsRedirectStatusCode defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CustomEnvironment0DomainsRedirectStatusCode float32
+
+// GetDeployment200JSONResponseBody2CustomEnvironment0DomainsVerified defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CustomEnvironment0DomainsVerified bool
+
+// GetDeployment200JSONResponseBody2CustomEnvironment0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CustomEnvironment0Type string
+
+// GetDeployment200JSONResponseBody2CustomEnvironment1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2CustomEnvironment1 struct {
+	Id string `json:"id"`
+}
+
+// GetDeployment200JSONResponseBody_2_CustomEnvironment defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_2_CustomEnvironment struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody2GitSource0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource0 struct {
+	PrId   *float32                                              `json:"prId,omitempty"`
+	Ref    *string                                               `json:"ref,omitempty"`
+	RepoId GetDeployment200JSONResponseBody_2_GitSource_0_RepoId `json:"repoId"`
+	Sha    *string                                               `json:"sha,omitempty"`
+	Type   GetDeployment200JSONResponseBody2GitSource0Type       `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource0RepoId0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource0RepoId0 = string
+
+// GetDeployment200JSONResponseBody2GitSource0RepoId1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource0RepoId1 = float32
+
+// GetDeployment200JSONResponseBody_2_GitSource_0_RepoId defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_2_GitSource_0_RepoId struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody2GitSource0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource0Type string
+
+// GetDeployment200JSONResponseBody2GitSource1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource1 struct {
+	Org  string                                          `json:"org"`
+	PrId *float32                                        `json:"prId,omitempty"`
+	Ref  *string                                         `json:"ref,omitempty"`
+	Repo string                                          `json:"repo"`
+	Sha  *string                                         `json:"sha,omitempty"`
+	Type GetDeployment200JSONResponseBody2GitSource1Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource1Type string
+
+// GetDeployment200JSONResponseBody2GitSource2 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource2 struct {
+	Host   string                                                `json:"host"`
+	PrId   *float32                                              `json:"prId,omitempty"`
+	Ref    *string                                               `json:"ref,omitempty"`
+	RepoId GetDeployment200JSONResponseBody_2_GitSource_2_RepoId `json:"repoId"`
+	Sha    *string                                               `json:"sha,omitempty"`
+	Type   GetDeployment200JSONResponseBody2GitSource2Type       `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource2RepoId0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource2RepoId0 = string
+
+// GetDeployment200JSONResponseBody2GitSource2RepoId1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource2RepoId1 = float32
+
+// GetDeployment200JSONResponseBody_2_GitSource_2_RepoId defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_2_GitSource_2_RepoId struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody2GitSource2Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource2Type string
+
+// GetDeployment200JSONResponseBody2GitSource3 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource3 struct {
+	Host string                                          `json:"host"`
+	Org  string                                          `json:"org"`
+	PrId *float32                                        `json:"prId,omitempty"`
+	Ref  *string                                         `json:"ref,omitempty"`
+	Repo string                                          `json:"repo"`
+	Sha  *string                                         `json:"sha,omitempty"`
+	Type GetDeployment200JSONResponseBody2GitSource3Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource3Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource3Type string
+
+// GetDeployment200JSONResponseBody2GitSource4 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource4 struct {
+	PrId   *float32                                              `json:"prId,omitempty"`
+	Ref    *string                                               `json:"ref,omitempty"`
+	RepoId GetDeployment200JSONResponseBody_2_GitSource_4_RepoId `json:"repoId"`
+	Sha    *string                                               `json:"sha,omitempty"`
+	Type   GetDeployment200JSONResponseBody2GitSource4Type       `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource4RepoId0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource4RepoId0 = string
+
+// GetDeployment200JSONResponseBody2GitSource4RepoId1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource4RepoId1 = float32
+
+// GetDeployment200JSONResponseBody_2_GitSource_4_RepoId defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_2_GitSource_4_RepoId struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody2GitSource4Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource4Type string
+
+// GetDeployment200JSONResponseBody2GitSource5 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource5 struct {
+	Org  string                                          `json:"org"`
+	PrId *float32                                        `json:"prId,omitempty"`
+	Ref  *string                                         `json:"ref,omitempty"`
+	Repo string                                          `json:"repo"`
+	Sha  *string                                         `json:"sha,omitempty"`
+	Type GetDeployment200JSONResponseBody2GitSource5Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource5Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource5Type string
+
+// GetDeployment200JSONResponseBody2GitSource6 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource6 struct {
+	PrId      *float32                                                 `json:"prId,omitempty"`
+	ProjectId GetDeployment200JSONResponseBody_2_GitSource_6_ProjectId `json:"projectId"`
+	Ref       *string                                                  `json:"ref,omitempty"`
+	Sha       *string                                                  `json:"sha,omitempty"`
+	Type      GetDeployment200JSONResponseBody2GitSource6Type          `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource6ProjectId0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource6ProjectId0 = string
+
+// GetDeployment200JSONResponseBody2GitSource6ProjectId1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource6ProjectId1 = float32
+
+// GetDeployment200JSONResponseBody_2_GitSource_6_ProjectId defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_2_GitSource_6_ProjectId struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody2GitSource6Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource6Type string
+
+// GetDeployment200JSONResponseBody2GitSource7 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource7 struct {
+	PrId          *float32                                        `json:"prId,omitempty"`
+	Ref           *string                                         `json:"ref,omitempty"`
+	RepoUuid      string                                          `json:"repoUuid"`
+	Sha           *string                                         `json:"sha,omitempty"`
+	Type          GetDeployment200JSONResponseBody2GitSource7Type `json:"type"`
+	WorkspaceUuid *string                                         `json:"workspaceUuid,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource7Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource7Type string
+
+// GetDeployment200JSONResponseBody2GitSource8 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource8 struct {
+	Owner string                                          `json:"owner"`
+	PrId  *float32                                        `json:"prId,omitempty"`
+	Ref   *string                                         `json:"ref,omitempty"`
+	Sha   *string                                         `json:"sha,omitempty"`
+	Slug  string                                          `json:"slug"`
+	Type  GetDeployment200JSONResponseBody2GitSource8Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource8Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource8Type string
+
+// GetDeployment200JSONResponseBody2GitSource9 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource9 struct {
+	CommitMetadata *struct {
+		Author struct {
+			Date  string `json:"date"`
+			Email string `json:"email"`
+			Name  string `json:"name"`
+		} `json:"author"`
+		Committer struct {
+			Date  string `json:"date"`
+			Email string `json:"email"`
+			Name  string `json:"name"`
+		} `json:"committer"`
+		Message string `json:"message"`
+	} `json:"commitMetadata,omitempty"`
+	Org          *string                                         `json:"org,omitempty"`
+	PrId         *float32                                        `json:"prId,omitempty"`
+	Ref          *string                                         `json:"ref,omitempty"`
+	Repo         *string                                         `json:"repo,omitempty"`
+	RepoId       string                                          `json:"repoId"`
+	RepoPushedAt *float32                                        `json:"repoPushedAt,omitempty"`
+	Sha          string                                          `json:"sha"`
+	Type         GetDeployment200JSONResponseBody2GitSource9Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource9Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource9Type string
+
+// GetDeployment200JSONResponseBody2GitSource10 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource10 struct {
+	// Owner Owner (namespace) slug.
+	Owner *string  `json:"owner,omitempty"`
+	PrId  *float32 `json:"prId,omitempty"`
+	Ref   *string  `json:"ref,omitempty"`
+	Repo  *string  `json:"repo,omitempty"`
+
+	// RepoId Origin repository id.
+	RepoId string                                           `json:"repoId"`
+	Sha    *string                                          `json:"sha,omitempty"`
+	Type   GetDeployment200JSONResponseBody2GitSource10Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource10Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource10Type string
+
+// GetDeployment200JSONResponseBody2GitSource11 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource11 struct {
+	GitUrl string                                           `json:"gitUrl"`
+	Ref    string                                           `json:"ref"`
+	Sha    string                                           `json:"sha"`
+	Type   GetDeployment200JSONResponseBody2GitSource11Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource11Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource11Type string
+
+// GetDeployment200JSONResponseBody2GitSource12 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource12 struct {
+	Org    *string                                          `json:"org,omitempty"`
+	Ref    string                                           `json:"ref"`
+	Repo   *string                                          `json:"repo,omitempty"`
+	RepoId float32                                          `json:"repoId"`
+	Sha    string                                           `json:"sha"`
+	Type   GetDeployment200JSONResponseBody2GitSource12Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource12Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource12Type string
+
+// GetDeployment200JSONResponseBody2GitSource13 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource13 struct {
+	Host   string                                           `json:"host"`
+	Org    *string                                          `json:"org,omitempty"`
+	Ref    string                                           `json:"ref"`
+	Repo   *string                                          `json:"repo,omitempty"`
+	RepoId float32                                          `json:"repoId"`
+	Sha    string                                           `json:"sha"`
+	Type   GetDeployment200JSONResponseBody2GitSource13Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource13Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource13Type string
+
+// GetDeployment200JSONResponseBody2GitSource14 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource14 struct {
+	Org    *string                                          `json:"org,omitempty"`
+	Ref    string                                           `json:"ref"`
+	Repo   *string                                          `json:"repo,omitempty"`
+	RepoId float32                                          `json:"repoId"`
+	Sha    string                                           `json:"sha"`
+	Type   GetDeployment200JSONResponseBody2GitSource14Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource14Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource14Type string
+
+// GetDeployment200JSONResponseBody2GitSource15 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource15 struct {
+	ProjectId float32                                          `json:"projectId"`
+	Ref       string                                           `json:"ref"`
+	Sha       string                                           `json:"sha"`
+	Type      GetDeployment200JSONResponseBody2GitSource15Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource15Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource15Type string
+
+// GetDeployment200JSONResponseBody2GitSource16 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource16 struct {
+	Owner         *string                                          `json:"owner,omitempty"`
+	Ref           string                                           `json:"ref"`
+	RepoUuid      string                                           `json:"repoUuid"`
+	Sha           string                                           `json:"sha"`
+	Slug          *string                                          `json:"slug,omitempty"`
+	Type          GetDeployment200JSONResponseBody2GitSource16Type `json:"type"`
+	WorkspaceUuid string                                           `json:"workspaceUuid"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource16Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource16Type string
+
+// GetDeployment200JSONResponseBody2GitSource17 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource17 struct {
+	CommitMetadata *struct {
+		Author struct {
+			Date  string `json:"date"`
+			Email string `json:"email"`
+			Name  string `json:"name"`
+		} `json:"author"`
+		Committer struct {
+			Date  string `json:"date"`
+			Email string `json:"email"`
+			Name  string `json:"name"`
+		} `json:"committer"`
+		Message string `json:"message"`
+	} `json:"commitMetadata,omitempty"`
+	Org          string                                           `json:"org"`
+	Ref          string                                           `json:"ref"`
+	Repo         string                                           `json:"repo"`
+	RepoId       *string                                          `json:"repoId,omitempty"`
+	RepoPushedAt *float32                                         `json:"repoPushedAt,omitempty"`
+	Sha          string                                           `json:"sha"`
+	Type         GetDeployment200JSONResponseBody2GitSource17Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource17Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource17Type string
+
+// GetDeployment200JSONResponseBody2GitSource18 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource18 struct {
+	Owner  string                                           `json:"owner"`
+	Ref    string                                           `json:"ref"`
+	Repo   string                                           `json:"repo"`
+	RepoId string                                           `json:"repoId"`
+	Sha    string                                           `json:"sha"`
+	Type   GetDeployment200JSONResponseBody2GitSource18Type `json:"type"`
+}
+
+// GetDeployment200JSONResponseBody2GitSource18Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2GitSource18Type string
+
+// GetDeployment200JSONResponseBody_2_GitSource defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_2_GitSource struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody2IsFirstBranchDeployment defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2IsFirstBranchDeployment bool
+
+// GetDeployment200JSONResponseBody2LambdasReadyState defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2LambdasReadyState string
+
+// GetDeployment200JSONResponseBody2ManualProvisioningState defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2ManualProvisioningState string
+
+// GetDeployment200JSONResponseBody2NodeVersion defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2NodeVersion string
+
+// GetDeployment200JSONResponseBody2OomReport defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2OomReport string
+
+// GetDeployment200JSONResponseBody2Prebuilt defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Prebuilt bool
+
+// GetDeployment200JSONResponseBody2PreviewCommentsEnabled defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2PreviewCommentsEnabled bool
+
+// GetDeployment200JSONResponseBody2Public defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Public bool
+
+// GetDeployment200JSONResponseBody2ReadyState defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2ReadyState string
+
+// GetDeployment200JSONResponseBody2ReadySubstate defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2ReadySubstate string
+
+// GetDeployment200JSONResponseBody2SoftDeletedByRetention defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2SoftDeletedByRetention bool
+
+// GetDeployment200JSONResponseBody2Source defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Source string
+
+// GetDeployment200JSONResponseBody2Status defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Status string
+
+// GetDeployment200JSONResponseBody2Target defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Target string
+
+// GetDeployment200JSONResponseBody2TtyBuildLogs defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2TtyBuildLogs bool
+
+// GetDeployment200JSONResponseBody2Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Type string
+
+// GetDeployment200JSONResponseBody2Version defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody2Version float32
+
+// GetDeployment200JSONResponseBody defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody struct {
+	union json.RawMessage
+}
+
+// DeleteDeploymentParams defines parameters for DeleteDeployment.
+type DeleteDeploymentParams struct {
+	// Url A Deployment or Alias URL. In case it is passed, the ID will be ignored
+	Url *string `form:"url,omitempty" json:"url,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteDeployment200JSONResponseBodyState defines parameters for DeleteDeployment.
+type DeleteDeployment200JSONResponseBodyState string
+
+// DeleteAliasParams defines parameters for DeleteAlias.
+type DeleteAliasParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// DeleteAliasParamsAliasId0 defines parameters for DeleteAlias.
+type DeleteAliasParamsAliasId0 = string
+
+// DeleteAlias200JSONResponseBodyStatus defines parameters for DeleteAlias.
+type DeleteAlias200JSONResponseBodyStatus string
+
+// ListConnectorsParams defines parameters for ListConnectors.
+type ListConnectorsParams struct {
+	// Limit Maximum number of connectors to return. Defaults to 20.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Cursor from `pagination.next` on the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// ProjectId Return only connectors connected to this project.
+	ProjectId *string `form:"projectId,omitempty" json:"projectId,omitempty"`
+
+	// Search Search connector names, UIDs, and services.
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// Type Comma-separated connector types: `slack`, `discord`, `github`, `linear`, `linq`, `salesforce`, `sendblue`, `snowflake`, `snowflake-wif`, `microsoft-entra`, `api-key`, `photon`, `oauth`, or `custom`.
+	Type *string `form:"type,omitempty" json:"type,omitempty"`
+
+	// Service Comma-separated provider or service identifiers.
+	Service *string `form:"service,omitempty" json:"service,omitempty"`
+
+	// Sort Sort by name in ascending order, or by creation or update time in descending order.
+	Sort *ListConnectorsParamsSort `form:"sort,omitempty" json:"sort,omitempty"`
+
+	// TeamId The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListConnectorsParamsSort defines parameters for ListConnectors.
+type ListConnectorsParamsSort string
+
+// UpdateConnectorParams defines parameters for UpdateConnector.
+type UpdateConnectorParams struct {
+	// TeamId The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListConnectorProjectConnectionsParams defines parameters for ListConnectorProjectConnections.
+type ListConnectorProjectConnectionsParams struct {
+	// Limit Maximum number of project connections to return. Defaults to 50.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Cursor from `pagination.next` on the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListProjectConnectorConnectionsParams defines parameters for ListProjectConnectorConnections.
+type ListProjectConnectorConnectionsParams struct {
+	// Limit Maximum number of connector connections to return. Defaults to 50.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Cursor from `pagination.next` on the previous response.
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// TeamId The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListDeploymentCheckRunsParams defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRunsParams struct {
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// ListDeploymentCheckRuns200JSONResponseBodyRuns0 defines parameters for ListDeploymentCheckRuns.
+type ListDeploymentCheckRuns200JSONResponseBodyRuns0 struct {
+	Blocks         *ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks     `json:"blocks,omitempty"`
+	CheckId        string                                                     `json:"checkId"`
+	CompletedAt    *float32                                                   `json:"completedAt,omitempty"`
+	Conclusion     *ListDeploymentCheckRuns200JSONResponseBodyRuns0Conclusion `json:"conclusion,omitempty"`
+	ConclusionText *string                                                    `json:"conclusionText,omitempty"`
+	CreatedAt      float32                                                    `json:"createdAt"`
+	DeploymentId   string                                                     `json:"deploymentId"`
+	ExpectationRef *struct {
+		InvocationAttempt float32 `json:"invocationAttempt"`
+		InvocationId      string  `json:"invocationId"`
+		JobDefinitionId   string  `json:"jobDefinitionId"`
+		JobRunAttempt     float32 `json:"jobRunAttempt"`
+	} `json:"expectationRef,omitempty"`
+
+	// ExpectationRevision Latest aggregate revision applied to this check run.
+	ExpectationRevision *float32                                                 `json:"expectationRevision,omitempty"`
+	ExternalId          *string                                                  `json:"externalId,omitempty"`
+	ExternalUrl         *string                                                  `json:"externalUrl,omitempty"`
+	Id                  string                                                   `json:"id"`
+	Name                string                                                   `json:"name"`
+	Output              *map[string]interface{}                                  `json:"output,omitempty"`
+	OwnerId             string                                                   `json:"ownerId"`
+	ProjectId           *string                                                  `json:"projectId,omitempty"`
+	Requires            *ListDeploymentCheckRuns200JSONResponseBodyRuns0Requires `json:"requires,omitempty"`
+	Source              ListDeploymentCheckRuns200JSONResponseBody_Runs_0_Source `json:"source"`
+	StartedAt           *float32                                                 `json:"startedAt,omitempty"`
+	Status              ListDeploymentCheckRuns200JSONResponseBodyRuns0Status    `json:"status"`
+	Targets             *[]string                                                `json:"targets,omitempty"`
+	TaskSummary         *struct {
+		Failed    float32 `json:"failed"`
+		Pending   float32 `json:"pending"`
+		Succeeded float32 `json:"succeeded"`
+		Total     float32 `json:"total"`
+	} `json:"taskSummary,omitempty"`
+	Timeout   float32 `json:"timeout"`
+	UpdatedAt float32 `json:"updatedAt"`
+}
 
 // ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks defines parameters for ListDeploymentCheckRuns.
 type ListDeploymentCheckRuns200JSONResponseBodyRuns0Blocks string
@@ -16209,25 +17428,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload125. Returns the specified
+// Getter for additional properties for UserEventPayload127. Returns the specified
 // element and whether it was found
-func (a UserEventPayload125) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload127) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload125
-func (a *UserEventPayload125) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload127
+func (a *UserEventPayload127) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload125 to handle AdditionalProperties
-func (a *UserEventPayload125) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload127 to handle AdditionalProperties
+func (a *UserEventPayload127) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -16256,8 +17475,8 @@ func (a *UserEventPayload125) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload125 to handle AdditionalProperties
-func (a UserEventPayload125) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload127 to handle AdditionalProperties
+func (a UserEventPayload127) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -16275,25 +17494,25 @@ func (a UserEventPayload125) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload277. Returns the specified
+// Getter for additional properties for UserEventPayload280. Returns the specified
 // element and whether it was found
-func (a UserEventPayload277) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload280) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload277
-func (a *UserEventPayload277) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload280
+func (a *UserEventPayload280) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload277 to handle AdditionalProperties
-func (a *UserEventPayload277) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload280 to handle AdditionalProperties
+func (a *UserEventPayload280) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -16346,8 +17565,8 @@ func (a *UserEventPayload277) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload277 to handle AdditionalProperties
-func (a UserEventPayload277) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload280 to handle AdditionalProperties
+func (a UserEventPayload280) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -18838,1178 +20057,4 @@ func (a AggregatePageviews200JSONResponseBody_Data_1_Item) MarshalJSON() ([]byte
 		}
 	}
 	return json.Marshal(object)
-}
-
-// Getter for additional properties for CountPageviews200JSONResponseBodyData0. Returns the specified
-// element and whether it was found
-func (a CountPageviews200JSONResponseBodyData0) Get(fieldName string) (value float32, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for CountPageviews200JSONResponseBodyData0
-func (a *CountPageviews200JSONResponseBodyData0) Set(fieldName string, value float32) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]float32)
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for CountPageviews200JSONResponseBodyData0 to handle AdditionalProperties
-func (a *CountPageviews200JSONResponseBodyData0) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["browserName"]; found {
-		err = json.Unmarshal(raw, &a.BrowserName)
-		if err != nil {
-			return fmt.Errorf("error reading 'browserName': %w", err)
-		}
-		delete(object, "browserName")
-	}
-
-	if raw, found := object["country"]; found {
-		err = json.Unmarshal(raw, &a.Country)
-		if err != nil {
-			return fmt.Errorf("error reading 'country': %w", err)
-		}
-		delete(object, "country")
-	}
-
-	if raw, found := object["deviceType"]; found {
-		err = json.Unmarshal(raw, &a.DeviceType)
-		if err != nil {
-			return fmt.Errorf("error reading 'deviceType': %w", err)
-		}
-		delete(object, "deviceType")
-	}
-
-	if raw, found := object["environment"]; found {
-		err = json.Unmarshal(raw, &a.Environment)
-		if err != nil {
-			return fmt.Errorf("error reading 'environment': %w", err)
-		}
-		delete(object, "environment")
-	}
-
-	if raw, found := object["flags"]; found {
-		err = json.Unmarshal(raw, &a.Flags)
-		if err != nil {
-			return fmt.Errorf("error reading 'flags': %w", err)
-		}
-		delete(object, "flags")
-	}
-
-	if raw, found := object["groupId"]; found {
-		err = json.Unmarshal(raw, &a.GroupId)
-		if err != nil {
-			return fmt.Errorf("error reading 'groupId': %w", err)
-		}
-		delete(object, "groupId")
-	}
-
-	if raw, found := object["osName"]; found {
-		err = json.Unmarshal(raw, &a.OsName)
-		if err != nil {
-			return fmt.Errorf("error reading 'osName': %w", err)
-		}
-		delete(object, "osName")
-	}
-
-	if raw, found := object["projectId"]; found {
-		err = json.Unmarshal(raw, &a.ProjectId)
-		if err != nil {
-			return fmt.Errorf("error reading 'projectId': %w", err)
-		}
-		delete(object, "projectId")
-	}
-
-	if raw, found := object["projectName"]; found {
-		err = json.Unmarshal(raw, &a.ProjectName)
-		if err != nil {
-			return fmt.Errorf("error reading 'projectName': %w", err)
-		}
-		delete(object, "projectName")
-	}
-
-	if raw, found := object["referrerHostname"]; found {
-		err = json.Unmarshal(raw, &a.ReferrerHostname)
-		if err != nil {
-			return fmt.Errorf("error reading 'referrerHostname': %w", err)
-		}
-		delete(object, "referrerHostname")
-	}
-
-	if raw, found := object["requestHostname"]; found {
-		err = json.Unmarshal(raw, &a.RequestHostname)
-		if err != nil {
-			return fmt.Errorf("error reading 'requestHostname': %w", err)
-		}
-		delete(object, "requestHostname")
-	}
-
-	if raw, found := object["requestPath"]; found {
-		err = json.Unmarshal(raw, &a.RequestPath)
-		if err != nil {
-			return fmt.Errorf("error reading 'requestPath': %w", err)
-		}
-		delete(object, "requestPath")
-	}
-
-	if raw, found := object["route"]; found {
-		err = json.Unmarshal(raw, &a.Route)
-		if err != nil {
-			return fmt.Errorf("error reading 'route': %w", err)
-		}
-		delete(object, "route")
-	}
-
-	if raw, found := object["userId"]; found {
-		err = json.Unmarshal(raw, &a.UserId)
-		if err != nil {
-			return fmt.Errorf("error reading 'userId': %w", err)
-		}
-		delete(object, "userId")
-	}
-
-	if raw, found := object["utmCampaign"]; found {
-		err = json.Unmarshal(raw, &a.UtmCampaign)
-		if err != nil {
-			return fmt.Errorf("error reading 'utmCampaign': %w", err)
-		}
-		delete(object, "utmCampaign")
-	}
-
-	if raw, found := object["utmContent"]; found {
-		err = json.Unmarshal(raw, &a.UtmContent)
-		if err != nil {
-			return fmt.Errorf("error reading 'utmContent': %w", err)
-		}
-		delete(object, "utmContent")
-	}
-
-	if raw, found := object["utmMedium"]; found {
-		err = json.Unmarshal(raw, &a.UtmMedium)
-		if err != nil {
-			return fmt.Errorf("error reading 'utmMedium': %w", err)
-		}
-		delete(object, "utmMedium")
-	}
-
-	if raw, found := object["utmSource"]; found {
-		err = json.Unmarshal(raw, &a.UtmSource)
-		if err != nil {
-			return fmt.Errorf("error reading 'utmSource': %w", err)
-		}
-		delete(object, "utmSource")
-	}
-
-	if raw, found := object["utmTerm"]; found {
-		err = json.Unmarshal(raw, &a.UtmTerm)
-		if err != nil {
-			return fmt.Errorf("error reading 'utmTerm': %w", err)
-		}
-		delete(object, "utmTerm")
-	}
-
-	if raw, found := object["visitorId"]; found {
-		err = json.Unmarshal(raw, &a.VisitorId)
-		if err != nil {
-			return fmt.Errorf("error reading 'visitorId': %w", err)
-		}
-		delete(object, "visitorId")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]float32)
-		for fieldName, fieldBuf := range object {
-			var fieldVal float32
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for CountPageviews200JSONResponseBodyData0 to handle AdditionalProperties
-func (a CountPageviews200JSONResponseBodyData0) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	object["browserName"], err = json.Marshal(a.BrowserName)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'browserName': %w", err)
-	}
-
-	object["country"], err = json.Marshal(a.Country)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'country': %w", err)
-	}
-
-	object["deviceType"], err = json.Marshal(a.DeviceType)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'deviceType': %w", err)
-	}
-
-	object["environment"], err = json.Marshal(a.Environment)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'environment': %w", err)
-	}
-
-	object["flags"], err = json.Marshal(a.Flags)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'flags': %w", err)
-	}
-
-	object["groupId"], err = json.Marshal(a.GroupId)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'groupId': %w", err)
-	}
-
-	object["osName"], err = json.Marshal(a.OsName)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'osName': %w", err)
-	}
-
-	object["projectId"], err = json.Marshal(a.ProjectId)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'projectId': %w", err)
-	}
-
-	object["projectName"], err = json.Marshal(a.ProjectName)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'projectName': %w", err)
-	}
-
-	object["referrerHostname"], err = json.Marshal(a.ReferrerHostname)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'referrerHostname': %w", err)
-	}
-
-	object["requestHostname"], err = json.Marshal(a.RequestHostname)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'requestHostname': %w", err)
-	}
-
-	object["requestPath"], err = json.Marshal(a.RequestPath)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'requestPath': %w", err)
-	}
-
-	object["route"], err = json.Marshal(a.Route)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'route': %w", err)
-	}
-
-	object["userId"], err = json.Marshal(a.UserId)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'userId': %w", err)
-	}
-
-	object["utmCampaign"], err = json.Marshal(a.UtmCampaign)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'utmCampaign': %w", err)
-	}
-
-	object["utmContent"], err = json.Marshal(a.UtmContent)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'utmContent': %w", err)
-	}
-
-	object["utmMedium"], err = json.Marshal(a.UtmMedium)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'utmMedium': %w", err)
-	}
-
-	object["utmSource"], err = json.Marshal(a.UtmSource)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'utmSource': %w", err)
-	}
-
-	object["utmTerm"], err = json.Marshal(a.UtmTerm)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'utmTerm': %w", err)
-	}
-
-	object["visitorId"], err = json.Marshal(a.VisitorId)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'visitorId': %w", err)
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// Getter for additional properties for CreateObservabilityQueryJSONBody. Returns the specified
-// element and whether it was found
-func (a CreateObservabilityQueryJSONBody) Get(fieldName string) (value interface{}, found bool) {
-	if a.AdditionalProperties != nil {
-		value, found = a.AdditionalProperties[fieldName]
-	}
-	return
-}
-
-// Setter for additional properties for CreateObservabilityQueryJSONBody
-func (a *CreateObservabilityQueryJSONBody) Set(fieldName string, value interface{}) {
-	if a.AdditionalProperties == nil {
-		a.AdditionalProperties = make(map[string]interface{})
-	}
-	a.AdditionalProperties[fieldName] = value
-}
-
-// Override default JSON handling for CreateObservabilityQueryJSONBody to handle AdditionalProperties
-func (a *CreateObservabilityQueryJSONBody) UnmarshalJSON(b []byte) error {
-	object := make(map[string]json.RawMessage)
-	err := json.Unmarshal(b, &object)
-	if err != nil {
-		return err
-	}
-
-	if raw, found := object["aggregation"]; found {
-		err = json.Unmarshal(raw, &a.Aggregation)
-		if err != nil {
-			return fmt.Errorf("error reading 'aggregation': %w", err)
-		}
-		delete(object, "aggregation")
-	}
-
-	if raw, found := object["bucketTimezone"]; found {
-		err = json.Unmarshal(raw, &a.BucketTimezone)
-		if err != nil {
-			return fmt.Errorf("error reading 'bucketTimezone': %w", err)
-		}
-		delete(object, "bucketTimezone")
-	}
-
-	if raw, found := object["endTime"]; found {
-		err = json.Unmarshal(raw, &a.EndTime)
-		if err != nil {
-			return fmt.Errorf("error reading 'endTime': %w", err)
-		}
-		delete(object, "endTime")
-	}
-
-	if raw, found := object["filter"]; found {
-		err = json.Unmarshal(raw, &a.Filter)
-		if err != nil {
-			return fmt.Errorf("error reading 'filter': %w", err)
-		}
-		delete(object, "filter")
-	}
-
-	if raw, found := object["granularity"]; found {
-		err = json.Unmarshal(raw, &a.Granularity)
-		if err != nil {
-			return fmt.Errorf("error reading 'granularity': %w", err)
-		}
-		delete(object, "granularity")
-	}
-
-	if raw, found := object["groupBy"]; found {
-		err = json.Unmarshal(raw, &a.GroupBy)
-		if err != nil {
-			return fmt.Errorf("error reading 'groupBy': %w", err)
-		}
-		delete(object, "groupBy")
-	}
-
-	if raw, found := object["limit"]; found {
-		err = json.Unmarshal(raw, &a.Limit)
-		if err != nil {
-			return fmt.Errorf("error reading 'limit': %w", err)
-		}
-		delete(object, "limit")
-	}
-
-	if raw, found := object["metric"]; found {
-		err = json.Unmarshal(raw, &a.Metric)
-		if err != nil {
-			return fmt.Errorf("error reading 'metric': %w", err)
-		}
-		delete(object, "metric")
-	}
-
-	if raw, found := object["orderBy"]; found {
-		err = json.Unmarshal(raw, &a.OrderBy)
-		if err != nil {
-			return fmt.Errorf("error reading 'orderBy': %w", err)
-		}
-		delete(object, "orderBy")
-	}
-
-	if raw, found := object["orderDirection"]; found {
-		err = json.Unmarshal(raw, &a.OrderDirection)
-		if err != nil {
-			return fmt.Errorf("error reading 'orderDirection': %w", err)
-		}
-		delete(object, "orderDirection")
-	}
-
-	if raw, found := object["scope"]; found {
-		err = json.Unmarshal(raw, &a.Scope)
-		if err != nil {
-			return fmt.Errorf("error reading 'scope': %w", err)
-		}
-		delete(object, "scope")
-	}
-
-	if raw, found := object["startTime"]; found {
-		err = json.Unmarshal(raw, &a.StartTime)
-		if err != nil {
-			return fmt.Errorf("error reading 'startTime': %w", err)
-		}
-		delete(object, "startTime")
-	}
-
-	if len(object) != 0 {
-		a.AdditionalProperties = make(map[string]interface{})
-		for fieldName, fieldBuf := range object {
-			var fieldVal interface{}
-			err := json.Unmarshal(fieldBuf, &fieldVal)
-			if err != nil {
-				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
-			}
-			a.AdditionalProperties[fieldName] = fieldVal
-		}
-	}
-	return nil
-}
-
-// Override default JSON handling for CreateObservabilityQueryJSONBody to handle AdditionalProperties
-func (a CreateObservabilityQueryJSONBody) MarshalJSON() ([]byte, error) {
-	var err error
-	object := make(map[string]json.RawMessage)
-
-	if a.Aggregation != nil {
-		object["aggregation"], err = json.Marshal(a.Aggregation)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'aggregation': %w", err)
-		}
-	}
-
-	if a.BucketTimezone != nil {
-		object["bucketTimezone"], err = json.Marshal(a.BucketTimezone)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'bucketTimezone': %w", err)
-		}
-	}
-
-	if a.EndTime != nil {
-		object["endTime"], err = json.Marshal(a.EndTime)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'endTime': %w", err)
-		}
-	}
-
-	if a.Filter != nil {
-		object["filter"], err = json.Marshal(a.Filter)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'filter': %w", err)
-		}
-	}
-
-	if a.Granularity != nil {
-		object["granularity"], err = json.Marshal(a.Granularity)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'granularity': %w", err)
-		}
-	}
-
-	if a.GroupBy != nil {
-		object["groupBy"], err = json.Marshal(a.GroupBy)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'groupBy': %w", err)
-		}
-	}
-
-	if a.Limit != nil {
-		object["limit"], err = json.Marshal(a.Limit)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'limit': %w", err)
-		}
-	}
-
-	object["metric"], err = json.Marshal(a.Metric)
-	if err != nil {
-		return nil, fmt.Errorf("error marshaling 'metric': %w", err)
-	}
-
-	if a.OrderBy != nil {
-		object["orderBy"], err = json.Marshal(a.OrderBy)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'orderBy': %w", err)
-		}
-	}
-
-	if a.OrderDirection != nil {
-		object["orderDirection"], err = json.Marshal(a.OrderDirection)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'orderDirection': %w", err)
-		}
-	}
-
-	if a.Scope != nil {
-		object["scope"], err = json.Marshal(a.Scope)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'scope': %w", err)
-		}
-	}
-
-	if a.StartTime != nil {
-		object["startTime"], err = json.Marshal(a.StartTime)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling 'startTime': %w", err)
-		}
-	}
-
-	for fieldName, field := range a.AdditionalProperties {
-		object[fieldName], err = json.Marshal(field)
-		if err != nil {
-			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
-		}
-	}
-	return json.Marshal(object)
-}
-
-// AsAPIKeyQuotaRefreshPeriod0 returns the union data inside the APIKeyQuota_RefreshPeriod as a APIKeyQuotaRefreshPeriod0
-func (t APIKeyQuota_RefreshPeriod) AsAPIKeyQuotaRefreshPeriod0() (APIKeyQuotaRefreshPeriod0, error) {
-	var body APIKeyQuotaRefreshPeriod0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAPIKeyQuotaRefreshPeriod0 overwrites any union data inside the APIKeyQuota_RefreshPeriod as the provided APIKeyQuotaRefreshPeriod0
-func (t *APIKeyQuota_RefreshPeriod) FromAPIKeyQuotaRefreshPeriod0(v APIKeyQuotaRefreshPeriod0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAPIKeyQuotaRefreshPeriod0 performs a merge with any union data inside the APIKeyQuota_RefreshPeriod, using the provided APIKeyQuotaRefreshPeriod0
-func (t *APIKeyQuota_RefreshPeriod) MergeAPIKeyQuotaRefreshPeriod0(v APIKeyQuotaRefreshPeriod0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAPIKeyQuotaRefreshPeriod1 returns the union data inside the APIKeyQuota_RefreshPeriod as a APIKeyQuotaRefreshPeriod1
-func (t APIKeyQuota_RefreshPeriod) AsAPIKeyQuotaRefreshPeriod1() (APIKeyQuotaRefreshPeriod1, error) {
-	var body APIKeyQuotaRefreshPeriod1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAPIKeyQuotaRefreshPeriod1 overwrites any union data inside the APIKeyQuota_RefreshPeriod as the provided APIKeyQuotaRefreshPeriod1
-func (t *APIKeyQuota_RefreshPeriod) FromAPIKeyQuotaRefreshPeriod1(v APIKeyQuotaRefreshPeriod1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAPIKeyQuotaRefreshPeriod1 performs a merge with any union data inside the APIKeyQuota_RefreshPeriod, using the provided APIKeyQuotaRefreshPeriod1
-func (t *APIKeyQuota_RefreshPeriod) MergeAPIKeyQuotaRefreshPeriod1(v APIKeyQuotaRefreshPeriod1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAPIKeyQuotaRefreshPeriod2 returns the union data inside the APIKeyQuota_RefreshPeriod as a APIKeyQuotaRefreshPeriod2
-func (t APIKeyQuota_RefreshPeriod) AsAPIKeyQuotaRefreshPeriod2() (APIKeyQuotaRefreshPeriod2, error) {
-	var body APIKeyQuotaRefreshPeriod2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAPIKeyQuotaRefreshPeriod2 overwrites any union data inside the APIKeyQuota_RefreshPeriod as the provided APIKeyQuotaRefreshPeriod2
-func (t *APIKeyQuota_RefreshPeriod) FromAPIKeyQuotaRefreshPeriod2(v APIKeyQuotaRefreshPeriod2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAPIKeyQuotaRefreshPeriod2 performs a merge with any union data inside the APIKeyQuota_RefreshPeriod, using the provided APIKeyQuotaRefreshPeriod2
-func (t *APIKeyQuota_RefreshPeriod) MergeAPIKeyQuotaRefreshPeriod2(v APIKeyQuotaRefreshPeriod2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAPIKeyQuotaRefreshPeriod3 returns the union data inside the APIKeyQuota_RefreshPeriod as a APIKeyQuotaRefreshPeriod3
-func (t APIKeyQuota_RefreshPeriod) AsAPIKeyQuotaRefreshPeriod3() (APIKeyQuotaRefreshPeriod3, error) {
-	var body APIKeyQuotaRefreshPeriod3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAPIKeyQuotaRefreshPeriod3 overwrites any union data inside the APIKeyQuota_RefreshPeriod as the provided APIKeyQuotaRefreshPeriod3
-func (t *APIKeyQuota_RefreshPeriod) FromAPIKeyQuotaRefreshPeriod3(v APIKeyQuotaRefreshPeriod3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAPIKeyQuotaRefreshPeriod3 performs a merge with any union data inside the APIKeyQuota_RefreshPeriod, using the provided APIKeyQuotaRefreshPeriod3
-func (t *APIKeyQuota_RefreshPeriod) MergeAPIKeyQuotaRefreshPeriod3(v APIKeyQuotaRefreshPeriod3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t APIKeyQuota_RefreshPeriod) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *APIKeyQuota_RefreshPeriod) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiGatewayEvaluationFallbackCondition0 returns the union data inside the AiGatewayEvaluationFallbackCondition as a AiGatewayEvaluationFallbackCondition0
-func (t AiGatewayEvaluationFallbackCondition) AsAiGatewayEvaluationFallbackCondition0() (AiGatewayEvaluationFallbackCondition0, error) {
-	var body AiGatewayEvaluationFallbackCondition0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayEvaluationFallbackCondition0 overwrites any union data inside the AiGatewayEvaluationFallbackCondition as the provided AiGatewayEvaluationFallbackCondition0
-func (t *AiGatewayEvaluationFallbackCondition) FromAiGatewayEvaluationFallbackCondition0(v AiGatewayEvaluationFallbackCondition0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayEvaluationFallbackCondition0 performs a merge with any union data inside the AiGatewayEvaluationFallbackCondition, using the provided AiGatewayEvaluationFallbackCondition0
-func (t *AiGatewayEvaluationFallbackCondition) MergeAiGatewayEvaluationFallbackCondition0(v AiGatewayEvaluationFallbackCondition0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiGatewayEvaluationFallbackCondition1 returns the union data inside the AiGatewayEvaluationFallbackCondition as a AiGatewayEvaluationFallbackCondition1
-func (t AiGatewayEvaluationFallbackCondition) AsAiGatewayEvaluationFallbackCondition1() (AiGatewayEvaluationFallbackCondition1, error) {
-	var body AiGatewayEvaluationFallbackCondition1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayEvaluationFallbackCondition1 overwrites any union data inside the AiGatewayEvaluationFallbackCondition as the provided AiGatewayEvaluationFallbackCondition1
-func (t *AiGatewayEvaluationFallbackCondition) FromAiGatewayEvaluationFallbackCondition1(v AiGatewayEvaluationFallbackCondition1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayEvaluationFallbackCondition1 performs a merge with any union data inside the AiGatewayEvaluationFallbackCondition, using the provided AiGatewayEvaluationFallbackCondition1
-func (t *AiGatewayEvaluationFallbackCondition) MergeAiGatewayEvaluationFallbackCondition1(v AiGatewayEvaluationFallbackCondition1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiGatewayEvaluationFallbackCondition2 returns the union data inside the AiGatewayEvaluationFallbackCondition as a AiGatewayEvaluationFallbackCondition2
-func (t AiGatewayEvaluationFallbackCondition) AsAiGatewayEvaluationFallbackCondition2() (AiGatewayEvaluationFallbackCondition2, error) {
-	var body AiGatewayEvaluationFallbackCondition2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayEvaluationFallbackCondition2 overwrites any union data inside the AiGatewayEvaluationFallbackCondition as the provided AiGatewayEvaluationFallbackCondition2
-func (t *AiGatewayEvaluationFallbackCondition) FromAiGatewayEvaluationFallbackCondition2(v AiGatewayEvaluationFallbackCondition2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayEvaluationFallbackCondition2 performs a merge with any union data inside the AiGatewayEvaluationFallbackCondition, using the provided AiGatewayEvaluationFallbackCondition2
-func (t *AiGatewayEvaluationFallbackCondition) MergeAiGatewayEvaluationFallbackCondition2(v AiGatewayEvaluationFallbackCondition2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiGatewayEvaluationFallbackCondition3 returns the union data inside the AiGatewayEvaluationFallbackCondition as a AiGatewayEvaluationFallbackCondition3
-func (t AiGatewayEvaluationFallbackCondition) AsAiGatewayEvaluationFallbackCondition3() (AiGatewayEvaluationFallbackCondition3, error) {
-	var body AiGatewayEvaluationFallbackCondition3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayEvaluationFallbackCondition3 overwrites any union data inside the AiGatewayEvaluationFallbackCondition as the provided AiGatewayEvaluationFallbackCondition3
-func (t *AiGatewayEvaluationFallbackCondition) FromAiGatewayEvaluationFallbackCondition3(v AiGatewayEvaluationFallbackCondition3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayEvaluationFallbackCondition3 performs a merge with any union data inside the AiGatewayEvaluationFallbackCondition, using the provided AiGatewayEvaluationFallbackCondition3
-func (t *AiGatewayEvaluationFallbackCondition) MergeAiGatewayEvaluationFallbackCondition3(v AiGatewayEvaluationFallbackCondition3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiGatewayEvaluationFallbackCondition4 returns the union data inside the AiGatewayEvaluationFallbackCondition as a AiGatewayEvaluationFallbackCondition4
-func (t AiGatewayEvaluationFallbackCondition) AsAiGatewayEvaluationFallbackCondition4() (AiGatewayEvaluationFallbackCondition4, error) {
-	var body AiGatewayEvaluationFallbackCondition4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayEvaluationFallbackCondition4 overwrites any union data inside the AiGatewayEvaluationFallbackCondition as the provided AiGatewayEvaluationFallbackCondition4
-func (t *AiGatewayEvaluationFallbackCondition) FromAiGatewayEvaluationFallbackCondition4(v AiGatewayEvaluationFallbackCondition4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayEvaluationFallbackCondition4 performs a merge with any union data inside the AiGatewayEvaluationFallbackCondition, using the provided AiGatewayEvaluationFallbackCondition4
-func (t *AiGatewayEvaluationFallbackCondition) MergeAiGatewayEvaluationFallbackCondition4(v AiGatewayEvaluationFallbackCondition4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiGatewayEvaluationFallbackCondition) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiGatewayEvaluationFallbackCondition) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAiGatewayVirtualModelConfigModels0 returns the union data inside the AiGatewayVirtualModelConfig_Models_Item as a AiGatewayVirtualModelConfigModels0
-func (t AiGatewayVirtualModelConfig_Models_Item) AsAiGatewayVirtualModelConfigModels0() (AiGatewayVirtualModelConfigModels0, error) {
-	var body AiGatewayVirtualModelConfigModels0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayVirtualModelConfigModels0 overwrites any union data inside the AiGatewayVirtualModelConfig_Models_Item as the provided AiGatewayVirtualModelConfigModels0
-func (t *AiGatewayVirtualModelConfig_Models_Item) FromAiGatewayVirtualModelConfigModels0(v AiGatewayVirtualModelConfigModels0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayVirtualModelConfigModels0 performs a merge with any union data inside the AiGatewayVirtualModelConfig_Models_Item, using the provided AiGatewayVirtualModelConfigModels0
-func (t *AiGatewayVirtualModelConfig_Models_Item) MergeAiGatewayVirtualModelConfigModels0(v AiGatewayVirtualModelConfigModels0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiGatewayVirtualModelConfigModels1 returns the union data inside the AiGatewayVirtualModelConfig_Models_Item as a AiGatewayVirtualModelConfigModels1
-func (t AiGatewayVirtualModelConfig_Models_Item) AsAiGatewayVirtualModelConfigModels1() (AiGatewayVirtualModelConfigModels1, error) {
-	var body AiGatewayVirtualModelConfigModels1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayVirtualModelConfigModels1 overwrites any union data inside the AiGatewayVirtualModelConfig_Models_Item as the provided AiGatewayVirtualModelConfigModels1
-func (t *AiGatewayVirtualModelConfig_Models_Item) FromAiGatewayVirtualModelConfigModels1(v AiGatewayVirtualModelConfigModels1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayVirtualModelConfigModels1 performs a merge with any union data inside the AiGatewayVirtualModelConfig_Models_Item, using the provided AiGatewayVirtualModelConfigModels1
-func (t *AiGatewayVirtualModelConfig_Models_Item) MergeAiGatewayVirtualModelConfigModels1(v AiGatewayVirtualModelConfigModels1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAiGatewayVirtualModelConfigModels2 returns the union data inside the AiGatewayVirtualModelConfig_Models_Item as a AiGatewayVirtualModelConfigModels2
-func (t AiGatewayVirtualModelConfig_Models_Item) AsAiGatewayVirtualModelConfigModels2() (AiGatewayVirtualModelConfigModels2, error) {
-	var body AiGatewayVirtualModelConfigModels2
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAiGatewayVirtualModelConfigModels2 overwrites any union data inside the AiGatewayVirtualModelConfig_Models_Item as the provided AiGatewayVirtualModelConfigModels2
-func (t *AiGatewayVirtualModelConfig_Models_Item) FromAiGatewayVirtualModelConfigModels2(v AiGatewayVirtualModelConfigModels2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAiGatewayVirtualModelConfigModels2 performs a merge with any union data inside the AiGatewayVirtualModelConfig_Models_Item, using the provided AiGatewayVirtualModelConfigModels2
-func (t *AiGatewayVirtualModelConfig_Models_Item) MergeAiGatewayVirtualModelConfigModels2(v AiGatewayVirtualModelConfigModels2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AiGatewayVirtualModelConfig_Models_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AiGatewayVirtualModelConfig_Models_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAuthTokenScopes0 returns the union data inside the AuthToken_Scopes_Item as a AuthTokenScopes0
-func (t AuthToken_Scopes_Item) AsAuthTokenScopes0() (AuthTokenScopes0, error) {
-	var body AuthTokenScopes0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthTokenScopes0 overwrites any union data inside the AuthToken_Scopes_Item as the provided AuthTokenScopes0
-func (t *AuthToken_Scopes_Item) FromAuthTokenScopes0(v AuthTokenScopes0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthTokenScopes0 performs a merge with any union data inside the AuthToken_Scopes_Item, using the provided AuthTokenScopes0
-func (t *AuthToken_Scopes_Item) MergeAuthTokenScopes0(v AuthTokenScopes0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAuthTokenScopes1 returns the union data inside the AuthToken_Scopes_Item as a AuthTokenScopes1
-func (t AuthToken_Scopes_Item) AsAuthTokenScopes1() (AuthTokenScopes1, error) {
-	var body AuthTokenScopes1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthTokenScopes1 overwrites any union data inside the AuthToken_Scopes_Item as the provided AuthTokenScopes1
-func (t *AuthToken_Scopes_Item) FromAuthTokenScopes1(v AuthTokenScopes1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthTokenScopes1 performs a merge with any union data inside the AuthToken_Scopes_Item, using the provided AuthTokenScopes1
-func (t *AuthToken_Scopes_Item) MergeAuthTokenScopes1(v AuthTokenScopes1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AuthToken_Scopes_Item) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AuthToken_Scopes_Item) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAuthUserImportFlowGitNamespace0 returns the union data inside the AuthUser_ImportFlowGitNamespace as a AuthUserImportFlowGitNamespace0
-func (t AuthUser_ImportFlowGitNamespace) AsAuthUserImportFlowGitNamespace0() (AuthUserImportFlowGitNamespace0, error) {
-	var body AuthUserImportFlowGitNamespace0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthUserImportFlowGitNamespace0 overwrites any union data inside the AuthUser_ImportFlowGitNamespace as the provided AuthUserImportFlowGitNamespace0
-func (t *AuthUser_ImportFlowGitNamespace) FromAuthUserImportFlowGitNamespace0(v AuthUserImportFlowGitNamespace0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthUserImportFlowGitNamespace0 performs a merge with any union data inside the AuthUser_ImportFlowGitNamespace, using the provided AuthUserImportFlowGitNamespace0
-func (t *AuthUser_ImportFlowGitNamespace) MergeAuthUserImportFlowGitNamespace0(v AuthUserImportFlowGitNamespace0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAuthUserImportFlowGitNamespace1 returns the union data inside the AuthUser_ImportFlowGitNamespace as a AuthUserImportFlowGitNamespace1
-func (t AuthUser_ImportFlowGitNamespace) AsAuthUserImportFlowGitNamespace1() (AuthUserImportFlowGitNamespace1, error) {
-	var body AuthUserImportFlowGitNamespace1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthUserImportFlowGitNamespace1 overwrites any union data inside the AuthUser_ImportFlowGitNamespace as the provided AuthUserImportFlowGitNamespace1
-func (t *AuthUser_ImportFlowGitNamespace) FromAuthUserImportFlowGitNamespace1(v AuthUserImportFlowGitNamespace1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthUserImportFlowGitNamespace1 performs a merge with any union data inside the AuthUser_ImportFlowGitNamespace, using the provided AuthUserImportFlowGitNamespace1
-func (t *AuthUser_ImportFlowGitNamespace) MergeAuthUserImportFlowGitNamespace1(v AuthUserImportFlowGitNamespace1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AuthUser_ImportFlowGitNamespace) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AuthUser_ImportFlowGitNamespace) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAuthUserImportFlowGitNamespaceId0 returns the union data inside the AuthUser_ImportFlowGitNamespaceId as a AuthUserImportFlowGitNamespaceId0
-func (t AuthUser_ImportFlowGitNamespaceId) AsAuthUserImportFlowGitNamespaceId0() (AuthUserImportFlowGitNamespaceId0, error) {
-	var body AuthUserImportFlowGitNamespaceId0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthUserImportFlowGitNamespaceId0 overwrites any union data inside the AuthUser_ImportFlowGitNamespaceId as the provided AuthUserImportFlowGitNamespaceId0
-func (t *AuthUser_ImportFlowGitNamespaceId) FromAuthUserImportFlowGitNamespaceId0(v AuthUserImportFlowGitNamespaceId0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthUserImportFlowGitNamespaceId0 performs a merge with any union data inside the AuthUser_ImportFlowGitNamespaceId, using the provided AuthUserImportFlowGitNamespaceId0
-func (t *AuthUser_ImportFlowGitNamespaceId) MergeAuthUserImportFlowGitNamespaceId0(v AuthUserImportFlowGitNamespaceId0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAuthUserImportFlowGitNamespaceId1 returns the union data inside the AuthUser_ImportFlowGitNamespaceId as a AuthUserImportFlowGitNamespaceId1
-func (t AuthUser_ImportFlowGitNamespaceId) AsAuthUserImportFlowGitNamespaceId1() (AuthUserImportFlowGitNamespaceId1, error) {
-	var body AuthUserImportFlowGitNamespaceId1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthUserImportFlowGitNamespaceId1 overwrites any union data inside the AuthUser_ImportFlowGitNamespaceId as the provided AuthUserImportFlowGitNamespaceId1
-func (t *AuthUser_ImportFlowGitNamespaceId) FromAuthUserImportFlowGitNamespaceId1(v AuthUserImportFlowGitNamespaceId1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthUserImportFlowGitNamespaceId1 performs a merge with any union data inside the AuthUser_ImportFlowGitNamespaceId, using the provided AuthUserImportFlowGitNamespaceId1
-func (t *AuthUser_ImportFlowGitNamespaceId) MergeAuthUserImportFlowGitNamespaceId1(v AuthUserImportFlowGitNamespaceId1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AuthUser_ImportFlowGitNamespaceId) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AuthUser_ImportFlowGitNamespaceId) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAuthUserPreferredScopesAndGitNamespacesGitNamespaceId0 returns the union data inside the AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId as a AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0
-func (t AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) AsAuthUserPreferredScopesAndGitNamespacesGitNamespaceId0() (AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0, error) {
-	var body AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthUserPreferredScopesAndGitNamespacesGitNamespaceId0 overwrites any union data inside the AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId as the provided AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0
-func (t *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) FromAuthUserPreferredScopesAndGitNamespacesGitNamespaceId0(v AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthUserPreferredScopesAndGitNamespacesGitNamespaceId0 performs a merge with any union data inside the AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId, using the provided AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0
-func (t *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) MergeAuthUserPreferredScopesAndGitNamespacesGitNamespaceId0(v AuthUserPreferredScopesAndGitNamespacesGitNamespaceId0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsAuthUserPreferredScopesAndGitNamespacesGitNamespaceId1 returns the union data inside the AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId as a AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1
-func (t AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) AsAuthUserPreferredScopesAndGitNamespacesGitNamespaceId1() (AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1, error) {
-	var body AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAuthUserPreferredScopesAndGitNamespacesGitNamespaceId1 overwrites any union data inside the AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId as the provided AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1
-func (t *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) FromAuthUserPreferredScopesAndGitNamespacesGitNamespaceId1(v AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAuthUserPreferredScopesAndGitNamespacesGitNamespaceId1 performs a merge with any union data inside the AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId, using the provided AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1
-func (t *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) MergeAuthUserPreferredScopesAndGitNamespacesGitNamespaceId1(v AuthUserPreferredScopesAndGitNamespacesGitNamespaceId1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *AuthUser_PreferredScopesAndGitNamespaces_GitNamespaceId) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsConnectConnectorCreatedBy2Environment0 returns the union data inside the ConnectConnector_CreatedBy_2_Environment as a ConnectConnectorCreatedBy2Environment0
-func (t ConnectConnector_CreatedBy_2_Environment) AsConnectConnectorCreatedBy2Environment0() (ConnectConnectorCreatedBy2Environment0, error) {
-	var body ConnectConnectorCreatedBy2Environment0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreatedBy2Environment0 overwrites any union data inside the ConnectConnector_CreatedBy_2_Environment as the provided ConnectConnectorCreatedBy2Environment0
-func (t *ConnectConnector_CreatedBy_2_Environment) FromConnectConnectorCreatedBy2Environment0(v ConnectConnectorCreatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeConnectConnectorCreatedBy2Environment0 performs a merge with any union data inside the ConnectConnector_CreatedBy_2_Environment, using the provided ConnectConnectorCreatedBy2Environment0
-func (t *ConnectConnector_CreatedBy_2_Environment) MergeConnectConnectorCreatedBy2Environment0(v ConnectConnectorCreatedBy2Environment0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsConnectConnectorCreatedBy2Environment1 returns the union data inside the ConnectConnector_CreatedBy_2_Environment as a ConnectConnectorCreatedBy2Environment1
-func (t ConnectConnector_CreatedBy_2_Environment) AsConnectConnectorCreatedBy2Environment1() (ConnectConnectorCreatedBy2Environment1, error) {
-	var body ConnectConnectorCreatedBy2Environment1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromConnectConnectorCreatedBy2Environment1 overwrites any union data inside the ConnectConnector_CreatedBy_2_Environment as the provided ConnectConnectorCreatedBy2Environment1
-func (t *ConnectConnector_CreatedBy_2_Environment) FromConnectConnectorCreatedBy2Environment1(v ConnectConnectorCreatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
 }
