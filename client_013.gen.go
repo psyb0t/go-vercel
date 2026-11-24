@@ -2341,7 +2341,7 @@ type CreateSandboxesV2JSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
-	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.
 	//
 	// Example: 300000
 	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
@@ -3459,7 +3459,7 @@ type UpdateSandboxJSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
-	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.
 	//
 	// Example: 300000
 	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
@@ -5466,7 +5466,7 @@ type CreateSandboxesV3JSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
-	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.
 	//
 	// Example: 300000
 	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
@@ -6602,7 +6602,7 @@ type CreateSandboxesV4JSONBody struct {
 	// Example: {"HELLO":"world","NODE_ENV":"production"}
 	Env *map[string]string `json:"env,omitempty"`
 
-	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 2 minutes. Takes effect from the next session.
+	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time. Defaults to 1 minute. Takes effect from the next session.
 	//
 	// Example: 300000
 	ExpiryNotificationLeadTime *int `json:"expiryNotificationLeadTime,omitempty"`
@@ -7173,6 +7173,21 @@ type GetDomainConfig200JSONResponseBodyConfiguredBy string
 
 // GetDomainConfig200JSONResponseBodyMisconfigured defines parameters for GetDomainConfig.
 type GetDomainConfig200JSONResponseBodyMisconfigured bool
+
+// ListAuthTokensParams defines parameters for ListAuthTokens.
+type ListAuthTokensParams struct {
+	// Kind Filter by token kind. Omit or use `all` to include every kind.
+	Kind *ListAuthTokensParamsKind `form:"kind,omitempty" json:"kind,omitempty"`
+
+	// Status Filter by token status. Omit or use `all` to include every status.
+	Status *ListAuthTokensParamsStatus `form:"status,omitempty" json:"status,omitempty"`
+}
+
+// ListAuthTokensParamsKind defines parameters for ListAuthTokens.
+type ListAuthTokensParamsKind string
+
+// ListAuthTokensParamsStatus defines parameters for ListAuthTokens.
+type ListAuthTokensParamsStatus string
 
 // ListAuthTokens200JSONResponseBody0 defines parameters for ListAuthTokens.
 type ListAuthTokens200JSONResponseBody0 struct {
@@ -19997,21 +20012,4 @@ func (t *ConnectConnector_CreatedBy_2_Environment) FromConnectConnectorCreatedBy
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
-}
-
-// MergeConnectConnectorCreatedBy2Environment1 performs a merge with any union data inside the ConnectConnector_CreatedBy_2_Environment, using the provided ConnectConnectorCreatedBy2Environment1
-func (t *ConnectConnector_CreatedBy_2_Environment) MergeConnectConnectorCreatedBy2Environment1(v ConnectConnectorCreatedBy2Environment1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ConnectConnector_CreatedBy_2_Environment) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
 }

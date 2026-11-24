@@ -14,6 +14,51 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
+// FromGetDeployment200JSONResponseBody2GitSource0 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource as the provided GetDeployment200JSONResponseBody2GitSource0
+func (t *GetDeployment200JSONResponseBody_2_GitSource) FromGetDeployment200JSONResponseBody2GitSource0(v GetDeployment200JSONResponseBody2GitSource0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource0 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource, using the provided GetDeployment200JSONResponseBody2GitSource0
+func (t *GetDeployment200JSONResponseBody_2_GitSource) MergeGetDeployment200JSONResponseBody2GitSource0(v GetDeployment200JSONResponseBody2GitSource0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetDeployment200JSONResponseBody2GitSource1 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource as a GetDeployment200JSONResponseBody2GitSource1
+func (t GetDeployment200JSONResponseBody_2_GitSource) AsGetDeployment200JSONResponseBody2GitSource1() (GetDeployment200JSONResponseBody2GitSource1, error) {
+	var body GetDeployment200JSONResponseBody2GitSource1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetDeployment200JSONResponseBody2GitSource1 overwrites any union data inside the GetDeployment200JSONResponseBody_2_GitSource as the provided GetDeployment200JSONResponseBody2GitSource1
+func (t *GetDeployment200JSONResponseBody_2_GitSource) FromGetDeployment200JSONResponseBody2GitSource1(v GetDeployment200JSONResponseBody2GitSource1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetDeployment200JSONResponseBody2GitSource1 performs a merge with any union data inside the GetDeployment200JSONResponseBody_2_GitSource, using the provided GetDeployment200JSONResponseBody2GitSource1
+func (t *GetDeployment200JSONResponseBody_2_GitSource) MergeGetDeployment200JSONResponseBody2GitSource1(v GetDeployment200JSONResponseBody2GitSource1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsGetDeployment200JSONResponseBody2GitSource2 returns the union data inside the GetDeployment200JSONResponseBody_2_GitSource as a GetDeployment200JSONResponseBody2GitSource2
 func (t GetDeployment200JSONResponseBody_2_GitSource) AsGetDeployment200JSONResponseBody2GitSource2() (GetDeployment200JSONResponseBody2GitSource2, error) {
 	var body GetDeployment200JSONResponseBody2GitSource2
@@ -18836,7 +18881,7 @@ type ClientInterface interface {
 
 	// BuyCreditsWithBody Purchase credits
 	//
-	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
+	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team. Pro subscription purchases additionally require permission to update the team's plan, and AI Gateway credit purchases require permission to create AI Gateway credits.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -18845,7 +18890,7 @@ type ClientInterface interface {
 
 	// BuyCredits Purchase credits
 	//
-	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
+	// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team. Pro subscription purchases additionally require permission to update the team's plan, and AI Gateway credit purchases require permission to create AI Gateway credits.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -23526,7 +23571,7 @@ type ClientInterface interface {
 	// Retrieve a list of the current User's authentication tokens.
 	//
 	// Corresponds with GET /v6/user/tokens (the `ListAuthTokens` operationId).
-	ListAuthTokens(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListAuthTokens(ctx context.Context, params *ListAuthTokensParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetDeployments List deployments
 	//

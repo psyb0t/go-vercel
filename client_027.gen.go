@@ -2264,7 +2264,7 @@ func (c *ClientWithResponses) ListAiGatewayRoutersWithResponse(ctx context.Conte
 
 // BuyCreditsWithBodyWithResponse Purchase credits
 //
-// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
+// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team. Pro subscription purchases additionally require permission to update the team's plan, and AI Gateway credit purchases require permission to create AI Gateway credits.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -2279,7 +2279,7 @@ func (c *ClientWithResponses) BuyCreditsWithBodyWithResponse(ctx context.Context
 
 // BuyCreditsWithResponse Purchase credits
 //
-// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team.
+// Purchases credits for a Vercel team using the default payment method on file. The purchase is charged immediately via Stripe invoice. Supported credit types are `v0`, `gateway`, and `agent`. The `amount` field specifies the number of credits to purchase and must be a positive integer. An optional `source` query parameter can be provided to identify the caller. Defaults to `api` if not specified. This is only available for Owner, Member, Developer, Security, and Billing roles for the supplied team. Pro subscription purchases additionally require permission to update the team's plan, and AI Gateway credit purchases require permission to create AI Gateway credits.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -10901,8 +10901,8 @@ func (c *ClientWithResponses) GetDomainConfigWithResponse(ctx context.Context, d
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v6/user/tokens (the `ListAuthTokens` operationId).
-func (c *ClientWithResponses) ListAuthTokensWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListAuthTokensResponse, error) {
-	rsp, err := c.ListAuthTokens(ctx, reqEditors...)
+func (c *ClientWithResponses) ListAuthTokensWithResponse(ctx context.Context, params *ListAuthTokensParams, reqEditors ...RequestEditorFn) (*ListAuthTokensResponse, error) {
+	rsp, err := c.ListAuthTokens(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}

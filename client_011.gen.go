@@ -10,6 +10,272 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesDestination defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesDestination string
+
+// UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesEnv defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTracingSamplingRulesEnv string
+
+// UploadProjectAvatar200JSONResponseBodyTrustedIps0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedIps0 struct {
+	Addresses []struct {
+		Note  *string `json:"note,omitempty"`
+		Value string  `json:"value"`
+	} `json:"addresses"`
+	DeploymentType UploadProjectAvatar200JSONResponseBodyTrustedIps0DeploymentType `json:"deploymentType"`
+	ProtectionMode UploadProjectAvatar200JSONResponseBodyTrustedIps0ProtectionMode `json:"protectionMode"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedIps0DeploymentType defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedIps0DeploymentType string
+
+// UploadProjectAvatar200JSONResponseBodyTrustedIps0ProtectionMode defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedIps0ProtectionMode string
+
+// UploadProjectAvatar200JSONResponseBodyTrustedIps1 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedIps1 struct {
+	DeploymentType UploadProjectAvatar200JSONResponseBodyTrustedIps1DeploymentType `json:"deploymentType"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedIps1DeploymentType defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedIps1DeploymentType string
+
+// UploadProjectAvatar200JSONResponseBody_TrustedIps defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_TrustedIps struct {
+	union json.RawMessage
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesEnableVercelCiSameRepository bool
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo0 struct {
+	Preset *UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset `json:"preset,omitempty"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs []string `json:"slugs"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo0Preset string
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo1 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo1 struct {
+	Preset UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset `json:"preset"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs *[]string `json:"slugs,omitempty"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesOidcProvidersTo1Preset string
+
+// UploadProjectAvatar200JSONResponseBody_TrustedSources_OidcProviders_To defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_TrustedSources_OidcProviders_To struct {
+	union json.RawMessage
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0 struct {
+	Preset *UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset `json:"preset,omitempty"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs []string `json:"slugs"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom0Preset string
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1 struct {
+	Preset UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset `json:"preset"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs *[]string `json:"slugs,omitempty"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowFrom1Preset string
+
+// UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_From defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_From struct {
+	union json.RawMessage
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0 struct {
+	Preset *UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset `json:"preset,omitempty"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs []string `json:"slugs"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo0Preset string
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1 struct {
+	Preset UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset `json:"preset"`
+
+	// Slugs System environment slugs (`production`, `preview`) and/or custom environment slugs defined on the referenced project.
+	Slugs *[]string `json:"slugs,omitempty"`
+}
+
+// UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyTrustedSourcesProjectsCustomAllowTo1Preset string
+
+// UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_To defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_TrustedSources_Projects_CustomAllow_To struct {
+	union json.RawMessage
+}
+
+// UploadProjectAvatar200JSONResponseBodyUsageStatusKind defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyUsageStatusKind string
+
+// UploadProjectAvatar200JSONResponseBodyUsageStatusTeamThrottled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyUsageStatusTeamThrottled bool
+
+// UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyUsageStatusThrottled bool
+
+// UploadProjectAvatar200JSONResponseBodyV0 defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyV0 bool
+
+// UploadProjectAvatar200JSONResponseBodyV0Created defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyV0Created bool
+
+// UploadProjectAvatar200JSONResponseBodyWebAnalyticsHasData defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyWebAnalyticsHasData bool
+
+// GetProjectBoxesParams defines parameters for GetProjectBoxes.
+type GetProjectBoxesParams struct {
+	// Limit Maximum daemons to return (default: 10, max: 100)
+	Limit *string `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Cursor Pagination cursor
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+
+	// ScopeType Filter by scope type
+	ScopeType *GetProjectBoxesParamsScopeType `form:"scopeType,omitempty" json:"scopeType,omitempty"`
+
+	// ScopeValue Filter by scope value (requires scopeType)
+	ScopeValue *string `form:"scopeValue,omitempty" json:"scopeValue,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// GetProjectBoxesParamsScopeType defines parameters for GetProjectBoxes.
+type GetProjectBoxesParamsScopeType string
+
+// GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances0 = float32
+
+// GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsConfigConfiguredInstances1 map[string]float32
+
+// GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBody_Daemons_Config_ConfiguredInstances struct {
+	union json.RawMessage
+}
+
+// GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances0 = float32
+
+// GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsConfigInstances1 map[string]float32
+
+// GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBody_Daemons_Config_Instances struct {
+	union json.RawMessage
+}
+
+// GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsConfigLivenessProbeHttpGetScheme string
+
+// GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsAlive bool
+
+// GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsInstancesItemsProcessCrashLooping bool
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope0 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope0 struct {
+	Type  GetProjectBoxes200JSONResponseBodyDaemonsScope0Type  `json:"type"`
+	Value GetProjectBoxes200JSONResponseBodyDaemonsScope0Value `json:"value"`
+}
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope0Type defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope0Type string
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope0Value defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope0Value string
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope1 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope1 struct {
+	Type  GetProjectBoxes200JSONResponseBodyDaemonsScope1Type `json:"type"`
+	Value string                                              `json:"value"`
+}
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope1Type defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope1Type string
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope2 defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope2 struct {
+	Type  GetProjectBoxes200JSONResponseBodyDaemonsScope2Type `json:"type"`
+	Value string                                              `json:"value"`
+}
+
+// GetProjectBoxes200JSONResponseBodyDaemonsScope2Type defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsScope2Type string
+
+// GetProjectBoxes200JSONResponseBody_Daemons_Scope defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBody_Daemons_Scope struct {
+	union json.RawMessage
+}
+
+// GetProjectBoxes200JSONResponseBodyDaemonsStatus defines parameters for GetProjectBoxes.
+type GetProjectBoxes200JSONResponseBodyDaemonsStatus string
+
+// PutProjectDaemonInstancesJSONBody defines parameters for PutProjectDaemonInstances.
+type PutProjectDaemonInstancesJSONBody map[string]*int
+
+// PutProjectDaemonInstancesParams defines parameters for PutProjectDaemonInstances.
+type PutProjectDaemonInstancesParams struct {
+	// Target The deployment target for the daemon configuration.
+	Target *PutProjectDaemonInstancesParamsTarget `form:"target,omitempty" json:"target,omitempty"`
+
+	// CustomEnvironmentId The ID of the custom environment of the daemon, instead of `target`.
+	CustomEnvironmentId *string `form:"customEnvironmentId,omitempty" json:"customEnvironmentId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
+// PutProjectDaemonInstancesParamsTarget defines parameters for PutProjectDaemonInstances.
+type PutProjectDaemonInstancesParamsTarget string
+
+// PutProjectDaemonInstances200JSONResponseBodyOk defines parameters for PutProjectDaemonInstances.
+type PutProjectDaemonInstances200JSONResponseBodyOk bool
+
+// RestartProjectDaemonInstanceParams defines parameters for RestartProjectDaemonInstance.
+type RestartProjectDaemonInstanceParams struct {
+	// CustomEnvironmentId The ID of the custom environment of the instance. Production instances are restarted when omitted.
+	CustomEnvironmentId *string `form:"customEnvironmentId,omitempty" json:"customEnvironmentId,omitempty"`
+
+	// TeamId The Team identifier to perform the request on behalf of.
+	TeamId *string `form:"teamId,omitempty" json:"teamId,omitempty"`
+
+	// Slug The Team slug to perform the request on behalf of.
+	Slug *string `form:"slug,omitempty" json:"slug,omitempty"`
+}
+
 // RestartProjectDaemonInstance202JSONResponseBodyOk defines parameters for RestartProjectDaemonInstance.
 type RestartProjectDaemonInstance202JSONResponseBodyOk bool
 

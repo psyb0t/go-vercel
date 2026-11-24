@@ -7366,6 +7366,9 @@ func ParsePutProjectDaemonInstancesResponse(rsp *http.Response) (*PutProjectDaem
 	case rsp.StatusCode == 404:
 		break // No content-type
 
+	case rsp.StatusCode == 409:
+		break // No content-type
+
 	case rsp.StatusCode == 410:
 		break // No content-type
 

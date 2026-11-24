@@ -8,6 +8,213 @@ import (
 	"time"
 )
 
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures enum.
+func (e UpdateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailures) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailuresFalse:
+		return true
+	case UpdateProject200JSONResponseBodyGitProviderOptionsConsolidatedGitCommitStatusPropagateFailuresTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeployments.
+const (
+	UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeploymentsDisabled UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeployments = "disabled"
+	UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeploymentsEnabled  UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeployments = "enabled"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeployments enum.
+func (e UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeployments) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeploymentsDisabled:
+		return true
+	case UpdateProject200JSONResponseBodyGitProviderOptionsCreateDeploymentsEnabled:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents.
+const (
+	UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEventsFalse UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents = false
+	UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEventsTrue  UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents enum.
+func (e UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEvents) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEventsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyGitProviderOptionsDisableRepositoryDispatchEventsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus.
+const (
+	UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatusFalse UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus = false
+	UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatusTrue  UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus enum.
+func (e UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatus) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatusFalse:
+		return true
+	case UpdateProject200JSONResponseBodyGitProviderOptionsGitCommitStatusTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits.
+const (
+	UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommitsFalse UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits = false
+	UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommitsTrue  UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits enum.
+func (e UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommits) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommitsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyGitProviderOptionsRequireVerifiedCommitsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyHasActiveBranches.
+const (
+	UpdateProject200JSONResponseBodyHasActiveBranchesFalse UpdateProject200JSONResponseBodyHasActiveBranches = false
+	UpdateProject200JSONResponseBodyHasActiveBranchesTrue  UpdateProject200JSONResponseBodyHasActiveBranches = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyHasActiveBranches enum.
+func (e UpdateProject200JSONResponseBodyHasActiveBranches) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyHasActiveBranchesFalse:
+		return true
+	case UpdateProject200JSONResponseBodyHasActiveBranchesTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyHasDeployments.
+const (
+	UpdateProject200JSONResponseBodyHasDeploymentsFalse UpdateProject200JSONResponseBodyHasDeployments = false
+	UpdateProject200JSONResponseBodyHasDeploymentsTrue  UpdateProject200JSONResponseBodyHasDeployments = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyHasDeployments enum.
+func (e UpdateProject200JSONResponseBodyHasDeployments) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyHasDeploymentsFalse:
+		return true
+	case UpdateProject200JSONResponseBodyHasDeploymentsTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyInternalRoutes1Has0Key.
+const (
+	UpdateProject200JSONResponseBodyInternalRoutes1Has0KeyXVercelIpCountry UpdateProject200JSONResponseBodyInternalRoutes1Has0Key = "x-vercel-ip-country"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyInternalRoutes1Has0Key enum.
+func (e UpdateProject200JSONResponseBodyInternalRoutes1Has0Key) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyInternalRoutes1Has0KeyXVercelIpCountry:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyInternalRoutes1Has0Type.
+const (
+	UpdateProject200JSONResponseBodyInternalRoutes1Has0TypeHeader UpdateProject200JSONResponseBodyInternalRoutes1Has0Type = "header"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyInternalRoutes1Has0Type enum.
+func (e UpdateProject200JSONResponseBodyInternalRoutes1Has0Type) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyInternalRoutes1Has0TypeHeader:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyInternalRoutes1Has1Type.
+const (
+	UpdateProject200JSONResponseBodyInternalRoutes1Has1TypeHost UpdateProject200JSONResponseBodyInternalRoutes1Has1Type = "host"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyInternalRoutes1Has1Type enum.
+func (e UpdateProject200JSONResponseBodyInternalRoutes1Has1Type) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyInternalRoutes1Has1TypeHost:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyInternalRoutes1MitigateAction.
+const (
+	UpdateProject200JSONResponseBodyInternalRoutes1MitigateActionBlockLegalCwc UpdateProject200JSONResponseBodyInternalRoutes1MitigateAction = "block_legal_cwc"
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyInternalRoutes1MitigateAction enum.
+func (e UpdateProject200JSONResponseBodyInternalRoutes1MitigateAction) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyInternalRoutes1MitigateActionBlockLegalCwc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyIpBucketsDefault.
+const (
+	UpdateProject200JSONResponseBodyIpBucketsDefaultFalse UpdateProject200JSONResponseBodyIpBucketsDefault = false
+	UpdateProject200JSONResponseBodyIpBucketsDefaultTrue  UpdateProject200JSONResponseBodyIpBucketsDefault = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyIpBucketsDefault enum.
+func (e UpdateProject200JSONResponseBodyIpBucketsDefault) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyIpBucketsDefaultFalse:
+		return true
+	case UpdateProject200JSONResponseBodyIpBucketsDefaultTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateProject200JSONResponseBodyLastAliasRequestJobStatus.
+const (
+	UpdateProject200JSONResponseBodyLastAliasRequestJobStatusFailed     UpdateProject200JSONResponseBodyLastAliasRequestJobStatus = "failed"
+	UpdateProject200JSONResponseBodyLastAliasRequestJobStatusInProgress UpdateProject200JSONResponseBodyLastAliasRequestJobStatus = "in-progress"
+	UpdateProject200JSONResponseBodyLastAliasRequestJobStatusPending    UpdateProject200JSONResponseBodyLastAliasRequestJobStatus = "pending"
+	UpdateProject200JSONResponseBodyLastAliasRequestJobStatusSkipped    UpdateProject200JSONResponseBodyLastAliasRequestJobStatus = "skipped"
+	UpdateProject200JSONResponseBodyLastAliasRequestJobStatusSucceeded  UpdateProject200JSONResponseBodyLastAliasRequestJobStatus = "succeeded"
+)
+
 // Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyLastAliasRequestJobStatus enum.
 func (e UpdateProject200JSONResponseBodyLastAliasRequestJobStatus) Valid() bool {
 	switch e {
@@ -5508,12 +5715,15 @@ type AdditionalContactInfoRequiredStatus float32
 
 // AiGatewayBudget defines model for AiGatewayBudget.
 type AiGatewayBudget struct {
-	Active             AiGatewayBudgetActive             `json:"active"`
-	AlertThresholds    *[]float32                        `json:"alertThresholds,omitempty"`
-	Archived           AiGatewayBudgetArchived           `json:"archived"`
-	CreatedAt          float32                           `json:"createdAt"`
-	CurrentByokSpend   float32                           `json:"currentByokSpend"`
-	CurrentSpend       float32                           `json:"currentSpend"`
+	Active           AiGatewayBudgetActive   `json:"active"`
+	AlertThresholds  *[]float32              `json:"alertThresholds,omitempty"`
+	Archived         AiGatewayBudgetArchived `json:"archived"`
+	CreatedAt        float32                 `json:"createdAt"`
+	CurrentByokSpend float32                 `json:"currentByokSpend"`
+	CurrentSpend     float32                 `json:"currentSpend"`
+
+	// ExpiresAt When a member's own budget change lapses and the user default applies again, in ms since the epoch. Absent means the budget is permanent.
+	ExpiresAt          *float32                          `json:"expiresAt,omitempty"`
 	IncludeByokInQuota AiGatewayBudgetIncludeByokInQuota `json:"includeByokInQuota"`
 	LimitAmount        float32                           `json:"limitAmount"`
 	Name               *string                           `json:"name,omitempty"`
@@ -5549,17 +5759,23 @@ type AiGatewayBudgetSource string
 
 // AiGatewayBudgetDefault defines model for AiGatewayBudgetDefault.
 type AiGatewayBudgetDefault struct {
-	Active          AiGatewayBudgetDefaultActive        `json:"active"`
-	AlertThresholds *[]float32                          `json:"alertThresholds,omitempty"`
-	CreatedAt       float32                             `json:"createdAt"`
-	LimitAmount     float32                             `json:"limitAmount"`
-	RefreshPeriod   AiGatewayBudgetDefaultRefreshPeriod `json:"refreshPeriod"`
-	ScopeType       AiGatewayBudgetDefaultScopeType     `json:"scopeType"`
-	UpdatedAt       float32                             `json:"updatedAt"`
+	Active          AiGatewayBudgetDefaultActive `json:"active"`
+	AlertThresholds *[]float32                   `json:"alertThresholds,omitempty"`
+
+	// AppliesTo `api-key` scope only: key spend attributions covered. Absent means both.
+	AppliesTo     *[]AiGatewayBudgetDefaultAppliesTo  `json:"appliesTo,omitempty"`
+	CreatedAt     float32                             `json:"createdAt"`
+	LimitAmount   float32                             `json:"limitAmount"`
+	RefreshPeriod AiGatewayBudgetDefaultRefreshPeriod `json:"refreshPeriod"`
+	ScopeType     AiGatewayBudgetDefaultScopeType     `json:"scopeType"`
+	UpdatedAt     float32                             `json:"updatedAt"`
 }
 
 // AiGatewayBudgetDefaultActive defines model for AiGatewayBudgetDefault.Active.
 type AiGatewayBudgetDefaultActive bool
+
+// AiGatewayBudgetDefaultAppliesTo `api-key` scope only: key spend attributions covered. Absent means both.
+type AiGatewayBudgetDefaultAppliesTo string
 
 // AiGatewayBudgetDefaultRefreshPeriod defines model for AiGatewayBudgetDefault.RefreshPeriod.
 type AiGatewayBudgetDefaultRefreshPeriod string
@@ -5935,6 +6151,11 @@ type AuthToken struct {
 	// Example: 5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391
 	Id string `json:"id"`
 
+	// Kind The user-facing kind of the token.
+	//
+	// Example: access-token
+	Kind AuthTokenKind `json:"kind"`
+
 	// LeakedAt Timestamp (in milliseconds) of when the token was marked as leaked.
 	//
 	// Example: 1632816536002
@@ -5974,6 +6195,11 @@ type AuthToken struct {
 	// Example: oauth2-token
 	Type string `json:"type"`
 }
+
+// AuthTokenKind The user-facing kind of the token.
+//
+// Example: access-token
+type AuthTokenKind string
 
 // AuthTokenScopes0 The access scopes granted to the token.
 type AuthTokenScopes0 struct {
@@ -8777,7 +9003,7 @@ type ConnectUpdateConnectorRequest struct {
 	// Triggers Whether the triggers are enabled for this connector.
 	Triggers *bool `json:"triggers,omitempty"`
 
-	// Uid Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
+	// Uid Full team- or organization-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
 	Uid *string `json:"uid,omitempty"`
 }
 
@@ -9730,7 +9956,7 @@ type NamedSandbox struct {
 
 	// ExpiryNotificationLeadTime How long before a session expires, in milliseconds, the `sandbox.session.expiring` webhook is sent. It affects only that webhook. When a deadline is closer than the lead time, the webhook is sent right away: at the start of a session whose timeout is shorter, and after each extension that leaves the deadline within the lead time.
 	//
-	// Example: 120000
+	// Example: 60000
 	ExpiryNotificationLeadTime float32 `json:"expiryNotificationLeadTime"`
 
 	// FailoverRegions The regions the sandbox fails over to. Empty when it does not fail over.
@@ -12226,6 +12452,9 @@ type UserEventPayload31 struct {
 	Budget *struct {
 		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
 
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
+
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                               `json:"limitAmount"`
 		RefreshPeriod UserEventPayload31BudgetRefreshPeriod `json:"refreshPeriod"`
@@ -12266,6 +12495,9 @@ type UserEventPayload33 struct {
 	Budget *struct {
 		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
 
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
+
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                               `json:"limitAmount"`
 		RefreshPeriod UserEventPayload33BudgetRefreshPeriod `json:"refreshPeriod"`
@@ -12276,6 +12508,9 @@ type UserEventPayload33 struct {
 	// PreviousBudget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
 	PreviousBudget *struct {
 		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
 
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                                       `json:"limitAmount"`
@@ -12316,9 +12551,13 @@ type UserEventPayload34Change string
 
 // UserEventPayload35 The payload of the event, if requested.
 type UserEventPayload35 struct {
-	// Budget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
+	// Budget `api-key` defaults may cover only some key spend attributions.
 	Budget *struct {
-		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+		AlertThresholds *[]float32                           `json:"alertThresholds,omitempty"`
+		AppliesTo       *[]UserEventPayload35BudgetAppliesTo `json:"appliesTo,omitempty"`
+
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
 
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                               `json:"limitAmount"`
@@ -12327,9 +12566,13 @@ type UserEventPayload35 struct {
 	Change        UserEventPayload35Change `json:"change"`
 	Justification *string                  `json:"justification,omitempty"`
 
-	// PreviousBudget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
+	// PreviousBudget `api-key` defaults may cover only some key spend attributions.
 	PreviousBudget *struct {
-		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+		AlertThresholds *[]float32                                   `json:"alertThresholds,omitempty"`
+		AppliesTo       *[]UserEventPayload35PreviousBudgetAppliesTo `json:"appliesTo,omitempty"`
+
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
 
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                                       `json:"limitAmount"`
@@ -12338,11 +12581,17 @@ type UserEventPayload35 struct {
 	ScopeType UserEventPayload35ScopeType `json:"scopeType"`
 }
 
+// UserEventPayload35BudgetAppliesTo defines model for UserEvent.Payload.35.Budget.AppliesTo.
+type UserEventPayload35BudgetAppliesTo string
+
 // UserEventPayload35BudgetRefreshPeriod defines model for UserEvent.Payload.35.Budget.RefreshPeriod.
 type UserEventPayload35BudgetRefreshPeriod string
 
 // UserEventPayload35Change defines model for UserEvent.Payload.35.Change.
 type UserEventPayload35Change string
+
+// UserEventPayload35PreviousBudgetAppliesTo defines model for UserEvent.Payload.35.PreviousBudget.AppliesTo.
+type UserEventPayload35PreviousBudgetAppliesTo string
 
 // UserEventPayload35PreviousBudgetRefreshPeriod defines model for UserEvent.Payload.35.PreviousBudget.RefreshPeriod.
 type UserEventPayload35PreviousBudgetRefreshPeriod string
@@ -12360,6 +12609,9 @@ type UserEventPayload36 struct {
 	Budget *struct {
 		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
 
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
+
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                               `json:"limitAmount"`
 		RefreshPeriod UserEventPayload36BudgetRefreshPeriod `json:"refreshPeriod"`
@@ -12370,6 +12622,9 @@ type UserEventPayload36 struct {
 	// PreviousBudget Spend budget on an AI Gateway API key, scope, or budget default, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.
 	PreviousBudget *struct {
 		AlertThresholds *[]float32 `json:"alertThresholds,omitempty"`
+
+		// ExpiresAt When the budget lapses to the scope's default, in ms since the epoch.
+		ExpiresAt *float32 `json:"expiresAt,omitempty"`
 
 		// LimitAmount Spend cap, in dollars.
 		LimitAmount   float32                                       `json:"limitAmount"`
@@ -18756,150 +19011,165 @@ type UserEventPayload391 struct {
 
 // UserEventPayload392 The payload of the event, if requested.
 type UserEventPayload392 struct {
-	ActorName    *string                      `json:"actorName,omitempty"`
-	ActorType    UserEventPayload392ActorType `json:"actorType"`
-	ConnectionId string                       `json:"connectionId"`
-	KeyId        string                       `json:"keyId"`
+	ActorName               *string                       `json:"actorName,omitempty"`
+	ActorType               *UserEventPayload392ActorType `json:"actorType,omitempty"`
+	CertificateFingerprints *[]string                     `json:"certificateFingerprints,omitempty"`
+	ConnectionId            *string                       `json:"connectionId,omitempty"`
+	To                      *UserEventPayload392To        `json:"to,omitempty"`
 }
 
 // UserEventPayload392ActorType defines model for UserEvent.Payload.392.ActorType.
 type UserEventPayload392ActorType string
 
+// UserEventPayload392To defines model for UserEvent.Payload.392.To.
+type UserEventPayload392To string
+
 // UserEventPayload393 The payload of the event, if requested.
 type UserEventPayload393 struct {
-	ActorName      *string                           `json:"actorName,omitempty"`
-	ActorType      UserEventPayload393ActorType      `json:"actorType"`
-	ConnectionId   string                            `json:"connectionId"`
-	KeyId          string                            `json:"keyId"`
-	SigningEnabled UserEventPayload393SigningEnabled `json:"signingEnabled"`
-	SigningKeyId   *string                           `json:"signingKeyId"`
+	ActorName    *string                       `json:"actorName,omitempty"`
+	ActorType    *UserEventPayload393ActorType `json:"actorType,omitempty"`
+	ConnectionId *string                       `json:"connectionId,omitempty"`
+	KeyId        string                        `json:"keyId"`
 }
 
 // UserEventPayload393ActorType defines model for UserEvent.Payload.393.ActorType.
 type UserEventPayload393ActorType string
 
-// UserEventPayload393SigningEnabled defines model for UserEvent.Payload.393.SigningEnabled.
-type UserEventPayload393SigningEnabled bool
-
 // UserEventPayload394 The payload of the event, if requested.
 type UserEventPayload394 struct {
+	ActorName      *string                           `json:"actorName,omitempty"`
+	ActorType      *UserEventPayload394ActorType     `json:"actorType,omitempty"`
+	ConnectionId   *string                           `json:"connectionId,omitempty"`
+	KeyId          string                            `json:"keyId"`
+	SigningEnabled UserEventPayload394SigningEnabled `json:"signingEnabled"`
+	SigningKeyId   *string                           `json:"signingKeyId"`
+}
+
+// UserEventPayload394ActorType defines model for UserEvent.Payload.394.ActorType.
+type UserEventPayload394ActorType string
+
+// UserEventPayload394SigningEnabled defines model for UserEvent.Payload.394.SigningEnabled.
+type UserEventPayload394SigningEnabled bool
+
+// UserEventPayload395 The payload of the event, if requested.
+type UserEventPayload395 struct {
+	ProjectId string `json:"projectId"`
+	SandboxId string `json:"sandboxId"`
+}
+
+// UserEventPayload396 The payload of the event, if requested.
+type UserEventPayload396 struct {
 	Alias       string  `json:"alias"`
 	ProjectId   *string `json:"projectId,omitempty"`
 	SandboxId   *string `json:"sandboxId,omitempty"`
 	SandboxName string  `json:"sandboxName"`
 }
 
-// UserEventPayload395 The payload of the event, if requested.
-type UserEventPayload395 struct {
+// UserEventPayload397 The payload of the event, if requested.
+type UserEventPayload397 struct {
 	ExpiryNotificationLeadTime float32 `json:"expiryNotificationLeadTime"`
 	ProjectId                  string  `json:"projectId"`
 	ProjectName                string  `json:"projectName"`
 	SandboxName                string  `json:"sandboxName"`
 }
 
-// UserEventPayload396 The payload of the event, if requested.
-type UserEventPayload396 struct {
-	ProjectId string `json:"projectId"`
-	SandboxId string `json:"sandboxId"`
-}
-
-// UserEventPayload397 The payload of the event, if requested.
-type UserEventPayload397 struct {
+// UserEventPayload398 The payload of the event, if requested.
+type UserEventPayload398 struct {
 	ProjectId     string   `json:"projectId"`
 	ProjectName   string   `json:"projectName"`
 	SnapshotId    string   `json:"snapshotId"`
 	TargetRegions []string `json:"targetRegions"`
 }
 
-// UserEventPayload398 The payload of the event, if requested.
-type UserEventPayload398 struct {
+// UserEventPayload399 The payload of the event, if requested.
+type UserEventPayload399 struct {
 	Email     string `json:"email"`
 	Name      string `json:"name"`
 	ProjectId string `json:"projectId"`
 	SandboxId string `json:"sandboxId"`
 }
 
-// UserEventPayload399 The payload of the event, if requested.
-type UserEventPayload399 struct {
+// UserEventPayload400 The payload of the event, if requested.
+type UserEventPayload400 struct {
 	Instances float32 `json:"instances"`
 	Url       string  `json:"url"`
 }
 
-// UserEventPayload400 The payload of the event, if requested.
-type UserEventPayload400 struct {
-	Email    string                      `json:"email"`
-	Verified UserEventPayload400Verified `json:"verified"`
-}
-
-// UserEventPayload400Verified defines model for UserEvent.Payload.400.Verified.
-type UserEventPayload400Verified bool
-
 // UserEventPayload401 The payload of the event, if requested.
 type UserEventPayload401 struct {
-	// ActorId Okta user id.
-	ActorId   string                       `json:"actorId"`
-	ActorName *string                      `json:"actorName,omitempty"`
-	ActorType UserEventPayload401ActorType `json:"actorType"`
-	Email     string                       `json:"email"`
-	Verified  UserEventPayload401Verified  `json:"verified"`
+	Email    string                      `json:"email"`
+	Verified UserEventPayload401Verified `json:"verified"`
 }
-
-// UserEventPayload401ActorType defines model for UserEvent.Payload.401.ActorType.
-type UserEventPayload401ActorType string
 
 // UserEventPayload401Verified defines model for UserEvent.Payload.401.Verified.
 type UserEventPayload401Verified bool
 
 // UserEventPayload402 The payload of the event, if requested.
 type UserEventPayload402 struct {
-	Email string `json:"email"`
+	// ActorId Okta user id.
+	ActorId   string                       `json:"actorId"`
+	ActorName *string                      `json:"actorName,omitempty"`
+	ActorType UserEventPayload402ActorType `json:"actorType"`
+	Email     string                       `json:"email"`
+	Verified  UserEventPayload402Verified  `json:"verified"`
 }
+
+// UserEventPayload402ActorType defines model for UserEvent.Payload.402.ActorType.
+type UserEventPayload402ActorType string
+
+// UserEventPayload402Verified defines model for UserEvent.Payload.402.Verified.
+type UserEventPayload402Verified bool
 
 // UserEventPayload403 The payload of the event, if requested.
 type UserEventPayload403 struct {
-	Name UserEvent_Payload_403_Name `json:"name"`
-	Uid  string                     `json:"uid"`
-}
-
-// UserEventPayload403Name0 defines model for UserEvent.Payload.403.Name.0.
-type UserEventPayload403Name0 = string
-
-// UserEventPayload403Name1 defines model for UserEvent.Payload.403.Name.1.
-type UserEventPayload403Name1 struct {
-	Name string `json:"name"`
-}
-
-// UserEvent_Payload_403_Name defines model for UserEvent.Payload.403.Name.
-type UserEvent_Payload_403_Name struct {
-	union json.RawMessage
+	Email string `json:"email"`
 }
 
 // UserEventPayload404 The payload of the event, if requested.
 type UserEventPayload404 struct {
+	Name UserEvent_Payload_404_Name `json:"name"`
+	Uid  string                     `json:"uid"`
+}
+
+// UserEventPayload404Name0 defines model for UserEvent.Payload.404.Name.0.
+type UserEventPayload404Name0 = string
+
+// UserEventPayload404Name1 defines model for UserEvent.Payload.404.Name.1.
+type UserEventPayload404Name1 struct {
+	Name string `json:"name"`
+}
+
+// UserEvent_Payload_404_Name defines model for UserEvent.Payload.404.Name.
+type UserEvent_Payload_404_Name struct {
+	union json.RawMessage
+}
+
+// UserEventPayload405 The payload of the event, if requested.
+type UserEventPayload405 struct {
 	NewName string  `json:"newName"`
 	OldName string  `json:"oldName"`
 	Uid     *string `json:"uid,omitempty"`
 }
 
-// UserEventPayload405 The payload of the event, if requested.
-type UserEventPayload405 struct {
-	Enabled        UserEventPayload405Enabled `json:"enabled"`
+// UserEventPayload406 The payload of the event, if requested.
+type UserEventPayload406 struct {
+	Enabled        UserEventPayload406Enabled `json:"enabled"`
 	FirstEnabledAt *float32                   `json:"firstEnabledAt,omitempty"`
 	ProjectId      *string                    `json:"projectId,omitempty"`
 	ProjectName    *string                    `json:"projectName,omitempty"`
 	UpdatedAt      float32                    `json:"updatedAt"`
 }
 
-// UserEventPayload405Enabled defines model for UserEvent.Payload.405.Enabled.
-type UserEventPayload405Enabled bool
-
-// UserEventPayload406 The payload of the event, if requested.
-type UserEventPayload406 struct {
-	Bio string `json:"bio"`
-}
+// UserEventPayload406Enabled defines model for UserEvent.Payload.406.Enabled.
+type UserEventPayload406Enabled bool
 
 // UserEventPayload407 The payload of the event, if requested.
 type UserEventPayload407 struct {
+	Bio string `json:"bio"`
+}
+
+// UserEventPayload408 The payload of the event, if requested.
+type UserEventPayload408 struct {
 	Max          float32 `json:"max"`
 	Min          float32 `json:"min"`
 	ScalingRules map[string]struct {
@@ -18909,12 +19179,12 @@ type UserEventPayload407 struct {
 	Url string `json:"url"`
 }
 
-// UserEventPayload408 The payload of the event, if requested.
-type UserEventPayload408 struct {
+// UserEventPayload409 The payload of the event, if requested.
+type UserEventPayload409 struct {
 	Env     *string `json:"env,omitempty"`
 	Factors *[]struct {
-		Legacy   *UserEventPayload408FactorsLegacy `json:"legacy,omitempty"`
-		Origin   UserEventPayload408FactorsOrigin  `json:"origin"`
+		Legacy   *UserEventPayload409FactorsLegacy `json:"legacy,omitempty"`
+		Origin   UserEventPayload409FactorsOrigin  `json:"origin"`
 		SsoType  *string                           `json:"ssoType,omitempty"`
 		TeamId   *string                           `json:"teamId,omitempty"`
 		Username *string                           `json:"username,omitempty"`
@@ -18941,48 +19211,48 @@ type UserEventPayload408 struct {
 	SsoType      *string                          `json:"ssoType,omitempty"`
 	UserAgent    *string                          `json:"userAgent,omitempty"`
 	Username     *string                          `json:"username,omitempty"`
-	ViaApple     *UserEventPayload408ViaApple     `json:"viaApple,omitempty"`
-	ViaBitbucket *UserEventPayload408ViaBitbucket `json:"viaBitbucket,omitempty"`
-	ViaGithub    *UserEventPayload408ViaGithub    `json:"viaGithub,omitempty"`
-	ViaGitlab    *UserEventPayload408ViaGitlab    `json:"viaGitlab,omitempty"`
-	ViaGoogle    *UserEventPayload408ViaGoogle    `json:"viaGoogle,omitempty"`
-	ViaOTP       *UserEventPayload408ViaOTP       `json:"viaOTP,omitempty"`
-	ViaPasskey   *UserEventPayload408ViaPasskey   `json:"viaPasskey,omitempty"`
-	ViaSamlSso   *UserEventPayload408ViaSamlSso   `json:"viaSamlSso,omitempty"`
+	ViaApple     *UserEventPayload409ViaApple     `json:"viaApple,omitempty"`
+	ViaBitbucket *UserEventPayload409ViaBitbucket `json:"viaBitbucket,omitempty"`
+	ViaGithub    *UserEventPayload409ViaGithub    `json:"viaGithub,omitempty"`
+	ViaGitlab    *UserEventPayload409ViaGitlab    `json:"viaGitlab,omitempty"`
+	ViaGoogle    *UserEventPayload409ViaGoogle    `json:"viaGoogle,omitempty"`
+	ViaOTP       *UserEventPayload409ViaOTP       `json:"viaOTP,omitempty"`
+	ViaPasskey   *UserEventPayload409ViaPasskey   `json:"viaPasskey,omitempty"`
+	ViaSamlSso   *UserEventPayload409ViaSamlSso   `json:"viaSamlSso,omitempty"`
 }
 
-// UserEventPayload408FactorsLegacy defines model for UserEvent.Payload.408.Factors.Legacy.
-type UserEventPayload408FactorsLegacy bool
+// UserEventPayload409FactorsLegacy defines model for UserEvent.Payload.409.Factors.Legacy.
+type UserEventPayload409FactorsLegacy bool
 
-// UserEventPayload408FactorsOrigin defines model for UserEvent.Payload.408.Factors.Origin.
-type UserEventPayload408FactorsOrigin string
+// UserEventPayload409FactorsOrigin defines model for UserEvent.Payload.409.Factors.Origin.
+type UserEventPayload409FactorsOrigin string
 
-// UserEventPayload408ViaApple defines model for UserEvent.Payload.408.ViaApple.
-type UserEventPayload408ViaApple bool
+// UserEventPayload409ViaApple defines model for UserEvent.Payload.409.ViaApple.
+type UserEventPayload409ViaApple bool
 
-// UserEventPayload408ViaBitbucket defines model for UserEvent.Payload.408.ViaBitbucket.
-type UserEventPayload408ViaBitbucket bool
+// UserEventPayload409ViaBitbucket defines model for UserEvent.Payload.409.ViaBitbucket.
+type UserEventPayload409ViaBitbucket bool
 
-// UserEventPayload408ViaGithub defines model for UserEvent.Payload.408.ViaGithub.
-type UserEventPayload408ViaGithub bool
+// UserEventPayload409ViaGithub defines model for UserEvent.Payload.409.ViaGithub.
+type UserEventPayload409ViaGithub bool
 
-// UserEventPayload408ViaGitlab defines model for UserEvent.Payload.408.ViaGitlab.
-type UserEventPayload408ViaGitlab bool
+// UserEventPayload409ViaGitlab defines model for UserEvent.Payload.409.ViaGitlab.
+type UserEventPayload409ViaGitlab bool
 
-// UserEventPayload408ViaGoogle defines model for UserEvent.Payload.408.ViaGoogle.
-type UserEventPayload408ViaGoogle bool
+// UserEventPayload409ViaGoogle defines model for UserEvent.Payload.409.ViaGoogle.
+type UserEventPayload409ViaGoogle bool
 
-// UserEventPayload408ViaOTP defines model for UserEvent.Payload.408.ViaOTP.
-type UserEventPayload408ViaOTP bool
+// UserEventPayload409ViaOTP defines model for UserEvent.Payload.409.ViaOTP.
+type UserEventPayload409ViaOTP bool
 
-// UserEventPayload408ViaPasskey defines model for UserEvent.Payload.408.ViaPasskey.
-type UserEventPayload408ViaPasskey bool
+// UserEventPayload409ViaPasskey defines model for UserEvent.Payload.409.ViaPasskey.
+type UserEventPayload409ViaPasskey bool
 
-// UserEventPayload408ViaSamlSso defines model for UserEvent.Payload.408.ViaSamlSso.
-type UserEventPayload408ViaSamlSso bool
+// UserEventPayload409ViaSamlSso defines model for UserEvent.Payload.409.ViaSamlSso.
+type UserEventPayload409ViaSamlSso bool
 
-// UserEventPayload409 The payload of the event, if requested.
-type UserEventPayload409 struct {
+// UserEventPayload410 The payload of the event, if requested.
+type UserEventPayload410 struct {
 	BitbucketEmail  string `json:"bitbucketEmail"`
 	BitbucketLogin  string `json:"bitbucketLogin"`
 	BitbucketName   string `json:"bitbucketName"`
@@ -18991,16 +19261,16 @@ type UserEventPayload409 struct {
 	ZeitAccountType string `json:"zeitAccountType"`
 }
 
-// UserEventPayload410 The payload of the event, if requested.
-type UserEventPayload410 struct {
+// UserEventPayload411 The payload of the event, if requested.
+type UserEventPayload411 struct {
 	Email           string `json:"email"`
 	GithubLogin     string `json:"githubLogin"`
 	ZeitAccount     string `json:"zeitAccount"`
 	ZeitAccountType string `json:"zeitAccountType"`
 }
 
-// UserEventPayload411 The payload of the event, if requested.
-type UserEventPayload411 struct {
+// UserEventPayload412 The payload of the event, if requested.
+type UserEventPayload412 struct {
 	Email           string `json:"email"`
 	GitlabEmail     string `json:"gitlabEmail"`
 	GitlabLogin     string `json:"gitlabLogin"`
@@ -19009,8 +19279,8 @@ type UserEventPayload411 struct {
 	ZeitAccountType string `json:"zeitAccountType"`
 }
 
-// UserEventPayload412 The payload of the event, if requested.
-type UserEventPayload412 struct {
+// UserEventPayload413 The payload of the event, if requested.
+type UserEventPayload413 struct {
 	AnalyticsId *string `json:"analyticsId,omitempty"`
 	Previous    struct {
 		SampleRatePercent   *float32 `json:"sampleRatePercent"`
@@ -19022,8 +19292,8 @@ type UserEventPayload412 struct {
 	SpendLimitInDollars *float32 `json:"spendLimitInDollars"`
 }
 
-// UserEventPayload413 The payload of the event, if requested.
-type UserEventPayload413 struct {
+// UserEventPayload414 The payload of the event, if requested.
+type UserEventPayload414 struct {
 	Budget struct {
 		// BudgetItem Represents a budget for tracking and notifying teams on their spending.
 		BudgetItem struct {
@@ -19037,22 +19307,22 @@ type UserEventPayload413 struct {
 			Id string `json:"id"`
 
 			// IsActive Is the budget currently active for a customer
-			IsActive UserEventPayload413BudgetBudgetItemIsActive `json:"isActive"`
+			IsActive UserEventPayload414BudgetBudgetItemIsActive `json:"isActive"`
 
 			// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
 			NotifiedAt []float32 `json:"notifiedAt"`
 
 			// PauseProjects Should all projects be paused if budget is exceeded
-			PauseProjects *UserEventPayload413BudgetBudgetItemPauseProjects `json:"pauseProjects,omitempty"`
+			PauseProjects *UserEventPayload414BudgetBudgetItemPauseProjects `json:"pauseProjects,omitempty"`
 
 			// PreviousSpend Array of the last 3 months of spend data
 			PreviousSpend []float32 `json:"previousSpend"`
 
 			// PricingPlan The acive pricing plan the team is billed with
-			PricingPlan *UserEventPayload413BudgetBudgetItemPricingPlan `json:"pricingPlan,omitempty"`
+			PricingPlan *UserEventPayload414BudgetBudgetItemPricingPlan `json:"pricingPlan,omitempty"`
 
 			// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-			Scope *UserEventPayload413BudgetBudgetItemScope `json:"scope,omitempty"`
+			Scope *UserEventPayload414BudgetBudgetItemScope `json:"scope,omitempty"`
 
 			// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
 			ScopeId *string `json:"scopeId,omitempty"`
@@ -19061,7 +19331,7 @@ type UserEventPayload413 struct {
 			TeamId string `json:"teamId"`
 
 			// Type The budget type
-			Type UserEventPayload413BudgetBudgetItemType `json:"type"`
+			Type UserEventPayload414BudgetBudgetItemType `json:"type"`
 
 			// UpdatedAt Date time when budget is updated last
 			UpdatedAt *float32 `json:"updatedAt,omitempty"`
@@ -19070,7 +19340,7 @@ type UserEventPayload413 struct {
 			WebhookId *string `json:"webhookId,omitempty"`
 
 			// WebhookNotified Keep track if the webhook has been called for the month
-			WebhookNotified *UserEventPayload413BudgetBudgetItemWebhookNotified `json:"webhookNotified,omitempty"`
+			WebhookNotified *UserEventPayload414BudgetBudgetItemWebhookNotified `json:"webhookNotified,omitempty"`
 		} `json:"budgetItem"`
 	} `json:"budget"`
 
@@ -19079,100 +19349,23 @@ type UserEventPayload413 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 }
 
-// UserEventPayload413BudgetBudgetItemIsActive Is the budget currently active for a customer
-type UserEventPayload413BudgetBudgetItemIsActive bool
+// UserEventPayload414BudgetBudgetItemIsActive Is the budget currently active for a customer
+type UserEventPayload414BudgetBudgetItemIsActive bool
 
-// UserEventPayload413BudgetBudgetItemPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload413BudgetBudgetItemPauseProjects bool
+// UserEventPayload414BudgetBudgetItemPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload414BudgetBudgetItemPauseProjects bool
 
-// UserEventPayload413BudgetBudgetItemPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload413BudgetBudgetItemPricingPlan string
+// UserEventPayload414BudgetBudgetItemPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload414BudgetBudgetItemPricingPlan string
 
-// UserEventPayload413BudgetBudgetItemScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload413BudgetBudgetItemScope string
+// UserEventPayload414BudgetBudgetItemScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload414BudgetBudgetItemScope string
 
-// UserEventPayload413BudgetBudgetItemType The budget type
-type UserEventPayload413BudgetBudgetItemType string
+// UserEventPayload414BudgetBudgetItemType The budget type
+type UserEventPayload414BudgetBudgetItemType string
 
-// UserEventPayload413BudgetBudgetItemWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload413BudgetBudgetItemWebhookNotified bool
-
-// UserEventPayload414 The payload of the event, if requested.
-type UserEventPayload414 struct {
-	// Budget Represents a budget for tracking and notifying teams on their spending.
-	Budget struct {
-		// CreatedAt Date time when budget is created
-		CreatedAt float32 `json:"createdAt"`
-
-		// FixedBudget Budget amount (USD / dollars)
-		FixedBudget float32 `json:"fixedBudget"`
-
-		// Id Sort key that needs to be unique per teamId
-		Id string `json:"id"`
-
-		// IsActive Is the budget currently active for a customer
-		IsActive UserEventPayload414BudgetIsActive `json:"isActive"`
-
-		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
-		NotifiedAt []float32 `json:"notifiedAt"`
-
-		// PauseProjects Should all projects be paused if budget is exceeded
-		PauseProjects *UserEventPayload414BudgetPauseProjects `json:"pauseProjects,omitempty"`
-
-		// PreviousSpend Array of the last 3 months of spend data
-		PreviousSpend []float32 `json:"previousSpend"`
-
-		// PricingPlan The acive pricing plan the team is billed with
-		PricingPlan *UserEventPayload414BudgetPricingPlan `json:"pricingPlan,omitempty"`
-
-		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-		Scope *UserEventPayload414BudgetScope `json:"scope,omitempty"`
-
-		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
-		ScopeId *string `json:"scopeId,omitempty"`
-
-		// TeamId Partition key
-		TeamId string `json:"teamId"`
-
-		// Type The budget type
-		Type UserEventPayload414BudgetType `json:"type"`
-
-		// UpdatedAt Date time when budget is updated last
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-		// WebhookId Webhook id that corresponds to a webhook in Cosmos webhook collection
-		WebhookId *string `json:"webhookId,omitempty"`
-
-		// WebhookNotified Keep track if the webhook has been called for the month
-		WebhookNotified *UserEventPayload414BudgetWebhookNotified `json:"webhookNotified,omitempty"`
-	} `json:"budget"`
-
-	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
-	ProjectId   *string `json:"projectId,omitempty"`
-	ProjectName *string `json:"projectName,omitempty"`
-
-	// ScopeName Stored when activity clients can't resolve the name, as for products.
-	ScopeName  *string `json:"scopeName,omitempty"`
-	WebhookUrl *string `json:"webhookUrl,omitempty"`
-}
-
-// UserEventPayload414BudgetIsActive Is the budget currently active for a customer
-type UserEventPayload414BudgetIsActive bool
-
-// UserEventPayload414BudgetPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload414BudgetPauseProjects bool
-
-// UserEventPayload414BudgetPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload414BudgetPricingPlan string
-
-// UserEventPayload414BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload414BudgetScope string
-
-// UserEventPayload414BudgetType The budget type
-type UserEventPayload414BudgetType string
-
-// UserEventPayload414BudgetWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload414BudgetWebhookNotified bool
+// UserEventPayload414BudgetBudgetItemWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload414BudgetBudgetItemWebhookNotified bool
 
 // UserEventPayload415 The payload of the event, if requested.
 type UserEventPayload415 struct {
@@ -19229,7 +19422,8 @@ type UserEventPayload415 struct {
 	ProjectName *string `json:"projectName,omitempty"`
 
 	// ScopeName Stored when activity clients can't resolve the name, as for products.
-	ScopeName *string `json:"scopeName,omitempty"`
+	ScopeName  *string `json:"scopeName,omitempty"`
+	WebhookUrl *string `json:"webhookUrl,omitempty"`
 }
 
 // UserEventPayload415BudgetIsActive Is the budget currently active for a customer
@@ -19300,64 +19494,12 @@ type UserEventPayload416 struct {
 		WebhookNotified *UserEventPayload416BudgetWebhookNotified `json:"webhookNotified,omitempty"`
 	} `json:"budget"`
 
-	// PrevBudget Represents a budget for tracking and notifying teams on their spending.
-	PrevBudget *struct {
-		// CreatedAt Date time when budget is created
-		CreatedAt float32 `json:"createdAt"`
-
-		// FixedBudget Budget amount (USD / dollars)
-		FixedBudget float32 `json:"fixedBudget"`
-
-		// Id Sort key that needs to be unique per teamId
-		Id string `json:"id"`
-
-		// IsActive Is the budget currently active for a customer
-		IsActive UserEventPayload416PrevBudgetIsActive `json:"isActive"`
-
-		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
-		NotifiedAt []float32 `json:"notifiedAt"`
-
-		// PauseProjects Should all projects be paused if budget is exceeded
-		PauseProjects *UserEventPayload416PrevBudgetPauseProjects `json:"pauseProjects,omitempty"`
-
-		// PreviousSpend Array of the last 3 months of spend data
-		PreviousSpend []float32 `json:"previousSpend"`
-
-		// PricingPlan The acive pricing plan the team is billed with
-		PricingPlan *UserEventPayload416PrevBudgetPricingPlan `json:"pricingPlan,omitempty"`
-
-		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-		Scope *UserEventPayload416PrevBudgetScope `json:"scope,omitempty"`
-
-		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
-		ScopeId *string `json:"scopeId,omitempty"`
-
-		// TeamId Partition key
-		TeamId string `json:"teamId"`
-
-		// Type The budget type
-		Type UserEventPayload416PrevBudgetType `json:"type"`
-
-		// UpdatedAt Date time when budget is updated last
-		UpdatedAt *float32 `json:"updatedAt,omitempty"`
-
-		// WebhookId Webhook id that corresponds to a webhook in Cosmos webhook collection
-		WebhookId *string `json:"webhookId,omitempty"`
-
-		// WebhookNotified Keep track if the webhook has been called for the month
-		WebhookNotified *UserEventPayload416PrevBudgetWebhookNotified `json:"webhookNotified,omitempty"`
-	} `json:"prevBudget,omitempty"`
-	PrevWebhookUrl *string `json:"prevWebhookUrl,omitempty"`
-
 	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
-	ProjectId *string `json:"projectId,omitempty"`
-
-	// ProjectName Injected at read time from `payload.projectId`.
+	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
 
 	// ScopeName Stored when activity clients can't resolve the name, as for products.
-	ScopeName  *string `json:"scopeName,omitempty"`
-	WebhookUrl *string `json:"webhookUrl,omitempty"`
+	ScopeName *string `json:"scopeName,omitempty"`
 }
 
 // UserEventPayload416BudgetIsActive Is the budget currently active for a customer
@@ -19378,56 +19520,170 @@ type UserEventPayload416BudgetType string
 // UserEventPayload416BudgetWebhookNotified Keep track if the webhook has been called for the month
 type UserEventPayload416BudgetWebhookNotified bool
 
-// UserEventPayload416PrevBudgetIsActive Is the budget currently active for a customer
-type UserEventPayload416PrevBudgetIsActive bool
-
-// UserEventPayload416PrevBudgetPauseProjects Should all projects be paused if budget is exceeded
-type UserEventPayload416PrevBudgetPauseProjects bool
-
-// UserEventPayload416PrevBudgetPricingPlan The acive pricing plan the team is billed with
-type UserEventPayload416PrevBudgetPricingPlan string
-
-// UserEventPayload416PrevBudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
-type UserEventPayload416PrevBudgetScope string
-
-// UserEventPayload416PrevBudgetType The budget type
-type UserEventPayload416PrevBudgetType string
-
-// UserEventPayload416PrevBudgetWebhookNotified Keep track if the webhook has been called for the month
-type UserEventPayload416PrevBudgetWebhookNotified bool
-
 // UserEventPayload417 The payload of the event, if requested.
 type UserEventPayload417 struct {
+	// Budget Represents a budget for tracking and notifying teams on their spending.
+	Budget struct {
+		// CreatedAt Date time when budget is created
+		CreatedAt float32 `json:"createdAt"`
+
+		// FixedBudget Budget amount (USD / dollars)
+		FixedBudget float32 `json:"fixedBudget"`
+
+		// Id Sort key that needs to be unique per teamId
+		Id string `json:"id"`
+
+		// IsActive Is the budget currently active for a customer
+		IsActive UserEventPayload417BudgetIsActive `json:"isActive"`
+
+		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
+		NotifiedAt []float32 `json:"notifiedAt"`
+
+		// PauseProjects Should all projects be paused if budget is exceeded
+		PauseProjects *UserEventPayload417BudgetPauseProjects `json:"pauseProjects,omitempty"`
+
+		// PreviousSpend Array of the last 3 months of spend data
+		PreviousSpend []float32 `json:"previousSpend"`
+
+		// PricingPlan The acive pricing plan the team is billed with
+		PricingPlan *UserEventPayload417BudgetPricingPlan `json:"pricingPlan,omitempty"`
+
+		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+		Scope *UserEventPayload417BudgetScope `json:"scope,omitempty"`
+
+		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
+		ScopeId *string `json:"scopeId,omitempty"`
+
+		// TeamId Partition key
+		TeamId string `json:"teamId"`
+
+		// Type The budget type
+		Type UserEventPayload417BudgetType `json:"type"`
+
+		// UpdatedAt Date time when budget is updated last
+		UpdatedAt *float32 `json:"updatedAt,omitempty"`
+
+		// WebhookId Webhook id that corresponds to a webhook in Cosmos webhook collection
+		WebhookId *string `json:"webhookId,omitempty"`
+
+		// WebhookNotified Keep track if the webhook has been called for the month
+		WebhookNotified *UserEventPayload417BudgetWebhookNotified `json:"webhookNotified,omitempty"`
+	} `json:"budget"`
+
+	// PrevBudget Represents a budget for tracking and notifying teams on their spending.
+	PrevBudget *struct {
+		// CreatedAt Date time when budget is created
+		CreatedAt float32 `json:"createdAt"`
+
+		// FixedBudget Budget amount (USD / dollars)
+		FixedBudget float32 `json:"fixedBudget"`
+
+		// Id Sort key that needs to be unique per teamId
+		Id string `json:"id"`
+
+		// IsActive Is the budget currently active for a customer
+		IsActive UserEventPayload417PrevBudgetIsActive `json:"isActive"`
+
+		// NotifiedAt Array of 50, 75, 100 to keep track of notifications sent out
+		NotifiedAt []float32 `json:"notifiedAt"`
+
+		// PauseProjects Should all projects be paused if budget is exceeded
+		PauseProjects *UserEventPayload417PrevBudgetPauseProjects `json:"pauseProjects,omitempty"`
+
+		// PreviousSpend Array of the last 3 months of spend data
+		PreviousSpend []float32 `json:"previousSpend"`
+
+		// PricingPlan The acive pricing plan the team is billed with
+		PricingPlan *UserEventPayload417PrevBudgetPricingPlan `json:"pricingPlan,omitempty"`
+
+		// Scope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+		Scope *UserEventPayload417PrevBudgetScope `json:"scope,omitempty"`
+
+		// ScopeId What the budget caps: team id for `team`, organization id for `organization`, project id for `project`, product id for `product`.
+		ScopeId *string `json:"scopeId,omitempty"`
+
+		// TeamId Partition key
+		TeamId string `json:"teamId"`
+
+		// Type The budget type
+		Type UserEventPayload417PrevBudgetType `json:"type"`
+
+		// UpdatedAt Date time when budget is updated last
+		UpdatedAt *float32 `json:"updatedAt,omitempty"`
+
+		// WebhookId Webhook id that corresponds to a webhook in Cosmos webhook collection
+		WebhookId *string `json:"webhookId,omitempty"`
+
+		// WebhookNotified Keep track if the webhook has been called for the month
+		WebhookNotified *UserEventPayload417PrevBudgetWebhookNotified `json:"webhookNotified,omitempty"`
+	} `json:"prevBudget,omitempty"`
+	PrevWebhookUrl *string `json:"prevWebhookUrl,omitempty"`
+
+	// ProjectId Stored for project budgets. Same value as `budget.scopeId`.
+	ProjectId *string `json:"projectId,omitempty"`
+
+	// ProjectName Injected at read time from `payload.projectId`.
+	ProjectName *string `json:"projectName,omitempty"`
+
+	// ScopeName Stored when activity clients can't resolve the name, as for products.
+	ScopeName  *string `json:"scopeName,omitempty"`
+	WebhookUrl *string `json:"webhookUrl,omitempty"`
+}
+
+// UserEventPayload417BudgetIsActive Is the budget currently active for a customer
+type UserEventPayload417BudgetIsActive bool
+
+// UserEventPayload417BudgetPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload417BudgetPauseProjects bool
+
+// UserEventPayload417BudgetPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload417BudgetPricingPlan string
+
+// UserEventPayload417BudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload417BudgetScope string
+
+// UserEventPayload417BudgetType The budget type
+type UserEventPayload417BudgetType string
+
+// UserEventPayload417BudgetWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload417BudgetWebhookNotified bool
+
+// UserEventPayload417PrevBudgetIsActive Is the budget currently active for a customer
+type UserEventPayload417PrevBudgetIsActive bool
+
+// UserEventPayload417PrevBudgetPauseProjects Should all projects be paused if budget is exceeded
+type UserEventPayload417PrevBudgetPauseProjects bool
+
+// UserEventPayload417PrevBudgetPricingPlan The acive pricing plan the team is billed with
+type UserEventPayload417PrevBudgetPricingPlan string
+
+// UserEventPayload417PrevBudgetScope Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).
+type UserEventPayload417PrevBudgetScope string
+
+// UserEventPayload417PrevBudgetType The budget type
+type UserEventPayload417PrevBudgetType string
+
+// UserEventPayload417PrevBudgetWebhookNotified Keep track if the webhook has been called for the month
+type UserEventPayload417PrevBudgetWebhookNotified bool
+
+// UserEventPayload418 The payload of the event, if requested.
+type UserEventPayload418 struct {
 	ProjectId   *string `json:"projectId,omitempty"`
 	ProjectName *string `json:"projectName,omitempty"`
 	WebhookUrl  *string `json:"webhookUrl,omitempty"`
 }
 
-// UserEventPayload418 The payload of the event, if requested.
-type UserEventPayload418 struct {
-	StoreType UserEventPayload418StoreType `json:"storeType"`
-}
-
-// UserEventPayload418StoreType defines model for UserEvent.Payload.418.StoreType.
-type UserEventPayload418StoreType string
-
 // UserEventPayload419 The payload of the event, if requested.
 type UserEventPayload419 struct {
-	Store struct {
-		Id   string                       `json:"id"`
-		Name *string                      `json:"name,omitempty"`
-		Type UserEventPayload419StoreType `json:"type"`
-	} `json:"store"`
+	StoreType UserEventPayload419StoreType `json:"storeType"`
 }
 
-// UserEventPayload419StoreType defines model for UserEvent.Payload.419.Store.Type.
+// UserEventPayload419StoreType defines model for UserEvent.Payload.419.StoreType.
 type UserEventPayload419StoreType string
 
 // UserEventPayload420 The payload of the event, if requested.
 type UserEventPayload420 struct {
-	DestinationTeamId   string `json:"destinationTeamId"`
-	DestinationTeamName string `json:"destinationTeamName"`
-	Store               struct {
+	Store struct {
 		Id   string                       `json:"id"`
 		Name *string                      `json:"name,omitempty"`
 		Type UserEventPayload420StoreType `json:"type"`
@@ -19439,9 +19695,9 @@ type UserEventPayload420StoreType string
 
 // UserEventPayload421 The payload of the event, if requested.
 type UserEventPayload421 struct {
-	OriginTeamId   string `json:"originTeamId"`
-	OriginTeamName string `json:"originTeamName"`
-	Store          struct {
+	DestinationTeamId   string `json:"destinationTeamId"`
+	DestinationTeamName string `json:"destinationTeamName"`
+	Store               struct {
 		Id   string                       `json:"id"`
 		Name *string                      `json:"name,omitempty"`
 		Type UserEventPayload421StoreType `json:"type"`
@@ -19453,23 +19709,37 @@ type UserEventPayload421StoreType string
 
 // UserEventPayload422 The payload of the event, if requested.
 type UserEventPayload422 struct {
-	Access                *UserEventPayload422Access `json:"access,omitempty"`
+	OriginTeamId   string `json:"originTeamId"`
+	OriginTeamName string `json:"originTeamName"`
+	Store          struct {
+		Id   string                       `json:"id"`
+		Name *string                      `json:"name,omitempty"`
+		Type UserEventPayload422StoreType `json:"type"`
+	} `json:"store"`
+}
+
+// UserEventPayload422StoreType defines model for UserEvent.Payload.422.Store.Type.
+type UserEventPayload422StoreType string
+
+// UserEventPayload423 The payload of the event, if requested.
+type UserEventPayload423 struct {
+	Access                *UserEventPayload423Access `json:"access,omitempty"`
 	ComputeUnitsMax       *float32                   `json:"computeUnitsMax,omitempty"`
 	ComputeUnitsMin       *float32                   `json:"computeUnitsMin,omitempty"`
 	Id                    string                     `json:"id"`
 	Name                  *string                    `json:"name,omitempty"`
 	SuspendTimeoutSeconds *float32                   `json:"suspendTimeoutSeconds,omitempty"`
-	Type                  UserEventPayload422Type    `json:"type"`
+	Type                  UserEventPayload423Type    `json:"type"`
 }
 
-// UserEventPayload422Access defines model for UserEvent.Payload.422.Access.
-type UserEventPayload422Access string
+// UserEventPayload423Access defines model for UserEvent.Payload.423.Access.
+type UserEventPayload423Access string
 
-// UserEventPayload422Type defines model for UserEvent.Payload.422.Type.
-type UserEventPayload422Type string
+// UserEventPayload423Type defines model for UserEvent.Payload.423.Type.
+type UserEventPayload423Type string
 
-// UserEventPayload423 The payload of the event, if requested.
-type UserEventPayload423 struct {
+// UserEventPayload424 The payload of the event, if requested.
+type UserEventPayload424 struct {
 	OwnerId *string `json:"ownerId,omitempty"`
 	Store   struct {
 		Id   string `json:"id"`
@@ -19477,146 +19747,82 @@ type UserEventPayload423 struct {
 	} `json:"store"`
 }
 
-// UserEventPayload424 The payload of the event, if requested.
-type UserEventPayload424 struct {
-	Access                *UserEventPayload424Access `json:"access,omitempty"`
+// UserEventPayload425 The payload of the event, if requested.
+type UserEventPayload425 struct {
+	Access                *UserEventPayload425Access `json:"access,omitempty"`
 	ComputeUnitsMax       *float32                   `json:"computeUnitsMax,omitempty"`
 	ComputeUnitsMin       *float32                   `json:"computeUnitsMin,omitempty"`
 	Id                    string                     `json:"id"`
-	Locked                UserEventPayload424Locked  `json:"locked"`
+	Locked                UserEventPayload425Locked  `json:"locked"`
 	Name                  *string                    `json:"name,omitempty"`
 	SuspendTimeoutSeconds *float32                   `json:"suspendTimeoutSeconds,omitempty"`
-	Type                  UserEventPayload424Type    `json:"type"`
+	Type                  UserEventPayload425Type    `json:"type"`
 }
 
-// UserEventPayload424Access defines model for UserEvent.Payload.424.Access.
-type UserEventPayload424Access string
+// UserEventPayload425Access defines model for UserEvent.Payload.425.Access.
+type UserEventPayload425Access string
 
-// UserEventPayload424Locked defines model for UserEvent.Payload.424.Locked.
-type UserEventPayload424Locked bool
+// UserEventPayload425Locked defines model for UserEvent.Payload.425.Locked.
+type UserEventPayload425Locked bool
 
-// UserEventPayload424Type defines model for UserEvent.Payload.424.Type.
-type UserEventPayload424Type string
+// UserEventPayload425Type defines model for UserEvent.Payload.425.Type.
+type UserEventPayload425Type string
 
-// UserEventPayload425 The payload of the event, if requested.
-type UserEventPayload425 struct {
+// UserEventPayload426 The payload of the event, if requested.
+type UserEventPayload426 struct {
 	ActorId    *string                       `json:"actorId,omitempty"`
-	ActorType  *UserEventPayload425ActorType `json:"actorType,omitempty"`
+	ActorType  *UserEventPayload426ActorType `json:"actorType,omitempty"`
 	CaseNumber *string                       `json:"caseNumber,omitempty"`
 	Client     *string                       `json:"client,omitempty"`
 	Reason     *string                       `json:"reason,omitempty"`
 }
 
-// UserEventPayload425ActorType defines model for UserEvent.Payload.425.ActorType.
-type UserEventPayload425ActorType string
-
-// UserEventPayload426 The payload of the event, if requested.
-type UserEventPayload426 struct {
-	Slug string `json:"slug"`
-}
+// UserEventPayload426ActorType defines model for UserEvent.Payload.426.ActorType.
+type UserEventPayload426ActorType string
 
 // UserEventPayload427 The payload of the event, if requested.
 type UserEventPayload427 struct {
-	BillingConsent UserEventPayload427BillingConsent `json:"billingConsent"`
-	Source         string                            `json:"source"`
+	Slug string `json:"slug"`
 }
-
-// UserEventPayload427BillingConsent defines model for UserEvent.Payload.427.BillingConsent.
-type UserEventPayload427BillingConsent string
 
 // UserEventPayload428 The payload of the event, if requested.
 type UserEventPayload428 struct {
-	Action              UserEventPayload428Action            `json:"action"`
-	CodeReviewEnabled   UserEventPayload428CodeReviewEnabled `json:"codeReviewEnabled"`
-	CodeReviewSelection *struct {
-		Initial   UserEventPayload428CodeReviewSelectionInitial   `json:"initial"`
-		Submitted UserEventPayload428CodeReviewSelectionSubmitted `json:"submitted"`
-	} `json:"codeReviewSelection,omitempty"`
-	CumulativeBalance string                      `json:"cumulativeBalance"`
-	Endpoint          UserEventPayload428Endpoint `json:"endpoint"`
-	LedgerId          string                      `json:"ledgerId"`
-	Next              struct {
-		Enabled          UserEventPayload428NextEnabled `json:"enabled"`
-		MaximumOverdraft *string                        `json:"maximumOverdraft"`
-	} `json:"next"`
-	Previous struct {
-		Enabled          UserEventPayload428PreviousEnabled `json:"enabled"`
-		MaximumOverdraft *string                            `json:"maximumOverdraft"`
-	} `json:"previous"`
-	RemovedTopupIds       []string                                 `json:"removedTopupIds"`
-	Source                string                                   `json:"source"`
-	TopupCleanupCompleted UserEventPayload428TopupCleanupCompleted `json:"topupCleanupCompleted"`
+	BillingConsent UserEventPayload428BillingConsent `json:"billingConsent"`
+	Source         string                            `json:"source"`
 }
 
-// UserEventPayload428Action defines model for UserEvent.Payload.428.Action.
-type UserEventPayload428Action string
-
-// UserEventPayload428CodeReviewEnabled defines model for UserEvent.Payload.428.CodeReviewEnabled.
-type UserEventPayload428CodeReviewEnabled bool
-
-// UserEventPayload428CodeReviewSelectionInitial defines model for UserEvent.Payload.428.CodeReviewSelection.Initial.
-type UserEventPayload428CodeReviewSelectionInitial bool
-
-// UserEventPayload428CodeReviewSelectionSubmitted defines model for UserEvent.Payload.428.CodeReviewSelection.Submitted.
-type UserEventPayload428CodeReviewSelectionSubmitted bool
-
-// UserEventPayload428Endpoint defines model for UserEvent.Payload.428.Endpoint.
-type UserEventPayload428Endpoint string
-
-// UserEventPayload428NextEnabled defines model for UserEvent.Payload.428.Next.Enabled.
-type UserEventPayload428NextEnabled bool
-
-// UserEventPayload428PreviousEnabled defines model for UserEvent.Payload.428.Previous.Enabled.
-type UserEventPayload428PreviousEnabled bool
-
-// UserEventPayload428TopupCleanupCompleted defines model for UserEvent.Payload.428.TopupCleanupCompleted.
-type UserEventPayload428TopupCleanupCompleted bool
+// UserEventPayload428BillingConsent defines model for UserEvent.Payload.428.BillingConsent.
+type UserEventPayload428BillingConsent string
 
 // UserEventPayload429 The payload of the event, if requested.
 type UserEventPayload429 struct {
-	Action              *UserEventPayload429Action `json:"action,omitempty"`
+	Action              UserEventPayload429Action            `json:"action"`
+	CodeReviewEnabled   UserEventPayload429CodeReviewEnabled `json:"codeReviewEnabled"`
 	CodeReviewSelection *struct {
 		Initial   UserEventPayload429CodeReviewSelectionInitial   `json:"initial"`
 		Submitted UserEventPayload429CodeReviewSelectionSubmitted `json:"submitted"`
 	} `json:"codeReviewSelection,omitempty"`
-	Endpoint *UserEventPayload429Endpoint `json:"endpoint,omitempty"`
-
-	// Next Automatic code review settings
-	Next struct {
-		// Enabled Whether automatic code reviews are enabled
-		Enabled UserEventPayload429NextEnabled `json:"enabled"`
-
-		// IncludeDrafts Whether to include draft pull requests in automatic reviews
-		IncludeDrafts UserEventPayload429NextIncludeDrafts `json:"includeDrafts"`
-
-		// Scope Which repository visibilities get automatic reviews
-		Scope UserEventPayload429NextScope `json:"scope"`
-
-		// SelectedRepos GitHub repos to scope automatic reviews to. Format: "owner/repo" (lowercase). Only used when scope='selected_repos'.
-		SelectedRepos *[]string `json:"selectedRepos,omitempty"`
+	CumulativeBalance string                      `json:"cumulativeBalance"`
+	Endpoint          UserEventPayload429Endpoint `json:"endpoint"`
+	LedgerId          string                      `json:"ledgerId"`
+	Next              struct {
+		Enabled          UserEventPayload429NextEnabled `json:"enabled"`
+		MaximumOverdraft *string                        `json:"maximumOverdraft"`
 	} `json:"next"`
-
-	// Previous Automatic code review settings
-	Previous *struct {
-		// Enabled Whether automatic code reviews are enabled
-		Enabled UserEventPayload429PreviousEnabled `json:"enabled"`
-
-		// IncludeDrafts Whether to include draft pull requests in automatic reviews
-		IncludeDrafts UserEventPayload429PreviousIncludeDrafts `json:"includeDrafts"`
-
-		// Scope Which repository visibilities get automatic reviews
-		Scope UserEventPayload429PreviousScope `json:"scope"`
-
-		// SelectedRepos GitHub repos to scope automatic reviews to. Format: "owner/repo" (lowercase). Only used when scope='selected_repos'.
-		SelectedRepos *[]string `json:"selectedRepos,omitempty"`
-	} `json:"previous,omitempty"`
-
-	// Source Caller-reported surface, not proof of a browser interaction or consent.
-	Source *string `json:"source,omitempty"`
+	Previous struct {
+		Enabled          UserEventPayload429PreviousEnabled `json:"enabled"`
+		MaximumOverdraft *string                            `json:"maximumOverdraft"`
+	} `json:"previous"`
+	RemovedTopupIds       []string                                 `json:"removedTopupIds"`
+	Source                string                                   `json:"source"`
+	TopupCleanupCompleted UserEventPayload429TopupCleanupCompleted `json:"topupCleanupCompleted"`
 }
 
 // UserEventPayload429Action defines model for UserEvent.Payload.429.Action.
 type UserEventPayload429Action string
+
+// UserEventPayload429CodeReviewEnabled defines model for UserEvent.Payload.429.CodeReviewEnabled.
+type UserEventPayload429CodeReviewEnabled bool
 
 // UserEventPayload429CodeReviewSelectionInitial defines model for UserEvent.Payload.429.CodeReviewSelection.Initial.
 type UserEventPayload429CodeReviewSelectionInitial bool
@@ -19627,69 +19833,103 @@ type UserEventPayload429CodeReviewSelectionSubmitted bool
 // UserEventPayload429Endpoint defines model for UserEvent.Payload.429.Endpoint.
 type UserEventPayload429Endpoint string
 
-// UserEventPayload429NextEnabled Whether automatic code reviews are enabled
+// UserEventPayload429NextEnabled defines model for UserEvent.Payload.429.Next.Enabled.
 type UserEventPayload429NextEnabled bool
 
-// UserEventPayload429NextIncludeDrafts Whether to include draft pull requests in automatic reviews
-type UserEventPayload429NextIncludeDrafts bool
-
-// UserEventPayload429NextScope Which repository visibilities get automatic reviews
-type UserEventPayload429NextScope string
-
-// UserEventPayload429PreviousEnabled Whether automatic code reviews are enabled
+// UserEventPayload429PreviousEnabled defines model for UserEvent.Payload.429.Previous.Enabled.
 type UserEventPayload429PreviousEnabled bool
 
-// UserEventPayload429PreviousIncludeDrafts Whether to include draft pull requests in automatic reviews
-type UserEventPayload429PreviousIncludeDrafts bool
-
-// UserEventPayload429PreviousScope Which repository visibilities get automatic reviews
-type UserEventPayload429PreviousScope string
+// UserEventPayload429TopupCleanupCompleted defines model for UserEvent.Payload.429.TopupCleanupCompleted.
+type UserEventPayload429TopupCleanupCompleted bool
 
 // UserEventPayload430 The payload of the event, if requested.
 type UserEventPayload430 struct {
+	Action              *UserEventPayload430Action `json:"action,omitempty"`
+	CodeReviewSelection *struct {
+		Initial   UserEventPayload430CodeReviewSelectionInitial   `json:"initial"`
+		Submitted UserEventPayload430CodeReviewSelectionSubmitted `json:"submitted"`
+	} `json:"codeReviewSelection,omitempty"`
+	Endpoint *UserEventPayload430Endpoint `json:"endpoint,omitempty"`
+
+	// Next Automatic code review settings
+	Next struct {
+		// Enabled Whether automatic code reviews are enabled
+		Enabled UserEventPayload430NextEnabled `json:"enabled"`
+
+		// IncludeDrafts Whether to include draft pull requests in automatic reviews
+		IncludeDrafts UserEventPayload430NextIncludeDrafts `json:"includeDrafts"`
+
+		// Scope Which repository visibilities get automatic reviews
+		Scope UserEventPayload430NextScope `json:"scope"`
+
+		// SelectedRepos GitHub repos to scope automatic reviews to. Format: "owner/repo" (lowercase). Only used when scope='selected_repos'.
+		SelectedRepos *[]string `json:"selectedRepos,omitempty"`
+	} `json:"next"`
+
+	// Previous Automatic code review settings
+	Previous *struct {
+		// Enabled Whether automatic code reviews are enabled
+		Enabled UserEventPayload430PreviousEnabled `json:"enabled"`
+
+		// IncludeDrafts Whether to include draft pull requests in automatic reviews
+		IncludeDrafts UserEventPayload430PreviousIncludeDrafts `json:"includeDrafts"`
+
+		// Scope Which repository visibilities get automatic reviews
+		Scope UserEventPayload430PreviousScope `json:"scope"`
+
+		// SelectedRepos GitHub repos to scope automatic reviews to. Format: "owner/repo" (lowercase). Only used when scope='selected_repos'.
+		SelectedRepos *[]string `json:"selectedRepos,omitempty"`
+	} `json:"previous,omitempty"`
+
+	// Source Caller-reported surface, not proof of a browser interaction or consent.
+	Source *string `json:"source,omitempty"`
+}
+
+// UserEventPayload430Action defines model for UserEvent.Payload.430.Action.
+type UserEventPayload430Action string
+
+// UserEventPayload430CodeReviewSelectionInitial defines model for UserEvent.Payload.430.CodeReviewSelection.Initial.
+type UserEventPayload430CodeReviewSelectionInitial bool
+
+// UserEventPayload430CodeReviewSelectionSubmitted defines model for UserEvent.Payload.430.CodeReviewSelection.Submitted.
+type UserEventPayload430CodeReviewSelectionSubmitted bool
+
+// UserEventPayload430Endpoint defines model for UserEvent.Payload.430.Endpoint.
+type UserEventPayload430Endpoint string
+
+// UserEventPayload430NextEnabled Whether automatic code reviews are enabled
+type UserEventPayload430NextEnabled bool
+
+// UserEventPayload430NextIncludeDrafts Whether to include draft pull requests in automatic reviews
+type UserEventPayload430NextIncludeDrafts bool
+
+// UserEventPayload430NextScope Which repository visibilities get automatic reviews
+type UserEventPayload430NextScope string
+
+// UserEventPayload430PreviousEnabled Whether automatic code reviews are enabled
+type UserEventPayload430PreviousEnabled bool
+
+// UserEventPayload430PreviousIncludeDrafts Whether to include draft pull requests in automatic reviews
+type UserEventPayload430PreviousIncludeDrafts bool
+
+// UserEventPayload430PreviousScope Which repository visibilities get automatic reviews
+type UserEventPayload430PreviousScope string
+
+// UserEventPayload431 The payload of the event, if requested.
+type UserEventPayload431 struct {
 	// Next Mirrors the `security-review` setting value in `@api/api-settings`.
 	Next struct {
-		Enabled         UserEventPayload430NextEnabled          `json:"enabled"`
+		Enabled         UserEventPayload431NextEnabled          `json:"enabled"`
 		ProjectIds      *[]string                               `json:"projectIds,omitempty"`
-		ProjectScope    UserEventPayload430NextProjectScope     `json:"projectScope"`
-		RepositoryScope *UserEventPayload430NextRepositoryScope `json:"repositoryScope,omitempty"`
+		ProjectScope    UserEventPayload431NextProjectScope     `json:"projectScope"`
+		RepositoryScope *UserEventPayload431NextRepositoryScope `json:"repositoryScope,omitempty"`
 	} `json:"next"`
 
 	// Previous Mirrors the `security-review` setting value in `@api/api-settings`.
 	Previous struct {
-		Enabled         UserEventPayload430PreviousEnabled          `json:"enabled"`
-		ProjectIds      *[]string                                   `json:"projectIds,omitempty"`
-		ProjectScope    UserEventPayload430PreviousProjectScope     `json:"projectScope"`
-		RepositoryScope *UserEventPayload430PreviousRepositoryScope `json:"repositoryScope,omitempty"`
-	} `json:"previous"`
-}
-
-// UserEventPayload430NextEnabled defines model for UserEvent.Payload.430.Next.Enabled.
-type UserEventPayload430NextEnabled bool
-
-// UserEventPayload430NextProjectScope defines model for UserEvent.Payload.430.Next.ProjectScope.
-type UserEventPayload430NextProjectScope string
-
-// UserEventPayload430NextRepositoryScope defines model for UserEvent.Payload.430.Next.RepositoryScope.
-type UserEventPayload430NextRepositoryScope string
-
-// UserEventPayload430PreviousEnabled defines model for UserEvent.Payload.430.Previous.Enabled.
-type UserEventPayload430PreviousEnabled bool
-
-// UserEventPayload430PreviousProjectScope defines model for UserEvent.Payload.430.Previous.ProjectScope.
-type UserEventPayload430PreviousProjectScope string
-
-// UserEventPayload430PreviousRepositoryScope defines model for UserEvent.Payload.430.Previous.RepositoryScope.
-type UserEventPayload430PreviousRepositoryScope string
-
-// UserEventPayload431 The payload of the event, if requested.
-type UserEventPayload431 struct {
-	Next struct {
-		Enabled         UserEventPayload431NextEnabled          `json:"enabled"`
-		RepositoryScope *UserEventPayload431NextRepositoryScope `json:"repositoryScope,omitempty"`
-	} `json:"next"`
-	Previous struct {
 		Enabled         UserEventPayload431PreviousEnabled          `json:"enabled"`
+		ProjectIds      *[]string                                   `json:"projectIds,omitempty"`
+		ProjectScope    UserEventPayload431PreviousProjectScope     `json:"projectScope"`
 		RepositoryScope *UserEventPayload431PreviousRepositoryScope `json:"repositoryScope,omitempty"`
 	} `json:"previous"`
 }
@@ -19697,25 +19937,55 @@ type UserEventPayload431 struct {
 // UserEventPayload431NextEnabled defines model for UserEvent.Payload.431.Next.Enabled.
 type UserEventPayload431NextEnabled bool
 
+// UserEventPayload431NextProjectScope defines model for UserEvent.Payload.431.Next.ProjectScope.
+type UserEventPayload431NextProjectScope string
+
 // UserEventPayload431NextRepositoryScope defines model for UserEvent.Payload.431.Next.RepositoryScope.
 type UserEventPayload431NextRepositoryScope string
 
 // UserEventPayload431PreviousEnabled defines model for UserEvent.Payload.431.Previous.Enabled.
 type UserEventPayload431PreviousEnabled bool
 
+// UserEventPayload431PreviousProjectScope defines model for UserEvent.Payload.431.Previous.ProjectScope.
+type UserEventPayload431PreviousProjectScope string
+
 // UserEventPayload431PreviousRepositoryScope defines model for UserEvent.Payload.431.Previous.RepositoryScope.
 type UserEventPayload431PreviousRepositoryScope string
 
 // UserEventPayload432 The payload of the event, if requested.
 type UserEventPayload432 struct {
+	Next struct {
+		Enabled         UserEventPayload432NextEnabled          `json:"enabled"`
+		RepositoryScope *UserEventPayload432NextRepositoryScope `json:"repositoryScope,omitempty"`
+	} `json:"next"`
+	Previous struct {
+		Enabled         UserEventPayload432PreviousEnabled          `json:"enabled"`
+		RepositoryScope *UserEventPayload432PreviousRepositoryScope `json:"repositoryScope,omitempty"`
+	} `json:"previous"`
+}
+
+// UserEventPayload432NextEnabled defines model for UserEvent.Payload.432.Next.Enabled.
+type UserEventPayload432NextEnabled bool
+
+// UserEventPayload432NextRepositoryScope defines model for UserEvent.Payload.432.Next.RepositoryScope.
+type UserEventPayload432NextRepositoryScope string
+
+// UserEventPayload432PreviousEnabled defines model for UserEvent.Payload.432.Previous.Enabled.
+type UserEventPayload432PreviousEnabled bool
+
+// UserEventPayload432PreviousRepositoryScope defines model for UserEvent.Payload.432.Previous.RepositoryScope.
+type UserEventPayload432PreviousRepositoryScope string
+
+// UserEventPayload433 The payload of the event, if requested.
+type UserEventPayload433 struct {
 	Amount               string  `json:"amount"`
 	Currency             string  `json:"currency"`
 	ExpiresAt            string  `json:"expiresAt"`
 	TrialCreditsIssuedAt float32 `json:"trialCreditsIssuedAt"`
 }
 
-// UserEventPayload433 The payload of the event, if requested.
-type UserEventPayload433 struct {
+// UserEventPayload434 The payload of the event, if requested.
+type UserEventPayload434 struct {
 	EventId    string  `json:"eventId"`
 	OccurredAt float32 `json:"occurredAt"`
 	SessionId  string  `json:"sessionId"`
@@ -19727,8 +19997,8 @@ type UserEventPayload433 struct {
 	Surface string `json:"surface"`
 }
 
-// UserEventPayload434 The payload of the event, if requested.
-type UserEventPayload434 struct {
+// UserEventPayload435 The payload of the event, if requested.
+type UserEventPayload435 struct {
 	ElevatedScopeCount float32 `json:"elevatedScopeCount"`
 
 	// ElevatedScopes Requested Vercel scopes that are not included in the baseline token.
@@ -19756,256 +20026,3 @@ type UserEventPayload434 struct {
 	// Surface Currently emitted surfaces: dashboard, internal, slack, automation, github.
 	Surface string `json:"surface"`
 }
-
-// UserEventPayload435 The payload of the event, if requested.
-type UserEventPayload435 struct {
-	BranchRef *string `json:"branchRef"`
-	CommitSha *string `json:"commitSha,omitempty"`
-
-	// DeploymentId Null for a repository's findings and those of an undeployed commit.
-	DeploymentId *string `json:"deploymentId"`
-
-	// Environment Null for a repository's findings.
-	Environment       *string  `json:"environment"`
-	EventId           string   `json:"eventId"`
-	FindingId         string   `json:"findingId"`
-	FindingNumber     float32  `json:"findingNumber"`
-	OccurredAt        float32  `json:"occurredAt"`
-	PullRequestNumber *float32 `json:"pullRequestNumber,omitempty"`
-
-	// Repository The GitHub repository, such as `acme/app`, commit, and pull request the event's review read: the one that found the finding, or for a resolution, the one that fixed it. Null for uploaded files; absent from events recorded before they were sent.
-	Repository *string `json:"repository,omitempty"`
-	SessionId  string  `json:"sessionId"`
-
-	// SessionKind Currently emitted session kinds: chat, investigation.
-	SessionKind string `json:"sessionKind"`
-	Severity    string `json:"severity"`
-
-	// Surface Currently emitted surfaces: dashboard, internal, slack, automation, github.
-	Surface  string `json:"surface"`
-	TargetId string `json:"targetId"`
-
-	// TargetKind A repository's findings are in code no project runs.
-	TargetKind         UserEventPayload435TargetKind `json:"targetKind"`
-	TargetName         string                        `json:"targetName"`
-	VulnerabilityClass string                        `json:"vulnerabilityClass"`
-}
-
-// UserEventPayload435TargetKind A repository's findings are in code no project runs.
-type UserEventPayload435TargetKind string
-
-// UserEventPayload436 The payload of the event, if requested.
-type UserEventPayload436 struct {
-	BranchRef   *string                        `json:"branchRef"`
-	CloseReason UserEventPayload436CloseReason `json:"closeReason"`
-	CommitSha   *string                        `json:"commitSha,omitempty"`
-
-	// DeploymentId Null for a repository's findings and those of an undeployed commit.
-	DeploymentId *string `json:"deploymentId"`
-
-	// Environment Null for a repository's findings.
-	Environment       *string  `json:"environment"`
-	EventId           string   `json:"eventId"`
-	FindingId         string   `json:"findingId"`
-	FindingNumber     float32  `json:"findingNumber"`
-	OccurredAt        float32  `json:"occurredAt"`
-	PullRequestNumber *float32 `json:"pullRequestNumber,omitempty"`
-
-	// Repository The GitHub repository, such as `acme/app`, commit, and pull request the event's review read: the one that found the finding, or for a resolution, the one that fixed it. Null for uploaded files; absent from events recorded before they were sent.
-	Repository *string `json:"repository,omitempty"`
-	SessionId  string  `json:"sessionId"`
-
-	// SessionKind Currently emitted session kinds: chat, investigation.
-	SessionKind string `json:"sessionKind"`
-	Severity    string `json:"severity"`
-
-	// Surface Currently emitted surfaces: dashboard, internal, slack, automation, github.
-	Surface  string `json:"surface"`
-	TargetId string `json:"targetId"`
-
-	// TargetKind A repository's findings are in code no project runs.
-	TargetKind         UserEventPayload436TargetKind `json:"targetKind"`
-	TargetName         string                        `json:"targetName"`
-	VulnerabilityClass string                        `json:"vulnerabilityClass"`
-}
-
-// UserEventPayload436CloseReason defines model for UserEvent.Payload.436.CloseReason.
-type UserEventPayload436CloseReason string
-
-// UserEventPayload436TargetKind A repository's findings are in code no project runs.
-type UserEventPayload436TargetKind string
-
-// UserEventPayload437 The payload of the event, if requested.
-type UserEventPayload437 struct {
-	BranchRef *string `json:"branchRef"`
-	CommitSha *string `json:"commitSha,omitempty"`
-
-	// DeploymentId Null for a repository's findings and those of an undeployed commit.
-	DeploymentId    *string                            `json:"deploymentId"`
-	DismissalReason UserEventPayload437DismissalReason `json:"dismissalReason"`
-
-	// Environment Null for a repository's findings.
-	Environment       *string  `json:"environment"`
-	EventId           string   `json:"eventId"`
-	FindingId         string   `json:"findingId"`
-	FindingNumber     float32  `json:"findingNumber"`
-	OccurredAt        float32  `json:"occurredAt"`
-	PullRequestNumber *float32 `json:"pullRequestNumber,omitempty"`
-
-	// Repository The GitHub repository, such as `acme/app`, commit, and pull request the event's review read: the one that found the finding, or for a resolution, the one that fixed it. Null for uploaded files; absent from events recorded before they were sent.
-	Repository *string `json:"repository,omitempty"`
-	SessionId  string  `json:"sessionId"`
-
-	// SessionKind Currently emitted session kinds: chat, investigation.
-	SessionKind string `json:"sessionKind"`
-	Severity    string `json:"severity"`
-
-	// Surface Currently emitted surfaces: dashboard, internal, slack, automation, github.
-	Surface  string `json:"surface"`
-	TargetId string `json:"targetId"`
-
-	// TargetKind A repository's findings are in code no project runs.
-	TargetKind         UserEventPayload437TargetKind `json:"targetKind"`
-	TargetName         string                        `json:"targetName"`
-	VulnerabilityClass string                        `json:"vulnerabilityClass"`
-}
-
-// UserEventPayload437DismissalReason defines model for UserEvent.Payload.437.DismissalReason.
-type UserEventPayload437DismissalReason string
-
-// UserEventPayload437TargetKind A repository's findings are in code no project runs.
-type UserEventPayload437TargetKind string
-
-// UserEventPayload438 The payload of the event, if requested.
-type UserEventPayload438 struct {
-	EventId     string  `json:"eventId"`
-	OccurredAt  float32 `json:"occurredAt"`
-	ProjectId   *string `json:"projectId"`
-	ProjectName *string `json:"projectName,omitempty"`
-}
-
-// UserEventPayload439 The payload of the event, if requested.
-type UserEventPayload439 struct {
-	Next     *UserEventPayload439Next     `json:"next"`
-	Previous *UserEventPayload439Previous `json:"previous"`
-	TeamSlug *string                      `json:"teamSlug,omitempty"`
-}
-
-// UserEventPayload439Next defines model for UserEvent.Payload.439.Next.
-type UserEventPayload439Next string
-
-// UserEventPayload439Previous defines model for UserEvent.Payload.439.Previous.
-type UserEventPayload439Previous string
-
-// UserEventPayload440 The payload of the event, if requested.
-type UserEventPayload440 struct {
-	ActorName *string                       `json:"actorName,omitempty"`
-	ActorType *UserEventPayload440ActorType `json:"actorType,omitempty"`
-	Disabled  *UserEventPayload440Disabled  `json:"disabled,omitempty"`
-}
-
-// UserEventPayload440ActorType defines model for UserEvent.Payload.440.ActorType.
-type UserEventPayload440ActorType string
-
-// UserEventPayload440Disabled defines model for UserEvent.Payload.440.Disabled.
-type UserEventPayload440Disabled bool
-
-// UserEventPayload441 The payload of the event, if requested.
-type UserEventPayload441 struct {
-	IsSystemInitiated *UserEventPayload441IsSystemInitiated `json:"isSystemInitiated,omitempty"`
-	Next              *UserEventPayload441Next              `json:"next,omitempty"`
-	Previous          *UserEventPayload441Previous          `json:"previous,omitempty"`
-	Reason            *UserEventPayload441Reason            `json:"reason,omitempty"`
-}
-
-// UserEventPayload441IsSystemInitiated defines model for UserEvent.Payload.441.IsSystemInitiated.
-type UserEventPayload441IsSystemInitiated bool
-
-// UserEventPayload441Next defines model for UserEvent.Payload.441.Next.
-type UserEventPayload441Next string
-
-// UserEventPayload441Previous defines model for UserEvent.Payload.441.Previous.
-type UserEventPayload441Previous string
-
-// UserEventPayload441Reason defines model for UserEvent.Payload.441.Reason.
-type UserEventPayload441Reason string
-
-// UserEventPayload442 The payload of the event, if requested.
-type UserEventPayload442 struct {
-	ActorName *string                       `json:"actorName,omitempty"`
-	ActorType *UserEventPayload442ActorType `json:"actorType,omitempty"`
-	Enrolled  *UserEventPayload442Enrolled  `json:"enrolled,omitempty"`
-}
-
-// UserEventPayload442ActorType defines model for UserEvent.Payload.442.ActorType.
-type UserEventPayload442ActorType string
-
-// UserEventPayload442Enrolled defines model for UserEvent.Payload.442.Enrolled.
-type UserEventPayload442Enrolled bool
-
-// UserEventPayload443 The payload of the event, if requested.
-type UserEventPayload443 struct {
-	By      string  `json:"by"`
-	ByUid   *string `json:"byUid,omitempty"`
-	Reasons *[]struct {
-		Description string `json:"description"`
-		Slug        string `json:"slug"`
-	} `json:"reasons,omitempty"`
-	RemovedMemberCount *float32 `json:"removedMemberCount,omitempty"`
-	RemovedUsers       *map[string]struct {
-		Confirmed   UserEventPayload443RemovedUsersConfirmed `json:"confirmed"`
-		ConfirmedAt *float32                                 `json:"confirmedAt,omitempty"`
-		Role        UserEventPayload443RemovedUsersRole      `json:"role"`
-	} `json:"removedUsers,omitempty"`
-	Slug      string   `json:"slug"`
-	TeamId    string   `json:"teamId"`
-	Timestamp *float32 `json:"timestamp,omitempty"`
-}
-
-// UserEventPayload443RemovedUsersConfirmed defines model for UserEvent.Payload.443.RemovedUsers.Confirmed.
-type UserEventPayload443RemovedUsersConfirmed bool
-
-// UserEventPayload443RemovedUsersRole defines model for UserEvent.Payload.443.RemovedUsers.Role.
-type UserEventPayload443RemovedUsersRole string
-
-// UserEventPayload444 The payload of the event, if requested.
-type UserEventPayload444 struct {
-	Enabled UserEventPayload444Enabled `json:"enabled"`
-	Scope   *UserEventPayload444Scope  `json:"scope,omitempty"`
-}
-
-// UserEventPayload444Enabled defines model for UserEvent.Payload.444.Enabled.
-type UserEventPayload444Enabled bool
-
-// UserEventPayload444Scope defines model for UserEvent.Payload.444.Scope.
-type UserEventPayload444Scope string
-
-// UserEventPayload445 The payload of the event, if requested.
-type UserEventPayload445 struct {
-	Next *struct {
-		DeploymentSources *[]interface{} `json:"deploymentSources,omitempty"`
-		GitSources        *[]interface{} `json:"gitSources,omitempty"`
-	} `json:"next"`
-	Previous *struct {
-		DeploymentSources *[]interface{} `json:"deploymentSources,omitempty"`
-		GitSources        *[]interface{} `json:"gitSources,omitempty"`
-	} `json:"previous"`
-}
-
-// UserEventPayload446 The payload of the event, if requested.
-type UserEventPayload446 struct {
-	Action   UserEventPayload446Action `json:"action"`
-	TargetId string                    `json:"targetId"`
-}
-
-// UserEventPayload446Action defines model for UserEvent.Payload.446.Action.
-type UserEventPayload446Action string
-
-// UserEventPayload447 The payload of the event, if requested.
-type UserEventPayload447 struct {
-	Domain  *string                    `json:"domain,omitempty"`
-	Enabled UserEventPayload447Enabled `json:"enabled"`
-}
-
-// UserEventPayload447Enabled defines model for UserEvent.Payload.447.Enabled.
-type UserEventPayload447Enabled bool

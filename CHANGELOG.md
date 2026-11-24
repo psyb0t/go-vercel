@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.35.0, 2026-11-24
+
+- Breaking: `ListAuthTokens`, `ListAuthTokensWithResponse` and `NewListAuthTokensRequest` take a new `*ListAuthTokensParams` argument, with `Kind` and `Status` filters. The matching `ClientInterface` and `ClientWithResponsesInterface` methods change the same way.
+- Added `AuthToken.Kind` and the `AuthTokenKind` enum with `AuthTokenKindAccessToken`, `AuthTokenKindApp`, `AuthTokenKindOther` and `AuthTokenKindSignInSession`.
+- Added `AppliesTo` (`team` or `user`) to `AiGatewayBudgetDefault`, `UpsertAiGatewayBudgetDefaultJSONBody` and `UpsertAiGatewayBudgetDefaultJSONRequestBody`, and `AiGatewayBudget.ExpiresAt`.
+- Breaking: `UserEventPayload` types are renumbered again and many lose fields and enum types. For example `UserEventPayload392.KeyId`, `UserEventPayload393.SigningEnabled`, `UserEventPayload408.Username` and `UserEventPayload400.Verified` are removed.
+- Breaking: `UserEventPayload392.ConnectionId`, `UserEventPayload392.ActorType` and `UserEventPayload396.ProjectId` become pointers, `UserEventPayload404.Uid` becomes `string`, and `UserEventPayload398` and `UserEventPayload408` are no longer comparable.
+- Breaking: the budget structs in `UserEventPayload31`, `UserEventPayload33`, `UserEventPayload35` and `UserEventPayload36` gain `ExpiresAt`, and the `UserEventPayload35` ones also gain `AppliesTo`.
+- Added `UserEvent_Payload.FromUserEventPayload552` and `MergeUserEventPayload552`.
+- Added webhook event type constants `ListEventTypeNameSamlLoginProviderChanged` and `ListEventTypeNameSandboxAiGatewayCredentialsConfigured`, with matching `ListEventTypeReplacedBy` constants.
+
 ## v0.34.0, 2026-11-21
 
 - Breaking: `UpsertAiGatewayBudgetJSONBody.LimitAmount` and `UpsertAiGatewayBudgetJSONRequestBody.LimitAmount` change from `float32` to `*float32`.

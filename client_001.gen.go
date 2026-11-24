@@ -198,6 +198,24 @@ func (e AiGatewayBudgetDefaultActive) Valid() bool {
 	}
 }
 
+// Defines values for AiGatewayBudgetDefaultAppliesTo.
+const (
+	AiGatewayBudgetDefaultAppliesToTeam AiGatewayBudgetDefaultAppliesTo = "team"
+	AiGatewayBudgetDefaultAppliesToUser AiGatewayBudgetDefaultAppliesTo = "user"
+)
+
+// Valid indicates whether the value is a known member of the AiGatewayBudgetDefaultAppliesTo enum.
+func (e AiGatewayBudgetDefaultAppliesTo) Valid() bool {
+	switch e {
+	case AiGatewayBudgetDefaultAppliesToTeam:
+		return true
+	case AiGatewayBudgetDefaultAppliesToUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AiGatewayBudgetDefaultRefreshPeriod.
 const (
 	AiGatewayBudgetDefaultRefreshPeriodDaily   AiGatewayBudgetDefaultRefreshPeriod = "daily"
@@ -612,6 +630,30 @@ func (e AiGatewayVirtualModelConfigZeroDataRetention) Valid() bool {
 	case AiGatewayVirtualModelConfigZeroDataRetentionFalse:
 		return true
 	case AiGatewayVirtualModelConfigZeroDataRetentionTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AuthTokenKind.
+const (
+	AuthTokenKindAccessToken   AuthTokenKind = "access-token"
+	AuthTokenKindApp           AuthTokenKind = "app"
+	AuthTokenKindOther         AuthTokenKind = "other"
+	AuthTokenKindSignInSession AuthTokenKind = "sign-in-session"
+)
+
+// Valid indicates whether the value is a known member of the AuthTokenKind enum.
+func (e AuthTokenKind) Valid() bool {
+	switch e {
+	case AuthTokenKindAccessToken:
+		return true
+	case AuthTokenKindApp:
+		return true
+	case AuthTokenKindOther:
+		return true
+	case AuthTokenKindSignInSession:
 		return true
 	default:
 		return false
@@ -4827,6 +4869,8 @@ const (
 	ListEventTypeNameSamlIdpMaterialSet                                  ListEventTypeName = "saml-idp-material-set"
 	ListEventTypeNameSamlIdpMaterialSystemDeleted                        ListEventTypeName = "saml-idp-material-system-deleted"
 	ListEventTypeNameSamlIdpMaterialSystemSet                            ListEventTypeName = "saml-idp-material-system-set"
+	ListEventTypeNameSamlLoginProviderChanged                            ListEventTypeName = "saml-login-provider-changed"
+	ListEventTypeNameSandboxAiGatewayCredentialsConfigured               ListEventTypeName = "sandbox-ai-gateway-credentials-configured"
 	ListEventTypeNameSandboxAliasAssigned                                ListEventTypeName = "sandbox-alias-assigned"
 	ListEventTypeNameSandboxAliasDelete                                  ListEventTypeName = "sandbox-alias-delete"
 	ListEventTypeNameSandboxDriveCreated                                 ListEventTypeName = "sandbox-drive-created"
@@ -6275,6 +6319,10 @@ func (e ListEventTypeName) Valid() bool {
 		return true
 	case ListEventTypeNameSamlIdpMaterialSystemSet:
 		return true
+	case ListEventTypeNameSamlLoginProviderChanged:
+		return true
+	case ListEventTypeNameSandboxAiGatewayCredentialsConfigured:
+		return true
 	case ListEventTypeNameSandboxAliasAssigned:
 		return true
 	case ListEventTypeNameSandboxAliasDelete:
@@ -7329,6 +7377,8 @@ const (
 	ListEventTypeReplacedBySamlIdpMaterialSet                                  ListEventTypeReplacedBy = "saml-idp-material-set"
 	ListEventTypeReplacedBySamlIdpMaterialSystemDeleted                        ListEventTypeReplacedBy = "saml-idp-material-system-deleted"
 	ListEventTypeReplacedBySamlIdpMaterialSystemSet                            ListEventTypeReplacedBy = "saml-idp-material-system-set"
+	ListEventTypeReplacedBySamlLoginProviderChanged                            ListEventTypeReplacedBy = "saml-login-provider-changed"
+	ListEventTypeReplacedBySandboxAiGatewayCredentialsConfigured               ListEventTypeReplacedBy = "sandbox-ai-gateway-credentials-configured"
 	ListEventTypeReplacedBySandboxAliasAssigned                                ListEventTypeReplacedBy = "sandbox-alias-assigned"
 	ListEventTypeReplacedBySandboxAliasDelete                                  ListEventTypeReplacedBy = "sandbox-alias-delete"
 	ListEventTypeReplacedBySandboxDriveCreated                                 ListEventTypeReplacedBy = "sandbox-drive-created"
@@ -8776,6 +8826,10 @@ func (e ListEventTypeReplacedBy) Valid() bool {
 	case ListEventTypeReplacedBySamlIdpMaterialSystemDeleted:
 		return true
 	case ListEventTypeReplacedBySamlIdpMaterialSystemSet:
+		return true
+	case ListEventTypeReplacedBySamlLoginProviderChanged:
+		return true
+	case ListEventTypeReplacedBySandboxAiGatewayCredentialsConfigured:
 		return true
 	case ListEventTypeReplacedBySandboxAliasAssigned:
 		return true
@@ -12918,6 +12972,24 @@ func (e UserEventPayload34Change) Valid() bool {
 	}
 }
 
+// Defines values for UserEventPayload35BudgetAppliesTo.
+const (
+	UserEventPayload35BudgetAppliesToTeam UserEventPayload35BudgetAppliesTo = "team"
+	UserEventPayload35BudgetAppliesToUser UserEventPayload35BudgetAppliesTo = "user"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload35BudgetAppliesTo enum.
+func (e UserEventPayload35BudgetAppliesTo) Valid() bool {
+	switch e {
+	case UserEventPayload35BudgetAppliesToTeam:
+		return true
+	case UserEventPayload35BudgetAppliesToUser:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UserEventPayload35BudgetRefreshPeriod.
 const (
 	UserEventPayload35BudgetRefreshPeriodDaily   UserEventPayload35BudgetRefreshPeriod = "daily"
@@ -12960,6 +13032,24 @@ func (e UserEventPayload35Change) Valid() bool {
 	case UserEventPayload35ChangeRemove:
 		return true
 	case UserEventPayload35ChangeSet:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UserEventPayload35PreviousBudgetAppliesTo.
+const (
+	UserEventPayload35PreviousBudgetAppliesToTeam UserEventPayload35PreviousBudgetAppliesTo = "team"
+	UserEventPayload35PreviousBudgetAppliesToUser UserEventPayload35PreviousBudgetAppliesTo = "user"
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload35PreviousBudgetAppliesTo enum.
+func (e UserEventPayload35PreviousBudgetAppliesTo) Valid() bool {
+	switch e {
+	case UserEventPayload35PreviousBudgetAppliesToTeam:
+		return true
+	case UserEventPayload35PreviousBudgetAppliesToUser:
 		return true
 	default:
 		return false
@@ -19917,87 +20007,6 @@ func (e UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimits) Val
 	case UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimitsFalse:
 		return true
 	case UserEventPayload241ProjectMicrofrontends1FreeProjectForLegacyLimitsTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload241ProjectMicrofrontends1IsDefaultApp.
-const (
-	UserEventPayload241ProjectMicrofrontends1IsDefaultAppFalse UserEventPayload241ProjectMicrofrontends1IsDefaultApp = false
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1IsDefaultApp enum.
-func (e UserEventPayload241ProjectMicrofrontends1IsDefaultApp) Valid() bool {
-	switch e {
-	case UserEventPayload241ProjectMicrofrontends1IsDefaultAppFalse:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject.
-const (
-	UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectFalse UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject = false
-	UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectTrue  UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject enum.
-func (e UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProject) Valid() bool {
-	switch e {
-	case UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectFalse:
-		return true
-	case UserEventPayload241ProjectMicrofrontends1RouteObservabilityToThisProjectTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload241ProjectMicrofrontends2Enabled.
-const (
-	UserEventPayload241ProjectMicrofrontends2EnabledFalse UserEventPayload241ProjectMicrofrontends2Enabled = false
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends2Enabled enum.
-func (e UserEventPayload241ProjectMicrofrontends2Enabled) Valid() bool {
-	switch e {
-	case UserEventPayload241ProjectMicrofrontends2EnabledFalse:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits.
-const (
-	UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits = false
-	UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits = true
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits enum.
-func (e UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimits) Valid() bool {
-	switch e {
-	case UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsFalse:
-		return true
-	case UserEventPayload241ProjectMicrofrontends2FreeProjectForLegacyLimitsTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UserEventPayload243ActorType.
-const (
-	UserEventPayload243ActorTypeAdmin UserEventPayload243ActorType = "admin"
-)
-
-// Valid indicates whether the value is a known member of the UserEventPayload243ActorType enum.
-func (e UserEventPayload243ActorType) Valid() bool {
-	switch e {
-	case UserEventPayload243ActorTypeAdmin:
 		return true
 	default:
 		return false
