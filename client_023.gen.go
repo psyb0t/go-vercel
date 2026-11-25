@@ -5,6 +5,7 @@ package vercel
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -14,73 +15,6 @@ import (
 
 	"github.com/oapi-codegen/runtime"
 )
-
-// NewGetBulkAvailabilityRequest calls the generic GetBulkAvailability builder with application/json body
-func NewGetBulkAvailabilityRequest(server string, params *GetBulkAvailabilityParams, body GetBulkAvailabilityJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewGetBulkAvailabilityRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewGetBulkAvailabilityRequestWithBody constructs an http.Request for the GetBulkAvailability method, with any body, and a specified content type
-func NewGetBulkAvailabilityRequestWithBody(server string, params *GetBulkAvailabilityParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/registrar/domains/availability")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.TeamId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
 
 // NewBuyDomainsRequest calls the generic BuyDomains builder with application/json body
 func NewBuyDomainsRequest(server string, params *BuyDomainsParams, body BuyDomainsJSONRequestBody) (*http.Request, error) {
@@ -20016,4 +19950,81 @@ func NewEditProjectEnvRequestWithBody(server string, idOrName string, id string,
 	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
+}
+
+// NewCreateWebInsightsToggleRequest calls the generic CreateWebInsightsToggle builder with application/json body
+func NewCreateWebInsightsToggleRequest(server string, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateWebInsightsToggleRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateWebInsightsToggleRequestWithBody constructs an http.Request for the CreateWebInsightsToggle method, with any body, and a specified content type
+func NewCreateWebInsightsToggleRequestWithBody(server string, params *CreateWebInsightsToggleParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/web/insights/toggle")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+func (c *Client) applyEditors(ctx context.Context, req *http.Request, additionalEditors []RequestEditorFn) error {
+	for _, r := range c.RequestEditors {
+		if err := r(ctx, req); err != nil {
+			return err
+		}
+	}
+	for _, r := range additionalEditors {
+		if err := r(ctx, req); err != nil {
+			return err
+		}
+	}
+	return nil
 }

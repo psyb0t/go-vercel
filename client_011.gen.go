@@ -10,202 +10,6 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1 struct {
-	Cores  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores  `json:"cores"`
-	Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label  `json:"label"`
-	Memory UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory `json:"memory"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Cores float32
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Label string
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine1Memory float32
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2 struct {
-	Cores  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores  `json:"cores"`
-	Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label  `json:"label"`
-	Memory UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory `json:"memory"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Cores float32
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Label string
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine2Memory float32
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3 struct {
-	Cores  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Cores  `json:"cores"`
-	Label  UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Label  `json:"label"`
-	Memory UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Memory `json:"memory"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Cores defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Cores float32
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Label defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Label string
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Memory defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticBuildMachine3Memory float32
-
-// UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBody_ResourceConfig_ElasticBuildMachine struct {
-	union json.RawMessage
-}
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigElasticConcurrencyEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigEnableFunctionsBeta defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigEnableFunctionsBeta bool
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigFluid defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigFluid bool
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionDefaultMemoryType defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionDefaultMemoryType string
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionZeroConfigFailover defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigFunctionZeroConfigFailover bool
-
-// UploadProjectAvatar200JSONResponseBodyResourceConfigIsNSNBDisabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyResourceConfigIsNSNBDisabled bool
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0 struct {
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Type `json:"type"`
-	User struct {
-		Id string `json:"id"`
-	} `json:"user"`
-	Via *UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal_0_Via `json:"via"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Type string
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via0 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via0 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via0Type `json:"type"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via0Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via0Type string
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via1 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via1 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via1Type `json:"type"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via1Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal0Via1Type string
-
-// UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal_0_Via defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal_0_Via struct {
-	union json.RawMessage
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal1 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal1 struct {
-	Project struct {
-		Id string `json:"id"`
-	} `json:"project"`
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal1Type `json:"type"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal1Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal1Type string
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal2 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal2 struct {
-	App struct {
-		// ClientId The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
-		ClientId *string `json:"clientId,omitempty"`
-
-		// Id The internal ID of the Vercel App backing this principal.
-		Id string `json:"id"`
-	} `json:"app"`
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal2Type `json:"type"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal2Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal2Type string
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal3 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal3 struct {
-	Integration struct {
-		ConfigurationId string `json:"configurationId"`
-		IntegrationId   string `json:"integrationId"`
-	} `json:"integration"`
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal3Type `json:"type"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal3Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal3Type string
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4 defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4 struct {
-	Type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4Type `json:"type"`
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4Type defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4Type string
-
-// UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal struct {
-	union json.RawMessage
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift bool
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval bool
-
-// UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions string
-
-// UploadProjectAvatar200JSONResponseBodySandboxRegion defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySandboxRegion string
-
-// UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled bool
-
 // UploadProjectAvatar200JSONResponseBodySecurityJa4Enabled defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodySecurityJa4Enabled bool
 
@@ -19049,7 +18853,9 @@ type GetProjects200JSONResponseBody0 = []struct {
 	} `json:"passport,omitempty"`
 	PasswordProtection *map[string]interface{}                `json:"passwordProtection,omitempty"`
 	Paused             *GetProjects200JSONResponseBody0Paused `json:"paused,omitempty"`
-	ResourceConfig     struct {
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
+	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
 		BuildMachineElasticTransition  *struct {
@@ -20019,3 +19825,187 @@ type GetProjects200JSONResponseBody0Link5 struct {
 	Type             GetProjects200JSONResponseBody0Link5Type        `json:"type"`
 	UpdatedAt        *float32                                        `json:"updatedAt,omitempty"`
 }
+
+// GetProjects200JSONResponseBody0Link5Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link5Sourceless bool
+
+// GetProjects200JSONResponseBody0Link5Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link5Type string
+
+// GetProjects200JSONResponseBody0Link6 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link6 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId  string                                          `json:"gitCredentialId"`
+	Org              string                                          `json:"org"`
+	ProductionBranch string                                          `json:"productionBranch"`
+	Repo             string                                          `json:"repo"`
+	RepoId           string                                          `json:"repoId"`
+	Sourceless       *GetProjects200JSONResponseBody0Link6Sourceless `json:"sourceless,omitempty"`
+	Type             GetProjects200JSONResponseBody0Link6Type        `json:"type"`
+	UpdatedAt        *float32                                        `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody0Link6Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link6Sourceless bool
+
+// GetProjects200JSONResponseBody0Link6Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link6Type string
+
+// GetProjects200JSONResponseBody0Link7 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link7 struct {
+	CreatedAt   *float32 `json:"createdAt,omitempty"`
+	DeployHooks []struct {
+		CreatedAt *float32 `json:"createdAt,omitempty"`
+		Id        string   `json:"id"`
+		Name      string   `json:"name"`
+		Ref       string   `json:"ref"`
+		Url       string   `json:"url"`
+	} `json:"deployHooks"`
+	GitCredentialId string `json:"gitCredentialId"`
+
+	// Owner Owner (namespace) slug, e.g. `acme`.
+	Owner string `json:"owner"`
+
+	// OwnerId Origin namespace id (`ns_…`) of the owner.
+	OwnerId          string `json:"ownerId"`
+	ProductionBranch string `json:"productionBranch"`
+	Repo             string `json:"repo"`
+
+	// RepoId Origin repository id.
+	RepoId     string                                          `json:"repoId"`
+	Sourceless *GetProjects200JSONResponseBody0Link7Sourceless `json:"sourceless,omitempty"`
+	Type       GetProjects200JSONResponseBody0Link7Type        `json:"type"`
+	UpdatedAt  *float32                                        `json:"updatedAt,omitempty"`
+}
+
+// GetProjects200JSONResponseBody0Link7Sourceless defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link7Sourceless bool
+
+// GetProjects200JSONResponseBody0Link7Type defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Link7Type string
+
+// GetProjects200JSONResponseBody_0_Link defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_0_Link struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody0Live defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Live bool
+
+// GetProjects200JSONResponseBody0NodeVersion defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0NodeVersion string
+
+// GetProjects200JSONResponseBody0OidcTokenConfigEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0OidcTokenConfigEnabled bool
+
+// GetProjects200JSONResponseBody0OidcTokenConfigIssuerMode defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0OidcTokenConfigIssuerMode string
+
+// GetProjects200JSONResponseBody0PassportDeploymentType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0PassportDeploymentType string
+
+// GetProjects200JSONResponseBody0Paused defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0Paused bool
+
+// GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticReason defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticReason string
+
+// GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticTransitionDirection defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticTransitionDirection string
+
+// GetProjects200JSONResponseBody0ResourceConfigBuildMachineSelection defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigBuildMachineSelection string
+
+// GetProjects200JSONResponseBody0ResourceConfigBuildMachineType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigBuildMachineType string
+
+// GetProjects200JSONResponseBody0ResourceConfigBuildQueueConfiguration defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigBuildQueueConfiguration string
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0 struct {
+	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Cores  `json:"cores"`
+	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Label  `json:"label"`
+	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Memory `json:"memory"`
+}
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Cores defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Cores float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Label defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Label string
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Memory defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Memory float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1 struct {
+	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Cores  `json:"cores"`
+	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Label  `json:"label"`
+	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Memory `json:"memory"`
+}
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Cores defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Cores float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Label defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Label string
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Memory defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Memory float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2 struct {
+	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Cores  `json:"cores"`
+	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Label  `json:"label"`
+	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Memory `json:"memory"`
+}
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Cores defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Cores float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Label defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Label string
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Memory defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Memory float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3 defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3 struct {
+	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Cores  `json:"cores"`
+	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Label  `json:"label"`
+	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Memory `json:"memory"`
+}
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Cores defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Cores float32
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Label defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Label string
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Memory defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Memory float32
+
+// GetProjects200JSONResponseBody_0_ResourceConfig_ElasticBuildMachine defines parameters for GetProjects.
+type GetProjects200JSONResponseBody_0_ResourceConfig_ElasticBuildMachine struct {
+	union json.RawMessage
+}
+
+// GetProjects200JSONResponseBody0ResourceConfigElasticConcurrencyEnabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigElasticConcurrencyEnabled bool
+
+// GetProjects200JSONResponseBody0ResourceConfigEnableFunctionsBeta defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigEnableFunctionsBeta bool
+
+// GetProjects200JSONResponseBody0ResourceConfigFluid defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigFluid bool
+
+// GetProjects200JSONResponseBody0ResourceConfigFunctionDefaultMemoryType defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigFunctionDefaultMemoryType string

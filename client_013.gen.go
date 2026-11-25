@@ -11,193 +11,6 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// GetDeployment200JSONResponseBody1Services1Routes0Destination0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Destination0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Destination1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Destination1 struct {
-	// Path Routing-only path used to select a route inside the target service.
-	Path    *string `json:"path,omitempty"`
-	Service string  `json:"service"`
-
-	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
-	Type *GetDeployment200JSONResponseBody1Services1Routes0Destination1Type `json:"type,omitempty"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Destination1Type defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Destination1Type string
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has0 struct {
-	Type  GetDeployment200JSONResponseBody1Services1Routes0Has0Type          `json:"type"`
-	Value GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value `json:"value"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has0Type defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has0Type string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has0Value0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has0Value0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1 struct {
-	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                 `json:"gt,omitempty"`
-	Gte  *float32                                                                 `json:"gte,omitempty"`
-	Inc  *[]string                                                                `json:"inc,omitempty"`
-	Lt   *float32                                                                 `json:"lt,omitempty"`
-	Lte  *float32                                                                 `json:"lte,omitempty"`
-	Neq  *string                                                                  `json:"neq,omitempty"`
-	Ninc *[]string                                                                `json:"ninc,omitempty"`
-	Pre  *string                                                                  `json:"pre,omitempty"`
-	Re   *string                                                                  `json:"re,omitempty"`
-	Suf  *string                                                                  `json:"suf,omitempty"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 = float32
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has1 struct {
-	Key   string                                                              `json:"key"`
-	Type  GetDeployment200JSONResponseBody1Services1Routes0Has1Type           `json:"type"`
-	Value *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value `json:"value,omitempty"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has1Type defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has1Type string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has1Value0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has1Value0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1 struct {
-	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                 `json:"gt,omitempty"`
-	Gte  *float32                                                                 `json:"gte,omitempty"`
-	Inc  *[]string                                                                `json:"inc,omitempty"`
-	Lt   *float32                                                                 `json:"lt,omitempty"`
-	Lte  *float32                                                                 `json:"lte,omitempty"`
-	Neq  *string                                                                  `json:"neq,omitempty"`
-	Ninc *[]string                                                                `json:"ninc,omitempty"`
-	Pre  *string                                                                  `json:"pre,omitempty"`
-	Re   *string                                                                  `json:"re,omitempty"`
-	Suf  *string                                                                  `json:"suf,omitempty"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 = float32
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Important defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Important bool
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing0 struct {
-	Type  GetDeployment200JSONResponseBody1Services1Routes0Missing0Type          `json:"type"`
-	Value GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value `json:"value"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing0Type defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing0Type string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 struct {
-	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                     `json:"gt,omitempty"`
-	Gte  *float32                                                                     `json:"gte,omitempty"`
-	Inc  *[]string                                                                    `json:"inc,omitempty"`
-	Lt   *float32                                                                     `json:"lt,omitempty"`
-	Lte  *float32                                                                     `json:"lte,omitempty"`
-	Neq  *string                                                                      `json:"neq,omitempty"`
-	Ninc *[]string                                                                    `json:"ninc,omitempty"`
-	Pre  *string                                                                      `json:"pre,omitempty"`
-	Re   *string                                                                      `json:"re,omitempty"`
-	Suf  *string                                                                      `json:"suf,omitempty"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 = float32
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value struct {
-	union json.RawMessage
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing1 struct {
-	Key   string                                                                  `json:"key"`
-	Type  GetDeployment200JSONResponseBody1Services1Routes0Missing1Type           `json:"type"`
-	Value *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value `json:"value,omitempty"`
-}
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing1Type defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing1Type string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 = string
-
-// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 defines parameters for GetDeployment.
-type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 struct {
-	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq `json:"eq,omitempty"`
-	Gt   *float32                                                                     `json:"gt,omitempty"`
-	Gte  *float32                                                                     `json:"gte,omitempty"`
-	Inc  *[]string                                                                    `json:"inc,omitempty"`
-	Lt   *float32                                                                     `json:"lt,omitempty"`
-	Lte  *float32                                                                     `json:"lte,omitempty"`
-	Neq  *string                                                                      `json:"neq,omitempty"`
-	Ninc *[]string                                                                    `json:"ninc,omitempty"`
-	Pre  *string                                                                      `json:"pre,omitempty"`
-	Re   *string                                                                      `json:"re,omitempty"`
-	Suf  *string                                                                      `json:"suf,omitempty"`
-}
-
 // GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 = string
 
@@ -17428,25 +17241,25 @@ func (a Team) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload127. Returns the specified
+// Getter for additional properties for UserEventPayload128. Returns the specified
 // element and whether it was found
-func (a UserEventPayload127) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload128) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload127
-func (a *UserEventPayload127) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload128
+func (a *UserEventPayload128) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload127 to handle AdditionalProperties
-func (a *UserEventPayload127) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload128 to handle AdditionalProperties
+func (a *UserEventPayload128) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -17475,8 +17288,8 @@ func (a *UserEventPayload127) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload127 to handle AdditionalProperties
-func (a UserEventPayload127) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload128 to handle AdditionalProperties
+func (a UserEventPayload128) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -17494,25 +17307,25 @@ func (a UserEventPayload127) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
-// Getter for additional properties for UserEventPayload280. Returns the specified
+// Getter for additional properties for UserEventPayload281. Returns the specified
 // element and whether it was found
-func (a UserEventPayload280) Get(fieldName string) (value interface{}, found bool) {
+func (a UserEventPayload281) Get(fieldName string) (value interface{}, found bool) {
 	if a.AdditionalProperties != nil {
 		value, found = a.AdditionalProperties[fieldName]
 	}
 	return
 }
 
-// Setter for additional properties for UserEventPayload280
-func (a *UserEventPayload280) Set(fieldName string, value interface{}) {
+// Setter for additional properties for UserEventPayload281
+func (a *UserEventPayload281) Set(fieldName string, value interface{}) {
 	if a.AdditionalProperties == nil {
 		a.AdditionalProperties = make(map[string]interface{})
 	}
 	a.AdditionalProperties[fieldName] = value
 }
 
-// Override default JSON handling for UserEventPayload280 to handle AdditionalProperties
-func (a *UserEventPayload280) UnmarshalJSON(b []byte) error {
+// Override default JSON handling for UserEventPayload281 to handle AdditionalProperties
+func (a *UserEventPayload281) UnmarshalJSON(b []byte) error {
 	object := make(map[string]json.RawMessage)
 	err := json.Unmarshal(b, &object)
 	if err != nil {
@@ -17565,8 +17378,8 @@ func (a *UserEventPayload280) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Override default JSON handling for UserEventPayload280 to handle AdditionalProperties
-func (a UserEventPayload280) MarshalJSON() ([]byte, error) {
+// Override default JSON handling for UserEventPayload281 to handle AdditionalProperties
+func (a UserEventPayload281) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
@@ -20057,4 +19870,203 @@ func (a AggregatePageviews200JSONResponseBody_Data_1_Item) MarshalJSON() ([]byte
 		}
 	}
 	return json.Marshal(object)
+}
+
+// Getter for additional properties for CountPageviews200JSONResponseBodyData0. Returns the specified
+// element and whether it was found
+func (a CountPageviews200JSONResponseBodyData0) Get(fieldName string) (value float32, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for CountPageviews200JSONResponseBodyData0
+func (a *CountPageviews200JSONResponseBodyData0) Set(fieldName string, value float32) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]float32)
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for CountPageviews200JSONResponseBodyData0 to handle AdditionalProperties
+func (a *CountPageviews200JSONResponseBodyData0) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["browserName"]; found {
+		err = json.Unmarshal(raw, &a.BrowserName)
+		if err != nil {
+			return fmt.Errorf("error reading 'browserName': %w", err)
+		}
+		delete(object, "browserName")
+	}
+
+	if raw, found := object["country"]; found {
+		err = json.Unmarshal(raw, &a.Country)
+		if err != nil {
+			return fmt.Errorf("error reading 'country': %w", err)
+		}
+		delete(object, "country")
+	}
+
+	if raw, found := object["deviceType"]; found {
+		err = json.Unmarshal(raw, &a.DeviceType)
+		if err != nil {
+			return fmt.Errorf("error reading 'deviceType': %w", err)
+		}
+		delete(object, "deviceType")
+	}
+
+	if raw, found := object["environment"]; found {
+		err = json.Unmarshal(raw, &a.Environment)
+		if err != nil {
+			return fmt.Errorf("error reading 'environment': %w", err)
+		}
+		delete(object, "environment")
+	}
+
+	if raw, found := object["flags"]; found {
+		err = json.Unmarshal(raw, &a.Flags)
+		if err != nil {
+			return fmt.Errorf("error reading 'flags': %w", err)
+		}
+		delete(object, "flags")
+	}
+
+	if raw, found := object["groupId"]; found {
+		err = json.Unmarshal(raw, &a.GroupId)
+		if err != nil {
+			return fmt.Errorf("error reading 'groupId': %w", err)
+		}
+		delete(object, "groupId")
+	}
+
+	if raw, found := object["osName"]; found {
+		err = json.Unmarshal(raw, &a.OsName)
+		if err != nil {
+			return fmt.Errorf("error reading 'osName': %w", err)
+		}
+		delete(object, "osName")
+	}
+
+	if raw, found := object["projectId"]; found {
+		err = json.Unmarshal(raw, &a.ProjectId)
+		if err != nil {
+			return fmt.Errorf("error reading 'projectId': %w", err)
+		}
+		delete(object, "projectId")
+	}
+
+	if raw, found := object["projectName"]; found {
+		err = json.Unmarshal(raw, &a.ProjectName)
+		if err != nil {
+			return fmt.Errorf("error reading 'projectName': %w", err)
+		}
+		delete(object, "projectName")
+	}
+
+	if raw, found := object["referrerHostname"]; found {
+		err = json.Unmarshal(raw, &a.ReferrerHostname)
+		if err != nil {
+			return fmt.Errorf("error reading 'referrerHostname': %w", err)
+		}
+		delete(object, "referrerHostname")
+	}
+
+	if raw, found := object["requestHostname"]; found {
+		err = json.Unmarshal(raw, &a.RequestHostname)
+		if err != nil {
+			return fmt.Errorf("error reading 'requestHostname': %w", err)
+		}
+		delete(object, "requestHostname")
+	}
+
+	if raw, found := object["requestPath"]; found {
+		err = json.Unmarshal(raw, &a.RequestPath)
+		if err != nil {
+			return fmt.Errorf("error reading 'requestPath': %w", err)
+		}
+		delete(object, "requestPath")
+	}
+
+	if raw, found := object["route"]; found {
+		err = json.Unmarshal(raw, &a.Route)
+		if err != nil {
+			return fmt.Errorf("error reading 'route': %w", err)
+		}
+		delete(object, "route")
+	}
+
+	if raw, found := object["userId"]; found {
+		err = json.Unmarshal(raw, &a.UserId)
+		if err != nil {
+			return fmt.Errorf("error reading 'userId': %w", err)
+		}
+		delete(object, "userId")
+	}
+
+	if raw, found := object["utmCampaign"]; found {
+		err = json.Unmarshal(raw, &a.UtmCampaign)
+		if err != nil {
+			return fmt.Errorf("error reading 'utmCampaign': %w", err)
+		}
+		delete(object, "utmCampaign")
+	}
+
+	if raw, found := object["utmContent"]; found {
+		err = json.Unmarshal(raw, &a.UtmContent)
+		if err != nil {
+			return fmt.Errorf("error reading 'utmContent': %w", err)
+		}
+		delete(object, "utmContent")
+	}
+
+	if raw, found := object["utmMedium"]; found {
+		err = json.Unmarshal(raw, &a.UtmMedium)
+		if err != nil {
+			return fmt.Errorf("error reading 'utmMedium': %w", err)
+		}
+		delete(object, "utmMedium")
+	}
+
+	if raw, found := object["utmSource"]; found {
+		err = json.Unmarshal(raw, &a.UtmSource)
+		if err != nil {
+			return fmt.Errorf("error reading 'utmSource': %w", err)
+		}
+		delete(object, "utmSource")
+	}
+
+	if raw, found := object["utmTerm"]; found {
+		err = json.Unmarshal(raw, &a.UtmTerm)
+		if err != nil {
+			return fmt.Errorf("error reading 'utmTerm': %w", err)
+		}
+		delete(object, "utmTerm")
+	}
+
+	if raw, found := object["visitorId"]; found {
+		err = json.Unmarshal(raw, &a.VisitorId)
+		if err != nil {
+			return fmt.Errorf("error reading 'visitorId': %w", err)
+		}
+		delete(object, "visitorId")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]float32)
+		for fieldName, fieldBuf := range object {
+			var fieldVal float32
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
 }

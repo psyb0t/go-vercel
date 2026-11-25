@@ -13,6 +13,80 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// ParseStageRoutesResponse parses an HTTP response from a StageRoutesWithResponse call
+func ParseStageRoutesResponse(rsp *http.Response) (*StageRoutesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &StageRoutesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Version A version of routing rules stored in S3.
+			Version struct {
+				// Alias The staging alias for previewing this version.
+				Alias *string `json:"alias,omitempty"`
+
+				// CreatedBy The user who created this version.
+				CreatedBy string `json:"createdBy"`
+
+				// Id Unique identifier for the version.
+				Id string `json:"id"`
+
+				// IsLive Whether this version is currently live in production.
+				IsLive *StageRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
+
+				// IsStaging Whether this version is staged and not yet promoted to production.
+				IsStaging *StageRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
+
+				// LastModified Timestamp of when this version was last modified.
+				LastModified float32 `json:"lastModified"`
+
+				// RuleCount The number of routing rules in this version.
+				RuleCount *float32 `json:"ruleCount,omitempty"`
+
+				// S3Key The S3 key where the routing rules are stored.
+				S3Key string `json:"s3Key"`
+			} `json:"version"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
 // ParseGenerateRouteResponse parses an HTTP response from a GenerateRouteWithResponse call
 func ParseGenerateRouteResponse(rsp *http.Response) (*GenerateRouteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -8101,6 +8175,8 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 				Unlimited        *CreateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 				UserDisabled     CreateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 			} `json:"dataCache,omitempty"`
+
+			// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			DefaultResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -9320,6 +9396,8 @@ func ParseCreateProjectResponse(rsp *http.Response) (*CreateProjectResponse, err
 					InheritDeploymentProtection *CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 				} `json:"sandboxUrls,omitempty"`
 			} `json:"protectionConfig,omitempty"`
+
+			// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			ResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -17441,6 +17519,8 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 				Unlimited        *GetProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 				UserDisabled     GetProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 			} `json:"dataCache,omitempty"`
+
+			// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			DefaultResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                     `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -18671,6 +18751,8 @@ func ParseGetProjectResponse(rsp *http.Response) (*GetProjectResponse, error) {
 					InheritDeploymentProtection *GetProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 				} `json:"sandboxUrls,omitempty"`
 			} `json:"protectionConfig,omitempty"`
+
+			// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			ResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *GetProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -19256,6 +19338,8 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 				Unlimited        *UpdateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 				UserDisabled     UpdateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 			} `json:"dataCache,omitempty"`
+
+			// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			DefaultResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -20475,6 +20559,8 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 					InheritDeploymentProtection *UpdateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 				} `json:"sandboxUrls,omitempty"`
 			} `json:"protectionConfig,omitempty"`
+
+			// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			ResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *UpdateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`

@@ -4,95 +4,13 @@
 package vercel
 
 import (
-	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"time"
-
-	"github.com/oapi-codegen/runtime"
 )
-
-// NewCreateWebInsightsToggleRequest calls the generic CreateWebInsightsToggle builder with application/json body
-func NewCreateWebInsightsToggleRequest(server string, params *CreateWebInsightsToggleParams, body CreateWebInsightsToggleJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCreateWebInsightsToggleRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCreateWebInsightsToggleRequestWithBody constructs an http.Request for the CreateWebInsightsToggle method, with any body, and a specified content type
-func NewCreateWebInsightsToggleRequestWithBody(server string, params *CreateWebInsightsToggleParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/web/insights/toggle")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "projectId", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-			return nil, err
-		} else {
-			for _, qp := range strings.Split(queryFrag, "&") {
-				rawQueryFragments = append(rawQueryFragments, qp)
-			}
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-func (c *Client) applyEditors(ctx context.Context, req *http.Request, additionalEditors []RequestEditorFn) error {
-	for _, r := range c.RequestEditors {
-		if err := r(ctx, req); err != nil {
-			return err
-		}
-	}
-	for _, r := range additionalEditors {
-		if err := r(ctx, req); err != nil {
-			return err
-		}
-	}
-	return nil
-}
 
 // ClientWithResponses builds on ClientInterface to offer response payloads
 type ClientWithResponses struct {
@@ -1648,13 +1566,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
 	CreateEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEdgeConfigTokenResponse, error)
 
-	// GetEdgeConfigTokenWithResponse Get Global Config token meta data
+	// GetEdgeConfigTokenWithResponse Deprecated: Use `GET /v1/global-config/:edgeConfigId/token` with the `x-vercel-global-config-token` header instead. Get Global Config token metadata
 	//
 	// Return metadata about a Global Config token.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	GetEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokenResponse, error)
 
 	// DeleteEdgeConfigTokensWithBodyWithResponse Delete one or more Global Config tokens
@@ -1713,7 +1633,7 @@ type ClientWithResponsesInterface interface {
 
 	// SubmitBillingDataWithBodyWithResponse Submit Billing Data
 	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -1722,7 +1642,7 @@ type ClientWithResponsesInterface interface {
 
 	// SubmitBillingDataWithResponse Submit Billing Data
 	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -1731,7 +1651,7 @@ type ClientWithResponsesInterface interface {
 
 	// SubmitPrepaymentBalancesWithBodyWithResponse Submit Prepayment Balances
 	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -1740,7 +1660,7 @@ type ClientWithResponsesInterface interface {
 
 	// SubmitPrepaymentBalancesWithResponse Submit Prepayment Balances
 	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -1749,7 +1669,7 @@ type ClientWithResponsesInterface interface {
 
 	// FinalizeInstallationWithResponse Finalize Installation
 	//
-	// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -1758,7 +1678,7 @@ type ClientWithResponsesInterface interface {
 
 	// SubmitInvoiceWithBodyWithResponse Submit Invoice
 	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -1767,7 +1687,7 @@ type ClientWithResponsesInterface interface {
 
 	// SubmitInvoiceWithResponse Submit Invoice
 	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -18178,6 +18098,8 @@ type GetMicrofrontendsInGroupResponse struct {
 				Unlimited        *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDataCacheUnlimited   `json:"unlimited,omitempty"`
 				UserDisabled     GetMicrofrontendsInGroup200JSONResponseBodyProjectsDataCacheUserDisabled `json:"userDisabled"`
 			} `json:"dataCache,omitempty"`
+
+			// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			DefaultResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                                           `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -19397,6 +19319,8 @@ type GetMicrofrontendsInGroupResponse struct {
 					InheritDeploymentProtection *GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 				} `json:"sandboxUrls,omitempty"`
 			} `json:"protectionConfig,omitempty"`
+
+			// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 			ResourceConfig struct {
 				BuildMachineElasticLastUpdated *float32                                                                                    `json:"buildMachineElasticLastUpdated,omitempty"`
 				BuildMachineElasticReason      *GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -19947,6 +19871,8 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 			Unlimited        *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     GetMicrofrontendsInGroup200JSONResponseBodyProjectsDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                                           `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetMicrofrontendsInGroup200JSONResponseBodyProjectsDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -21166,6 +21092,8 @@ func (r GetMicrofrontendsInGroupResponse) GetJSON200() *struct {
 				InheritDeploymentProtection *GetMicrofrontendsInGroup200JSONResponseBodyProjectsProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                                    `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetMicrofrontendsInGroup200JSONResponseBodyProjectsResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`

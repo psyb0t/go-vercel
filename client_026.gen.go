@@ -7624,6 +7624,8 @@ type CreateProjectResponse struct {
 			Unlimited        *CreateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     CreateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -8843,6 +8845,8 @@ type CreateProjectResponse struct {
 				InheritDeploymentProtection *CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -9391,6 +9395,8 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 		Unlimited        *CreateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 		UserDisabled     CreateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 	} `json:"dataCache,omitempty"`
+
+	// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	DefaultResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *CreateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -10610,6 +10616,8 @@ func (r CreateProjectResponse) GetJSON200() *struct {
 			InheritDeploymentProtection *CreateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 		} `json:"sandboxUrls,omitempty"`
 	} `json:"protectionConfig,omitempty"`
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *CreateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`

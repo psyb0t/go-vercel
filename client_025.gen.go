@@ -1403,6 +1403,8 @@ type DeleteProjectAvatarResponse struct {
 			Unlimited        *DeleteProjectAvatar200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     DeleteProjectAvatar200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -2622,6 +2624,8 @@ type DeleteProjectAvatarResponse struct {
 				InheritDeploymentProtection *DeleteProjectAvatar200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                       `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *DeleteProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -3170,6 +3174,8 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 		Unlimited        *DeleteProjectAvatar200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 		UserDisabled     DeleteProjectAvatar200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 	} `json:"dataCache,omitempty"`
+
+	// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	DefaultResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *DeleteProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -4389,6 +4395,8 @@ func (r DeleteProjectAvatarResponse) GetJSON200() *struct {
 			InheritDeploymentProtection *DeleteProjectAvatar200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 		} `json:"sandboxUrls,omitempty"`
 	} `json:"protectionConfig,omitempty"`
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                       `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *DeleteProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -4970,6 +4978,8 @@ type UploadProjectAvatarResponse struct {
 			Unlimited        *UploadProjectAvatar200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     UploadProjectAvatar200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -6189,6 +6199,8 @@ type UploadProjectAvatarResponse struct {
 				InheritDeploymentProtection *UploadProjectAvatar200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                       `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -6737,6 +6749,8 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 		Unlimited        *UploadProjectAvatar200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 		UserDisabled     UploadProjectAvatar200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 	} `json:"dataCache,omitempty"`
+
+	// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	DefaultResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -7956,6 +7970,8 @@ func (r UploadProjectAvatarResponse) GetJSON200() *struct {
 			InheritDeploymentProtection *UploadProjectAvatar200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 		} `json:"sandboxUrls,omitempty"`
 	} `json:"protectionConfig,omitempty"`
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                       `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *UploadProjectAvatar200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -12992,6 +13008,8 @@ type UpdateMicrofrontendsResponse struct {
 			Unlimited        *UpdateMicrofrontends200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     UpdateMicrofrontends200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                               `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -14211,6 +14229,8 @@ type UpdateMicrofrontendsResponse struct {
 				InheritDeploymentProtection *UpdateMicrofrontends200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -14759,6 +14779,8 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 		Unlimited        *UpdateMicrofrontends200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 		UserDisabled     UpdateMicrofrontends200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 	} `json:"dataCache,omitempty"`
+
+	// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	DefaultResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                               `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *UpdateMicrofrontends200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -15978,6 +16000,8 @@ func (r UpdateMicrofrontendsResponse) GetJSON200() *struct {
 			InheritDeploymentProtection *UpdateMicrofrontends200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 		} `json:"sandboxUrls,omitempty"`
 	} `json:"protectionConfig,omitempty"`
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *UpdateMicrofrontends200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`

@@ -442,6 +442,8 @@ type GetProjectResponse struct {
 			Unlimited        *GetProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     GetProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                     `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -1672,6 +1674,8 @@ type GetProjectResponse struct {
 				InheritDeploymentProtection *GetProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -2220,6 +2224,8 @@ func (r GetProjectResponse) GetJSON200() *struct {
 		Unlimited        *GetProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 		UserDisabled     GetProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 	} `json:"dataCache,omitempty"`
+
+	// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	DefaultResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                     `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *GetProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -3450,6 +3456,8 @@ func (r GetProjectResponse) GetJSON200() *struct {
 			InheritDeploymentProtection *GetProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 		} `json:"sandboxUrls,omitempty"`
 	} `json:"protectionConfig,omitempty"`
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                              `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *GetProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -4031,6 +4039,8 @@ type UpdateProjectResponse struct {
 			Unlimited        *UpdateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     UpdateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -5250,6 +5260,8 @@ type UpdateProjectResponse struct {
 				InheritDeploymentProtection *UpdateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *UpdateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -5798,6 +5810,8 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 		Unlimited        *UpdateProject200JSONResponseBodyDataCacheUnlimited   `json:"unlimited,omitempty"`
 		UserDisabled     UpdateProject200JSONResponseBodyDataCacheUserDisabled `json:"userDisabled"`
 	} `json:"dataCache,omitempty"`
+
+	// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	DefaultResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -7017,6 +7031,8 @@ func (r UpdateProjectResponse) GetJSON200() *struct {
 			InheritDeploymentProtection *UpdateProject200JSONResponseBodyProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 		} `json:"sandboxUrls,omitempty"`
 	} `json:"protectionConfig,omitempty"`
+
+	// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 	ResourceConfig struct {
 		BuildMachineElasticLastUpdated *float32                                                                 `json:"buildMachineElasticLastUpdated,omitempty"`
 		BuildMachineElasticReason      *UpdateProject200JSONResponseBodyResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -11188,13 +11204,15 @@ func (c *ClientWithResponses) CreateEdgeConfigTokenWithResponse(ctx context.Cont
 	return ParseCreateEdgeConfigTokenResponse(rsp)
 }
 
-// GetEdgeConfigTokenWithResponse Get Global Config token meta data
+// GetEdgeConfigTokenWithResponse Deprecated: Use `GET /v1/global-config/:edgeConfigId/token` with the `x-vercel-global-config-token` header instead. Get Global Config token metadata
 //
 // Return metadata about a Global Config token.
 //
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
+//
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *ClientWithResponses) GetEdgeConfigTokenWithResponse(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*GetEdgeConfigTokenResponse, error) {
 	rsp, err := c.GetEdgeConfigToken(ctx, edgeConfigId, token, params, reqEditors...)
 	if err != nil {
@@ -11295,7 +11313,7 @@ func (c *ClientWithResponses) GetAccountInfoWithResponse(ctx context.Context, in
 
 // SubmitBillingDataWithBodyWithResponse Submit Billing Data
 //
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -11310,7 +11328,7 @@ func (c *ClientWithResponses) SubmitBillingDataWithBodyWithResponse(ctx context.
 
 // SubmitBillingDataWithResponse Submit Billing Data
 //
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -11325,7 +11343,7 @@ func (c *ClientWithResponses) SubmitBillingDataWithResponse(ctx context.Context,
 
 // SubmitPrepaymentBalancesWithBodyWithResponse Submit Prepayment Balances
 //
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -11340,7 +11358,7 @@ func (c *ClientWithResponses) SubmitPrepaymentBalancesWithBodyWithResponse(ctx c
 
 // SubmitPrepaymentBalancesWithResponse Submit Prepayment Balances
 //
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -11355,7 +11373,7 @@ func (c *ClientWithResponses) SubmitPrepaymentBalancesWithResponse(ctx context.C
 
 // FinalizeInstallationWithResponse Finalize Installation
 //
-// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -11370,7 +11388,7 @@ func (c *ClientWithResponses) FinalizeInstallationWithResponse(ctx context.Conte
 
 // SubmitInvoiceWithBodyWithResponse Submit Invoice
 //
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -11385,7 +11403,7 @@ func (c *ClientWithResponses) SubmitInvoiceWithBodyWithResponse(ctx context.Cont
 
 // SubmitInvoiceWithResponse Submit Invoice
 //
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //

@@ -7,190 +7,6 @@ import (
 	"encoding/json"
 )
 
-// GetProjects200JSONResponseBody0Link5Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link5Sourceless bool
-
-// GetProjects200JSONResponseBody0Link5Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link5Type string
-
-// GetProjects200JSONResponseBody0Link6 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link6 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId  string                                          `json:"gitCredentialId"`
-	Org              string                                          `json:"org"`
-	ProductionBranch string                                          `json:"productionBranch"`
-	Repo             string                                          `json:"repo"`
-	RepoId           string                                          `json:"repoId"`
-	Sourceless       *GetProjects200JSONResponseBody0Link6Sourceless `json:"sourceless,omitempty"`
-	Type             GetProjects200JSONResponseBody0Link6Type        `json:"type"`
-	UpdatedAt        *float32                                        `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody0Link6Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link6Sourceless bool
-
-// GetProjects200JSONResponseBody0Link6Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link6Type string
-
-// GetProjects200JSONResponseBody0Link7 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link7 struct {
-	CreatedAt   *float32 `json:"createdAt,omitempty"`
-	DeployHooks []struct {
-		CreatedAt *float32 `json:"createdAt,omitempty"`
-		Id        string   `json:"id"`
-		Name      string   `json:"name"`
-		Ref       string   `json:"ref"`
-		Url       string   `json:"url"`
-	} `json:"deployHooks"`
-	GitCredentialId string `json:"gitCredentialId"`
-
-	// Owner Owner (namespace) slug, e.g. `acme`.
-	Owner string `json:"owner"`
-
-	// OwnerId Origin namespace id (`ns_…`) of the owner.
-	OwnerId          string `json:"ownerId"`
-	ProductionBranch string `json:"productionBranch"`
-	Repo             string `json:"repo"`
-
-	// RepoId Origin repository id.
-	RepoId     string                                          `json:"repoId"`
-	Sourceless *GetProjects200JSONResponseBody0Link7Sourceless `json:"sourceless,omitempty"`
-	Type       GetProjects200JSONResponseBody0Link7Type        `json:"type"`
-	UpdatedAt  *float32                                        `json:"updatedAt,omitempty"`
-}
-
-// GetProjects200JSONResponseBody0Link7Sourceless defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link7Sourceless bool
-
-// GetProjects200JSONResponseBody0Link7Type defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Link7Type string
-
-// GetProjects200JSONResponseBody_0_Link defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_0_Link struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody0Live defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Live bool
-
-// GetProjects200JSONResponseBody0NodeVersion defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0NodeVersion string
-
-// GetProjects200JSONResponseBody0OidcTokenConfigEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0OidcTokenConfigEnabled bool
-
-// GetProjects200JSONResponseBody0OidcTokenConfigIssuerMode defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0OidcTokenConfigIssuerMode string
-
-// GetProjects200JSONResponseBody0PassportDeploymentType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0PassportDeploymentType string
-
-// GetProjects200JSONResponseBody0Paused defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0Paused bool
-
-// GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticReason defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticReason string
-
-// GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticTransitionDirection defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigBuildMachineElasticTransitionDirection string
-
-// GetProjects200JSONResponseBody0ResourceConfigBuildMachineSelection defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigBuildMachineSelection string
-
-// GetProjects200JSONResponseBody0ResourceConfigBuildMachineType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigBuildMachineType string
-
-// GetProjects200JSONResponseBody0ResourceConfigBuildQueueConfiguration defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigBuildQueueConfiguration string
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0 struct {
-	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Cores float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Label string
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine0Memory float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1 struct {
-	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Cores float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Label string
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine1Memory float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2 struct {
-	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Cores float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Label string
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine2Memory float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3 defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3 struct {
-	Cores  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Cores  `json:"cores"`
-	Label  GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Label  `json:"label"`
-	Memory GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Memory `json:"memory"`
-}
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Cores defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Cores float32
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Label defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Label string
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Memory defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticBuildMachine3Memory float32
-
-// GetProjects200JSONResponseBody_0_ResourceConfig_ElasticBuildMachine defines parameters for GetProjects.
-type GetProjects200JSONResponseBody_0_ResourceConfig_ElasticBuildMachine struct {
-	union json.RawMessage
-}
-
-// GetProjects200JSONResponseBody0ResourceConfigElasticConcurrencyEnabled defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigElasticConcurrencyEnabled bool
-
-// GetProjects200JSONResponseBody0ResourceConfigEnableFunctionsBeta defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigEnableFunctionsBeta bool
-
-// GetProjects200JSONResponseBody0ResourceConfigFluid defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigFluid bool
-
-// GetProjects200JSONResponseBody0ResourceConfigFunctionDefaultMemoryType defines parameters for GetProjects.
-type GetProjects200JSONResponseBody0ResourceConfigFunctionDefaultMemoryType string
-
 // GetProjects200JSONResponseBody0ResourceConfigFunctionZeroConfigFailover defines parameters for GetProjects.
 type GetProjects200JSONResponseBody0ResourceConfigFunctionZeroConfigFailover bool
 
@@ -916,7 +732,9 @@ type GetProjects200JSONResponseBody1 struct {
 		} `json:"passport,omitempty"`
 		PasswordProtection *map[string]interface{}                        `json:"passwordProtection,omitempty"`
 		Paused             *GetProjects200JSONResponseBody1ProjectsPaused `json:"paused,omitempty"`
-		ResourceConfig     struct {
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
+		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetProjects200JSONResponseBody1ProjectsResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
 			BuildMachineElasticTransition  *struct {
@@ -2742,6 +2560,8 @@ type GetProjects200JSONResponseBody2 struct {
 			Unlimited        *GetProjects200JSONResponseBody2ProjectsDataCacheUnlimited   `json:"unlimited,omitempty"`
 			UserDisabled     GetProjects200JSONResponseBody2ProjectsDataCacheUserDisabled `json:"userDisabled"`
 		} `json:"dataCache,omitempty"`
+
+		// DefaultResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		DefaultResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                               `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetProjects200JSONResponseBody2ProjectsDefaultResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -3961,6 +3781,8 @@ type GetProjects200JSONResponseBody2 struct {
 				InheritDeploymentProtection *GetProjects200JSONResponseBody2ProjectsProtectionConfigSandboxUrlsInheritDeploymentProtection `json:"inheritDeploymentProtection,omitempty"`
 			} `json:"sandboxUrls,omitempty"`
 		} `json:"protectionConfig,omitempty"`
+
+		// ResourceConfig Project resource config returned by the API. `buildMachineType` is a fixed machine type or `elastic`; the active Elastic machine is reported through `elasticBuildMachine`.
 		ResourceConfig struct {
 			BuildMachineElasticLastUpdated *float32                                                                        `json:"buildMachineElasticLastUpdated,omitempty"`
 			BuildMachineElasticReason      *GetProjects200JSONResponseBody2ProjectsResourceConfigBuildMachineElasticReason `json:"buildMachineElasticReason,omitempty"`
@@ -20006,3 +19828,190 @@ type GetDeployment200JSONResponseBody1Services1Routes0Check bool
 
 // GetDeployment200JSONResponseBody1Services1Routes0Continue defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services1Routes0Continue bool
+
+// GetDeployment200JSONResponseBody1Services1Routes0Destination0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Destination0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Destination1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Destination1 struct {
+	// Path Routing-only path used to select a route inside the target service.
+	Path    *string `json:"path,omitempty"`
+	Service string  `json:"service"`
+
+	// Type Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+	Type *GetDeployment200JSONResponseBody1Services1Routes0Destination1Type `json:"type,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Destination1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Destination1Type string
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Destination struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0 struct {
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Has0Type          `json:"type"`
+	Value GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value `json:"value"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                 `json:"gt,omitempty"`
+	Gte  *float32                                                                 `json:"gte,omitempty"`
+	Inc  *[]string                                                                `json:"inc,omitempty"`
+	Lt   *float32                                                                 `json:"lt,omitempty"`
+	Lte  *float32                                                                 `json:"lte,omitempty"`
+	Neq  *string                                                                  `json:"neq,omitempty"`
+	Ninc *[]string                                                                `json:"ninc,omitempty"`
+	Pre  *string                                                                  `json:"pre,omitempty"`
+	Re   *string                                                                  `json:"re,omitempty"`
+	Suf  *string                                                                  `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has0Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_0_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1 struct {
+	Key   string                                                              `json:"key"`
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Has1Type           `json:"type"`
+	Value *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value `json:"value,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                 `json:"gt,omitempty"`
+	Gte  *float32                                                                 `json:"gte,omitempty"`
+	Inc  *[]string                                                                `json:"inc,omitempty"`
+	Lt   *float32                                                                 `json:"lt,omitempty"`
+	Lte  *float32                                                                 `json:"lte,omitempty"`
+	Neq  *string                                                                  `json:"neq,omitempty"`
+	Ninc *[]string                                                                `json:"ninc,omitempty"`
+	Pre  *string                                                                  `json:"pre,omitempty"`
+	Re   *string                                                                  `json:"re,omitempty"`
+	Suf  *string                                                                  `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Has1Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_1_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Has_Item struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Important defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Important bool
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0 struct {
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Missing0Type          `json:"type"`
+	Value GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value `json:"value"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing0Value1Eq1 = float32
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value_1_Eq struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_0_Value struct {
+	union json.RawMessage
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1 struct {
+	Key   string                                                                  `json:"key"`
+	Type  GetDeployment200JSONResponseBody1Services1Routes0Missing1Type           `json:"type"`
+	Value *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value `json:"value,omitempty"`
+}
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Type defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Type string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value0 = string
+
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}

@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.37.0, 2026-11-25
+
+- Breaking: `AiGatewayVirtualModelConfig.SelectorOptions` gains an `Intelligence` field, which changes its anonymous struct type.
+- Breaking: `AuthUser.ResourceConfig` gains `MessageboardAttachmentBytes`, `MessageboardChannelsPerBoard`, `MessageboardMessages` and `MessageboardStoredAttachmentBytes`, which changes its anonymous struct type.
+- Breaking: the `BuildMachineTypeN14cpu28gb` constants are removed from project responses, for example `GetProject200JSONResponseBodyResourceConfigBuildMachineTypeN14cpu28gb` and `UpdateProject200JSONResponseBodyDefaultResourceConfigBuildMachineTypeN14cpu28gb`.
+- Breaking: `UserEventPayload` types are renumbered again. Many lose methods such as `UserEventPayload127.Set`, `UserEventPayload127.UnmarshalJSON`, `UserEventPayload280.Set` and `UserEventPayload280.UnmarshalJSON`. `UserEvent_Payload.FromUserEventPayload137` and `UserEvent_Payload.MergeUserEventPayload137` are removed.
+- Added `AiGatewayVirtualModelConfig.AutoRouterDefaultVersion` and `AiGatewayVirtualModelConfigSelectorIntelligence`.
+- Added `AiGatewayVirtualModelConfigModels1.Effort` with the `AiGatewayVirtualModelConfigModels1Effort` enum: `None`, `Minimal`, `Low`, `Medium`, `High` and `Xhigh`.
+- Added `BuildMachineTypeElastic` constants for project responses, for example `GetProject200JSONResponseBodyResourceConfigBuildMachineTypeElastic`.
+- Added `ListEventTypeNameFlagsLayerCreated`, `ListEventTypeNameFlagsLayerUpdated`, `ListEventTypeNameFlagsLayerDeleted` and the matching `ListEventTypeReplacedByFlagsLayer*` and `UserEventTypeFlagsLayer*` constants.
+
 ## v0.36.0, 2026-11-24
 
 - Breaking: `CreateFlagJSONBody.Environments` and `CreateFlagJSONRequestBody.Environments` change from a map to a struct with fixed `Development`, `Preview` and `Production` fields. The shared `CreateFlagJSONBodyEnvironments*` and `CreateFlagJSONBody_Environments_*` helper types are replaced by per-environment ones such as `CreateFlagJSONBody_Environments_Development_Fallthrough`.

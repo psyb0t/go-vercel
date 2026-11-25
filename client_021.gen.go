@@ -16,129 +16,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// FromEditProjectEnv200JSONResponseBodyContentHint2 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint2
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint2(v EditProjectEnv200JSONResponseBodyContentHint2) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint2 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint2
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint2(v EditProjectEnv200JSONResponseBodyContentHint2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint3 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint3
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint3() (EditProjectEnv200JSONResponseBodyContentHint3, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint3 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint3
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint3(v EditProjectEnv200JSONResponseBodyContentHint3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint3 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint3
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint3(v EditProjectEnv200JSONResponseBodyContentHint3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint4 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint4
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint4() (EditProjectEnv200JSONResponseBodyContentHint4, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint4
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint4 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint4
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint4(v EditProjectEnv200JSONResponseBodyContentHint4) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint4 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint4
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint4(v EditProjectEnv200JSONResponseBodyContentHint4) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint5 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint5
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint5() (EditProjectEnv200JSONResponseBodyContentHint5, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint5
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint5 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint5
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint5(v EditProjectEnv200JSONResponseBodyContentHint5) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint5 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint5
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint5(v EditProjectEnv200JSONResponseBodyContentHint5) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint6 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint6
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint6() (EditProjectEnv200JSONResponseBodyContentHint6, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint6
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint6 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint6
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint6(v EditProjectEnv200JSONResponseBodyContentHint6) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint6 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint6
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint6(v EditProjectEnv200JSONResponseBodyContentHint6) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
 // AsEditProjectEnv200JSONResponseBodyContentHint7 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint7
 func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint7() (EditProjectEnv200JSONResponseBodyContentHint7, error) {
 	var body EditProjectEnv200JSONResponseBodyContentHint7
@@ -1937,11 +1814,13 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/global-config/{edgeConfigId}/token (the `CreateEdgeConfigToken` operationId).
 	CreateEdgeConfigToken(ctx context.Context, edgeConfigId string, params *CreateEdgeConfigTokenParams, body CreateEdgeConfigTokenJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetEdgeConfigToken Get Global Config token meta data
+	// GetEdgeConfigToken Deprecated: Use `GET /v1/global-config/:edgeConfigId/token` with the `x-vercel-global-config-token` header instead. Get Global Config token metadata
 	//
 	// Return metadata about a Global Config token.
 	//
 	// Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
+	//
+	// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	GetEdgeConfigToken(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteEdgeConfigTokensWithBody Delete one or more Global Config tokens
@@ -1996,7 +1875,7 @@ type ClientInterface interface {
 
 	// SubmitBillingDataWithBody Submit Billing Data
 	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -2005,7 +1884,7 @@ type ClientInterface interface {
 
 	// SubmitBillingData Submit Billing Data
 	//
-	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -2014,7 +1893,7 @@ type ClientInterface interface {
 
 	// SubmitPrepaymentBalancesWithBody Submit Prepayment Balances
 	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -2023,7 +1902,7 @@ type ClientInterface interface {
 
 	// SubmitPrepaymentBalances Submit Prepayment Balances
 	//
-	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -2032,14 +1911,14 @@ type ClientInterface interface {
 
 	// FinalizeInstallation Finalize Installation
 	//
-	// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+	// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid.
 	//
 	// Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
 	FinalizeInstallation(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// SubmitInvoiceWithBody Submit Invoice
 	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -2048,7 +1927,7 @@ type ClientInterface interface {
 
 	// SubmitInvoice Submit Invoice
 	//
-	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+	// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -9208,11 +9087,12 @@ func (c *Client) CreateEdgeConfigToken(ctx context.Context, edgeConfigId string,
 	return c.Client.Do(req)
 }
 
-// GetEdgeConfigToken Get Global Config token meta data
+// GetEdgeConfigToken Deprecated: Use `GET /v1/global-config/:edgeConfigId/token` with the `x-vercel-global-config-token` header instead. Get Global Config token metadata
 //
 // Return metadata about a Global Config token.
 //
 // Corresponds with GET /v1/global-config/{edgeConfigId}/token/{token} (the `GetEdgeConfigToken` operationId).
+// Deprecated: this operation has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 func (c *Client) GetEdgeConfigToken(ctx context.Context, edgeConfigId string, token string, params *GetEdgeConfigTokenParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetEdgeConfigTokenRequest(c.Server, edgeConfigId, token, params)
 	if err != nil {
@@ -9337,7 +9217,7 @@ func (c *Client) GetAccountInfo(ctx context.Context, integrationConfigurationId 
 
 // SubmitBillingDataWithBody Submit Billing Data
 //
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes any type of body and a specified content type.
 //
@@ -9356,7 +9236,7 @@ func (c *Client) SubmitBillingDataWithBody(ctx context.Context, integrationConfi
 
 // SubmitBillingData Submit Billing Data
 //
-// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -9375,7 +9255,7 @@ func (c *Client) SubmitBillingData(ctx context.Context, integrationConfiguration
 
 // SubmitPrepaymentBalancesWithBody Submit Prepayment Balances
 //
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes any type of body and a specified content type.
 //
@@ -9394,7 +9274,7 @@ func (c *Client) SubmitPrepaymentBalancesWithBody(ctx context.Context, integrati
 
 // SubmitPrepaymentBalances Submit Prepayment Balances
 //
-// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -9413,7 +9293,7 @@ func (c *Client) SubmitPrepaymentBalances(ctx context.Context, integrationConfig
 
 // FinalizeInstallation Finalize Installation
 //
-// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.
+// This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid.
 //
 // Corresponds with POST /v1/installations/{integrationConfigurationId}/billing/finalize (the `FinalizeInstallation` operationId).
 func (c *Client) FinalizeInstallation(ctx context.Context, integrationConfigurationId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -9430,7 +9310,7 @@ func (c *Client) FinalizeInstallation(ctx context.Context, integrationConfigurat
 
 // SubmitInvoiceWithBody Submit Invoice
 //
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 //
 // Takes any type of body and a specified content type.
 //
@@ -9449,7 +9329,7 @@ func (c *Client) SubmitInvoiceWithBody(ctx context.Context, integrationConfigura
 
 // SubmitInvoice Submit Invoice
 //
-// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
+// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>
 //
 // Takes a body of the `application/json` content type.
 //
@@ -20024,6 +19904,120 @@ func NewDeleteAiGatewayVirtualModelConfigRequest(server string, params *DeleteAi
 	}
 
 	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAiGatewayVirtualModelConfigRequest constructs an http.Request for the GetAiGatewayVirtualModelConfig method
+func NewGetAiGatewayVirtualModelConfigRequest(server string, params *GetAiGatewayVirtualModelConfigParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/ai-gateway/virtual-model-configs")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.OwnerId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "ownerId", *params.OwnerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.VirtualModelSlug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "virtualModelSlug", *params.VirtualModelSlug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
