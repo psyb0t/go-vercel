@@ -16,221 +16,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// AsEditProjectEnv200JSONResponseBodyContentHint7 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint7
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint7() (EditProjectEnv200JSONResponseBodyContentHint7, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint7
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint7 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint7
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint7(v EditProjectEnv200JSONResponseBodyContentHint7) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint7 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint7
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint7(v EditProjectEnv200JSONResponseBodyContentHint7) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint8 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint8
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint8() (EditProjectEnv200JSONResponseBodyContentHint8, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint8
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint8 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint8
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint8(v EditProjectEnv200JSONResponseBodyContentHint8) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint8 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint8
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint8(v EditProjectEnv200JSONResponseBodyContentHint8) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint9 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint9
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint9() (EditProjectEnv200JSONResponseBodyContentHint9, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint9
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint9 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint9
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint9(v EditProjectEnv200JSONResponseBodyContentHint9) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint9 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint9
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint9(v EditProjectEnv200JSONResponseBodyContentHint9) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint10 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint10
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint10() (EditProjectEnv200JSONResponseBodyContentHint10, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint10
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint10 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint10
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint10(v EditProjectEnv200JSONResponseBodyContentHint10) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint10 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint10
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint10(v EditProjectEnv200JSONResponseBodyContentHint10) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint11 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint11
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint11() (EditProjectEnv200JSONResponseBodyContentHint11, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint11
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint11 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint11
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint11(v EditProjectEnv200JSONResponseBodyContentHint11) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint11 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint11
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint11(v EditProjectEnv200JSONResponseBodyContentHint11) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint12 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint12
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint12() (EditProjectEnv200JSONResponseBodyContentHint12, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint12
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint12 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint12
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint12(v EditProjectEnv200JSONResponseBodyContentHint12) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint12 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint12
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint12(v EditProjectEnv200JSONResponseBodyContentHint12) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint13 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint13
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint13() (EditProjectEnv200JSONResponseBodyContentHint13, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint13
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint13 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint13
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint13(v EditProjectEnv200JSONResponseBodyContentHint13) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint13 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint13
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint13(v EditProjectEnv200JSONResponseBodyContentHint13) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint14 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint14
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint14() (EditProjectEnv200JSONResponseBodyContentHint14, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint14
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEditProjectEnv200JSONResponseBodyContentHint14 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint14
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint14(v EditProjectEnv200JSONResponseBodyContentHint14) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEditProjectEnv200JSONResponseBodyContentHint14 performs a merge with any union data inside the EditProjectEnv200JSONResponseBody_ContentHint, using the provided EditProjectEnv200JSONResponseBodyContentHint14
-func (t *EditProjectEnv200JSONResponseBody_ContentHint) MergeEditProjectEnv200JSONResponseBodyContentHint14(v EditProjectEnv200JSONResponseBodyContentHint14) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEditProjectEnv200JSONResponseBodyContentHint15 returns the union data inside the EditProjectEnv200JSONResponseBody_ContentHint as a EditProjectEnv200JSONResponseBodyContentHint15
-func (t EditProjectEnv200JSONResponseBody_ContentHint) AsEditProjectEnv200JSONResponseBodyContentHint15() (EditProjectEnv200JSONResponseBodyContentHint15, error) {
-	var body EditProjectEnv200JSONResponseBodyContentHint15
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
 // FromEditProjectEnv200JSONResponseBodyContentHint15 overwrites any union data inside the EditProjectEnv200JSONResponseBody_ContentHint as the provided EditProjectEnv200JSONResponseBodyContentHint15
 func (t *EditProjectEnv200JSONResponseBody_ContentHint) FromEditProjectEnv200JSONResponseBodyContentHint15(v EditProjectEnv200JSONResponseBodyContentHint15) error {
 	b, err := json.Marshal(v)
@@ -19978,6 +19763,278 @@ func NewGetAiGatewayVirtualModelConfigRequest(server string, params *GetAiGatewa
 		if params.Cursor != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateAiGatewayVirtualModelConfigRequest calls the generic UpdateAiGatewayVirtualModelConfig builder with application/json body
+func NewUpdateAiGatewayVirtualModelConfigRequest(server string, params *UpdateAiGatewayVirtualModelConfigParams, body UpdateAiGatewayVirtualModelConfigJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAiGatewayVirtualModelConfigRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewUpdateAiGatewayVirtualModelConfigRequestWithBody constructs an http.Request for the UpdateAiGatewayVirtualModelConfig method, with any body, and a specified content type
+func NewUpdateAiGatewayVirtualModelConfigRequestWithBody(server string, params *UpdateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/ai-gateway/virtual-model-configs")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateAiGatewayVirtualModelConfigRequest calls the generic CreateAiGatewayVirtualModelConfig builder with application/json body
+func NewCreateAiGatewayVirtualModelConfigRequest(server string, params *CreateAiGatewayVirtualModelConfigParams, body CreateAiGatewayVirtualModelConfigJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAiGatewayVirtualModelConfigRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateAiGatewayVirtualModelConfigRequestWithBody constructs an http.Request for the CreateAiGatewayVirtualModelConfig method, with any body, and a specified content type
+func NewCreateAiGatewayVirtualModelConfigRequestWithBody(server string, params *CreateAiGatewayVirtualModelConfigParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/ai-gateway/virtual-model-configs")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.TeamId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "teamId", *params.TeamId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Slug != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "slug", *params.Slug, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListAiGatewayVirtualModelConfigsRequest constructs an http.Request for the ListAiGatewayVirtualModelConfigs method
+func NewListAiGatewayVirtualModelConfigsRequest(server string, params *ListAiGatewayVirtualModelConfigsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/ai-gateway/virtual-model-configs/list")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.OwnerId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "ownerId", *params.OwnerId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Cursor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "cursor", *params.Cursor, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.IncludeArchived != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeArchived", *params.IncludeArchived, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {

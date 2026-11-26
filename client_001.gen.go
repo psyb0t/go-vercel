@@ -3441,21 +3441,6 @@ func (e FlagEnvironmentsFallthrough2Type) Valid() bool {
 	}
 }
 
-// Defines values for FlagEnvironmentsFallthrough3Type.
-const (
-	FlagEnvironmentsFallthrough3TypeExperiment FlagEnvironmentsFallthrough3Type = "experiment"
-)
-
-// Valid indicates whether the value is a known member of the FlagEnvironmentsFallthrough3Type enum.
-func (e FlagEnvironmentsFallthrough3Type) Valid() bool {
-	switch e {
-	case FlagEnvironmentsFallthrough3TypeExperiment:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for FlagEnvironmentsPausedOutcomeType.
 const (
 	FlagEnvironmentsPausedOutcomeTypeVariant FlagEnvironmentsPausedOutcomeType = "variant"
@@ -3738,21 +3723,6 @@ const (
 func (e FlagEnvironmentsRulesOutcome2Type) Valid() bool {
 	switch e {
 	case FlagEnvironmentsRulesOutcome2TypeRollout:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for FlagEnvironmentsRulesOutcome3Type.
-const (
-	FlagEnvironmentsRulesOutcome3TypeExperiment FlagEnvironmentsRulesOutcome3Type = "experiment"
-)
-
-// Valid indicates whether the value is a known member of the FlagEnvironmentsRulesOutcome3Type enum.
-func (e FlagEnvironmentsRulesOutcome3Type) Valid() bool {
-	switch e {
-	case FlagEnvironmentsRulesOutcome3TypeExperiment:
 		return true
 	default:
 		return false
@@ -19911,6 +19881,24 @@ func (e UserEventPayload244PrevProjectMicrofrontends0IsDefaultApp) Valid() bool 
 	}
 }
 
+// Defines values for UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules.
+const (
+	UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRulesFalse UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules = false
+	UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRulesTrue  UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules = true
+)
+
+// Valid indicates whether the value is a known member of the UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules enum.
+func (e UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules) Valid() bool {
+	switch e {
+	case UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRulesFalse:
+		return true
+	case UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRulesTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UserEventPayload244PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
 	UserEventPayload244PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UserEventPayload244PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
@@ -20009,3 +19997,9 @@ func (e UserEventPayload244PrevProjectMicrofrontends2Enabled) Valid() bool {
 		return false
 	}
 }
+
+// Defines values for UserEventPayload244PrevProjectMicrofrontends2FreeProjectForLegacyLimits.
+const (
+	UserEventPayload244PrevProjectMicrofrontends2FreeProjectForLegacyLimitsFalse UserEventPayload244PrevProjectMicrofrontends2FreeProjectForLegacyLimits = false
+	UserEventPayload244PrevProjectMicrofrontends2FreeProjectForLegacyLimitsTrue  UserEventPayload244PrevProjectMicrofrontends2FreeProjectForLegacyLimits = true
+)

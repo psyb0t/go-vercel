@@ -3223,32 +3223,6 @@ func (t *Flag_Environments_Fallthrough) MergeFlagEnvironmentsFallthrough2(v Flag
 	return err
 }
 
-// AsFlagEnvironmentsFallthrough3 returns the union data inside the Flag_Environments_Fallthrough as a FlagEnvironmentsFallthrough3
-func (t Flag_Environments_Fallthrough) AsFlagEnvironmentsFallthrough3() (FlagEnvironmentsFallthrough3, error) {
-	var body FlagEnvironmentsFallthrough3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsFallthrough3 overwrites any union data inside the Flag_Environments_Fallthrough as the provided FlagEnvironmentsFallthrough3
-func (t *Flag_Environments_Fallthrough) FromFlagEnvironmentsFallthrough3(v FlagEnvironmentsFallthrough3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsFallthrough3 performs a merge with any union data inside the Flag_Environments_Fallthrough, using the provided FlagEnvironmentsFallthrough3
-func (t *Flag_Environments_Fallthrough) MergeFlagEnvironmentsFallthrough3(v FlagEnvironmentsFallthrough3) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
 func (t Flag_Environments_Fallthrough) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -3591,32 +3565,6 @@ func (t *Flag_Environments_Rules_Outcome) FromFlagEnvironmentsRulesOutcome2(v Fl
 
 // MergeFlagEnvironmentsRulesOutcome2 performs a merge with any union data inside the Flag_Environments_Rules_Outcome, using the provided FlagEnvironmentsRulesOutcome2
 func (t *Flag_Environments_Rules_Outcome) MergeFlagEnvironmentsRulesOutcome2(v FlagEnvironmentsRulesOutcome2) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFlagEnvironmentsRulesOutcome3 returns the union data inside the Flag_Environments_Rules_Outcome as a FlagEnvironmentsRulesOutcome3
-func (t Flag_Environments_Rules_Outcome) AsFlagEnvironmentsRulesOutcome3() (FlagEnvironmentsRulesOutcome3, error) {
-	var body FlagEnvironmentsRulesOutcome3
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFlagEnvironmentsRulesOutcome3 overwrites any union data inside the Flag_Environments_Rules_Outcome as the provided FlagEnvironmentsRulesOutcome3
-func (t *Flag_Environments_Rules_Outcome) FromFlagEnvironmentsRulesOutcome3(v FlagEnvironmentsRulesOutcome3) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFlagEnvironmentsRulesOutcome3 performs a merge with any union data inside the Flag_Environments_Rules_Outcome, using the provided FlagEnvironmentsRulesOutcome3
-func (t *Flag_Environments_Rules_Outcome) MergeFlagEnvironmentsRulesOutcome3(v FlagEnvironmentsRulesOutcome3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -20006,6 +19954,58 @@ func (t UserEvent_Payload) AsUserEventPayload481() (UserEventPayload481, error) 
 
 // FromUserEventPayload481 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload481
 func (t *UserEvent_Payload) FromUserEventPayload481(v UserEventPayload481) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload481 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload481
+func (t *UserEvent_Payload) MergeUserEventPayload481(v UserEventPayload481) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload482 returns the union data inside the UserEvent_Payload as a UserEventPayload482
+func (t UserEvent_Payload) AsUserEventPayload482() (UserEventPayload482, error) {
+	var body UserEventPayload482
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload482 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload482
+func (t *UserEvent_Payload) FromUserEventPayload482(v UserEventPayload482) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUserEventPayload482 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload482
+func (t *UserEvent_Payload) MergeUserEventPayload482(v UserEventPayload482) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUserEventPayload483 returns the union data inside the UserEvent_Payload as a UserEventPayload483
+func (t UserEvent_Payload) AsUserEventPayload483() (UserEventPayload483, error) {
+	var body UserEventPayload483
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUserEventPayload483 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload483
+func (t *UserEvent_Payload) FromUserEventPayload483(v UserEventPayload483) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err

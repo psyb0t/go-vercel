@@ -10,6 +10,41 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal struct {
+	union json.RawMessage
+}
+
+// UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
+
+// UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift bool
+
+// UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval bool
+
+// UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions string
+
+// UploadProjectAvatar200JSONResponseBodySandboxRegion defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySandboxRegion string
+
+// UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled bool
+
+// UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled bool
+
+// UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled bool
+
+// UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled bool
+
+// UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled bool
+
 // UploadProjectAvatar200JSONResponseBodySecurityJa4Enabled defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodySecurityJa4Enabled bool
 
@@ -2772,14 +2807,6 @@ type CreateFlag201JSONResponseBodyEnvironmentsFallthrough2BaseType string
 // CreateFlag201JSONResponseBodyEnvironmentsFallthrough2Type defines parameters for CreateFlag.
 type CreateFlag201JSONResponseBodyEnvironmentsFallthrough2Type string
 
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough3 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough3 struct {
-	Type CreateFlag201JSONResponseBodyEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsFallthrough3Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsFallthrough3Type string
-
 // CreateFlag201JSONResponseBody_Environments_Fallthrough defines parameters for CreateFlag.
 type CreateFlag201JSONResponseBody_Environments_Fallthrough struct {
 	union json.RawMessage
@@ -2923,14 +2950,6 @@ type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2BaseType string
 
 // CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type defines parameters for CreateFlag.
 type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome2Type string
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3 defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3 struct {
-	Type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type defines parameters for CreateFlag.
-type CreateFlag201JSONResponseBodyEnvironmentsRulesOutcome3Type string
 
 // CreateFlag201JSONResponseBody_Environments_Rules_Outcome defines parameters for CreateFlag.
 type CreateFlag201JSONResponseBody_Environments_Rules_Outcome struct {
@@ -3367,14 +3386,6 @@ type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2BaseType string
 // UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type defines parameters for UpdateFlag.
 type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough2Type string
 
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3 struct {
-	Type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsFallthrough3Type string
-
 // UpdateFlag200JSONResponseBody_Environments_Fallthrough defines parameters for UpdateFlag.
 type UpdateFlag200JSONResponseBody_Environments_Fallthrough struct {
 	union json.RawMessage
@@ -3519,14 +3530,6 @@ type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2BaseType string
 // UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type defines parameters for UpdateFlag.
 type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome2Type string
 
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3 defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3 struct {
-	Type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type defines parameters for UpdateFlag.
-type UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3Type string
-
 // UpdateFlag200JSONResponseBody_Environments_Rules_Outcome defines parameters for UpdateFlag.
 type UpdateFlag200JSONResponseBody_Environments_Rules_Outcome struct {
 	union json.RawMessage
@@ -3641,14 +3644,6 @@ type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Base
 
 // ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type defines parameters for ListFlagVersions.
 type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsFallthrough3Type string
 
 // ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough defines parameters for ListFlagVersions.
 type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Fallthrough struct {
@@ -3793,14 +3788,6 @@ type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Bas
 
 // ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type defines parameters for ListFlagVersions.
 type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome2Type string
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3 struct {
-	Type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type defines parameters for ListFlagVersions.
-type ListFlagVersions200JSONResponseBodyVersionsDataEnvironmentsRulesOutcome3Type string
 
 // ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome defines parameters for ListFlagVersions.
 type ListFlagVersions200JSONResponseBody_Versions_Data_Environments_Rules_Outcome struct {
@@ -4613,6 +4600,9 @@ type UpdateMicrofrontendsJSONBody struct {
 	//
 	// Example: /home
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
+
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this project skip the default application's managed rulesets, so only this project's own managed rulesets apply. Can only be set for child applications.
+	DoNotInheritDefaultAppManagedRules *bool `json:"doNotInheritDefaultAppManagedRules,omitempty"`
 
 	// DoNotRouteWithMicrofrontendsRouting Whether domains in this project should route as a microfrontend. Can only be set for child applications.
 	DoNotRouteWithMicrofrontendsRouting *bool `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
@@ -5742,6 +5732,9 @@ type UpdateMicrofrontends200JSONResponseBodyMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *UpdateMicrofrontends200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *UpdateMicrofrontends200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -5761,6 +5754,9 @@ type UpdateMicrofrontends200JSONResponseBodyMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// UpdateMicrofrontends200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules defines parameters for UpdateMicrofrontends.
+type UpdateMicrofrontends200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // UpdateMicrofrontends200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for UpdateMicrofrontends.
 type UpdateMicrofrontends200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -20009,3 +20005,9 @@ type GetProjects200JSONResponseBody0ResourceConfigFluid bool
 
 // GetProjects200JSONResponseBody0ResourceConfigFunctionDefaultMemoryType defines parameters for GetProjects.
 type GetProjects200JSONResponseBody0ResourceConfigFunctionDefaultMemoryType string
+
+// GetProjects200JSONResponseBody0ResourceConfigFunctionZeroConfigFailover defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigFunctionZeroConfigFailover bool
+
+// GetProjects200JSONResponseBody0ResourceConfigIsNSNBDisabled defines parameters for GetProjects.
+type GetProjects200JSONResponseBody0ResourceConfigIsNSNBDisabled bool

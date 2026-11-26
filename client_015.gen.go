@@ -10,58 +10,6 @@ import (
 	"github.com/oapi-codegen/runtime"
 )
 
-// MergeUserEventPayload481 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload481
-func (t *UserEvent_Payload) MergeUserEventPayload481(v UserEventPayload481) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload482 returns the union data inside the UserEvent_Payload as a UserEventPayload482
-func (t UserEvent_Payload) AsUserEventPayload482() (UserEventPayload482, error) {
-	var body UserEventPayload482
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload482 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload482
-func (t *UserEvent_Payload) FromUserEventPayload482(v UserEventPayload482) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeUserEventPayload482 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload482
-func (t *UserEvent_Payload) MergeUserEventPayload482(v UserEventPayload482) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsUserEventPayload483 returns the union data inside the UserEvent_Payload as a UserEventPayload483
-func (t UserEvent_Payload) AsUserEventPayload483() (UserEventPayload483, error) {
-	var body UserEventPayload483
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromUserEventPayload483 overwrites any union data inside the UserEvent_Payload as the provided UserEventPayload483
-func (t *UserEvent_Payload) FromUserEventPayload483(v UserEventPayload483) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
 // MergeUserEventPayload483 performs a merge with any union data inside the UserEvent_Payload, using the provided UserEventPayload483
 func (t *UserEvent_Payload) MergeUserEventPayload483(v UserEventPayload483) error {
 	b, err := json.Marshal(v)
@@ -20014,5 +19962,55 @@ func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_G
 
 	merged, err := runtime.JSONMerge(t.union, b)
 	t.union = merged
+	return err
+}
+
+// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1
+func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1, error) {
+	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1
+func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1 performs a merge with any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item, using the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1
+func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item) MergeGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesEnvironments1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Environments_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0 returns the union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Sources_Item as a GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0
+func (t GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Sources_Item) AsGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0() (GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0, error) {
+	var body GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0 overwrites any union data inside the GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Sources_Item as the provided GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0
+func (t *GetMicrofrontendsInGroup200JSONResponseBody_Projects_DeploymentPolicy_GitSources_Sources_Item) FromGetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0(v GetMicrofrontendsInGroup200JSONResponseBodyProjectsDeploymentPolicyGitSourcesSources0) error {
+	b, err := json.Marshal(v)
+	t.union = b
 	return err
 }

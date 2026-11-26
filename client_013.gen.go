@@ -11,6 +11,21 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 defines parameters for GetDeployment.
+type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1 struct {
+	Eq   *GetDeployment200JSONResponseBody_1_Services_1_Routes_0_Missing_1_Value_1_Eq `json:"eq,omitempty"`
+	Gt   *float32                                                                     `json:"gt,omitempty"`
+	Gte  *float32                                                                     `json:"gte,omitempty"`
+	Inc  *[]string                                                                    `json:"inc,omitempty"`
+	Lt   *float32                                                                     `json:"lt,omitempty"`
+	Lte  *float32                                                                     `json:"lte,omitempty"`
+	Neq  *string                                                                      `json:"neq,omitempty"`
+	Ninc *[]string                                                                    `json:"ninc,omitempty"`
+	Pre  *string                                                                      `json:"pre,omitempty"`
+	Re   *string                                                                      `json:"re,omitempty"`
+	Suf  *string                                                                      `json:"suf,omitempty"`
+}
+
 // GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 defines parameters for GetDeployment.
 type GetDeployment200JSONResponseBody1Services1Routes0Missing1Value1Eq0 = string
 
@@ -9920,6 +9935,9 @@ type GetProject200JSONResponseBodyMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *GetProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *GetProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -9939,6 +9957,9 @@ type GetProject200JSONResponseBodyMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// GetProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules defines parameters for GetProject.
+type GetProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // GetProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for GetProject.
 type GetProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -12242,6 +12263,9 @@ type UpdateProject200JSONResponseBodyMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -12261,6 +12285,9 @@ type UpdateProject200JSONResponseBodyMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules defines parameters for UpdateProject.
+type UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for UpdateProject.
 type UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool

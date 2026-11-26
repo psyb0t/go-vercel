@@ -13,7374 +13,6 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// ParseStageRoutesResponse parses an HTTP response from a StageRoutesWithResponse call
-func ParseStageRoutesResponse(rsp *http.Response) (*StageRoutesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &StageRoutesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Version A version of routing rules stored in S3.
-			Version struct {
-				// Alias The staging alias for previewing this version.
-				Alias *string `json:"alias,omitempty"`
-
-				// CreatedBy The user who created this version.
-				CreatedBy string `json:"createdBy"`
-
-				// Id Unique identifier for the version.
-				Id string `json:"id"`
-
-				// IsLive Whether this version is currently live in production.
-				IsLive *StageRoutes200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-				// IsStaging Whether this version is staged and not yet promoted to production.
-				IsStaging *StageRoutes200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-				// LastModified Timestamp of when this version was last modified.
-				LastModified float32 `json:"lastModified"`
-
-				// RuleCount The number of routing rules in this version.
-				RuleCount *float32 `json:"ruleCount,omitempty"`
-
-				// S3Key The S3 key where the routing rules are stored.
-				S3Key string `json:"s3Key"`
-			} `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGenerateRouteResponse parses an HTTP response from a GenerateRouteWithResponse call
-func ParseGenerateRouteResponse(rsp *http.Response) (*GenerateRouteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GenerateRouteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Error *string `json:"error,omitempty"`
-			Route *struct {
-				Actions []struct {
-					Dest    *string `json:"dest,omitempty"`
-					Headers *[]struct {
-						Key   string                                                `json:"key"`
-						Op    GenerateRoute200JSONResponseBodyRouteActionsHeadersOp `json:"op"`
-						Value *string                                               `json:"value,omitempty"`
-					} `json:"headers,omitempty"`
-					Status  *float32                                             `json:"status,omitempty"`
-					SubType *GenerateRoute200JSONResponseBodyRouteActionsSubType `json:"subType,omitempty"`
-					Type    GenerateRoute200JSONResponseBodyRouteActionsType     `json:"type"`
-				} `json:"actions"`
-				CaseSensitive *GenerateRoute200JSONResponseBodyRouteCaseSensitive `json:"caseSensitive,omitempty"`
-				Conditions    *[]struct {
-					Field    GenerateRoute200JSONResponseBodyRouteConditionsField    `json:"field"`
-					Key      *string                                                 `json:"key,omitempty"`
-					Missing  GenerateRoute200JSONResponseBodyRouteConditionsMissing  `json:"missing"`
-					Operator GenerateRoute200JSONResponseBodyRouteConditionsOperator `json:"operator"`
-					Value    *string                                                 `json:"value,omitempty"`
-				} `json:"conditions,omitempty"`
-				Description   string `json:"description"`
-				Name          string `json:"name"`
-				PathCondition struct {
-					Syntax GenerateRoute200JSONResponseBodyRoutePathConditionSyntax `json:"syntax"`
-					Value  string                                                   `json:"value"`
-				} `json:"pathCondition"`
-			} `json:"route,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 408:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRouteVersionsResponse parses an HTTP response from a GetRouteVersionsWithResponse call
-func ParseGetRouteVersionsResponse(rsp *http.Response) (*GetRouteVersionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRouteVersionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Versions []struct {
-				// Alias The staging alias for previewing this version.
-				Alias *string `json:"alias,omitempty"`
-
-				// CreatedBy The user who created this version.
-				CreatedBy string `json:"createdBy"`
-
-				// Id Unique identifier for the version.
-				Id string `json:"id"`
-
-				// IsLive Whether this version is currently live in production.
-				IsLive *GetRouteVersions200JSONResponseBodyVersionsIsLive `json:"isLive,omitempty"`
-
-				// IsStaging Whether this version is staged and not yet promoted to production.
-				IsStaging *GetRouteVersions200JSONResponseBodyVersionsIsStaging `json:"isStaging,omitempty"`
-
-				// LastModified Timestamp of when this version was last modified.
-				LastModified float32 `json:"lastModified"`
-
-				// RuleCount The number of routing rules in this version.
-				RuleCount *float32 `json:"ruleCount,omitempty"`
-
-				// S3Key The S3 key where the routing rules are stored.
-				S3Key string `json:"s3Key"`
-			} `json:"versions"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateRouteVersionsResponse parses an HTTP response from a UpdateRouteVersionsWithResponse call
-func ParseUpdateRouteVersionsResponse(rsp *http.Response) (*UpdateRouteVersionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateRouteVersionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Version A version of routing rules stored in S3.
-			Version struct {
-				// Alias The staging alias for previewing this version.
-				Alias *string `json:"alias,omitempty"`
-
-				// CreatedBy The user who created this version.
-				CreatedBy string `json:"createdBy"`
-
-				// Id Unique identifier for the version.
-				Id string `json:"id"`
-
-				// IsLive Whether this version is currently live in production.
-				IsLive *UpdateRouteVersions200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-				// IsStaging Whether this version is staged and not yet promoted to production.
-				IsStaging *UpdateRouteVersions200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-				// LastModified Timestamp of when this version was last modified.
-				LastModified float32 `json:"lastModified"`
-
-				// RuleCount The number of routing rules in this version.
-				RuleCount *float32 `json:"ruleCount,omitempty"`
-
-				// S3Key The S3 key where the routing rules are stored.
-				S3Key string `json:"s3Key"`
-			} `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseEditRouteResponse parses an HTTP response from a EditRouteWithResponse call
-func ParseEditRouteResponse(rsp *http.Response) (*EditRouteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &EditRouteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Route *struct {
-				// Description Optional description of what the routing rule does.
-				Description *string `json:"description,omitempty"`
-
-				// Enabled Whether the routing rule is enabled. Defaults to true.
-				Enabled *EditRoute200JSONResponseBodyRouteEnabled `json:"enabled,omitempty"`
-
-				// Id Unique identifier for the routing rule.
-				Id string `json:"id"`
-
-				// Name Human-readable name for the routing rule.
-				Name string `json:"name"`
-
-				// RawDest Original destination provided by user.
-				RawDest *string `json:"rawDest,omitempty"`
-
-				// RawSrc Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
-				RawSrc *string `json:"rawSrc,omitempty"`
-
-				// Route The route definition from @vercel/routing-utils.
-				Route struct {
-					CaseSensitive *EditRoute200JSONResponseBodyRouteRouteCaseSensitive  `json:"caseSensitive,omitempty"`
-					Check         *EditRoute200JSONResponseBodyRouteRouteCheck          `json:"check,omitempty"`
-					Continue      *EditRoute200JSONResponseBodyRouteRouteContinue       `json:"continue,omitempty"`
-					Dest          *string                                               `json:"dest,omitempty"`
-					Destination   *EditRoute200JSONResponseBody_Route_Route_Destination `json:"destination,omitempty"`
-					Env           *[]string                                             `json:"env,omitempty"`
-					Has           *[]EditRoute200JSONResponseBody_Route_Route_Has_Item  `json:"has,omitempty"`
-					Headers       *map[string]string                                    `json:"headers,omitempty"`
-					Important     *EditRoute200JSONResponseBodyRouteRouteImportant      `json:"important,omitempty"`
-					Locale        *struct {
-						Cookie   *string            `json:"cookie,omitempty"`
-						Redirect *map[string]string `json:"redirect,omitempty"`
-					} `json:"locale,omitempty"`
-					Methods *[]string `json:"methods,omitempty"`
-
-					// Middleware A middleware index in the `middleware` key under the build result
-					Middleware *float32 `json:"middleware,omitempty"`
-
-					// MiddlewarePath A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
-					MiddlewarePath *string `json:"middlewarePath,omitempty"`
-
-					// MiddlewareRawSrc The original middleware matchers.
-					MiddlewareRawSrc *[]string                                                `json:"middlewareRawSrc,omitempty"`
-					Missing          *[]EditRoute200JSONResponseBody_Route_Route_Missing_Item `json:"missing,omitempty"`
-					Mitigate         *struct {
-						Action EditRoute200JSONResponseBodyRouteRouteMitigateAction `json:"action"`
-					} `json:"mitigate,omitempty"`
-					Override                  *EditRoute200JSONResponseBodyRouteRouteOverride                  `json:"override,omitempty"`
-					RespectOriginCacheControl *EditRoute200JSONResponseBodyRouteRouteRespectOriginCacheControl `json:"respectOriginCacheControl,omitempty"`
-
-					// Source Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved as-is (not folded into `dest`).
-					Source     *string                                                     `json:"source,omitempty"`
-					Src        string                                                      `json:"src"`
-					Status     *float32                                                    `json:"status,omitempty"`
-					StatusCode *float32                                                    `json:"statusCode,omitempty"`
-					Transforms *[]EditRoute200JSONResponseBody_Route_Route_Transforms_Item `json:"transforms,omitempty"`
-				} `json:"route"`
-				RouteType *EditRoute200JSONResponseBodyRouteRouteType `json:"routeType,omitempty"`
-
-				// SrcSyntax The syntax type of the source pattern. Determines how the pattern is compiled to regex.
-				SrcSyntax *EditRoute200JSONResponseBodyRouteSrcSyntax `json:"srcSyntax,omitempty"`
-
-				// Staged Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
-				Staged *EditRoute200JSONResponseBodyRouteStaged `json:"staged,omitempty"`
-			} `json:"route,omitempty"`
-
-			// Version A version of routing rules stored in S3.
-			Version struct {
-				// Alias The staging alias for previewing this version.
-				Alias *string `json:"alias,omitempty"`
-
-				// CreatedBy The user who created this version.
-				CreatedBy string `json:"createdBy"`
-
-				// Id Unique identifier for the version.
-				Id string `json:"id"`
-
-				// IsLive Whether this version is currently live in production.
-				IsLive *EditRoute200JSONResponseBodyVersionIsLive `json:"isLive,omitempty"`
-
-				// IsStaging Whether this version is staged and not yet promoted to production.
-				IsStaging *EditRoute200JSONResponseBodyVersionIsStaging `json:"isStaging,omitempty"`
-
-				// LastModified Timestamp of when this version was last modified.
-				LastModified float32 `json:"lastModified"`
-
-				// RuleCount The number of routing rules in this version.
-				RuleCount *float32 `json:"ruleCount,omitempty"`
-
-				// S3Key The S3 key where the routing rules are stored.
-				S3Key string `json:"s3Key"`
-			} `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUnpauseProjectResponse parses an HTTP response from a UnpauseProjectWithResponse call
-func ParseUnpauseProjectResponse(rsp *http.Response) (*UnpauseProjectResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UnpauseProjectResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseAggregateEventsResponse parses an HTTP response from a AggregateEventsWithResponse call
-func ParseAggregateEventsResponse(rsp *http.Response) (*AggregateEventsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AggregateEventsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data  AggregateEvents200JSONResponseBody_Data `json:"data"`
-			Query struct {
-				Filter  *string                                                  `json:"filter,omitempty"`
-				GroupBy *[]AggregateEvents200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
-				Limit   float32                                                  `json:"limit"`
-				Since   string                                                   `json:"since"`
-				Until   string                                                   `json:"until"`
-			} `json:"query"`
-			Version float32 `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCountEventsResponse parses an HTTP response from a CountEventsWithResponse call
-func ParseCountEventsResponse(rsp *http.Response) (*CountEventsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CountEventsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data  CountEvents200JSONResponseBody_Data `json:"data"`
-			Query struct {
-				Filter *string `json:"filter,omitempty"`
-				Since  string  `json:"since"`
-				Until  string  `json:"until"`
-			} `json:"query"`
-			Version float32 `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseAggregatePageviewsResponse parses an HTTP response from a AggregatePageviewsWithResponse call
-func ParseAggregatePageviewsResponse(rsp *http.Response) (*AggregatePageviewsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AggregatePageviewsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data  AggregatePageviews200JSONResponseBody_Data `json:"data"`
-			Query struct {
-				Filter  *string                                                     `json:"filter,omitempty"`
-				GroupBy *[]AggregatePageviews200JSONResponseBody_Query_GroupBy_Item `json:"groupBy,omitempty"`
-				Limit   float32                                                     `json:"limit"`
-				Since   string                                                      `json:"since"`
-				Until   string                                                      `json:"until"`
-			} `json:"query"`
-			Version float32 `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCountPageviewsResponse parses an HTTP response from a CountPageviewsWithResponse call
-func ParseCountPageviewsResponse(rsp *http.Response) (*CountPageviewsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CountPageviewsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data  CountPageviews200JSONResponseBody_Data `json:"data"`
-			Query struct {
-				Filter *string `json:"filter,omitempty"`
-				Since  string  `json:"since"`
-				Until  string  `json:"until"`
-			} `json:"query"`
-			Version float32 `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetBulkAvailabilityResponse parses an HTTP response from a GetBulkAvailabilityWithResponse call
-func ParseGetBulkAvailabilityResponse(rsp *http.Response) (*GetBulkAvailabilityResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetBulkAvailabilityResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Results []struct {
-				Available bool `json:"available"`
-
-				// Domain A valid domain name
-				Domain DomainName `json:"domain"`
-			} `json:"results"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest HttpApiDecodeError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseBuyDomainsResponse parses an HTTP response from a BuyDomainsWithResponse call
-func ParseBuyDomainsResponse(rsp *http.Response) (*BuyDomainsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BuyDomainsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			UnderscoreLinks map[string]struct {
-				Href   string                                   `json:"href"`
-				Method BuyDomains200JSONResponseBodyLinksMethod `json:"method"`
-			} `json:"_links"`
-
-			// OrderId A valid order ID
-			OrderId OrderId `json:"orderId"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest BuyDomains400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest BuyDomains403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetBulkPriceResponse parses an HTTP response from a GetBulkPriceWithResponse call
-func ParseGetBulkPriceResponse(rsp *http.Response) (*GetBulkPriceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetBulkPriceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Results []struct {
-				// Domain A valid domain name
-				Domain        DomainName                                            `json:"domain"`
-				PurchasePrice GetBulkPrice200JSONResponseBody_Results_PurchasePrice `json:"purchasePrice"`
-				RenewalPrice  GetBulkPrice200JSONResponseBody_Results_RenewalPrice  `json:"renewalPrice"`
-				TransferPrice GetBulkPrice200JSONResponseBody_Results_TransferPrice `json:"transferPrice"`
-				Years         float32                                               `json:"years"`
-			} `json:"results"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetBulkPrice400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseSearchDomainsResponse parses an HTTP response from a SearchDomainsWithResponse call
-func ParseSearchDomainsResponse(rsp *http.Response) (*SearchDomainsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &SearchDomainsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Results []SearchDomains200JSONResponseBody_Results_Item `json:"results"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest HttpApiDecodeError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetDomainAuthCodeResponse parses an HTTP response from a GetDomainAuthCodeWithResponse call
-func ParseGetDomainAuthCodeResponse(rsp *http.Response) (*GetDomainAuthCodeResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDomainAuthCodeResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AuthCode string `json:"authCode"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetDomainAuthCode400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest GetDomainAuthCode403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DomainNotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest DomainCannotBeTransferedOutUntil
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateDomainAutoRenewResponse parses an HTTP response from a UpdateDomainAutoRenewWithResponse call
-func ParseUpdateDomainAutoRenewResponse(rsp *http.Response) (*UpdateDomainAutoRenewResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateDomainAutoRenewResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case rsp.StatusCode == 204:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest UpdateDomainAutoRenew400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest UpdateDomainAutoRenew403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DomainNotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetDomainAvailabilityResponse parses an HTTP response from a GetDomainAvailabilityWithResponse call
-func ParseGetDomainAvailabilityResponse(rsp *http.Response) (*GetDomainAvailabilityResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDomainAvailabilityResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Available bool `json:"available"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest HttpApiDecodeError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest NotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseBuySingleDomainResponse parses an HTTP response from a BuySingleDomainWithResponse call
-func ParseBuySingleDomainResponse(rsp *http.Response) (*BuySingleDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BuySingleDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			UnderscoreLinks map[string]struct {
-				Href   string                                        `json:"href"`
-				Method BuySingleDomain200JSONResponseBodyLinksMethod `json:"method"`
-			} `json:"_links"`
-
-			// OrderId A valid order ID
-			OrderId OrderId `json:"orderId"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest BuySingleDomain400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest BuySingleDomain403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetContactInfoSchemaResponse parses an HTTP response from a GetContactInfoSchemaWithResponse call
-func ParseGetContactInfoSchemaResponse(rsp *http.Response) (*GetContactInfoSchemaResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetContactInfoSchemaResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest map[string]interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetContactInfoSchema400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetDomainContactVerificationResponse parses an HTTP response from a GetDomainContactVerificationWithResponse call
-func ParseGetDomainContactVerificationResponse(rsp *http.Response) (*GetDomainContactVerificationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDomainContactVerificationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetDomainContactVerification200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetDomainContactVerification400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest GetDomainContactVerification403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DomainNotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateDomainNameserversResponse parses an HTTP response from a UpdateDomainNameserversWithResponse call
-func ParseUpdateDomainNameserversResponse(rsp *http.Response) (*UpdateDomainNameserversResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateDomainNameserversResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case rsp.StatusCode == 204:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest UpdateDomainNameservers400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest UpdateDomainNameservers403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DomainNotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetDomainPriceResponse parses an HTTP response from a GetDomainPriceWithResponse call
-func ParseGetDomainPriceResponse(rsp *http.Response) (*GetDomainPriceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDomainPriceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			PurchasePrice GetDomainPrice200JSONResponseBody_PurchasePrice `json:"purchasePrice"`
-			RenewalPrice  GetDomainPrice200JSONResponseBody_RenewalPrice  `json:"renewalPrice"`
-			TransferPrice GetDomainPrice200JSONResponseBody_TransferPrice `json:"transferPrice"`
-			Years         float32                                         `json:"years"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetDomainPrice400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseRenewDomainResponse parses an HTTP response from a RenewDomainWithResponse call
-func ParseRenewDomainResponse(rsp *http.Response) (*RenewDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RenewDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			UnderscoreLinks map[string]struct {
-				Href   string                                    `json:"href"`
-				Method RenewDomain200JSONResponseBodyLinksMethod `json:"method"`
-			} `json:"_links"`
-
-			// OrderId A valid order ID
-			OrderId OrderId `json:"orderId"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest RenewDomain400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest RenewDomain403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DomainNotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetDomainTransferInResponse parses an HTTP response from a GetDomainTransferInWithResponse call
-func ParseGetDomainTransferInResponse(rsp *http.Response) (*GetDomainTransferInResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetDomainTransferInResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Status GetDomainTransferIn200JSONResponseBodyStatus `json:"status"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest HttpApiDecodeError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest GetDomainTransferIn403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest NotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseTransferInDomainResponse parses an HTTP response from a TransferInDomainWithResponse call
-func ParseTransferInDomainResponse(rsp *http.Response) (*TransferInDomainResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &TransferInDomainResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			UnderscoreLinks map[string]struct {
-				Href   string                                         `json:"href"`
-				Method TransferInDomain200JSONResponseBodyLinksMethod `json:"method"`
-			} `json:"_links"`
-
-			// OrderId A valid order ID
-			OrderId OrderId `json:"orderId"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest TransferInDomain400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest TransferInDomain403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetOrderResponse parses an HTTP response from a GetOrderWithResponse call
-func ParseGetOrderResponse(rsp *http.Response) (*GetOrderResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetOrderResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Domains []GetOrder200JSONResponseBody_Domains_Item `json:"domains"`
-			Error   *GetOrder200JSONResponseBody_Error         `json:"error,omitempty"`
-
-			// OrderId A valid order ID
-			OrderId OrderId                           `json:"orderId"`
-			Status  GetOrder200JSONResponseBodyStatus `json:"status"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest HttpApiDecodeError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest GetOrder403JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest NotFound
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetSupportedTldsResponse parses an HTTP response from a GetSupportedTldsWithResponse call
-func ParseGetSupportedTldsResponse(rsp *http.Response) (*GetSupportedTldsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetSupportedTldsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []TldName
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest HttpApiDecodeError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetTldResponse parses an HTTP response from a GetTldWithResponse call
-func ParseGetTldResponse(rsp *http.Response) (*GetTldResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetTldResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// SupportedLanguageCodes The language codes that are supported for the TLD. The key is the language code, and the value is the name of the language.
-			SupportedLanguageCodes map[string]string `json:"supportedLanguageCodes"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetTld400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetTldPriceResponse parses an HTTP response from a GetTldPriceWithResponse call
-func ParseGetTldPriceResponse(rsp *http.Response) (*GetTldPriceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetTldPriceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			PurchasePrice GetTldPrice200JSONResponseBody_PurchasePrice `json:"purchasePrice"`
-			RenewalPrice  GetTldPrice200JSONResponseBody_RenewalPrice  `json:"renewalPrice"`
-			TransferPrice GetTldPrice200JSONResponseBody_TransferPrice `json:"transferPrice"`
-
-			// Years The number of years the returned price is for.
-			Years float32 `json:"years"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest GetTldPrice400JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest Unauthorized
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest NotAuthorizedForScope
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest TooManyRequests
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest InternalServerError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateAttackChallengeModeResponse parses an HTTP response from a UpdateAttackChallengeModeWithResponse call
-func ParseUpdateAttackChallengeModeResponse(rsp *http.Response) (*UpdateAttackChallengeModeResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateAttackChallengeModeResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AttackModeEnabled   UpdateAttackChallengeMode200JSONResponseBodyAttackModeEnabled `json:"attackModeEnabled"`
-			AttackModeUpdatedAt float32                                                       `json:"attackModeUpdatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetActiveAttackStatusResponse parses an HTTP response from a GetActiveAttackStatusWithResponse call
-func ParseGetActiveAttackStatusResponse(rsp *http.Response) (*GetActiveAttackStatusResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetActiveAttackStatusResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetActiveAttackStatus200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveBypassIpResponse parses an HTTP response from a RemoveBypassIpWithResponse call
-func ParseRemoveBypassIpResponse(rsp *http.Response) (*RemoveBypassIpResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveBypassIpResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Ok RemoveBypassIp200JSONResponseBodyOk `json:"ok"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetBypassIpResponse parses an HTTP response from a GetBypassIpWithResponse call
-func ParseGetBypassIpResponse(rsp *http.Response) (*GetBypassIpResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetBypassIpResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Pagination *struct {
-				Id      string `json:"Id"`
-				OwnerId string `json:"OwnerId"`
-			} `json:"pagination,omitempty"`
-			Result []struct {
-				Action        *GetBypassIp200JSONResponseBodyResultAction        `json:"Action,omitempty"`
-				ActorId       *string                                            `json:"ActorId,omitempty"`
-				CreatedAt     string                                             `json:"CreatedAt"`
-				DeletedAt     *string                                            `json:"DeletedAt,omitempty"`
-				Domain        string                                             `json:"Domain"`
-				ExpiresAt     *float32                                           `json:"ExpiresAt,omitempty"`
-				Id            string                                             `json:"Id"`
-				Ip            string                                             `json:"Ip"`
-				IsProjectRule *GetBypassIp200JSONResponseBodyResultIsProjectRule `json:"IsProjectRule,omitempty"`
-				Note          *string                                            `json:"Note,omitempty"`
-				OwnerId       string                                             `json:"OwnerId"`
-				ProjectId     *string                                            `json:"ProjectId,omitempty"`
-				UpdatedAt     string                                             `json:"UpdatedAt"`
-				UpdatedAtHour string                                             `json:"UpdatedAtHour"`
-			} `json:"result"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseAddBypassIpResponse parses an HTTP response from a AddBypassIpWithResponse call
-func ParseAddBypassIpResponse(rsp *http.Response) (*AddBypassIpResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AddBypassIpResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AddBypassIp200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteConditionalBypassResponse parses an HTTP response from a DeleteConditionalBypassWithResponse call
-func ParseDeleteConditionalBypassResponse(rsp *http.Response) (*DeleteConditionalBypassResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteConditionalBypassResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
-		var dest string
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON204 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetConditionalBypassResponse parses an HTTP response from a GetConditionalBypassWithResponse call
-func ParseGetConditionalBypassResponse(rsp *http.Response) (*GetConditionalBypassResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetConditionalBypassResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest GetConditionalBypass200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateConditionalBypassResponse parses an HTTP response from a CreateConditionalBypassWithResponse call
-func ParseCreateConditionalBypassResponse(rsp *http.Response) (*CreateConditionalBypassResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateConditionalBypassResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Condition      string `json:"condition"`
-			ConditionGroup []struct {
-				Conditions []struct {
-					Key   *string                                                                     `json:"key,omitempty"`
-					Neg   *CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg      `json:"neg,omitempty"`
-					Op    CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp        `json:"op"`
-					Type  CreateConditionalBypass200JSONResponseBodyConditionGroupConditionsType      `json:"type"`
-					Value *CreateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-				} `json:"conditions"`
-			} `json:"conditionGroup"`
-			CreatedAt string  `json:"createdAt"`
-			Domain    string  `json:"domain"`
-			Id        string  `json:"id"`
-			Note      *string `json:"note,omitempty"`
-			ProjectId string  `json:"projectId"`
-			UpdatedAt string  `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateConditionalBypassResponse parses an HTTP response from a UpdateConditionalBypassWithResponse call
-func ParseUpdateConditionalBypassResponse(rsp *http.Response) (*UpdateConditionalBypassResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateConditionalBypassResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Condition      string `json:"condition"`
-			ConditionGroup []struct {
-				Conditions []struct {
-					Key   *string                                                                     `json:"key,omitempty"`
-					Neg   *UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsNeg      `json:"neg,omitempty"`
-					Op    UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsOp        `json:"op"`
-					Type  UpdateConditionalBypass200JSONResponseBodyConditionGroupConditionsType      `json:"type"`
-					Value *UpdateConditionalBypass200JSONResponseBody_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-				} `json:"conditions"`
-			} `json:"conditionGroup"`
-			CreatedAt string  `json:"createdAt"`
-			Domain    string  `json:"domain"`
-			Id        string  `json:"id"`
-			Note      *string `json:"note,omitempty"`
-			ProjectId string  `json:"projectId"`
-			UpdatedAt string  `json:"updatedAt"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetSecurityFirewallConfigResponse parses an HTTP response from a GetSecurityFirewallConfigWithResponse call
-func ParseGetSecurityFirewallConfigResponse(rsp *http.Response) (*GetSecurityFirewallConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetSecurityFirewallConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Active *struct {
-				BotIdEnabled *GetSecurityFirewallConfig200JSONResponseBodyActiveBotIdEnabled `json:"botIdEnabled,omitempty"`
-				Changes      []map[string]interface{}                                        `json:"changes"`
-				Conditions   *[]struct {
-					Active         GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsActive `json:"active"`
-					ConditionGroup []struct {
-						Conditions []struct {
-							Key   *string                                                                                         `json:"key,omitempty"`
-							Neg   *GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
-							Op    GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsOp          `json:"op"`
-							Type  GetSecurityFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsType        `json:"type"`
-							Value *GetSecurityFirewallConfig200JSONResponseBody_Active_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-						} `json:"conditions"`
-					} `json:"conditionGroup"`
-					Description *string `json:"description,omitempty"`
-					Id          string  `json:"id"`
-					Name        string  `json:"name"`
-				} `json:"conditions,omitempty"`
-				Crs *struct {
-					Gen struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsGenAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsGenActive `json:"active"`
-					} `json:"gen"`
-					Java struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsJavaAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsJavaActive `json:"active"`
-					} `json:"java"`
-					Lfi struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsLfiAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsLfiActive `json:"active"`
-					} `json:"lfi"`
-					Ma struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsMaAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsMaActive `json:"active"`
-					} `json:"ma"`
-					Php struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsPhpActive `json:"active"`
-					} `json:"php"`
-					Rce struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRceActive `json:"active"`
-					} `json:"rce"`
-					Rfi struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsRfiActive `json:"active"`
-					} `json:"rfi"`
-					Sd struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSdActive `json:"active"`
-					} `json:"sd"`
-					Sf struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSfActive `json:"active"`
-					} `json:"sf"`
-					Sqli struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsSqliActive `json:"active"`
-					} `json:"sqli"`
-					Xss struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyActiveCrsXssActive `json:"active"`
-					} `json:"xss"`
-				} `json:"crs,omitempty"`
-				FirewallEnabled GetSecurityFirewallConfig200JSONResponseBodyActiveFirewallEnabled `json:"firewallEnabled"`
-				Id              string                                                            `json:"id"`
-				Ips             []struct {
-					Action   GetSecurityFirewallConfig200JSONResponseBodyActiveIpsAction `json:"action"`
-					Hostname string                                                      `json:"hostname"`
-					Id       string                                                      `json:"id"`
-					Ip       string                                                      `json:"ip"`
-					Notes    *string                                                     `json:"notes,omitempty"`
-				} `json:"ips"`
-				LogHeaders   *GetSecurityFirewallConfig200JSONResponseBody_Active_LogHeaders `json:"logHeaders,omitempty"`
-				ManagedRules *struct {
-					AiBots *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive  `json:"active"`
-						UpdatedAt *string                                                                     `json:"updatedAt,omitempty"`
-						UserId    *string                                                                     `json:"userId,omitempty"`
-						Username  *string                                                                     `json:"username,omitempty"`
-					} `json:"ai_bots,omitempty"`
-					BotProtection *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActive  `json:"active"`
-						UpdatedAt *string                                                                            `json:"updatedAt,omitempty"`
-						UserId    *string                                                                            `json:"userId,omitempty"`
-						Username  *string                                                                            `json:"username,omitempty"`
-					} `json:"bot_protection,omitempty"`
-					Owasp *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspActive  `json:"active"`
-						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
-						UserId    *string                                                                    `json:"userId,omitempty"`
-						Username  *string                                                                    `json:"username,omitempty"`
-					} `json:"owasp,omitempty"`
-					TrafficSources *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesActive  `json:"active"`
-						UpdatedAt *string                                                                             `json:"updatedAt,omitempty"`
-						UserId    *string                                                                             `json:"userId,omitempty"`
-						Username  *string                                                                             `json:"username,omitempty"`
-					} `json:"traffic_sources,omitempty"`
-					VercelRuleset *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetActive  `json:"active"`
-						UpdatedAt *string                                                                            `json:"updatedAt,omitempty"`
-						UserId    *string                                                                            `json:"userId,omitempty"`
-						Username  *string                                                                            `json:"username,omitempty"`
-					} `json:"vercel_ruleset,omitempty"`
-				} `json:"managedRules,omitempty"`
-				OwnerId    string                                                           `json:"ownerId"`
-				ProjectKey string                                                           `json:"projectKey"`
-				Rules      []GetSecurityFirewallConfig200JSONResponseBody_Active_Rules_Item `json:"rules"`
-				Rulesets   *GetSecurityFirewallConfig200JSONResponseBody_Active_Rulesets    `json:"rulesets,omitempty"`
-				UpdatedAt  string                                                           `json:"updatedAt"`
-				Version    float32                                                          `json:"version"`
-			} `json:"active"`
-			Draft *struct {
-				BotIdEnabled *GetSecurityFirewallConfig200JSONResponseBodyDraftBotIdEnabled `json:"botIdEnabled,omitempty"`
-				Changes      []map[string]interface{}                                       `json:"changes"`
-				Conditions   *[]struct {
-					Active         GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsActive `json:"active"`
-					ConditionGroup []struct {
-						Conditions []struct {
-							Key   *string                                                                                        `json:"key,omitempty"`
-							Neg   *GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
-							Op    GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsOp          `json:"op"`
-							Type  GetSecurityFirewallConfig200JSONResponseBodyDraftConditionsConditionGroupConditionsType        `json:"type"`
-							Value *GetSecurityFirewallConfig200JSONResponseBody_Draft_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-						} `json:"conditions"`
-					} `json:"conditionGroup"`
-					Description *string `json:"description,omitempty"`
-					Id          string  `json:"id"`
-					Name        string  `json:"name"`
-				} `json:"conditions,omitempty"`
-				Crs *struct {
-					Gen struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsGenActive `json:"active"`
-					} `json:"gen"`
-					Java struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsJavaActive `json:"active"`
-					} `json:"java"`
-					Lfi struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsLfiActive `json:"active"`
-					} `json:"lfi"`
-					Ma struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsMaActive `json:"active"`
-					} `json:"ma"`
-					Php struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsPhpActive `json:"active"`
-					} `json:"php"`
-					Rce struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRceActive `json:"active"`
-					} `json:"rce"`
-					Rfi struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsRfiActive `json:"active"`
-					} `json:"rfi"`
-					Sd struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSdActive `json:"active"`
-					} `json:"sd"`
-					Sf struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSfActive `json:"active"`
-					} `json:"sf"`
-					Sqli struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsSqliActive `json:"active"`
-					} `json:"sqli"`
-					Xss struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyDraftCrsXssActive `json:"active"`
-					} `json:"xss"`
-				} `json:"crs,omitempty"`
-				FirewallEnabled GetSecurityFirewallConfig200JSONResponseBodyDraftFirewallEnabled `json:"firewallEnabled"`
-				Id              string                                                           `json:"id"`
-				Ips             []struct {
-					Action   GetSecurityFirewallConfig200JSONResponseBodyDraftIpsAction `json:"action"`
-					Hostname string                                                     `json:"hostname"`
-					Id       string                                                     `json:"id"`
-					Ip       string                                                     `json:"ip"`
-					Notes    *string                                                    `json:"notes,omitempty"`
-				} `json:"ips"`
-				LogHeaders   *GetSecurityFirewallConfig200JSONResponseBody_Draft_LogHeaders `json:"logHeaders,omitempty"`
-				ManagedRules *struct {
-					AiBots *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesAiBotsActive  `json:"active"`
-						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
-						UserId    *string                                                                    `json:"userId,omitempty"`
-						Username  *string                                                                    `json:"username,omitempty"`
-					} `json:"ai_bots,omitempty"`
-					BotProtection *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesBotProtectionActive  `json:"active"`
-						UpdatedAt *string                                                                           `json:"updatedAt,omitempty"`
-						UserId    *string                                                                           `json:"userId,omitempty"`
-						Username  *string                                                                           `json:"username,omitempty"`
-					} `json:"bot_protection,omitempty"`
-					Owasp *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesOwaspActive  `json:"active"`
-						UpdatedAt *string                                                                   `json:"updatedAt,omitempty"`
-						UserId    *string                                                                   `json:"userId,omitempty"`
-						Username  *string                                                                   `json:"username,omitempty"`
-					} `json:"owasp,omitempty"`
-					TrafficSources *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesTrafficSourcesActive  `json:"active"`
-						UpdatedAt *string                                                                            `json:"updatedAt,omitempty"`
-						UserId    *string                                                                            `json:"userId,omitempty"`
-						Username  *string                                                                            `json:"username,omitempty"`
-					} `json:"traffic_sources,omitempty"`
-					VercelRuleset *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyDraftManagedRulesVercelRulesetActive  `json:"active"`
-						UpdatedAt *string                                                                           `json:"updatedAt,omitempty"`
-						UserId    *string                                                                           `json:"userId,omitempty"`
-						Username  *string                                                                           `json:"username,omitempty"`
-					} `json:"vercel_ruleset,omitempty"`
-				} `json:"managedRules,omitempty"`
-				OwnerId    string                                                          `json:"ownerId"`
-				ProjectKey string                                                          `json:"projectKey"`
-				Rules      []GetSecurityFirewallConfig200JSONResponseBody_Draft_Rules_Item `json:"rules"`
-				Rulesets   *GetSecurityFirewallConfig200JSONResponseBody_Draft_Rulesets    `json:"rulesets,omitempty"`
-				UpdatedAt  string                                                          `json:"updatedAt"`
-				Version    float32                                                         `json:"version"`
-			} `json:"draft"`
-			Versions []struct {
-				BotIdEnabled *GetSecurityFirewallConfig200JSONResponseBodyVersionsBotIdEnabled `json:"botIdEnabled,omitempty"`
-				Changes      []map[string]interface{}                                          `json:"changes"`
-				Conditions   *[]struct {
-					Active         GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsActive `json:"active"`
-					ConditionGroup []struct {
-						Conditions []struct {
-							Key   *string                                                                                           `json:"key,omitempty"`
-							Neg   *GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
-							Op    GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsOp          `json:"op"`
-							Type  GetSecurityFirewallConfig200JSONResponseBodyVersionsConditionsConditionGroupConditionsType        `json:"type"`
-							Value *GetSecurityFirewallConfig200JSONResponseBody_Versions_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-						} `json:"conditions"`
-					} `json:"conditionGroup"`
-					Description *string `json:"description,omitempty"`
-					Id          string  `json:"id"`
-					Name        string  `json:"name"`
-				} `json:"conditions,omitempty"`
-				Crs *struct {
-					Gen struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsGenActive `json:"active"`
-					} `json:"gen"`
-					Java struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsJavaActive `json:"active"`
-					} `json:"java"`
-					Lfi struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsLfiActive `json:"active"`
-					} `json:"lfi"`
-					Ma struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsMaActive `json:"active"`
-					} `json:"ma"`
-					Php struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsPhpActive `json:"active"`
-					} `json:"php"`
-					Rce struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRceActive `json:"active"`
-					} `json:"rce"`
-					Rfi struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsRfiActive `json:"active"`
-					} `json:"rfi"`
-					Sd struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSdActive `json:"active"`
-					} `json:"sd"`
-					Sf struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSfActive `json:"active"`
-					} `json:"sf"`
-					Sqli struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsSqliActive `json:"active"`
-					} `json:"sqli"`
-					Xss struct {
-						Action GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssAction `json:"action"`
-						Active GetSecurityFirewallConfig200JSONResponseBodyVersionsCrsXssActive `json:"active"`
-					} `json:"xss"`
-				} `json:"crs,omitempty"`
-				FirewallEnabled GetSecurityFirewallConfig200JSONResponseBodyVersionsFirewallEnabled `json:"firewallEnabled"`
-				Id              string                                                              `json:"id"`
-				Ips             []struct {
-					Action   GetSecurityFirewallConfig200JSONResponseBodyVersionsIpsAction `json:"action"`
-					Hostname string                                                        `json:"hostname"`
-					Id       string                                                        `json:"id"`
-					Ip       string                                                        `json:"ip"`
-					Notes    *string                                                       `json:"notes,omitempty"`
-				} `json:"ips"`
-				LogHeaders   *GetSecurityFirewallConfig200JSONResponseBody_Versions_LogHeaders `json:"logHeaders,omitempty"`
-				ManagedRules *struct {
-					AiBots *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesAiBotsActive  `json:"active"`
-						UpdatedAt *string                                                                       `json:"updatedAt,omitempty"`
-						UserId    *string                                                                       `json:"userId,omitempty"`
-						Username  *string                                                                       `json:"username,omitempty"`
-					} `json:"ai_bots,omitempty"`
-					BotProtection *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesBotProtectionActive  `json:"active"`
-						UpdatedAt *string                                                                              `json:"updatedAt,omitempty"`
-						UserId    *string                                                                              `json:"userId,omitempty"`
-						Username  *string                                                                              `json:"username,omitempty"`
-					} `json:"bot_protection,omitempty"`
-					Owasp *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesOwaspActive  `json:"active"`
-						UpdatedAt *string                                                                      `json:"updatedAt,omitempty"`
-						UserId    *string                                                                      `json:"userId,omitempty"`
-						Username  *string                                                                      `json:"username,omitempty"`
-					} `json:"owasp,omitempty"`
-					TrafficSources *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesTrafficSourcesActive  `json:"active"`
-						UpdatedAt *string                                                                               `json:"updatedAt,omitempty"`
-						UserId    *string                                                                               `json:"userId,omitempty"`
-						Username  *string                                                                               `json:"username,omitempty"`
-					} `json:"traffic_sources,omitempty"`
-					VercelRuleset *struct {
-						Action    *GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetAction `json:"action,omitempty"`
-						Active    GetSecurityFirewallConfig200JSONResponseBodyVersionsManagedRulesVercelRulesetActive  `json:"active"`
-						UpdatedAt *string                                                                              `json:"updatedAt,omitempty"`
-						UserId    *string                                                                              `json:"userId,omitempty"`
-						Username  *string                                                                              `json:"username,omitempty"`
-					} `json:"vercel_ruleset,omitempty"`
-				} `json:"managedRules,omitempty"`
-				OwnerId    string                                                             `json:"ownerId"`
-				ProjectKey string                                                             `json:"projectKey"`
-				Rules      []GetSecurityFirewallConfig200JSONResponseBody_Versions_Rules_Item `json:"rules"`
-				Rulesets   *GetSecurityFirewallConfig200JSONResponseBody_Versions_Rulesets    `json:"rulesets,omitempty"`
-				UpdatedAt  string                                                             `json:"updatedAt"`
-				Version    float32                                                            `json:"version"`
-			} `json:"versions"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateFirewallConfigResponse parses an HTTP response from a UpdateFirewallConfigWithResponse call
-func ParseUpdateFirewallConfigResponse(rsp *http.Response) (*UpdateFirewallConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateFirewallConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest map[string]interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParsePutFirewallConfigResponse parses an HTTP response from a PutFirewallConfigWithResponse call
-func ParsePutFirewallConfigResponse(rsp *http.Response) (*PutFirewallConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PutFirewallConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Active struct {
-				BotIdEnabled *PutFirewallConfig200JSONResponseBodyActiveBotIdEnabled `json:"botIdEnabled,omitempty"`
-				Changes      []map[string]interface{}                                `json:"changes"`
-				Conditions   *[]struct {
-					Active         PutFirewallConfig200JSONResponseBodyActiveConditionsActive `json:"active"`
-					ConditionGroup []struct {
-						Conditions []struct {
-							Key   *string                                                                                 `json:"key,omitempty"`
-							Neg   *PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsNeg        `json:"neg,omitempty"`
-							Op    PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsOp          `json:"op"`
-							Type  PutFirewallConfig200JSONResponseBodyActiveConditionsConditionGroupConditionsType        `json:"type"`
-							Value *PutFirewallConfig200JSONResponseBody_Active_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-						} `json:"conditions"`
-					} `json:"conditionGroup"`
-					Description *string `json:"description,omitempty"`
-					Id          string  `json:"id"`
-					Name        string  `json:"name"`
-				} `json:"conditions,omitempty"`
-
-				// Crs Custom Ruleset
-				Crs *struct {
-					// Gen Generic Attack - Provide broad protection from various undefined or novel attack vectors.
-					Gen struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsGenAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsGenActive `json:"active"`
-					} `json:"gen"`
-
-					// Java Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
-					Java struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsJavaAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsJavaActive `json:"active"`
-					} `json:"java"`
-
-					// Lfi Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
-					Lfi struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsLfiAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsLfiActive `json:"active"`
-					} `json:"lfi"`
-
-					// Ma Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
-					Ma struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsMaAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsMaActive `json:"active"`
-					} `json:"ma"`
-
-					// Php PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
-					Php struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsPhpAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsPhpActive `json:"active"`
-					} `json:"php"`
-
-					// Rce Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
-					Rce struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsRceAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsRceActive `json:"active"`
-					} `json:"rce"`
-
-					// Rfi Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
-					Rfi struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsRfiAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsRfiActive `json:"active"`
-					} `json:"rfi"`
-
-					// Sd Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
-					Sd struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsSdAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsSdActive `json:"active"`
-					} `json:"sd"`
-
-					// Sf Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
-					Sf struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsSfAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsSfActive `json:"active"`
-					} `json:"sf"`
-
-					// Sqli SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
-					Sqli struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsSqliAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsSqliActive `json:"active"`
-					} `json:"sqli"`
-
-					// Xss XSS Attack - Prevent injection of malicious scripts into trusted webpages.
-					Xss struct {
-						Action PutFirewallConfig200JSONResponseBodyActiveCrsXssAction `json:"action"`
-						Active PutFirewallConfig200JSONResponseBodyActiveCrsXssActive `json:"active"`
-					} `json:"xss"`
-				} `json:"crs,omitempty"`
-				FirewallEnabled PutFirewallConfig200JSONResponseBodyActiveFirewallEnabled `json:"firewallEnabled"`
-				Id              string                                                    `json:"id"`
-				Ips             []struct {
-					Action   PutFirewallConfig200JSONResponseBodyActiveIpsAction `json:"action"`
-					Hostname string                                              `json:"hostname"`
-					Id       string                                              `json:"id"`
-					Ip       string                                              `json:"ip"`
-					Notes    *string                                             `json:"notes,omitempty"`
-				} `json:"ips"`
-				LogHeaders   *PutFirewallConfig200JSONResponseBody_Active_LogHeaders `json:"logHeaders,omitempty"`
-				ManagedRules *struct {
-					AiBots *struct {
-						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsAction `json:"action,omitempty"`
-						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesAiBotsActive  `json:"active"`
-						UpdatedAt *string                                                             `json:"updatedAt,omitempty"`
-						UserId    *string                                                             `json:"userId,omitempty"`
-						Username  *string                                                             `json:"username,omitempty"`
-					} `json:"ai_bots,omitempty"`
-					BotProtection *struct {
-						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionAction `json:"action,omitempty"`
-						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesBotProtectionActive  `json:"active"`
-						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
-						UserId    *string                                                                    `json:"userId,omitempty"`
-						Username  *string                                                                    `json:"username,omitempty"`
-					} `json:"bot_protection,omitempty"`
-					Owasp *struct {
-						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspAction `json:"action,omitempty"`
-						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesOwaspActive  `json:"active"`
-						UpdatedAt *string                                                            `json:"updatedAt,omitempty"`
-						UserId    *string                                                            `json:"userId,omitempty"`
-						Username  *string                                                            `json:"username,omitempty"`
-					} `json:"owasp,omitempty"`
-					TrafficSources *struct {
-						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesTrafficSourcesActive  `json:"active"`
-						UpdatedAt *string                                                                     `json:"updatedAt,omitempty"`
-						UserId    *string                                                                     `json:"userId,omitempty"`
-						Username  *string                                                                     `json:"username,omitempty"`
-					} `json:"traffic_sources,omitempty"`
-					VercelRuleset *struct {
-						Action    *PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetAction `json:"action,omitempty"`
-						Active    PutFirewallConfig200JSONResponseBodyActiveManagedRulesVercelRulesetActive  `json:"active"`
-						UpdatedAt *string                                                                    `json:"updatedAt,omitempty"`
-						UserId    *string                                                                    `json:"userId,omitempty"`
-						Username  *string                                                                    `json:"username,omitempty"`
-					} `json:"vercel_ruleset,omitempty"`
-				} `json:"managedRules,omitempty"`
-				OwnerId    string                                                   `json:"ownerId"`
-				ProjectKey string                                                   `json:"projectKey"`
-				Rules      []PutFirewallConfig200JSONResponseBody_Active_Rules_Item `json:"rules"`
-				Rulesets   *PutFirewallConfig200JSONResponseBody_Active_Rulesets    `json:"rulesets,omitempty"`
-				UpdatedAt  string                                                   `json:"updatedAt"`
-				Version    float32                                                  `json:"version"`
-			} `json:"active"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGenerateFirewallRuleResponse parses an HTTP response from a GenerateFirewallRuleWithResponse call
-func ParseGenerateFirewallRuleResponse(rsp *http.Response) (*GenerateFirewallRuleResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GenerateFirewallRuleResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Error *string `json:"error,omitempty"`
-			Rule  *struct {
-				Action struct {
-					Mitigate *struct {
-						Action         string  `json:"action"`
-						ActionDuration *string `json:"actionDuration,omitempty"`
-						RateLimit      *struct {
-							Action *string  `json:"action,omitempty"`
-							Algo   string   `json:"algo"`
-							Keys   []string `json:"keys"`
-							Limit  float32  `json:"limit"`
-							Window float32  `json:"window"`
-						} `json:"rateLimit,omitempty"`
-						Redirect *struct {
-							Location  string                                                                     `json:"location"`
-							Permanent GenerateFirewallRule200JSONResponseBodyRuleActionMitigateRedirectPermanent `json:"permanent"`
-						} `json:"redirect,omitempty"`
-					} `json:"mitigate,omitempty"`
-				} `json:"action"`
-				Active         GenerateFirewallRule200JSONResponseBodyRuleActive `json:"active"`
-				ConditionGroup []struct {
-					Conditions []struct {
-						Key   *string                                                                       `json:"key,omitempty"`
-						Neg   GenerateFirewallRule200JSONResponseBodyRuleConditionGroupConditionsNeg        `json:"neg"`
-						Op    string                                                                        `json:"op"`
-						Type  string                                                                        `json:"type"`
-						Value *GenerateFirewallRule200JSONResponseBody_Rule_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-					} `json:"conditions"`
-				} `json:"conditionGroup"`
-				Description *string `json:"description,omitempty"`
-				Name        string  `json:"name"`
-			} `json:"rule,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 408:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteSecurityFirewallConfigByConfigVersionResponse parses an HTTP response from a DeleteSecurityFirewallConfigByConfigVersionWithResponse call
-func ParseDeleteSecurityFirewallConfigByConfigVersionResponse(rsp *http.Response) (*DeleteSecurityFirewallConfigByConfigVersionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteSecurityFirewallConfigByConfigVersionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
-		var dest string
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON204 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetFirewallConfigResponse parses an HTTP response from a GetFirewallConfigWithResponse call
-func ParseGetFirewallConfigResponse(rsp *http.Response) (*GetFirewallConfigResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetFirewallConfigResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			BotIdEnabled *GetFirewallConfig200JSONResponseBodyBotIdEnabled `json:"botIdEnabled,omitempty"`
-			Changes      []map[string]interface{}                          `json:"changes"`
-			Conditions   *[]struct {
-				Active         GetFirewallConfig200JSONResponseBodyConditionsActive `json:"active"`
-				ConditionGroup []struct {
-					Conditions []struct {
-						Key   *string                                                                          `json:"key,omitempty"`
-						Neg   *GetFirewallConfig200JSONResponseBodyConditionsConditionGroupConditionsNeg       `json:"neg,omitempty"`
-						Op    GetFirewallConfig200JSONResponseBodyConditionsConditionGroupConditionsOp         `json:"op"`
-						Type  GetFirewallConfig200JSONResponseBodyConditionsConditionGroupConditionsType       `json:"type"`
-						Value *GetFirewallConfig200JSONResponseBody_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-					} `json:"conditions"`
-				} `json:"conditionGroup"`
-				Description *string `json:"description,omitempty"`
-				Id          string  `json:"id"`
-				Name        string  `json:"name"`
-			} `json:"conditions,omitempty"`
-
-			// Crs Custom Ruleset
-			Crs *struct {
-				// Gen Generic Attack - Provide broad protection from various undefined or novel attack vectors.
-				Gen struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsGenAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsGenActive `json:"active"`
-				} `json:"gen"`
-
-				// Java Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
-				Java struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsJavaAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsJavaActive `json:"active"`
-				} `json:"java"`
-
-				// Lfi Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
-				Lfi struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsLfiAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsLfiActive `json:"active"`
-				} `json:"lfi"`
-
-				// Ma Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
-				Ma struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsMaAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsMaActive `json:"active"`
-				} `json:"ma"`
-
-				// Php PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
-				Php struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsPhpAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsPhpActive `json:"active"`
-				} `json:"php"`
-
-				// Rce Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
-				Rce struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsRceAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsRceActive `json:"active"`
-				} `json:"rce"`
-
-				// Rfi Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
-				Rfi struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsRfiAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsRfiActive `json:"active"`
-				} `json:"rfi"`
-
-				// Sd Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
-				Sd struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsSdAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsSdActive `json:"active"`
-				} `json:"sd"`
-
-				// Sf Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
-				Sf struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsSfAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsSfActive `json:"active"`
-				} `json:"sf"`
-
-				// Sqli SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
-				Sqli struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsSqliAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsSqliActive `json:"active"`
-				} `json:"sqli"`
-
-				// Xss XSS Attack - Prevent injection of malicious scripts into trusted webpages.
-				Xss struct {
-					Action GetFirewallConfig200JSONResponseBodyCrsXssAction `json:"action"`
-					Active GetFirewallConfig200JSONResponseBodyCrsXssActive `json:"active"`
-				} `json:"xss"`
-			} `json:"crs,omitempty"`
-			FirewallEnabled GetFirewallConfig200JSONResponseBodyFirewallEnabled `json:"firewallEnabled"`
-			Id              string                                              `json:"id"`
-			Ips             []struct {
-				Action   GetFirewallConfig200JSONResponseBodyIpsAction `json:"action"`
-				Hostname string                                        `json:"hostname"`
-				Id       string                                        `json:"id"`
-				Ip       string                                        `json:"ip"`
-				Notes    *string                                       `json:"notes,omitempty"`
-			} `json:"ips"`
-			LogHeaders   *GetFirewallConfig200JSONResponseBody_LogHeaders `json:"logHeaders,omitempty"`
-			ManagedRules *struct {
-				AiBots *struct {
-					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesAiBotsAction `json:"action,omitempty"`
-					Active    GetFirewallConfig200JSONResponseBodyManagedRulesAiBotsActive  `json:"active"`
-					UpdatedAt *string                                                       `json:"updatedAt,omitempty"`
-					UserId    *string                                                       `json:"userId,omitempty"`
-					Username  *string                                                       `json:"username,omitempty"`
-				} `json:"ai_bots,omitempty"`
-				BotProtection *struct {
-					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesBotProtectionAction `json:"action,omitempty"`
-					Active    GetFirewallConfig200JSONResponseBodyManagedRulesBotProtectionActive  `json:"active"`
-					UpdatedAt *string                                                              `json:"updatedAt,omitempty"`
-					UserId    *string                                                              `json:"userId,omitempty"`
-					Username  *string                                                              `json:"username,omitempty"`
-				} `json:"bot_protection,omitempty"`
-				Owasp *struct {
-					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesOwaspAction `json:"action,omitempty"`
-					Active    GetFirewallConfig200JSONResponseBodyManagedRulesOwaspActive  `json:"active"`
-					UpdatedAt *string                                                      `json:"updatedAt,omitempty"`
-					UserId    *string                                                      `json:"userId,omitempty"`
-					Username  *string                                                      `json:"username,omitempty"`
-				} `json:"owasp,omitempty"`
-				TrafficSources *struct {
-					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-					Active    GetFirewallConfig200JSONResponseBodyManagedRulesTrafficSourcesActive  `json:"active"`
-					UpdatedAt *string                                                               `json:"updatedAt,omitempty"`
-					UserId    *string                                                               `json:"userId,omitempty"`
-					Username  *string                                                               `json:"username,omitempty"`
-				} `json:"traffic_sources,omitempty"`
-				VercelRuleset *struct {
-					Action    *GetFirewallConfig200JSONResponseBodyManagedRulesVercelRulesetAction `json:"action,omitempty"`
-					Active    GetFirewallConfig200JSONResponseBodyManagedRulesVercelRulesetActive  `json:"active"`
-					UpdatedAt *string                                                              `json:"updatedAt,omitempty"`
-					UserId    *string                                                              `json:"userId,omitempty"`
-					Username  *string                                                              `json:"username,omitempty"`
-				} `json:"vercel_ruleset,omitempty"`
-			} `json:"managedRules,omitempty"`
-			OwnerId    string                                            `json:"ownerId"`
-			ProjectKey string                                            `json:"projectKey"`
-			Rules      []GetFirewallConfig200JSONResponseBody_Rules_Item `json:"rules"`
-			Rulesets   *GetFirewallConfig200JSONResponseBody_Rulesets    `json:"rulesets,omitempty"`
-			UpdatedAt  string                                            `json:"updatedAt"`
-			Version    float32                                           `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateSecurityFirewallConfigByConfigVersionActivateResponse parses an HTTP response from a CreateSecurityFirewallConfigByConfigVersionActivateWithResponse call
-func ParseCreateSecurityFirewallConfigByConfigVersionActivateResponse(rsp *http.Response) (*CreateSecurityFirewallConfigByConfigVersionActivateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateSecurityFirewallConfigByConfigVersionActivateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			BotIdEnabled *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyBotIdEnabled `json:"botIdEnabled,omitempty"`
-			Changes      []map[string]interface{}                                                            `json:"changes"`
-			Conditions   *[]struct {
-				Active         CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsActive `json:"active"`
-				ConditionGroup []struct {
-					Conditions []struct {
-						Key   *string                                                                                                            `json:"key,omitempty"`
-						Neg   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsNeg       `json:"neg,omitempty"`
-						Op    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsOp         `json:"op"`
-						Type  CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyConditionsConditionGroupConditionsType       `json:"type"`
-						Value *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Conditions_ConditionGroup_Conditions_Value `json:"value,omitempty"`
-					} `json:"conditions"`
-				} `json:"conditionGroup"`
-				Description *string `json:"description,omitempty"`
-				Id          string  `json:"id"`
-				Name        string  `json:"name"`
-			} `json:"conditions,omitempty"`
-			Crs *struct {
-				Gen struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsGenActive `json:"active"`
-				} `json:"gen"`
-				Java struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsJavaActive `json:"active"`
-				} `json:"java"`
-				Lfi struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsLfiActive `json:"active"`
-				} `json:"lfi"`
-				Ma struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsMaActive `json:"active"`
-				} `json:"ma"`
-				Php struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsPhpActive `json:"active"`
-				} `json:"php"`
-				Rce struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRceActive `json:"active"`
-				} `json:"rce"`
-				Rfi struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsRfiActive `json:"active"`
-				} `json:"rfi"`
-				Sd struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSdActive `json:"active"`
-				} `json:"sd"`
-				Sf struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSfActive `json:"active"`
-				} `json:"sf"`
-				Sqli struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsSqliActive `json:"active"`
-				} `json:"sqli"`
-				Xss struct {
-					Action CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssAction `json:"action"`
-					Active CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyCrsXssActive `json:"active"`
-				} `json:"xss"`
-			} `json:"crs,omitempty"`
-			FirewallEnabled CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyFirewallEnabled `json:"firewallEnabled"`
-			Id              string                                                                                `json:"id"`
-			Ips             []struct {
-				Action   CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyIpsAction `json:"action"`
-				Hostname string                                                                          `json:"hostname"`
-				Id       string                                                                          `json:"id"`
-				Ip       string                                                                          `json:"ip"`
-				Notes    *string                                                                         `json:"notes,omitempty"`
-			} `json:"ips"`
-			LogHeaders   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_LogHeaders `json:"logHeaders,omitempty"`
-			ManagedRules *struct {
-				AiBots *struct {
-					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsAction `json:"action,omitempty"`
-					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesAiBotsActive  `json:"active"`
-					UpdatedAt *string                                                                                         `json:"updatedAt,omitempty"`
-					UserId    *string                                                                                         `json:"userId,omitempty"`
-					Username  *string                                                                                         `json:"username,omitempty"`
-				} `json:"ai_bots,omitempty"`
-				BotProtection *struct {
-					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionAction `json:"action,omitempty"`
-					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesBotProtectionActive  `json:"active"`
-					UpdatedAt *string                                                                                                `json:"updatedAt,omitempty"`
-					UserId    *string                                                                                                `json:"userId,omitempty"`
-					Username  *string                                                                                                `json:"username,omitempty"`
-				} `json:"bot_protection,omitempty"`
-				Owasp *struct {
-					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspAction `json:"action,omitempty"`
-					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesOwaspActive  `json:"active"`
-					UpdatedAt *string                                                                                        `json:"updatedAt,omitempty"`
-					UserId    *string                                                                                        `json:"userId,omitempty"`
-					Username  *string                                                                                        `json:"username,omitempty"`
-				} `json:"owasp,omitempty"`
-				TrafficSources *struct {
-					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesAction `json:"action,omitempty"`
-					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesTrafficSourcesActive  `json:"active"`
-					UpdatedAt *string                                                                                                 `json:"updatedAt,omitempty"`
-					UserId    *string                                                                                                 `json:"userId,omitempty"`
-					Username  *string                                                                                                 `json:"username,omitempty"`
-				} `json:"traffic_sources,omitempty"`
-				VercelRuleset *struct {
-					Action    *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetAction `json:"action,omitempty"`
-					Active    CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBodyManagedRulesVercelRulesetActive  `json:"active"`
-					UpdatedAt *string                                                                                                `json:"updatedAt,omitempty"`
-					UserId    *string                                                                                                `json:"userId,omitempty"`
-					Username  *string                                                                                                `json:"username,omitempty"`
-				} `json:"vercel_ruleset,omitempty"`
-			} `json:"managedRules,omitempty"`
-			OwnerId    string                                                                              `json:"ownerId"`
-			ProjectKey string                                                                              `json:"projectKey"`
-			Rules      []CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rules_Item `json:"rules"`
-			Rulesets   *CreateSecurityFirewallConfigByConfigVersionActivate200JSONResponseBody_Rulesets    `json:"rulesets,omitempty"`
-			UpdatedAt  string                                                                              `json:"updatedAt"`
-			Version    float32                                                                             `json:"version"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetSecurityFirewallEventsResponse parses an HTTP response from a GetSecurityFirewallEventsWithResponse call
-func ParseGetSecurityFirewallEventsResponse(rsp *http.Response) (*GetSecurityFirewallEventsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetSecurityFirewallEventsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Actions []struct {
-				Action     string                                                      `json:"action"`
-				ActionType string                                                      `json:"action_type"`
-				Count      float32                                                     `json:"count"`
-				EndTime    string                                                      `json:"endTime"`
-				Host       string                                                      `json:"host"`
-				IsActive   GetSecurityFirewallEvents200JSONResponseBodyActionsIsActive `json:"isActive"`
-				PublicIp   string                                                      `json:"public_ip"`
-				RuleId     *string                                                     `json:"ruleId"`
-				RuleName   *string                                                     `json:"ruleName"`
-				StartTime  string                                                      `json:"startTime"`
-			} `json:"actions"`
-			Pagination struct {
-				HasMore GetSecurityFirewallEvents200JSONResponseBodyPaginationHasMore `json:"hasMore"`
-
-				// Next Pass as `cursor` to fetch the next page; null when there are no more.
-				Next *string `json:"next"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 408:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetSecurityFirewallEventsSummaryResponse parses an HTTP response from a GetSecurityFirewallEventsSummaryWithResponse call
-func ParseGetSecurityFirewallEventsSummaryResponse(rsp *http.Response) (*GetSecurityFirewallEventsSummaryResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetSecurityFirewallEventsSummaryResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			BlockingIps    float32            `json:"blockingIps"`
-			ByAction       map[string]float32 `json:"byAction"`
-			ByActionType   map[string]float32 `json:"byActionType"`
-			ChallengingIps float32            `json:"challengingIps"`
-			Other          float32            `json:"other"`
-			Total          float32            `json:"total"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 408:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateIntegrationStoreDirectResponse parses an HTTP response from a CreateIntegrationStoreDirectWithResponse call
-func ParseCreateIntegrationStoreDirectResponse(rsp *http.Response) (*CreateIntegrationStoreDirectResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateIntegrationStoreDirectResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Store *struct {
-				BillingPlan *struct {
-					Cost        *string `json:"cost,omitempty"`
-					Description string  `json:"description"`
-					Details     *[]struct {
-						Label string  `json:"label"`
-						Value *string `json:"value,omitempty"`
-					} `json:"details,omitempty"`
-					Disabled           *CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanDisabled `json:"disabled,omitempty"`
-					DisabledReason     *string                                                                  `json:"disabledReason,omitempty"`
-					EffectiveDate      *string                                                                  `json:"effectiveDate,omitempty"`
-					HighlightedDetails *[]struct {
-						Label string  `json:"label"`
-						Value *string `json:"value,omitempty"`
-					} `json:"highlightedDetails,omitempty"`
-					Id                                 string                                                                               `json:"id"`
-					InitialCharge                      *string                                                                              `json:"initialCharge,omitempty"`
-					MaximumAmount                      *string                                                                              `json:"maximumAmount,omitempty"`
-					MaximumAmountAutoPurchasePerPeriod *string                                                                              `json:"maximumAmountAutoPurchasePerPeriod,omitempty"`
-					MinimumAmount                      *string                                                                              `json:"minimumAmount,omitempty"`
-					Name                               string                                                                               `json:"name"`
-					PaymentMethodRequired              CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanPaymentMethodRequired `json:"paymentMethodRequired"`
-					PreauthorizationAmount             *float32                                                                             `json:"preauthorizationAmount,omitempty"`
-					Quote                              *[]struct {
-						Amount string `json:"amount"`
-						Line   string `json:"line"`
-					} `json:"quote,omitempty"`
-					Scope CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanScope `json:"scope"`
-					Type  CreateIntegrationStoreDirect200JSONResponseBodyStoreBillingPlanType  `json:"type"`
-				} `json:"billingPlan,omitempty"`
-				Capabilities *struct {
-					AgentTools                 *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAgentTools                     `json:"agentTools,omitempty"`
-					AutoSensitive              *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesAutoSensitive                  `json:"autoSensitive,omitempty"`
-					Billable                   *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesBillable                       `json:"billable,omitempty"`
-					CredentialTypesTransitions *[][]CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesCredentialTypesTransitions `json:"credentialTypesTransitions,omitempty"`
-					Mcp                        *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcp                            `json:"mcp,omitempty"`
-					McpReadonly                *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesMcpReadonly                    `json:"mcpReadonly,omitempty"`
-					Projects                   *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesProjects                       `json:"projects,omitempty"`
-					SecretRotation             *CreateIntegrationStoreDirect200JSONResponseBody_Store_Capabilities_SecretRotation              `json:"secretRotation,omitempty"`
-					SecretsSync                *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSecretsSync                    `json:"secretsSync,omitempty"`
-					Sso                        *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesSso                            `json:"sso,omitempty"`
-					Transferable               *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesTransferable                   `json:"transferable,omitempty"`
-					V0                         *CreateIntegrationStoreDirect200JSONResponseBodyStoreCapabilitiesV0                             `json:"v0,omitempty"`
-				} `json:"capabilities,omitempty"`
-
-				// CredentialTypes The credential types the resource accepts: `static` for long-lived secrets, `oidc` for resource OIDC tokens.
-				CredentialTypes *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreCredentialTypes `json:"credentialTypes,omitempty"`
-
-				// CredentialTypesTransition The latest requested change of `credentialTypes`, and when the provider completed it.
-				CredentialTypesTransition *struct {
-					CompletedAt *float32                                                                          `json:"completedAt,omitempty"`
-					RequestedAt float32                                                                           `json:"requestedAt"`
-					To          []CreateIntegrationStoreDirect200JSONResponseBodyStoreCredentialTypesTransitionTo `json:"to"`
-				} `json:"credentialTypesTransition,omitempty"`
-				DirectPartnerConsoleUrl *string                                                                                         `json:"directPartnerConsoleUrl,omitempty"`
-				ExternalResourceId      string                                                                                          `json:"externalResourceId"`
-				ExternalResourceStatus  *CreateIntegrationStoreDirect200JSONResponseBodyStoreExternalResourceStatus                     `json:"externalResourceStatus,omitempty"`
-				Metadata                *map[string]CreateIntegrationStoreDirect200JSONResponseBody_Store_Metadata_AdditionalProperties `json:"metadata,omitempty"`
-				Notification            *struct {
-					Href    *string                                                               `json:"href,omitempty"`
-					Level   CreateIntegrationStoreDirect200JSONResponseBodyStoreNotificationLevel `json:"level"`
-					Message *string                                                               `json:"message,omitempty"`
-					Title   string                                                                `json:"title"`
-				} `json:"notification,omitempty"`
-				Ownership *CreateIntegrationStoreDirect200JSONResponseBodyStoreOwnership `json:"ownership,omitempty"`
-
-				// ParentId The ID of the parent resource. Used to establish a parent-child relationship between resources, such as sandbox resources linking to their owner account resource.
-				ParentId *string `json:"parentId,omitempty"`
-				Product  struct {
-					// AgentSkills URLs to skills/guides for how AI agents should use this product. Providers can specify these to help agents understand how to interact with their integration.
-					AgentSkills  *[]string `json:"agentSkills,omitempty"`
-					Capabilities *struct {
-						AgentTools              *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAgentTools              `json:"agentTools,omitempty"`
-						AutoSensitive           *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesAutoSensitive           `json:"autoSensitive,omitempty"`
-						Billable                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesBillable                `json:"billable,omitempty"`
-						ConnectedImportResource *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesConnectedImportResource `json:"connectedImportResource,omitempty"`
-						DatabaseUI              *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesDatabaseUI              `json:"databaseUI,omitempty"`
-						ImportResource          *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesImportResource          `json:"importResource,omitempty"`
-						Linking                 *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesLinking                 `json:"linking,omitempty"`
-						Mcp                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcp                     `json:"mcp,omitempty"`
-						McpReadonly             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesMcpReadonly             `json:"mcpReadonly,omitempty"`
-						NativeImportResource    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesNativeImportResource    `json:"nativeImportResource,omitempty"`
-						Projects                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesProjects                `json:"projects,omitempty"`
-						Sandbox                 *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSandbox                 `json:"sandbox,omitempty"`
-						SecretRotation          *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Capabilities_SecretRotation      `json:"secretRotation,omitempty"`
-						SecretsSync             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSecretsSync             `json:"secretsSync,omitempty"`
-						Sso                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesSso                     `json:"sso,omitempty"`
-						Transferable            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesTransferable            `json:"transferable,omitempty"`
-						V0                      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0                      `json:"v0,omitempty"`
-						V0Flavors               *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductCapabilitiesV0Flavors               `json:"v0Flavors,omitempty"`
-					} `json:"capabilities,omitempty"`
-					DisableResourceRenaming *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductDisableResourceRenaming `json:"disableResourceRenaming,omitempty"`
-					Guides                  *[]struct {
-						Framework string `json:"framework"`
-						Steps     []struct {
-							Actions *[]struct {
-								Type CreateIntegrationStoreDirect200JSONResponseBodyStoreProductGuidesStepsActionsType `json:"type"`
-							} `json:"actions,omitempty"`
-							Content string `json:"content"`
-							Title   string `json:"title"`
-						} `json:"steps"`
-						Title string `json:"title"`
-					} `json:"guides,omitempty"`
-					IconUrl     *string `json:"iconUrl,omitempty"`
-					Id          *string `json:"id,omitempty"`
-					Integration struct {
-						Capabilities *struct {
-							Billable                *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesBillable                  `json:"billable,omitempty"`
-							Checks                  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesChecks                    `json:"checks,omitempty"`
-							ConnectedImportResource *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedImportResource   `json:"connectedImportResource,omitempty"`
-							ConnectedProvisioning   *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesConnectedProvisioning     `json:"connectedProvisioning,omitempty"`
-							CredentialTypesCreate   *[][]CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesCredentialTypesCreate `json:"credentialTypesCreate,omitempty"`
-							FlexCommitEligible      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesFlexCommitEligible        `json:"flexCommitEligible,omitempty"`
-							ImportResource          *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesImportResource            `json:"importResource,omitempty"`
-							MaxAllowedTeams         *float32                                                                                                     `json:"maxAllowedTeams,omitempty"`
-							Mcp                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcp                       `json:"mcp,omitempty"`
-							McpConfiguration        *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpConfiguration          `json:"mcpConfiguration,omitempty"`
-							McpReadonly             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesMcpReadonly               `json:"mcpReadonly,omitempty"`
-							NativeImportResource    *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesNativeImportResource      `json:"nativeImportResource,omitempty"`
-							Provisioning            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesProvisioning              `json:"provisioning,omitempty"`
-							RequiresBrowserInstall  *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesRequiresBrowserInstall    `json:"requiresBrowserInstall,omitempty"`
-							SecretRotation          *CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_Integration_Capabilities_SecretRotation       `json:"secretRotation,omitempty"`
-							Sso                     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesSso                       `json:"sso,omitempty"`
-							TemplateCloneOnly       *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTemplateCloneOnly         `json:"templateCloneOnly,omitempty"`
-							Transferable            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesTransferable              `json:"transferable,omitempty"`
-							UpdateConfiguration     *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesUpdateConfiguration       `json:"updateConfiguration,omitempty"`
-							V0Flavors               *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationCapabilitiesV0Flavors                 `json:"v0Flavors,omitempty"`
-						} `json:"capabilities,omitempty"`
-						Flags                            *[]string                                                                                               `json:"flags,omitempty"`
-						Icon                             string                                                                                                  `json:"icon"`
-						Id                               string                                                                                                  `json:"id"`
-						Name                             string                                                                                                  `json:"name"`
-						Slug                             string                                                                                                  `json:"slug"`
-						SupportsInstallationBillingPlans *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductIntegrationSupportsInstallationBillingPlans `json:"supportsInstallationBillingPlans,omitempty"`
-					} `json:"integration"`
-					IntegrationConfigurationId string                                                                     `json:"integrationConfigurationId"`
-					LogDrainStatus             *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductLogDrainStatus `json:"logDrainStatus,omitempty"`
-					MetadataSchema             *struct {
-						Properties map[string]CreateIntegrationStoreDirect200JSONResponseBody_Store_Product_MetadataSchema_Properties_AdditionalProperties `json:"properties"`
-						Required   *[]string                                                                                                               `json:"required,omitempty"`
-						Type       CreateIntegrationStoreDirect200JSONResponseBodyStoreProductMetadataSchemaType                                           `json:"type"`
-						UiOrder    *[]string                                                                                                               `json:"ui:order,omitempty"`
-					} `json:"metadataSchema,omitempty"`
-					Name                    *string                                                                               `json:"name,omitempty"`
-					PrimaryProtocol         *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductPrimaryProtocol           `json:"primaryProtocol,omitempty"`
-					ProjectConnectionScopes *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreProductProjectConnectionScopes `json:"projectConnectionScopes,omitempty"`
-					Repl                    *struct {
-						Enabled              CreateIntegrationStoreDirect200JSONResponseBodyStoreProductReplEnabled              `json:"enabled"`
-						SupportsReadOnlyMode CreateIntegrationStoreDirect200JSONResponseBodyStoreProductReplSupportsReadOnlyMode `json:"supportsReadOnlyMode"`
-						WelcomeMessage       *string                                                                             `json:"welcomeMessage,omitempty"`
-					} `json:"repl,omitempty"`
-					ResourceLinks *[]struct {
-						Href  string `json:"href"`
-						Title string `json:"title"`
-					} `json:"resourceLinks,omitempty"`
-
-					// ResourceTitle Custom resource title to display during installation and configuration. If not provided, defaults to protocol-based defaults.
-					//
-					// Example: Instance
-					ResourceTitle                  *string                                                                                    `json:"resourceTitle,omitempty"`
-					ShortDescription               *string                                                                                    `json:"shortDescription,omitempty"`
-					ShowSSOLinkOnProjectConnection *CreateIntegrationStoreDirect200JSONResponseBodyStoreProductShowSSOLinkOnProjectConnection `json:"showSSOLinkOnProjectConnection,omitempty"`
-					Slug                           *string                                                                                    `json:"slug,omitempty"`
-					SupportedProtocols             []CreateIntegrationStoreDirect200JSONResponseBodyStoreProductSupportedProtocols            `json:"supportedProtocols"`
-					Tags                           *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreProductTags                         `json:"tags,omitempty"`
-				} `json:"product"`
-				ProjectFilter *struct {
-					Git *struct {
-						Owners    *[]string                                                                         `json:"owners,omitempty"`
-						Providers CreateIntegrationStoreDirect200JSONResponseBody_Store_ProjectFilter_Git_Providers `json:"providers"`
-						Repos     *[]string                                                                         `json:"repos,omitempty"`
-					} `json:"git,omitempty"`
-				} `json:"projectFilter,omitempty"`
-				ProjectsMetadata []struct {
-					Deployments *struct {
-						Actions []struct {
-							Environments []string `json:"environments"`
-							Slug         string   `json:"slug"`
-						} `json:"actions"`
-						Required CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataDeploymentsRequired `json:"required"`
-					} `json:"deployments,omitempty"`
-					EnvVarPrefix         *string                                                                                   `json:"envVarPrefix"`
-					EnvironmentVariables []string                                                                                  `json:"environmentVariables"`
-					Environments         []string                                                                                  `json:"environments"`
-					Framework            *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataFramework            `json:"framework,omitempty"`
-					Id                   string                                                                                    `json:"id"`
-					LatestDeployment     *string                                                                                   `json:"latestDeployment,omitempty"`
-					MakeEnvVarsSensitive *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataMakeEnvVarsSensitive `json:"makeEnvVarsSensitive,omitempty"`
-					Name                 string                                                                                    `json:"name"`
-					ProjectId            string                                                                                    `json:"projectId"`
-					SecretsOutdated      *CreateIntegrationStoreDirect200JSONResponseBodyStoreProjectsMetadataSecretsOutdated      `json:"secretsOutdated,omitempty"`
-				} `json:"projectsMetadata"`
-				ProtocolSettings *struct {
-					Authentication *struct {
-						AppUrls *[]struct {
-							Target CreateIntegrationStoreDirect200JSONResponseBodyStoreProtocolSettingsAuthenticationAppUrlsTarget `json:"target"`
-							Url    string                                                                                          `json:"url"`
-						} `json:"appUrls,omitempty"`
-					} `json:"authentication,omitempty"`
-					Experimentation *struct {
-						EdgeConfigId               *string                                                                                                        `json:"edgeConfigId,omitempty"`
-						EdgeConfigSyncingEnabled   *CreateIntegrationStoreDirect200JSONResponseBodyStoreProtocolSettingsExperimentationEdgeConfigSyncingEnabled   `json:"edgeConfigSyncingEnabled,omitempty"`
-						EdgeConfigTokenId          *string                                                                                                        `json:"edgeConfigTokenId,omitempty"`
-						GlobalConfigId             *string                                                                                                        `json:"globalConfigId,omitempty"`
-						GlobalConfigSyncingEnabled *CreateIntegrationStoreDirect200JSONResponseBodyStoreProtocolSettingsExperimentationGlobalConfigSyncingEnabled `json:"globalConfigSyncingEnabled,omitempty"`
-					} `json:"experimentation,omitempty"`
-				} `json:"protocolSettings,omitempty"`
-
-				// SecretRotationCompletedAt The timestamp when secret rotation was completed.
-				SecretRotationCompletedAt *float32 `json:"secretRotationCompletedAt,omitempty"`
-
-				// SecretRotationRequestedAt The timestamp when secret rotation was requested.
-				SecretRotationRequestedAt *float32 `json:"secretRotationRequestedAt,omitempty"`
-
-				// SecretRotationRequestedBy The ID of the user/team who requested the secret rotation.
-				SecretRotationRequestedBy *string `json:"secretRotationRequestedBy,omitempty"`
-
-				// SecretRotationRequestedReason The reason for the secret rotation request.
-				SecretRotationRequestedReason *string `json:"secretRotationRequestedReason,omitempty"`
-				Secrets                       []struct {
-					FrameworkPublishable *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsFrameworkPublishable `json:"frameworkPublishable,omitempty"`
-					Length               float32                                                                          `json:"length"`
-					Name                 string                                                                           `json:"name"`
-					NonSensitive         *CreateIntegrationStoreDirect200JSONResponseBodyStoreSecretsNonSensitive         `json:"nonSensitive,omitempty"`
-
-					// TokenSetKey The token set key `name` is built from; absent for env vars that are not in the token set.
-					TokenSetKey *string `json:"tokenSetKey,omitempty"`
-				} `json:"secrets"`
-				SecretsAppliedAt *float32                                                    `json:"secretsAppliedAt,omitempty"`
-				Status           *CreateIntegrationStoreDirect200JSONResponseBodyStoreStatus `json:"status"`
-
-				// Targets The deployment targets that this resource is available for.
-				Targets                *[]CreateIntegrationStoreDirect200JSONResponseBodyStoreTargets         `json:"targets,omitempty"`
-				TotalConnectedProjects *float32                                                               `json:"totalConnectedProjects,omitempty"`
-				UsageQuotaExceeded     CreateIntegrationStoreDirect200JSONResponseBodyStoreUsageQuotaExceeded `json:"usageQuotaExceeded"`
-			} `json:"store"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateTeamResponse parses an HTTP response from a CreateTeamWithResponse call
-func ParseCreateTeamResponse(rsp *http.Response) (*CreateTeamResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateTeamResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Id Id of the created team
-			//
-			// Example: team_nLlpyC6RE1qxqglFKbrMxlud
-			Id   string `json:"id"`
-			Slug string `json:"slug"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteTeamResponse parses an HTTP response from a DeleteTeamWithResponse call
-func ParseDeleteTeamResponse(rsp *http.Response) (*DeleteTeamResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteTeamResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Id The ID of the deleted Team
-			//
-			// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-			Id string `json:"id"`
-
-			// NewDefaultTeamIdError Signifies whether the default team update has failed, when newDefaultTeamId is provided in request query.
-			//
-			// Example: true
-			NewDefaultTeamIdError *DeleteTeam200JSONResponseBodyNewDefaultTeamIdError `json:"newDefaultTeamIdError,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParsePostTeamDsyncRolesResponse parses an HTTP response from a PostTeamDsyncRolesWithResponse call
-func ParsePostTeamDsyncRolesResponse(rsp *http.Response) (*PostTeamDsyncRolesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostTeamDsyncRolesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Ok PostTeamDsyncRoles200JSONResponseBodyOk `json:"ok"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListTeamFlagsResponse parses an HTTP response from a ListTeamFlagsWithResponse call
-func ParseListTeamFlagsResponse(rsp *http.Response) (*ListTeamFlagsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListTeamFlagsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data       []Flag `json:"data"`
-			Pagination struct {
-				Next *string `json:"next"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListTeamFlagSettingsResponse parses an HTTP response from a ListTeamFlagSettingsWithResponse call
-func ParseListTeamFlagSettingsResponse(rsp *http.Response) (*ListTeamFlagSettingsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListTeamFlagSettingsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ListTeamFlagSettings200JSONResponseBody
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteTeamInviteCodeResponse parses an HTTP response from a DeleteTeamInviteCodeWithResponse call
-func ParseDeleteTeamInviteCodeResponse(rsp *http.Response) (*DeleteTeamInviteCodeResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteTeamInviteCodeResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Id ID of the team.
-			Id string `json:"id"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseJoinTeamResponse parses an HTTP response from a JoinTeamWithResponse call
-func ParseJoinTeamResponse(rsp *http.Response) (*JoinTeamResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &JoinTeamResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// From The origin of how the user joined.
-			//
-			// Example: email
-			From string `json:"from"`
-
-			// Name The name of the team the user joined.
-			//
-			// Example: My Team
-			Name string `json:"name"`
-
-			// Slug The slug of the team the user joined.
-			//
-			// Example: my-team
-			Slug string `json:"slug"`
-
-			// TeamId The ID of the team the user joined.
-			//
-			// Example: team_LLHUOMOoDlqOp8wPE4kFo9pE
-			TeamId string `json:"teamId"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveTeamMemberResponse parses an HTTP response from a RemoveTeamMemberWithResponse call
-func ParseRemoveTeamMemberResponse(rsp *http.Response) (*RemoveTeamMemberResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveTeamMemberResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Id ID of the team.
-			Id string `json:"id"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateTeamMemberResponse parses an HTTP response from a UpdateTeamMemberWithResponse call
-func ParseUpdateTeamMemberResponse(rsp *http.Response) (*UpdateTeamMemberResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateTeamMemberResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Id ID of the team.
-			Id string `json:"id"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteMicrofrontendsGroupResponse parses an HTTP response from a DeleteMicrofrontendsGroupWithResponse call
-func ParseDeleteMicrofrontendsGroupResponse(rsp *http.Response) (*DeleteMicrofrontendsGroupResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteMicrofrontendsGroupResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest map[string]interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 500:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateMicrofrontendsGroupResponse parses an HTTP response from a UpdateMicrofrontendsGroupWithResponse call
-func ParseUpdateMicrofrontendsGroupResponse(rsp *http.Response) (*UpdateMicrofrontendsGroupResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateMicrofrontendsGroupResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			UpdatedMicrofrontendsGroup struct {
-				EnablePolyrepoBranchRouting *UpdateMicrofrontendsGroup200JSONResponseBodyUpdatedMicrofrontendsGroupEnablePolyrepoBranchRouting `json:"enablePolyrepoBranchRouting,omitempty"`
-				FallbackEnvironment         *string                                                                                            `json:"fallbackEnvironment,omitempty"`
-				Id                          string                                                                                             `json:"id"`
-				Name                        *string                                                                                            `json:"name,omitempty"`
-				Slug                        *string                                                                                            `json:"slug,omitempty"`
-			} `json:"updatedMicrofrontendsGroup"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRequestAccessToTeamResponse parses an HTTP response from a RequestAccessToTeamWithResponse call
-func ParseRequestAccessToTeamResponse(rsp *http.Response) (*RequestAccessToTeamResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RequestAccessToTeamResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AccessRequestedAt *float32 `json:"accessRequestedAt,omitempty"`
-			Bitbucket         *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"bitbucket"`
-			Confirmed RequestAccessToTeam200JSONResponseBodyConfirmed `json:"confirmed"`
-			Github    *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"github"`
-			Gitlab *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"gitlab"`
-			JoinedFrom *struct {
-				CommitId         *string                                                      `json:"commitId,omitempty"`
-				DsyncConnectedAt *float32                                                     `json:"dsyncConnectedAt,omitempty"`
-				DsyncUserId      *string                                                      `json:"dsyncUserId,omitempty"`
-				GitUserId        *RequestAccessToTeam200JSONResponseBody_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
-				GitUserLogin     *string                                                      `json:"gitUserLogin,omitempty"`
-				IdpUserId        *string                                                      `json:"idpUserId,omitempty"`
-				Origin           RequestAccessToTeam200JSONResponseBodyJoinedFromOrigin       `json:"origin"`
-				RepoId           *string                                                      `json:"repoId,omitempty"`
-				RepoPath         *string                                                      `json:"repoPath,omitempty"`
-				SsoConnectedAt   *float32                                                     `json:"ssoConnectedAt,omitempty"`
-
-				// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
-				SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
-				SsoUserId        *string `json:"ssoUserId,omitempty"`
-			} `json:"joinedFrom,omitempty"`
-			TeamName string `json:"teamName"`
-			TeamSlug string `json:"teamSlug"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case rsp.StatusCode == 429:
-		break // No content-type
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetTeamAccessRequestResponse parses an HTTP response from a GetTeamAccessRequestWithResponse call
-func ParseGetTeamAccessRequestResponse(rsp *http.Response) (*GetTeamAccessRequestResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetTeamAccessRequestResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// AccessRequestedAt Timestamp in milliseconds when the user requested access to the team.
-			//
-			// Example: 1588720733602
-			AccessRequestedAt float32 `json:"accessRequestedAt"`
-
-			// Bitbucket Map of the connected Bitbucket account.
-			Bitbucket *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"bitbucket"`
-
-			// Confirmed Current status of the membership. Will be `true` if confirmed, if pending it'll be `false`.
-			//
-			// Example: false
-			Confirmed GetTeamAccessRequest200JSONResponseBodyConfirmed `json:"confirmed"`
-
-			// Github Map of the connected GitHub account.
-			Github *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"github"`
-
-			// Gitlab Map of the connected GitLab account.
-			Gitlab *struct {
-				Login *string `json:"login,omitempty"`
-			} `json:"gitlab"`
-
-			// JoinedFrom A map that describes the origin from where the user joined.
-			JoinedFrom struct {
-				CommitId         *string                                                       `json:"commitId,omitempty"`
-				DsyncConnectedAt *float32                                                      `json:"dsyncConnectedAt,omitempty"`
-				DsyncUserId      *string                                                       `json:"dsyncUserId,omitempty"`
-				GitUserId        *GetTeamAccessRequest200JSONResponseBody_JoinedFrom_GitUserId `json:"gitUserId,omitempty"`
-				GitUserLogin     *string                                                       `json:"gitUserLogin,omitempty"`
-				IdpUserId        *string                                                       `json:"idpUserId,omitempty"`
-				Origin           GetTeamAccessRequest200JSONResponseBodyJoinedFromOrigin       `json:"origin"`
-				RepoId           *string                                                       `json:"repoId,omitempty"`
-				RepoPath         *string                                                       `json:"repoPath,omitempty"`
-				SsoConnectedAt   *float32                                                      `json:"ssoConnectedAt,omitempty"`
-
-				// SsoIdFingerprint How `ssoUserId` and `idpUserId` were made; absent when unknown.
-				SsoIdFingerprint *string `json:"ssoIdFingerprint,omitempty"`
-				SsoUserId        *string `json:"ssoUserId,omitempty"`
-			} `json:"joinedFrom"`
-
-			// TeamName The name of the team.
-			//
-			// Example: My Team
-			TeamName string `json:"teamName"`
-
-			// TeamSlug The slug of the team.
-			//
-			// Example: my-team
-			TeamSlug string `json:"teamSlug"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRequestDeleteResponse parses an HTTP response from a RequestDeleteWithResponse call
-func ParseRequestDeleteResponse(rsp *http.Response) (*RequestDeleteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RequestDeleteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			// Email Email address of the User who has initiated deletion.
-			Email string `json:"email"`
-
-			// Id Unique identifier of the User who has initiated deletion.
-			Id string `json:"id"`
-
-			// Message User deletion progress status.
-			//
-			// Example: Verification email sent
-			Message string `json:"message"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListRepositoriesResponse parses an HTTP response from a ListRepositoriesWithResponse call
-func ParseListRepositoriesResponse(rsp *http.Response) (*ListRepositoriesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListRepositoriesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VcrRepositoryList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateRepositoryResponse parses an HTTP response from a CreateRepositoryWithResponse call
-func ParseCreateRepositoryResponse(rsp *http.Response) (*CreateRepositoryResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateRepositoryResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Repository A Vercel Container Registry repository.
-			Repository VcrRepository `json:"repository"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 402:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteRepositoryResponse parses an HTTP response from a DeleteRepositoryWithResponse call
-func ParseDeleteRepositoryResponse(rsp *http.Response) (*DeleteRepositoryResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteRepositoryResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRepositoryResponse parses an HTTP response from a GetRepositoryWithResponse call
-func ParseGetRepositoryResponse(rsp *http.Response) (*GetRepositoryResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRepositoryResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Repository A Vercel Container Registry repository.
-			Repository VcrRepository `json:"repository"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListRepositoryImagesResponse parses an HTTP response from a ListRepositoryImagesWithResponse call
-func ParseListRepositoryImagesResponse(rsp *http.Response) (*ListRepositoryImagesResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListRepositoryImagesResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VcrImageList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRepositoryImageResponse parses an HTTP response from a GetRepositoryImageWithResponse call
-func ParseGetRepositoryImageResponse(rsp *http.Response) (*GetRepositoryImageResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRepositoryImageResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Image A single image with its tags, status and resolved Dockerfile layer history.
-			Image VcrImageDetail `json:"image"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteRepositoryImageResponse parses an HTTP response from a DeleteRepositoryImageWithResponse call
-func ParseDeleteRepositoryImageResponse(rsp *http.Response) (*DeleteRepositoryImageResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteRepositoryImageResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseRemoveRepositoryPermissionResponse parses an HTTP response from a RemoveRepositoryPermissionWithResponse call
-func ParseRemoveRepositoryPermissionResponse(rsp *http.Response) (*RemoveRepositoryPermissionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RemoveRepositoryPermissionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON204 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListRepositoryPermissionsResponse parses an HTTP response from a ListRepositoryPermissionsWithResponse call
-func ParseListRepositoryPermissionsResponse(rsp *http.Response) (*ListRepositoryPermissionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListRepositoryPermissionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VcrRepositoryPermissionList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseAddRepositoryPermissionResponse parses an HTTP response from a AddRepositoryPermissionWithResponse call
-func ParseAddRepositoryPermissionResponse(rsp *http.Response) (*AddRepositoryPermissionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AddRepositoryPermissionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Permission A team's access grant to a Vercel Container Registry repository.
-			Permission VcrRepositoryPermission `json:"permission"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseClearRepositoryPermissionsResponse parses an HTTP response from a ClearRepositoryPermissionsWithResponse call
-func ParseClearRepositoryPermissionsResponse(rsp *http.Response) (*ClearRepositoryPermissionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ClearRepositoryPermissionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 204:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON204 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListRepositoryTagsResponse parses an HTTP response from a ListRepositoryTagsWithResponse call
-func ParseListRepositoryTagsResponse(rsp *http.Response) (*ListRepositoryTagsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListRepositoryTagsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			NextCursor *string `json:"nextCursor,omitempty"`
-			Tags       []struct {
-				Arch           *string                                          `json:"arch,omitempty"`
-				CreatedAt      string                                           `json:"createdAt"`
-				ImageId        string                                           `json:"imageId"`
-				Kind           ListRepositoryTags200JSONResponseBodyTagsKind    `json:"kind"`
-				ManifestDigest string                                           `json:"manifestDigest"`
-				Platform       *string                                          `json:"platform,omitempty"`
-				PushedBy       *string                                          `json:"pushedBy,omitempty"`
-				SizeInBytes    float32                                          `json:"sizeInBytes"`
-				Status         *ListRepositoryTags200JSONResponseBodyTagsStatus `json:"status"`
-				Tag            string                                           `json:"tag"`
-				UpdatedAt      string                                           `json:"updatedAt"`
-			} `json:"tags"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetRepositoryTagResponse parses an HTTP response from a GetRepositoryTagWithResponse call
-func ParseGetRepositoryTagResponse(rsp *http.Response) (*GetRepositoryTagResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetRepositoryTagResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Tag A tag pointing at an image in a Vercel Container Registry repository, enriched with the backing image's metadata and VHS-readiness status.
-			Tag VcrTag `json:"tag"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case rsp.StatusCode == 401:
-		break // No content-type
-
-	case rsp.StatusCode == 403:
-		break // No content-type
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseListVercelCiInvocationAttemptsResponse parses an HTTP response from a ListVercelCiInvocationAttemptsWithResponse call
-func ParseListVercelCiInvocationAttemptsResponse(rsp *http.Response) (*ListVercelCiInvocationAttemptsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListVercelCiInvocationAttemptsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Attempts []struct {
-				Attempt             float32 `json:"attempt"`
-				BootstrappingFailed *struct {
-					Reason string `json:"reason"`
-				} `json:"bootstrappingFailed,omitempty"`
-				BootstrappingStarted *struct {
-					StartedAt float32 `json:"startedAt"`
-				} `json:"bootstrappingStarted,omitempty"`
-				CommitSha string `json:"commitSha"`
-				Completed *struct {
-					CompletedAt float32                                                                          `json:"completedAt"`
-					Conclusion  *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Completed_Conclusion `json:"conclusion,omitempty"`
-				} `json:"completed,omitempty"`
-				CreatedAt             float32 `json:"createdAt"`
-				InvocationId          string  `json:"invocationId"`
-				JobDefinitionsCreated *struct {
-					Names       []string                                                                                 `json:"names"`
-					ScheduledAt *float32                                                                                 `json:"scheduledAt,omitempty"`
-					Source      *ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_JobDefinitionsCreated_Source `json:"source,omitempty"`
-				} `json:"jobDefinitionsCreated,omitempty"`
-				Ref           string `json:"ref"`
-				RepositoryKey string `json:"repositoryKey"`
-
-				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
-				RunConclusion *struct {
-					Result ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_RunConclusion_Result `json:"result"`
-				} `json:"runConclusion,omitempty"`
-				SandboxNamed *struct {
-					ReadyAt          *float32 `json:"readyAt,omitempty"`
-					SandboxName      string   `json:"sandboxName"`
-					WorkingDirectory string   `json:"workingDirectory"`
-				} `json:"sandboxNamed,omitempty"`
-				SandboxSnapshotted *struct {
-					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
-					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
-					WorkingDirectory  string   `json:"workingDirectory"`
-				} `json:"sandboxSnapshotted,omitempty"`
-
-				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
-				SetupConclusion *struct {
-					Result ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_SetupConclusion_Result `json:"result"`
-				} `json:"setupConclusion,omitempty"`
-				Skipped *struct {
-					Reason string `json:"reason"`
-				} `json:"skipped,omitempty"`
-				Source ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Source `json:"source"`
-				Status ListVercelCiInvocationAttempts200JSONResponseBody_Attempts_Status `json:"status"`
-				TeamId string                                                            `json:"teamId"`
-			} `json:"attempts"`
-			Repositories map[string]interface{} `json:"repositories"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiInvocationResponse parses an HTTP response from a GetVercelCiInvocationWithResponse call
-func ParseGetVercelCiInvocationResponse(rsp *http.Response) (*GetVercelCiInvocationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiInvocationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Invocation struct {
-				Attempt             float32 `json:"attempt"`
-				BootstrappingFailed *struct {
-					Reason string `json:"reason"`
-				} `json:"bootstrappingFailed,omitempty"`
-				BootstrappingStarted *struct {
-					StartedAt float32 `json:"startedAt"`
-				} `json:"bootstrappingStarted,omitempty"`
-				CommitSha string `json:"commitSha"`
-				Completed *struct {
-					CompletedAt float32                                                                   `json:"completedAt"`
-					Conclusion  *GetVercelCiInvocation200JSONResponseBody_Invocation_Completed_Conclusion `json:"conclusion,omitempty"`
-				} `json:"completed,omitempty"`
-				CreatedAt             float32 `json:"createdAt"`
-				InvocationId          string  `json:"invocationId"`
-				JobDefinitionsCreated *struct {
-					Names       []string                                                                          `json:"names"`
-					ScheduledAt *float32                                                                          `json:"scheduledAt,omitempty"`
-					Source      *GetVercelCiInvocation200JSONResponseBody_Invocation_JobDefinitionsCreated_Source `json:"source,omitempty"`
-				} `json:"jobDefinitionsCreated,omitempty"`
-				Ref           string `json:"ref"`
-				RepositoryKey string `json:"repositoryKey"`
-
-				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
-				RunConclusion *struct {
-					Result GetVercelCiInvocation200JSONResponseBody_Invocation_RunConclusion_Result `json:"result"`
-				} `json:"runConclusion,omitempty"`
-				SandboxNamed *struct {
-					ReadyAt          *float32 `json:"readyAt,omitempty"`
-					SandboxName      string   `json:"sandboxName"`
-					WorkingDirectory string   `json:"workingDirectory"`
-				} `json:"sandboxNamed,omitempty"`
-				SandboxSnapshotted *struct {
-					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
-					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
-					WorkingDirectory  string   `json:"workingDirectory"`
-				} `json:"sandboxSnapshotted,omitempty"`
-
-				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
-				SetupConclusion *struct {
-					Result GetVercelCiInvocation200JSONResponseBody_Invocation_SetupConclusion_Result `json:"result"`
-				} `json:"setupConclusion,omitempty"`
-				Skipped *struct {
-					Reason string `json:"reason"`
-				} `json:"skipped,omitempty"`
-				Source GetVercelCiInvocation200JSONResponseBody_Invocation_Source `json:"source"`
-				Status GetVercelCiInvocation200JSONResponseBody_Invocation_Status `json:"status"`
-				TeamId string                                                     `json:"teamId"`
-			} `json:"invocation"`
-			Repositories map[string]interface{} `json:"repositories"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListVercelCiJobDefinitionsResponse parses an HTTP response from a ListVercelCiJobDefinitionsWithResponse call
-func ParseListVercelCiJobDefinitionsResponse(rsp *http.Response) (*ListVercelCiJobDefinitionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListVercelCiJobDefinitionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			JobDefinitions []struct {
-				Command           string                                                            `json:"command"`
-				CreatedAt         float32                                                           `json:"createdAt"`
-				InvocationAttempt float32                                                           `json:"invocationAttempt"`
-				InvocationId      string                                                            `json:"invocationId"`
-				JobDefinitionId   string                                                            `json:"jobDefinitionId"`
-				Kind              ListVercelCiJobDefinitions200JSONResponseBody_JobDefinitions_Kind `json:"kind"`
-				Name              string                                                            `json:"name"`
-			} `json:"jobDefinitions"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiJobDefinitionResponse parses an HTTP response from a GetVercelCiJobDefinitionWithResponse call
-func ParseGetVercelCiJobDefinitionResponse(rsp *http.Response) (*GetVercelCiJobDefinitionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiJobDefinitionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			JobDefinition struct {
-				Command           string                                                         `json:"command"`
-				CreatedAt         float32                                                        `json:"createdAt"`
-				InvocationAttempt float32                                                        `json:"invocationAttempt"`
-				InvocationId      string                                                         `json:"invocationId"`
-				JobDefinitionId   string                                                         `json:"jobDefinitionId"`
-				Kind              GetVercelCiJobDefinition200JSONResponseBody_JobDefinition_Kind `json:"kind"`
-				Name              string                                                         `json:"name"`
-			} `json:"jobDefinition"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListVercelCiJobRunsResponse parses an HTTP response from a ListVercelCiJobRunsWithResponse call
-func ParseListVercelCiJobRunsResponse(rsp *http.Response) (*ListVercelCiJobRunsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListVercelCiJobRunsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			JobRuns []struct {
-				Attempt   float32 `json:"attempt"`
-				Completed *struct {
-					CompletedAt float32                                                             `json:"completedAt"`
-					Conclusion  ListVercelCiJobRuns200JSONResponseBody_JobRuns_Completed_Conclusion `json:"conclusion"`
-				} `json:"completed,omitempty"`
-				CreatedAt         float32 `json:"createdAt"`
-				InvocationAttempt float32 `json:"invocationAttempt"`
-				InvocationId      string  `json:"invocationId"`
-				JobDefinitionId   string  `json:"jobDefinitionId"`
-				Started           *struct {
-					StartedAt float32 `json:"startedAt"`
-				} `json:"started,omitempty"`
-			} `json:"jobRuns"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiJobRunResponse parses an HTTP response from a GetVercelCiJobRunWithResponse call
-func ParseGetVercelCiJobRunResponse(rsp *http.Response) (*GetVercelCiJobRunResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiJobRunResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			JobRun struct {
-				Attempt   float32 `json:"attempt"`
-				Completed *struct {
-					CompletedAt float32                                                          `json:"completedAt"`
-					Conclusion  GetVercelCiJobRun200JSONResponseBody_JobRun_Completed_Conclusion `json:"conclusion"`
-				} `json:"completed,omitempty"`
-				CreatedAt         float32 `json:"createdAt"`
-				InvocationAttempt float32 `json:"invocationAttempt"`
-				InvocationId      string  `json:"invocationId"`
-				JobDefinitionId   string  `json:"jobDefinitionId"`
-				Started           *struct {
-					StartedAt float32 `json:"startedAt"`
-				} `json:"started,omitempty"`
-			} `json:"jobRun"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiJobRunLogsResponse parses an HTTP response from a GetVercelCiJobRunLogsWithResponse call
-func ParseGetVercelCiJobRunLogsResponse(rsp *http.Response) (*GetVercelCiJobRunLogsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiJobRunLogsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Lines []struct {
-				Level     string  `json:"level"`
-				Message   string  `json:"message"`
-				Timestamp float32 `json:"timestamp"`
-			} `json:"lines"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListVercelCiTaskDefinitionsResponse parses an HTTP response from a ListVercelCiTaskDefinitionsWithResponse call
-func ParseListVercelCiTaskDefinitionsResponse(rsp *http.Response) (*ListVercelCiTaskDefinitionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListVercelCiTaskDefinitionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			TaskDefinitions []struct {
-				CreatedAt                   float32                                                                  `json:"createdAt"`
-				DependencyTaskDefinitionIds []string                                                                 `json:"dependencyTaskDefinitionIds"`
-				InvocationAttempt           float32                                                                  `json:"invocationAttempt"`
-				InvocationId                string                                                                   `json:"invocationId"`
-				JobDefinitionId             string                                                                   `json:"jobDefinitionId"`
-				JobRunAttempt               float32                                                                  `json:"jobRunAttempt"`
-				Name                        string                                                                   `json:"name"`
-				Operation                   ListVercelCiTaskDefinitions200JSONResponseBody_TaskDefinitions_Operation `json:"operation"`
-				PackageDirectory            *string                                                                  `json:"packageDirectory,omitempty"`
-				TaskDefinitionId            string                                                                   `json:"taskDefinitionId"`
-			} `json:"taskDefinitions"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiTaskRunLogsResponse parses an HTTP response from a GetVercelCiTaskRunLogsWithResponse call
-func ParseGetVercelCiTaskRunLogsResponse(rsp *http.Response) (*GetVercelCiTaskRunLogsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiTaskRunLogsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Lines []struct {
-				Level     string  `json:"level"`
-				Message   string  `json:"message"`
-				Timestamp float32 `json:"timestamp"`
-			} `json:"lines"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseListVercelCiTaskRunsResponse parses an HTTP response from a ListVercelCiTaskRunsWithResponse call
-func ParseListVercelCiTaskRunsResponse(rsp *http.Response) (*ListVercelCiTaskRunsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &ListVercelCiTaskRunsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			TaskRuns []struct {
-				Attempt   float32 `json:"attempt"`
-				Completed *struct {
-					CompletedAt float32                                                               `json:"completedAt"`
-					Conclusion  ListVercelCiTaskRuns200JSONResponseBody_TaskRuns_Completed_Conclusion `json:"conclusion"`
-				} `json:"completed,omitempty"`
-				CreatedAt         float32 `json:"createdAt"`
-				DeploymentBinding *struct {
-					DeploymentCreatedAt float32 `json:"deploymentCreatedAt"`
-					DeploymentId        string  `json:"deploymentId"`
-					EventAt             float32 `json:"eventAt"`
-					ReadyState          *string `json:"readyState,omitempty"`
-				} `json:"deploymentBinding,omitempty"`
-				InvocationAttempt float32 `json:"invocationAttempt"`
-				InvocationId      string  `json:"invocationId"`
-				JobDefinitionId   string  `json:"jobDefinitionId"`
-				JobRunAttempt     float32 `json:"jobRunAttempt"`
-				Started           *struct {
-					StartedAt float32 `json:"startedAt"`
-				} `json:"started,omitempty"`
-				TaskDefinitionId string `json:"taskDefinitionId"`
-			} `json:"taskRuns"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiInvocationLogsResponse parses an HTTP response from a GetVercelCiInvocationLogsWithResponse call
-func ParseGetVercelCiInvocationLogsResponse(rsp *http.Response) (*GetVercelCiInvocationLogsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiInvocationLogsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Lines []struct {
-				Level     string  `json:"level"`
-				Message   string  `json:"message"`
-				Timestamp float32 `json:"timestamp"`
-			} `json:"lines"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseRetryVercelCiInvocationResponse parses an HTTP response from a RetryVercelCiInvocationWithResponse call
-func ParseRetryVercelCiInvocationResponse(rsp *http.Response) (*RetryVercelCiInvocationResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &RetryVercelCiInvocationResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Attempt      float32 `json:"attempt"`
-			InvocationId string  `json:"invocationId"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiTaskLogsResponse parses an HTTP response from a GetVercelCiTaskLogsWithResponse call
-func ParseGetVercelCiTaskLogsResponse(rsp *http.Response) (*GetVercelCiTaskLogsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiTaskLogsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// HasMore Whether more tasks matched the filters than were returned. With `search`, whether more than 1000 lines matched.
-			HasMore bool `json:"hasMore"`
-			Tasks   []struct {
-				Conclusion      *GetVercelCiTaskLogs200JSONResponseBody_Tasks_Conclusion `json:"conclusion,omitempty"`
-				JobDefinitionId string                                                   `json:"jobDefinitionId"`
-				JobName         string                                                   `json:"jobName"`
-				JobRunAttempt   float32                                                  `json:"jobRunAttempt"`
-				Lines           []struct {
-					Level     string  `json:"level"`
-					Message   string  `json:"message"`
-					Timestamp float32 `json:"timestamp"`
-				} `json:"lines"`
-				TaskDefinitionId string   `json:"taskDefinitionId"`
-				TaskName         string   `json:"taskName"`
-				TaskRunAttempt   *float32 `json:"taskRunAttempt,omitempty"`
-			} `json:"tasks"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiInvocationTreeResponse parses an HTTP response from a GetVercelCiInvocationTreeWithResponse call
-func ParseGetVercelCiInvocationTreeResponse(rsp *http.Response) (*GetVercelCiInvocationTreeResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiInvocationTreeResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Invocation struct {
-				Attempt             float32 `json:"attempt"`
-				BootstrappingFailed *struct {
-					Reason string `json:"reason"`
-				} `json:"bootstrappingFailed,omitempty"`
-				BootstrappingStarted *struct {
-					StartedAt float32 `json:"startedAt"`
-				} `json:"bootstrappingStarted,omitempty"`
-				CommitSha string `json:"commitSha"`
-				Completed *struct {
-					CompletedAt float32                                                                       `json:"completedAt"`
-					Conclusion  *GetVercelCiInvocationTree200JSONResponseBody_Invocation_Completed_Conclusion `json:"conclusion,omitempty"`
-				} `json:"completed,omitempty"`
-				CreatedAt             float32 `json:"createdAt"`
-				InvocationId          string  `json:"invocationId"`
-				JobDefinitionsCreated *struct {
-					Names       []string                                                                              `json:"names"`
-					ScheduledAt *float32                                                                              `json:"scheduledAt,omitempty"`
-					Source      *GetVercelCiInvocationTree200JSONResponseBody_Invocation_JobDefinitionsCreated_Source `json:"source,omitempty"`
-				} `json:"jobDefinitionsCreated,omitempty"`
-				Ref           string `json:"ref"`
-				RepositoryKey string `json:"repositoryKey"`
-
-				// RunConclusion The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
-				RunConclusion *struct {
-					Result GetVercelCiInvocationTree200JSONResponseBody_Invocation_RunConclusion_Result `json:"result"`
-				} `json:"runConclusion,omitempty"`
-				SandboxNamed *struct {
-					ReadyAt          *float32 `json:"readyAt,omitempty"`
-					SandboxName      string   `json:"sandboxName"`
-					WorkingDirectory string   `json:"workingDirectory"`
-				} `json:"sandboxNamed,omitempty"`
-				SandboxSnapshotted *struct {
-					SandboxSnapshotId string   `json:"sandboxSnapshotId"`
-					SnapshottedAt     *float32 `json:"snapshottedAt,omitempty"`
-					WorkingDirectory  string   `json:"workingDirectory"`
-				} `json:"sandboxSnapshotted,omitempty"`
-
-				// SetupConclusion The terminal setup result. Omitted while invocation setup is still running.
-				SetupConclusion *struct {
-					Result GetVercelCiInvocationTree200JSONResponseBody_Invocation_SetupConclusion_Result `json:"result"`
-				} `json:"setupConclusion,omitempty"`
-				Skipped *struct {
-					Reason string `json:"reason"`
-				} `json:"skipped,omitempty"`
-				Source GetVercelCiInvocationTree200JSONResponseBody_Invocation_Source `json:"source"`
-				Status GetVercelCiInvocationTree200JSONResponseBody_Invocation_Status `json:"status"`
-				TeamId string                                                         `json:"teamId"`
-			} `json:"invocation"`
-			Jobs []struct {
-				Definition struct {
-					Command           string                                                            `json:"command"`
-					CreatedAt         float32                                                           `json:"createdAt"`
-					InvocationAttempt float32                                                           `json:"invocationAttempt"`
-					InvocationId      string                                                            `json:"invocationId"`
-					JobDefinitionId   string                                                            `json:"jobDefinitionId"`
-					Kind              GetVercelCiInvocationTree200JSONResponseBody_Jobs_Definition_Kind `json:"kind"`
-					Name              string                                                            `json:"name"`
-				} `json:"definition"`
-				Run *struct {
-					Attempt   float32 `json:"attempt"`
-					Completed *struct {
-						CompletedAt float32                                                                    `json:"completedAt"`
-						Conclusion  GetVercelCiInvocationTree200JSONResponseBody_Jobs_Run_Completed_Conclusion `json:"conclusion"`
-					} `json:"completed,omitempty"`
-					CreatedAt         float32 `json:"createdAt"`
-					InvocationAttempt float32 `json:"invocationAttempt"`
-					InvocationId      string  `json:"invocationId"`
-					JobDefinitionId   string  `json:"jobDefinitionId"`
-					Started           *struct {
-						StartedAt float32 `json:"startedAt"`
-					} `json:"started,omitempty"`
-				} `json:"run,omitempty"`
-				Tasks []struct {
-					Definition struct {
-						CreatedAt                   float32                                                                      `json:"createdAt"`
-						DependencyTaskDefinitionIds []string                                                                     `json:"dependencyTaskDefinitionIds"`
-						InvocationAttempt           float32                                                                      `json:"invocationAttempt"`
-						InvocationId                string                                                                       `json:"invocationId"`
-						JobDefinitionId             string                                                                       `json:"jobDefinitionId"`
-						JobRunAttempt               float32                                                                      `json:"jobRunAttempt"`
-						Name                        string                                                                       `json:"name"`
-						Operation                   GetVercelCiInvocationTree200JSONResponseBody_Jobs_Tasks_Definition_Operation `json:"operation"`
-						PackageDirectory            *string                                                                      `json:"packageDirectory,omitempty"`
-						TaskDefinitionId            string                                                                       `json:"taskDefinitionId"`
-					} `json:"definition"`
-					Run *struct {
-						Attempt   float32 `json:"attempt"`
-						Completed *struct {
-							CompletedAt float32                                                                          `json:"completedAt"`
-							Conclusion  GetVercelCiInvocationTree200JSONResponseBody_Jobs_Tasks_Run_Completed_Conclusion `json:"conclusion"`
-						} `json:"completed,omitempty"`
-						CreatedAt         float32 `json:"createdAt"`
-						DeploymentBinding *struct {
-							DeploymentCreatedAt float32 `json:"deploymentCreatedAt"`
-							DeploymentId        string  `json:"deploymentId"`
-							EventAt             float32 `json:"eventAt"`
-							ReadyState          *string `json:"readyState,omitempty"`
-						} `json:"deploymentBinding,omitempty"`
-						InvocationAttempt float32 `json:"invocationAttempt"`
-						InvocationId      string  `json:"invocationId"`
-						JobDefinitionId   string  `json:"jobDefinitionId"`
-						JobRunAttempt     float32 `json:"jobRunAttempt"`
-						Started           *struct {
-							StartedAt float32 `json:"startedAt"`
-						} `json:"started,omitempty"`
-						TaskDefinitionId string `json:"taskDefinitionId"`
-					} `json:"run,omitempty"`
-				} `json:"tasks"`
-			} `json:"jobs"`
-			Repositories map[string]interface{} `json:"repositories"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseSearchVercelCiLogsResponse parses an HTTP response from a SearchVercelCiLogsWithResponse call
-func ParseSearchVercelCiLogsResponse(rsp *http.Response) (*SearchVercelCiLogsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &SearchVercelCiLogsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// HasMore Whether more than 1000 lines matched. The newest lines are returned.
-			HasMore     bool `json:"hasMore"`
-			Invocations []struct {
-				Attempt      float32 `json:"attempt"`
-				InvocationId string  `json:"invocationId"`
-
-				// Setup Matching lines from the setup logs. Present only when a setup line matches.
-				Setup *struct {
-					Lines []struct {
-						Level     string  `json:"level"`
-						Message   string  `json:"message"`
-						Timestamp float32 `json:"timestamp"`
-					} `json:"lines"`
-				} `json:"setup,omitempty"`
-				Tasks []struct {
-					Conclusion      *SearchVercelCiLogs200JSONResponseBody_Invocations_Tasks_Conclusion `json:"conclusion,omitempty"`
-					JobDefinitionId string                                                              `json:"jobDefinitionId"`
-					JobName         string                                                              `json:"jobName"`
-					JobRunAttempt   float32                                                             `json:"jobRunAttempt"`
-					Lines           []struct {
-						Level     string  `json:"level"`
-						Message   string  `json:"message"`
-						Timestamp float32 `json:"timestamp"`
-					} `json:"lines"`
-					TaskDefinitionId string   `json:"taskDefinitionId"`
-					TaskName         string   `json:"taskName"`
-					TaskRunAttempt   *float32 `json:"taskRunAttempt,omitempty"`
-				} `json:"tasks"`
-			} `json:"invocations"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiRepositorySettingsResponse parses an HTTP response from a GetVercelCiRepositorySettingsWithResponse call
-func ParseGetVercelCiRepositorySettingsResponse(rsp *http.Response) (*GetVercelCiRepositorySettingsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiRepositorySettingsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			CiEnabled      bool                                                      `json:"ciEnabled"`
-			CiEnabledAt    *float32                                                  `json:"ciEnabledAt,omitempty"`
-			OrganizationId string                                                    `json:"organizationId"`
-			Provider       GetVercelCiRepositorySettings200JSONResponseBody_Provider `json:"provider"`
-			Repository     string                                                    `json:"repository"`
-			UpdatedAt      *float32                                                  `json:"updatedAt,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUpdateVercelCiRepositorySettingsResponse parses an HTTP response from a UpdateVercelCiRepositorySettingsWithResponse call
-func ParseUpdateVercelCiRepositorySettingsResponse(rsp *http.Response) (*UpdateVercelCiRepositorySettingsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UpdateVercelCiRepositorySettingsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			CiEnabled      bool                                                         `json:"ciEnabled"`
-			CiEnabledAt    *float32                                                     `json:"ciEnabledAt,omitempty"`
-			OrganizationId string                                                       `json:"organizationId"`
-			Provider       UpdateVercelCiRepositorySettings200JSONResponseBody_Provider `json:"provider"`
-			Repository     string                                                       `json:"repository"`
-			UpdatedAt      *float32                                                     `json:"updatedAt,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateVercelCiTaskAnalysisResponse parses an HTTP response from a CreateVercelCiTaskAnalysisWithResponse call
-func ParseCreateVercelCiTaskAnalysisResponse(rsp *http.Response) (*CreateVercelCiTaskAnalysisResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateVercelCiTaskAnalysisResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			AnalysisId string                                               `json:"analysisId"`
-			Status     CreateVercelCiTaskAnalysis202JSONResponseBody_Status `json:"status"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case rsp.StatusCode == 503:
-		break // No content-type
-
-	}
-
-	return response, nil
-}
-
-// ParseGetVercelCiTaskAnalysisResponse parses an HTTP response from a GetVercelCiTaskAnalysisWithResponse call
-func ParseGetVercelCiTaskAnalysisResponse(rsp *http.Response) (*GetVercelCiTaskAnalysisResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetVercelCiTaskAnalysisResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			AnalysisId    string                                            `json:"analysisId"`
-			FailureReason *string                                           `json:"failureReason,omitempty"`
-			Status        GetVercelCiTaskAnalysis200JSONResponseBody_Status `json:"status"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCreateVercelCiTaskConfigurationPullRequestResponse parses an HTTP response from a CreateVercelCiTaskConfigurationPullRequestWithResponse call
-func ParseCreateVercelCiTaskConfigurationPullRequestResponse(rsp *http.Response) (*CreateVercelCiTaskConfigurationPullRequestResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CreateVercelCiTaskConfigurationPullRequestResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			ChangedTaskNames []string `json:"changedTaskNames"`
-			Url              string   `json:"url"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case rsp.StatusCode == 400:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case rsp.StatusCode == 404:
-		break // No content-type
-
-	case rsp.StatusCode == 409:
-		break // No content-type
-
-	case rsp.StatusCode == 410:
-		break // No content-type
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest struct {
-			Error struct {
-				Code    string  `json:"code"`
-				Limit   float32 `json:"limit"`
-				Message string  `json:"message"`
-				Name    string  `json:"name"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Error struct {
-				Code    string `json:"code"`
-				Message string `json:"message"`
-			} `json:"error"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
 // ParseListVercelCiTaskAnalysisTasksResponse parses an HTTP response from a ListVercelCiTaskAnalysisTasksWithResponse call
 func ParseListVercelCiTaskAnalysisTasksResponse(rsp *http.Response) (*ListVercelCiTaskAnalysisTasksResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -13239,6 +5871,9 @@ func ParseListSessionSnapshotsResponse(rsp *http.Response) (*ListSessionSnapshot
 		break // No content-type
 
 	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 503:
 		break // No content-type
 
 	}
@@ -20912,6 +13547,942 @@ func ParseUpdateProjectResponse(rsp *http.Response) (*UpdateProjectResponse, err
 		break // No content-type
 
 	case rsp.StatusCode == 503:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectsByIdOrNameCustomEnvironmentsResponse parses an HTTP response from a GetProjectsByIdOrNameCustomEnvironmentsWithResponse call
+func ParseGetProjectsByIdOrNameCustomEnvironmentsResponse(rsp *http.Response) (*GetProjectsByIdOrNameCustomEnvironmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectsByIdOrNameCustomEnvironmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// AccountLimit The maximum number of custom environments allowed either by the team's plan type or a custom override.
+			AccountLimit struct {
+				Total float32 `json:"total"`
+			} `json:"accountLimit"`
+			Environments []struct {
+				// BranchMatcher Configuration for matching git branches to this environment
+				BranchMatcher *struct {
+					// Pattern The pattern to match against branch names
+					Pattern string `json:"pattern"`
+
+					// Type The type of matching to perform
+					Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsBranchMatcherType `json:"type"`
+				} `json:"branchMatcher,omitempty"`
+
+				// CreatedAt Timestamp when the environment was created
+				CreatedAt float32 `json:"createdAt"`
+
+				// CurrentDeploymentAliases List of aliases for the current deployment
+				CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+				// Description Optional description of the environment's purpose
+				Description *string `json:"description,omitempty"`
+
+				// Domains List of domains associated with this environment
+				Domains *[]struct {
+					ApexName            string                                                                                           `json:"apexName"`
+					CreatedAt           *float32                                                                                         `json:"createdAt,omitempty"`
+					CustomEnvironmentId *string                                                                                          `json:"customEnvironmentId,omitempty"`
+					GitBranch           *string                                                                                          `json:"gitBranch,omitempty"`
+					Name                string                                                                                           `json:"name"`
+					ProjectId           string                                                                                           `json:"projectId"`
+					Redirect            *string                                                                                          `json:"redirect,omitempty"`
+					RedirectStatusCode  *GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+					UpdatedAt           *float32                                                                                         `json:"updatedAt,omitempty"`
+
+					// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+					Verification *[]struct {
+						Domain string `json:"domain"`
+						Reason string `json:"reason"`
+						Type   string `json:"type"`
+						Value  string `json:"value"`
+					} `json:"verification,omitempty"`
+
+					// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+					Verified GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsDomainsVerified `json:"verified"`
+				} `json:"domains,omitempty"`
+
+				// Id Unique identifier for the custom environment (format: env_*)
+				Id string `json:"id"`
+
+				// Slug URL-friendly name of the environment
+				Slug string `json:"slug"`
+
+				// Type The type of environment (production, preview, or development)
+				Type GetProjectsByIdOrNameCustomEnvironments200JSONResponseBodyEnvironmentsType `json:"type"`
+
+				// UpdatedAt Timestamp when the environment was last updated
+				UpdatedAt float32 `json:"updatedAt"`
+			} `json:"environments"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateCustomEnvironmentResponse parses an HTTP response from a CreateCustomEnvironmentWithResponse call
+func ParseCreateCustomEnvironmentResponse(rsp *http.Response) (*CreateCustomEnvironmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateCustomEnvironmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// BranchMatcher Configuration for matching git branches to this environment
+			BranchMatcher *struct {
+				// Pattern The pattern to match against branch names
+				Pattern string `json:"pattern"`
+
+				// Type The type of matching to perform
+				Type CreateCustomEnvironment201JSONResponseBodyBranchMatcherType `json:"type"`
+			} `json:"branchMatcher,omitempty"`
+
+			// CreatedAt Timestamp when the environment was created
+			CreatedAt float32 `json:"createdAt"`
+
+			// CurrentDeploymentAliases List of aliases for the current deployment
+			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+			// Description Optional description of the environment's purpose
+			Description *string `json:"description,omitempty"`
+
+			// Domains List of domains associated with this environment
+			Domains *[]struct {
+				ApexName            string                                                               `json:"apexName"`
+				CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+				CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+				GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+				Name                string                                                               `json:"name"`
+				ProjectId           string                                                               `json:"projectId"`
+				Redirect            *string                                                              `json:"redirect,omitempty"`
+				RedirectStatusCode  *CreateCustomEnvironment201JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+				UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+				Verification *[]struct {
+					Domain string `json:"domain"`
+					Reason string `json:"reason"`
+					Type   string `json:"type"`
+					Value  string `json:"value"`
+				} `json:"verification,omitempty"`
+
+				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+				Verified CreateCustomEnvironment201JSONResponseBodyDomainsVerified `json:"verified"`
+			} `json:"domains,omitempty"`
+
+			// Id Unique identifier for the custom environment (format: env_*)
+			Id string `json:"id"`
+
+			// Slug URL-friendly name of the environment
+			Slug string `json:"slug"`
+
+			// Type The type of environment (production, preview, or development)
+			Type CreateCustomEnvironment201JSONResponseBodyType `json:"type"`
+
+			// UpdatedAt Timestamp when the environment was last updated
+			UpdatedAt float32 `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveCustomEnvironmentResponse parses an HTTP response from a RemoveCustomEnvironmentWithResponse call
+func ParseRemoveCustomEnvironmentResponse(rsp *http.Response) (*RemoveCustomEnvironmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveCustomEnvironmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// BranchMatcher Configuration for matching git branches to this environment
+			BranchMatcher *struct {
+				// Pattern The pattern to match against branch names
+				Pattern string `json:"pattern"`
+
+				// Type The type of matching to perform
+				Type RemoveCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+			} `json:"branchMatcher,omitempty"`
+
+			// CreatedAt Timestamp when the environment was created
+			CreatedAt float32 `json:"createdAt"`
+
+			// CurrentDeploymentAliases List of aliases for the current deployment
+			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+			// Description Optional description of the environment's purpose
+			Description *string `json:"description,omitempty"`
+
+			// Domains List of domains associated with this environment
+			Domains *[]struct {
+				ApexName            string                                                               `json:"apexName"`
+				CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+				CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+				GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+				Name                string                                                               `json:"name"`
+				ProjectId           string                                                               `json:"projectId"`
+				Redirect            *string                                                              `json:"redirect,omitempty"`
+				RedirectStatusCode  *RemoveCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+				UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+				Verification *[]struct {
+					Domain string `json:"domain"`
+					Reason string `json:"reason"`
+					Type   string `json:"type"`
+					Value  string `json:"value"`
+				} `json:"verification,omitempty"`
+
+				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+				Verified RemoveCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+			} `json:"domains,omitempty"`
+
+			// Id Unique identifier for the custom environment (format: env_*)
+			Id string `json:"id"`
+
+			// Slug URL-friendly name of the environment
+			Slug string `json:"slug"`
+
+			// Type The type of environment (production, preview, or development)
+			Type RemoveCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+			// UpdatedAt Timestamp when the environment was last updated
+			UpdatedAt float32 `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetCustomEnvironmentResponse parses an HTTP response from a GetCustomEnvironmentWithResponse call
+func ParseGetCustomEnvironmentResponse(rsp *http.Response) (*GetCustomEnvironmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCustomEnvironmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// BranchMatcher Configuration for matching git branches to this environment
+			BranchMatcher *struct {
+				// Pattern The pattern to match against branch names
+				Pattern string `json:"pattern"`
+
+				// Type The type of matching to perform
+				Type GetCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+			} `json:"branchMatcher,omitempty"`
+
+			// CreatedAt Timestamp when the environment was created
+			CreatedAt float32 `json:"createdAt"`
+
+			// CurrentDeploymentAliases List of aliases for the current deployment
+			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+			// Description Optional description of the environment's purpose
+			Description *string `json:"description,omitempty"`
+
+			// Domains List of domains associated with this environment
+			Domains *[]struct {
+				ApexName            string                                                            `json:"apexName"`
+				CreatedAt           *float32                                                          `json:"createdAt,omitempty"`
+				CustomEnvironmentId *string                                                           `json:"customEnvironmentId,omitempty"`
+				GitBranch           *string                                                           `json:"gitBranch,omitempty"`
+				Name                string                                                            `json:"name"`
+				ProjectId           string                                                            `json:"projectId"`
+				Redirect            *string                                                           `json:"redirect,omitempty"`
+				RedirectStatusCode  *GetCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+				UpdatedAt           *float32                                                          `json:"updatedAt,omitempty"`
+
+				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+				Verification *[]struct {
+					Domain string `json:"domain"`
+					Reason string `json:"reason"`
+					Type   string `json:"type"`
+					Value  string `json:"value"`
+				} `json:"verification,omitempty"`
+
+				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+				Verified GetCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+			} `json:"domains,omitempty"`
+
+			// Id Unique identifier for the custom environment (format: env_*)
+			Id string `json:"id"`
+
+			// Slug URL-friendly name of the environment
+			Slug string `json:"slug"`
+
+			// Type The type of environment (production, preview, or development)
+			Type GetCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+			// UpdatedAt Timestamp when the environment was last updated
+			UpdatedAt float32 `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateCustomEnvironmentResponse parses an HTTP response from a UpdateCustomEnvironmentWithResponse call
+func ParseUpdateCustomEnvironmentResponse(rsp *http.Response) (*UpdateCustomEnvironmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateCustomEnvironmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// BranchMatcher Configuration for matching git branches to this environment
+			BranchMatcher *struct {
+				// Pattern The pattern to match against branch names
+				Pattern string `json:"pattern"`
+
+				// Type The type of matching to perform
+				Type UpdateCustomEnvironment200JSONResponseBodyBranchMatcherType `json:"type"`
+			} `json:"branchMatcher,omitempty"`
+
+			// CreatedAt Timestamp when the environment was created
+			CreatedAt float32 `json:"createdAt"`
+
+			// CurrentDeploymentAliases List of aliases for the current deployment
+			CurrentDeploymentAliases *[]string `json:"currentDeploymentAliases,omitempty"`
+
+			// Description Optional description of the environment's purpose
+			Description *string `json:"description,omitempty"`
+
+			// Domains List of domains associated with this environment
+			Domains *[]struct {
+				ApexName            string                                                               `json:"apexName"`
+				CreatedAt           *float32                                                             `json:"createdAt,omitempty"`
+				CustomEnvironmentId *string                                                              `json:"customEnvironmentId,omitempty"`
+				GitBranch           *string                                                              `json:"gitBranch,omitempty"`
+				Name                string                                                               `json:"name"`
+				ProjectId           string                                                               `json:"projectId"`
+				Redirect            *string                                                              `json:"redirect,omitempty"`
+				RedirectStatusCode  *UpdateCustomEnvironment200JSONResponseBodyDomainsRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+				UpdatedAt           *float32                                                             `json:"updatedAt,omitempty"`
+
+				// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+				Verification *[]struct {
+					Domain string `json:"domain"`
+					Reason string `json:"reason"`
+					Type   string `json:"type"`
+					Value  string `json:"value"`
+				} `json:"verification,omitempty"`
+
+				// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+				Verified UpdateCustomEnvironment200JSONResponseBodyDomainsVerified `json:"verified"`
+			} `json:"domains,omitempty"`
+
+			// Id Unique identifier for the custom environment (format: env_*)
+			Id string `json:"id"`
+
+			// Slug URL-friendly name of the environment
+			Slug string `json:"slug"`
+
+			// Type The type of environment (production, preview, or development)
+			Type UpdateCustomEnvironment200JSONResponseBodyType `json:"type"`
+
+			// UpdatedAt Timestamp when the environment was last updated
+			UpdatedAt float32 `json:"updatedAt"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 402:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectDomainsResponse parses an HTTP response from a GetProjectDomainsWithResponse call
+func ParseGetProjectDomainsResponse(rsp *http.Response) (*GetProjectDomainsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectDomainsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetProjectDomains200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveProjectDomainResponse parses an HTTP response from a RemoveProjectDomainWithResponse call
+func ParseRemoveProjectDomainResponse(rsp *http.Response) (*RemoveProjectDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveProjectDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectDomainResponse parses an HTTP response from a GetProjectDomainWithResponse call
+func ParseGetProjectDomainResponse(rsp *http.Response) (*GetProjectDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ApexName            string                                                 `json:"apexName"`
+			CreatedAt           *float32                                               `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                `json:"gitBranch,omitempty"`
+			Name                string                                                 `json:"name"`
+			ProjectId           string                                                 `json:"projectId"`
+			Redirect            *string                                                `json:"redirect,omitempty"`
+			RedirectStatusCode  *GetProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                               `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified GetProjectDomain200JSONResponseBodyVerified `json:"verified"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateProjectDomainResponse parses an HTTP response from a UpdateProjectDomainWithResponse call
+func ParseUpdateProjectDomainResponse(rsp *http.Response) (*UpdateProjectDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateProjectDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ApexName            string                                                    `json:"apexName"`
+			CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                   `json:"gitBranch,omitempty"`
+			Name                string                                                    `json:"name"`
+			ProjectId           string                                                    `json:"projectId"`
+			Redirect            *string                                                   `json:"redirect,omitempty"`
+			RedirectStatusCode  *UpdateProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
+
+			// Verification A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+			Verification *[]struct {
+				Domain string `json:"domain"`
+				Reason string `json:"reason"`
+				Type   string `json:"type"`
+				Value  string `json:"value"`
+			} `json:"verification,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified UpdateProjectDomain200JSONResponseBodyVerified `json:"verified"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseVerifyProjectDomainResponse parses an HTTP response from a VerifyProjectDomainWithResponse call
+func ParseVerifyProjectDomainResponse(rsp *http.Response) (*VerifyProjectDomainResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VerifyProjectDomainResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			ApexName            string                                                    `json:"apexName"`
+			CreatedAt           *float32                                                  `json:"createdAt,omitempty"`
+			CustomEnvironmentId *string                                                   `json:"customEnvironmentId,omitempty"`
+			GitBranch           *string                                                   `json:"gitBranch,omitempty"`
+			Name                string                                                    `json:"name"`
+			ProjectId           string                                                    `json:"projectId"`
+			Redirect            *string                                                   `json:"redirect,omitempty"`
+			RedirectStatusCode  *VerifyProjectDomain200JSONResponseBodyRedirectStatusCode `json:"redirectStatusCode,omitempty"`
+			UpdatedAt           *float32                                                  `json:"updatedAt,omitempty"`
+
+			// Verified `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+			Verified VerifyProjectDomain200JSONResponseBodyVerified `json:"verified"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseRemoveProjectEnvResponse parses an HTTP response from a RemoveProjectEnvWithResponse call
+func ParseRemoveProjectEnvResponse(rsp *http.Response) (*RemoveProjectEnvResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RemoveProjectEnvResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest RemoveProjectEnv200JSONResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseEditProjectEnvResponse parses an HTTP response from a EditProjectEnvWithResponse call
+func ParseEditProjectEnvResponse(rsp *http.Response) (*EditProjectEnvResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &EditProjectEnvResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Comment              *string                                        `json:"comment,omitempty"`
+			ConfigurationId      *string                                        `json:"configurationId,omitempty"`
+			ContentHint          *EditProjectEnv200JSONResponseBody_ContentHint `json:"contentHint,omitempty"`
+			CreatedAt            *float32                                       `json:"createdAt,omitempty"`
+			CreatedBy            *string                                        `json:"createdBy,omitempty"`
+			CustomEnvironmentIds *[]string                                      `json:"customEnvironmentIds,omitempty"`
+			Decrypted            *EditProjectEnv200JSONResponseBodyDecrypted    `json:"decrypted,omitempty"`
+			EdgeConfigId         *string                                        `json:"edgeConfigId,omitempty"`
+			EdgeConfigTokenId    *string                                        `json:"edgeConfigTokenId,omitempty"`
+			GitBranch            *string                                        `json:"gitBranch,omitempty"`
+			Id                   *string                                        `json:"id,omitempty"`
+
+			// InternalContentHint Similar to `contentHints`, but should not be exposed to the user.
+			InternalContentHint *struct {
+				// EncryptedValue Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+				EncryptedValue string                                                   `json:"encryptedValue"`
+				Type           EditProjectEnv200JSONResponseBodyInternalContentHintType `json:"type"`
+			} `json:"internalContentHint,omitempty"`
+			Key string `json:"key"`
+
+			// LegacyValue Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
+			LegacyValue *string `json:"legacyValue,omitempty"`
+
+			// SunsetSecretId This is used to identify variables that have been migrated from type secret to sensitive.
+			SunsetSecretId *string                                   `json:"sunsetSecretId,omitempty"`
+			Target         *EditProjectEnv200JSONResponseBody_Target `json:"target,omitempty"`
+			Type           EditProjectEnv200JSONResponseBodyType     `json:"type"`
+			UpdatedAt      *float32                                  `json:"updatedAt,omitempty"`
+			UpdatedBy      *string                                   `json:"updatedBy,omitempty"`
+			Value          string                                    `json:"value"`
+
+			// Visibility User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+			Visibility *EditProjectEnv200JSONResponseBodyVisibility `json:"visibility,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 409:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
+		break // No content-type
+
+	case rsp.StatusCode == 429:
+		break // No content-type
+
+	case rsp.StatusCode == 500:
+		break // No content-type
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateWebInsightsToggleResponse parses an HTTP response from a CreateWebInsightsToggleWithResponse call
+func ParseCreateWebInsightsToggleResponse(rsp *http.Response) (*CreateWebInsightsToggleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateWebInsightsToggleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Value CreateWebInsightsToggle200JSONResponseBodyValue `json:"value"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case rsp.StatusCode == 400:
+		break // No content-type
+
+	case rsp.StatusCode == 401:
+		break // No content-type
+
+	case rsp.StatusCode == 403:
+		break // No content-type
+
+	case rsp.StatusCode == 404:
+		break // No content-type
+
+	case rsp.StatusCode == 410:
 		break // No content-type
 
 	}

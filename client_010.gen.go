@@ -10,6 +10,21 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// UserEventPayload435Action defines model for UserEvent.Payload.435.Action.
+type UserEventPayload435Action string
+
+// UserEventPayload435CodeReviewSelectionInitial defines model for UserEvent.Payload.435.CodeReviewSelection.Initial.
+type UserEventPayload435CodeReviewSelectionInitial bool
+
+// UserEventPayload435CodeReviewSelectionSubmitted defines model for UserEvent.Payload.435.CodeReviewSelection.Submitted.
+type UserEventPayload435CodeReviewSelectionSubmitted bool
+
+// UserEventPayload435Endpoint defines model for UserEvent.Payload.435.Endpoint.
+type UserEventPayload435Endpoint string
+
+// UserEventPayload435NextEnabled Whether automatic code reviews are enabled
+type UserEventPayload435NextEnabled bool
+
 // UserEventPayload435NextIncludeDrafts Whether to include draft pull requests in automatic reviews
 type UserEventPayload435NextIncludeDrafts bool
 
@@ -3728,6 +3743,9 @@ type CreateSpeedInsightsToggleJSONBody struct {
 type CreateSpeedInsightsToggleParams struct {
 	ProjectId string `form:"projectId" json:"projectId"`
 }
+
+// CreateSpeedInsightsToggle200JSONResponseBodyChanged defines parameters for CreateSpeedInsightsToggle.
+type CreateSpeedInsightsToggle200JSONResponseBodyChanged bool
 
 // CreateSpeedInsightsToggle200JSONResponseBodyValue defines parameters for CreateSpeedInsightsToggle.
 type CreateSpeedInsightsToggle200JSONResponseBodyValue bool
@@ -15661,6 +15679,9 @@ type GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -15680,6 +15701,9 @@ type GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1DoNotInheritDefaultAppManagedRules defines parameters for GetMicrofrontendsInGroup.
+type GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for GetMicrofrontendsInGroup.
 type GetMicrofrontendsInGroup200JSONResponseBodyProjectsMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -17923,6 +17947,9 @@ type DeleteProjectAvatar200JSONResponseBodyMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *DeleteProjectAvatar200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *DeleteProjectAvatar200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -17942,6 +17969,9 @@ type DeleteProjectAvatar200JSONResponseBodyMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// DeleteProjectAvatar200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules defines parameters for DeleteProjectAvatar.
+type DeleteProjectAvatar200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // DeleteProjectAvatar200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for DeleteProjectAvatar.
 type DeleteProjectAvatar200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -19666,6 +19696,9 @@ type UploadProjectAvatar200JSONResponseBodyMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *UploadProjectAvatar200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *UploadProjectAvatar200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -19685,6 +19718,9 @@ type UploadProjectAvatar200JSONResponseBodyMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// UploadProjectAvatar200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules defines parameters for UploadProjectAvatar.
+type UploadProjectAvatar200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // UploadProjectAvatar200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -19974,38 +20010,3 @@ type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4 struct 
 
 // UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4Type defines parameters for UploadProjectAvatar.
 type UploadProjectAvatar200JSONResponseBodyRollbackDescriptionPrincipal4Type string
-
-// UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBody_RollbackDescription_Principal struct {
-	union json.RawMessage
-}
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseCanaryResponseHeader bool
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesLinearShift bool
-
-// UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodyRollingReleaseStagesRequireApproval bool
-
-// UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySandboxFailoverRegions string
-
-// UploadProjectAvatar200JSONResponseBodySandboxRegion defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySandboxRegion string
-
-// UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityAttackModeEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityBotIdEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityFirewallEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityFirewallSeawallEnabled bool
-
-// UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled defines parameters for UploadProjectAvatar.
-type UploadProjectAvatar200JSONResponseBodySecurityJa3Enabled bool

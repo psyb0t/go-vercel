@@ -5142,6 +5142,24 @@ func (e CreateProject200JSONResponseBodyMicrofrontends0IsDefaultApp) Valid() boo
 	}
 }
 
+// Defines values for CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules.
+const (
+	CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesFalse CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules = false
+	CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesTrue  CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules = true
+)
+
+// Valid indicates whether the value is a known member of the CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules enum.
+func (e CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules) Valid() bool {
+	switch e {
+	case CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesFalse:
+		return true
+	case CreateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
 	CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse CreateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
@@ -19989,17 +20007,3 @@ const (
 	GetDeployment200JSONResponseBody1Services0TriggerSchedule GetDeployment200JSONResponseBody1Services0Trigger = "schedule"
 	GetDeployment200JSONResponseBody1Services0TriggerWorkflow GetDeployment200JSONResponseBody1Services0Trigger = "workflow"
 )
-
-// Valid indicates whether the value is a known member of the GetDeployment200JSONResponseBody1Services0Trigger enum.
-func (e GetDeployment200JSONResponseBody1Services0Trigger) Valid() bool {
-	switch e {
-	case GetDeployment200JSONResponseBody1Services0TriggerQueue:
-		return true
-	case GetDeployment200JSONResponseBody1Services0TriggerSchedule:
-		return true
-	case GetDeployment200JSONResponseBody1Services0TriggerWorkflow:
-		return true
-	default:
-		return false
-	}
-}

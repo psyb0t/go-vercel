@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.38.0, 2026-11-26
+
+- Breaking: the `Fallthrough3` and `RulesOutcome3` experiment variants are removed from flag responses, with their `Type` enums and `Experiment` constants. Affected: `FlagEnvironmentsFallthrough3`, `FlagEnvironmentsRulesOutcome3`, `CreateFlag201JSONResponseBodyEnvironmentsFallthrough3`, `UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3` and the `ListFlagVersions200JSONResponseBody` equivalents.
+- Breaking: the matching `As*`, `From*` and `Merge*` methods are removed, for example `Flag_Environments_Fallthrough.AsFlagEnvironmentsFallthrough3` and `Flag_Environments_Rules_Outcome.MergeFlagEnvironmentsRulesOutcome3`.
+- Breaking: `CreateSpeedInsightsToggleResponse.JSON200` and `GetJSON200` gain a `Changed` field, which changes the anonymous struct type.
+- Added `DoNotInheritDefaultAppManagedRules` to the microfrontends settings in project responses, for example `GetProject200JSONResponseBodyMicrofrontends1` and `UpdateProject200JSONResponseBodyMicrofrontends1`, and to `UpdateMicrofrontendsJSONBody` and `UpdateMicrofrontendsJSONRequestBody`. Each has a `...DoNotInheritDefaultAppManagedRules` bool enum type with `True` and `False` constants.
+- Added `CreateSpeedInsightsToggle200JSONResponseBodyChanged` with `True` and `False` constants.
+- Generated code is redistributed across the `client_NNN.gen.go` files, and `client_030.gen.go` is removed.
+
 ## v0.37.0, 2026-11-25
 
 - Breaking: `AiGatewayVirtualModelConfig.SelectorOptions` gains an `Intelligence` field, which changes its anonymous struct type.

@@ -941,6 +941,24 @@ func (e UpdateProject200JSONResponseBodyMicrofrontends0IsDefaultApp) Valid() boo
 	}
 }
 
+// Defines values for UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules.
+const (
+	UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesFalse UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules = false
+	UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesTrue  UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules = true
+)
+
+// Valid indicates whether the value is a known member of the UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules enum.
+func (e UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRules) Valid() bool {
+	switch e {
+	case UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesFalse:
+		return true
+	case UpdateProject200JSONResponseBodyMicrofrontends1DoNotInheritDefaultAppManagedRulesTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting.
 const (
 	UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRoutingFalse UpdateProject200JSONResponseBodyMicrofrontends1DoNotRouteWithMicrofrontendsRouting = false
@@ -9563,14 +9581,6 @@ type FlagEnvironmentsFallthrough2BaseType string
 // FlagEnvironmentsFallthrough2Type defines model for Flag.Environments.Fallthrough.2.Type.
 type FlagEnvironmentsFallthrough2Type string
 
-// FlagEnvironmentsFallthrough3 defines model for Flag.Environments.Fallthrough.3.
-type FlagEnvironmentsFallthrough3 struct {
-	Type FlagEnvironmentsFallthrough3Type `json:"type"`
-}
-
-// FlagEnvironmentsFallthrough3Type defines model for Flag.Environments.Fallthrough.3.Type.
-type FlagEnvironmentsFallthrough3Type string
-
 // Flag_Environments_Fallthrough defines model for Flag.Environments.Fallthrough.
 type Flag_Environments_Fallthrough struct {
 	union json.RawMessage
@@ -9714,14 +9724,6 @@ type FlagEnvironmentsRulesOutcome2BaseType string
 
 // FlagEnvironmentsRulesOutcome2Type defines model for Flag.Environments.Rules.Outcome.2.Type.
 type FlagEnvironmentsRulesOutcome2Type string
-
-// FlagEnvironmentsRulesOutcome3 defines model for Flag.Environments.Rules.Outcome.3.
-type FlagEnvironmentsRulesOutcome3 struct {
-	Type FlagEnvironmentsRulesOutcome3Type `json:"type"`
-}
-
-// FlagEnvironmentsRulesOutcome3Type defines model for Flag.Environments.Rules.Outcome.3.Type.
-type FlagEnvironmentsRulesOutcome3Type string
 
 // Flag_Environments_Rules_Outcome defines model for Flag.Environments.Rules.Outcome.
 type Flag_Environments_Rules_Outcome struct {
@@ -16747,6 +16749,9 @@ type UserEventPayload244PrevProjectMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *UserEventPayload244PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -16766,6 +16771,9 @@ type UserEventPayload244PrevProjectMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+type UserEventPayload244PrevProjectMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // UserEventPayload244PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 type UserEventPayload244PrevProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -16834,6 +16842,9 @@ type UserEventPayload244ProjectMicrofrontends1 struct {
 	// DefaultRoute A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
 	DefaultRoute *string `json:"defaultRoute,omitempty"`
 
+	// DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+	DoNotInheritDefaultAppManagedRules *UserEventPayload244ProjectMicrofrontends1DoNotInheritDefaultAppManagedRules `json:"doNotInheritDefaultAppManagedRules,omitempty"`
+
 	// DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 	DoNotRouteWithMicrofrontendsRouting *UserEventPayload244ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting `json:"doNotRouteWithMicrofrontendsRouting,omitempty"`
 
@@ -16853,6 +16864,9 @@ type UserEventPayload244ProjectMicrofrontends1 struct {
 	// UpdatedAt Timestamp when the microfrontends settings were last updated.
 	UpdatedAt float32 `json:"updatedAt"`
 }
+
+// UserEventPayload244ProjectMicrofrontends1DoNotInheritDefaultAppManagedRules Whether requests routed to this microfrontend skip the default app's managed rulesets (OWASP Core Ruleset, Bot Protection, AI Bots), so only this project's own managed rulesets apply to its routes. The default app's custom firewall rules apply either way.
+type UserEventPayload244ProjectMicrofrontends1DoNotInheritDefaultAppManagedRules bool
 
 // UserEventPayload244ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
 type UserEventPayload244ProjectMicrofrontends1DoNotRouteWithMicrofrontendsRouting bool
@@ -19993,18 +20007,3 @@ type UserEventPayload435 struct {
 	// Source Caller-reported surface, not proof of a browser interaction or consent.
 	Source *string `json:"source,omitempty"`
 }
-
-// UserEventPayload435Action defines model for UserEvent.Payload.435.Action.
-type UserEventPayload435Action string
-
-// UserEventPayload435CodeReviewSelectionInitial defines model for UserEvent.Payload.435.CodeReviewSelection.Initial.
-type UserEventPayload435CodeReviewSelectionInitial bool
-
-// UserEventPayload435CodeReviewSelectionSubmitted defines model for UserEvent.Payload.435.CodeReviewSelection.Submitted.
-type UserEventPayload435CodeReviewSelectionSubmitted bool
-
-// UserEventPayload435Endpoint defines model for UserEvent.Payload.435.Endpoint.
-type UserEventPayload435Endpoint string
-
-// UserEventPayload435NextEnabled Whether automatic code reviews are enabled
-type UserEventPayload435NextEnabled bool
