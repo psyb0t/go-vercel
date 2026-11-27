@@ -23795,7 +23795,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateTeamMemberWithBodyWithResponse Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. A pending membership superseded by Directory Sync cannot receive direct v0 roles. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -23804,7 +23804,7 @@ type ClientWithResponsesInterface interface {
 
 	// UpdateTeamMemberWithResponse Update a Team Member
 	//
-	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
+	// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. A pending membership superseded by Directory Sync cannot receive direct v0 roles. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//

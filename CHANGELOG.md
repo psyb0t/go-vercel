@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.38.1, 2026-11-27
+
+- Updated the doc comments of `UpdateTeamMember`, `UpdateTeamMemberWithBody`, `UpdateTeamMemberWithResponse` and `UpdateTeamMemberWithBodyWithResponse`. A pending membership superseded by Directory Sync cannot receive direct v0 roles.
+- Added doc comments to the `Code` field of `CreateProjectTransferRequestResponse.JSON200`, `GetJSON200` and `ParseCreateProjectTransferRequestResponse`. The code accepts the project transfer request.
+- No exported API changes.
+
 ## v0.38.0, 2026-11-26
 
 - Breaking: the `Fallthrough3` and `RulesOutcome3` experiment variants are removed from flag responses, with their `Type` enums and `Experiment` constants. Affected: `FlagEnvironmentsFallthrough3`, `FlagEnvironmentsRulesOutcome3`, `CreateFlag201JSONResponseBodyEnvironmentsFallthrough3`, `UpdateFlag200JSONResponseBodyEnvironmentsRulesOutcome3` and the `ListFlagVersions200JSONResponseBody` equivalents.

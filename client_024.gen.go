@@ -1523,12 +1523,18 @@ type CreateProjectTransferRequestResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
+		// Code Code that can be used to accept the project transfer request.
+		//
+		// Example: f99cc49a-602e-4786-a748-762dfb205880
 		Code string `json:"code"`
 	}
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CreateProjectTransferRequestResponse) GetJSON200() *struct {
+	// Code Code that can be used to accept the project transfer request.
+	//
+	// Example: f99cc49a-602e-4786-a748-762dfb205880
 	Code string `json:"code"`
 } {
 	return r.JSON200

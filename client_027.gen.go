@@ -7991,7 +7991,7 @@ func (c *ClientWithResponses) RemoveTeamMemberWithResponse(ctx context.Context, 
 
 // UpdateTeamMemberWithBodyWithResponse Update a Team Member
 //
-// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. A pending membership superseded by Directory Sync cannot receive direct v0 roles. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -8006,7 +8006,7 @@ func (c *ClientWithResponses) UpdateTeamMemberWithBodyWithResponse(ctx context.C
 
 // UpdateTeamMemberWithResponse Update a Team Member
 //
-// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
+// Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. Organization-directory-managed team access and roles must be changed through the organization's identity provider. Unsupported changes return `organization_directory_managed`; supported local assignments remain editable. A pending membership superseded by Directory Sync cannot receive direct v0 roles. The authenticated user must be an `OWNER` of the Team. An update that would leave the Team's organization without an organization admin is refused.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -13064,6 +13064,9 @@ func ParseCreateProjectTransferRequestResponse(rsp *http.Response) (*CreateProje
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Code Code that can be used to accept the project transfer request.
+			//
+			// Example: f99cc49a-602e-4786-a748-762dfb205880
 			Code string `json:"code"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
